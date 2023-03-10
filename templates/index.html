@@ -1,0 +1,123 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+  .page__hero-caption {
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 2px 10px;
+    color: #fff;
+    font-family: Georgia,Times,serif;
+    font-size: 0.9em;
+    text-align: right;
+    z-index: 5;
+    opacity: 0.5;
+    border-radius: 4px 0 0 0;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 5px;">
+  <div class="row header p-6 m-5">
+    <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h2>
+        {{config.tagline|safe}}
+      </h2>
+      <h2 class="p-5">
+        {{config.date|safe}}
+      </h2>
+    </div>
+  </div>
+  <div class="page__hero-caption">Image Credit: NASA</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-7 col-sm-12 pr-5 lead">
+    <p>Welcome to EMNLP2020!<br><br>
+      Here is how to use this website to find live events (at fixed times) plus pre-recorded talks you can watch anytime.
+    </p>
+    <dl>
+      <dt>Schedule</dt>
+      <dd>Use the <a class="text" href="schedule.html" >Schedule</a> to find live sessions and set your timezone.
+      </dd>
+      <dt>Plenary Sessions</dt>
+      <dd>Plenary Sessions include Keynote Talks and the Business meeting (pre-recorded talks + live Q&A), plus Awards ceremonies.
+        <!-- Use the <a class="text" href="livestream.html" >Livestream</a> to watch live sessions in real time. -->
+        Pre-recorded videos are available under <a class="text" href="plenary_sessions.html" >Plenary Sessions</a>.
+      </dd>
+      <dt>Main Conference Papers</dt>
+      <dd>Each <a class="text" href="papers.html" >paper</a> has a pre-recorded 7-12 minute talk,
+        one live Q&A video sessions (on Zoom or in Gather.Town) at different times, and a linked RocketChat channel (for chatting anytime with the author).
+        This includes <a class="text" href="papers.html?filter=titles&program=demo&track=All+tracks" >System Demonstrations</a> papers</a>.
+      </dd>
+      <dt>Tutorials and Workshops</dt>
+      <dd>The 7 <a class="text" href="tutorials.html" >tutorials</a> and 25 <a class="text" href="workshops.html" >workshops</a> (November 19-20)  are all included under conference registration.
+        Some are fully pre-recorded, others include live sessions as well!
+      </dd>
+      <dt> Gather.town</dt>
+      <dd>Join the virtual conference venue in  <a class="text" href="{{ config.gather_town }}" target="_blank">Gather.Town</a>!
+        Come <a href="https://emnlp2020-public.s3.amazonaws.com/guides/EMNLP+Virtual+Chair+Pre-event+communications.pdf">here</a>
+        to learn a bit about accessing EMNLP events in Gather.Town, via 'Virtual Chair'."
+      </dd>
+      <dt> Sponsors</dt>
+      <dd>Meet our <a class="text" href="sponsors.html" >sponsors</a>.</dd>
+      <dt>Chat</dt>
+      <dd>Chat with attendees using various <a class="text" href="chat.html" >RocketChat</a> channels!
+        When you access RocketChat for the first time, click on 'Login via EMNLP2020 account' and your EMNLP2020 credentials will be automatically used to log you in to RocketChat.</dd>
+      <dt>Socials</dt>
+      <dd>Meet new people using <a class="text" href="socials.html" >social events</a> throughout the week.</dd>
+      <dt> Help</dt>
+      <dd> Look under <a class="text" href="about.html" >Help</a> for FAQs and technical support.</dd>
+      <dt> Social Media</dt>
+      <dd> Use the hashtag  <span style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">#emnlp2020</span></dd>
+    </dl>
+  </div>
+  <!-- <div class="col-md-1"></div> -->
+  <div class="col-md-5 col-sm-12">
+    <div class="text-center mt-4">
+      <h5>Announcements</h5>
+      <div class="col-md-12 col-xs-12">
+        <div id="gitter" class="slp">
+          <center>
+            <iframe frameborder="0" src="https://{{config.chat_server}}/channel/announcements?layout=embedded" height="500px" width="100%" ></iframe>
+          </center>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<br/>
+
+
+<a class="text-muted">
+The <a href="https://github.com/acl-org/emnlp-2020-virtual-conference" >EMNLP2020 virtual conference website</a>
+uses <a href="https://github.com/Mini-Conf/Mini-Conf" >MiniConf</a> built by Hendrik Strobelt and Sasha Rush that
+  was extended by the <a href="https://github.com/acl-org/acl-2020-virtual-conference" >amazing team of ACL 2020</a>.
+The EMNLP2020 infrastructure committee is very grateful to the
+<a href="static/pdf/volunteers.pdf" >volunteers</a>
+and contributors whose valuable contributions to building the virtual infrastructure made the conference possible.
+We would also like to thank <a href="https://desilinguist.org/">Nitin Madnani</a> for his advice and IT
+  support regarding the virtual infrastructure. We also want to thank
+  AI2  for contributing the <a href="https://github.com/allenai/specter">SPECTER model</a>
+  used in the "Similar Papers" feature, David Wadden et al. for <a href="https://github.com/dwadden/dygiepp">DyGIE++</a>
+  that generated paper keywords for us and the team of <a href="https://www.connectedpapers.com/">Connected Papers</a>
+  for providing us with citation graphs.
+
+</p>
+
+
+{% endblock %}

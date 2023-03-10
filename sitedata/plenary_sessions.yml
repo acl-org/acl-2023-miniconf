@@ -1,0 +1,167 @@
+- UID: opening_remarks
+  title: Opening Remarks
+  day: Nov 16
+  image: static/images/emnlp2020/acl-logo.png
+  presentation_id: '38942925'
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-16 14:45:00+00:00
+    end_time: 2020-11-16 15:00:00+00:00
+  rocketchat_channel: plenary-opening-remarks
+- UID: keynote_by_claire_cardie
+  title: 'Keynote: Information Extraction Through the Years: How Did We Get Here?'
+  day: Nov 16
+  image: static/images/keynotes/claire_cardie.jpg
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-16 15:00:00+00:00
+    end_time: 2020-11-16 16:00:00+00:00
+  rocketchat_channel: keynote-claire-cardie
+  abstract: In this talk, I'll examine the state of the NLP subfield of information
+    extraction from its inception almost 30 years ago to its current realization in
+    neural network models. Which aspects of the original formulation of the task are
+    more or less solved? In what ways are current state-of-the-art methods still falling
+    short? What's up next for information extraction?
+  bio: "[Claire Cardie](https://www.cs.cornell.edu/home/cardie/) is the John C. Ford\
+    \ Professor of Engineering in the Departments of Computer Science and Information\
+    \ Science at Cornell University. She has worked since the early 1990's on application\
+    \ of machine learning methods to problems in Natural Language Processing --- on\
+    \ topics ranging from information extraction, noun phrase coreference resolution,\
+    \ text summarization and question answering to the automatic analysis of opinions,\
+    \ argumentation, and deception in text. She has served on the executive committees\
+    \ of the ACL and AAAI and twice as secretary of NAACL. She has been Program Chair\
+    \ for ACL/COLING, EMNLP and CoNLL, and General Chair for ACL in 2018. Cardie was\
+    \ named a Fellow of the ACL in 2015 and a Fellow of the Association for Computing\
+    \ Machinery (ACM) in 2019. At Cornell, she led the development of the university's\
+    \ academic programs in Information Science and was the founding Chair of its Information\
+    \ Science Department."
+  presenter: Claire Cardie
+  presentation_id: '38938634'
+- UID: industry_panel
+  title: Industry Panel
+  day: Nov 16
+  image: static/images/emnlp2020/acl-logo.png
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-16 23:00:00+00:00
+    end_time: 2020-11-17 00:00:00+00:00
+  rocketchat_channel: plenary-industry-panel
+  presentation_id: '38942828'
+  presenter: "Fei Sha, Chin-Yew Lin, Kristina Toutanova, Daniel Marcu, Joel Tetreault,\
+    \ Jo\xE3o Gra\xE7a"
+- UID: ethics_panel_discussion
+  title: Ethics Panel Discussion
+  day: Nov 17
+  image: static/images/emnlp2020/acl-logo.png
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-17 15:00:00+00:00
+    end_time: 2020-11-17 16:00:00+00:00
+  rocketchat_channel: plenary-ethics-panel-discussion
+  presentation_id: '38942826'
+  presenter: Emily M. Bender, Rosie Campbell, Allan Dafoe, Pascale Fung, Meg Mitchell,
+    Saif Mohammad
+  abstract: 'Publishing in an era of Responsible AI: How can NLP be proactive? Considerations
+    and Implications. Moderated by Mona Diab.'
+- UID: keynote_by_rich_caruana
+  title: "Keynote: Friends Don\u2019t Let Friends Deploy Black-Box Models: The Importance\
+    \ of Intelligibility in Machine Learning"
+  day: Nov 17
+  image: static/images/keynotes/rich_caruana.jpg
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-17 23:00:00+00:00
+    end_time: 2020-11-18 00:00:00+00:00
+  rocketchat_channel: keynote-rich-caruana
+  abstract: "In machine learning sometimes tradeoffs must be made between accuracy\
+    \ and intelligibility: the most accurate models usually are not very intelligible,\
+    \ and the most intelligible models usually are less accurate. This can limit the\
+    \ accuracy of models that can safely be deployed in mission-critical applications\
+    \ where being able to understand, validate, edit, and ultimately trust a model\
+    \ is important. We have been working on a learning method to escape this tradeoff\
+    \ that is as accurate as full complexity models such as boosted trees and random\
+    \ forests, but more intelligible than linear models. This makes it easy to understand\
+    \ what the model has learned and to edit the model when it learns inappropriate\
+    \ things. Making it possible for humans to understand and repair a model is critical\
+    \ because most training data has unexpected problems. I\u2019ll present several\
+    \ case studies where these high-accuracy GAMs discover surprising patterns in\
+    \ the data that would have made deploying a black-box model inappropriate. I\u2019\
+    ll also show how these models can be used to detect and correct bias. And if there\u2019\
+    s time, I\u2019ll briefly discuss using intelligible GAM models to predict COVID-19\
+    \ mortality."
+  bio: "[Rich Caruana](https://www.microsoft.com/en-us/research/people/rcaruana/)\
+    \ is a Senior Principal Researcher at Microsoft. His focus is on intelligible/transparent\
+    \ modeling, machine learning for medical decision making, deep learning, and computational\
+    \ ecology. Before joining Microsoft, Rich was on the faculty in Computer Science\
+    \ at Cornell, at UCLA's Medical School, and at CMU's Center for Learning and Discovery.\
+    \ Rich's Ph.D. is from CMU. His work on Multitask Learning helped create interest\
+    \ in a subfield of machine learning called Transfer Learning.  Rich received an\
+    \ NSF CAREER Award in 2004 (for Meta Clustering), best paper awards in 2005 (with\
+    \ Alex Niculescu-Mizil), 2007 (with Daria Sorokina), and 2014 (with Todd Kulesza,\
+    \ Saleema Amershi, Danyel Fisher, and Denis Charles), and co-chaired KDD in 2007\
+    \ with Xindong Wu. \""
+  presenter: Rich Caruana
+  presentation_id: "38942829"
+- UID: keynote_by_janet_pierrehumbert
+  title: 'Keynote: Linguistic Behaviour and the Realistic Testing of NLP Systems.'
+  presentation_id: "38942827"
+  day: Nov 18
+  image: static/images/keynotes/janet_pierrehumbert.jpg
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-18 15:00:00+00:00
+    end_time: 2020-11-18 16:00:00+00:00
+  rocketchat_channel: keynote-janet-pierrehumbert
+  abstract: "To evaluate the performance of NLP systems, the standard is to use held-out\
+    \ test data. When the systems are deployed in real-world applications, they will\
+    \ only be successful if they perform well on examples that their architects never\
+    \ saw before. Many of these will be examples that nobody ever saw before; the\
+    \ central observation of generative linguistics, going back to von Humboldt, is\
+    \ that human language involves \"The infinite use of finite means\".\n    Predicting\
+    \ the real-world success of NLP systems thus comes down to predicting future human\
+    \ linguistic behaviour. In this talk, I will discuss some general characteristics\
+    \ of human linguistic behaviour, and the extent to which they are, or are not\
+    \ addressed in current NLP methodology. The topics I will address include: look-ahead\
+    \ and prediction; the role of categorization in building abstractions; effects\
+    \ of context; and variability across individuals."
+  bio: "[Janet Pierrehumbert](http://www.phon.ox.ac.uk/jpierrehumbert/) is the Professor\
+    \ of Language Modelling in the Department of Engineering Science at the University\
+    \ of Oxford. She received her BA in Linguistics and Mathematics at Harvard in\
+    \ 1975, and her Ph.D in Linguistics from MIT in 1980. Much of her Ph.D dissertation\
+    \ research on English prosody and intonation was carried out at AT&T Bell Laboratories,\
+    \ where she was also a Member of Technical Staff from 1982 to 1989. After she\
+    \ moved to Northwestern University in1989, her research program used a wide variety\
+    \ of experimental and computational methods to explore how lexical systems emerge\
+    \ in speech communities. She showed that the mental representations of words are\
+    \ at once abstract and phonetically detailed, and that social factors interact\
+    \ with cognitive factors as lexical patterns are learned, remembered, and generalized.\
+    \ Pierrehumbert joined the faculty at the University of Oxford in 2015 as a member\
+    \ of the interdisciplinary Oxford e-Research Centre. Her current research uses\
+    \ machine-learning methods to model the dynamics of on-line language. Her latest\
+    \ project, funded by the UK EPSRC, seeks to develop new NLP methods to characterize\
+    \ exaggeration, cohesion, and fragmentation in on-line forums.\n\nPierrehumbert\
+    \ is a Fellow of the Linguistic Society of America, the Cognitive Science Society,\
+    \ and the American Academy of Arts and Sciences. She was elected to the National\
+    \ Academy of Sciences in 2019. She is the recipient of the 2020 Medal for Scientific\
+    \ Achievement from the International Speech Communication Association."
+  presenter: Janet Pierrehumbert
+- UID: business_meeting
+  presentation_id: "38942830"
+  title: Business Meeting
+  day: Nov 19
+  image: static/images/emnlp2020/acl-logo.png
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-19 01:00:00+00:00
+    end_time: 2020-11-19 01:45:00+00:00
+  rocketchat_channel: plenary-business-meeting
+- UID: best_paper_awards_and_closing
+  title: Best Paper Awards and Closing
+  presentation_id: "38942830"
+  day: Nov 19
+  image: static/images/emnlp2020/acl-logo.png
+  sessions:
+  - name: P-Live Presentation
+    start_time: 2020-11-19 01:50:00+00:00
+    end_time: 2020-11-19 02:20:00+00:00
+  rocketchat_channel: plenary-best-paper-awards-and-closing

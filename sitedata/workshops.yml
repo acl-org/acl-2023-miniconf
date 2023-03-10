@@ -1,0 +1,2609 @@
+- UID: WS-1
+  title: CoNLL 2020
+  organizers: "Raquel Fern\xE1ndez and Tal Linzen"
+  abstract: "CoNLL is a yearly conference organized by SIGNLL (ACL's Special Interest\
+    \ Group on Natural Language Learning). The main focus of CoNLL is on theoretically,\
+    \ cognitively and scientifically motivated approaches to computational linguistics,\
+    \ rather than on work driven by particular engineering applications. "
+  website: https://www.conll.org
+  rocketchat_channel: workshop-conll
+  alias: conll
+  sessions:
+  - start_time: 2020-11-19 05:45:00-05:00
+    end_time: 2020-11-19 07:45:00-05:00
+    name: '<a href="http://mrp.nlpl.eu/2020/index.php?page=16">Shared Task: Meaning
+      Representation Parsing</a> (zoom and gather.town)'
+    hosts: TBD
+  - start_time: 2020-11-19 07:45:00-05:00
+    end_time: 2020-11-19 08:00:00-05:00
+    name: Coffee break
+    hosts: TBD
+  - start_time: 2020-11-19 08:00:00-05:00
+    end_time: 2020-11-19 10:00:00-05:00
+    name: 'Session 1: Mixed topics (gather.town)'
+    hosts: TBD
+  - start_time: 2020-11-19 10:00:00-05:00
+    end_time: 2020-11-19 10:50:00-05:00
+    name: Coffee break / watch pre-recorded Toutanova talk "Toward Progress in Text
+      Representations for Question Answering"
+    hosts: TBD
+  - start_time: 2020-11-19 10:50:00-05:00
+    end_time: 2020-11-19 11:00:00-05:00
+    name: Opening remarks and best paper awards
+    hosts: TBD
+  - start_time: 2020-11-19 11:00:00-05:00
+    end_time: 2020-11-19 11:30:00-05:00
+    name: 'Invited talk Q&A: Kristina Toutanova (Zoom)'
+    hosts: TBD
+  - start_time: 2020-11-19 11:30:00-05:00
+    end_time: 2020-11-19 11:45:00-05:00
+    name: Coffee break
+    hosts: TBD
+  - start_time: 2020-11-19 11:45:00-05:00
+    end_time: 2020-11-19 13:45:00-05:00
+    name: 'Session 2: Interaction and multimodality (gather.town)'
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-05:00
+    end_time: 2020-11-19 14:00:00-05:00
+    name: Coffee break
+    hosts: TBD
+  - start_time: 2020-11-19 14:00:00-05:00
+    end_time: 2020-11-19 16:00:00-05:00
+    name: 'Session 3: Interpretability of NLP models (gather.town)'
+    hosts: TBD
+  - start_time: 2020-11-20 08:00:00-05:00
+    end_time: 2020-11-20 10:00:00-05:00
+    name: 'Session 4: Resources and techniques (gather.town)'
+    hosts: TBD
+  - start_time: 2020-11-20 10:00:00-05:00
+    end_time: 2020-11-20 11:00:00-05:00
+    name: 'Coffee break / watch pre-recorded Dupoux talk "Learning Language Like Infants
+      Do: Self Supervised Learning From Raw Video"'
+    hosts: TBD
+  - start_time: 2020-11-20 11:00:00-05:00
+    end_time: 2020-11-20 11:30:00-05:00
+    name: 'Invited talk Q&A: Emmanuel Dupoux (Zoom)'
+    hosts: TBD
+  - start_time: 2020-11-20 11:30:00-05:00
+    end_time: 2020-11-20 11:45:00-05:00
+    name: Coffee break
+    hosts: TBD
+  - start_time: 2020-11-20 11:45:00-05:00
+    end_time: 2020-11-20 13:45:00-05:00
+    name: 'Session 5: Language acquisition and psycholinguistics (gather.town)'
+    hosts: TBD
+  - start_time: 2020-11-20 13:45:00-05:00
+    end_time: 2020-11-20 14:00:00-05:00
+    name: Coffee break
+    hosts: TBD
+  - start_time: 2020-11-20 14:00:00-05:00
+    end_time: 2020-11-20 16:00:00-05:00
+    name: 'Session 6: Mixed topics + Findings papers (gather.town)'
+    hosts: TBD
+  zoom_links:
+  - https://us02web.zoom.us/j/2575188702?pwd=VUdsT1dDK1d6ZXBjT0oyQk1vSUh2UT09
+  prerecorded_talks:
+  - title: 'Learning Language Like Infants Do: Self Supervised Learning From Raw Audio'
+    speakers: Emmanuel Dupoux
+    presentation_id: '38940786'
+  - title: Toward Progress in Text Representations for Question Answering
+    speakers: Kristina Toutanova
+    presentation_id: '38940787'
+- UID: WS-2
+  title: Fifth Conference on Machine Translation (WMT20)
+  organizers: "Barry Haddow, Philipp Koehn, Ond\u0159ej Bojar, Christian Federmann,\
+    \ Yvette Graham, Matthias Huck, Christof Monz and Lucia Specia"
+  abstract: A two day conference on machine translation with shared tasks.
+  website: http:/www.statmt.org/wmt20
+  rocketchat_channel: workshop-wmt
+  alias: wmt
+  sessions:
+  - start_time: 2020-11-19 09:45:00+00:00
+    end_time: 2020-11-19 10:00:00+00:00
+    name: Welcome Speech
+    hosts: zoom
+  - start_time: 2020-11-19 10:00:00+00:00
+    end_time: 2020-11-19 11:00:00+00:00
+    name: Shared Tasks Overview 1a
+    hosts: zoom
+  - start_time: 2020-11-19 11:00:00+00:00
+    end_time: 2020-11-19 12:30:00+00:00
+    name: Poster Session 1a
+    hosts: GT
+  - start_time: 2020-11-19 12:30:00+00:00
+    end_time: 2020-11-19 13:00:00+00:00
+    name: Break
+    hosts: n/a
+  - start_time: 2020-11-19 13:00:00+00:00
+    end_time: 2020-11-19 14:00:00+00:00
+    name: Full Research Paper Session 1
+    hosts: zoom
+  - start_time: 2020-11-19 14:00:00+00:00
+    end_time: 2020-11-19 16:00:00+00:00
+    name: Break
+    hosts: n/a
+  - start_time: 2020-11-19 16:00:00+00:00
+    end_time: 2020-11-19 17:00:00+00:00
+    name: Shared Tasks Overview 1b
+    hosts: zoom
+  - start_time: 2020-11-19 17:00:00+00:00
+    end_time: 2020-11-19 18:30:00+00:00
+    name: Poster Session 1b
+    hosts: GT
+  - start_time: 2020-11-19 18:30:00+00:00
+    end_time: 2020-11-19 19:00:00+00:00
+    name: Break
+    hosts: n/a
+  - start_time: 2020-11-19 19:00:00+00:00
+    end_time: 2020-11-19 20:00:00+00:00
+    name: Full Research Paper Session 2
+    hosts: zoom
+  - start_time: 2020-11-20 09:00:00+00:00
+    end_time: 2020-11-20 10:00:00+00:00
+    name: Full Research Paper Session 3
+    hosts: zoom
+  - start_time: 2020-11-20 10:00:00+00:00
+    end_time: 2020-11-20 11:00:00+00:00
+    name: Shared Tasks Overview 2a
+    hosts: zoom
+  - start_time: 2020-11-20 11:00:00+00:00
+    end_time: 2020-11-20 12:30:00+00:00
+    name: Poster Session 2a
+    hosts: GT
+  - start_time: 2020-11-20 12:30:00+00:00
+    end_time: 2020-11-20 13:00:00+00:00
+    name: Break
+    hosts: n/a
+  - start_time: 2020-11-20 13:00:00+00:00
+    end_time: 2020-11-20 14:00:00+00:00
+    name: Invited Talk
+    hosts: livestream over zoom??
+  - start_time: 2020-11-20 14:00:00+00:00
+    end_time: 2020-11-20 15:30:00+00:00
+    name: Panel Discussion
+    hosts: zoom
+  - start_time: 2020-11-20 16:00:00+00:00
+    end_time: 2020-11-20 17:00:00+00:00
+    name: Shared Tasks Overview 2b
+    hosts: zoom
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 18:30:00+00:00
+    name: Poster Session 2b
+    hosts: GT
+  - start_time: 2020-11-20 18:30:00+00:00
+    end_time: 2020-11-20 19:00:00+00:00
+    name: Break
+    hosts: n/a
+  - start_time: 2020-11-20 19:00:00+00:00
+    end_time: 2020-11-20 20:00:00+00:00
+    name: Full Research Paper Session 4
+    hosts: zoom
+  - start_time: 2020-11-20 20:00:00+00:00
+    end_time: 2020-11-20 20:15:00+00:00
+    name: Closing
+    hosts: zoom
+  zoom_links:
+  - https://us02web.zoom.us/j/7379300234?pwd=cnJnZllOM1dUNEJlSXZxd1ZNSC83QT09
+  prerecorded_talks:
+  - title: '"Low-resourcedness" Beyond Data'
+    speakers: Masakhane
+    presentation_id: '38940745'
+- UID: WS-3
+  title: Workshop on Insights from Negative Results in NLP
+  organizers: Anna Rogers, Joao Sedoc and Anna Rumshisky
+  abstract: Let's take a break from chasing leaderboards! Your negative results might
+    save others time, or poke holes in things we take for granted.
+  website: https://insights-workshop.github.io/
+  rocketchat_channel: workshop-insights
+  alias: insights
+  sessions:
+  - start_time: 2020-11-19 07:00:00-08:00
+    end_time: 2020-11-19 07:15:00-08:00
+    name: <b>Opening remarks</b>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 07:15:00-08:00
+    end_time: 2020-11-19 08:00:00-08:00
+    name: |-
+      <b>Invited talk: <a href="http://web.eecs.umich.edu/~mihalcea/">Rada Mihalcea</a>:</b> The ups and downs of word embeddings<br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-mihalcea">RocketChat</a><br/>
+      <i>Word embeddings have largely been a “success story” in our field. They have enabled progress in numerous language processing applications, and have facilitated the application of large-scale language analyses in other domains, such as social sciences and humanities. While less talked about, word embeddings also have many shortcomings – instability, lack of transparency, biases, and more. In this talk, I will review the “ups” and “downs” of word embeddings, discuss tradeoffs, and chart potential future research directions to address some of the downsides of these word representations.</i>
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 08:00:00-08:00
+    end_time: 2020-11-19 08:15:00-08:00
+    name: <b>Q&A with Rada Mihalcea</b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/insights-invited-mihalcea">RocketChat</a>
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 08:15:00-08:00
+    end_time: 2020-11-19 08:45:00-08:00
+    name: |-
+      <b>Thematic session: representation learning </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-representations">RocketChat</a> <br/>
+      • Embedding Structured Dictionary Entries (Steven Wilson, Walid Magdy, Barbara McGillivray and Gareth Tyson) <a href="https://virtual.2020.emnlp.org/paper_WS-3.34.html">Paper</a><br/>
+      • Can Knowledge Graph Embeddings Tell Us What Fact-checked Claims Are About? (Valentina Beretta, Sébastien Harispe, Katarina Boland, Luke Lo Seen, Konstantin Todorov and Andon Tchechmedjiev) <a href="https://virtual.2020.emnlp.org/paper_WS-3.24.html">Paper</a><br/>
+      • Layout-Aware Text Representations Harm Clustering Documents by Type (Catherine Finegan-Dollak and Ashish Verma) <a href="https://virtual.2020.emnlp.org/paper_WS-3.22.html">Paper</a>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 08:45:00-08:00
+    end_time: 2020-11-19 09:15:00-08:00
+    name: |-
+      <b>Thematic session: dialogue </b>  <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-dialogue">RocketChat</a> <br/>
+      • On Task-Level Dialogue Composition of Generative Transformer Model (Prasanna Parthasarathi, Sharan Narang and Arvind Neelakantan) <a href="https://virtual.2020.emnlp.org/paper_WS-3.12.html">Paper</a><br/>
+      • HINT3: Raising the bar for Intent Detection in the Wild (Gaurav Arora, Chirag Jain, Manas Chaturvedi and Krupal Modi) <a href="https://virtual.2020.emnlp.org/paper_WS-3.31.html">Paper</a><br/>
+      • Effects of Naturalistic Variation in Goal-Oriented Dialog (Jatin Ganhotra, Robert Moore, Sachindra Joshi and Kahini Wadhawan <a href="https://virtual.2020.emnlp.org/paper_WS-3.3004.html">Paper</a>
+    hosts: Joao Sedoc
+  - start_time: 2020-11-19 09:15:00-08:00
+    end_time: 2020-11-19 10:00:00-08:00
+    name: <b>Social break / meal time.</b> Gather.town (room N)
+    hosts: n/a
+  - start_time: 2020-11-19 10:00:00-08:00
+    end_time: 2020-11-19 10:45:00-08:00
+    name: |-
+      <b>Invited talk: <a href="http://www.byronwallace.com/">Byron Wallace</a>:</b>Negative results yield interesting questions, or: a bunch of stuff that didn’t work  <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-invited-wallace">RocketChat</a><br/>
+      <i>I will discuss recent projects in which ideas did not pan out as expected, but where these initial negative results led to (arguably) more interesting questions. My hope is that these case studies of negative results — which ultimately led to work we viewed as compelling enough to warrant write-up — will foster discussion about when “negative” results are nonetheless interesting, and about the kinds of questions we ask in empirical NLP research.</i>
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 10:45:00-08:00
+    end_time: 2020-11-19 11:00:00-08:00
+    name: <b>Q&A with Byron Wallace</b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/insights-invited-wallace">RocketChat</a>
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 11:00:00-08:00
+    end_time: 2020-11-19 11:30:00-08:00
+    name: |-
+      <b>Thematic session: question answering </b><br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-from-qa">RocketChat</a><br/>
+      • Do Transformers Dream of Inference, or Can Pretrained Generative Models Learn Implicit Inferential Rules? (Zhengzhong Liang and Mihai Surdeanu) <a href="https://virtual.2020.emnlp.org/paper_WS-3.26.html">Paper</a><br/>
+      • What do we expect from Multiple-choice QA Systems? (Krunal Shah, Nitish Gupta and Dan Roth) <a href="https://virtual.2020.emnlp.org/paper_WS-3.2575.html">Paper</a><br/>
+      • Q. Can Knowledge Graphs be used to Answer Boolean Questions? A. It’s complicated! (Daria Dzendzik, Carl Vogel and Jennifer Foster) <a href="https://virtual.2020.emnlp.org/paper_WS-3.4.html">Paper</a>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 11:30:00-08:00
+    end_time: 2020-11-19 12:00:00-08:00
+    name: |-
+      <b>Thematic session: natural language inference </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-from-nli">RocketChat</a><br/>
+      • Counterfactually-Augmented SNLI Training Data Does Not Yield Better Generalization Than Unaugmented Data (William Huang, Haokun Liu and Samuel R. Bowman) <a href="https://virtual.2020.emnlp.org/paper_WS-3.27.html">Paper</a><br/>
+      • The Extraordinary Failure of Complement Coercion Crowdsourcing (Yanai Elazar, Victoria Basmov, Shauli Ravfogel, Yoav Goldberg and Reut Tsarfat) <a href="https://virtual.2020.emnlp.org/paper_WS-3.33.html">Paper</a><br/>
+      • Poison Attacks against Text Datasets with Conditional Adversarially Regularized Autoencoder (Alvin Chan, Yi Tay, Yew-Soon Ong and Aston Zhang) <a href="https://virtual.2020.emnlp.org/paper_WS-3.106.html">Paper</a>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 12:00:00-08:00
+    end_time: 2020-11-19 12:30:00-08:00
+    name: |-
+      <b>Thematic session: lessons learned the hard way</b> <br/><a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-lessons">RocketChat</a> <br/>
+      • Evaluating the Effectiveness of Efficient Neural Architecture Search for Sentence-Pair Tasks (Ansel MacLaughlin, Jwala Dhamala, Anoop Kumar, Sriram Venkatapathy, Ragav Venkatesan and Rahul Gupta) <a href="https://virtual.2020.emnlp.org/paper_WS-3.7.html">Paper</a><br/>
+      • NMF Ensembles? Not for Text Summarization! (Alka Khurana and Vasudha Bhatnagar) <a href="https://virtual.2020.emnlp.org/paper_WS-3.29.html">Paper</a><br/>
+      • If You Build Your Own NER Scorer, Non-replicable Results Will Come (Constantine Lignos and Marjan Kamyab) <a href="https://virtual.2020.emnlp.org/paper_WS-3.30.html">Paper</a>
+    hosts: Joao Sedoc
+  - start_time: 2020-11-19 12:30:00-08:00
+    end_time: 2020-11-19 13:00:00-08:00
+    name: <b>Social break / meal time.</b> Gather.town (room N)
+    hosts: n/a
+  - start_time: 2020-11-19 13:00:00-08:00
+    end_time: 2020-11-19 14:00:00-08:00
+    name: |-
+      <b>Interactive Orals</b> <br/>
+      • Domain adaptation challenges of BERT in tokenization and sub-word representations of Out-of-Vocabulary words (Anmol Nayak, Hariprasad Timmapathini, Karthikeyan Ponnalagu and Vijendran Gopalan Venkoparao) <a href="https://virtual.2020.emnlp.org/paper_WS-3.1.html">Paper</a> <br/>
+      • How Far Can We Go with Data Selection? A Case Study on Semantic Sequence Tagging Tasks (Samuel Louvan and Bernardo Magnini) <a href="https://virtual.2020.emnlp.org/paper_WS-3.6.html">Paper</a><br/>
+      • Which Matters Most? Comparing the Impact of Concept and Document Relationships in Topic Models (Silvia Terragni, Debora Nozza, Elisabetta Fersini and Messina Enza) <a href="https://virtual.2020.emnlp.org/paper_WS-3.8.html">Paper</a><br/>
+      • How Effectively Can Machines Defend Against Machine-Generated Fake News? An Empirical Study (Meghana Moorthy Bhat and Srinivasan Parthasarathy) <a href="https://virtual.2020.emnlp.org/paper_WS-3.19.html">Paper</a><br/>
+      • Label Propagation-Based Semi-Supervised Learning for Hate Speech Classification (Ashwin Geet D’Sa, Irina Illina, Dominique Fohr and Dietrich Klakow) <a href="https://virtual.2020.emnlp.org/paper_WS-3.20.html">Paper</a><br/>
+      • An Analysis of Capsule Networks for Part of Speech Tagging in High- and Low-resource Scenarios (Andrew Zupon, Faiz Rafique and Mihai Surdeanu) <a href="https://virtual.2020.emnlp.org/paper_WS-3.23.html">Paper</a><br/>
+      • How Effective is Task-Agnostic Data Augmentation for Pretrained Transformers? (Shayne Longpre, Yu Wang and Christopher DuBois) <a href="https://virtual.2020.emnlp.org/paper_WS-3.3296.html">Paper</a><br/>
+      • WER we are and WER we think we are (Piotr Szymański, Piotr Żelasko, Mikolaj Morzy, Adrian Szymczak, Marzena Żyła-Hoppe, Joanna Banaszczak, Lukasz Augustyniak, Jan Mizgajski and Yishay Carmiel) <a href="https://virtual.2020.emnlp.org/paper_WS-3.2436.html">Paper</a><br/>
+    hosts: n/a
+  - start_time: 2020-11-19 14:00:00-08:00
+    end_time: 2020-11-19 14:45:00-08:00
+    name: |-
+      <b>The frustrations of leaderboardism. Panel discussion with Kawin Ethayarajh, Jesse Dodge and Rachael Tatman </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>, <a href="https://emnlp2020.rocket.chat/channel/insights-panel">RocketChat</a><br/>
+      <i>Leaderboards do not only drive progress in NLP: the bias towards publication of positive, and particularly state-of-the-art results implicitly encourages the development of highly specialized and brittle systems. If the reported success cannot be reproduced, or does not generalize well, the main result is much frustration by the developers who pick up academic papers in search of something that would actually work.</i>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 14:45:00-08:00
+    end_time: 2020-11-19 15:00:00-08:00
+    name: <b>QA with the panelists </b> <br/> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/insights-panel">RocketChat</a>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 15:00:00-08:00
+    end_time: 2020-11-19 15:15:00-08:00
+    name: <b>Closing remarks </b> <a href="https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09">Zoom</a>
+    hosts: Anna Rogers
+  - start_time: 2020-11-19 15:15:00-08:00
+    end_time: 2020-11-19 16:00:00-08:00
+    name: <b>Virtual happy hour</b> Gather.town (room N)
+    hosts: Joao Sedoc
+  zoom_links:
+  - https://us02web.zoom.us/j/7991785226?pwd=VGRLTnpVZyswOHJiZ3R1UzNrTWYxZz09
+  prerecorded_talks:
+  - title: "Negative results yield interesting questions, or: A bunch of stuff that\
+      \ didn't work"
+    speakers: Byron C. Wallace
+    presentation_id: '38940632'
+  - title: The Ups and Downs of Word Embeddings
+    speakers: Rada Mihalcea
+    presentation_id: '38940633'
+- UID: WS-4
+  title: Search-Oriented Conversational AI (SCAI) 2
+  organizers: Julia Kiseleva, Aleksandr Chuklin, Jeff Dalton and Mikhail Burtsev
+  abstract: N/A
+  website: http://scai.info
+  rocketchat_channel: workshop-scai
+  alias: scai
+  sessions:
+  - start_time: 2020-11-19 08:00:00+00:00
+    end_time: 2020-11-19 08:10:00+00:00
+    name: 'Welcome Speech #1 (Europe and Asia)'
+    hosts: M. Burtsev, A. Chuklin, J. Dalton
+  - start_time: 2020-11-19 08:10:00+00:00
+    end_time: 2020-11-19 08:40:00+00:00
+    name: "Invited Talk by Ivan Vuli\u0107 (30 min video)"
+    hosts: A. Chuklin
+  - start_time: 2020-11-19 08:40:00+00:00
+    end_time: 2020-11-19 09:10:00+00:00
+    name: Invited Talk by Thomas Wolf (30 min video)
+    hosts: A. Chuklin
+  - start_time: 2020-11-19 09:10:00+00:00
+    end_time: 2020-11-19 09:40:00+00:00
+    name: Invited Talk by Verena Rieser (30 min video)
+    hosts: A. Chuklin
+  - start_time: 2020-11-19 09:40:00+00:00
+    end_time: 2020-11-19 10:20:00+00:00
+    name: "Q&A & Panel Discussion w/ V. Rieser, I. Vuli\u0107 and T. Wolf"
+    hosts: J. Dalton & M. Burtsev
+  - start_time: 2020-11-19 10:20:00+00:00
+    end_time: 2020-11-19 10:40:00+00:00
+    name: 'Q&A with SCAI paper authors #1'
+    hosts: A. Chuklin
+  - start_time: 2020-11-19 10:40:00+00:00
+    end_time: 2020-11-19 11:00:00+00:00
+    name: ClariQ Challenge Presentation and Winner Announcement
+    hosts: M. Alliannejadi
+  - start_time: 2020-11-19 11:00:00+00:00
+    end_time: 2020-11-19 12:00:00+00:00
+    name: 'Coffe Hour & Poster Session #1'
+    hosts: M. Alliannejadi & M. Burtsev
+  - start_time: 2020-11-19 16:00:00+00:00
+    end_time: 2020-11-19 16:10:00+00:00
+    name: 'Welcome Speech #2 (Europe and Americas)'
+    hosts: J. Dalton, J. Kiseleva, A.Chuklin, M. Burtsev
+  - start_time: 2020-11-19 16:10:00+00:00
+    end_time: 2020-11-19 16:30:00+00:00
+    name: 'Q&A with SCAI paper authors #2'
+    hosts: J. Dalton
+  - start_time: 2020-11-19 16:30:00+00:00
+    end_time: 2020-11-19 17:30:00+00:00
+    name: 'Social Hour & Poster Session #2'
+    hosts: J. Dalton & A. Chuklin
+  - start_time: 2020-11-19 17:30:00+00:00
+    end_time: 2020-11-19 18:00:00+00:00
+    name: Invited Talk by Jason Weston (30 min video)
+    hosts: J. Kiseleva
+  - start_time: 2020-11-19 18:00:00+00:00
+    end_time: 2020-11-19 18:30:00+00:00
+    name: Invited Talk by Jian-Yun Nie (30 min video)
+    hosts: J. Kiseleva
+  - start_time: 2020-11-19 18:30:00+00:00
+    end_time: 2020-11-19 19:00:00+00:00
+    name: Invited Talk by Y-Lan Boureau (30 min video)
+    hosts: J. Kiseleva
+  - start_time: 2020-11-19 19:00:00+00:00
+    end_time: 2020-11-19 19:30:00+00:00
+    name: Invited Talk by Sungjin Lee (30 min video)
+    hosts: J. Kiseleva
+  - start_time: 2020-11-19 19:30:00+00:00
+    end_time: 2020-11-19 20:10:00+00:00
+    name: Q&A & Panel Discussion w/ Y. Boureau, S. Lee, J. Nie, J. Weston
+    hosts: J. Kiseleva
+  - start_time: 2020-11-19 20:10:00+00:00
+    end_time: 2020-11-19 21:00:00+00:00
+    name: Social Hour
+    hosts: J. Kiseleva & J. Dalton
+  zoom_links:
+  - https://us02web.zoom.us/j/4123561447?pwd=UUM5ZkxMQ3hYK0VVYU9YYWg3MmFjdz09
+  prerecorded_talks:
+  - title: Clarifying Questions in Conversations with Augmented Syntax Features and
+      Side Information
+    speakers: Hang Li, Tianqiao Liu, Yu Kang, Guowei Xu, Wenbiao Ding, Zitao Liu
+    presentation_id: '38940066'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940075'
+  - title: Clarifying Questions in Conversations with Augmented Syntax Features and
+      Side Information - TAL ML Team's Solution for ConvAI3 Challenge
+    speakers: Hang Li, Tianqiao Liu, Yu Kang, Guowei Xu, Wenbiao Ding, Zitao Liu
+    presentation_id: '38940067'
+  - title: "Clarifying Questions for Conversational Search Systems: Team Soda\u2019\
+      s Solution for the ClariQ Challenge"
+    speakers: Jian Wang, Wenjie Li
+    presentation_id: '38940068'
+  - title: TBA
+    speakers: Jian Wang, Wenjie Li
+    presentation_id: '38940069'
+  - title: TBA
+    speakers: Wenjie Ou, Yue Lin
+    presentation_id: '38940070'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940071'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940072'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940073'
+  - title: TBA
+    speakers: Tba
+    presentation_id: '38940074'
+  - title: Response Generation and Retrieval for Multimodal Conversational AI
+    speakers: Verena Rieser
+    presentation_id: '38940054'
+  - title: Data-Efficient Natural Language Understanding for Task-Oriented Dialogue
+    speakers: "Ivan Vuli\u0107"
+    presentation_id: '38940055'
+  - title: Towards Self-Learning for Large Scale Conversational Agents
+    speakers: Lee, Sungjin
+    presentation_id: '38940056'
+  - title: BlenderBot, Knowledge and Search
+    speakers: Jason Weston
+    presentation_id: '38940057'
+  - title: Better-behaved Conversational Agents
+    speakers: Y-Lan Boureau
+    presentation_id: '38940058'
+  - title: Smooth Training for Open-Domain Question Answering
+    speakers: Jian-Yun Nie
+    presentation_id: '38940059'
+  - title: Transfer Learning and tools for Conversational Agents
+    speakers: Thomas Wolf
+    presentation_id: '38940060'
+- UID: WS-5
+  title: Workshop on Cognitive Modeling and Computational Linguistics (CMCL)
+  organizers: "Emmanuele Chersoni, Cassandra L. Jacobs, Yohei Oseki, Laurent Pr\xE9\
+    vot and Enrico Santus"
+  abstract: The CMCL workshop provides a venue for computational research on cognitive
+    theories of language processing, representation and acquisition.
+  website: https://cmclorg.github.io/
+  rocketchat_channel: workshop-cmcl2020
+  alias: cmcl2020
+  sessions:
+  - start_time: 2020-11-19 09:30:00-04:00
+    end_time: 2020-11-19 09:45:00-04:00
+    name: Introduction
+    hosts: Emmanuele Chersoni
+  - start_time: 2020-11-19 09:45:00-04:00
+    end_time: 2020-11-19 10:45:00-04:00
+    name: Keynote talk by Suzanne Stevenson
+    hosts: Yohei Oseki
+  - start_time: 2020-11-19 10:45:00-04:00
+    end_time: 2020-11-19 11:15:00-04:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-19 11:15:00-04:00
+    end_time: 2020-11-19 12:15:00-04:00
+    name: 'Session 1: Oral Presentations'
+    hosts: "Laurent Pr\xE9vot"
+  - start_time: 2020-11-19 11:15:00-04:00
+    end_time: 2020-11-19 11:45:00-04:00
+    name: What Determines the Order of Verbal Dependents in Hindi? Effects of Efficiency
+      in Comprehension and Production
+    hosts: TBD
+  - start_time: 2020-11-19 11:45:00-04:00
+    end_time: 2020-11-19 12:15:00-04:00
+    name: 'Images and Imagination: Automated Analysis of Priming Effects Related to
+      Autism Spectrum Disorder and Developmental Language Disorder'
+    hosts: TBD
+  - start_time: 2020-11-19 12:15:00-04:00
+    end_time: 2020-11-19 13:30:00-04:00
+    name: Lunch Break
+    hosts: TBD
+  - start_time: 2020-11-19 13:30:00-04:00
+    end_time: 2020-11-19 13:45:00-04:00
+    name: Poster Booster
+    hosts: Nora Hollenstein
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Poster Session in gather.town
+    hosts: Nora Hollenstein
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Production-based Cognitive Models as a Test Suite for Reinforcement Learning
+      Algorithms
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Evaluating Word Embeddings for Language Acquisition
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Guessing the Age of Acquisition of Italian Lemmas through Linear Regression
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Word Co-Occurrence in Child Directed Speech Predicts Children's Free Word
+      Associations
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Development of Multilevel Linguistic Alignment in Child-Adult Conversations
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Conditioning, but on Which Distributions? Grammatical Gender in German Plural
+      Inflection
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Probabilistic Weighting of Perspectives in Dyadic Communication (cross-submission)
+    hosts: TBD
+  - start_time: 2020-11-19 13:45:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: Inferring Symmetry in Natural Language (Findings of EMNLP)
+    hosts: TBD
+  - start_time: 2020-11-19 14:45:00-04:00
+    end_time: 2020-11-19 15:45:00-04:00
+    name: 'Session 2: Oral Presentations'
+    hosts: Nora Hollenstein
+  - start_time: 2020-11-19 14:45:00-04:00
+    end_time: 2020-11-19 15:15:00-04:00
+    name: 'Learning Pronoun Case from Distributional Cues: Flexible Frames for Case
+      Acquisition'
+    hosts: TBD
+  - start_time: 2020-11-19 15:15:00-04:00
+    end_time: 2020-11-19 15:45:00-04:00
+    name: 'Probabilistic Predictions of People Perusing: Evaluating Metrics of Language
+      Model Performance for Psycholinguistic Modeling'
+    hosts: TBD
+  - start_time: 2020-11-19 15:45:00-04:00
+    end_time: 2020-11-19 16:45:00-04:00
+    name: Keynote talk by Richard Futrell
+    hosts: Enrico Santus
+  - start_time: 2020-11-19 16:45:00-04:00
+    end_time: 2020-11-19 17:00:00-04:00
+    name: Closing Remarks
+    hosts: Enrico Santus
+  zoom_links:
+  - https://us02web.zoom.us/j/8257686500?pwd=azc0bFltRk5ZQUp1TDhGRkxreGFiQT09
+  prerecorded_talks:
+  - title: 'How Languages Carve Up the World: Cognitive Explanation through Computational
+      Modeling'
+    speakers: Suzanne Stevenson
+    presentation_id: '38939684'
+  - title: Information Processing, Communication, and Word Order
+    speakers: Richard Futrell
+    presentation_id: '38939685'
+- UID: WS-6
+  title: Interactive and Executable Semantic Parsing (Int-Ex)
+  organizers: Ben Bogin, Srinivasan Iyer, Xi Victoria Lin, Panupong Pasupat, Alane
+    Suhr, Pengcheng Yin, Tao Yu, Rui Zhang, Victor Zhong, Caiming Xiong and Dragomir
+    Radev
+  abstract: Map natural language to meaning representations executed in databases,
+    knowledge graphs, robotic environment and software applications.
+  website: https://intex-sempar.github.io/
+  rocketchat_channel: workshop-intex-sempar2020
+  alias: intex-sempar2020
+  sessions:
+  - start_time: 2020-11-19 08:15:00-08:00
+    end_time: 2020-11-19 08:30:00-08:00
+    name: Opening Remarks
+    hosts: Victor Zhong, Victoria Lin, Rui Zhang
+  - start_time: 2020-11-19 08:30:00-08:00
+    end_time: 2020-11-19 09:30:00-08:00
+    name: 'Invited Talk: Jacob Andreas'
+    hosts: Ben Bogin
+  - start_time: 2020-11-19 09:30:00-08:00
+    end_time: 2020-11-19 10:30:00-08:00
+    name: 'Invited Talk: Jonathan Berant'
+    hosts: Ben Bogin
+  - start_time: 2020-11-19 10:30:00-08:00
+    end_time: 2020-11-19 10:50:00-08:00
+    name: Break
+    hosts: N/A
+  - start_time: 2020-11-19 10:50:00-08:00
+    end_time: 2020-11-19 11:00:00-08:00
+    name: Learning Adaptive Language Interfaces through Decomposition
+    hosts: Rui Zhang
+  - start_time: 2020-11-19 11:00:00-08:00
+    end_time: 2020-11-19 11:10:00-08:00
+    name: Improving Sequence-to-Sequence Semantic Parser for Task Oriented Dialog
+    hosts: Rui Zhang
+  - start_time: 2020-11-19 11:10:00-08:00
+    end_time: 2020-11-19 11:20:00-08:00
+    name: Uncertainty and Traffic-Aware Active Learning for Semantic Parsing
+    hosts: Rui Zhang
+  - start_time: 2020-11-19 11:20:00-08:00
+    end_time: 2020-11-19 11:30:00-08:00
+    name: Did You Ask a Good Question? A Cross-Domain Question Intention Classification
+      Benchmark for Text-to-SQL
+    hosts: Rui Zhang
+  - start_time: 2020-11-19 11:30:00-08:00
+    end_time: 2020-11-19 12:30:00-08:00
+    name: 'Invited Talk: Yoav Artzi'
+    hosts: Rui Zhang
+  - start_time: 2020-11-19 12:30:00-08:00
+    end_time: 2020-11-19 13:30:00-08:00
+    name: Poster Presentation in gather.town
+    hosts: N/A
+  - start_time: 2020-11-19 13:30:00-08:00
+    end_time: 2020-11-19 14:30:00-08:00
+    name: "Invited Talk: Dilek Hakkani-T\xFCr"
+    hosts: Victoria Lin
+  - start_time: 2020-11-19 14:30:00-08:00
+    end_time: 2020-11-19 14:40:00-08:00
+    name: 'QA2Explanation: Generating and Evaluating Explanations for Question Answering
+      Systems over Knowledge Graph'
+    hosts: Victoria Lin
+  - start_time: 2020-11-19 14:40:00-08:00
+    end_time: 2020-11-19 14:50:00-08:00
+    name: 'ColloQL: Robust Text-to-SQL Over Search Queries'
+    hosts: Victoria Lin
+  - start_time: 2020-11-19 14:50:00-08:00
+    end_time: 2020-11-19 15:00:00-08:00
+    name: 'GRAPPA: Grammar-Augmented Pre-Training for Table Semantic Parsing'
+    hosts: Victoria Lin
+  - start_time: 2020-11-19 15:00:00-08:00
+    end_time: 2020-11-19 15:10:00-08:00
+    name: 'Beyond I.I.D.: Three Levels of Generalization for Question Answering on
+      Knowledge Bases'
+    hosts: Victoria Lin
+  - start_time: 2020-11-19 15:10:00-08:00
+    end_time: 2020-11-19 15:20:00-08:00
+    name: Natural Language Response Generation from SQL with Generalization and Back-translation
+    hosts: Victoria Lin
+  - start_time: 2020-11-19 15:20:00-08:00
+    end_time: 2020-11-19 15:30:00-08:00
+    name: Break
+    hosts: N/A
+  - start_time: 2020-11-19 15:30:00-08:00
+    end_time: 2020-11-19 16:30:00-08:00
+    name: 'Invited Talk: Alex Polozov'
+    hosts: Victor Zhong
+  - start_time: 2020-11-19 16:30:00-08:00
+    end_time: 2020-11-19 17:30:00-08:00
+    name: 'Invited Talk: Richard Socher'
+    hosts: Victor Zhong
+  - start_time: 2020-11-19 17:30:00-08:00
+    end_time: 2020-11-19 17:35:00-08:00
+    name: Closing remarks
+    hosts: Victor Zhong, Victoria Lin, Rui Zhang
+  zoom_links:
+  - https://us02web.zoom.us/j/6771937722
+  prerecorded_talks:
+  - title: 'Invited Talk: Jacob Andreas'
+    speakers: Jacob Andreas
+    presentation_id: '38939462'
+  - title: 'Invited Talk: Jonathan Berant'
+    speakers: Jonathan Berant
+    presentation_id: '38939448'
+  - title: 'Invited Talk: Yoav Artzi'
+    speakers: Yoav Artzi
+    presentation_id: '38939449'
+  - title: "Invited Talk: Dilek Hakkani-T\xFCr"
+    speakers: "Dilek Hakkani-T\xFCr"
+    presentation_id: '38939450'
+  - title: 'Invited Talk: Alex Polozov'
+    speakers: Alex Polozov
+    presentation_id: '38939451'
+  - title: 'Invited Talk: Richard Socher'
+    speakers: Richard Socher
+    presentation_id: '38939452'
+- UID: WS-7
+  title: First Workshop on Scholarly Document Processing (SDP 2020)
+  organizers: Muthu Kumar Chandrasekaran, Guy Feigenblat, Dayne Freitag, Tirthankar
+    Ghosal, Michal Shmueli-Scheuer, Eduard Hovy, Petr Knoth, David Konopnicki, Philipp
+    Mayr, Robert Patton, Dominika Tkaczyk and Anita de Waard
+  abstract: 'SDP is a full day workshop that provides an interdisciplinary venue for
+    researchers interested in any aspect of mining scientific literature. SDP includes
+    a research track and three shared tasks: 6th CL-SciSumm, 1st LongSumm, 1st LaySumm.'
+  website: https://ornlcda.github.io/SDProc/
+  rocketchat_channel: workshop-sdp2020
+  alias: sdp2020
+  sessions:
+  - start_time: 2020-11-19 08:45:00-05:00
+    end_time: 2020-11-19 09:00:00-05:00
+    name: Opening Remarks
+    hosts: Philipp Mayr
+  - start_time: 2020-11-19 09:00:00-05:00
+    end_time: 2020-11-19 09:15:00-05:00
+    name: Teaser for Shared Tasks (5mins each)
+    hosts: tbd
+  - start_time: 2020-11-19 09:15:00-05:00
+    end_time: 2020-11-19 10:35:00-05:00
+    name: 'Research Track: Session 1 COVID-19 document processing'
+    hosts: Tirthankar Ghosal
+  - start_time: 2020-11-19 09:15:00-05:00
+    end_time: 2020-11-19 09:35:00-05:00
+    name: 'Wu et al.: Acknowledgement Entity Recognition in CORD-19 Papers'
+    hosts: TBD
+  - start_time: 2020-11-19 09:35:00-05:00
+    end_time: 2020-11-19 09:55:00-05:00
+    name: 'Bhambhoria et al.: A Smart System to Generate and Validate Question Answer
+      Pairs for COVID-19 Literature.'
+    hosts: TBD
+  - start_time: 2020-11-19 09:55:00-05:00
+    end_time: 2020-11-19 10:15:00-05:00
+    name: 'Zhang et al.: Covidex: Neural Ranking Models and Keyword Search Infrastructure
+      for the COVID-19 Open Research Dataset.'
+    hosts: TBD
+  - start_time: 2020-11-19 10:15:00-05:00
+    end_time: 2020-11-19 10:35:00-05:00
+    name: 'Satish et al.: The impact of preprint servers in the formation of novel
+      ideas.'
+    hosts: TBD
+  - start_time: 2020-11-19 10:40:00-05:00
+    end_time: 2020-11-19 11:25:00-05:00
+    name: |-
+      Keynote 1 (incl. QA):  Kuansan Wang
+      Mitigating scholarly corpus biases with citations: A case study on CORD-19
+    hosts: Philipp Mayr
+  - start_time: 2020-11-19 11:25:00-05:00
+    end_time: 2020-11-19 11:50:00-05:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-19 11:50:00-05:00
+    end_time: 2020-11-19 12:50:00-05:00
+    name: 'Research Track: Session 2 SDP mixed session'
+    hosts: Dayne Freitag
+  - start_time: 2020-11-19 11:50:00-05:00
+    end_time: 2020-11-19 12:10:00-05:00
+    name: 'Berger et al.: Effective Distributed Representations for Academic Expert
+      Search.'
+    hosts: TBD
+  - start_time: 2020-11-19 12:10:00-05:00
+    end_time: 2020-11-19 12:30:00-05:00
+    name: 'Kim et al.: Learning CNF Blocking for Large-scale Author Name Disambiguation.'
+    hosts: TBD
+  - start_time: 2020-11-19 12:30:00-05:00
+    end_time: 2020-11-19 12:50:00-05:00
+    name: "M\xFCller: Reconstructing Manual Information Extraction with DB-to-Document\
+      \ Backprojection: Experiments in the Life Science Domain."
+    hosts: TBD
+  - start_time: 2020-11-19 12:50:00-05:00
+    end_time: 2020-11-19 13:30:00-05:00
+    name: Poster Pitches
+    hosts: tbd
+  - start_time: 2020-11-19 13:30:00-05:00
+    end_time: 2020-11-19 14:00:00-05:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-19 14:00:00-05:00
+    end_time: 2020-11-19 14:50:00-05:00
+    name: 'Research Track: Session 3: Short papers and Findings'
+    hosts: Muthu
+  - start_time: 2020-11-19 14:00:00-05:00
+    end_time: 2020-11-19 14:10:00-05:00
+    name: 'Ling & Chen: DeepPaperComposer: A Simple Solution for Training Data Preparation
+      for Parsing Research Papers'
+    hosts: TBD
+  - start_time: 2020-11-19 14:10:00-05:00
+    end_time: 2020-11-19 14:20:00-05:00
+    name: 'Medic & Snajder: Improved Local Citation Recommendation Based on Context
+      Enhanced with Global Information'
+    hosts: TBD
+  - start_time: 2020-11-19 14:20:00-05:00
+    end_time: 2020-11-19 14:30:00-05:00
+    name: 'Cao et al.: Will This Idea Spread Beyond Academia? Understanding Knowledge
+      Transfer of Scientific Concepts across Text Corpora (Findings of EMNLP)'
+    hosts: TBD
+  - start_time: 2020-11-19 14:30:00-05:00
+    end_time: 2020-11-19 14:40:00-05:00
+    name: 'Subramanian et al.: MedICaT: A Dataset of Medical Images, Captions, and
+      Textual References (Findings of EMNLP)'
+    hosts: TBD
+  - start_time: 2020-11-19 14:40:00-05:00
+    end_time: 2020-11-19 14:50:00-05:00
+    name: 'Noh et al.: Literature Retrieval for Precision Medicine with Neural Matching
+      and Faceted Summarization (Findings of EMNLP)'
+    hosts: TBD
+  - start_time: 2020-11-19 14:50:00-05:00
+    end_time: 2020-11-19 15:20:00-05:00
+    name: Overview of Results of the Shared Tasks
+    hosts: Muthu, Anita, Guy, Michal
+  - start_time: 2020-11-19 15:20:00-05:00
+    end_time: 2020-11-19 15:30:00-05:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-19 15:30:00-05:00
+    end_time: 2020-11-19 16:15:00-05:00
+    name: |-
+      Keynote 2: Steinn Sigurdsson
+      The future of arXiv and knowledge discovery in open science
+    hosts: Tirthankar Ghosal
+  - start_time: 2020-11-19 16:15:00-05:00
+    end_time: 2020-11-19 17:00:00-05:00
+    name: Plenary Regroup & Panel (OC + Keynote Speakers)
+    hosts: tbd
+  - start_time: 2020-11-19 17:00:00-05:00
+    end_time: 2020-11-19 17:10:00-05:00
+    name: Closing
+    hosts: TBD
+  zoom_links:
+  - https://us02web.zoom.us/j/3372872285
+  - https://us02web.zoom.us/j/9587240070
+  - https://us02web.zoom.us/j/4013040190
+  prerecorded_talks: []
+- UID: WS-9
+  title: Second Workshop for NLP Open Source Software (NLP-OSS)
+  organizers: Masato Hagiwara, Eunjeong Park, Dmitrijs Milajevs, Nelson F. Liu, Liling
+    Tan and Geeticka Chauhan
+  abstract: Democratizing NLP!
+  website: https://nlposs.github.io/
+  rocketchat_channel: workshop-nlposs
+  alias: nlposs
+  sessions:
+  - start_time: 2020-11-19 05:00:00-08:00
+    end_time: 2020-11-19 05:30:00-08:00
+    name: Workshop Opening
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 05:30:00-08:00
+    end_time: 2020-11-19 06:30:00-08:00
+    name: 'On Typing: Historical and Potential Interactions in Word-processing - Spencer
+      Kelly'
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 06:30:00-08:00
+    end_time: 2020-11-19 07:30:00-08:00
+    name: An Introduction to Transfer Learning in NLP and HuggingFace - Thomas Wolf
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 07:30:00-08:00
+    end_time: 2020-11-19 09:00:00-08:00
+    name: Talks Session 1 (Watch on your own, authors encouraged to mend their slidelive
+      chat but not complusory)
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 14:30:00-08:00
+    end_time: 2020-11-19 16:00:00-08:00
+    name: Talks Session 2 (Watch on your own, authors encouraged to mend their slidelive
+      chat but not complusory)
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 16:00:00-08:00
+    end_time: 2020-11-19 17:30:00-08:00
+    name: Gather-town (Live) + Poster QnA
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 18:00:00-08:00
+    end_time: 2020-11-19 19:00:00-08:00
+    name: Principles of Good Machine Learning Systems Design - Chip Huyen
+    hosts: NLP-OSS Organziers
+  - start_time: 2020-11-19 19:00:00-08:00
+    end_time: 2020-11-19 19:30:00-08:00
+    name: Closing Remarks
+    hosts: NLP-OSS Organziers
+  zoom_links:
+  - https://us02web.zoom.us/j/7858391728
+  prerecorded_talks:
+  - title: (To be confirmed) Invited Talk 1 - Chip Huyen
+    speakers: Chip Huyen
+    presentation_id: '38939735'
+  - title: (To be confirmed) Invited Talk 2 - Spencer Kelly
+    speakers: Spencer Kelly
+    presentation_id: '38939736'
+  - title: (To be confirmed) Invited Talk 3 -  Thomas Wolf
+    speakers: Thomas Wolf
+    presentation_id: '38939737'
+- UID: WS-10
+  title: Spatial Language Understanding
+  organizers: Malihe Alikhani, Jason Baldridge, Mohit Bansal, Archna Bhatia, Parisa
+    Kordjamshidi and Marie-Francine Moens
+  abstract: Spatial Language Understanding, Learning/Reasoning on Spatial Semantics,
+    (sub)Symbolic Representations and Grounding Language in Perception
+  website: https://spatial-language.github.io
+  rocketchat_channel: workshop-splu2020
+  alias: splu2020
+  sessions:
+  - start_time: 2020-11-19 13:00:00+00:00
+    end_time: 2020-11-19 14:00:00+00:00
+    name: QA/Poster
+    hosts: SpLU Organizers
+  - start_time: 2020-11-19 14:00:00+00:00
+    end_time: 2020-11-19 14:10:00+00:00
+    name: Opening Talk
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 14:10:00+00:00
+    end_time: 2020-11-19 15:00:00+00:00
+    name: 'Invited talk 1: James Pustejovsky'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 15:00:00+00:00
+    end_time: 2020-11-19 15:56:00+00:00
+    name: Paper Presentations
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 15:00:00+00:00
+    end_time: 2020-11-19 15:14:00+00:00
+    name: An Element-wise Visual-enhanced BiLSTM-CRF Model for Location Name Recognition
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 15:14:00+00:00
+    end_time: 2020-11-19 15:28:00+00:00
+    name: BERT-based Spatial Information Extraction
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 15:28:00+00:00
+    end_time: 2020-11-19 15:42:00+00:00
+    name: A Cognitively Motivated Approach to Spatial Information Extraction
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 15:42:00+00:00
+    end_time: 2020-11-19 15:56:00+00:00
+    name: Language-Conditioned Feature Pyramids for Visual Selection Tasks
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 15:56:00+00:00
+    end_time: 2020-11-19 16:05:00+00:00
+    name: Break
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 16:05:00+00:00
+    end_time: 2020-11-19 16:55:00+00:00
+    name: 'Invited talk 2: Julia Hockenmeir'
+    hosts: Archna Bhatia
+  - start_time: 2020-11-19 16:55:00+00:00
+    end_time: 2020-11-19 17:51:00+00:00
+    name: Paper Presentations
+    hosts: Archna Bhatia
+  - start_time: 2020-11-19 16:55:00+00:00
+    end_time: 2020-11-19 17:09:00+00:00
+    name: 'They are not all alike: answering different spatial questions requires
+      different grounding strategies'
+    hosts: Archna Bhatia
+  - start_time: 2020-11-19 17:09:00+00:00
+    end_time: 2020-11-19 17:23:00+00:00
+    name: Categorisation, Typicality and Object-Specific Features in Spatial Referring
+      Expressions
+    hosts: Archna Bhatia
+  - start_time: 2020-11-19 17:23:00+00:00
+    end_time: 2020-11-19 17:37:00+00:00
+    name: A Linguistic Analysis of Visually Grounded Dialogues Based on Spatial Expressions
+    hosts: Archna Bhatia
+  - start_time: 2020-11-19 17:37:00+00:00
+    end_time: 2020-11-19 17:51:00+00:00
+    name: 'Visually-Grounded Planning without Vision: Language Models Infer Detailed
+      Plans from High-level Instructions'
+    hosts: Archna Bhatia
+  - start_time: 2020-11-19 17:51:00+00:00
+    end_time: 2020-11-19 18:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-19 18:00:00+00:00
+    end_time: 2020-11-19 18:50:00+00:00
+    name: 'Invited talk 3: Yoav Artzi'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 18:50:00+00:00
+    end_time: 2020-11-19 19:46:00+00:00
+    name: Paper Presentations
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 18:50:00+00:00
+    end_time: 2020-11-19 19:04:00+00:00
+    name: A Hybrid Deep Learning Approach for Spatial Trigger Extraction from Radiology
+      Reports
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 19:04:00+00:00
+    end_time: 2020-11-19 19:18:00+00:00
+    name: 'Retouchdown: Releasing Touchdown on StreetLearn as a Public Resource for
+      Language Grounding Tasks in Street View'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 19:18:00+00:00
+    end_time: 2020-11-19 19:32:00+00:00
+    name: 'SpaRTQA: A Textual Question Answering Benchmark for Spatial Reasoning'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 19:32:00+00:00
+    end_time: 2020-11-19 19:46:00+00:00
+    name: Decoding Language Spatial Relations to 2D Spatial Arrangements
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 19:46:00+00:00
+    end_time: 2020-11-19 20:45:00+00:00
+    name: QA/Poster
+    hosts: SpLU Organizers
+  - start_time: 2020-11-19 20:45:00+00:00
+    end_time: 2020-11-19 21:35:00+00:00
+    name: 'Invited talk 4: Bonnie Dorr'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 21:35:00+00:00
+    end_time: 2020-11-19 22:31:00+00:00
+    name: Paper Presentations
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 21:35:00+00:00
+    end_time: 2020-11-19 21:49:00+00:00
+    name: Geocoding with multi-level loss for spatial language representation
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 21:49:00+00:00
+    end_time: 2020-11-19 22:03:00+00:00
+    name: Vision-and-Language Navigation by Reasoning over Spatial Configurations
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 22:03:00+00:00
+    end_time: 2020-11-19 22:17:00+00:00
+    name: 'LiMiT: The Literal Motion in Text Dataset'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 22:17:00+00:00
+    end_time: 2020-11-19 22:31:00+00:00
+    name: 'ARRAMON: A Joint Navigation-Assembly Instruction Interpretation Task in
+      Dynamic Environments'
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-19 22:31:00+00:00
+    end_time: 2020-11-19 22:45:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-19 22:45:00+00:00
+    end_time: 2020-11-19 23:35:00+00:00
+    name: 'Invited Talk 5: Douwe Kiela'
+    hosts: Malihe Alikhani
+  - start_time: 2020-11-19 23:35:00+00:00
+    end_time: 2020-11-20 00:03:00+00:00
+    name: Paper Presentations
+    hosts: Malihe Alikhani
+  - start_time: 2020-11-19 23:35:00+00:00
+    end_time: 2020-11-19 23:49:00+00:00
+    name: Robust and Interpretable Grounding of Spatial References with Relation Networks
+    hosts: Malihe Alikhani
+  - start_time: 2020-11-19 23:49:00+00:00
+    end_time: 2020-11-20 00:03:00+00:00
+    name: 'RMM: A Recursive Mental Model for Dialogue Navigation'
+    hosts: Malihe Alikhani
+  - start_time: 2020-11-20 00:03:00+00:00
+    end_time: 2020-11-20 01:00:00+00:00
+    name: Panel Discussion
+    hosts: Parisa Kordjamshidi
+  - start_time: 2020-11-20 01:00:00+00:00
+    end_time: 2020-11-20 02:00:00+00:00
+    name: QA/Poster
+    hosts: SpLU Organizers
+  zoom_links:
+  - https://us02web.zoom.us/j/9514624887
+  prerecorded_talks:
+  - title: "\tVisualizing Meaning: Semantic Simulation of Actions and Events"
+    speakers: James Pustejovsky, Brandeis University
+    presentation_id: '38940086'
+  - title: Collaborative Construction and Communication with Minecraft
+    speakers: Julia Hockenmaier, University of Illinois at Urbana-Champaign
+    presentation_id: '38940087'
+  - title: 'Rethinking Benchmarking in AI: Adversarial NLI, Dynabench and Hateful
+      Memes'
+    speakers: Douwe Kiela,  Facebook
+    presentation_id: '38940088'
+  - title: 'Lexical Conceptual Structure: Spatial Representations for AI Applications'
+    speakers: Bonnie Dorr, Florida Institute for Human and Machine Cognition
+    presentation_id: '38940089'
+  - title: Few-shot Grounding, Mapping and Plan Generation for Instruction Following
+    speakers: Yoav Artzi, Cornell University
+    presentation_id: '38940090'
+- UID: WS-11
+  title: 'SIGTYP 2020: The Second Workshop on Computational Research in Linguistic
+    Typology'
+  organizers: "Yevgeni Berzak, Ryan Cotterell, Anna Korhonen, Roi Reichart, Eitan\
+    \ Grossman, Haim Dubossarsky, Arya D. McCarthy, Edoardo Maria Ponti, Ivan Vuli\u0107\
+    \ and Ekaterina Vylomova"
+  abstract: Bringing together researchers interested in applying computational techniques
+    to problems in linguistic typology and multilingual NLP.
+  website: https://sigtyp.github.io/ws2020.html
+  rocketchat_channel: workshop-sigtyp
+  alias: sigtyp
+  sessions:
+  - start_time: 2020-11-19 08:30:00-05:00
+    end_time: 2020-11-19 08:40:00-05:00
+    name: Opening Session
+    hosts: TBD
+  - start_time: 2020-11-19 08:40:00-05:00
+    end_time: 2020-11-19 09:20:00-05:00
+    name: 'Keynote Talk: Richard Sproat (Japan)'
+    hosts: TBD
+  - start_time: 2020-11-19 09:20:00-05:00
+    end_time: 2020-11-19 09:30:00-05:00
+    name: Keynote Q&A
+    hosts: TBD
+  - start_time: 2020-11-19 09:30:00-05:00
+    end_time: 2020-11-19 10:10:00-05:00
+    name: 'Keynote Talk: Miriam Butt (Germany)'
+    hosts: TBD
+  - start_time: 2020-11-19 10:10:00-05:00
+    end_time: 2020-11-19 10:20:00-05:00
+    name: Keynote Q&A
+    hosts: TBD
+  - start_time: 2020-11-19 10:20:00-05:00
+    end_time: 2020-11-19 10:30:00-05:00
+    name: Coffee Break
+    hosts: TBD
+  - start_time: 2020-11-19 10:30:00-05:00
+    end_time: 2020-11-19 10:45:00-05:00
+    name: 'Shared Task Overview: Johannes Bjerva (Denmark)'
+    hosts: TBD
+  - start_time: 2020-11-19 10:45:00-05:00
+    end_time: 2020-11-19 10:55:00-05:00
+    name: 'Shared Task Team 1: KMI-Panlingua-IITKGP (India)'
+    hosts: TBD
+  - start_time: 2020-11-19 10:55:00-05:00
+    end_time: 2020-11-19 11:05:00-05:00
+    name: 'Shared Task Team 2: NEMO (UK+Japan)'
+    hosts: TBD
+  - start_time: 2020-11-19 11:05:00-05:00
+    end_time: 2020-11-19 11:15:00-05:00
+    name: "Shared Task Team 3:  \xDAFAL (Europe)"
+    hosts: TBD
+  - start_time: 2020-11-19 11:15:00-05:00
+    end_time: 2020-11-19 11:25:00-05:00
+    name: "Shared Task Team 4: Gerhard J\xE4ger (Europe)"
+    hosts: TBD
+  - start_time: 2020-11-19 11:25:00-05:00
+    end_time: 2020-11-19 11:35:00-05:00
+    name: 'Shared Task Team 5: NUIG (Europe)'
+    hosts: TBD
+  - start_time: 2020-11-19 11:35:00-05:00
+    end_time: 2020-11-19 12:15:00-05:00
+    name: "Keynote Talk: Harald Hammarstr\xF6m (Germany)"
+    hosts: TBD
+  - start_time: 2020-11-19 12:15:00-05:00
+    end_time: 2020-11-19 12:25:00-05:00
+    name: Keynote Q&A
+    hosts: TBD
+  - start_time: 2020-11-19 12:25:00-05:00
+    end_time: 2020-11-19 12:30:00-05:00
+    name: Coffee Break
+    hosts: TBD
+  - start_time: 2020-11-19 12:30:00-05:00
+    end_time: 2020-11-19 12:40:00-05:00
+    name: 'DEmA: the Pavia Diachronic Emergence of Alignment database (Europe/Italy)'
+    hosts: TBD
+  - start_time: 2020-11-19 12:40:00-05:00
+    end_time: 2020-11-19 12:50:00-05:00
+    name: A dataset and metric to evaluate lexical extraction from parallel corpora
+      (Canada/Toronto)
+    hosts: TBD
+  - start_time: 2020-11-19 12:50:00-05:00
+    end_time: 2020-11-19 13:00:00-05:00
+    name: 'Keyword Spotting: A quick-and-dirty method for extracting typological features
+      of language from grammatical descriptions (Europe/Germany)'
+    hosts: TBD
+  - start_time: 2020-11-19 13:00:00-05:00
+    end_time: 2020-11-19 13:10:00-05:00
+    name: SNACS Annotation of Case Markers and Adpositions in Hindi (US/W,DC)
+    hosts: TBD
+  - start_time: 2020-11-19 13:10:00-05:00
+    end_time: 2020-11-19 13:20:00-05:00
+    name: 'Information from Topic Contexts: The Prediction of Aspectual Coding of
+      Verbs in Russian (Europe/Germany)'
+    hosts: TBD
+  - start_time: 2020-11-19 13:20:00-05:00
+    end_time: 2020-11-19 13:30:00-05:00
+    name: 'The role of community size and network structure in shaping linguistic
+      diversity: experimental evidence (Europe;UK)'
+    hosts: TBD
+  - start_time: 2020-11-19 13:30:00-05:00
+    end_time: 2020-11-19 14:05:00-05:00
+    name: gather.town
+    hosts: TBD
+  - start_time: 2020-11-19 14:05:00-05:00
+    end_time: 2020-11-19 14:20:00-05:00
+    name: 'SimAlign: High Quality Word Alignments without Parallel Training Data using
+      Static and Contextualized Embeddings (Europe/Germany)'
+    hosts: TBD
+  - start_time: 2020-11-19 14:20:00-05:00
+    end_time: 2020-11-19 14:30:00-05:00
+    name: Parsing with Multilingual BERT, a Small Corpus, and a Small Treebank (US/Pacific)
+    hosts: TBD
+  - start_time: 2020-11-19 14:30:00-05:00
+    end_time: 2020-11-19 14:45:00-05:00
+    name: Is Typology-Based Adaptation Effective for Multilingual Sequence Labelling?
+      (Netherlands)
+    hosts: TBD
+  - start_time: 2020-11-19 14:45:00-05:00
+    end_time: 2020-11-19 15:00:00-05:00
+    name: Multilingual BERT Learns Abstract Case Representations (US/California)
+    hosts: TBD
+  - start_time: 2020-11-19 15:00:00-05:00
+    end_time: 2020-11-19 15:10:00-05:00
+    name: Towards Induction of Structured Phoneme Inventories (UK)
+    hosts: TBD
+  - start_time: 2020-11-19 15:10:00-05:00
+    end_time: 2020-11-19 15:20:00-05:00
+    name: Uncovering Typological Context-Sensitive Features (Europe/Italy)
+    hosts: TBD
+  - start_time: 2020-11-19 15:20:00-05:00
+    end_time: 2020-11-19 15:30:00-05:00
+    name: Multilingual Jointly Trained Acoustic and Written Word Embeddings (US/Chicago)
+    hosts: TBD
+  - start_time: 2020-11-19 15:30:00-05:00
+    end_time: 2020-11-19 15:45:00-05:00
+    name: 'Cross-lingual Alignment Methods for Multilingual BERT: A Comparative Study
+      (US/UK)'
+    hosts: TBD
+  - start_time: 2020-11-19 15:45:00-05:00
+    end_time: 2020-11-19 16:20:00-05:00
+    name: gather.town
+    hosts: TBD
+  - start_time: 2020-11-19 16:20:00-05:00
+    end_time: 2020-11-19 17:00:00-05:00
+    name: 'Keynote Talk: Yulia Tsvetkov (US/Pennsylvania)'
+    hosts: TBD
+  - start_time: 2020-11-19 17:00:00-05:00
+    end_time: 2020-11-19 17:10:00-05:00
+    name: Keynote Q&A
+    hosts: TBD
+  - start_time: 2020-11-19 17:10:00-05:00
+    end_time: 2020-11-19 17:50:00-05:00
+    name: 'Keynote Talk: Bill Croft (US/New Mexico)'
+    hosts: TBD
+  - start_time: 2020-11-19 17:50:00-05:00
+    end_time: 2020-11-19 18:00:00-05:00
+    name: Keynote Q&A
+    hosts: TBD
+  - start_time: 2020-11-19 18:00:00-05:00
+    end_time: 2020-11-19 18:10:00-05:00
+    name: Closing
+    hosts: TBD
+  zoom_links:
+  - https://us02web.zoom.us/j/5070305812
+  prerecorded_talks:
+  - title: Invited talk
+    speakers: Miriam Butt
+    presentation_id: '38939785'
+  - title: Invited talk
+    speakers: Yulia Tsvetkov
+    presentation_id: '38939786'
+  - title: Invited talk
+    speakers: Richard Sproat
+    presentation_id: '38939787'
+  - title: Invited talk
+    speakers: Bill Croft
+    presentation_id: '38939788'
+  - title: Invited talk
+    speakers: "Harald Hammarstr\xF6m"
+    presentation_id: '38939789'
+  - title: 'SIGTYP 2020 Shared Task: Prediction of Typological Features'
+    speakers: Johannes Bjerva, Elizabeth Salesky, Sabrina J. Mielke, Aditi Chaudhary,
+      Giuseppe G. A. Celano, Edoardo M. Ponti, Ekaterina Vylomova, Ryan Cotterell,
+      Isabelle Augenstein
+    presentation_id: '38939790'
+- UID: WS-12
+  title: 3rd Clinical Natural Language Processing Workshop (Clinical NLP 2020)
+  organizers: Anna Rumshisky, Steven Bethard, Kirk Roberts and Tristan Naumann
+  abstract: "Explore challenges and promises of clinical text: understand a patient's\
+    \ story, predict health outcomes, advance medical research, and more."
+  website: https://clinical-nlp.github.io/2020/
+  rocketchat_channel: workshop-clinicalnlp
+  alias: clinicalnlp
+  sessions:
+  - start_time: 2020-11-19 08:45:00-05:00
+    end_time: 2020-11-19 09:00:00-05:00
+    name: Opening remarks </br> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 09:00:00-05:00
+    end_time: 2020-11-19 09:45:00-05:00
+    name: 'Keynote Talk: Hong Yu  </br><i>Deep Learning is Conquering Human Tasks.
+      How Far Can it Go in Medicine? Advances, Challenges, and Future Directions</i>
+      </br> <a href="https://slideslive.com/38939840">Video</a>'
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 09:45:00-05:00
+    end_time: 2020-11-19 10:00:00-05:00
+    name: Keynote Q&A <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Anna Rumshisky
+  - start_time: 2020-11-19 10:00:00-05:00
+    end_time: 2020-11-19 10:25:00-05:00
+    name: |-
+      Oral Session 1
+
+      - [Various Approaches for Predicting Stroke Prognosis using Magnetic Resonance Imaging Text Records](https://virtual.2020.emnlp.org/paper_WS-12.15.html)
+      - [Multiple Sclerosis Severity Classification From Clinical Text](https://virtual.2020.emnlp.org/paper_WS-12.12.html)
+      - [BERT-XML: Large Scale Automated ICD Coding Using BERT Pretraining](https://virtual.2020.emnlp.org/paper_WS-12.43.html)
+    hosts: Steven Bethard
+  - start_time: 2020-11-19 10:25:00-05:00
+    end_time: 2020-11-19 10:40:00-05:00
+    name: Oral Session 1 Q&A <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Steven Bethard
+  - start_time: 2020-11-19 10:40:00-05:00
+    end_time: 2020-11-19 10:50:00-05:00
+    name: Coffee Break (Gather.Town room L)
+    hosts: Unhosted
+  - start_time: 2020-11-19 10:50:00-05:00
+    end_time: 2020-11-19 11:25:00-05:00
+    name: |-
+      Oral Session 2
+
+      - [Incorporating Risk Factor Embeddings in Pre-trained Transformers Improves Sentiment Prediction in Psychiatric Discharge Summaries](https://virtual.2020.emnlp.org/paper_WS-12.21.html)
+      - [Information Extraction from Swedish Medical Prescriptions with Sig-Transformer Encoder](https://virtual.2020.emnlp.org/paper_WS-12.10.html)
+      - [Evaluation of Transfer Learning for Adverse Drug Event (ADE) and Medication Entity Extraction](https://virtual.2020.emnlp.org/paper_WS-12.18.html)
+      - [BioBERTpt - A Portuguese Neural Language Model for Clinical Named Entity Recognition](https://virtual.2020.emnlp.org/paper_WS-12.30.html)
+    hosts: Kirk Roberts
+  - start_time: 2020-11-19 11:25:00-05:00
+    end_time: 2020-11-19 11:40:00-05:00
+    name: Oral Session 2 Q&A  <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Kirk Roberts
+  - start_time: 2020-11-19 11:40:00-05:00
+    end_time: 2020-11-19 12:00:00-05:00
+    name: |-
+      Poster Teasers
+
+      - [Dilated Convolutional Attention Network for Medical Code Assignment from Clinical Text](https://virtual.2020.emnlp.org/paper_WS-12.1.html)
+      - [Classification of Syncope Cases in Norwegian Medical Records](https://virtual.2020.emnlp.org/paper_WS-12.3.html)
+      - [Comparison of Machine Learning Methods for Multi-label Classification of Nursing Education and Licensure Exam Questions](https://virtual.2020.emnlp.org/paper_WS-12.4.html)
+      - [Clinical XLNet: Modeling Sequential Clinical Notes and Predicting Prolonged Mechanical Ventilation](https://virtual.2020.emnlp.org/paper_WS-12.6.html)
+      - [Automatic recognition of abdominal lymph nodes from clinical text](https://virtual.2020.emnlp.org/paper_WS-12.7.html)
+      - [How You Ask Matters: The Effect of Paraphrastic Questions to BERT Performance on a Clinical SQuAD Dataset](https://virtual.2020.emnlp.org/paper_WS-12.11.html)
+      - [Relative and Incomplete Time Expression Anchoring for Clinical Text](https://virtual.2020.emnlp.org/paper_WS-12.16.html)
+      - [MeDAL: Medical Abbreviation Disambiguation Dataset for Natural Language Understanding Pretraining](https://virtual.2020.emnlp.org/paper_WS-12.17.html)
+      - [Knowledge Grounded Conversational Symptom Detection with Graph Memory Networks](https://virtual.2020.emnlp.org/paper_WS-12.19.html)
+      - [Pretrained Language Models for Biomedical and Clinical Tasks: Understanding and Extending the State-of-the-Art](https://virtual.2020.emnlp.org/paper_WS-12.20.html)
+      - [Assessment of DistilBERT performance on Named Entity Recognition task for the detection of Protected Health Information and medical concepts](https://virtual.2020.emnlp.org/paper_WS-12.23.html)
+      - [Distinguishing between Dementia with Lewy bodies (DLB) and Alzheimer’s Disease (AD) using Mental Health Records: a Classification Approach](https://virtual.2020.emnlp.org/paper_WS-12.2020.clinicalnlp-1.19.html)
+      - [Weakly Supervised Medication Regimen Extraction from Medical Conversations](https://virtual.2020.emnlp.org/paper_WS-12.26.html)
+      - [Extracting Relations between Radiotherapy Treatment Details](https://virtual.2020.emnlp.org/paper_WS-12.27.html)
+      - [Cancer Registry Information Extraction via Transfer Learning](https://virtual.2020.emnlp.org/paper_WS-12.31.html)
+      - [PHICON: Improving Generalization of Clinical Text De-identification Models via Data Augmentation](https://virtual.2020.emnlp.org/paper_WS-12.37.html)
+      - [Where’s the Question? A Multi-channel Deep Convolutional Neural Network for Question Identification in Textual Data](https://virtual.2020.emnlp.org/paper_WS-12.38.html)
+      - [Learning from Unlabelled Data for Clinical Semantic Textual Similarity](https://virtual.2020.emnlp.org/paper_WS-12.40.html)
+      - [Joint Learning with Pre-trained Transformer on Named Entity Recognition and Relation Extraction Tasks for Clinical Analytics](https://virtual.2020.emnlp.org/paper_WS-12.44.html)
+    hosts: Kirk Roberts
+  - start_time: 2020-11-19 12:30:00-05:00
+    end_time: 2020-11-19 13:20:00-05:00
+    name: Poster Session & Lunch (Gather.Town rooms L and M)
+    hosts: Unhosted
+  - start_time: 2020-11-19 13:20:00-05:00
+    end_time: 2020-11-19 13:55:00-05:00
+    name: |-
+      Oral Session 3
+
+      - [Extracting Semantic Aspects for Structured Representation of Clinical Trial Eligibility Criteria](https://virtual.2020.emnlp.org/paper_WS-12.49.html)
+      - [An Ensemble Approach to Automatic Structuring of Radiology Reports](https://virtual.2020.emnlp.org/paper_WS-12.13.html)
+      - [Utilizing Multimodal Feature Consistency to Detect Adversarial Examples on Clinical Summaries](https://virtual.2020.emnlp.org/paper_WS-12.33.html)
+      - [Advancing Seq2seq Models with Joint Paraphrase Learning](https://virtual.2020.emnlp.org/paper_WS-12.39.html)
+    hosts: Tristan Naumann
+  - start_time: 2020-11-19 13:55:00-05:00
+    end_time: 2020-11-19 14:10:00-05:00
+    name: Oral Session 3 Q&A  <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Tristan Naumann
+  - start_time: 2020-11-19 14:10:00-05:00
+    end_time: 2020-11-19 14:40:00-05:00
+    name: |-
+      EMNLP Findings Session 1
+
+      - [Learning to Generate Clinically Coherent Chest X-Ray Reports](https://virtual.2020.emnlp.org/paper_WS-12.1041.html)
+      - [Learning Visual-Semantic Embeddings for Reporting Abnormal Findings on Chest X-rays](https://virtual.2020.emnlp.org/paper_WS-12.1640.html)
+      - [Characterizing the Valuable Information in Medical Notes](https://virtual.2020.emnlp.org/paper_WS-12.1713.html)
+      - [PharmMT: A Neural Machine Translation Approach to Simplify Prescription Directions](https://virtual.2020.emnlp.org/paper_WS-12.2127.html)
+    hosts: Tristan Naumann
+  - start_time: 2020-11-19 14:40:00-05:00
+    end_time: 2020-11-19 14:55:00-05:00
+    name: EMNLP Findings Session 1 Q&A  <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Tristan Naumann
+  - start_time: 2020-11-19 14:55:00-05:00
+    end_time: 2020-11-19 15:05:00-05:00
+    name: Coffee Break (Gather.Town room L)
+    hosts: Unhosted
+  - start_time: 2020-11-19 15:05:00-05:00
+    end_time: 2020-11-19 15:35:00-05:00
+    name: |-
+      EMNLP Findings Session 2
+
+      - [A Dual-Attention Network for Joint Named Entity Recognition and Sentence Classification of Adverse Drug Events](https://virtual.2020.emnlp.org/paper_WS-12.2509.html)
+      - [Dr. Summarize: Global Summarization of Medical Dialogue by Exploiting Local Structures](https://virtual.2020.emnlp.org/paper_WS-12.2801.html)
+      - [Generating Accurate Electronic Health Assessment from Medical Graph](https://virtual.2020.emnlp.org/paper_WS-12.2804.html)
+    hosts: Tristan Naumann
+  - start_time: 2020-11-19 15:35:00-05:00
+    end_time: 2020-11-19 15:50:00-05:00
+    name: EMNLP Findings Session 2 Q&A  <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Tristan Naumann
+  - start_time: 2020-11-19 15:50:00-05:00
+    end_time: 2020-11-19 16:20:00-05:00
+    name: |-
+      Best Paper Session
+
+      - [On the diminishing return of labeling clinical reports](https://virtual.2020.emnlp.org/paper_WS-12.8.html)
+      - [The Chilean Waiting List Corpus: a new resource for clinical Named Entity Recognition in Spanish](https://virtual.2020.emnlp.org/paper_WS-12.29.html)
+      - [Analyzing Text Specific vs Blackbox Fairness Algorithms in Multimodal Clinical NLP](https://virtual.2020.emnlp.org/paper_WS-12.48.html)
+    hosts: Steven Bethard
+  - start_time: 2020-11-19 16:20:00-05:00
+    end_time: 2020-11-19 16:35:00-05:00
+    name: Best Paper Session Q&A  <br/> <a href="https://us02web.zoom.us/j/2769990355">Zoom</a>,
+      <a href="https://emnlp2020.rocket.chat/channel/workshop-clinicalnlp">Rocket
+      Chat</a>
+    hosts: Steven Bethard
+  - start_time: 2020-11-19 16:35:00-05:00
+    end_time: 2020-11-19 16:50:00-05:00
+    name: Concluding Session
+    hosts: Anna Rumshisky
+  zoom_links:
+  - https://us02web.zoom.us/j/2769990355
+  prerecorded_talks:
+  - title: Keynote 3rd Clinical Natural Language Processing Workshop
+    speakers: Hong Yu
+    presentation_id: '38939840'
+- UID: WS-13
+  title: 'Deep Learning Inside Out (DeeLIO): The First Workshop on Knowledge Extraction
+    and Integration for Deep Learning Architectures'
+  organizers: "Eneko Agirre, Marianna Apidianaki and Ivan Vuli\u0107"
+  abstract: 'Deep Learning Inside Out: Knowledge Extraction and Integration for Deep
+    Learning Architectures with special focus on low-data regimes'
+  website: https://sites.google.com/view/deelio-ws/
+  rocketchat_channel: workshop-deelio
+  alias: deelio
+  sessions:
+  - start_time: 2020-11-19 09:30:00-04:00
+    end_time: 2020-11-19 09:35:00-04:00
+    name: Opening Remarks
+    hosts: Eneko Agirre (Zoom link 1)
+  - start_time: 2020-11-19 09:35:00-04:00
+    end_time: 2020-11-19 10:35:00-04:00
+    name: 'Keynote Talk 1: Ellie Pavlick'
+    hosts: Marianna Apidianaki (Zoom link 1)
+  - start_time: 2020-11-19 10:35:00-04:00
+    end_time: 2020-11-19 10:45:00-04:00
+    name: Break
+    hosts: '-'
+  - start_time: 2020-11-19 10:45:00-04:00
+    end_time: 2020-11-19 12:00:00-04:00
+    name: |-
+      Session 1: Oral Presentations & QA<br><br>
+      • Common Sense or World Knowledge? Investigating Adapter-Based Knowledge Injection into Pretrained Transformers (Anne Lauscher, Olga Majewska, Leonardo F. R. Ribeiro, Iryna Gurevych, Nikolai Rozanov and Goran Glavaš) <a href="https://virtual.2020.emnlp.org/paper_WS-13.9.html">paper+video</a><br><br>
+      • Incorporating Commonsense Knowledge Graph in Pretrained Models for Social Commonsense Task(Ting-Yun Chang, Yang Liu, Karthik Gopalakrishnan, Behnam Hedayatnia, Pei Zhou and Dilek Hakkani-Tur) <a href="https://virtual.2020.emnlp.org/paper_WS-13.18.html">paper+video</a><br><br>
+      • Entity Attribute Relation Extraction with Attribute-Aware Embeddings (Dan Iter and Xiao Yu) <a href="https://virtual.2020.emnlp.org/paper_WS-13.12.html">paper+video</a><br><br>
+      • On the Complementary Nature of Knowledge Graph Embedding, Fine Grain Entity Types, and Language Modeling (Rajat Patel and Francis Ferraro) <a href="https://virtual.2020.emnlp.org/paper_WS-13.22.html">paper+video</a><br><br>
+      • Commonsense Statements Identification and Explanation with Transformer based Encoders (Sonia Cibu and Anca Marginean) <a href="https://virtual.2020.emnlp.org/paper_WS-13.20.html">paper+video</a><br><br>
+      • Target Concept Guided Medical Concept Normalization in Noisy User-Generated Texts (Katikapalli Subramanyam Kalyan and Sivanesan Sangeetha) <a href="https://virtual.2020.emnlp.org/paper_WS-13.17.html">paper+video</a><br><br>
+    hosts: "Ivan Vuli\u0107 (Zoom link 1)"
+  - start_time: 2020-11-19 12:00:00-04:00
+    end_time: 2020-11-19 12:30:00-04:00
+    name: Break
+    hosts: '-'
+  - start_time: 2020-11-19 12:30:00-04:00
+    end_time: 2020-11-19 13:30:00-04:00
+    name: 'Keynote Talk 2: Eduard Hovy'
+    hosts: Eneko Agirre (Zoom link 1)
+  - start_time: 2020-11-19 13:30:00-04:00
+    end_time: 2020-11-19 14:45:00-04:00
+    name: |-
+      Session 2: Oral Presentations & QA<br><br>
+      • Relation Extraction with Contextualized Relation Embedding (Xiaoyu Chen and Rohan Badlani) <a href="https://virtual.2020.emnlp.org/paper_WS-13.4.html">paper+video</a><br><br>
+      • GenAug: Data Augmentation for Finetuning Text Generators (Steven Y. Feng, Varun Gangal, Dongyeop Kang, Teruko Mitamura and Eduard Hovy) <a href="https://virtual.2020.emnlp.org/paper_WS-13.7.html">paper+video</a><br><br>
+      • Generalization to Mitigate Synonym Substitution Attacks (Basemah Alshemali and Jugal Kalita) <a href="https://virtual.2020.emnlp.org/paper_WS-13.6.html">paper+video</a><br><br>
+      • Correcting the Misuse: A Method for the Chinese Idiom Cloze Test (Xinyu Wang, Hongsheng Zhao, Tan Yang and Hongbo Wang) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1.html">paper+video</a><br><br>
+      • Enhancing Question Answering by Injecting Ontological Knowledge through Regularization (Travis Goodwin and Dina Demner-Fushman) <a href="https://virtual.2020.emnlp.org/paper_WS-13.16.html">paper+video</a><br><br>
+    hosts: Marianna Apidianaki (Zoom link 1)
+  - start_time: 2020-11-19 14:45:00-04:00
+    end_time: 2020-11-19 15:15:00-04:00
+    name: Break
+    hosts: '-'
+  - start_time: 2020-11-19 15:15:00-04:00
+    end_time: 2020-11-19 16:40:00-04:00
+    name: |-
+      Session 3: Findings papers presentations & QA
+      (Two Parallel sessions)
+    hosts: "Session 3A: Ivan Vuli\u0107 (Zoom link 1), Session 3B: Eneko Agirre (Zoom\
+      \ link 2)"
+  - start_time: 2020-11-19 15:15:00-04:00
+    end_time: 2020-11-19 16:40:00-04:00
+    name: |-
+      Session 3A<br><br>
+      • E-BERT: Efficient-Yet-Effective Entity Embeddings for BERT (Nina Poerner, Ulli Waltinger and Hinrich Schütze) <a href="https://virtual.2020.emnlp.org/paper_WS-13.696.html">paper+video</a><br><br>
+      • Generative Data Augmentation for Commonsense Reasoning (Yiben Yang, Chaitanya Malaviya, Jared Fernandez, Swabha Swayamdipta, Ronan Le Bras, Ji-Ping Wang, Chandra Bhagavatula, Yejin Choi and Doug Downey) <a href="https://virtual.2020.emnlp.org/paper_WS-13.884.html">paper+video</a><br><br>
+      • AutoETER: Automated Entity Type Representation for Knowledge Graph Embedding (Guanglin Niu, Bo Li, Yongfei Zhang, Shiliang Pu and Jingyang Li) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1008.html">paper+video</a><br><br>
+      • Dynamic Semantic Matching and Aggregation Network for Few-shot Intent Detection (Hoang Nguyen, Chenwei Zhang, Congying Xia and Philip Yu) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1039.html">paper+video</a><br><br>
+      • Biomedical Event Extraction with Hierarchical Knowledge Graphs (Kung-Hsiang Huang, Mu Yang and Nanyun Peng) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1059.html">paper+video</a><br><br>
+      • BERT-kNN: Adding a kNN Search Component to Pretrained Language Models for Better QA (Nora Kassner and Hinrich Schütze) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2513.html">paper+video</a><br><br>
+    hosts: "Ivan Vuli\u0107 (Zoom link 1)"
+  - start_time: 2020-11-19 15:15:00-04:00
+    end_time: 2020-11-19 16:40:00-04:00
+    name: |-
+      Session 3B<br><br>
+      • Out-of-Sample Representation Learning for Knowledge Graphs (Marjan Albooyeh, Rishab Goel and Seyed Mehran Kazemi) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2047.html">paper+video</a><br><br>
+      • Visual Objects As Context: Exploiting Visual Objects for Lexical Entailment (Masayasu Muraoka, Tetsuya Nasukawa and Bishwaranjan Bhattacharjee) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2085.html">paper+video</a><br><br>
+      • Cross-Lingual Text Classification with Minimal Resources by Transferring a Sparse Teacher (Giannis Karamanolakis, Daniel Hsu and Luis Gravano) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2666.html">paper+video</a><br><br>
+      • Adversarial Augmentation Policy Search for Domain and Cross-Lingual Generalization in Reading Comprehension (Adyasha Maharana and Mohit Bansal)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2797.html">paper+video</a><br><br>
+      • Continual Learning Long Short Term Memory (Xin Guo, Yu Tian, Qinghan Xue, Panos Lampropoulos, Steven Eliuk, Kenneth Barner and Xiaolong Wang)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.1524.html">paper+video</a><br><br>
+      • Denoising Multi-Source Weak Supervision for Neural Text Classification (Wendi Ren, Yinghao Li, Hanting Su, David Kartchner, Cassie Mitchell and Chao Zhang)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2800.html">paper+video</a><br><br>
+    hosts: Eneko Agirre (Zoom link 2)
+  - start_time: 2020-11-19 16:40:00-04:00
+    end_time: 2020-11-19 17:00:00-04:00
+    name: Closing remarks
+    hosts: "E. Agirre, M. Apidianaki and I. Vuli\u0107 (Zoom link 1)"
+  - start_time: 2020-11-19 22:00:00-04:00
+    end_time: 2020-11-19 22:40:00-04:00
+    name: |-
+      Session 4: Additional QA Sessions<br><br>
+      • GenAug: Data Augmentation for Finetuning Text Generators (Steven Y. Feng, Varun Gangal, Dongyeop Kang, Teruko Mitamura and Eduard Hovy) <a href="https://virtual.2020.emnlp.org/paper_WS-13.7.html">paper+bi</a> (<a href="https://cmu.zoom.us/j/91205554634?pwd=UkFWbDhHb2paN0RhZzI2c1ZjaHdDdz09">zoom channel</a>)<br><br>
+      • Common Sense or World Knowledge? Investigating Adapter-Based Knowledge Injection into Pretrained Transformers (Anne Lauscher, Olga Majewska, Leonardo F. R. Ribeiro, Iryna Gurevych, Nikolai Rozanov and Goran Glavaš) <a href="https://virtual.2020.emnlp.org/paper_WS-13.9.html">paper+video</a> (<a href="https://us04web.zoom.us/j/77688037366?pwd=S3NmeWhncmJGekh0VE5ZMnFvSS9oUT09">zoom channel</a>)<br><br>
+      • Incorporating Commonsense Knowledge Graph in Pretrained Models for Social Commonsense Task(Ting-Yun Chang, Yang Liu, Karthik Gopalakrishnan, Behnam Hedayatnia, Pei Zhou and Dilek Hakkani-Tur) <a href="https://virtual.2020.emnlp.org/paper_WS-13.18.html">paper+video</a> (<a href="https://us05web.zoom.us/j/87035883818?pwd=MFVMU2hzM2tKL2ZyaDBaek5BY3FZUT09">zoom channel</a>)<br><br>
+      • Commonsense Statements Identification and Explanation with Transformer based Encoders (Sonia Cibu and Anca Marginean) <a href="https://virtual.2020.emnlp.org/paper_WS-13.20.html">paper+video</a> (<a href="https://us04web.zoom.us/j/72704160575?pwd=SDk0Vzk3djRrUDYyZ0RwS2NidzBYdz09">zoom channel</a>)<br><br>
+      • On the Complementary Nature of Knowledge Graph Embedding, Fine Grain Entity Types, and Language Modeling (Rajat Patel and Francis Ferraro) <a href="https://virtual.2020.emnlp.org/paper_WS-13.22.html">paper+video</a> (<a href="https://zoom.us/j/99574609777?pwd=bm5qMDNpZVkwRXRPd2Jpd3NNd0daUT09">zoom channel</a>)<br><br>
+      • E-BERT: Efficient-Yet-Effective Entity Embeddings for BERT (Nina Poerner, Ulli Waltinger and Hinrich Schütze) <a href="https://virtual.2020.emnlp.org/paper_WS-13.696.html">paper+video</a> (<a href="https://us02web.zoom.us/j/88678730754?pwd=SGdMaUZXa1VyeG9Ea21EZllLWm1vdz09">zoom channel</a>)<br><br>
+      • AutoETER: Automated Entity Type Representation for Knowledge Graph Embedding (Guanglin Niu, Bo Li, Yongfei Zhang, Shiliang Pu and Jingyang Li) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1008.html">paper+video</a> (<a href="https://zoom.us/j/97149632460?pwd=N0RRWXVYcnltU0dTaXpOZEFERCtnUT09">zoom channel</a>)<br><br>
+      • Dynamic Semantic Matching and Aggregation Network for Few-shot Intent Detection (Hoang Nguyen, Chenwei Zhang, Congying Xia and Philip Yu) <a href="https://virtual.2020.emnlp.org/paper_WS-13.1039.html">paper+video</a> (<a href="https://zoom.us/j/91263575056?pwd=Sjc2WllYd3lzTnVUN1Q5TjRjak13dz09">zoom channel</a>)<br><br>
+      • Continual Learning Long Short Term Memory (Xin Guo, Yu Tian, Qinghan Xue, Panos Lampropoulos, Steven Eliuk, Kenneth Barner and Xiaolong Wang)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.1524.html">paper+video</a> (<a href="https://us02web.zoom.us/j/82872350643?pwd=bGNMVTBkU3Vka2NiY3FoeUswRzVjZz09">zoom channel</a>)<br><br>
+      • Visual Objects As Context: Exploiting Visual Objects for Lexical Entailment (Masayasu Muraoka, Tetsuya Nasukawa and Bishwaranjan Bhattacharjee) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2085.html">paper+video</a> (<a href="https://us04web.zoom.us/j/71033235132?pwd=REhqRWNxQ1BEZW5MS3pLYlRjVVdrQT09">zoom channel</a>)<br><br>
+      • Cross-Lingual Text Classification with Minimal Resources by Transferring a Sparse Teacher (Giannis Karamanolakis, Daniel Hsu and Luis Gravano) <a href="https://virtual.2020.emnlp.org/paper_WS-13.2666.html">paper+video</a> (<a href="https://us04web.zoom.us/j/75571792938?pwd=cnc5eHFVRUZmaTFkTUFON0JJc3ZrZz09">zoom channel</a>)<br><br>
+      • Adversarial Augmentation Policy Search for Domain and Cross-Lingual Generalization in Reading Comprehension (Adyasha Maharana and Mohit Bansal)  <a href="https://virtual.2020.emnlp.org/paper_WS-13.2797.html">paper+video</a> (<a href="https://unc.zoom.us/j/97249841910">zoom channel</a><br><br>
+    hosts: Please use separate Zoom links
+  zoom_links:
+  - https://us02web.zoom.us/j/8018218663
+  - https://us02web.zoom.us/j/3550218712
+  prerecorded_talks:
+  - title: Keynote talk by Eduard Hovy
+    speakers: Eduard Hovy
+    presentation_id: '38940164'
+  - title: 'You can lead a horse to water...: Representing vs. Using Features in Neural
+      NLP'
+    speakers: Ellie Pavlick
+    presentation_id: '38940165'
+- UID: WS-14
+  title: 6th Workshop on Noisy User-generated Text (W-NUT 2020)
+  organizers: Wei Xu, Alan Ritter, Timothy Baldwin, Afshin Rahimi and Leon Derczynski
+  abstract: Social media, crowdsourcing, medical texts, language learner essays, and
+    more! 2 keynotes, 130 PC members, talks &amp; 1-min madness for posters
+  website: http://noisy-text.github.io
+  rocketchat_channel: workshop-wnut2020
+  alias: wnut2020
+  sessions:
+  - start_time: 2020-11-19 04:00:00+00:00
+    end_time: 2020-11-19 04:15:00+00:00
+    name: Opening
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 04:15:00+00:00
+    end_time: 2020-11-19 04:45:00+00:00
+    name: Invited Talk by Rob Munro & QA
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 04:45:00+00:00
+    end_time: 2020-11-19 05:15:00+00:00
+    name: Oral Presentations (research papers) 1a
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 05:15:00+00:00
+    end_time: 2020-11-19 05:35:00+00:00
+    name: 'Shared Task #2 - Identification of informative COVID-19 English Tweets'
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 05:35:00+00:00
+    end_time: 2020-11-19 05:50:00+00:00
+    name: Breakout Rooms (social event)
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 05:50:00+00:00
+    end_time: 2020-11-19 06:20:00+00:00
+    name: Invited Talk by Irwin King & QA
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 06:20:00+00:00
+    end_time: 2020-11-19 06:35:00+00:00
+    name: Oral Presentations (research papers) 1b
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 06:35:00+00:00
+    end_time: 2020-11-19 07:35:00+00:00
+    name: GatherTown Poster Session
+    hosts: 'Tim Baldwin & Afshin Rahimi '
+  - start_time: 2020-11-19 15:00:00+00:00
+    end_time: 2020-11-19 15:35:00+00:00
+    name: Invited Talk by Manaal Faruqui & QA
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 15:35:00+00:00
+    end_time: 2020-11-19 15:45:00+00:00
+    name: Lightning Talks  (research papers) 2a
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 15:45:00+00:00
+    end_time: 2020-11-19 15:55:00+00:00
+    name: 'Shared Task #3 - COVID-19 Event Extraction from Twitter'
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 15:55:00+00:00
+    end_time: 2020-11-19 16:15:00+00:00
+    name: Oral Presentations (research papers) 2a
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 16:15:00+00:00
+    end_time: 2020-11-19 16:30:00+00:00
+    name: Breakout Rooms (social event)
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 16:30:00+00:00
+    end_time: 2020-11-19 17:05:00+00:00
+    name: Invited Talk by Eduardo Blanco & QA
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 17:05:00+00:00
+    end_time: 2020-11-19 17:15:00+00:00
+    name: Oral Presentations (research papers) 2b
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 17:15:00+00:00
+    end_time: 2020-11-19 17:25:00+00:00
+    name: 'Shared Task #1 - Entity and Relation Recognition over Wet-lab Protocols'
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 17:25:00+00:00
+    end_time: 2020-11-19 17:35:00+00:00
+    name: Lightning Talks  (research papers) 2b
+    hosts: Wei Xu & Alan Ritter
+  - start_time: 2020-11-19 17:35:00+00:00
+    end_time: 2020-11-19 18:35:00+00:00
+    name: GatherTown Poster Session
+    hosts: Wei Xu & Alan Ritter
+  zoom_links:
+  - https://us02web.zoom.us/j/8056354262
+  - https://us02web.zoom.us/j/3446463699
+  prerecorded_talks: []
+- UID: WS-15
+  title: 'SustaiNLP: Workshop on Simple and Efficient Natural Language Processing'
+  organizers: "Angela Fan, Goran Glava\u0161, Shafiq Joty, Nafise Sadat Moosavi, Vered\
+    \ Shwartz, Alex Wang and Thomas Wolf"
+  abstract: Promoting computationally efficient NLP and justified model complexity.
+    Encouraging conceptual NLP novelty, discouraging "more compute".
+  website: https://sites.google.com/view/sustainlp2020
+  rocketchat_channel: workshop-sustainlp2020
+  alias: sustainlp2020
+  sessions:
+  - start_time: 2020-11-20 00:00:00-08:00
+    end_time: 2020-11-20 01:00:00-08:00
+    name: |-
+      QA session1: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.8.html">Large Product Key Memory for Pre-trained Language Models</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.12.html">Exploring the Boundaries of Low-Resource BERT Distillation</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.30.html">Keyphrase Generation with GANs in Low-Resources Scenarios</a><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.2288.html">Domain Adversarial Fine-Tuning as an Effective Regularizer</a>
+    hosts: Shafiq Joty
+  - start_time: 2020-11-20 01:00:00-08:00
+    end_time: 2020-11-20 02:00:00-08:00
+    name: |-
+      QA session2: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.22.html">Don’t Read Too Much Into It: Adaptive Computation for Open-Domain Question Answering</a><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.45.html">A comparison between CNNs and WFAs for Sequence Classification</a><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.46.html">Counterfactual Augmentation for Training Next Response Selection </a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.651.html"> Pruning Redundant Mappings in Transformer Models via Spectral-Normalized Identity Prior </a>
+    hosts: Shafiq Joty
+  - start_time: 2020-11-20 06:00:00-08:00
+    end_time: 2020-11-20 07:00:00-08:00
+    name: '<b>Invited Talk</b><br> <a href="https://us02web.zoom.us/j/5715758008">Zoom
+      link 1</a> <br> <b>Mona Diab</b>: Non-parameterized sentence encoders: an efficient
+      alternative'
+    hosts: " Goran Glava\u0161"
+  - start_time: 2020-11-20 07:00:00-08:00
+    end_time: 2020-11-20 08:00:00-08:00
+    name: |-
+      QA session3-A: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.1.html">Knowing Right from Wrong: Should We Use More Complex Models for Automatic Short-Answer Scoring in Bahasa Indonesia?</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.5.html">Learning Informative Representations of Biomedical Relations with Latent Variable Models</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.6.html">End to End Binarized Neural Networks for Text Classification</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.36.html">Predictive Model Selection for Transfer Learning in Sequence Labeling Tasks</a>
+    hosts: Thomas Wolf
+  - start_time: 2020-11-20 07:00:00-08:00
+    end_time: 2020-11-20 08:00:00-08:00
+    name: |-
+      QA session3-B: <br> <a href="https://us02web.zoom.us/j/4500113018">Zoom link 2</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.547.html">PBoS: Probabilistic Bag-of-Subwords for Generalizing Word Embedding</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.2017.html">Unsupervised Few-Bits Semantic Hashing with Implicit Topics Modeling</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.512.html"> Fixed Encoder Self-Attention Patterns in Transformer-Based Machine Translation</a>
+    hosts: Marzieh Fadaee
+  - start_time: 2020-11-20 08:00:00-08:00
+    end_time: 2020-11-20 09:00:00-08:00
+    name: |-
+      <b>Invited speakers QA</b> <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://slideslive.com/38940100"><b>Heng Ji</b>: Efficient Language Acquisition through Multimedia Curriculum Learning</a> <br>
+      • <a href="https://slideslive.com/38940101"> <b>Graham Neubig</b>: More is Less? Non-parametric Language Models and Efficiency</a> <br>
+      • <a href="https://slideslive.com/38940102"><b>Alexander Rush</b>: Advances in Sequence Knowledge Distillation </a> <br>
+      • <a href="https://slideslive.com/38940103"> <b>Armand Joulin</b>: Making Pre-trained Models More Sustainable </a>
+    hosts: " Goran Glava\u0161"
+  - start_time: 2020-11-20 09:00:00-08:00
+    end_time: 2020-11-20 10:00:00-08:00
+    name: |-
+      <b>Panel Discussion</b> <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      <b>Panelists</b>: Kyunghyun Cho, Yejin Choi, Mona Diab, Yoav Goldberg, Iryna Gurevych, Heng Ji, Graham Neubig, Alexander Rush, Armand Joulin, Luke Zettlemoyer
+    hosts: Vered Shwartz & Angela Fan
+  - start_time: 2020-11-20 10:00:00-08:00
+    end_time: 2020-11-20 11:00:00-08:00
+    name: |-
+      QA session4: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.29.html">Early Exiting BERT for Efficient Document Ranking</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.32.html">Quasi-Multitask Learning: an Efficient Surrogate for Obtaining Model Ensembles</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.2516.html">Identifying Spurious Correlations for Robust Text Classification</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.724.html"> Improving QA Generalization by Concurrent Modeling of Multiple Biases</a>
+    hosts: Nafise Sadat Moosavi
+  - start_time: 2020-11-20 11:00:00-08:00
+    end_time: 2020-11-20 12:00:00-08:00
+    name: |-
+      QA session5: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.37.html">Load What You Need: Smaller Versions of Mutlilingual BERT</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.42.html">Towards Accurate and Reliable Energy Measurement of NLP Models</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.47.html">Do We Need to Create Big Datasets to Learn a Task?</a>
+    hosts: Nafise Sadat Moosavi
+  - start_time: 2020-11-20 15:00:00-08:00
+    end_time: 2020-11-20 16:00:00-08:00
+    name: |-
+      QA Session6-A: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.2.html">Rank and run-time aware compression of NLP Applications</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.3.html">Incremental Neural Coreference Resolution in Constant Memory</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.13.html">Efficient Estimation of Influence of a Training Instance</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.14.html">Efficient Inference For Neural Machine Translation</a>
+    hosts: Alex Wang
+  - start_time: 2020-11-20 15:00:00-08:00
+    end_time: 2020-11-20 16:00:00-08:00
+    name: |-
+      QA Session6-B: <br> <a href="https://us02web.zoom.us/j/4500113018">Zoom link 2</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.3459.html">Guiding Attention for Self-Supervised Learning with Transformers</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.1887.html">Semi-supervised Formality Style Transfer using LanguageModel Discriminator and Mutual Information Maximization</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.3078.html">SupMMD: A Sentence Importance Model for Extractive Summarization using Maximum Mean Discrepancy</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.3526.html"> Probabilstic Case-based Reasoning for Open-World Knowledge Graph Completion</a>
+    hosts: Ameet Deshpande
+  - start_time: 2020-11-20 16:00:00-08:00
+    end_time: 2020-11-20 17:00:00-08:00
+    name: |-
+      QA Session7: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.9.html">P-SIF: Document Embeddings using Partition Averaging</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.17.html">Sparse Optimization for Unsupervised Extractive Summarization of Long Documents with the Frank-Wolfe Algorithm</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.39.html"> Analysis of Resource-efficient Predictive Models for Natural Language Processing</a><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.34.html">A Little Bit Is Worse Than None: Ranking with Limited Training Data</a>
+    hosts: Vered Shwartz
+  - start_time: 2020-11-20 17:00:00-08:00
+    end_time: 2020-11-20 18:00:00-08:00
+    name: |-
+      QA Session8: <br> <a href="https://us02web.zoom.us/j/5715758008">Zoom link 1</a> <br><br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.27.html"> Doped Structured Matrices for Extreme Compression of LSTM Models</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.28.html">A Two-stage Model for Slot Filling in Low-resource Settings: Domain-agnostic Non-slot Reduction and Pretrained Contextual Embeddings</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.38.html">SqueezeBERT: What can computer vision teach NLP about efficient neural networks?</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.43.html">FastFormers: Highly Efficient Transformer Models for Natural Language Understanding</a> <br>
+      • <a href="https://virtual.2020.emnlp.org/paper_WS-15.1098.html">  OptSLA: an Optimization-Based Approach for Sequential Label Aggregation  </a>
+    hosts: Alex Wang
+  zoom_links:
+  - https://us02web.zoom.us/j/5715758008
+  - https://us02web.zoom.us/j/4500113018
+  prerecorded_talks:
+  - title: Invited Talk
+    speakers: Mona Diab
+    presentation_id: '38940099'
+  - title: Invited Talk
+    speakers: Heng Ji
+    presentation_id: '38940100'
+  - title: Invited Talk
+    speakers: Graham Neubig
+    presentation_id: '38940101'
+  - title: Invited Talk
+    speakers: Alexander Rush
+    presentation_id: '38940102'
+  - title: Invited Talk
+    speakers: Armand Joulin
+    presentation_id: '38940103'
+- UID: WS-16
+  title: 1st Workshop on Computational Approaches to Discourse
+  organizers: "Chlo\xE9 Braud, Christian Hardmeier, Junyi Jessy Li, Annie Louis and\
+    \ Michael Strube"
+  abstract: The Workshop on Computational Approaches to Discourse (CODI) covers all
+    aspects of discourse and its computational modeling.
+  website: https://cad-workshop.github.io/
+  rocketchat_channel: workshop-codi2020
+  alias: codi2020
+  sessions:
+  - start_time: 2020-11-20 08:00:00-06:00
+    end_time: 2020-11-20 08:10:00-06:00
+    name: <b>Opening remarks</b> <br> <a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
+    hosts: TBD
+  - start_time: 2020-11-20 08:10:00-06:00
+    end_time: 2020-11-20 09:00:00-06:00
+    name: <b>Discussion on next year workshop and SIG</b> <br> <a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
+    hosts: TBD
+  - start_time: 2020-11-20 09:00:00-06:00
+    end_time: 2020-11-20 10:00:00-06:00
+    name: '<b>Keynote: </b><a href="https://codi-workshop.github.io/invited-speakers/"><b>Eunsol
+      Choi</b> - <i>Learning to Understand Language in Context</i></a><br><a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>'
+    hosts: TBD
+  - start_time: 2020-11-20 10:00:00-06:00
+    end_time: 2020-11-20 10:15:00-06:00
+    name: <b> break - Gather.town (Room K) </b>
+    hosts: TBD
+  - start_time: 2020-11-20 10:15:00-06:00
+    end_time: 2020-11-20 10:45:00-06:00
+    name: |-
+      <b>Session 1: QA - Anaphora and coreference - Part 1</b> <br> <a href="https://us02web.zoom.us/j/2338884319">Zoom link 2</a> <br><br> • Exploring Span Representations in Neural Coreference Resolution, Patrick Kahardipraja, Olena Vyshnevska and Sharid Loáiciga <br>
+      • Using Type Information to Improve Entity Coreference Resolution, Sopan Khosla and Carolyn Rose <br>
+      • Eliminating Mention Overlaps: Evaluation of Coreference Resolution Systems Under Adversarial Attacks, Haixia Chai, Wei Zhao, Steffen Eger and Michael Strube <br>
+      • COLING Free the Plural: Unrestricted Split-Antecedent Anaphora Resolution, Juntao Yu, Nafise Sadat Moosavi, Silviu Paun and Massimo Poesio
+    hosts: Michael Strube
+  - start_time: 2020-11-20 10:15:00-06:00
+    end_time: 2020-11-20 10:45:00-06:00
+    name: |-
+      <b>Session 1: QA - Coherence relations, discourse parsing and corpora - Part 1</b> <br> <a href="https://us02web.zoom.us/j/9783550398">Zoom link 3</a> <br><br>
+      • Coreference for Discourse Parsing: A Neural Approach, Grigorii Guz and Giuseppe Carenini <br>
+      • Analyzing Neural Discourse Coherence Models, Youmna Farag, Josef Valvoda, Helen Yannakoudakis and Ted Briscoe  <br>
+      • DSNDM: Deep Siamese Neural Discourse Model with Attention for Text Pairs Categorization and Ranking, Alexander Chernyavskiy and Dmitry Ilvovsky <br>
+      • Unsupervised Inference of Data-Driven Discourse Structures using a Tree Auto-Encoder, Patrick Huber and Giuseppe Carenini
+    hosts: "Chlo\xE9 Braud and Annie Louis"
+  - start_time: 2020-11-20 10:15:00-06:00
+    end_time: 2020-11-20 10:45:00-06:00
+    name: |-
+      <b>Session 1: QA - Discourse and dialog - Part 1 </b> <br> <a href="https://us02web.zoom.us/j/5611345347">Zoom link 4</a> <br><br>
+      • Joint Modeling of Arguments for Event Understanding, Yunmo Chen, Tongfei Chen and Benjamin Van Durme <br>
+      • Beyond Adjacency Pairs: Extracting Longer Regularities in Human-Machine Dialogues, Maitreyee Maitreyee   <br>
+      • (FINDINGS) Converting the Point of View of Messages Spoken to Virtual Assistants, Isabelle G. Lee, Vera Zu, Sai Srujana Buddi, Dennis Liang, Purva Kulkarni, Jack G.M. Fitzgerald   <br>
+      • (FINDINGS) Dialogue Generation on Infrequent Sentence Functions via Structured Meta-Learning, Yifan Gao, Piji Li, Wei Bi, Xiaojiang Liu, Michael R. Lyu, Irwin King  <br>
+      • (FINDINGS) Composed Variational Natural Language Generation for Few-shot Intents, Congying Xia, Caiming Xiong, Philip Yu, Richard Socher <br>
+      • (FINDINGS) A Hierarchical Network for Abstractive Meeting Summarization with Cross-Domain Pretraining, Chenguang Zhu, Ruochen Xu, Michael Zeng, Xuedong Huang
+    hosts: Christian Hardmeier and Jessy Li
+  - start_time: 2020-11-20 10:45:00-06:00
+    end_time: 2020-11-20 12:15:00-06:00
+    name: '<b>Breakout Sessions + Lunch</b> <br><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a><br><b>Then meet in: Gather.town (Room K) </b><br>'
+    hosts: TBD
+  - start_time: 2020-11-20 12:15:00-06:00
+    end_time: 2020-11-20 13:15:00-06:00
+    name: '<b>Keynote: </b><a href="https://codi-workshop.github.io/invited-speakers/"><b>Eduard
+      Hovy </b> - <i>- Discourse processing in the time of DNNs</i></a> <a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>'
+    hosts: TBD
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      <b>Session 2: QA - Anaphora and coreference - Part 2 </b> <br> <a href="https://us02web.zoom.us/j/2338884319">Zoom link 2</a> <br><br>
+      • Adapting Coreference Resolution to Twitter ConversationExploring Coreference Features in Heterogeneous Data with Text Classification, Ekaterina Lapshinova-Koltunski and Kerstin Kunz <br>
+      • (COLING) Multitask Learning-Based Neural Bridging Reference Resolution, Juntao Yu and Massimo Poesio  <br>
+      • (FINDINGS) Paraphrasing vs Coreferring: Two Sides of the Same Coin Yehudit Meged   <br>
+      • (FINDINGS) Adapting Coreference Resolution to Twitter Conversations Berfin Aktas
+    hosts: Michael Strube
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      <b>Session 2: QA - Coherence relations, discourse parsing and corpora - Part 2 </b> <br> <a href="https://us02web.zoom.us/j/9783550398">Zoom link 3</a> <br><br>
+      • TED-MDB Lexicons: TrEnConnLex, PtEnConnLex, Murathan Kurfalı, Sibel Ozer, Deniz Zeyrek and Amália Mendes <br>
+      • Large Discourse Treebanks from Scalable Distant Supervision, Patrick Huber and Giuseppe Carenini  <br>
+      • Contextualized Embeddings for Connective Disambiguation in Shallow Discourse Parsing, René Knaebel and Manfred Stede <br>
+      • Extending Implicit Discourse Relation Recognition to the PDTB-3, Li Liang, Zheng Zhao and Bonnie Webber
+    hosts: "Chlo\xE9 Braud  "
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      <b>Session 2: QA - Discourse and language understanding </b>   <br> <a href="https://us02web.zoom.us/j/5611345347">Zoom link 4</a> <br><br>
+      • Discourse for Argument Mining, and Argument Mining as Discourse, Diane Litman  <br>
+      • Do sentence embeddings capture discourse properties of sentences from Scientific Abstracts?, Laurine Huber, Chaker Memmadi, Mathilde Dargnat and Yannick Toussaint  <br>
+      • How does discourse affect Spanish-Chinese Translation? A case study based on a Spanish-Chinese parallel corpus, Shuyuan Cao  <br>
+      • (FINDINGS) Social Commonsense Reasoning with Multi-Head Knowledge Attention, Debjit Paul, Anette Frank <br>
+      • (FINDINGS) Thinking Like a Skeptic: Defeasible Inference in Natural Language, Rachel Rudinger, Vered Shwartz, Jena D. Hwang, Chandra Bhagavatula, Maxwell Forbes, Ronan Le Bras, Noah A. Smith, Yejin Choi
+    hosts: Christian Hardmeier and Annie Louis
+  - start_time: 2020-11-20 13:15:00-06:00
+    end_time: 2020-11-20 13:45:00-06:00
+    name: |-
+      <b>Session 2: QA - Generation and applications </b>  <br> <a href="https://us02web.zoom.us/j/9987253895">Zoom link 5</a> <br><br>
+      • Computational Interpretation of Recency for the Choice of Referring Expressions in Discourse, Fahime Same and Kees van Deemter <br>
+      • Do We Really Need Thrs In Transformer For Extractive Summarization? Discourse Can Help!, Wen Xiao, Patrick Huber and Giuseppe Carenini  <br>
+      • Supporting Comedy Writers: Predicting Audience’s Response from Sketch Comedy and Crosstalk Scripts, Maolin Li  <br>
+      •  Exploring aspects of similarity between spoken personal narratives by disentangling them into narrative clause types, Belen Saldias and Deb Roy
+    hosts: Jessy Li
+  - start_time: 2020-11-20 13:45:00-06:00
+    end_time: 2020-11-20 14:30:00-06:00
+    name: <b>Discussion and closing remarks</b> <br><a href="https://us02web.zoom.us/j/3636713515">Zoom
+      link 1</a>
+    hosts: TBD
+  zoom_links:
+  - https://us02web.zoom.us/j/3636713515
+  - https://us02web.zoom.us/j/2338884319
+  - https://us02web.zoom.us/j/9783550398
+  - https://us02web.zoom.us/j/5611345347
+  - https://us02web.zoom.us/j/9987253895
+  prerecorded_talks: []
+- UID: WS-17
+  title: The Fourth Workshop on Online Abuse and Harms (WOAH) a.k.a. ALW
+  organizers: Zeerak Waseem, Vinodkumar Prabhakaran, Seyi Akiwowo and Bertie Vidgen
+  abstract: The workshop focuses on online abuse through a multi-disciplinary lens,
+    drawing on social sciences, law, media studies, and more.
+  website: https://www.workshopononlineabuse.com/home
+  rocketchat_channel: workshop-woah4
+  alias: woah4
+  sessions:
+  - start_time: 2020-11-20 13:00:00+00:00
+    end_time: 2020-11-20 13:10:00+00:00
+    name: Opening Remarks
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 13:10:00+00:00
+    end_time: 2020-11-20 13:55:00+00:00
+    name: "<b>Keynote</b><br> TBD <i>- Andr\xE9 Brock</i> <br> <a href=\"https://us02web.zoom.us/j/4396802858\"\
+      >Zoom link 1</a>"
+    hosts: Bertie Vidgen
+  - start_time: 2020-11-20 13:55:00+00:00
+    end_time: 2020-11-20 14:40:00+00:00
+    name: '<b>Keynote</b><br>"100,000 Lines in the Sand": Agency and Policy Feedback
+      in Content Moderation <i>- Alex Hanna and Maliha Ahmed</i> <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>'
+    hosts: Bertie Vidgen
+  - start_time: 2020-11-20 14:40:00+00:00
+    end_time: 2020-11-20 14:45:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 14:45:00+00:00
+    end_time: 2020-11-20 15:30:00+00:00
+    name: <b>Keynote</b><br>"The Root Of Algorithmic Bias And How To Deal With It"
+      <i>- Maria Rodriguez</i> <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>
+    hosts: Bertie Vidgen
+  - start_time: 2020-11-20 15:30:00+00:00
+    end_time: 2020-11-20 15:40:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 15:40:00+00:00
+    end_time: 2020-11-20 16:40:00+00:00
+    name: "Keynote Panel: Maliha Ahmed, Andr\xE9 Brock, Alex Hanna and Maria Rodriguez\
+      \ <br> <a href=\"https://us02web.zoom.us/j/4396802858\">Zoom link 1</a>"
+    hosts: Bertie Vidgen
+  - start_time: 2020-11-20 16:40:00+00:00
+    end_time: 2020-11-20 17:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: Paper Q&A Panels I (3 parallel sessions)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: |-
+      Session 1, Panel I: Methods for classifying online abuse <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom link 1</a> <br><br>
+      • A Novel Methodology for Developing Automatic Harassment Classifiers for Twitter (Ishaan Arora, Julia Guo, Sarah Ita Levitan, Susan McGregor and Julia Hirschberg)<br>
+      • Using Transfer-based Language Models to Detect Hateful and Offensive Language Online (Vebjørn Isaksen and Björn Gambäck)<br>
+      • Fine-tuning BERT for multi-domain and multi-label incivil language detection (Kadir Bulut Ozler, Kate Kenski, Steve Rains, Yotam Shmargad, Kevin Coe and Steven Bethard)<br>
+      • HurtBERT: Incorporating Lexical Features with BERT for the Detection of Abusive Language (Anna Koufakou, Endang Wahyu Pamungkas, Valerio Basile and Viviana Patti)<br>
+      • Abusive Language Detection using Syntactic Dependency Graphs (Kanika Narang and Chris Brew)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: |-
+      Session 1, Panel II: Biases in datasets for abuse<br> <a href="https://us02web.zoom.us/j/5727154448">Zoom link 2</a> <br><br>
+      • Impact of politically biased data on hate speech classification (Maximilian Wich, Jan Bauer and Georg Groh)<br>
+      • Identifying and Measuring Annotator Bias Based on Annotators’ Demographic Characteristics (Hala Al Kuwatly, Maximilian Wich and Georg Groh)<br>
+      • Investigating Annotator Bias with a Graph-Based Approach (Maximilian Wich, Hala Al Kuwatly and Georg Groh)<br>
+      • Reducing Unintended Identity Bias in Russian Hate Speech Detection (Nadezhda Zueva, Madina Kabirova and Pavel Kalaidin)<br>
+      • Investigating Sampling Bias in Abusive Language Detection (Dante Razo and Sandra Kübler)<br>
+      • Is your toxicity my toxicity? Understanding the influence of rater identity on perceptions of toxicity (Ian Kivlichan, Olivia Redfield, Rachel Rosen, Raquel Saxe, Nitesh Goyal and Lucy Vasserman)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 17:45:00+00:00
+    name: |-
+      Session 1, Panel III: Technical challenges in classifying online abuse<br> <a href="https://us02web.zoom.us/j/9208909204">Zoom link 3</a> <br><br>
+      • Attending the Emotions to Detect Online Abusive Language (Niloofar Safi Samghabadi, Afsheen Hatami, Mahsa Shafaei, Sudipta Kar and Thamar Solorio)<br>
+      • Enhancing the Identification of Cyberbullying through Participant Roles (Gathika Rathnayake, Thushari Atapattu, Mahen Herath, Georgia Zhang and Katrina Falkner)<br>
+      • Developing a New Classifier for Automated Identification of Incivility in Social Media (Sam Davidson, Qiusi Sun and Magdalena Wojcieszak)<br>
+      • [Findings] Hybrid Emoji-Based Masked Language Models for Zero-Shot Abusive Language Detection (Michele Corazza, Stefano Menini, Elena Cabrio, Sara Tonelli and Serena Villata)<br>
+      • Countering hate on social media: Large scale classification of hate and counter speech (Joshua Garland, Keyan Ghazi-Zahedi, Jean-Gabriel Young, Laurent HébertDufresne and Mirta Galesic)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 17:45:00+00:00
+    end_time: 2020-11-20 18:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 18:00:00+00:00
+    end_time: 2020-11-20 18:45:00+00:00
+    name: Paper Q&A Panels II (3 parallel sessions)
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 18:00:00+00:00
+    end_time: 2020-11-20 18:45:00+00:00
+    name: |-
+      Session 2, Panel IV: Ways of tackling online abuse<br> <a href="https://us02web.zoom.us/j/4396802858">Zoom link 1</a><br><br>
+      • Moderating Our (Dis)Content: Renewing the Regulatory Approach (Claire Pershan)<br>
+      • Investigating takedowns of misogynistic abuse on Twitter: a story of iterative failures and partial successes (Nicolas Suzor and Rosalie Gillett)<br>
+      • Six Attributes of Unhealthy Conversations (Ilan Price, Jordan Gifford-Moore, Jory Fleming, Saul Musker, Maayan Roichman, Guillaume Sylvain, Nithum Thain, Lucas Dixon and Jeffrey Sorensen)<br>
+      • Free Expression By Design: Improving In-Platform Features & Third-Party Tools to Tackle Online Abuse (Viktorya Vilk, Elodie Vialle and Matt Bailey)<br>
+      • A Unified Taxonomy of Harmful Content (Michele Banko, Brendon MacKeen and Laurie Ray)<br>
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 18:00:00+00:00
+    end_time: 2020-11-20 18:45:00+00:00
+    name: |-
+      Session 2, Panel V: New datasets for abuse<br> <a href="https://us02web.zoom.us/j/5727154448">Zoom link 2</a> <br><br>
+      • Towards a Comprehensive Taxonomy and Large-Scale Annotated Corpus for Online Slur Usage (Jana Kurrek, Haji Mohammad Saleem and Derek Ruths)<br>
+      • In Data We Trust: A Critical Analysis of Hate Speech Detection Datasets (Kosisochukwu Madukwe, Xiaoying Gao and Bing Xue)<br>
+      • Detecting East Asian Prejudice on Social Media (Bertie Vidgen, Scott Hale, Ella Guest, Helen Margetts, David Broniatowski, Zeerak Waseem, Austin Botelho, Matthew Hall and Rebekah Tromble)<br>
+      • On Cross-Dataset Generalization in Automatic Detection of Online Abuse Isar Nejadgholi and Svetlana Kiritchenko<br>
+      • [Findings] A little goes a long way: Improving toxic language classification despite data scarcity Mika Juuti, Tommi Gröndahl, Adrian Flanagan and N. Asokan
+    hosts: Zeerak Waseem
+  - start_time: 2020-11-20 18:45:00+00:00
+    end_time: 2020-11-20 19:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 19:00:00+00:00
+    end_time: 2020-11-20 19:20:00+00:00
+    name: 'Online Abuse and Human Rights: Report on WOAH RightsCon Satellite Session<br>
+      <a href="https://us02web.zoom.us/j/4396802858">Zoom link 1</a>'
+    hosts: Vinodkumar Prabhakaran
+  - start_time: 2020-11-20 19:20:00+00:00
+    end_time: 2020-11-20 19:30:00+00:00
+    name: Closing Remarks <br> <a href="https://us02web.zoom.us/j/4396802858">Zoom
+      link 1</a>
+    hosts: Vinodkumar Prabhakaran
+  zoom_links:
+  - https://us02web.zoom.us/j/4396802858
+  - https://us02web.zoom.us/j/5727154448
+  - https://us02web.zoom.us/j/9208909204
+  prerecorded_talks:
+  - title: Keynote1
+    speakers: "Andr\xE9 Brock"
+    presentation_id: '38939540'
+  - title: '"100,000 Lines in the Sand": Agency and Policy Feedback in Content Moderation'
+    speakers: Alex Hanna & Maliha Ahmed
+    presentation_id: '38939541'
+  - title: The Root Of Algorithmic Bias And How To Deal With It
+    speakers: Maria Y. Rodriguez
+    presentation_id: '38939542'
+- UID: WS-18
+  title: NLP and Computational Social Science (NLP+CSS)
+  organizers: Svitlana Volkova, David Jurgens, David Bamman, Dirk Hovy and Brendan
+    T. O'Connor
+  abstract: This workshop focuses on NLP for Social Sciences, interdisciplinary work
+    in CSS, and integrating CSS with current trends in NLP.
+  website: https://sites.google.com/site/nlpandcss/nlp-css-at-emnlp-2020
+  rocketchat_channel: workshop-nlpcss
+  alias: nlpcss
+  sessions:
+  - start_time: 2020-11-20 07:00:00-08:00
+    end_time: 2020-11-20 07:15:00-08:00
+    name: Opening Remarks
+    hosts: David Jurgens
+  - start_time: 2020-11-20 07:15:00-08:00
+    end_time: 2020-11-20 08:00:00-08:00
+    name: 'Invited Speaker: Dong Nguyen, Assistant Professor, Information and Computing
+      Sciences, Utrecht University "When NLP Meets Language Variation"'
+    hosts: David Jurgens
+  - start_time: 2020-11-20 08:00:00-08:00
+    end_time: 2020-11-20 09:00:00-08:00
+    name: Posters/papers session 1
+    hosts: Dirk Hovy
+  - start_time: 2020-11-20 09:00:00-08:00
+    end_time: 2020-11-20 09:15:00-08:00
+    name: Break
+    hosts: Dirk Hovy
+  - start_time: 2020-11-20 09:15:00-08:00
+    end_time: 2020-11-20 10:00:00-08:00
+    name: 'Invited Speaker: Elizabeth E. Bruch, Associate Professor in Sociology and
+      Complex Systems, University of Michigan "How (and Why) Online Dating Experiences
+      Differ across American Cities"'
+    hosts: David Bamman
+  - start_time: 2020-11-20 10:00:00-08:00
+    end_time: 2020-11-20 11:00:00-08:00
+    name: Lunch + Birds of a feather
+    hosts: David Bamman
+  - start_time: 2020-11-20 11:00:00-08:00
+    end_time: 2020-11-20 11:45:00-08:00
+    name: 'Invited Speaker: Jesse Shapiro, Eastman Professor of Political Economy,
+      Brown University "Measuring Group Differences in High-Dimensional Choices: Method
+      and Application to Congressional Speech"'
+    hosts: Brendan O'Connor
+  - start_time: 2020-11-20 11:45:00-08:00
+    end_time: 2020-11-20 13:00:00-08:00
+    name: Posters/papers session 2
+    hosts: Brendan O'Connor
+  - start_time: 2020-11-20 13:00:00-08:00
+    end_time: 2020-11-20 13:45:00-08:00
+    name: |-
+      Invited Speaker: Diyi Yang, Assistant Professor, Interactive Computing, Georgia Institute of Technology
+      "Persuasion, Bias, and Choice? Building Socially-aware Language Technologies"
+    hosts: Svitlana Volkova
+  - start_time: 2020-11-20 13:45:00-08:00
+    end_time: 2020-11-20 14:30:00-08:00
+    name: 'Panel "CSS Research: An Industry Perspective"'
+    hosts: Svitlana Volkova
+  - start_time: 2020-11-20 14:30:00-08:00
+    end_time: 2020-11-20 14:35:00-08:00
+    name: Closing Remarks
+    hosts: David Jurgens
+  zoom_links:
+  - https://us02web.zoom.us/j/6709619322
+  prerecorded_talks: []
+- UID: WS-19
+  title: LOUHI 2020 - 11th International Workshop on Health Text Mining and Information
+    Analysis
+  organizers: Alberto Lavelli, James Pustejovsky, Eben Holderness, Antonio Jimeno
+    Yepes, Anne-Lyse Minard and Fabio Rinaldi
+  abstract: an interdisciplinary forum for researchers interested in automated processing
+    of health documents
+  website: https://louhi2020.fbk.eu/
+  rocketchat_channel: workshop-louhi2020
+  alias: louhi2020
+  sessions:
+  - start_time: 2020-11-20 09:00:00+00:00
+    end_time: 2020-11-20 09:15:00+00:00
+    name: Introduction
+    hosts: TBD
+  - start_time: 2020-11-20 09:15:00+00:00
+    end_time: 2020-11-20 10:45:00+00:00
+    name: |-
+      <b>Session 1</b>: oral presentations & QA <br>
+      The Impact of De-identification on Downstream Named Entity Recognition in Clinical Text (Hanna Berg, Aron Henriksson and Hercules Dalianis) <br>
+      Simple Hierarchical Multi-Task Neural End-To-End Entity Linking for Biomedical Text (Maciej Wiatrak and Juha Iso-Sipila) <br>
+      Medical Concept Normalization in User-Generated Texts by Learning Target Concept Embeddings (Katikapalli Subramanyam Kalyan and Sivanesan Sangeetha) <br>
+      Not a cute stroke: Analysis of Rule- and Neural Network-based Information Extraction Systems for Brain Radiology Reports (Andreas Grivas, Beatrice Alex, Claire Grover, Richard Tobin and William Whiteley) <br>
+      GGPONC: A Corpus of German Medical Text with Rich Metadata Based on Clinical Practice Guidelines (Florian Borchert, Christina Lohr, Luise Modersohn, Thomas Langer, Markus Follmann, Jan Philipp Sachs, Udo Hahn and Matthieu-P. Schapranow)
+    hosts: Antonio Jimeno
+  - start_time: 2020-11-20 10:45:00+00:00
+    end_time: 2020-11-20 11:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 11:00:00+00:00
+    end_time: 2020-11-20 12:20:00+00:00
+    name: |-
+      <b>Session 2</b>: oral presentations & QA <br>
+      Normalization of Long-tail Adverse Drug Reactions in Social Media (Emmanouil Manousogiannis, Sepideh Mesbah, Alessandro Bozzon, Robert-Jan Sips, Zoltan Szlanik and Selene Baez) <br>
+      Evaluation of Machine Translation Methods applied to Medical Term (Konstantinos Skianis, Yann Briand and Florent Desgrippes) <br>
+      Information retrieval for animal disease surveillance: a pattern-based approach (Sarah Valentin, Mathieu Roche and Renaud Lancelot) <br>
+      Multitask Learning of Negation and Speculation using Transformers (Aditya Khandelwal and Benita Kathleen Britto)
+    hosts: TBD
+  - start_time: 2020-11-20 12:20:00+00:00
+    end_time: 2020-11-20 14:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 14:00:00+00:00
+    end_time: 2020-11-20 14:45:00+00:00
+    name: '<b>Keynote speaker: Guergana Savova </b>'
+    hosts: Eben Holderness
+  - start_time: 2020-11-20 14:45:00+00:00
+    end_time: 2020-11-20 15:00:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 15:00:00+00:00
+    end_time: 2020-11-20 16:15:00+00:00
+    name: |-
+      <b>Session 3</b>: oral presentations & QA <br>
+      Biomedical Event Extraction as Multi-turn Question Answering (Xing David Wang, Leon Weber and Ulf Leser) <br>
+      An efficient representation of chronological events in medical texts (Andrey Kormilitzin, Nemanja Vaci, Qiang Liu, Hao Ni, Goran Nenadic and Alejo Nevado-Holgado) <br>
+      Defining and Learning Refined Temporal Relations in the Clinical Narrative (Kristin Wright-Bettner, Chen Lin, Timothy Miller, Steven Bethard, Dmitriy Dligach, Martha Palmer, James H. Martin and Guergana Savova) <br>
+      Context-Aware Automatic Text Simplification of Health Materials in Low-Resource Domains (Tarek Sakakini, Jong Yoon Lee, Aditya Duri, Renato F.L. Azevedo, Victor Sadauskas, Kuangxiao Gu, Suma Bhat, Dan Morrow, James Graumlich, Saqib Walayat, Mark Hasegawa-Johnson, Thomas Huang, Ann Willemsen-Dunlap and Donald Halpin)
+    hosts: Fabio Rinaldi
+  - start_time: 2020-11-20 16:15:00+00:00
+    end_time: 2020-11-20 16:30:00+00:00
+    name: Break
+    hosts: TBD
+  - start_time: 2020-11-20 16:30:00+00:00
+    end_time: 2020-11-20 17:30:00+00:00
+    name: |-
+      <b>Session 4</b>: oral presentations & QA <br>
+      Identifying Personal Experience Tweets of Medication Effects Using Pre-trained RoBERTa Language Model and Its Updating (Minghao Zhu, Youzhe Song, Ge Jin and Keyuan Jiang) <br>
+      Detecting Foodborne Illness Complaints in Multiple Languages Using English Annotations Only (Ziyi Liu, Giannis Karamanolakis, Daniel Hsu and Luis Gravano) <br>
+      Detection of Mental Health from Reddit via Deep Contextualized Representations (Zhengping Jiang, Sarah Ita Levitan, Jonathan Zomick and Julia Hirschberg)
+    hosts: TBD
+  zoom_links:
+  - https://us02web.zoom.us/j/9825218020
+  prerecorded_talks: []
+- UID: WS-20
+  title: Evaluation and Comparison of NLP Systems
+  organizers: "Steffen Eger, Yang Gao, Maxime Peyrard, Wei Zhao,\_Eduard Hovy,\_Mohit\
+    \ Bansal, Robert West,\_Ani Nenkova, and Ido Dagan"
+  abstract: The workshop focuses on designing evaluation metrics, reporting trustworthy
+    results and creating adequate and correct evaluation data.
+  website: https://nlpevaluation2020.github.io/
+  rocketchat_channel: workshop-eval4nlp
+  alias: eval4nlp
+  sessions:
+  - start_time: 2020-11-20 09:00:00+00:00
+    end_time: 2020-11-20 09:15:00+00:00
+    name: Opening Remarks
+    hosts: Eval4NLP
+  - start_time: 2020-11-20 09:15:00+00:00
+    end_time: 2020-11-20 10:15:00+00:00
+    name: 'Keynote 1: Goran Glavas'
+    hosts: Wei Zhao
+  - start_time: 2020-11-20 10:15:00+00:00
+    end_time: 2020-11-20 10:30:00+00:00
+    name: Break
+    hosts: ' '
+  - start_time: 2020-11-20 10:30:00+00:00
+    end_time: 2020-11-20 11:30:00+00:00
+    name: 'Keynote 2: Ido Dagan'
+    hosts: Maxime Peyrard
+  - start_time: 2020-11-20 11:30:00+00:00
+    end_time: 2020-11-20 12:30:00+00:00
+    name: Lunch Break
+    hosts: ' '
+  - start_time: 2020-11-20 12:30:00+00:00
+    end_time: 2020-11-20 13:30:00+00:00
+    name: 'Keynote 3: Asli Celikyilmaz'
+    hosts: Steffen Eger
+  - start_time: 2020-11-20 13:30:00+00:00
+    end_time: 2020-11-20 13:45:00+00:00
+    name: Break
+    hosts: ' '
+  - start_time: 2020-11-20 13:45:00+00:00
+    end_time: 2020-11-20 14:30:00+00:00
+    name: Best paper awards incl. short presentations
+    hosts: Steffen Eger
+  - start_time: 2020-11-20 14:30:00+00:00
+    end_time: 2020-11-20 15:30:00+00:00
+    name: 'Keynote 4: William Wang'
+    hosts: Yang Gao
+  - start_time: 2020-11-20 15:30:00+00:00
+    end_time: 2020-11-20 15:35:00+00:00
+    name: Concluding Remarks
+    hosts: Yang Gao
+  zoom_links:
+  - https://us02web.zoom.us/j/5916616973
+  prerecorded_talks: []
+- UID: WS-21
+  title: 4th Workshop on Structured Prediction for NLP
+  organizers: "Andr\xE9 F. T. Martins, Andreas Vlachos, Zornitsa Kozareva, Sujith\
+    \ Ravi, Gerasimos Lampouras, Priyanka Agrawal and Julia Kreutzer"
+  abstract: Structured prediction with continuous representations, task-level supervision
+    and latent linguistic structure.
+  website: http://structuredprediction.github.io/SPNLP20
+  rocketchat_channel: workshop-spnlp20
+  alias: spnlp20
+  sessions:
+  - start_time: 2020-11-20 09:00:00+00:00
+    end_time: 2020-11-20 09:10:00+00:00
+    name: Welcome Speech
+    hosts: |-
+      Priyanka Agrawal, André Martins
+      Zoom Link 1
+  - start_time: 2020-11-20 09:10:00+00:00
+    end_time: 2020-11-20 09:50:00+00:00
+    name: |-
+      Invited Talk: Introduction to Structured Prediction in NLP
+      Mark Johnson (Macquarie University)
+    hosts: |-
+      Priyanka Agrawal, André Martins
+      Zoom Link 1
+  - start_time: 2020-11-20 09:50:00+00:00
+    end_time: 2020-11-20 10:30:00+00:00
+    name: |-
+      Invited Talk: The Role and Representation of Alignments in Modern Seq2Seq Architectures
+      Sunita Sarawagi (IIT Bombay)
+    hosts: |-
+      Priyanka Agrawal, André Martins
+      Zoom Link 1
+  - start_time: 2020-11-20 10:30:00+00:00
+    end_time: 2020-11-20 11:00:00+00:00
+    name: Coffee Break
+    hosts: Gather Room E
+  - start_time: 2020-11-20 11:00:00+00:00
+    end_time: 2020-11-20 11:40:00+00:00
+    name: |-
+      Invited Talk: Explainable Fact Checking as Structured Prediction
+      Isabelle Augenstein (University of Copenhagen)
+    hosts: |-
+      Priyanka Agrawal, Andreas Vlachos
+      Zoom Link 1
+  - start_time: 2020-11-20 11:40:00+00:00
+    end_time: 2020-11-20 11:55:00+00:00
+    name: |-
+      Contributed Talk: On the Discrepancy between Density Estimation and Sequence Generation
+      (Jason Lee, Dustin Tran, Orhan Firat and Kyunghyun Cho)
+    hosts: |-
+      Priyanka Agrawal, Andreas Vlachos
+      Zoom Link 1
+  - start_time: 2020-11-20 11:55:00+00:00
+    end_time: 2020-11-20 12:10:00+00:00
+    name: |-
+      Contributed Talk: Improving Joint Training of Inference Networks and Structured Prediction Energy Networks
+      (Lifu Tu, Richard Yuanzhe Pang and Kevin Gimpel)
+    hosts: |-
+      Priyanka Agrawal, Andreas Vlachos
+      Zoom Link 1
+  - start_time: 2020-11-20 12:10:00+00:00
+    end_time: 2020-11-20 13:00:00+00:00
+    name: Lunch Break
+    hosts: Gather Room E
+  - start_time: 2020-11-20 13:00:00+00:00
+    end_time: 2020-11-20 13:40:00+00:00
+    name: |-
+      Invited Talk: Latent Tree Models for Compositional Generalization
+       Jonathan Berant (Tel-Aviv University)
+    hosts: |-
+      Andreas Vlachos,  Gerasimos L
+      Zoom Link 1
+  - start_time: 2020-11-20 13:40:00+00:00
+    end_time: 2020-11-20 13:55:00+00:00
+    name: |-
+      Contributed Talk: CopyNext: Explicit Span Copying and Alignment in Sequence to Sequence Models
+      (Abhinav Singh, Patrick Xia, Guanghui Qin, Mahsa Yarmohammadi and Benjamin Van Durme)
+    hosts: |-
+      Andreas Vlachos,  Gerasimos L
+      Zoom Link 1
+  - start_time: 2020-11-20 13:55:00+00:00
+    end_time: 2020-11-20 15:30:00+00:00
+    name: Poster Session
+    hosts: |-
+      André Martins, Andreas Vlachos
+      Gather Rooms E & F
+  - start_time: 2020-11-20 15:30:00+00:00
+    end_time: 2020-11-20 16:00:00+00:00
+    name: Coffee Break + Poster Session
+    hosts: |-
+      André Martins, Andreas Vlachos
+      Gather Rooms E & F
+  - start_time: 2020-11-20 16:00:00+00:00
+    end_time: 2020-11-20 16:40:00+00:00
+    name: |-
+      Invited Talk: Exploring Deep Structured NLP
+      Alexander Rush (Cornell Tech)
+    hosts: |-
+      Julia Kreutzer,  Gerasimos L
+      Zoom Link 1
+  - start_time: 2020-11-20 16:40:00+00:00
+    end_time: 2020-11-20 17:20:00+00:00
+    name: |-
+      Invited Talk: Interpretability with Differentiable Subset Selection
+      Ivan Titov (University of Edinburgh)
+    hosts: |-
+      Julia Kreutzer,  Gerasimos L
+      Zoom Link 1
+  - start_time: 2020-11-20 17:20:00+00:00
+    end_time: 2020-11-20 17:30:00+00:00
+    name: Closing Remarks
+    hosts: |-
+      Julia Kreutzer,  André Martins
+      Zoom Link 1
+  zoom_links:
+  - https://us02web.zoom.us/j/3828955479
+  - https://us02web.zoom.us/j/6468788696
+  prerecorded_talks:
+  - title: Invited talk by Isabelle Augenstein
+    speakers: Isabelle Augenstein
+    presentation_id: '38940145'
+  - title: Invited talk by Jonathan Berant
+    speakers: Jonathan Berant
+    presentation_id: '38940146'
+  - title: Invited talk by Mark Johnson
+    speakers: Mark Johnson
+    presentation_id: '38940147'
+  - title: Invited talk by Alexander Rush
+    speakers: Alexander Rush
+    presentation_id: '38940148'
+  - title: Invited talk by Sunita Sarawagi
+    speakers: Sunita Sarawagi
+    presentation_id: '38940149'
+  - title: Invited talk by Ivan Titov
+    speakers: Ivan Titov
+    presentation_id: '38940150'
+- UID: WS-23
+  title: NLP Beyond Text
+  organizers: Erik Cambria, Giuseppe Castellucci, Simone Filice, Soujanya Poria, Lucia
+    Specia
+  abstract: Can you really know if someone is sarcastic by only reading his texts?
+    If the answer is no, the NLPBT workshop is what you're looking for.
+  website: https://sites.google.com/view/nlpbt-2020
+  rocketchat_channel: workshop-nlpbt2020
+  alias: nlpbt2020
+  sessions:
+  - start_time: 2020-11-20 15:00:00+00:00
+    end_time: 2020-11-20 15:10:00+00:00
+    name: Intro to NLPBT
+    hosts: Simone Filice
+  - start_time: 2020-11-20 15:10:00+00:00
+    end_time: 2020-11-20 15:30:00+00:00
+    name: Modulated Fusion using Transformer for Linguistic-Acoustic Emotion Recognition
+    hosts: Simone Filice
+  - start_time: 2020-11-20 15:30:00+00:00
+    end_time: 2020-11-20 15:50:00+00:00
+    name: Multimodal Speech Recognition with Unstructured Audio Masking
+    hosts: Simone Filice
+  - start_time: 2020-11-20 15:50:00+00:00
+    end_time: 2020-11-20 16:10:00+00:00
+    name: 'Findings Paper: No Gestures Left Behind: Learning Relationships between
+      Spoken Language and Freeform Gestures'
+    hosts: Simone Filice
+  - start_time: 2020-11-20 16:10:00+00:00
+    end_time: 2020-11-20 17:00:00+00:00
+    name: 'Keynote Talk:  A Vision on (Simultaneous) Multimodal Machine Translation
+      Loic Barrault'
+    hosts: Simone Filice
+  - start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 18:30:00+00:00
+    name: Poster Session on gather.town
+    hosts: Giuseppe Castellucci
+  - start_time: 2020-11-20 18:30:00+00:00
+    end_time: 2020-11-20 18:50:00+00:00
+    name: 'MAST: Multimodal Abstractive Summarization with Trimodal Hierarchical Attention'
+    hosts: Giuseppe Castellucci
+  - start_time: 2020-11-20 18:50:00+00:00
+    end_time: 2020-11-20 19:10:00+00:00
+    name: Towards End-to-End In-Image Neural Machine Translation
+    hosts: Giuseppe Castellucci
+  - start_time: 2020-11-20 19:10:00+00:00
+    end_time: 2020-11-20 19:30:00+00:00
+    name: 'Findings Paper: Beyond Language: Learning Commonsense from Images for Reasoning'
+    hosts: Giuseppe Castellucci
+  - start_time: 2020-11-20 19:30:00+00:00
+    end_time: 2020-11-20 19:50:00+00:00
+    name: 'Reasoning Over History: Context Aware Visual Dialog'
+    hosts: Giuseppe Castellucci
+  - start_time: 2020-11-20 19:50:00+00:00
+    end_time: 2020-11-20 20:00:00+00:00
+    name: Closing NLPBT
+    hosts: Giuseppe Castellucci
+  zoom_links:
+  - https://us02web.zoom.us/j/4210020303
+  prerecorded_talks: []
+- UID: WS-24
+  title: 'PrivateNLP 2020: The First Workshop on Privacy in NLP'
+  organizers: Oluwaseyi Feyisetan, Sepideh Ghanavati, Patricia Thaine and Shervin
+    Malmasi
+  abstract: 'PrivateNLP focuses on Privacy Preserving systems: differential privacy,
+    anonymized datasets and models, GDPR compliance, and shared tasks!'
+  website: https://sites.google.com/view/privatenlp/
+  rocketchat_channel: workshop-privatenlp2020
+  alias: privatenlp2020
+  sessions:
+  - start_time: 2020-11-20 08:45:00-08:00
+    end_time: 2020-11-20 09:00:00-08:00
+    name: Opening remarks
+    hosts: TBD
+  - start_time: 2020-11-20 09:00:00-08:00
+    end_time: 2020-11-20 10:15:00-08:00
+    name: Session 1
+    hosts: TBD
+  - start_time: 2020-11-20 09:00:00-08:00
+    end_time: 2020-11-20 09:45:00-08:00
+    name: Invited talk by Aaron Roth
+    hosts: TBD
+  - start_time: 2020-11-20 09:45:00-08:00
+    end_time: 2020-11-20 10:15:00-08:00
+    name: On Log-Loss Scores and (No) Privacy
+    hosts: TBD
+  - start_time: 2020-11-20 10:30:00-08:00
+    end_time: 2020-11-20 12:15:00-08:00
+    name: Session 2
+    hosts: TBD
+  - start_time: 2020-11-20 10:30:00-08:00
+    end_time: 2020-11-20 11:15:00-08:00
+    name: Invited talk by Reza Shokri
+    hosts: TBD
+  - start_time: 2020-11-20 11:15:00-08:00
+    end_time: 2020-11-20 11:45:00-08:00
+    name: A Differentially Private Text Perturbation Method Using Regularized Mahalanobis
+      Metric
+    hosts: TBD
+  - start_time: 2020-11-20 11:45:00-08:00
+    end_time: 2020-11-20 12:15:00-08:00
+    name: 'TextHide: Tackling Data Privacy in Language Understanding Tasks'
+    hosts: TBD
+  - start_time: 2020-11-20 13:00:00-08:00
+    end_time: 2020-11-20 14:45:00-08:00
+    name: Session 3
+    hosts: TBD
+  - start_time: 2020-11-20 13:00:00-08:00
+    end_time: 2020-11-20 13:45:00-08:00
+    name: Invited talk by Mark Dras and Annabell McIver
+    hosts: TBD
+  - start_time: 2020-11-20 13:45:00-08:00
+    end_time: 2020-11-20 14:15:00-08:00
+    name: Identifying and Classifying Third-party Entities in Natural Language Privacy
+      Policies
+    hosts: TBD
+  - start_time: 2020-11-20 14:15:00-08:00
+    end_time: 2020-11-20 14:45:00-08:00
+    name: Surfacing Privacy Settings Using Semantic Matching
+    hosts: TBD
+  - start_time: 2020-11-20 15:00:00-08:00
+    end_time: 2020-11-20 17:00:00-08:00
+    name: Session 4
+    hosts: Patricia
+  - start_time: 2020-11-20 15:00:00-08:00
+    end_time: 2020-11-20 15:45:00-08:00
+    name: Invited talk by Krishnaram Kenthapadi
+    hosts: TBD
+  - start_time: 2020-11-20 15:45:00-08:00
+    end_time: 2020-11-20 16:15:00-08:00
+    name: Differentially Private Language Models Benefit from Public Pre-training
+    hosts: TBD
+  - start_time: 2020-11-20 16:15:00-08:00
+    end_time: 2020-11-20 16:45:00-08:00
+    name: A Semantics-based Approach to Disclosure Classification in User-Generated
+      Online Content
+    hosts: TBD
+  - start_time: 2020-11-20 16:45:00-08:00
+    end_time: 2020-11-20 17:00:00-08:00
+    name: Closing remarks
+    hosts: TBD
+  zoom_links:
+  - https://us02web.zoom.us/j/9648673341
+  prerecorded_talks:
+  - title: invited1
+    speakers: Aaron Roth
+    presentation_id: '38939775'
+  - title: invited2
+    speakers: Reza Shokri
+    presentation_id: '38939776'
+  - title: invited3
+    speakers: Krishnaram Kenthapadi
+    presentation_id: '38939777'
+  - title: invited4
+    speakers: Annabelle McIver, Mark Dras
+    presentation_id: '38939778'
+- UID: WS-25
+  title: 'BlackboxNLP 2020: Analyzing and interpreting neural networks for NLP'
+  organizers: "Yonatan Belinkov, Afra Alishahi, Grzegorz Chrupa\u0142a, Dieuwke Hupkes,\
+    \ Yuval Pinter and Hassan Sajjad"
+  abstract: Open the black-box of neural networks in NLP and make sense of the big
+    pile of goo inside it
+  website: https://blackboxnlp.github.io
+  rocketchat_channel: workshop-blackboxnlp2020
+  alias: blackboxnlp2020
+  sessions:
+  - start_time: 2020-11-20 04:00:00-04:00
+    end_time: 2020-11-20 04:15:00-04:00
+    name: Opening remarks
+    hosts: Grzegorz Chrupala
+  - start_time: 2020-11-20 04:15:00-04:00
+    end_time: 2020-11-20 05:00:00-04:00
+    name: Keynote 1 - Anna Rogers
+    hosts: Grzegorz Chrupala
+  - start_time: 2020-11-20 05:15:00-04:00
+    end_time: 2020-11-20 06:00:00-04:00
+    name: Oral session 1
+    hosts: Yonatan Belinkov
+  - start_time: 2020-11-20 06:15:00-04:00
+    end_time: 2020-11-20 06:30:00-04:00
+    name: System demonstration
+    hosts: Yonatan Belinkov
+  - start_time: 2020-11-20 06:30:00-04:00
+    end_time: 2020-11-20 08:00:00-04:00
+    name: Poster session A
+    hosts: gather.town
+  - start_time: 2020-11-20 08:15:00-04:00
+    end_time: 2020-11-20 09:00:00-04:00
+    name: Keynote 1 - Anna Rogers (repeat)
+    hosts: Yonatan Belinkov
+  - start_time: 2020-11-20 11:00:00-04:00
+    end_time: 2020-11-20 11:45:00-04:00
+    name: Keynote 2 - Roger Levy
+    hosts: Dieuwke Hupkes
+  - start_time: 2020-11-20 12:00:00-04:00
+    end_time: 2020-11-20 13:00:00-04:00
+    name: Oral session 2
+    hosts: Dieuwke Hupkes
+  - start_time: 2020-11-20 13:15:00-04:00
+    end_time: 2020-11-20 14:00:00-04:00
+    name: Keynote 3 - Idan Blank
+    hosts: Yonatan Belinkov
+  - start_time: 2020-11-20 14:00:00-04:00
+    end_time: 2020-11-20 14:20:00-04:00
+    name: Awards
+    hosts: Yonatan Belinkov
+  - start_time: 2020-11-20 14:30:00-04:00
+    end_time: 2020-11-20 16:00:00-04:00
+    name: Poster session B
+    hosts: gather.town
+  - start_time: 2020-11-20 19:00:00-04:00
+    end_time: 2020-11-20 19:45:00-04:00
+    name: Keynote 2 - Roger Levy (repeat)
+    hosts: Yuval Pinter
+  - start_time: 2020-11-20 20:00:00-04:00
+    end_time: 2020-11-20 21:30:00-04:00
+    name: Poster session C
+    hosts: gather.town
+  - start_time: 2020-11-20 21:30:00-04:00
+    end_time: 2020-11-20 22:45:00-04:00
+    name: Oral session 3
+    hosts: Yuval Pinter
+  - start_time: 2020-11-20 23:00:00-04:00
+    end_time: 2020-11-20 23:45:00-04:00
+    name: Keynote 3 - Idan Blank (repeat)
+    hosts: Yuval Pinter
+  zoom_links:
+  - https://us02web.zoom.us/j/4126435944
+  prerecorded_talks:
+  - title: Evaluating and calibrating neural language models for human-like language
+      processing
+    speakers: Roger Levy
+    presentation_id: '38939760'
+  - title: "Understanding NLP\u2019s blackbox with the brain\u2019s blackbox and vice\
+      \ versa"
+    speakers: Idan Blank
+    presentation_id: '38939761'
+  - title: When BERT plays the lottery, all tickets are winning!
+    speakers: Anna Rogers
+    presentation_id: '38939762'
+- UID: WS-26
+  title: NLP for COVID-19 Workshop (Part 2)
+  organizers: Karin Verspoor, Kevin Bretonnel Cohen, Mike Conway, Berry de Bruijn,
+    Mark Dredze, Rada Mihalcea and Byron Wallace
+  abstract:
+  website: https://www.nlpcovid19workshop.org/emnlp2020/
+  rocketchat_channel: workshop-nlp-covid19-emnlp
+  alias: nlp-covid19-emnlp
+  sessions:
+  - start_time: 2020-11-20 08:00:00+00:00
+    end_time: 2020-11-20 08:10:00+00:00
+    name: Welcome Speech
+    hosts: Karin Verspoor
+  - start_time: 2020-11-20 08:10:00+00:00
+    end_time: 2020-11-20 10:30:00+00:00
+    name: 'Session 1: Presentations'
+    hosts: Karin Verspoor
+  - start_time: 2020-11-20 10:30:00+00:00
+    end_time: 2020-11-20 11:30:00+00:00
+    name: Poster session 1 (gather.town)
+    hosts: Karin Verspoor
+  - start_time: 2020-11-20 11:30:00+00:00
+    end_time: 2020-11-20 16:00:00+00:00
+    name: long break
+    hosts: unhosted
+  - start_time: 2020-11-20 16:00:00+00:00
+    end_time: 2020-11-20 17:50:00+00:00
+    name: 'Session 2: Presentations'
+    hosts: Byron Wallace
+  - start_time: 2020-11-20 17:50:00+00:00
+    end_time: 2020-11-20 18:50:00+00:00
+    name: Poster session 1 (gather.town)
+    hosts: Mike Conway
+  - start_time: 2020-11-20 18:50:00+00:00
+    end_time: 2020-11-20 19:00:00+00:00
+    name: short break
+    hosts: unhosted
+  - start_time: 2020-11-20 19:00:00+00:00
+    end_time: 2020-11-20 20:35:00+00:00
+    name: 'Session 3: Presentations'
+    hosts: Mike Conway
+  - start_time: 2020-11-20 20:35:00+00:00
+    end_time: 2020-11-20 21:00:00+00:00
+    name: Discussion
+    hosts: Mike Conway
+  zoom_links:
+  - https://us02web.zoom.us/j/2311998450
+  prerecorded_talks: []

@@ -1,0 +1,224 @@
+- UID: T1
+  title: Interpreting Predictions of NLP Models
+  organizers: Eric Wallace, Matt Gardner, Sameer Singh
+  abstract: Although neural NLP models are highly expressive and empirically successful,
+    they also systematically fail in counterintuitive ways and are opaque in their
+    decision-making process. This tutorial will provide a background on interpretation
+    techniques, i.e., methods for explaining the predictions of NLP models. We will
+    first situate example-specific interpretations in the context of other ways to
+    understand models (e.g., probing, dataset analyses). Next, we will present a thorough
+    study of example-specific interpretations, including saliency maps, input perturbations
+    (e.g., LIME, input reduction), adversarial attacks, and influence functions. Alongside
+    these descriptions, we will walk through source code that creates and visualizes
+    interpretations for a diverse set of NLP tasks. Finally, we will discuss open
+    problems in the field, e.g., evaluating, extending, and improving interpretation
+    methods.
+  info: |-
+    This tutorial has slides that you see can anytime (It does not have any
+        prerecorded talk). It will be conducted entirely live on Zoom and will be
+        livestreamed on this page. It has a chat window that you can use to have
+        discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-1-interpreting-predictions
+  sessions:
+  - name: Part 1
+    start_time: 2020-11-19 15:00:00+00:00
+    end_time: 2020-11-19 16:30:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
+    hosts: Eric Wallace, Matt Gardner and Sameer Singh
+  - name: Q&A 1
+    start_time: 2020-11-19 16:30:00+00:00
+    end_time: 2020-11-19 17:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
+  - name: BREAK
+    start_time: 2020-11-19 17:00:00+00:00
+    end_time: 2020-11-19 17:30:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
+  - name: Part 2
+    start_time: 2020-11-19 17:30:00+00:00
+    end_time: 2020-11-19 19:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
+  - name: Q&A 2
+    start_time: 2020-11-19 19:00:00+00:00
+    end_time: 2020-11-19 19:30:00+00:00
+    zoom_link: https://us02web.zoom.us/j/2637599975
+  website: https://www.ericswallace.com/interpretability
+- UID: T2
+  title: 'Fact-Checking, Fake News, Propaganda, and Media Bias: Truth Seeking in the
+    Post-Truth Era'
+  organizers: Preslav Nakov, Giovanni Da San Martino
+  abstract: |-
+    The rise of social media has democratized content creation and has made it easy for anybody to share and to spread information online. On the positive side, this has given rise to citizen journalism, thus enabling much faster dissemination of information compared to what was possible with newspapers, radio, and TV. On the negative side, stripping traditional media from their gate-keeping role has left the public unprotected against the spread of disinformation, which could now travel at breaking-news speed over the same democratic channel. This situation gave rise to the proliferation of false information specifically created to affect individual people's beliefs, and ultimately to influence major events such as political elections; it also set the dawn of the Post-Truth Era, where appeal to emotions has become more important than the truth. More recently, with the emergence of the COVID-19 pandemic, a new blending of medical and political misinformation and disinformation has given rise to the first global infodemic. Limiting the impact of these negative developments has become a major focus for journalists, social media companies, and regulatory authorities.
+
+    The tutorial offers an overview of the emerging and inter-connected research areas of fact-checking, misinformation, disinformation, “fake news”, propaganda, and media bias detection, with focus on text and on computational approaches. It further explores the general fact-checking pipeline and important elements thereof such as check-worthiness estimation, spotting previous fact-checked claims, stance detection, source reliability estimation, and detecting malicious users in social media. Finally, it covers some recent developments such as the emergence of large-scale pre-trained language models, and the challenges and opportunities they offer.
+  info: |-
+    This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-2-fact-checking
+  sessions:
+  - name: Q&A
+    start_time: 2020-11-19 10:00:00+00:00
+    end_time: 2020-11-19 11:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/7912953569
+    hosts: Preslav Nakov and Giovanni Da San Martino
+  - name: Q&A
+    start_time: 2020-11-19 14:00:00+00:00
+    end_time: 2020-11-19 15:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/7912953569
+  prerecorded: '38940825'
+  website: https://propaganda.math.unipd.it/emnlp20-tutorial
+- UID: T3
+  title: High Performance Natural Language Processing
+  organizers: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
+    Kenton Lee
+  abstract: Scale has played a central role in the rapid progress natural language
+    processing has enjoyed in recent years. While benchmarks are dominated by ever
+    larger models, efficient hardware use is critical for their widespread adoption
+    and further progress in the field. In this cutting-edge tutorial, we will recapitulate
+    the state-of-the-art in natural language processing with scale in perspective.
+    After establishing these foundations, we will cover a wide range of techniques
+    for improving efficiency, including knowledge distillation, quantization, pruning,
+    more efficient architectures, along with case studies and practical implementation
+    tricks.
+  info: |-
+    This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-3-high-performance
+  sessions:
+  - name: Q&A
+    start_time: 2020-11-19 17:00:00+00:00
+    end_time: 2020-11-19 18:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9096516638
+    hosts: Gabriel Ilharco, Cesar Ilharco, Iulia Turc, Tim Dettmers, Felipe Ferreira,
+      Kenton Lee
+  - name: Q&A
+    start_time: 2020-11-20 00:00:00+00:00
+    end_time: 2020-11-20 01:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9096516638
+  prerecorded: '38940826'
+- UID: T4
+  title: 'Machine Reasoning: Technology, Dilemma and Future'
+  organizers: Nan Duan, Duyu Tang, Ming Zhou
+  abstract: Machine reasoning research aims to build interpretable AI systems that
+    can solve problems or draw conclusions from what they are told (i.e. facts and
+    observations) and already know (i.e. models, common sense and knowledge) under
+    certain constraints. In this tutorial, we will (1) describe the motivation of
+    this tutorial and give our definition on machine reasoning; (2) introduce typical
+    machine reasoning frameworks, including symbolic reasoning, probabilistic reasoning,
+    neural-symbolic reasoning and neural-evidence reasoning, and show their successful
+    applications in real-world scenarios; (3) talk about the dilemma between black-box
+    neural networks with state-of-the-art performance and machine reasoning approaches
+    with better interpretability; (4) summarize the content of this tutorial and discuss
+    possible future directions.
+  info: |-
+    This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-4-machine-reasoning
+  sessions:
+  - name: Q&A
+    start_time: 2020-11-19 09:00:00+00:00
+    end_time: 2020-11-19 10:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/4445879998
+    hosts: Nan Duan, Duyu Tang and Ming Zhou
+  - name: Q&A
+    start_time: 2020-11-20 01:00:00+00:00
+    end_time: 2020-11-20 02:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/4445879998
+  prerecorded: '38940827'
+- UID: T5
+  title: Representation, Learning and Reasoning on Spatial Language for Down-stream
+    NLP Tasks
+  organizers: Parisa Kordjamshidi, James Pustejovsky, Marie-Francine Moens
+  abstract: Understating spatial semantics expressed in natural language can become
+    highly complex in real-world applications. This includes applications of language
+    grounding, navigation, visual question answering, and more generic human-machine
+    interaction and dialogue systems. In many of such downstream tasks, explicit representation
+    of spatial concepts and relationships can improve the capabilities of machine
+    learning models in reasoning and deep language understanding. In this tutorial,
+    we overview the cutting-edge research results and existing challenges related
+    to spatial language understanding including semantic annotations,  existing corpora,
+    symbolic and sub-symbolic representations, qualitative spatial reasoning, spatial
+    common sense, deep and structured learning models.  We discuss the recent results
+    on the above-mentioned applications --that need spatial language learning and
+    reasoning -- and highlight the research gaps and future directions.
+  info: |-
+    This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-5-spatial-language
+  sessions:
+  - name: Q&A
+    start_time: 2020-11-20 17:00:00+00:00
+    end_time: 2020-11-20 18:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/8232538402
+    hosts: Parisa Kordjamshidi, James Pustejovsky and Marie-Francine Moens
+  - name: Q&A
+    start_time: 2020-11-21 00:00:00+00:00
+    end_time: 2020-11-21 01:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/8232538402
+  prerecorded: '38940828'
+  website: https://spatial-language-tutorial.github.io
+- UID: T6
+  title: Simultaneous Translation
+  organizers: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan, Zhongjun He
+  abstract: |-
+    Simultaneous translation, which performs translation concurrently with the source speech, is widely useful in many scenarios such as international conferences, negotiations, press releases, legal proceedings, and medicine. This problem has long been considered one of the hardest problems in AI and one of its holy grails.
+    Recently, with rapid improvements in machine translation, speech recognition, and speech synthesis, there has been exciting progress towards simultaneous translation. This tutorial will focus on the design and evaluation of policies for simultaneous translation, to leave attendees with a deep technical understanding of the history, the recent advances, and the remaining challenges in this field.
+  info: |-
+    This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-6-simultaneous-translation
+  sessions:
+  - name: Q&A
+    start_time: 2020-11-20 18:00:00+00:00
+    end_time: 2020-11-20 19:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9514558044
+    hosts: Liang Huang, Colin Cherry, Mingbo Ma, Naveen Arivazhagan and Zhongjun He
+  - name: Q&A
+    start_time: 2020-11-21 01:00:00+00:00
+    end_time: 2020-11-21 02:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9514558044
+  prerecorded: '38940829'
+- UID: T7
+  title: The Amazing World of Neural Language Generation
+  organizers: Yangfeng Ji, Antoine Bosselut, Thomas Wolf, Asli Celikyilmaz
+  abstract: 'Neural Language Generation (NLG) -- using neural network models to generate
+    coherent text -- is among the most promising methods for automated text creation.  Recent
+    years have seen a paradigm shift in neural text generation, caused by the advances
+    in deep contextual language modeling (e.g., LSTMs, GPT, GPT2) and transfer learning
+    (e.g., ELMo, BERT). While these tools have dramatically improved the state of
+    NLG, particularly for low resources tasks, state-of-the-art NLG models still face
+    many challenges: a lack of diversity in generated text, commonsense violations
+    in depicted situations, difficulties in making use of factual information, and
+    difficulties in designing reliable evaluation metrics. In this tutorial, we will
+    present an overview of the current state-of-the-art in neural network architectures,
+    and how they shaped recent research directions in text generation. We will discuss
+    how and why these models succeed/fail at generating coherent text, and provide
+    insights on several applications.'
+  info: |-
+    This tutorial has a prerecorded talk on this page (see below) that you can watch anytime during the conference. It
+        also has two live sessions that will be conducted on Zoom and will be livestreamed on this page. Additionally, it has
+        a chat window that you can use to have discussions with the tutorial teachers and other attendees anytime during the
+        conference.
+  rocketchat_channel: tutorial-7-world-of-generation
+  sessions:
+  - name: Q&A
+    start_time: 2020-11-20 19:00:00+00:00
+    end_time: 2020-11-20 20:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9058998626
+    hosts: Yangfeng Ji, Antoine Bosselut, Thomas Wolf and Asli Celikyilmaz
+  - name: Q&A
+    start_time: 2020-11-21 01:00:00+00:00
+    end_time: 2020-11-21 02:00:00+00:00
+    zoom_link: https://us02web.zoom.us/j/9058998626
+  prerecorded: '38940830'
+  website: https://nlg-world.github.io

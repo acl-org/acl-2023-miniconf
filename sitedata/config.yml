@@ -1,0 +1,32 @@
+name: EMNLP2020
+tagline: The 2020 Conference on Empirical Methods <br/> in Natural Language Processing
+date: November 16 &ndash; 20 <br> 2020
+proceedings_title: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing
+citation_date: November 2020
+analytics: UA-179777566-1
+site_url: https://virtual.2020.emnlp.org
+logo:
+  image: static/images/emnlp2020/acl-logo.png
+  height: 45px
+site_title: EMNLP2020
+page_title:
+  prefix: 'EMNLP2020'
+  separator: ': '
+background_image: static/images/emnlp2020/EMNLP-Banner-5.1.jpg
+organization: Association for Computational Linguistics
+
+# Path to the folder of paper images.
+paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
+
+default_presentation_id: 38931484
+
+# Remove or change to your chat server.
+chat_server: emnlp2020.rocket.chat
+channels_stats_server: https://emnlp2020-channels-stats.azure-api.net
+
+gather_town: https://www.virtualchair.net/events/emnlp2020
+connected_papers_conference_name: EMNLP2020
+
+calendar:
+  start: '2020-11-16'
+  end: '2020-11-20'

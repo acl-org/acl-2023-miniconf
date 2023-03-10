@@ -1,0 +1,122 @@
+committee:
+  - aff: University of Edinburgh, UK
+    image: https://2020.emnlp.org/static/1bc4b2fd3ed07db0a3dd87271a8df3c5/94da3/bonnie_webber.jpg
+    name: Bonnie Webber
+    role: General Chair
+  - aff: The University of Melbourne, Australia
+    image: https://2020.emnlp.org/static/6a8ad7ecaa679312d5d67b4f9342faac/94da3/trevor_cohn.jpg
+    name: Trevor Cohn
+    role: Program Co-chair
+  - aff: University of Warwick, UK
+    image: https://2020.emnlp.org/static/b173696a1709bfbfecdd2be93a57a846/94da3/yulan_he.jpg
+    name: Yulan He
+    role: Program Co-chair
+  - aff: "Amazon \u2013 Alexa AI, USA"
+    image: https://2020.emnlp.org/static/5efed94a102b6e6fd30066ec778172e4/94da3/yang_liu.jpg
+    name: Yang Liu
+    role: Program Co-chair
+  - aff: University of Malta, Malta
+    image: https://2020.emnlp.org/static/592074e7ccdfb0d8d82702b0c385c32b/94da3/lonneke_van_der_plas.jpg
+    name: Lonneke van der Plas
+    role: Workshop Chair
+  - aff: McGill University, Canada
+    image: https://2020.emnlp.org/static/d3ba870fc3fd718edb064d9d5b9c963d/94da3/jackie_chi_kit_cheung.jpg
+    name: Jackie Chi Kit Cheung
+    role: Workshop Chair
+  - aff: University of Sheffield, UK
+    image: https://2020.emnlp.org/static/defc4001888c4c80a4e8410806c9e290/94da3/aline_villavicencio.jpg
+    name: Aline Villavicencio
+    role: Tutorial Chair
+  - aff: Johns Hopkins University, USA
+    image: https://2020.emnlp.org/static/98ee780dd02d8fef790dcea3f7d2fcd3/7ba55/benjamin_van_durme.jpg
+    name: Benjamin van Durme
+    role: Tutorial Chair
+  - aff: Huawei Noah's Ark Lab, Hong Kong
+    image: https://2020.emnlp.org/static/e3b54bc911ff3187a0dcd1a1302252d8/94da3/qun_liu.jpg
+    name: Qun Liu
+    role: Demonstration Chair
+  - aff: University of Potsdam, Germany
+    image: https://2020.emnlp.org/static/2561cb887e75cae94da97054cbb6d134/94da3/david_schlangen.jpg
+    name: David Schlangen
+    role: Demonstration Chair
+  - aff: University of Central Florida, USA
+    image: https://2020.emnlp.org/static/5092a15c0874961beec142bf36ffc110/94da3/fei_liu.jpg
+    name: Fei Liu
+    role: General Publication Chair
+  - aff: University of Toulouse, France, UK
+    image: https://2020.emnlp.org/static/c56fe81d28f29b6bc50d7064a3292a1e/94da3/philippe_muller.jpg
+    name: Philippe Muller
+    role: Publication Chair
+  - aff: Royal Holloway, University of London
+    image: https://2020.emnlp.org/static/6c2dbb34009b6deff1a67f7095d43708/7a6cf/yang_gao.png
+    name: Yang Gao
+    role: Publication Chair
+  - aff: The Hong Kong Polytechnic University, Hong Kong
+    image: https://2020.emnlp.org/static/a4ba39118bd47fb8f61ac0022fc7b6ab/94da3/jing_li.jpg
+    name: Jing Li
+    role: Publication Chair
+  - aff: University of Turku, Finland
+    image: https://2020.emnlp.org/static/90012ef5c420ce11f1a09e0b1c21963e/94da3/veronika_laippala.jpg
+    name: Veronika Laippala
+    role: Publication Chair
+  - aff: University of Copenhagen, Denmark
+    image: https://2020.emnlp.org/static/cb7726e03753f2ca6de917658148b155/94da3/anna_rogers.jpg
+    name: Anna Rogers
+    role: Publicity Chair
+  - aff: Harbin Institute of Technology, China
+    image: https://2020.emnlp.org/static/ae751e75d91d08d2939b274405854b65/94da3/ruifeng_xu.jpg
+    name: Ruifeng Xu
+    role: Publicity Chair
+  - aff: Culture Amp, Australia
+    image: https://2020.emnlp.org/static/e9bf5d21c129c1295099cdea7515e59c/94da3/andy_mackinlay.jpg
+    name: Andy MacKinlay
+    role: Website Chair
+  - aff: Google, USA
+    image: ''
+    name: Kellie Webster
+    role: Student Volunteer Coordinator & Student Scholarship Chair
+  - aff: University of Copenhagen
+    image: https://2020.emnlp.org/static/81ac8cc54abd4a4257a36262b43a7612/94da3/isabelle_augenstein.jpg
+    name: Isabelle Augenstein
+    role: Diversity & Inclusion Chair
+  - aff: ''
+    image: https://2020.emnlp.org/static/39dd647aa2a52e522a5b6485cc64a3cd/94da3/chris_brew.jpg
+    name: Chris Brew
+    role: Diversity & Inclusion Chair
+  - aff: University of Stockholm
+    image: https://2020.emnlp.org/static/cf0d65976c54e6df10d9d5a2e29e3e2f/94da3/murathan_kurfali.jpg
+    name: Murathan Kurfali
+    role: Diversity & Inclusion Student Chair
+  - aff: Nanyang Technological University, Singapore
+    image: https://2020.emnlp.org/static/ad66a7ccf5824bde5faab124ad8d6c3a/94da3/prathyusha_jwalapuram.jpg
+    name: Prathyusha Jwalapuram
+    role: Diversity & Inclusion Student Chair
+  - aff: Technical University of Darmstadt, Germany
+    image: https://2020.emnlp.org/static/80e59d1d5fd18bb21eaae8c0da5e5fbb/94da3/jan-christoph_klie.jpg
+    name: Jan-Christoph Klie
+    role: Virtual Infrastructure Co-chair
+  - aff: Chinese Academy of Sciences, China
+    image: https://2020.emnlp.org/static/82dda44a38439af353648c931814dd9a/94da3/yang_feng.jpg
+    name: Yang Feng
+    role: Virtual Infrastructure Co-chair
+  - aff: Fudan University, China
+    image: https://2020.emnlp.org/static/65d86d48aca35dea862bc16a060185f7/94da3/zhongyu_wei.jpg
+    name: Zhongyu Wei
+    role: Virtual Infrastructure Co-chair
+  - aff: University of North Texas, USA
+    image: https://2020.emnlp.org/static/e4361b3c3aeb75120afda05edf318439/94da3/eduardo_blanco.jpg
+    name: Eduardo Blanco
+    role: Virtual Infrastructure Co-chair
+  - aff: Microsoft Research, USA
+    image: https://2020.emnlp.org/static/aaf18ad0ead732dad61c81118f80cf03/94da3/sudha_rao.jpg
+    name: Sudha Rao
+    role: Advisors, Virtual Infrastructure Committee
+  - aff: Microsoft Semantic Machines, USA
+    image: https://2020.emnlp.org/static/e1e861e5e50769036955a9a9164d7b74/7a6cf/hao_fang.png
+    name: Hao Fang
+    role: Advisors, Virtual Infrastructure Committee
+  - aff: Association for Computational Linguistics, USA
+    image: ''
+    name: Priscilla Rasmussen
+    role: ACL Business Manager & Local Arrangements Chair
+    tw: ''

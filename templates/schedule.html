@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% set active_page = "Schedule" %}
+{% set page_title = "Schedule" %}
+{% block head %}
+{{ super() }}
+{% include 'cal_head.html' %}
+{% endblock %}
+
+{% block heading %}
+{{ components.section("Schedule") }}
+  <div class="text-muted text-center">
+  Use <strong>"day" view to show more details</strong> about ongoing events on each day.
+  <br />
+  Click each session card in the day view to find out all papers in the specific session.
+  <br />
+  <strong>To see a list of all paper Q&A sessions, please visit our <a href="qa_sessions.html">
+    Q&A session overview
+  </a> .</strong>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="form-group col">
+    <label for="time-zone-selector">Timezone:</label>
+    <select id="time-zone-selector" class="selectpicker" data-live-search="true">
+      <option value="local" selected>Local</option>
+      <option value="UTC">UTC</option>
+    </select>
+    <label for="event-type-selector">&nbsp;Event type:</label>
+    <select id="event-type-selector" class="selectpicker" multiple>
+        {% for event_type in event_types | sort %}
+        <option value="{{ event_type }}" selected>{{ event_type }}</option>
+        {% endfor %}
+    </select>
+    <div id='calendar'></div>
+  </div>
+  
+
+<script type="text/javascript">
+  lazyLoader();
+</script>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% set active_page = "Tutorials" %}
+{% set page_title = "Tutorials" %}
+
+{% block heading %}
+{{ components.section("Tutorial") }}
+
+<div class="text-center text-muted">
+    Below are the tutorials to be held on November 19th and November 20th, 2020. Click on it to access its material. <br/>
+    You can also view the schedule by going to the "day" view on the <a href="schedule.html" target="_blank">Schedule</a>
+    page for November 19 and November 20.</div>
+{% endblock %}
+
+{% block content %}
+<div class="tutorials">
+  {{ components.tutorialgroup(tutorials) }}
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+{% endblock %}

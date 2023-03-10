@@ -1,0 +1,161 @@
+{% set page_title = tutorial.title %}
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      {{tutorial.id}}: {{tutorial.title}}
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      {{ tutorial.organizers }}
+    </h3>
+
+    <div class="text-center p-3">
+    <a class="card-link" data-toggle="collapse" role="button" href="#details">
+      Description
+    </a>
+
+    {% if tutorial.sessions %}
+    <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+      Schedule
+    </a>
+    {% endif %}
+
+    {% if tutorial.website %}
+      <a href="{{tutorial.website}}" target="_blank"  class="card-link">
+        Website
+      </a>
+    {% endif %}
+    {% if tutorial.slides %}
+      <a href="{{tutorial.slides}}" target="_blank"  class="card-link">
+        Slides
+      </a>
+    {% endif %}
+    {% if tutorial.material %}
+      <a href="{{tutorial.material}}" target="_blank"  class="card-link">
+        Material
+      </a>
+    {% endif %}
+    </div>
+
+    {{ components.live_sessions(
+        tutorial.blocks,
+        tutorial.title,
+        "https://virtual.acl2020.org/tutorial_" + tutorial.id + ".html",
+        false) }}
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        {{tutorial.abstract|safe}} <br />
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+{% if tutorial.sessions %}
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 30%;">Time</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Hosts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in tutorial.sessions %}
+        <tr>
+            <td>
+              {{event.day}}, <span class="session_times">{{event.time_string}}</span>
+            </td>
+          <td scope="row">{{event.session_name}}</td>
+          <td style="white-space: pre-wrap;">{{event.hosts}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="row m-2">
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <b>Information about the virtual format of this tutorial: </b>
+      {{tutorial.virtual_format_description}}
+    </div>
+  </div>
+
+  <div class="text-muted text-center">
+    {% if tutorial.prerecorded %}
+    <a class="btn btn-outline-danger"
+       href="https://slideslive.com/{{tutorial.prerecorded}}" target="_blank"
+       style="margin-left: 5px; margin-right: 5px">
+      Pre-recorded Video
+    </a>
+    {% endif %}
+
+    <a class="btn btn-outline-danger"
+       href="https://{{config.chat_server}}/channel/{{tutorial.rocketchat_channel}}"
+       target="_blank"
+       style="margin-left: 5px; margin-right: 5px">
+      Chat
+    </a>
+  </div>
+
+  <div class="row m-2">   
+
+    {% if tutorial.prerecorded %}
+      {% set rocketchat_width = 5 %}
+    {% else %}
+      {% set rocketchat_width = 12 %}
+    {% endif %}
+
+    <!-- Prerecorded Talk -->
+    {% if tutorial.prerecorded %}
+    <div class="col-md-7 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed-{{tutorial.prerecorded}}" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed-{{tutorial.prerecorded}}', {
+          presentationId: '{{tutorial.prerecorded}}',  // TODO: make this configurable
+          autoPlay: false, // change to true to autoplay the embedded presentation
+          verticalEnabled: true,
+          verticalWhenWidthLte: 500,
+          allowHiddenControlsWhenPaused: true,
+          hideTitle: true
+        });
+      </script>
+    </div>
+    {% endif %}
+
+    <!-- RocketChat Channel -->
+    <div class="col-md-{{ rocketchat_width }} col-xs-12 p-2">
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{tutorial.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+{% endblock %}

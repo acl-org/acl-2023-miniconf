@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% set page_title = "Q&A Sessions" %}
+
+{% block heading %}
+{{ components.section("Q&A Sessions") }}
+Each <a class="text" href="papers.html" >paper</a> has a pre-recorded 7-12 minute talk,
+        one live Q&A video sessions (on Zoom or in Gather.Town) at different times, and a linked RocketChat channel (for chatting anytime with the author).
+        This includes <a class="text" href="papers.html?filter=titles&program=demo&track=All+tracks" >System Demonstrations</a> papers</a>.
+{% endblock %}
+
+{% block tabs %}
+{{ components.tabs(qa_session_days) }}
+{% endblock %}
+
+{% block content %}
+<div class="tab-content" id="nav-tabContent">
+
+    {% for (tab_id, day, active) in qa_session_days %}
+    <div
+            class="tab-pane fade {{ 'active show' if active else '' }}"
+            id="tab-{{ tab_id }}"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+    >
+
+        <div id="{{ tab_id }}">
+            <div class="plenary_sessions">
+                {% for session in qa_sessions[day] %}
+                <div class="row p-4 col-md-12">
+
+                    <a name="{{ session.uid }}">
+                        <h5>{{ session.name }}:
+                            {{session.day}},
+                            <span>{{session.session}} </span>
+                            <span class="session_times">{{session.session}} {{session.time_string}}</span>
+                        </h5>
+                    </a>
+
+                    {% for subsession in session.subsessions %}
+                    <div class="col-12 mb-4">
+                        <strong>{{ subsession.name }}</strong>
+                        <ul>
+                            {% for paper_id in subsession.papers %}
+                            {% set paper = papers[paper_id] %}
+                            <li>
+                                <a class="text-dark" href="paper_{{paper.id}}.html" target="_blank">
+                                    {{ paper.content.title }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% if session.uid.startswith("z") %}
+                            {% if subsession.link %}
+                            <a class="btn btn-primary btn-sm" href="{{ subsession.link }}" role="button" target="_blank">Join via Zoom</a>
+                            {% endif %}
+                        {% elif session.uid.startswith("g") %}
+                            <a class="btn btn-info btn-sm" href="{{ config.gather_town }}" role="button" target="_blank">Join on Gather</a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+<script src="static/js/time-extend.js"></script>
+<script>
+    $(document).ready(() => {
+        add_local_tz('.session_times');
+    });
+</script>
+
+{% endblock %}

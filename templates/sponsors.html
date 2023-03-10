@@ -1,0 +1,51 @@
+{% set active_page = "Sponsors" %}
+{% set page_title = "Sponsors" %}
+{% extends "base.html" %}
+
+{% block heading %}
+{{ components.section("Sponsor Lounge") }}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-12 pb-4">
+    <p class="lead">
+      EMNLP 2020 is grateful to all its sponsors, who are listed below. We simply
+      couldn't run the conference without the help of these generous companies. We
+      thank them sincerely for their ongoing support of the NLP/CL community.
+      <br >
+      <span class="font-weight-bold">Click on sponsor logos to visit their Virtual Exhibit Spaces!</span>
+    </p>
+  </div>
+
+</div>
+
+<div class="sponsors">
+  <div class="cards row">
+  {% for sponsor_level in sponsor_levels %}
+    {% if sponsors[sponsor_level] | length > 0 %}
+      <div class="col-12 pt-3">
+      <h2>{{ sponsor_level }}</h2>
+      <hr />
+      </div>
+
+      {% for sponsor in sponsors[sponsor_level] %}
+        {% if sponsor.landingpage is defined %}
+          <a class="text-muted" href="{{sponsor.landingpage}}" target="_blank">
+        {% else %}
+          <a class="text-muted" href="sponsor_{{sponsor.UID}}.html">
+        {% endif %}
+      <div class="col-md-3 col-sm-6">
+        <div class="sponsorLogo">
+            <span class="sponsorHelper"></span>
+              <img class="card-img-top sponsorImg" src="static/images/sponsors/{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

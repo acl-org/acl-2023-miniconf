@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% set active_page = "Workshops" %}
+{% set page_title = "Workshops" %}
+
+{% block heading %}
+{{ components.section("Workshops") }}
+
+<div class="text-center text-muted">
+  You can also view the schedule by going to the "day" view on the <a href="schedule.html" target="_blank">Schedule</a> page for November 19 and November 20.
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="workshops">
+  {{ components.workshopgroup(workshops) }}
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+{% endblock %}

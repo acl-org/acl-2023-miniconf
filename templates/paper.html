@@ -1,0 +1,268 @@
+{% set page_title = paper.content.title %}
+{% extends "base.html" %}
+
+{% block head %}
+
+{{ super() }}
+<meta name="citation_title" content="{{paper.content.title}}" />
+{% for author in paper.content.authors %}
+<meta name="citation_author" content="{{author}}" />
+{% endfor %}
+<meta name="citation_publication_date" content="{{config.citation_date}}" />
+<meta name="citation_conference_title" content="{{config.tagline|striptags|title}}" />
+<meta name="citation_inbook_title" content="{{config.proceedings_title}}" />
+<meta name="citation_abstract" content="{{paper.content.abstract}}" />
+{% for keyword in paper.content.keywords %}
+<meta name="citation_keywords" content="{{keyword}}" />
+{% endfor %}
+<meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
+
+<script src="static/js/persistor.js"></script>
+
+<script>
+  let paper_id = "{{ paper.id }}"
+
+  function updateFavBtn(isFav){
+    let favBtn = $('#favBtn');
+    if (isFav) {
+      // favBtn.removeClass('btn-outline-primary')
+      favBtn.addClass('card-link-warning');
+      favBtn.html('<i class="fas fa-star"></i>');
+      favBtn.tooltip(
+          {title:'Click to remove from Favorites', placement: 'right'});
+    } else {
+      favBtn.removeClass('card-link-warning')
+      // favBtn.addClass('btn-outline-primary')
+      favBtn.html('<i class="fas fa-star"></i> Add to Favorites');
+      favBtn.tooltip('dispose');
+    }
+  }
+
+  $(document).ready(function () {
+
+    const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
+
+    let isFav = favPersistor.get(paper_id);
+    updateFavBtn(isFav)
+
+    $('#favBtn').click(()=>{
+      let isFav = favPersistor.get(paper_id) || false;
+      favPersistor.set(paper_id, !isFav);
+      updateFavBtn(!isFav);
+    })
+  })
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Title -->
+<div class="card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="color: black">
+      {{paper.content.title}}
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      {% for author in paper.content.authors %}
+      <a href="papers.html?filter=authors&search={{author}}&program=all" class="text-primary"
+        >{{author}}</a
+      >{{ "," if not loop.last }}
+      {% endfor %}
+    </h3>
+   
+    <div class="text-center p-3">
+      {% if paper.content.abstract %}
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      {% endif %}
+
+      {% if paper.content.pdf_url %}
+      <a class="card-link" target="_blank" href="{{paper.content.pdf_url}}">
+        Paper
+      </a>
+      {% endif %}
+      {% if paper.content.code != blank %}
+      <a href="{{paper.content.code}}" target="_blank" class="card-link">
+        Code
+      </a>
+      {% endif %}
+      {% if paper.content.demo_url %}
+      <a href="{{paper.content.demo_url}}" target="_blank" class="card-link">
+        Demo
+      </a>
+      {% endif %}
+      {% if paper.content.program == "main" %}
+      <a class="card-link" target="_blank" href="https://www.connectedpapers.com/conferece-redirect/main/{{ config.connected_papers_conference_name }}/{{paper.id}}/graph">
+        Connected Papers
+      </a>
+      {% endif %}
+
+      {% if paper.content.material %}
+      {% for material in paper.content.material.split("|") %}
+        <span class="card-link d-inline-block">{{ material|markdown }}</span>
+      {% endfor %}
+      {% endif %}
+      
+      <a href="#" id="favBtn" class="card-link">
+        <i class="fas fa-star"></i> Add to Favorites
+      </a>
+    </div>
+    <p class="card-text text-center h5">
+
+      {% if paper.content.program == "main" %}
+     <a href="papers.html?program=main&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
+     {% elif paper.content.program == "workshop" %}
+      <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
+      {% endif %}
+      <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
+    </p>
+
+    {{ components.live_sessions(
+        paper.content.sessions,
+        paper.content.title,
+        "https://virtual.2020.emnlp.org/paper_" + paper.id + ".html",
+        false) }}
+
+        <p class="card-text text-center h5 pt-2">
+
+    {% if paper.presentation_id %}
+      <span>
+      You can open the
+    <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank">pre-recorded video</a>
+    and the
+    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+       target="_blank">#{{paper.rocketchat_channel}}</a>
+    channel
+    in separate windows.
+    </span>
+    {% endif %}
+    </p>
+
+  </div>
+</div>
+<div id="details" class="pp-card m-3 {% if paper.content.program != "findings"%}collapse{% endif %}">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        {{paper.content.abstract}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if paper.content.program != "findings" %}
+{% if paper.presentation_id %}
+<div class="container" style="; padding: 0px;">
+  <div class="text-muted text-center">
+  </div>
+  <div class="row m-2">
+    <!-- Slides Live-->
+    <div class="col-md-7 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '{{paper.presentation_id | default(config.default_presentation_id)}}',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+
+      <div class="text-muted">
+      NOTE: Video may display a random order of authors.
+      Correct author list is at the top of this page.
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div class="col-md-5 col-xs-12 p-2">
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+       target="_blank">#{{paper.rocketchat_channel}}</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+
+{% if paper.poster_pdf %}
+{{ components.section("Example Poster") }}
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.content.poster_link
+        initPDFViewer("{{paper.poster_pdf}}",'#pdf_view');
+    })
+</script>
+{% endif %}
+
+{% if config.connected_papers_conference_name and paper.content.program == "main" %}
+<div class="container">
+  {{ components.section("Connected Papers in EMNLP2020") }}
+  <iframe width="100%" height="600px" loading="lazy" style="border:none;"
+            src="https://www.connectedpapers.com/conferece-redirect/conference/{{ config.connected_papers_conference_name }}/{{ paper.id }}/graph">
+  </iframe>
+</div>
+{% endif %}
+
+{% if paper_recs %}
+{{ components.section("Similar Papers") }}
+<div class="container" >
+  <div class="row">
+  {% for recommended in paper_recs %}
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card card" >
+        <div class="card-header pp-card-header " class="text-muted">
+          <a href="paper_{{recommended.id}}.html" class="text-muted">
+            <h5 class="card-title" align="center">{{recommended.content.title}}</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             {% for a in recommended.content.authors %}
+             {{a}},
+             {% endfor %}
+          </h6>
+          <center>
+              <img class="cards_img" src="{{recommended.card_image_path}}" onerror="javascript:this.onerror=null;this.src=''" width="80%"/>
+          </center>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+{% endblock %}

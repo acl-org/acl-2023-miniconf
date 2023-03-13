@@ -22,8 +22,8 @@ run:
 
 freeze:
 	rm -rf build/
-	python main.py --build
-	python generate_version.py build/version.json
+	python main.py build=true
+	# python generate_version.py build/version.json
 
 # check code format
 format-check:

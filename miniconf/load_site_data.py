@@ -31,7 +31,9 @@ from miniconf.site_data import (
 
 
 def load_site_data(
-    site_data_path: str, site_data: Dict[str, Any], by_uid: Dict[str, Any],
+    site_data_path: str,
+    site_data: Dict[str, Any],
+    by_uid: Dict[str, Any],
 ) -> List[str]:
     """Loads all site data at once.
 
@@ -254,7 +256,6 @@ def build_plenary_sessions(
     raw_plenary_sessions: List[Dict[str, Any]],
     raw_plenary_videos: Dict[str, List[Dict[str, Any]]],
 ) -> DefaultDict[str, List[PlenarySession]]:
-
     plenary_videos: DefaultDict[str, List[PlenaryVideo]] = defaultdict(list)
     for plenary_id, videos in raw_plenary_videos.items():
         for item in videos:
@@ -298,7 +299,7 @@ def build_plenary_sessions(
 
 
 def generate_plenary_events(site_data: Dict[str, Any]):
-    """ We add sessions from the plenary for the weekly and daily view. """
+    """We add sessions from the plenary for the weekly and daily view."""
     # Add plenary sessions to calendar
     all_sessions = []
     for plenary in site_data["plenary_sessions"]:
@@ -348,7 +349,7 @@ def generate_plenary_events(site_data: Dict[str, Any]):
 
 
 def generate_tutorial_events(site_data: Dict[str, Any]):
-    """ We add sessions from tutorials and compute the overall tutorial blocks for the weekly view. """
+    """We add sessions from tutorials and compute the overall tutorial blocks for the weekly view."""
 
     # Add tutorial sessions to calendar
     all_sessions: List[Dict[str, Any]] = []
@@ -395,7 +396,7 @@ def generate_tutorial_events(site_data: Dict[str, Any]):
 
 
 def generate_workshop_events(site_data: Dict[str, Any]):
-    """ We add sessions from workshops and compute the overall workshops blocks for the weekly view. """
+    """We add sessions from workshops and compute the overall workshops blocks for the weekly view."""
     # Add workshop sessions to calendar
     all_sessions: List[Dict[str, Any]] = []
     for workshop in site_data["workshops"]:
@@ -441,7 +442,7 @@ def generate_workshop_events(site_data: Dict[str, Any]):
 
 
 def generate_paper_events(site_data: Dict[str, Any]):
-    """ We add sessions from papers and compute the overall paper blocks for the weekly view. """
+    """We add sessions from papers and compute the overall paper blocks for the weekly view."""
     # Add paper sessions to calendar
 
     all_grouped: Dict[str, List[Any]] = defaultdict(list)
@@ -500,7 +501,7 @@ def generate_paper_events(site_data: Dict[str, Any]):
 
 
 def generate_social_events(site_data: Dict[str, Any]):
-    """ We add social sessions and compute the overall paper social for the weekly view. """
+    """We add social sessions and compute the overall paper social for the weekly view."""
     # Add paper sessions to calendar
 
     all_sessions = []
@@ -554,7 +555,6 @@ def generate_social_events(site_data: Dict[str, Any]):
 
 
 def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-
     events = [
         copy.deepcopy(event)
         for event in overall_calendar
@@ -826,7 +826,8 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 
 
 def build_workshops(
-    raw_workshops: List[Dict[str, Any]], raw_workshop_papers: List[Dict[str, Any]],
+    raw_workshops: List[Dict[str, Any]],
+    raw_workshop_papers: List[Dict[str, Any]],
 ) -> List[Workshop]:
     def workshop_title(workshop_id):
         for wsh in raw_workshops:

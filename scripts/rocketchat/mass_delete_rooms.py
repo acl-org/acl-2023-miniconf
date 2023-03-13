@@ -66,7 +66,6 @@ if __name__ == "__main__":
             channel_name = "paper-" + paper["UID"]
             channel_name = channel_name.replace(".", "-")
             if not args.test:
-
                 delete_channel = rocket.channels_delete(channel=channel_name).json()
                 if (
                     delete_channel["success"] == False

@@ -41,7 +41,6 @@ def load_schedule() -> Dict[str, Tutorial]:
 
     data = {}
     for ws in wb.worksheets[1:]:
-
         tutorial_id = ws["B2"].value or ""
         abstract = ws["B3"].value or ""
         website = ws["B4"].value or ""

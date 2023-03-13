@@ -140,7 +140,9 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
             "UID": uid,
             "title": title,
             "organizers": row["Organizers"].strip(),
-            "abstract": workshop.description if workshop.description else row["Summary"],
+            "abstract": workshop.description
+            if workshop.description
+            else row["Summary"],
             "website": row["URL"],
             "rocketchat_channel": f"workshop-{alias.lower()}",
             "alias": alias,
@@ -150,7 +152,6 @@ def build_workshops_basics() -> List[Dict[str, Any]]:
         if title in zooms:
             entry["zoom_links"] = zooms[title]
         else:
-
             print(title)
 
         data.append(entry)
@@ -278,7 +279,13 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         if title.startswith("Findings:"):
             continue
 
-        if uid == "510" or uid == "561" or uid == "1093" or uid == "1761"  or uid == "2575-ws3":
+        if (
+            uid == "510"
+            or uid == "561"
+            or uid == "1093"
+            or uid == "1761"
+            or uid == "2575-ws3"
+        ):
             continue
 
         if ws == "WS-15" and str(uid) in fix.keys():
@@ -297,9 +304,7 @@ def generate_workshop_papers(slideslive: pd.DataFrame):
         UIDs.append(paper_id)
         titles.append(title)
         authors.append("|".join(author_list))
-        presentation_ids.append(
-            presentation_id
-        )
+        presentation_ids.append(presentation_id)
 
         i += 1
 
@@ -447,7 +452,6 @@ def get_anthology_workshop_papers() -> List[Paper]:
         collection_id = root.attrib["id"]
 
         for volume in root.findall("volume"):
-
             volume_id = volume.attrib["id"]
 
             for paper in volume.findall("paper"):

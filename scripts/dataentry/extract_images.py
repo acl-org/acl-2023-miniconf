@@ -53,5 +53,3 @@ for pdf_path in tqdm(list(PATH_TO_PROCEEDINGS.iterdir())):
                 img.save(name, "png")
 
             pix = None
-
-

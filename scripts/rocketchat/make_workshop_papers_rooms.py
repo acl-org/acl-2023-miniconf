@@ -89,7 +89,11 @@ def get_workshop_channels():
         topic = w["title"]
         description = w["abstract"]
         website = w["website"]
-        announcement = "%s - %s - %s" % (topic, description, website,)
+        announcement = "%s - %s - %s" % (
+            topic,
+            description,
+            website,
+        )
         channel = {
             "alias": alias,
             "channel_name": channel_name,
@@ -102,7 +106,6 @@ def get_workshop_channels():
 
 
 def get_workshop_paper_channels(workshop_channels):
-
     df = pd.read_csv(WORKSHOPS_PAPERS_CSV)
 
     channels = {}
@@ -112,8 +115,14 @@ def get_workshop_paper_channels(workshop_channels):
         alias = workshop_channels[workshop_id]["alias"]
         workshop_description = workshop_channels[workshop_id]["description"]
         author_string = row["authors"].replace("|", ", ")
-        topic = "%s - %s" % (row["title"], author_string,)
-        description = "%s - %s" % (topic, workshop_description,)
+        topic = "%s - %s" % (
+            row["title"],
+            author_string,
+        )
+        description = "%s - %s" % (
+            topic,
+            workshop_description,
+        )
         channel_name = f"paper-{alias}-{paper_id.split('.')[-1]}"
         channel = {
             "channel_name": channel_name,

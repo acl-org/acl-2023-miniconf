@@ -11,14 +11,16 @@ from sklearn.preprocessing import StandardScaler
 SPECTER_CMD = """python scripts/embed.py --ids specter.ids --metadata specter_metadata.json --model ./model.tar.gz --output-file specter.jsonl --vocab-dir data/vocab/ --batch-size 16 --cuda-device 0"""
 
 
-def generate_specter_embeddings(paper_ids: List[str], titles: List[str], abstracts: List[str]):
+def generate_specter_embeddings(
+    paper_ids: List[str], titles: List[str], abstracts: List[str]
+):
     metadata = {}
 
     for paper_id, title, abstract in zip(paper_ids, titles, abstracts):
         metadata[paper_id] = {
             "title": title,
             "abstract": abstract,
-            "paper_id": paper_id
+            "paper_id": paper_id,
         }
 
     with open("specter/specter.ids", "w") as f:
@@ -54,10 +56,7 @@ def generate_umap():
 
     projections = []
     for i, row in enumerate(result):
-        projections.append({
-            "id": idx_to_id[i],
-            "pos": [float(x) for x in row]
-        })
+        projections.append({"id": idx_to_id[i], "pos": [float(x) for x in row]})
 
     with open("paper_projections.json", "w") as f:
         json.dump(projections, f, indent=2)
@@ -101,5 +100,5 @@ def main():
     generate_recommendations()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

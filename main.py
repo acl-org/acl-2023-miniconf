@@ -265,7 +265,6 @@ def serve(path):
 
 @freezer.register_generator
 def generator():
-
     paper: Paper
     for paper in site_data["papers"]:
         yield "paper", {"uid": paper.id}
@@ -309,6 +308,7 @@ def hydra_main(cfg: DictConfig):
             debug_val = True
 
         app.run(port=cfg.port, debug=debug_val, extra_files=extra_files)
+
 
 if __name__ == "__main__":
     hydra_main()

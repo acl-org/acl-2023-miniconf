@@ -1,4 +1,4 @@
-## EMNLP 2020 Virtual Conference
+## ACL 2023 Virtual Conference
 
 This virtual conference page is based on [MiniConf](http://www.mini-conf.org/) by Alexander Rush
 and Hendrik Strobelt. It was extended by the [amazing team of ACL 2020](https://github.com/acl-org/acl-2020-virtual-conference).
@@ -16,9 +16,9 @@ recommend deploying it via Amazon CloudFront and using Amazon Cognito as the aut
 
 ## Quick Start
 
-    pip install -r requirements.txt
-    pip install -r requirements-dev.txt
-    make run
+1. Install [python poetry](https://python-poetry.org/)
+2. Run: `poetry install`
+3. Run: `make run`
 
 When you are ready to deploy run `make freeze` to get a static version of the site in the `build` folder.
 

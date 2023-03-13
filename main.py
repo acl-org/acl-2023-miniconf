@@ -4,6 +4,9 @@ import os
 from typing import Any, Dict
 from urllib.parse import quote_plus
 
+import hydra
+from omegaconf import DictConfig
+
 from flask import Flask, jsonify, redirect, render_template, send_from_directory
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
@@ -294,35 +297,18 @@ def generator():
         yield "serve", {"path": key}
 
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(description="MiniConf Portal Command Line")
-    parser.add_argument(
-        "--build",
-        action="store_true",
-        default=False,
-        help="Convert the site to static assets",
-    )
-    parser.add_argument(
-        "-b",
-        action="store_true",
-        default=False,
-        dest="build",
-        help="Convert the site to static assets",
-    )
-
-    return parser.parse_args()
-
-
-if __name__ == "__main__":
-    args = parse_arguments()
-
+@hydra.main(version_base=None, config_path="configs", config_name="site")
+def hydra_main(cfg: DictConfig):
     extra_files = load_site_data("sitedata", site_data, by_uid)
 
-    if args.build:
+    if cfg.build:
         freezer.freeze()
     else:
-        debug_val = False
+        debug_val = cfg.debug
         if os.getenv("FLASK_DEBUG") == "True":
             debug_val = True
 
-        app.run(port=5000, debug=debug_val, extra_files=extra_files)
+        app.run(port=cfg.port, debug=debug_val, extra_files=extra_files)
+
+if __name__ == "__main__":
+    hydra_main()

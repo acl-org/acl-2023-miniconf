@@ -1,0 +1,5 @@
+build: false
+site_data_path: sitedata/template
+port: 5000
+debug: false
+out_dir: build/

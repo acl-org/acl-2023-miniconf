@@ -12,7 +12,7 @@ import jsons
 import pytz
 import yaml
 
-from miniconf.site_data import (
+from acl_miniconf.site_data import (
     CommitteeMember,
     Paper,
     PaperContent,

@@ -11,8 +11,8 @@ from flask import Flask, jsonify, redirect, render_template, send_from_directory
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
 
-from miniconf.load_site_data import load_site_data
-from miniconf.site_data import Paper, PlenarySession, Tutorial, Workshop
+from acl_miniconf.load_site_data import load_site_data
+from acl_miniconf.site_data import Paper, PlenarySession, Tutorial, Workshop
 
 site_data: Dict[str, Any] = {}
 by_uid: Dict[str, Any] = {}

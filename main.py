@@ -3,6 +3,7 @@ import argparse
 import os
 from typing import Any, Dict
 from urllib.parse import quote_plus
+from pathlib import Path
 
 import hydra
 from omegaconf import DictConfig
@@ -298,7 +299,12 @@ def generator():
 
 @hydra.main(version_base=None, config_path="configs", config_name="site")
 def hydra_main(cfg: DictConfig):
-    extra_files = load_site_data("sitedata", site_data, by_uid)
+    data_dir = Path("data") / cfg.data_dir
+    if not data_dir.exists():
+        raise AssertionError(
+            f"Data directory {cfg.data_dir} not found in `data`. Please specify the correct data directory in config."
+        )
+    extra_files = load_site_data(str(data_dir), site_data, by_uid)
 
     if cfg.build:
         freezer.freeze()

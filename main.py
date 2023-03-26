@@ -46,6 +46,7 @@ def index():
 @app.route("/index.html")
 def home():
     data = _data()
+    data["ack_text"] = site_data["index"]["ack_text"]
     return render_template("index.html", **data)
 
 

@@ -44,6 +44,7 @@ def load_site_data(
     registered_sitedata = {
         "config",
         # index.html
+        "index",
         "committee",
         # schedule.html
         "overall_calendar",

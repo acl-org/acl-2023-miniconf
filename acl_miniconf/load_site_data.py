@@ -6,9 +6,11 @@ import json
 import os
 from collections import OrderedDict, defaultdict
 from datetime import timedelta
+from pathlib import Path
 from typing import Any, DefaultDict, Dict, List, Optional, Tuple
 
 import jsons
+import markdown
 import pytz
 import yaml
 
@@ -29,6 +31,45 @@ from acl_miniconf.site_data import (
     WorkshopPaper,
 )
 
+def load_files_to_dict(dir:str) -> Dict[str, Any]:
+    """
+    Load all files in the given directory to a dict. 
+    Load the file using the file_name as key and contents as value.
+    """
+    data = {}
+    for f in glob.glob(dir + "/*"):
+        filename = os.path.basename(f) 
+        name, typ = filename.split(".") 
+        if typ == "json":
+            data[name] = json.load(open(f))
+        elif typ in {"csv", "tsv"}:
+            data[name] = list(csv.DictReader(open(f)))
+        elif typ == "yml":
+            data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
+        elif typ == "md":
+            # Do not load using `markdown`, as Jinja will convert it
+            data[name] = open(f).read()
+    return data
+
+def load_all_configs(site_data_path:str) -> Dict[str, Any]:
+    config_data = load_files_to_dict(str(Path(site_data_path) / "configs"))
+    print(f"Loaded {len(config_data)} config files.")
+    return config_data
+
+def load_all_data(site_data_path:str) -> Dict[str, Any]:
+    data = load_files_to_dict(str(Path(site_data_path) / "data"))
+    print(f"Loaded {len(data)} data files.")
+    return data
+
+def load_all_page_texts(site_data_path:str) -> Dict[str, Any]:
+    pages_dir = str(Path(site_data_path) / "pages")
+    pages = {}
+    for page in glob.glob(pages_dir + "/*"):
+        pages_data = load_files_to_dict(page)
+        page_name = page.split("/")[-1]
+        pages[page_name] = pages_data
+        print(f"Loaded page data for {page_name}")
+    return pages
 
 def load_site_data(
     site_data_path: str,
@@ -40,56 +81,12 @@ def load_site_data(
     Populates the `committee` and `by_uid` using files under `site_data_path`.
 
     NOTE: site_data[filename][field]
-    """
-    registered_sitedata = {
-        "config",
-        # index.html
-        "index",
-        "committee",
-        # schedule.html
-        "overall_calendar",
-        "plenary_sessions",
-        "opening_remarks",
-        # tutorials.html
-        "tutorials",
-        # papers.html
-        "main_papers",
-        "demo_papers",
-        "findings_papers",
-        "paper_recs",
-        "papers_projection",
-        "paper_sessions",
-        # socials.html
-        "socials",
-        # workshops.html
-        "workshops",
-        "workshop_papers",
-        # sponsors.html
-        "sponsors",
-        # about.html
-        "code_of_conduct",
-        "faq",
-    }
-    extra_files = []
-    # Load all for your sitedata one time.
-    for f in glob.glob(site_data_path + "/*"):
-        filename = os.path.basename(f)
-        if filename == "inbox":
-            continue
-        name, typ = filename.split(".")
-        if name not in registered_sitedata:
-            continue
+    """ 
 
-        extra_files.append(f)
-        if typ == "json":
-            site_data[name] = json.load(open(f))
-        elif typ in {"csv", "tsv"}:
-            site_data[name] = list(csv.DictReader(open(f)))
-        elif typ == "yml":
-            site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
-    assert set(site_data.keys()) == registered_sitedata, registered_sitedata - set(
-        site_data.keys()
-    )
+    # Load site data
+    site_data.update(load_all_configs(site_data_path))
+    site_data.update(load_all_data(site_data_path))
+    site_data["pages"] = load_all_page_texts(site_data_path)
 
     display_time_format = "%H:%M"
 
@@ -223,7 +220,7 @@ def load_site_data(
     }
 
     print("Data Successfully Loaded")
-    return extra_files
+    return []
 
 
 def extract_list_field(v, key):

@@ -143,3 +143,4 @@ node_modules/
 /scripts/dataentry/yamls
 /venv2/
 outputs/
+.watchman-cookie*

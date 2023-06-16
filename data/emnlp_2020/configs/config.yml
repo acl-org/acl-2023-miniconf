@@ -31,3 +31,22 @@ connected_papers_conference_name: EMNLP2020
 calendar:
   start: '2020-11-16'
   end: '2020-11-20'
+
+navigation_bar:
+  order:
+    - Home
+  links:
+    Home: index.html
+    Schedule: schedule.html
+    Plenary: plenary_sessions.html
+    Livestream: livestream.html
+    Papers: papers.html
+    Tutorials: tutorials.html
+    Workshops: workshops.html
+    Socials: socials.html 
+    Sponsors: sponsors.html
+    Chat: config.chat_server
+    Gather: config.gather_town 
+    Organizers: https://2020.emnlp.org/organizers,
+    Help: about.html
+ 

@@ -1,5 +1,7 @@
 build: false
-site_data_path: sitedata/template
-port: 5000
+sitedata: sitedata/emnlp2020
+port: 7777
 debug: false
+host: '0.0.0.0'
 out_dir: build/
+time_zone: America/Toronto

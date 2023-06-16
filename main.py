@@ -298,7 +298,7 @@ def generator():
 
 @hydra.main(version_base=None, config_path="configs", config_name="site")
 def hydra_main(cfg: DictConfig):
-    extra_files = load_site_data("sitedata", site_data, by_uid)
+    extra_files = load_site_data(cfg.sitedata, site_data, by_uid)
 
     if cfg.build:
         freezer.freeze()
@@ -307,7 +307,7 @@ def hydra_main(cfg: DictConfig):
         if os.getenv("FLASK_DEBUG") == "True":
             debug_val = True
 
-        app.run(port=cfg.port, debug=debug_val, extra_files=extra_files)
+        app.run(host=cfg.host, port=cfg.port, debug=debug_val, extra_files=extra_files)
 
 
 if __name__ == "__main__":

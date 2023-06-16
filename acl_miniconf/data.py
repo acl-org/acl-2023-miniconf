@@ -65,9 +65,6 @@ class Paper(BaseModel):
         return f"paper-{self.id.replace('.', '-')}"
 
 
-
-
-
 class Conference(BaseModel):
     # Time slots, e.g. Session 1
     sessions: Dict[str, Session]

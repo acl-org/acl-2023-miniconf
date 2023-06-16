@@ -47,6 +47,7 @@ class Acl2023Parser:
     def parse(self):
         self._parse_oral_papers(self.oral_tsv_path)
         self._parse_poster_papers(self.poster_tsv_path)
+        self._parse_virtual_papers(self.virtual_tsv_path)
         return Conference(
             sessions=self.sessions,
             papers=self.papers,
@@ -58,6 +59,47 @@ class Acl2023Parser:
         start_parsed_dt = self.zone.localize(datetime.datetime.strptime(f'{date_str} {start_time}', DATE_FMT))
         end_parsed_dt = self.zone.localize(datetime.datetime.strptime(f'{date_str} {end_time}', DATE_FMT))
         return start_parsed_dt, end_parsed_dt
+    
+    def _parse_virtual_papers(self, virtual_tsv_path: Path):
+        df = pd.read_csv(virtual_tsv_path, sep='\t')
+        group_type = 'Virtual Poster'
+        for (group_session, group_track), group in df.groupby(['Session', 'Track']):
+            group = group.sort_values('Local order')
+            event_name = get_session_event_name(group_session, group_track, group_type)
+            start_dt, end_dt = self._parse_start_end_dt(group.iloc[0].Date, group.iloc[0].Time)
+            if event_name not in self.events:
+                self.events[event_name] = Event(
+                    id=event_name,
+                    session=group_session,
+                    track=group_track,
+                    start_time=start_dt,
+                    end_time=end_dt,
+                    chairs=[],
+                    paper_ids=[],
+                    link=None,
+                    room='Virtual Poster Session',
+                    type=group_type,
+                )
+            event = self.events[event_name]
+            if group_session not in self.sessions:
+                self.sessions[group_session] = Session(
+                    id=group_session,
+                    name=group_session,
+                    start_time=start_dt,
+                    end_time=end_dt,
+                    events=[],
+                )
+            session = self.sessions[group_session]
+            if event_name in session.events:
+                raise ValueError('Duplicated events')
+            session.events[event_name] = event
+
+            for row in group.itertuples():
+                paper_id = row.PID
+                start_dt, end_dt = self._parse_start_end_dt(row.Date, row.Time)
+                event = self.events[event_name]
+                event.paper_ids.append(paper_id)
+
     
     def _parse_poster_papers(self, poster_tsv_path: Path):
         df = pd.read_csv(poster_tsv_path, sep='\t')
@@ -80,6 +122,7 @@ class Acl2023Parser:
                     type=group_type,
                 )
             event = self.events[event_name]
+
             if group_session not in self.sessions:
                 self.sessions[group_session] = Session(
                     id=group_session,
@@ -91,8 +134,8 @@ class Acl2023Parser:
             session = self.sessions[group_session]
             if event_name in session.events:
                 raise ValueError('Duplicated events')
-
             session.events[event_name] = event
+
             for row in group.itertuples():
                 paper_id = row.PID
                 start_dt, end_dt = self._parse_start_end_dt(row.Date, row.Time)

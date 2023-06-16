@@ -46,6 +46,18 @@ Contains frontend components like the default css, images, and JavaCcript libs.
 
 Contains additional preprocessing to add visualizations, recommendations, schedules to the conference. 
 
+## Data processing Architecture
+
+1. `acl_miniconf` uses a shared data format that current and future conferences should use defined in `acl_miniconf.data.Conference`. 
+2. `acl_miniconf/import_acl2023.py`: Parses program information from spreadsheets/underline to generate a single `acl_miniconf.data.Conference` object, which is converted to JSON for the frontend and YAML for human inspection.
+3. The static components of the website consume the JSON output to generate the website.
+
+The main reasons for this architecture are:
+
+1. To abstract the data parsing from the data format.
+2. Keep a static format for the frontend.
+3. Move conference specific processing out from shared library code.
+
 ## Pages
 
 This section describes all pages that are in this version of MiniConf and how to customize them.

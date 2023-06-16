@@ -47,7 +47,7 @@
 
 <div class="row">
   <div class="col-md-7 col-sm-12 pr-5 lead">
-    <p>Welcome to EMNLP2020!<br><br>
+    <p>Welcome to {{ config.name}}!<br><br>
       Here is how to use this website to find live events (at fixed times) plus pre-recorded talks you can watch
       anytime.
     </p>
@@ -92,8 +92,8 @@
       <dd> Look under <a class="text" href="about.html">Help</a> for FAQs and technical support.</dd>
       <dt> Social Media</dt>
       <dd> Use the hashtag <span
-          style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">#emnlp2020</span>
-      </dd>
+          style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">{{
+          config.social_tag }}</span></dd>
     </dl>
   </div>
   <!-- <div class="col-md-1"></div> -->
@@ -116,7 +116,14 @@
 <br />
 
 
-<p class="text-muted">{{ack_text | markdown }}</p>
+<a class="text-muted">
+  The <a href="https://github.com/entilzha/acl-miniconf">ACL2023 virtual conference website</a> uses <a
+    href="https://github.com/Mini-Conf/Mini-Conf">MiniConf</a> built by Hendrik Strobelt and Sasha Rush that
+  was extended by the amazing <a href="https://github.com/acl-org/acl-2020-virtual-conference">ACL 2020</a> and <a
+    href="https://github.com/acl-org/emnlp-2020-virtual-conference">EMNLP2020</a> teams.
 
+  The ACL2023 infrastructure committee is very grateful to the
+  <a href="static/pdf/volunteers.pdf">volunteers</a> and contributors whose valuable contributions to building the
+  virtual infrastructure made the conference possible.
 
-{% endblock %}
+  {% endblock %}

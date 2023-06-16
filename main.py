@@ -314,7 +314,7 @@ def hydra_main(cfg: DictConfig):
         if os.getenv("FLASK_DEBUG") == "True":
             debug_val = True
 
-        app.run(port=cfg.port, debug=debug_val, extra_files=extra_files)
+        app.run(host=cfg.host, port=cfg.port, debug=debug_val, extra_files=extra_files)
 
 
 if __name__ == "__main__":

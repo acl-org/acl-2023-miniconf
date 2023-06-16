@@ -143,3 +143,8 @@ node_modules/
 /scripts/dataentry/yamls
 /venv2/
 outputs/
+.watchman-cookie*
+
+# This will eventually be committed once site is public
+sitedata/acl2023
+*.ipynb

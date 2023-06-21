@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 import datetime
 from pydantic import BaseModel
 import pytz
@@ -63,6 +63,30 @@ class Paper(BaseModel):
     @property
     def rocketchat_channel(self) -> str:
         return f"paper-{self.id.replace('.', '-')}"
+
+
+class SiteData(BaseModel):
+    pages: Any
+    committee: Any
+    calendar: Any
+    overall_calendar: Any
+    event_types: List
+    plenary_sessions: Any
+    plenary_session_days: Any
+    main_papers: List[Paper]
+    demo_papers: List[Paper]
+    findings_papers: List[Paper]
+    workshop_papers: List
+    tutorials: Any
+    tutorials_calendar: Any
+    workshops: Any
+    socials: Any
+    tracks: List
+    main_program_tracks: List
+    faq: Any
+    code_of_conduct: Any
+    qa_sessions: Any
+    qa_sessions_by_day: Any
 
 
 class Conference(BaseModel):

@@ -148,3 +148,5 @@ outputs/
 # This will eventually be committed once site is public
 sitedata/acl2023
 *.ipynb
+# Avoid committing API keys/etc
+configs/rocketchat

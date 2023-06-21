@@ -1,7 +1,11 @@
 from typing import List, Dict
+import pickle
+import json
 import datetime
 from pathlib import Path
 
+import yaml
+import typer
 import pandas as pd
 import pytz
 
@@ -36,9 +40,10 @@ def get_session_event_name(session: str, track: str, session_type: str):
 
 
 class Acl2023Parser:
-    def __init__(self, *, oral_tsv_path: Path, poster_tsv_path: Path):
+    def __init__(self, *, oral_tsv_path: Path, poster_tsv_path: Path, virtual_tsv_path: Path):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
+        self.virtual_tsv_path = virtual_tsv_path
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
@@ -199,3 +204,36 @@ class Acl2023Parser:
                 if row.PID in self.papers:
                     raise ValueError('Duplicate papers')
                 self.papers[row.PID] = paper
+
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (datetime.datetime,)):
+            return obj.isoformat()
+
+def main(
+    oral_tsv: str = 'sitedata/acl2023/oral-papers.tsv',
+    poster_tsv: str = 'sitedata/acl2023/poster-papers.tsv',
+    virtual_tsv: str = 'sitedata/acl2023/virtual-papers.tsv',
+    out_dir: str = 'auto_data/acl_2023/',
+):
+    parser = Acl2023Parser(
+        oral_tsv_path=Path(oral_tsv),
+        poster_tsv_path=Path(poster_tsv),
+        virtual_tsv_path=Path(virtual_tsv),
+    )
+    conf = parser.parse()
+    out_dir = Path(out_dir)
+    out_dir.mkdir(exist_ok=True, parents=True)
+    conf_dict = conf.dict()
+    with open(out_dir / 'program.yaml', 'w') as f:
+        f.write(yaml.dump(conf_dict))
+
+    with open(out_dir / 'program.json', 'w') as f:
+        json.dump(conf_dict, f, cls=DateTimeEncoder)
+
+    with open(out_dir / 'program.pkl', 'wb') as f:
+        pickle.dump(conf, f)
+
+
+if __name__ == '__main__':
+    typer.run(main)

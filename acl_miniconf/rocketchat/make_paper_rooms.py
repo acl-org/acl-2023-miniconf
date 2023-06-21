@@ -22,13 +22,6 @@ def parse_arguments():
     return parser.parse_args()
 
 
-# Fancy countdown function for sleeping threads
-def sleep_session(duration):
-    for remaining in range(duration, 0, -1):
-        sys.stdout.write("\r")
-        sys.stdout.write("{:2d} seconds remaining.".format(remaining))
-        sys.stdout.flush()
-        time.sleep(1)
 
 
 def read_papers(fname):
@@ -42,16 +35,6 @@ def read_papers(fname):
     else:
         raise ValueError("file not supported: " + fname)
     return res
-
-
-def connect_rocket_API(config, session):
-    rocket = RocketChat(
-        user_id=config["user_id"],
-        auth_token=config["auth_token"],
-        server_url=config["server"],
-        session=session,
-    )
-    return rocket
 
 
 if __name__ == "__main__":

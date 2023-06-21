@@ -58,6 +58,17 @@ The main reasons for this architecture are:
 2. Keep a static format for the frontend.
 3. Move conference specific processing out from shared library code.
 
+
+## RocketChat Documentation
+
+Once you have a RocketChat instance, be sure to:
+
+1. How to get API key: https://docs.rocket.chat/use-rocket.chat/user-guides/user-panel/my-account
+2. Copy the template in `configs/rocketchat/template.yaml` to another file in the same directory. Add your user/api keys here, but do not commit it!
+3. Follow these instructions and ensure that getting all paginated results is allowed: https://developer.rocket.chat/reference/api/rest-api#pagination
+
+Running the CLI, from root directory: `python -m acl_miniconf.rocketchat.cli --config-name rc-pedro command=add_emojis`
+
 ## Pages
 
 This section describes all pages that are in this version of MiniConf and how to customize them.

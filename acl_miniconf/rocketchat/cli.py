@@ -18,8 +18,10 @@ def paper_id_to_channel_name(paper_id: str):
     channel_name = channel_name.replace(".", "-")
     return channel_name
 
+
 API_path = "/api/v1/"
 CUSTOM_EMOJI_DIR = Path("rocketchat-custom-emojis/")
+
 
 class AclRcHelper:
     def __init__(
@@ -46,7 +48,9 @@ class AclRcHelper:
         )
 
     def get_channel_names(self) -> List[str]:
-        return [c["name"] for c in self.rocket.channels_list(count=0).json()["channels"]]
+        return [
+            c["name"] for c in self.rocket.channels_list(count=0).json()["channels"]
+        ]
 
     def create_channel(self, name: str, topic: str, description: str):
         if self.dry_run:
@@ -76,7 +80,7 @@ class AclRcHelper:
         print(
             f"Total papers: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
         )
-    
+
     def add_custom_emojis(self):
         headers = {
             "X-Auth-Token": self.auth_token,
@@ -127,7 +131,7 @@ def hydra_main(cfg: DictConfig):
                 dry_run=cfg.dry_run,
             )
             helper.create_paper_channels()
-    elif command == 'add_emojis':
+    elif command == "add_emojis":
         with sessions.Session() as session:
             helper = AclRcHelper(
                 user_id=cfg.user_id,
@@ -138,7 +142,6 @@ def hydra_main(cfg: DictConfig):
                 dry_run=cfg.dry_run,
             )
             helper.add_custom_emojis()
-        
 
 
 if __name__ == "__main__":

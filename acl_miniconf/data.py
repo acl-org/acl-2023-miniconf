@@ -12,8 +12,8 @@ class Event(BaseModel):
     session: str
     track: str
     type: str
-    start_time: datetime.datetime
-    end_time: datetime.datetime
+    start_time: Optional[datetime.datetime]
+    end_time: Optional[datetime.datetime]
     chairs: List[str] = None
     paper_ids: List[str] = None
     link: Optional[str] = None
@@ -31,8 +31,8 @@ class Event(BaseModel):
 class Session(BaseModel):
     id: str
     name: str
-    start_time: datetime.datetime
-    end_time: datetime.datetime
+    start_time: Optional[datetime.datetime]
+    end_time: Optional[datetime.datetime]
     events: Dict[str, Event]
 
 
@@ -49,6 +49,7 @@ class Paper(BaseModel):
     authors: List[str]
     track: str
     paper_type: str
+    category: str
     abstract: str
     tldr: str
     keywords: List[str]

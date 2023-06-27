@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 apt update
+apt install python3-pip
 
-curl -sSL https://install.python-poetry.org | python3 -
+pip install pipx
+pipx install poetry
 poetry install
 make freeze

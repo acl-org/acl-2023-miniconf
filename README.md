@@ -22,6 +22,12 @@ recommend deploying it via Amazon CloudFront and using Amazon Cognito as the aut
 
 When you are ready to deploy run `make freeze` to get a static version of the site in the `build` folder.
 
+
+## Todos
+
+- Obtain and incorporate info beyond paper program
+- Obtain/incorporate underline links for papers/events
+
 ## Project Structure
 
 The repository consists of the following main components:

@@ -458,16 +458,16 @@
   {% endfor %}
 {%- endmacro %}
 
-{% macro live_sessions(sessions, title, url, is_plenary) -%}
-{% for session in sessions %}
+{% macro live_sessions(events, title, url, is_plenary) -%}
+{% for event in events %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-    <span>{{session.session}}, </span>
-    <span class="session_times">{{session.session}} {{session.time_string}}</span>
+    <span>{{event.session}}: {{event.track}} ({{event.type}})</span>
+    <span class="session_times">{{event.session}} {{event.time_string}}</span>
 
-  {% if session.link %}
+  {% if event.link %}
   <a href="{{session.link}}"   class="card-link" target="_blank">
-    {% if session.session_type == "gather" %}
+    {% if event.session_type == "gather" %}
       [Join Gather Meeting]
     {% else %}
       [Join Zoom Meeting]
@@ -503,7 +503,7 @@
   let parser = new DOMParser();
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
-  {% for session in sessions %}
+  {% for event in events %}
     // create a calendar by hand
     ouicalData = addToCalendarData({
       options: {
@@ -514,15 +514,15 @@
         title: '{{ title }}'.replace("#", " "),
 
         // Event start date
-        start: new Date("{{session.start_time_string}}"),
-        end: new Date("{{session.end_time_string}}"),
+        start: new Date("{{event.start_time_string}}"),
+        end: new Date("{{event.end_time_string}}"),
         // duration: 120,                           // Event duration (IN MINUTES)
         // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
         // Event timezone. Will convert the given time to that zone
         timezone: 'UTC',
         // Event Address
-        {% if session.link %}
+        {% if event.link %}
         address: '{{session.link}}',
         {% endif %}
 

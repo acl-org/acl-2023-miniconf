@@ -1,0 +1,45 @@
+name: ACL2023
+display_name: ACL 2023
+tagline: The 61st Annual Meeting of the Association for Computational Linguistics
+date: July 9 &ndash; 14 <br> 2023
+proceedings_title: Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics
+citation_date: July 2023
+analytics: null
+site_url: https://virtual.2023.aclweb.org
+logo:
+  image: static/images/acl2023/acl-logo.png
+  height: 45px
+site_title: ACL 2023
+page_title:
+  prefix: 'ACL2023'
+  separator: ': '
+background_image: static/images/acl2023/toronto_banner.jpg
+organization: Association for Computational Linguistics
+social_tag: '#acl2023'
+
+# Path to the folder of paper images.
+paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
+
+default_presentation_id: 38931484
+
+# Remove or change to your chat server.
+enable_chat: false
+chat_server: acl.rocket.chat
+channels_stats_server: https://emnlp2020-channels-stats.azure-api.net
+
+gather_town: https://www.virtualchair.net/events/acl2023
+connected_papers_conference_name: ACL2023
+
+calendar:
+  start: '2023-07-09'
+  end: '2020-07-14'
+
+navigation_bar:
+  order:
+    - Home
+  links:
+    Home: index.html
+    Schedule: schedule.html
+    Papers: papers.html
+    Organizers: https://2023.acl.org/organizers,
+ 

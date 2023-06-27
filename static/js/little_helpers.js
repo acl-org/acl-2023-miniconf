@@ -85,11 +85,11 @@ let calcAllKeys = function (allPapers, allKeys) {
 
     allPapers.forEach(
       d => {
-          d.content.authors.forEach(a => collectAuthors.add(a));
-          d.content.keywords.forEach(a => collectKeywords.add(a));
-          d.content.sessions.forEach(a => collectSessions.add(a));
-          collectTracks.add(d.content.track);
-          allKeys.titles.push(d.content.title);
+          d.authors.forEach(a => collectAuthors.add(a));
+          d.keywords.forEach(a => collectKeywords.add(a));
+          d.event_ids.forEach(a => collectSessions.add(a));
+          collectTracks.add(d.track);
+          allKeys.titles.push(d.title);
       });
     allKeys.authors = Array.from(collectAuthors);
     allKeys.keywords = Array.from(collectKeywords);

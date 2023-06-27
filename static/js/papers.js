@@ -131,8 +131,8 @@ const updateCards = (papers) => {
     
     papers.forEach(
       openreview => {
-          openreview.content.read = storedPapers[openreview.id] || false
-          openreview.content.isFav = favPapers[openreview.id] || false
+          openreview.read = storedPapers[openreview.id] || false
+          openreview.isFav = favPapers[openreview.id] || false
       })
 
     papers.map((e, idx, array) => {
@@ -227,10 +227,10 @@ const maybe_update = (element_ids, value, callback) => {
 
 const updateModalData = (paper) => {
 
-    let program = paper.content.program;
+    let program = paper.program;
     let badgeClass = program_to_badge_class[program];
     $('#modalTitle').html(
-        `${paper.content.title} &nbsp; <span class="badge badge-pill badge-${badgeClass}">${program}</span>`);
+        `${paper.title} &nbsp; <span class="badge badge-pill badge-${badgeClass}">${program}</span>`);
 
     let isVisited = persistor.get(paper.id) || false
     if (isVisited)
@@ -238,7 +238,7 @@ const updateModalData = (paper) => {
     else
         $('#modalTitle').removeClass('card-title-visited');
 
-    let authorsHtml = paper.content.authors.map(author_html).join(', ');
+    let authorsHtml = paper.authors.map(author_html).join(', ');
     maybe_update(
         ["#modalAuthors"], 
         authorsHtml,
@@ -247,16 +247,16 @@ const updateModalData = (paper) => {
     
     maybe_update(
         ['#modalPaperType'], 
-        paper.content.paper_type,
+        paper.paper_type,
         x => $('#modalPaperType').text(x));
     maybe_update(
         ['#modalPaperTrack'], 
-        paper.content.track,
+        paper.track,
         x => $('#modalPaperTrack').text(x));
 
     maybe_update(
         ['#modalAbstract', '#modalAbstractHeader'], 
-        paper.content.abstract,
+        paper.abstract,
         x => $('#modalAbstract').text(x));
     
     if (program != "workshop"){
@@ -273,21 +273,21 @@ const updateModalData = (paper) => {
         x => $('#modalPresUrl').attr('href', `https://slideslive.com/${x}`));
     maybe_update(
         ['#modalPaperUrl'], 
-        paper.content.pdf_url,
+        paper.pdf_url,
         x => $('#modalPaperUrl').attr('href', x));
     
 
-    let keywordsHtml = paper.content.keywords.map(modal_keyword).join('\n');
+    let keywordsHtml = paper.keywords.map(modal_keyword).join('\n');
     maybe_update(
         ['#modalKeywords', '#modalKeywordsHeader'], 
-        paper.content.keywords,
+        paper.keywords,
         x => $('#modalKeywords').html(keywordsHtml));
 
-    let sessionsHtml = paper.content.sessions.map(s => modal_session_html(s, paper)).join('\n');
+    let sessionsHtml = paper.event_ids.map(s => modal_session_html(s, paper)).join('\n');
     $('#modalSessions').html(sessionsHtml);
     maybe_update(
         ['#modalSessions', '#modalSessionsHeader'], 
-        paper.content.sessions,
+        paper.event_ids,
         x => $('#modalSessions').html(sessionsHtml));
 
     $('#modalPaperPage').unbind( "click" );
@@ -356,7 +356,7 @@ function hideQaEnded(array, element){
         let result = []
         let now = new Date()
         for (let i = array.length - 1; i > 0; i--) {
-            let qa = new Date(Math.max.apply(null, array[i].content.sessions.map(function (e) {
+            let qa = new Date(Math.max.apply(null, array[i].event_ids.map(function (e) {
                 return new Date(e.end_time);
             })));
             if (qa.getTime() >= now.getTime())
@@ -414,18 +414,18 @@ const render = () => {
                 let i = 0;
                 while (i < f_test.length && pass_test) {
                     if (f_test[i][0] === 'titles') {
-                        pass_test &= d.content['title'].toLowerCase()
+                        pass_test &= d['title'].toLowerCase()
                             .indexOf(f_test[i][1].toLowerCase()) > -1;
 
                     } else {
                         if (f_test[i][0] === 'session' || f_test[i][0] === 'sessions' ) {
-                            pass_test &= d.content['sessions'].some(
+                            pass_test &= d['sessions'].some(
                                 function (item) {
-                                    return item.session_name === f_test[i][1];
+                                    return item.name === f_test[i][1];
                                 }
                             );
                         } else {
-                            pass_test &= d.content[f_test[i][0]].indexOf(
+                            pass_test &= d[f_test[i][0]].indexOf(
                                 f_test[i][1]) > -1
                         }
                     }
@@ -491,7 +491,7 @@ const start = (reset_track) => {
     reset_track = reset_track || false;
     
     const urlFilter = getUrlParameter("filter") || 'titles';
-    const program = getUrlParameter("program") || 'main'
+    const program = getUrlParameter("program") || 'Main'
     let default_track = program == "workshop"? "All workshops" : "All tracks";
     
     let track = getUrlParameter("track") || default_track;
@@ -608,14 +608,14 @@ const card_image = (openreview, show) => {
 const card_detail = (openreview, show) => {
     if (show) {
         let str = ''
-        if (openreview.content.tldr && openreview.content.tldr != '')
-            str += `<br/><p class="card-text"> ${openreview.content.tldr}</p>`
+        if (openreview.tldr && openreview.tldr != '')
+            str += `<br/><p class="card-text"> ${openreview.tldr}</p>`
         
-        if (openreview.content.keywords 
-            && (openreview.content.keywords.length > 1 
-                || openreview.content.keywords.length == 1 && openreview.content.keywords[0] !== ""))
+        if (openreview.keywords 
+            && (openreview.keywords.length > 1 
+                || openreview.keywords.length == 1 && openreview.keywords[0] !== ""))
             str += `<p class="card-text"><span class="font-weight-bold">Keywords:</span>
-                ${openreview.content.keywords.map(keyword).join(', ')}
+                ${openreview.keywords.map(keyword).join(', ')}
             </p>`
         
         return str
@@ -643,22 +643,22 @@ const card_program_badge = (paper) => {
     let selected_program = getUrlParameter("program");
     if (selected_program === "all") 
         return `<span class="badge 
-                      badge-pill badge-${program_to_badge_class[paper.content.program]}"
-                      >${paper.content.program}</span>`;
+                      badge-pill badge-${program_to_badge_class[paper.program]}"
+                      >${paper.program}</span>`;
     else
         return ``;
 }
 
 //language=HTML
 const card_html = openreview => `
-        <div class="card card-paper ${openreview.content.isFav? 'card-fav' : ''}
+        <div class="card card-paper ${openreview.isFav? 'card-fav' : ''}
                 card-dimensions${(render_mode == 'detail')? '-detail' : render_mode !== 'list'? '-image' : ''}">
             <div class="card-body">
 
                 <a href="paper_${openreview.id}.html"
-                target="_blank"><h5 class="card-title ${openreview.content.read ? 'card-title-visited' : ''}">${openreview.content.title}</h5>
+                target="_blank"><h5 class="card-title ${openreview.read ? 'card-title-visited' : ''}">${openreview.title}</h5>
                 </a>
-                <h6 class="card-subtitle mb-2 text-muted">${openreview.content.authors.join(', ')}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">${openreview.authors.join(', ')}</h6>
                 
                 ${card_program_badge(openreview)}
                 
@@ -668,7 +668,7 @@ const card_html = openreview => `
             </div>
 
             <div class="card-footer">
-                    ${card_fav_btn_html(openreview.content.isFav)}
+                    ${card_fav_btn_html(openreview.isFav)}
                     <button type="button" class="btn btn-sm btn-outline-primary btn-quickview"><i class="fas fa-bars"></i> Quickview</button>
             </div>
         </div>
@@ -707,7 +707,7 @@ const getCalendarLinks = (sess, paper) => {
           id: 'my-id'
         },
         data: {
-          title: paper.content.title.replace("#", " "),
+          title: paper.title.replace("#", " "),
           start: new Date(start_time.format('YYYY-MM-DDTHH:mm:ss')),
           end: new Date(end_time.format('YYYY-MM-DDTHH:mm:ss')),
           timezone: 'UTC',

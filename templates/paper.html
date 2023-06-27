@@ -1,21 +1,21 @@
-{% set page_title = paper.content.title %}
+{% set page_title = paper.title %}
 {% extends "base.html" %}
 
 {% block head %}
 
 {{ super() }}
-<meta name="citation_title" content="{{paper.content.title}}" />
-{% for author in paper.content.authors %}
+<meta name="citation_title" content="{{paper.title}}" />
+{% for author in paper.authors %}
 <meta name="citation_author" content="{{author}}" />
 {% endfor %}
 <meta name="citation_publication_date" content="{{config.citation_date}}" />
 <meta name="citation_conference_title" content="{{config.tagline|striptags|title}}" />
 <meta name="citation_inbook_title" content="{{config.proceedings_title}}" />
-<meta name="citation_abstract" content="{{paper.content.abstract}}" />
-{% for keyword in paper.content.keywords %}
+<meta name="citation_abstract" content="{{paper.abstract}}" />
+{% for keyword in paper.keywords %}
 <meta name="citation_keywords" content="{{keyword}}" />
 {% endfor %}
-<meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
+<meta name="citation_pdf_url" content="{{paper.pdf_url | default("")}}" />
 
 <script src="static/js/persistor.js"></script>
 
@@ -63,10 +63,10 @@
 <div class="card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="color: black">
-      {{paper.content.title}}
+      {{paper.title}}
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      {% for author in paper.content.authors %}
+      {% for author in paper.authors %}
       <a href="papers.html?filter=authors&search={{author}}&program=all" class="text-primary"
         >{{author}}</a
       >{{ "," if not loop.last }}
@@ -74,35 +74,35 @@
     </h3>
    
     <div class="text-center p-3">
-      {% if paper.content.abstract %}
+      {% if paper.abstract %}
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Abstract
       </a>
       {% endif %}
 
-      {% if paper.content.pdf_url %}
-      <a class="card-link" target="_blank" href="{{paper.content.pdf_url}}">
+      {% if paper.pdf_url %}
+      <a class="card-link" target="_blank" href="{{paper.pdf_url}}">
         Paper
       </a>
       {% endif %}
-      {% if paper.content.code != blank %}
-      <a href="{{paper.content.code}}" target="_blank" class="card-link">
+      {% if paper.code != blank %}
+      <a href="{{paper.code}}" target="_blank" class="card-link">
         Code
       </a>
       {% endif %}
-      {% if paper.content.demo_url %}
-      <a href="{{paper.content.demo_url}}" target="_blank" class="card-link">
+      {% if paper.demo_url %}
+      <a href="{{paper.demo_url}}" target="_blank" class="card-link">
         Demo
       </a>
       {% endif %}
-      {% if paper.content.program == "main" %}
+      {% if paper.program == "main" %}
       <a class="card-link" target="_blank" href="https://www.connectedpapers.com/conferece-redirect/main/{{ config.connected_papers_conference_name }}/{{paper.id}}/graph">
         Connected Papers
       </a>
       {% endif %}
 
-      {% if paper.content.material %}
-      {% for material in paper.content.material.split("|") %}
+      {% if paper.material %}
+      {% for material in paper.material.split("|") %}
         <span class="card-link d-inline-block">{{ material|markdown }}</span>
       {% endfor %}
       {% endif %}
@@ -113,19 +113,21 @@
     </div>
     <p class="card-text text-center h5">
 
-      {% if paper.content.program == "main" %}
-     <a href="papers.html?program=main&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
-     {% elif paper.content.program == "workshop" %}
-      <a href="papers.html?program=workshop&track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
+      {% if paper.program in ['Main', 'Findings', 'Demo', 'Industry'] %}
+     <a href="papers.html?program=main&track={{paper.track}}" class ="badge badge-pill badge-primary">{{paper.program}}: {{ paper.track }}</a>
+     {% elif paper.program == "Workshop" %}
+      <a href="papers.html?program=workshop&track={{paper.track}}" class ="badge badge-pill badge-primary">{{ paper.track }}</a>
       {% endif %}
-      <span class="badge badge-secondary">{{ paper.content.paper_type|capitalize }} Paper</span>
+      <span class="badge badge-secondary">{{ paper.paper_type | capitalize }} Paper</span>
     </p>
 
     {{ components.live_sessions(
-        paper.content.sessions,
-        paper.content.title,
-        "https://virtual.2020.emnlp.org/paper_" + paper.id + ".html",
-        false) }}
+        events,
+        paper.title,
+        "https://underline.io",
+        false
+        )
+    }}
 
         <p class="card-text text-center h5 pt-2">
 
@@ -144,20 +146,20 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 {% if paper.content.program != "findings"%}collapse{% endif %}">
+<div id="details" class="pp-card m-3 {% if paper.program != "findings"%}collapse{% endif %}">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        {{paper.content.abstract}}
+        {{paper.abstract}}
       </div>
     </div>
   </div>
 </div>
 
-{% if paper.content.program != "findings" %}
+{% if paper.program != "Findings" %}
 {% if paper.presentation_id %}
-<div class="container" style="; padding: 0px;">
+<div class="container" style="padding: 0px;">
   <div class="text-muted text-center">
   </div>
   <div class="row m-2">
@@ -191,6 +193,8 @@
   </div>
 </div>
 {% else %}
+
+{% if config.enable_chat %}
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
     You can open the
@@ -206,6 +210,7 @@
 </div>
 {% endif %}
 {% endif %}
+{% endif %}
 
 {% if paper.poster_pdf %}
 {{ components.section("Example Poster") }}
@@ -216,15 +221,15 @@
 <script>
     $(document).ready(() => {
         // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.content.poster_link
+        // PDF name can be bound to variable -- e.g. paper.poster_link
         initPDFViewer("{{paper.poster_pdf}}",'#pdf_view');
     })
 </script>
 {% endif %}
 
-{% if config.connected_papers_conference_name and paper.content.program == "main" %}
+{% if config.connected_papers_conference_name and paper.program == "main" %}
 <div class="container">
-  {{ components.section("Connected Papers in EMNLP2020") }}
+  {{ components.section("Connected Papers in ACL2023") }}
   <iframe width="100%" height="600px" loading="lazy" style="border:none;"
             src="https://www.connectedpapers.com/conferece-redirect/conference/{{ config.connected_papers_conference_name }}/{{ paper.id }}/graph">
   </iframe>
@@ -240,10 +245,10 @@
       <div class="pp-card card" >
         <div class="card-header pp-card-header " class="text-muted">
           <a href="paper_{{recommended.id}}.html" class="text-muted">
-            <h5 class="card-title" align="center">{{recommended.content.title}}</h5>
+            <h5 class="card-title" align="center">{{recommended.title}}</h5>
           </a>
           <h6 class="card-subtitle text-muted" align="center">
-             {% for a in recommended.content.authors %}
+             {% for a in recommended.authors %}
              {{a}},
              {% endfor %}
           </h6>

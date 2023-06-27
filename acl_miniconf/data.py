@@ -1,8 +1,30 @@
 from typing import List, Optional, Dict, Any
+import glob
 import datetime
+from pathlib import Path
+
 from pydantic import BaseModel
 import pytz
+import yaml
 
+MAIN = "Main"
+WORKSHOP = "Workshop"
+FINDINGS = "Findings"
+DEMO = "Demo"
+INDUSTRY = "Industry"
+PROGRAMS = {MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY}
+
+
+def load_all_pages_texts(site_data_path: str) -> Dict[str, Any]:
+    pages_dir = str(Path(site_data_path) / "pages")
+    pages = {}
+    for page in glob.glob(pages_dir + "/*"):
+        with open(page) as f:
+            pages_data = f.read()
+        page_name = page.split("/")[-1]
+        pages[page_name] = pages_data
+        print(f"Loaded page data for {page_name}")
+    return pages
 
 
 # These are unique by id, which is determined by session/track/type
@@ -21,11 +43,24 @@ class Event(BaseModel):
 
     @property
     def day(self) -> str:
-        pass
+        start_time = self.start_time.astimezone(pytz.utc)
+        return start_time.strftime("%b %d")
 
     @property
     def time_string(self) -> str:
-        pass
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
+
+    @property
+    def start_time_string(self) -> str:
+        start = self.start_time.astimezone(pytz.utc)
+        return start.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @property
+    def end_time_string(self) -> str:
+        end = self.end_time.astimezone(pytz.utc)
+        return end.strftime("%Y-%m-%dT%H:%M:%S")
 
 
 class Session(BaseModel):
@@ -35,12 +70,17 @@ class Session(BaseModel):
     end_time: Optional[datetime.datetime]
     events: Dict[str, Event]
 
+    @property
+    def day(self) -> str:
+        return self.start_time.astimezone(pytz.utc).strftime("%b %d")
+
 
 class Paper(BaseModel):
     """The content of a paper.
 
     Needs to be synced with static/js/papers.js and static/js/paper_vis.js.
     """
+
     id: str
     forum: str
     card_image_path: str
@@ -66,28 +106,21 @@ class Paper(BaseModel):
         return f"paper-{self.id.replace('.', '-')}"
 
 
-class SiteData(BaseModel):
-    pages: Any
-    committee: Any
-    calendar: Any
-    overall_calendar: Any
-    event_types: List
-    plenary_sessions: Any
-    plenary_session_days: Any
-    main_papers: List[Paper]
-    demo_papers: List[Paper]
-    findings_papers: List[Paper]
-    workshop_papers: List
-    tutorials: Any
-    tutorials_calendar: Any
-    workshops: Any
-    socials: Any
-    tracks: List
-    main_program_tracks: List
-    faq: Any
-    code_of_conduct: Any
-    qa_sessions: Any
-    qa_sessions_by_day: Any
+class CommitteeMember(BaseModel):
+    role: str
+    name: str
+    affiliation: str
+    url: str
+    email: str
+    image: Optional[str]
+
+
+class ByUid(BaseModel):
+    papers: Dict[str, Paper] = {}
+    plenary_sessions: Dict[str, Any] = {}
+    tutorials: Dict[str, Any] = {}
+    workshops: Dict[str, Any] = {}
+    sponsors: Dict[str, Any] = {}
 
 
 class Conference(BaseModel):
@@ -97,4 +130,137 @@ class Conference(BaseModel):
     papers: Dict[str, Paper]
     # Sessions have events (e.g., Oral session for NLP Applications, or a poster session)
     events: Dict[str, Event]
-    
+    # Key is committee/chair name
+    committee: Dict[str, List[CommitteeMember]]
+
+    @property
+    def main_papers(self):
+        return [p for p in self.papers.values() if p.program == MAIN]
+
+    @property
+    def workshop_papers(self):
+        return [p for p in self.papers.values() if p.program == WORKSHOP]
+
+    @property
+    def findings_papers(self):
+        return [p for p in self.papers.values() if p.program == FINDINGS]
+
+    @property
+    def demo_papers(self):
+        return [p for p in self.papers.values() if p.program == DEMO]
+
+    @property
+    def industry_papers(self):
+        return [p for p in self.papers.values() if p.program == INDUSTRY]
+
+PLENARIES = "Plenary Sessions"
+TUTORIALS = "Tutorials"
+WORKSHOPS = "Workshops"
+PAPER_SESSIONS = "Paper Sessions"
+SOCIALS = "Socials"
+SPONSORS = "Sponsors"
+EVENT_TYPES = {
+    PLENARIES,
+    TUTORIALS,
+    WORKSHOPS,
+    PAPER_SESSIONS,
+    SOCIALS,
+    SPONSORS,
+}
+
+
+class FrontendCalendarEvent(BaseModel):
+    title: str
+    start: datetime.datetime
+    end: datetime.datetime
+    location: str
+    url: str
+    category: str
+    type: str
+    view: str
+    classNames: List[str] = []
+
+
+class SiteData(BaseModel):
+    config: Any
+    pages: Dict[str, str] = {}
+    committee: Dict[str, List[CommitteeMember]]
+    calendar: List[FrontendCalendarEvent]
+    overall_calendar: List[FrontendCalendarEvent]
+    event_types: List[str] = []
+    plenary_sessions: Any
+    plenary_session_days: Any
+    papers: List[Paper] = []
+    main_papers: List[Paper] = []
+    demo_papers: List[Paper] = []
+    findings_papers: List[Paper] = []
+    workshop_papers: List[Paper] = []
+    tutorials: Any
+    tutorials_calendar: Any
+    workshops: List[str] = []
+    socials: Any
+    tracks: List[str] = []
+    programs: List[str] = []
+    main_program_tracks: List[str] = []
+    faq: Any
+    code_of_conduct: Any
+    sessions: Dict[str, Session]
+    session_days: List[Any] = []
+    sessions_by_day: Any
+    sponsors_by_level: Any
+    sponsor_levels: Any
+
+    @classmethod
+    def from_conference(cls, conference: Conference, site_data_path: Path):
+        days = set()
+        for s in conference.sessions.values():
+            days.add(s.day)
+
+        session_days = []
+        for i, day in enumerate(sorted(days)):
+            session_days.append(
+                (day.replace(" ", "").lower(), day, "active" if i == 0 else "")
+            )
+
+        main_program_tracks = list(
+            sorted(
+                track
+                for track in {
+                    paper.track
+                    for paper in conference.papers.values()
+                    if paper.program == MAIN
+                }
+            )
+        )
+        with open(site_data_path / 'configs' / 'config.yml') as f:
+            config = yaml.safe_load(f)
+        site_data = cls(
+            config=config,
+            pages=load_all_pages_texts(site_data_path),
+            committee=conference.committee,
+            calendar=[],
+            papers=list(conference.papers.values()),
+            overall_calendar=[],
+            event_types=[],
+            plenary_sessions=[],
+            plenary_session_days=[],
+            main_papers=conference.main_papers,
+            demo_papers=conference.demo_papers,
+            findings_papers=conference.findings_papers,
+            workshop_papers=conference.workshop_papers,
+            tutorials=[],
+            tutorials_calendar=[],
+            workshops=[],
+            socials=[],
+            tracks=list(sorted(track for track in {paper.track for paper in conference.papers.values()})),
+            main_program_tracks=main_program_tracks,
+            faq=None,
+            code_of_conduct=None,
+            sessions=conference.sessions,
+            session_days=session_days,
+            sessions_by_day=[],
+            sponsors_by_level=None,
+            sponsor_levels=None,
+            programs=PROGRAMS,
+        )
+        return site_data

@@ -148,6 +148,7 @@ auto_data/
 
 # This will eventually be committed once site is public
 sitedata/acl2023
+data/acl_2023/data
 *.ipynb
 # Avoid committing API keys/etc
 configs/rocketchat

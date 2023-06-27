@@ -11,7 +11,7 @@ import pandas as pd
 import pytz
 from rich.logging import RichHandler
 
-from acl_miniconf.data import Session, Event, Paper, Conference
+from acl_miniconf.data import CommitteeMember, Session, Event, Paper, Conference, MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY, PROGRAMS
 
 logging.basicConfig(
     format='%(message)s',
@@ -50,6 +50,21 @@ def get_session_event_name(session: str, track: str, session_type: str):
     return f"{session}: {track} ({session_type})"
 
 
+def determine_program(category: str):
+    if category in ['CL', 'TACL', 'Main-Oral', 'Main-Poster']:
+        return MAIN
+    elif category == 'Findings':
+        return FINDINGS
+    elif category == 'Demo':
+        return DEMO
+    elif category in ['Workshop', 'SRW']:
+        return WORKSHOP
+    elif category == 'Industry':
+        return INDUSTRY
+    else:
+        raise ValueError(f'Could not determine program from: {category}')
+
+
 class Acl2023Parser:
     def __init__(
         self,
@@ -58,11 +73,13 @@ class Acl2023Parser:
         poster_tsv_path: Path,
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
+        committee_yaml_path: Path,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
         self.virtual_tsv_path = virtual_tsv_path
         self.spotlight_tsv_path = spotlight_tsv_path
+        self.committee_yaml_path = committee_yaml_path
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
@@ -75,9 +92,15 @@ class Acl2023Parser:
         # Order is intentional, spotlight papers also appear in virtual, so repeated papers
         # warnings aren't emitted
         self._parse_spotlight_papers()
+        self.validate()
         return Conference(
-            sessions=self.sessions, papers=self.papers, events=self.events
+            sessions=self.sessions, papers=self.papers, events=self.events, committee=self._parse_committee()
         )
+    
+    def validate(self):
+        for p in self.papers.values():
+            assert len(p.event_ids) > 0
+            assert p.program in PROGRAMS
 
     def _parse_start_end_dt(self, date_str: str, time_str: str):
         start_time, end_time = time_str.split("-")
@@ -88,11 +111,26 @@ class Acl2023Parser:
             datetime.datetime.strptime(f"{date_str} {end_time}", DATE_FMT)
         )
         return start_parsed_dt, end_parsed_dt
+    
+    def _parse_committee(self) -> Dict[str, CommitteeMember]:
+        with open(self.committee_yaml_path) as f:
+            committee = yaml.full_load(f)
+            for group, entries in committee.items():
+                role = group.replace('Chairs', 'Chair')
+                committee[group] = [CommitteeMember(role=role, **e) for e in entries]
+            return committee
 
     def _parse_spotlight_papers(self):
         df = pd.read_csv(self.spotlight_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
         group_type = "Spotlight"
+        # start_dt and end_dt are not in the sheets, but hardcoded instead
+        start_dt = self.zone.localize(datetime.datetime(
+            year=2023, month=7, day=10, hour=19, minute=0
+        ))
+        end_dt = self.zone.localize(datetime.datetime(
+            year=2023, month=7, day=10, hour=21, minute=0
+        ))
         # TODO: Fix Session once the sheet has it
         for group_room, group in df.groupby(["Room"]):
             group_session = "Spotlight"
@@ -102,8 +140,6 @@ class Acl2023Parser:
             # There are multiple concurrent spotlight events, each in a different room.
             # Thus, the one spotlight session should have multiple events that are differentiated by room
             event_name = get_session_event_name(group_session, group_room, group_type)
-            start_dt = None
-            end_dt = None
 
             # TODO: Add back date/time when the sheet has it
             #start_dt, end_dt = self._parse_start_end_dt(
@@ -143,7 +179,7 @@ class Acl2023Parser:
                 else:
                     paper = Paper(
                         id=paper_id,
-                        program="Main",
+                        program=determine_program(row.Category),
                         title=row.Title,
                         authors=parse_authors(row.Author),
                         # TODO: group_track
@@ -214,7 +250,7 @@ class Acl2023Parser:
                 else:
                     paper = Paper(
                         id=paper_id,
-                        program="Main",
+                        program=determine_program(row.Category),
                         title=row.Title,
                         authors=parse_authors(row.Author),
                         track=group_track,
@@ -284,7 +320,7 @@ class Acl2023Parser:
                 else:
                     paper = Paper(
                         id=paper_id,
-                        program="Main",
+                        program=determine_program(row.Category),
                         title=row.Title,
                         authors=parse_authors(row.Author),
                         track=group_track,
@@ -349,7 +385,7 @@ class Acl2023Parser:
                 else:
                     paper = Paper(
                         id=paper_id,
-                        program="Main",
+                        program=determine_program(row.Category),
                         title=row.Title,
                         authors=parse_authors(row.Author),
                         track=group_track,
@@ -376,10 +412,11 @@ class DateTimeEncoder(json.JSONEncoder):
 
 
 def main(
-    oral_tsv: str = "sitedata/acl2023/oral-papers.tsv",
-    poster_tsv: str = "sitedata/acl2023/poster-papers.tsv",
-    virtual_tsv: str = "sitedata/acl2023/virtual-papers.tsv",
-    spotlight_tsv: str = "sitedata/acl2023/spotlight-papers.tsv",
+    oral_tsv: str = "data/acl_2023/data/oral-papers.tsv",
+    poster_tsv: str = "data/acl_2023/data/poster-demo-papers.tsv",
+    virtual_tsv: str = "data/acl_2023/data/virtual-papers.tsv",
+    spotlight_tsv: str = "data/acl_2023/data/spotlight-papers.tsv",
+    committee_yaml: str = "data/acl_2023/data/committee.yaml",
     out_dir: str = "auto_data/acl_2023/",
 ):
     parser = Acl2023Parser(
@@ -387,18 +424,19 @@ def main(
         poster_tsv_path=Path(poster_tsv),
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
+        committee_yaml_path=Path(committee_yaml)
     )
     conf = parser.parse()
     out_dir = Path(out_dir)
     out_dir.mkdir(exist_ok=True, parents=True)
     conf_dict = conf.dict()
-    with open(out_dir / "program.yaml", "w") as f:
+    with open(out_dir / "conference.yaml", "w") as f:
         f.write(yaml.dump(conf_dict))
 
-    with open(out_dir / "program.json", "w") as f:
+    with open(out_dir / "conference.json", "w") as f:
         json.dump(conf_dict, f, cls=DateTimeEncoder)
 
-    with open(out_dir / "program.pkl", "wb") as f:
+    with open(out_dir / "conference.pkl", "wb") as f:
         pickle.dump(conf, f)
 
 

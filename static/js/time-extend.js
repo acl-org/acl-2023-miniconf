@@ -6,7 +6,8 @@ add_local_tz = (selector) => {
     const t = $(this).text();
     const res = regex_time.exec(t);
     if (res) {
-      const dummy_date_str = "2020-11-16";
+      // This date matters as it sets PST VS PDT
+      const dummy_date_str = "2023-07-4";
       const start_time = moment.utc(`${dummy_date_str} ${res[1]}`);
       const end_time = moment.utc(`${dummy_date_str} ${res[2]}`);
       const local_start = start_time.tz(guess_tz);

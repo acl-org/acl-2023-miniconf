@@ -41,28 +41,7 @@ class SessionInfo:
     @property
     def session(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
-
         start_date = f'{start_time.strftime("%b")} {start_time.day}'
-        if self.session_name.startswith("D"):
-            # demo sessions
-            return f"Demo Session {self.session_name[1:]}: {start_date}"
-        if self.session_name.startswith("P-"):
-            # plenary sessions
-            return f"{self.session_name[2:]}: {start_date}"
-        if self.session_name.startswith("S-"):
-            # social event sessions
-            return f"{self.session_name[2:]}: {start_date}"
-        if self.session_name.startswith("T-"):
-            # workshop sessions
-            return f"{self.session_name[2:]}: {start_date}"
-        if self.session_name.startswith("W-"):
-            # workshop sessions
-            return f"{self.session_name[2:]}: {start_date}"
-        if self.session_name.startswith("z") or self.session_name.startswith("g"):
-            # paper sessions
-            prefix = self.session_type.capitalize()
-            return f"{prefix}-{self.session_name[1:]}: {start_date}"
-
         return f"Session {self.session_name}: {start_date}"
 
     @property
@@ -150,14 +129,6 @@ class PlenarySession:
     presentation_id: Optional[str]
     rocketchat_channel: Optional[str]
     videos: List[PlenaryVideo]
-
-
-@dataclass(frozen=True)
-class CommitteeMember:
-    role: str
-    name: str
-    aff: str
-    image: Optional[str]
 
 
 @dataclass(frozen=True)
@@ -261,30 +232,3 @@ class SocialEvent:
     rocketchat_channel: str
     website: str
     zoom_link: str
-
-
-@dataclass(frozen=True)
-class QaSubSession:
-    name: str
-    link: str
-    papers: List[str]
-
-
-@dataclass(frozen=True)
-class QaSession:
-    uid: str
-    name: str
-    start_time: datetime
-    end_time: datetime
-    subsessions: List[QaSubSession]
-
-    @property
-    def time_string(self) -> str:
-        start = self.start_time.astimezone(pytz.utc)
-        end = self.end_time.astimezone(pytz.utc)
-        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
-
-    @property
-    def day(self) -> str:
-        start_time = self.start_time.astimezone(pytz.utc)
-        return start_time.strftime("%b %d")

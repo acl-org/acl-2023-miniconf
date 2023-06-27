@@ -82,21 +82,21 @@
     {% block header %}
     {% set navigation_bar = [
     ('index.html', 'Home'),
+    ('papers.html', 'Papers'),
+    ('https://2023.aclweb.org/committees/organization/', 'Organizers'),
+    ] -%}
+
+    <!-- Add back ('livestream.html', 'Livestream'),
     ('schedule.html', 'Schedule'),
+    ('about.html', 'Help'),
     ('plenary_sessions.html', 'Plenary'),
     ('livestream.html', 'Livestream'),
-    ('papers.html', 'Papers'),
     ('tutorials.html', 'Tutorials'),
     ('workshops.html', 'Workshops'),
     ('socials.html', 'Socials'),
     ('sponsors.html', 'Sponsors'),
     ('http://' + config.chat_server, 'Chat'),
     (config.gather_town , 'Gather'),
-    ('https://2020.emnlp.org/organizers', 'Organizers'),
-    ('about.html', 'Help'),
-    ] -%}
-
-    <!-- Add back ('livestream.html', 'Livestream'),
     for a new conference
     -->
 
@@ -205,10 +205,10 @@
             height={{config.logo.height | default("auto") | tojson}}
             width={{config.logo.width | default("auto") | tojson}} align="center"
           >
-          <span class="lead">EMNLP 2020</span>
+          <span class="lead">{{ config.display_name }}</span>
         </p>
         <p class="float-right"><a href="#" class="text-dark">Back to Top</a></p>
-        <p class="text-center">© 2020 {{config.organization}}</p>
+        <p class="text-center">© 2023 {{config.organization}}</p>
       </div>
     </footer>
 

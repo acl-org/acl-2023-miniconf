@@ -1,7 +1,8 @@
 build: false
-data_dir: emnlp_2020
+auto_data_dir: auto_data/acl_2023
+data_dir: data/acl_2023
 port: 7777
-debug: false
+debug: true
 host: '0.0.0.0'
 out_dir: build/
 time_zone: America/Toronto

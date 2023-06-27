@@ -47,20 +47,41 @@
 
 <div class="row">
   <div class="col-md-7 col-sm-12 pr-5 lead">
-    <p>Welcome to {{ config.name}}!<br><br>
-      Here is how to use this website to find live events (at fixed times) plus pre-recorded talks you can watch
-      anytime.
+    <p>Welcome to {{ config.display_name}}!<br><br>
+      {{ config.display_name }} is hosted on a combination of underline.io, RocketChat, and MiniConf (this site)!<br>
+
+      <dt>Program</dt>
+      Currently, only the program for papers is on this site, which includes: main track papers (orals + in-person posters + virtual posters + spotlight), demo papers, and industry papers.
+
+      <dt>How can I find my session?</dt>
+      <ol>
+        <li>Click "Papers".</li>
+        <li>Search for your paper.</li>
+        <li>Click on the title.</li>
+        <li>Check the session assignment and time.</li>
+      </ol>
+
+      <dt>Volunteer</dt>
+      We are actively working on getting this site ready for ACL 2023, if you want to help, <a href="https://github.com/EntilZha/acl-miniconf/issues">open an issue to volunteer</a>.
+
     </p>
     <dl>
+      {#
       <dt>Schedule</dt>
       <dd>Use the <a class="text" href="schedule.html">Schedule</a> to find live sessions and set your timezone.
       </dd>
+      #}
+
+      {#
       <dt>Plenary Sessions</dt>
       <dd>Plenary Sessions include Keynote Talks and the Business meeting (pre-recorded talks + live Q&A), plus Awards
         ceremonies.
         <!-- Use the <a class="text" href="livestream.html" >Livestream</a> to watch live sessions in real time. -->
         Pre-recorded videos are available under <a class="text" href="plenary_sessions.html">Plenary Sessions</a>.
       </dd>
+      #}
+
+      {#
       <dt>Main Conference Papers</dt>
       <dd>Each <a class="text" href="papers.html">paper</a> has a pre-recorded 7-12 minute talk,
         one live Q&A video sessions (on Zoom or in Gather.Town) at different times, and a linked RocketChat channel (for
@@ -68,6 +89,9 @@
         This includes <a class="text" href="papers.html?filter=titles&program=demo&track=All+tracks">System
           Demonstrations</a> papers</a>.
       </dd>
+      #}
+
+      {#
       <dt>Tutorials and Workshops</dt>
       <dd>The 7 <a class="text" href="tutorials.html">tutorials</a> and 25 <a class="text"
           href="workshops.html">workshops</a> (November 19-20) are all included under conference registration.
@@ -94,6 +118,7 @@
       <dd> Use the hashtag <span
           style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">{{
           config.social_tag }}</span></dd>
+          #}
     </dl>
   </div>
   <!-- <div class="col-md-1"></div> -->
@@ -117,13 +142,10 @@
 
 
 <a class="text-muted">
-  The <a href="https://github.com/entilzha/acl-miniconf">ACL2023 virtual conference website</a> uses <a
-    href="https://github.com/Mini-Conf/Mini-Conf">MiniConf</a> built by Hendrik Strobelt and Sasha Rush that
-  was extended by the amazing <a href="https://github.com/acl-org/acl-2020-virtual-conference">ACL 2020</a> and <a
+  The <a href="https://github.com/entilzha/acl-miniconf">ACL2023 virtual conference website</a> is based on <a
+  href="https://github.com/Mini-Conf/Mini-Conf">MiniConf</a> and adapted for ACL 2023 by Pedro Rodriguez and the virtual infrastructure committee.
+  MiniConf was built by Hendrik Strobelt and Sasha Rush.
+  It was extended by the amazing <a href="https://github.com/acl-org/acl-2020-virtual-conference">ACL 2020</a> and <a
     href="https://github.com/acl-org/emnlp-2020-virtual-conference">EMNLP2020</a> teams.
-
-  The ACL2023 infrastructure committee is very grateful to the
-  <a href="static/pdf/volunteers.pdf">volunteers</a> and contributors whose valuable contributions to building the
-  virtual infrastructure made the conference possible.
 
   {% endblock %}

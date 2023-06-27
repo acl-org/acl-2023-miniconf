@@ -137,8 +137,6 @@ class Conference(BaseModel):
     papers: Dict[str, Paper]
     # Sessions have events (e.g., Oral session for NLP Applications, or a poster session)
     events: Dict[str, Event]
-    # Key is committee/chair name
-    committee: Dict[str, List[CommitteeMember]]
 
     @property
     def main_papers(self):
@@ -252,7 +250,7 @@ class SiteData(BaseModel):
         site_data = cls(
             config=config,
             pages=load_all_pages_texts(site_data_path),
-            committee=conference.committee,
+            committee={},
             calendar=[],
             papers=list(conference.papers.values()),
             overall_calendar=[],

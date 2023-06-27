@@ -145,12 +145,9 @@ node_modules/
 outputs/
 .watchman-cookie*
 
-# This leaves conference.json to be committed
-auto_data/acl_2023/conference.pkl
-auto_data/acl_2023/conference.yaml
-
-# This should never be committed, it is private sheets
-data/acl_2023/data
 *.ipynb
 # Avoid committing API keys/etc
 configs/rocketchat
+
+# This should never be committed, it is private sheets
+private_data-acl2023

@@ -11,14 +11,26 @@ import pandas as pd
 import pytz
 from rich.logging import RichHandler
 
-from acl_miniconf.data import CommitteeMember, Session, Event, Paper, Conference, MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY, PROGRAMS
+from acl_miniconf.data import (
+    CommitteeMember,
+    Session,
+    Event,
+    Paper,
+    Conference,
+    MAIN,
+    WORKSHOP,
+    FINDINGS,
+    DEMO,
+    INDUSTRY,
+    PROGRAMS,
+)
 
 logging.basicConfig(
-    format='%(message)s',
+    format="%(message)s",
     level=logging.INFO,
-    datefmt='%Y-%m-%d %H:%M:%S',
+    datefmt="%Y-%m-%d %H:%M:%S",
     handlers=[RichHandler(rich_tracebacks=True)],
-    force=True
+    force=True,
 )
 
 
@@ -51,22 +63,22 @@ def get_session_event_name(session: str, track: str, session_type: str):
 
 
 def determine_program(category: str):
-    if category in ['CL', 'TACL', 'Main-Oral', 'Main-Poster']:
+    if category in ["CL", "TACL", "Main-Oral", "Main-Poster"]:
         return MAIN
-    elif category == 'Findings':
+    elif category == "Findings":
         return FINDINGS
-    elif category == 'Demo':
+    elif category == "Demo":
         return DEMO
-    elif category in ['Workshop', 'SRW']:
+    elif category in ["Workshop", "SRW"]:
         return WORKSHOP
-    elif category == 'Industry':
+    elif category == "Industry":
         return INDUSTRY
     else:
-        raise ValueError(f'Could not determine program from: {category}')
+        raise ValueError(f"Could not determine program from: {category}")
 
 
 def name_to_id(name: str):
-    return name.replace(' ', '-').replace(':', '_').lower()
+    return name.replace(" ", "-").replace(":", "_").lower()
 
 
 class Acl2023Parser:
@@ -77,13 +89,11 @@ class Acl2023Parser:
         poster_tsv_path: Path,
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
-        committee_yaml_path: Path,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
         self.virtual_tsv_path = virtual_tsv_path
         self.spotlight_tsv_path = spotlight_tsv_path
-        self.committee_yaml_path = committee_yaml_path
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
@@ -98,9 +108,11 @@ class Acl2023Parser:
         self._parse_spotlight_papers()
         self.validate()
         return Conference(
-            sessions=self.sessions, papers=self.papers, events=self.events, committee=self._parse_committee()
+            sessions=self.sessions,
+            papers=self.papers,
+            events=self.events,
         )
-    
+
     def validate(self):
         for p in self.papers.values():
             assert len(p.event_ids) > 0
@@ -115,41 +127,33 @@ class Acl2023Parser:
             datetime.datetime.strptime(f"{date_str} {end_time}", DATE_FMT)
         )
         return start_parsed_dt, end_parsed_dt
-    
-    def _parse_committee(self) -> Dict[str, CommitteeMember]:
-        with open(self.committee_yaml_path) as f:
-            committee = yaml.full_load(f)
-            for group, entries in committee.items():
-                role = group.replace('Chairs', 'Chair')
-                committee[group] = [CommitteeMember(role=role, **e) for e in entries]
-            return committee
 
     def _parse_spotlight_papers(self):
         df = pd.read_csv(self.spotlight_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
         group_type = "Spotlight"
         # start_dt and end_dt are not in the sheets, but hardcoded instead
-        start_dt = self.zone.localize(datetime.datetime(
-            year=2023, month=7, day=10, hour=19, minute=0
-        ))
-        end_dt = self.zone.localize(datetime.datetime(
-            year=2023, month=7, day=10, hour=21, minute=0
-        ))
+        start_dt = self.zone.localize(
+            datetime.datetime(year=2023, month=7, day=10, hour=19, minute=0)
+        )
+        end_dt = self.zone.localize(
+            datetime.datetime(year=2023, month=7, day=10, hour=21, minute=0)
+        )
         # TODO: Fix Session once the sheet has it
         for group_room, group in df.groupby(["Room"]):
             group_session = "Spotlight"
             group = group.sort_values("Local order")
             room = group.iloc[0].Room
-            group_track = 'Spotlight'
+            group_track = "Spotlight"
             # There are multiple concurrent spotlight events, each in a different room.
             # Thus, the one spotlight session should have multiple events that are differentiated by room
             event_name = get_session_event_name(group_session, group_room, group_type)
             event_id = name_to_id(event_name)
 
             # TODO: Add back date/time when the sheet has it
-            #start_dt, end_dt = self._parse_start_end_dt(
+            # start_dt, end_dt = self._parse_start_end_dt(
             #    group.iloc[0].Date, group.iloc[0].Time
-            #)
+            # )
             if event_id not in self.events:
                 self.events[event_id] = Event(
                     id=event_id,
@@ -204,7 +208,6 @@ class Acl2023Parser:
                     )
                     self.papers[row.PID] = paper
 
-
     def _parse_virtual_papers(self):
         df = pd.read_csv(self.virtual_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
@@ -249,7 +252,9 @@ class Acl2023Parser:
                 event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
-                    logging.warning(f"Duplicate papers in virtual: {row.PID}\nExisting: {self.papers[row.PID]}\nNew:{paper}")
+                    logging.warning(
+                        f"Duplicate papers in virtual: {row.PID}\nExisting: {self.papers[row.PID]}\nNew:{paper}"
+                    )
                     paper = self.papers[row.PID]
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
@@ -320,7 +325,9 @@ class Acl2023Parser:
                 event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
-                    logging.warning(f"Duplicate papers in posters: {row.PID}\n{self.papers[row.PID]}")
+                    logging.warning(
+                        f"Duplicate papers in posters: {row.PID}\n{self.papers[row.PID]}"
+                    )
                     paper = self.papers[row.PID]
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
@@ -386,7 +393,9 @@ class Acl2023Parser:
                 paper_id = row.PID
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
-                    logging.warning(f"Duplicate papers in oral: {row.PID}\n{self.papers[row.PID]}")
+                    logging.warning(
+                        f"Duplicate papers in oral: {row.PID}\n{self.papers[row.PID]}"
+                    )
                     paper = self.papers[row.PID]
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
@@ -420,32 +429,25 @@ class DateTimeEncoder(json.JSONEncoder):
 
 
 def main(
-    oral_tsv: str = "data/acl_2023/data/oral-papers.tsv",
-    poster_tsv: str = "data/acl_2023/data/poster-demo-papers.tsv",
-    virtual_tsv: str = "data/acl_2023/data/virtual-papers.tsv",
-    spotlight_tsv: str = "data/acl_2023/data/spotlight-papers.tsv",
-    committee_yaml: str = "data/acl_2023/data/committee.yaml",
-    out_dir: str = "auto_data/acl_2023/",
+    oral_tsv: str = "private_data-acl2023/oral-papers.tsv",
+    poster_tsv: str = "private_data-acl2023/poster-demo-papers.tsv",
+    virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
+    spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
+    out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
         oral_tsv_path=Path(oral_tsv),
         poster_tsv_path=Path(poster_tsv),
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
-        committee_yaml_path=Path(committee_yaml)
     )
     conf = parser.parse()
     out_dir = Path(out_dir)
     out_dir.mkdir(exist_ok=True, parents=True)
     conf_dict = conf.dict()
-    with open(out_dir / "conference.yaml", "w") as f:
-        f.write(yaml.dump(conf_dict))
 
     with open(out_dir / "conference.json", "w") as f:
         json.dump(conf_dict, f, cls=DateTimeEncoder)
-
-    with open(out_dir / "conference.pkl", "wb") as f:
-        pickle.dump(conf, f)
 
 
 if __name__ == "__main__":

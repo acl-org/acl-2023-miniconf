@@ -26,25 +26,8 @@ jobs:
       run: poetry run make freeze
     - name: black
       run: poetry run black --check .
-    - name: Init new repo and commit
-      run: |
-        cd build/
-        git init
-        git add -A
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git config --global --add safe.directory /github/workspace/build
-        git commit -m 'deploy'
-    - name: Force push to destination branch
-      uses: ad-m/github-push-action@v0.5.0
+    - uses: actions/upload-artifact@v3
       with:
-        # Token for the repo
-        # Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # Destination branch to push changes
-        branch: gh-pages
-        # Use force push to fully overwrite the destination branch
-        force: true
-        # We have to push from the folder where files were generated.
-        # Same were the new repo was initialized in the previous step
-        directory: ./build/
+        name: Upload static site
+        path: build/
+      

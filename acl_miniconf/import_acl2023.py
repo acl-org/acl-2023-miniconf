@@ -65,6 +65,10 @@ def determine_program(category: str):
         raise ValueError(f'Could not determine program from: {category}')
 
 
+def name_to_id(name: str):
+    return name.replace(' ', '-').replace(':', '_').lower()
+
+
 class Acl2023Parser:
     def __init__(
         self,
@@ -140,14 +144,15 @@ class Acl2023Parser:
             # There are multiple concurrent spotlight events, each in a different room.
             # Thus, the one spotlight session should have multiple events that are differentiated by room
             event_name = get_session_event_name(group_session, group_room, group_type)
+            event_id = name_to_id(event_name)
 
             # TODO: Add back date/time when the sheet has it
             #start_dt, end_dt = self._parse_start_end_dt(
             #    group.iloc[0].Date, group.iloc[0].Time
             #)
-            if event_name not in self.events:
-                self.events[event_name] = Event(
-                    id=event_name,
+            if event_id not in self.events:
+                self.events[event_id] = Event(
+                    id=event_id,
                     session=group_session,
                     track=group_track,
                     start_time=start_dt,
@@ -158,17 +163,17 @@ class Acl2023Parser:
                     room=room,
                     type=group_type,
                 )
-            event = self.events[event_name]
+            event = self.events[event_id]
             if group_session not in self.sessions:
                 self.sessions[group_session] = Session(
-                    id=group_session,
+                    id=name_to_id(group_session),
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     events=[],
                 )
             session = self.sessions[group_session]
-            session.events[event_name] = event
+            session.events[event_id] = event
             for row in group.itertuples():
                 paper_id = row.PID
                 event.paper_ids.append(paper_id)
@@ -207,12 +212,13 @@ class Acl2023Parser:
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
             group = group.sort_values("Local order")
             event_name = get_session_event_name(group_session, group_track, group_type)
+            event_id = name_to_id(event_name)
             start_dt, end_dt = self._parse_start_end_dt(
                 group.iloc[0].Date, group.iloc[0].Time
             )
-            if event_name not in self.events:
-                self.events[event_name] = Event(
-                    id=event_name,
+            if event_id not in self.events:
+                self.events[event_id] = Event(
+                    id=event_id,
                     session=group_session,
                     track=group_track,
                     start_time=start_dt,
@@ -223,24 +229,24 @@ class Acl2023Parser:
                     room="Virtual Poster Session",
                     type=group_type,
                 )
-            event = self.events[event_name]
+            event = self.events[event_id]
             if group_session not in self.sessions:
                 self.sessions[group_session] = Session(
-                    id=group_session,
+                    id=name_to_id(group_session),
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     events=[],
                 )
             session = self.sessions[group_session]
-            if event_name in session.events:
+            if event_id in session.events:
                 raise ValueError("Duplicated events")
-            session.events[event_name] = event
+            session.events[event_id] = event
 
             for row in group.itertuples():
                 paper_id = row.PID
                 start_dt, end_dt = self._parse_start_end_dt(row.Date, row.Time)
-                event = self.events[event_name]
+                event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
                     logging.warning(f"Duplicate papers in virtual: {row.PID}\nExisting: {self.papers[row.PID]}\nNew:{paper}")
@@ -276,12 +282,13 @@ class Acl2023Parser:
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
             group = group.sort_values("Local order")
             event_name = get_session_event_name(group_session, group_track, group_type)
+            event_id = name_to_id(event_name)
             start_dt, end_dt = self._parse_start_end_dt(
                 group.iloc[0].Date, group.iloc[0].Time
             )
-            if event_name not in self.events:
-                self.events[event_name] = Event(
-                    id=event_name,
+            if event_id not in self.events:
+                self.events[event_id] = Event(
+                    id=event_id,
                     session=group_session,
                     track=group_track,
                     start_time=start_dt,
@@ -292,25 +299,25 @@ class Acl2023Parser:
                     room="Poster Session",
                     type=group_type,
                 )
-            event = self.events[event_name]
+            event = self.events[event_id]
 
             if group_session not in self.sessions:
                 self.sessions[group_session] = Session(
-                    id=group_session,
+                    id=name_to_id(group_session),
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     events=[],
                 )
             session = self.sessions[group_session]
-            if event_name in session.events:
+            if event_id in session.events:
                 raise ValueError("Duplicated events")
-            session.events[event_name] = event
+            session.events[event_id] = event
 
             for row in group.itertuples():
                 paper_id = row.PID
                 start_dt, end_dt = self._parse_start_end_dt(row.Date, row.Time)
-                event = self.events[event_name]
+                event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
                     logging.warning(f"Duplicate papers in posters: {row.PID}\n{self.papers[row.PID]}")
@@ -347,12 +354,13 @@ class Acl2023Parser:
             group = group.sort_values("Track Order")
             room = group.iloc[0].Room
             event_name = get_session_event_name(group_session, group_track, group_type)
+            event_id = name_to_id(event_name)
             start_dt, end_dt = self._parse_start_end_dt(
                 group.iloc[0].Date, group.iloc[0].Time
             )
-            if event_name not in self.events:
-                self.events[event_name] = Event(
-                    id=event_name,
+            if event_id not in self.events:
+                self.events[event_id] = Event(
+                    id=event_id,
                     session=group_session,
                     track=group_track,
                     start_time=start_dt,
@@ -363,17 +371,17 @@ class Acl2023Parser:
                     room=room,
                     type=group_type,
                 )
-            event = self.events[event_name]
+            event = self.events[event_id]
             if group_session not in self.sessions:
                 self.sessions[group_session] = Session(
-                    id=group_session,
+                    id=name_to_id(group_session),
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     events=[],
                 )
             session = self.sessions[group_session]
-            session.events[event_name] = event
+            session.events[event_id] = event
             for row in group.itertuples():
                 paper_id = row.PID
                 event.paper_ids.append(paper_id)

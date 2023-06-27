@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import List, Optional, Dict, Any
 import glob
 import datetime
@@ -73,6 +74,12 @@ class Session(BaseModel):
     @property
     def day(self) -> str:
         return self.start_time.astimezone(pytz.utc).strftime("%b %d")
+
+    @property
+    def time_string(self) -> str:
+        start = self.start_time.astimezone(pytz.utc)
+        end = self.end_time.astimezone(pytz.utc)
+        return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
 
 
 class Paper(BaseModel):
@@ -188,8 +195,8 @@ class SiteData(BaseModel):
     calendar: List[FrontendCalendarEvent]
     overall_calendar: List[FrontendCalendarEvent]
     event_types: List[str] = []
-    plenary_sessions: Any
-    plenary_session_days: Any
+    plenary_sessions: Dict
+    plenary_session_days: List[str]
     papers: List[Paper] = []
     main_papers: List[Paper] = []
     demo_papers: List[Paper] = []
@@ -206,7 +213,7 @@ class SiteData(BaseModel):
     code_of_conduct: Any
     sessions: Dict[str, Session]
     session_days: List[Any] = []
-    sessions_by_day: Any
+    sessions_by_day: Dict[str, List[Session]]
     sponsors_by_level: Any
     sponsor_levels: Any
 
@@ -221,6 +228,13 @@ class SiteData(BaseModel):
             session_days.append(
                 (day.replace(" ", "").lower(), day, "active" if i == 0 else "")
             )
+        
+        sessions_by_day = defaultdict(list)
+        for s in conference.sessions.values():
+            sessions_by_day[s.day].append(s)
+        
+        for day, sessions in sessions_by_day.items():
+            sessions_by_day[day] = sorted(sessions, key=lambda x: x.name)
 
         main_program_tracks = list(
             sorted(
@@ -232,6 +246,7 @@ class SiteData(BaseModel):
                 }
             )
         )
+        
         with open(site_data_path / 'configs' / 'config.yml') as f:
             config = yaml.safe_load(f)
         site_data = cls(
@@ -242,7 +257,7 @@ class SiteData(BaseModel):
             papers=list(conference.papers.values()),
             overall_calendar=[],
             event_types=[],
-            plenary_sessions=[],
+            plenary_sessions={},
             plenary_session_days=[],
             main_papers=conference.main_papers,
             demo_papers=conference.demo_papers,
@@ -254,13 +269,13 @@ class SiteData(BaseModel):
             socials=[],
             tracks=list(sorted(track for track in {paper.track for paper in conference.papers.values()})),
             main_program_tracks=main_program_tracks,
-            faq=None,
-            code_of_conduct=None,
+            faq=[],
+            code_of_conduct=[],
             sessions=conference.sessions,
             session_days=session_days,
-            sessions_by_day=[],
-            sponsors_by_level=None,
-            sponsor_levels=None,
+            sessions_by_day=sessions_by_day,
+            sponsors_by_level=[],
+            sponsor_levels=[],
             programs=PROGRAMS,
         )
         return site_data

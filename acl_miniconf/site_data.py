@@ -55,58 +55,6 @@ class SessionInfo:
 
 
 @dataclass(frozen=True)
-class PaperContent:
-    """The content of a paper.
-
-    Needs to be synced with static/js/papers.js and static/js/paper_vis.js.
-    """
-
-    # needs to be synced with
-    title: str
-    authors: List[str]
-    track: str
-    paper_type: str
-    abstract: str
-    tldr: str
-    keywords: List[str]
-    pdf_url: Optional[str]
-    demo_url: Optional[str]
-    sessions: List[SessionInfo]
-    similar_paper_uids: List[str]
-    program: str
-    material: str = None
-
-    def __post_init__(self):
-        if self.program != "workshop" and self.program != "findings":
-            assert self.track, self
-        if self.pdf_url:
-            assert self.pdf_url.startswith("https://"), self.pdf_url
-        if self.demo_url:
-            assert self.demo_url.startswith("https://") or self.demo_url.startswith(
-                "http://"
-            ), self.demo_url
-
-
-@dataclass(frozen=True)
-class Paper:
-    """The paper dataclass.
-
-    This corresponds to an entry in the `papers.json`.
-    See the `start()` method in static/js/papers.js.
-    """
-
-    id: str
-    forum: str
-    card_image_path: str
-    presentation_id: str
-    content: PaperContent
-
-    @property
-    def rocketchat_channel(self) -> str:
-        return f"paper-{self.id.replace('.', '-')}"
-
-
-@dataclass(frozen=True)
 class PlenaryVideo:
     id: str
     title: str
@@ -193,7 +141,7 @@ class WorkshopPaper:
     title: str
     speakers: str
     presentation_id: Optional[str]
-    content: PaperContent
+    content: Any
     rocketchat_channel: str
 
 

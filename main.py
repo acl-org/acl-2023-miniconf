@@ -14,7 +14,7 @@ from flaskext.markdown import Markdown
 
 from acl_miniconf.load_site_data import load_site_data
 from acl_miniconf.site_data import PlenarySession
-from acl_miniconf.data import Conference, SiteData, ByUid, Paper
+from acl_miniconf.data import WORKSHOP, Conference, SiteData, ByUid, Paper
 
 conference: Conference = None
 site_data: SiteData = None
@@ -50,14 +50,6 @@ def home():
     data = _data()
     data["ack_text"] = site_data.pages["acknowledgement.md"]
     return render_template("index.html", **data)
-
-
-@app.route("/about.html")
-def about():
-    data = _data()
-    data["FAQ"] = site_data.faq
-    data["CodeOfConduct"] = site_data.code_of_conduct
-    return render_template("about.html", **data)
 
 
 @app.route("/papers.html")
@@ -116,6 +108,12 @@ def sessions():
     data["session_days"] = site_data.session_days
     data["sessions"] = site_data.sessions_by_day
 
+    event_types = set()
+    for e in conference.events.values():
+        event_types.add(e.type)
+    event_types = sorted(event_types)
+    data['event_types'] = event_types
+
     data["papers"] = {k: v.dict() for k, v in by_uid.papers.items()}
     return render_template("sessions.html", **data)
 
@@ -134,14 +132,6 @@ def workshops():
     return render_template("workshops.html", **data)
 
 
-@app.route("/sponsors.html")
-def sponsors():
-    data = _data()
-    data["sponsors"] = site_data.sponsors_by_level
-    data["sponsor_levels"] = site_data.sponsor_levels
-    return render_template("sponsors.html", **data)
-
-
 @app.route("/socials.html")
 def socials():
     data = _data()
@@ -149,17 +139,8 @@ def socials():
     return render_template("socials.html", **data)
 
 
-@app.route("/organizers.html")
-def organizers():
-    data = _data()
-
-    data["committee"] = site_data.committee
-    return render_template("organizers.html", **data)
-
 
 # ITEM PAGES
-
-
 @app.route("/paper_<uid>.html")
 def paper(uid):
     data = _data()
@@ -197,14 +178,6 @@ def workshop(uid):
     return render_template("workshop.html", **data)
 
 
-@app.route("/sponsor_<uid>.html")
-def sponsor(uid):
-    data = _data()
-    data["sponsor"] = by_uid.sponsors[uid]
-    data["papers"] = by_uid.papers
-    return render_template("sponsor.html", **data)
-
-
 @app.route("/chat.html")
 def chat():
     data = _data()
@@ -234,7 +207,7 @@ def papers_program(program: str):
 
 @app.route("/track_<program_name>_<track_name>.json")
 def track_json(program_name, track_name):
-    if program_name == "workshop":
+    if program_name == WORKSHOP:
         papers_for_track = None
         for wsh in site_data.workshops:
             if wsh.title == track_name:
@@ -242,7 +215,7 @@ def track_json(program_name, track_name):
                 break
     else:
         papers_for_track = [
-            paper
+            paper.dict()
             for paper in site_data.papers
             if paper.track == track_name
             and paper.program == program_name
@@ -266,7 +239,6 @@ def serve(path):
 
 @freezer.register_generator
 def generator():
-    paper: Paper
     for paper in site_data.papers:
         yield "paper", {"uid": paper.id}
 
@@ -275,9 +247,9 @@ def generator():
         for track in site_data.tracks:
             yield "track_json", {"track_name": track, "program_name": program}
 
-    yield "papers_program", {"program": "workshop"}
+    yield "papers_program", {"program": WORKSHOP}
     for wsh in site_data.workshops:
-        yield "track_json", {"track_name": wsh.title, "program_name": "workshop"}
+        yield "track_json", {"track_name": wsh.title, "program_name": WORKSHOP}
 
     plenary_session: PlenarySession
     for _, plenary_sessions_on_date in site_data.plenary_sessions.items():
@@ -290,13 +262,8 @@ def generator():
     for workshop in site_data.workshops:
         yield "workshop", {"uid": workshop.id}
 
-    for sponsor in site_data.sponsors:
-        if "landingpage" in sponsor:
-            continue
-        yield "sponsor", {"uid": str(sponsor["UID"])}
-
-    for key in site_data:
-        yield "serve", {"path": key}
+    #for key in site_data:
+    #    yield "serve", {"path": key}
 
 
 @hydra.main(version_base=None, config_path="configs", config_name="site")
@@ -305,8 +272,7 @@ def hydra_main(cfg: DictConfig):
     data_dir = Path(cfg.data_dir)
     # TODO: Don't load pickle, load json, but need to figure out how to parse datetimes back into str
     global conference
-    with open(auto_data_dir / 'conference.pkl', 'rb') as f:
-        conference = pickle.load(f)
+    conference = Conference.parse_file(auto_data_dir / 'conference.json')
     if not data_dir.exists():
         raise AssertionError(
             f"Data directory {cfg.data_dir} not found in `data`. Please specify the correct data directory in config."

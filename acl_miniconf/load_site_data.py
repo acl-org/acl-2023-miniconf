@@ -15,7 +15,6 @@ import pytz
 import yaml
 
 from acl_miniconf.site_data import (
-    PaperContent,
     PlenarySession,
     PlenaryVideo,
     SessionInfo,

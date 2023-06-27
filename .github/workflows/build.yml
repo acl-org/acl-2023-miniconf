@@ -26,8 +26,3 @@ jobs:
       run: poetry run make freeze
     - name: black
       run: poetry run black --check .
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Upload static site
-        path: build/
-      

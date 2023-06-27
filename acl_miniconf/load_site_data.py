@@ -48,7 +48,7 @@ def load_site_data(
     #generate_social_events(site_data)
 
     site_data.calendar = build_schedule(site_data.overall_calendar)
-    site_data.event_types = list(
+    site_data.session_types = list(
         {event.type for event in site_data.overall_calendar}
     )
     # paper_<uid>.html
@@ -319,42 +319,16 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     # Add paper sessions to calendar
 
     overall_calendar = []
-    all_grouped: Dict[str, List[Any]] = defaultdict(list)
     for uid, session in site_data.sessions.items():
         start = session.start_time
         end = session.end_time
-
-        event = FrontendCalendarEvent(
-            title=f"<b>{session.name}</b>",
-            start=start,
-            end=end,
-            location="",
-            # TODO: UID probably doesn't work here
-            url=f"papers.html?session={uid}&program=all",
-            category="time",
-            type="Paper Sessions",
-            view="day",
-        )
-        overall_calendar.append(event)
-
-        assert start < end, "Session start after session end"
-        all_grouped[uid].append(session)
-
-    for uid, group in all_grouped.items():
-        name = group[0].name
-        start_time = group[0].start_time
-        end_time = group[0].end_time
-        assert all(s.start_time == start_time for s in group)
-        assert all(s.end_time == end_time for s in group)
-
         tab_id = (
-            start_time.astimezone(pytz.utc).strftime("%b %d").replace(" ", "").lower()
+            session.start_time.astimezone(pytz.utc).strftime("%b %d").replace(" ", "").lower()
         )
-
         event = FrontendCalendarEvent(
-            title=name,
-            start=start_time,
-            end=end_time,
+            title=session.name,
+            start=session.start_time,
+            end=session.end_time,
             location="",
             url=f"sessions.html#tab-{tab_id}",
             category="time",
@@ -362,6 +336,46 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
             view="week",
         )
         overall_calendar.append(event)
+        existing_events = set()
+        for event in session.events.values():
+            if (event.session, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    title=f"<b>{event.track}</b>",
+                    start=start,
+                    end=end,
+                    location="",
+                    # TODO: UID probably doesn't work here
+                    url=f"papers.html?session={uid}&program=all",
+                    category="time",
+                    type="Paper Sessions",
+                    view="day",
+                )
+                # We don't want repeats of types, just collect all matching session/track
+                # into one page
+                existing_events.add((event.session, event.track, event.start_time))
+                overall_calendar.append(frontend_event)
+
+                assert start < end, "Session start after session end"
+
+    # for uid, group in all_grouped.items():
+    #     name = group[0].name
+    #     start_time = group[0].start_time
+    #     end_time = group[0].end_time
+    #     assert all(s.start_time == start_time for s in group)
+    #     assert all(s.end_time == end_time for s in group)
+
+
+    #     event = FrontendCalendarEvent(
+    #         title=name,
+    #         start=start_time,
+    #         end=end_time,
+    #         location="",
+    #         url=f"sessions.html#tab-{tab_id}",
+    #         category="time",
+    #         type="Paper Sessions",
+    #         view="week",
+    #     )
+    #     overall_calendar.append(event)
     return overall_calendar
 
 

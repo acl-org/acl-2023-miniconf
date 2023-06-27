@@ -82,6 +82,7 @@
     {% block header %}
     {% set navigation_bar = [
     ('index.html', 'Home'),
+    ('schedule.html', 'Schedule'),
     ('sessions.html', 'Sessions'),
     ('papers.html', 'Papers'),
     ('https://2023.aclweb.org/faq/', 'FAQ'),
@@ -90,14 +91,11 @@
     ] -%}
 
     <!-- Add back ('livestream.html', 'Livestream'),
-    ('schedule.html', 'Schedule'),
     ('about.html', 'Help'),
     ('plenary_sessions.html', 'Plenary'),
     ('livestream.html', 'Livestream'),
     ('tutorials.html', 'Tutorials'),
     ('workshops.html', 'Workshops'),
-    ('socials.html', 'Socials'),
-    ('sponsors.html', 'Sponsors'),
     ('http://' + config.chat_server, 'Chat'),
     (config.gather_town , 'Gather'),
     for a new conference

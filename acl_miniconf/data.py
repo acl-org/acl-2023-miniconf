@@ -194,7 +194,7 @@ class SiteData(BaseModel):
     committee: Dict[str, List[CommitteeMember]]
     calendar: List[FrontendCalendarEvent]
     overall_calendar: List[FrontendCalendarEvent]
-    event_types: List[str] = []
+    session_types: List[str] = []
     plenary_sessions: Dict
     plenary_session_days: List[str]
     papers: List[Paper] = []
@@ -256,7 +256,7 @@ class SiteData(BaseModel):
             calendar=[],
             papers=list(conference.papers.values()),
             overall_calendar=[],
-            event_types=[],
+            session_types=[],
             plenary_sessions={},
             plenary_session_days=[],
             main_papers=conference.main_papers,

@@ -23,7 +23,7 @@ paper_images_path: https://emnlp2020-public.s3.amazonaws.com/paper_images
 default_presentation_id: 38931484
 
 # Remove or change to your chat server.
-enable_chat: false
+enable_chat: true
 chat_server: acl.rocket.chat
 channels_stats_server: https://emnlp2020-channels-stats.azure-api.net
 

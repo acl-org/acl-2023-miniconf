@@ -1,20 +1,15 @@
 ## ACL 2023 Virtual Conference
 
-This virtual conference page is based on [MiniConf](http://www.mini-conf.org/) by Alexander Rush
-and Hendrik Strobelt. It was extended by the [amazing team of ACL 2020](https://github.com/acl-org/acl-2020-virtual-conference).
-The ACL version is the base for this repository.
+This virtual conference page is based on [MiniConf](http://www.mini-conf.org/) by Alexander Rush and Hendrik Strobelt.
+It was extended by the [amazing team of ACL 2020](https://github.com/acl-org/acl-2020-virtual-conference).
+It was adapted for ACL 2023 by Pedro Rodriguez and the virtual infrastructure committee.
 
-<p align="center">
-  <img width="460" src="doc/img/emnlp2020_index.jpg">
-</p>
+The website is based on [Flask](https://flask.palletsprojects.com/) and [Frozen-Flask](https://pythonhosted.org/Frozen-Flask/). It:
 
-The website is based on [Flask](https://flask.palletsprojects.com/) and [Frozen-Flask](https://pythonhosted.org/Frozen-Flask/). 
-It uses data files like `.csv`, `.yaml` or `.json` that contains the information about events, papers, ... to populate the
-HTML templates. From this it generates a static website which can then deployed easily via an HTTP server. We strongly 
-recommend deploying it via Amazon CloudFront and using Amazon Cognito as the authentication provider. See 
-[here](doc/deployment_aws.md) for a guide to do this.
+1. Parses conference-specific input data (e.g., TSV files downloaded from Google Sheets) into a common format.
+2. From common format data, generate a full static page site, which can be deployed easily.
 
-## Quick Start
+## Quick Start (No Program Updates)
 
 1. Install [python poetry](https://python-poetry.org/)
 2. Run: `poetry install`
@@ -22,6 +17,15 @@ recommend deploying it via Amazon CloudFront and using Amazon Cognito as the aut
 
 When you are ready to deploy run `make freeze` to get a static version of the site in the `build` folder.
 
+This will not pickup any program changes, but it will pickup source code changes on the next GH Pages deploy.
+
+## Update ACL 2023 from Source
+
+ACL 2023 Miniconf is generated in three steps:
+
+1. Data is located in `data/acl_2023/data` and should be downloaded from the (private) conference google spreadsheets into these files: `oral-papers.tsv`, `poster-demo-papers.tsv`, `spotlight-papers.tsv`, adn `virtual-papers.tsv`. Additionally, obtain `acl-2023-events-export-2023-06-22.xlsx` from underline to map paper IDs to underline IDs/URLs.
+2. Run `python acl_miniconf/import_acl2023.py` to generate data to `auto_data/acl_2023/`, in `conference.json`, `conference.pkl`, and `conference.yaml` (all same content).
+3. Run `make run`
 
 ## Todos
 
@@ -119,26 +123,6 @@ and ask SlidesLive to show a `Livestream will start soon` message. After the liv
 to the plenary event itself. You can use the livestream ID as a slideslive ID for the player, it will then show
 a recording of the livestream.
 
-### Papers
-
-EMNLP hat 4 types of papers, main conference papers (long/short), CL, TACL, demo, workshop and findings papers.
-See below for the kind of things each paper had.
-
-| Type         | Page | Video | Chat | Visualization |
-|--------------|------|-------|------|---------------|
-| main/CL/TACL | x    | x     | x    | x             |
-| demo         | x    |       | x    |               |
-| workshop     | x    |       | x    |               |
-| findings     | x    |       |      |               |
-
-Demo papers can have arbitrary markdown under `material` to add info like code repo or screencast,
-see our `demo_papers.csv` for it.
-
-For *ACL style conferences, we recommend to ask publication chairs **early** to give out a list of accepted papers with
-SoftConf ids, title, authors, paper type (long/short) and anthology IDs. Also ask them to give out the proceedings
-as soon as they are done, **do not** wait for them to be published in the ACL anthology page. We do not store PDFs 
-directly, but link to the ACL anthology.
-
 #### Visualization
 
 We use [SPECTER](https://github.com/allenai/specter) to generate document embeddings from abstracts and
@@ -194,68 +178,6 @@ social organizers to fill in. Social blocks in the main schedule are computed au
 We gave each social event one Zoom link or they could get a Gather room, but did not schedule events for them. Instead, we 
 linked the personal meeting ID on our website.
 
-### Sponsors
-
-Each sponsor has a booth that is handmade just for him. We assigned one volunteer to each sponsor to write their YAML.
-We collected them via Dropbox file request. Then we merged them into one file via `scripts/dataentry/sponsors.py`.
-The file format is the following:
-
-<details><summary>Sponsor File Format</summary>
-<p>
-
-- name: `<sponsor name>`
-- logo: `<sponsor logo>`
-- level: `<Name of the sponsorship level, e.g. Gold. If there is more than one level, use levels and a list>`
-- levels: `<List of sponsorship levels if there is more than one e.g. Gold and diversity.`>
-- logoontop: `<boolean that says whether logo should be shown also on the booth, default is false, see Apple for an example>`  
-- website: `<external website of sponsor>`
-- channel: `<RocketChat channel name>`
-- description: `<description in markdown>`
-- contacts: `<List of contacts to reach out for more information>`
-  - name: `<Name/Label of the contact>`
-    email: `<Valid mail address>`  
-- video: `<link to a mp4 video (optional)>`
-- youtube: `<link to a Youtube video. Make sure that you use the link from 'Share -> Embed' (optional)>`
-- youtubes: `<List of links to Youtube videos. Make sure that you use the link from 'Share -> Embed' (optional)>`
-- vimeo: `<link to a youtube video. Make sure that you use the link from 'Share -> Embed' (optional)>`
-- gdrive: `<link to a Video on Google Drive. Make sure that you use the link from 'Click "More Actions" and Select Embed Code' (optional)>`
-- zoom_link: `<link, one per sponsor not one per event! You can also use links to other meetings if sponsors want that. e.g. Webex or Google Meet>`
-- zoom_schedule: `<list of zoom sessions>`
-    - start: `<start as ISO time with time zone>`
-    - duration|end: `<Either set duration in hours OR end time>`
-    - label: `<label of  the room>`
-- gather_schedule: `<list of Gather sessions>`
-    - start: `<start as ISO time with time zone>`
-    - duration|end: `<Either set duration in hours OR end time>`
-    - label: `<label of  the room>`
-- resources: `<list of links to external web resources>`
-    - label: `<label of the resource>`
-    - website: `<URL to resource>`
-- downloads: `<list of links to resources that are hosted in this repo, e.g. PDFs>`
-    - label: `<label of the resource>`
-    - website: `<path to this resource>`
-- papers: `<list of paper IDs so that sponsors can show accepted papers of themselves>`
-
-</p>
-</details>
-
-Most of these are optional. If the sponsor should not get a booth, then you can link to their page via `landingpage`:
-
-    name: ISI
-    level: Bronze
-    logo: isi.png
-    website: https://www.isi.edu
-    channel: example_sponsor
-    landingpage: https://www.isi.edu/
-
-
-#### Sponsor Accounts
-
-Sponsors a number of visitor accounts based on their sponsor tier. They also can register 3 people that only exhibit.
-We recommend also creating one account per sponsor early enough so that they can see their booth live. We recommend naming
-it after the sponsor and not binding it to a specific person, e.g. better call it `sponsor.deepmind`. This account will
-then not be removed before the conference. Additional exhibitors need to register and can usually register for free.
-
 #### Relevant documents
 
 - [Invitation to Dry Run](https://docs.google.com/document/d/1f0ScAG_tUNZry4F5cVBkfwtKaftnKJfZEn7nJZvkxd0/edit?usp=sharing)
@@ -280,9 +202,6 @@ We have scripts for RocketChat setup in `scripts\rocketchat` and [here](https://
 In order to use the `Active Chat` feature, you need to use RocketChat and host the statistics server. Please refer to
 `scripts/channels-stats` to see how. If you do not want it, remove it from `base.html`.
 
-### Help
-
-Update the code of conduct to your own. The FAQ is generated by `faq.yml`.
 
 ## Misc
 
@@ -304,23 +223,6 @@ we do not schedule events but use the personal meeting link. You can use
 - [Sponsors’ Documentation on Zoom](https://docs.google.com/document/d/1CPekSelpKNjGMTH7okFmCzEGaCqFmqSu2HVfYRRSWiU/edit?usp=sharing)
 - [Mentors’ Documentation on Zoom](https://docs.google.com/document/d/10aVXLFKQH95cCJ-JoauhzNztBjcu_2iYw-Pz9ETFlS8/edit?usp=sharing)
 
-### User creation
-
-For the first batch of accounts, we are given an Excel file and bulk create accounts. This is best to be done the 
-week before the conference starts. Use [these scripts](https://github.com/acl-org/acl-2020-virtual-conference-tools). You 
-might need to change `custom:name` to `name` and add support for affiliation if you choose to store it.
-
-### Late Registration
-
-We use Zappier for that: After the first bulk creation, the registration company forwards a copy of all registration
-mails to us. Then we use Zappier to parse email, name, affiliation and host. This is sent to a AWS Lambda function
-that then creates the account for us. See also [this issue](https://github.com/acl-org/acl-2020-virtual-conference/issues/55).
-
-### Help Desk
-
-We recommend setting up a helpdesk that is staffed by volunteers. For that, create a Google Group and add helpdesk members
-and also create a helpdesk channel. It is best to set the Google Group up early enough and also use it as the reply 
-mail for the conference invitation account credentials mail and also to mention it there.
 
 ### Favicons
 

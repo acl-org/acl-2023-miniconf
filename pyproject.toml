@@ -23,6 +23,7 @@ pandas = "^2.0.2"
 requests = "^2.31.0"
 rocketchat-api = "^1.30.0"
 typer = "^0.9.0"
+openpyxl = "^3.1.2"
 
 
 [tool.poetry.group.dev.dependencies]

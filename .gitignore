@@ -144,10 +144,12 @@ node_modules/
 /venv2/
 outputs/
 .watchman-cookie*
-auto_data/
 
-# This will eventually be committed once site is public
-sitedata/acl2023
+# This leaves conference.json to be committed
+auto_data/acl_2023/conference.pkl
+auto_data/acl_2023/conference.yaml
+
+# This should never be committed, it is private sheets
 data/acl_2023/data
 *.ipynb
 # Avoid committing API keys/etc

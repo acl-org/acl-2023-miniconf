@@ -1,5 +1,4 @@
 build: false
-auto_data_dir: auto_data/acl_2023
 data_dir: data/acl_2023
 port: 7777
 debug: true

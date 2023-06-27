@@ -77,8 +77,6 @@ def determine_program(category: str):
         raise ValueError(f"Could not determine program from: {category}")
 
 
-
-
 class Acl2023Parser:
     def __init__(
         self,

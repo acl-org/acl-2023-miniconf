@@ -15,8 +15,10 @@ DEMO = "Demo"
 INDUSTRY = "Industry"
 PROGRAMS = {MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY}
 
+
 def name_to_id(name: str):
     return name.replace(" ", "-").replace(":", "_").lower()
+
 
 def load_all_pages_texts(site_data_path: str) -> Dict[str, Any]:
     pages_dir = str(Path(site_data_path) / "pages")

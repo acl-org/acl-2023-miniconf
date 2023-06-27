@@ -15,6 +15,8 @@ DEMO = "Demo"
 INDUSTRY = "Industry"
 PROGRAMS = {MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY}
 
+def name_to_id(name: str):
+    return name.replace(" ", "-").replace(":", "_").lower()
 
 def load_all_pages_texts(site_data_path: str) -> Dict[str, Any]:
     pages_dir = str(Path(site_data_path) / "pages")
@@ -206,6 +208,7 @@ class SiteData(BaseModel):
     workshops: List[str] = []
     socials: Any
     tracks: List[str] = []
+    track_ids: List[str] = []
     programs: List[str] = []
     main_program_tracks: List[str] = []
     faq: Any
@@ -246,6 +249,14 @@ class SiteData(BaseModel):
             )
         )
 
+        unique_tracks = set()
+        unique_track_ids = set()
+        for paper in conference.papers.values():
+            unique_tracks.add(paper.track)
+            unique_track_ids.add(name_to_id(paper.track))
+        tracks = sorted(unique_tracks)
+        track_ids = list(unique_track_ids)
+
         with open(site_data_path / "configs" / "config.yml") as f:
             config = yaml.safe_load(f)
         site_data = cls(
@@ -266,12 +277,8 @@ class SiteData(BaseModel):
             tutorials_calendar=[],
             workshops=[],
             socials=[],
-            tracks=list(
-                sorted(
-                    track
-                    for track in {paper.track for paper in conference.papers.values()}
-                )
-            ),
+            tracks=tracks,
+            track_ids=track_ids,
             main_program_tracks=main_program_tracks,
             faq=[],
             code_of_conduct=[],

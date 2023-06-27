@@ -240,7 +240,7 @@ def generator():
 
     for program in site_data.programs:
         yield "papers_program", {"program": program}
-        for track in site_data.tracks:
+        for track in site_data.track_ids:
             yield "track_json", {"track_name": track, "program_name": program}
 
     yield "papers_program", {"program": WORKSHOP}

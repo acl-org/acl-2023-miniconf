@@ -12,7 +12,6 @@ import pytz
 from rich.logging import RichHandler
 
 from acl_miniconf.data import (
-    CommitteeMember,
     Session,
     Event,
     Paper,
@@ -23,6 +22,7 @@ from acl_miniconf.data import (
     DEMO,
     INDUSTRY,
     PROGRAMS,
+    name_to_id,
 )
 
 logging.basicConfig(
@@ -77,8 +77,6 @@ def determine_program(category: str):
         raise ValueError(f"Could not determine program from: {category}")
 
 
-def name_to_id(name: str):
-    return name.replace(" ", "-").replace(":", "_").lower()
 
 
 class Acl2023Parser:

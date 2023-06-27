@@ -25,7 +25,13 @@ from acl_miniconf.site_data import (
     Workshop,
     WorkshopPaper,
 )
-from acl_miniconf.data import EVENT_TYPES, Conference, SiteData, ByUid, FrontendCalendarEvent
+from acl_miniconf.data import (
+    EVENT_TYPES,
+    Conference,
+    SiteData,
+    ByUid,
+    FrontendCalendarEvent,
+)
 
 
 def load_site_data(
@@ -40,25 +46,23 @@ def load_site_data(
     NOTE: site_data[filename][field]
     """
     # schedule.html
-    #generate_plenary_events(site_data)
-    #generate_tutorial_events(site_data)
-    #generate_workshop_events(site_data)
+    # generate_plenary_events(site_data)
+    # generate_tutorial_events(site_data)
+    # generate_workshop_events(site_data)
     site_data.overall_calendar: List[FrontendCalendarEvent] = []
     site_data.overall_calendar.extend(generate_paper_events(site_data))
-    #generate_social_events(site_data)
+    # generate_social_events(site_data)
 
     site_data.calendar = build_schedule(site_data.overall_calendar)
-    site_data.session_types = list(
-        {event.type for event in site_data.overall_calendar}
-    )
+    site_data.session_types = list({event.type for event in site_data.overall_calendar})
     # paper_<uid>.html
     by_uid.papers = conference.papers
 
     # plenary_sessions.html
-    #plenary_sessions = build_plenary_sessions(
+    # plenary_sessions = build_plenary_sessions(
     #    raw_plenary_sessions=site_data["plenary_sessions"],
     #    raw_plenary_videos={"opening_remarks": site_data["opening_remarks"]},
-    #)
+    # )
 
     # site_data["plenary_sessions"] = plenary_sessions
     # by_uid["plenary_sessions"] = {
@@ -94,9 +98,8 @@ def load_site_data(
     # site_data["socials"] = social_events
 
     # papers.{html,json}
-    #for wsh in site_data["workshops"]:
+    # for wsh in site_data["workshops"]:
     #    papers.extend(wsh.papers)
-
 
     # # serve_papers_projection.json
     # all_paper_ids_with_projection = {
@@ -323,7 +326,10 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
         start = session.start_time
         end = session.end_time
         tab_id = (
-            session.start_time.astimezone(pytz.utc).strftime("%b %d").replace(" ", "").lower()
+            session.start_time.astimezone(pytz.utc)
+            .strftime("%b %d")
+            .replace(" ", "")
+            .lower()
         )
         event = FrontendCalendarEvent(
             title=session.name,
@@ -363,7 +369,6 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     #     end_time = group[0].end_time
     #     assert all(s.start_time == start_time for s in group)
     #     assert all(s.end_time == end_time for s in group)
-
 
     #     event = FrontendCalendarEvent(
     #         title=name,
@@ -433,12 +438,11 @@ def generate_social_events(site_data: Dict[str, Any]):
         site_data["overall_calendar"].append(event)
 
 
-def build_schedule(overall_calendar: List[FrontendCalendarEvent]) -> List[FrontendCalendarEvent]:
+def build_schedule(
+    overall_calendar: List[FrontendCalendarEvent],
+) -> List[FrontendCalendarEvent]:
     events = [
-        copy.deepcopy(event)
-        for event in overall_calendar
-        if event.type
-        in EVENT_TYPES
+        copy.deepcopy(event) for event in overall_calendar if event.type in EVENT_TYPES
     ]
 
     for event in events:

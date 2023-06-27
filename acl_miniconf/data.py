@@ -158,6 +158,7 @@ class Conference(BaseModel):
     def industry_papers(self):
         return [p for p in self.papers.values() if p.program == INDUSTRY]
 
+
 PLENARIES = "Plenary Sessions"
 TUTORIALS = "Tutorials"
 WORKSHOPS = "Workshops"
@@ -226,11 +227,11 @@ class SiteData(BaseModel):
             session_days.append(
                 (day.replace(" ", "").lower(), day, "active" if i == 0 else "")
             )
-        
+
         sessions_by_day = defaultdict(list)
         for s in conference.sessions.values():
             sessions_by_day[s.day].append(s)
-        
+
         for day, sessions in sessions_by_day.items():
             sessions_by_day[day] = sorted(sessions, key=lambda x: x.name)
 
@@ -244,8 +245,8 @@ class SiteData(BaseModel):
                 }
             )
         )
-        
-        with open(site_data_path / 'configs' / 'config.yml') as f:
+
+        with open(site_data_path / "configs" / "config.yml") as f:
             config = yaml.safe_load(f)
         site_data = cls(
             config=config,
@@ -265,7 +266,12 @@ class SiteData(BaseModel):
             tutorials_calendar=[],
             workshops=[],
             socials=[],
-            tracks=list(sorted(track for track in {paper.track for paper in conference.papers.values()})),
+            tracks=list(
+                sorted(
+                    track
+                    for track in {paper.track for paper in conference.papers.values()}
+                )
+            ),
             main_program_tracks=main_program_tracks,
             faq=[],
             code_of_conduct=[],

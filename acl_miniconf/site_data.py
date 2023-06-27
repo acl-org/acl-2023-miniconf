@@ -5,8 +5,6 @@ from typing import Any, Dict, List, Optional
 import pytz
 
 
-
-
 @dataclass(frozen=True)
 class SessionInfo:
     """The session information for a paper."""

@@ -112,7 +112,7 @@ def sessions():
     for e in conference.events.values():
         event_types.add(e.type)
     event_types = sorted(event_types)
-    data['event_types'] = event_types
+    data["event_types"] = event_types
 
     data["papers"] = {k: v.dict() for k, v in by_uid.papers.items()}
     return render_template("sessions.html", **data)
@@ -139,7 +139,6 @@ def socials():
     return render_template("socials.html", **data)
 
 
-
 # ITEM PAGES
 @app.route("/paper_<uid>.html")
 def paper(uid):
@@ -149,10 +148,8 @@ def paper(uid):
     data["id"] = uid
     data["openreview"] = v
     data["paper"] = v
-    data['events'] = [conference.events[e_id] for e_id in v.event_ids]
-    data["paper_recs"] = [
-        by_uid.papers[i] for i in v.similar_paper_ids[1:]
-    ]
+    data["events"] = [conference.events[e_id] for e_id in v.event_ids]
+    data["paper_recs"] = [by_uid.papers[i] for i in v.similar_paper_ids[1:]]
 
     return render_template("paper.html", **data)
 
@@ -217,8 +214,7 @@ def track_json(program_name, track_name):
         papers_for_track = [
             paper.dict()
             for paper in site_data.papers
-            if paper.track == track_name
-            and paper.program == program_name
+            if paper.track == track_name and paper.program == program_name
         ]
     return jsonify(papers_for_track)
 
@@ -262,7 +258,7 @@ def generator():
     for workshop in site_data.workshops:
         yield "workshop", {"uid": workshop.id}
 
-    #for key in site_data:
+    # for key in site_data:
     #    yield "serve", {"path": key}
 
 
@@ -271,7 +267,7 @@ def hydra_main(cfg: DictConfig):
     data_dir = Path(cfg.data_dir)
     # TODO: Don't load pickle, load json, but need to figure out how to parse datetimes back into str
     global conference
-    conference = Conference.parse_file(data_dir / 'data' / 'conference.json')
+    conference = Conference.parse_file(data_dir / "data" / "conference.json")
     if not data_dir.exists():
         raise AssertionError(
             f"Data directory {cfg.data_dir} not found in `data`. Please specify the correct data directory in config."

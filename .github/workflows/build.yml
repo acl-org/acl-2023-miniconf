@@ -27,7 +27,7 @@ jobs:
     - name: black
       run: poetry run black --check .
     - name: Init new repo and commit
-      run:
+      run: |
         cd build/
         git init
         git add -A

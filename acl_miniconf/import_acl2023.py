@@ -90,7 +90,7 @@ class Acl2023Parser:
         poster_tsv_path: Path,
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
-        extras_xlsx_path: Path
+        extras_xlsx_path: Path,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
@@ -426,7 +426,7 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_extras_from_spreadsheet(self):
-        """ Extracts information from the spreadsheet and fills the events that
+        """Extracts information from the spreadsheet and fills the events that
         were not already extracted from the other TSV files.
         """
         try:
@@ -437,16 +437,14 @@ class Acl2023Parser:
             )
             return
         # Part 1: read all tracks from the spreadsheet
-        sheet = workbook['Tracks']
+        sheet = workbook["Tracks"]
         spreadsheet_info = dict()
         row = 1
         try:
             while True:
-                track_id = sheet['A'][row].value
-                track_name = sheet['B'][row].value.strip()
-                track = {'id': track_id,
-                         'desc': None,
-                         'events': defaultdict(list)}
+                track_id = sheet["A"][row].value
+                track_name = sheet["B"][row].value.strip()
+                track = {"id": track_id, "desc": None, "events": defaultdict(list)}
                 spreadsheet_info[track_name] = track
                 row += 1
         except IndexError:
@@ -454,31 +452,37 @@ class Acl2023Parser:
             pass
 
         # Part 2: assign events to tracks
-        sheet = workbook['Event Sessions']
+        sheet = workbook["Event Sessions"]
         row = 1
         # Set the time to our desired timezone. Useful for parsing the dates
         # in the proper locale
-        os.environ['TZ'] = 'America/Toronto'
+        os.environ["TZ"] = "America/Toronto"
         time.tzset()
         try:
             while True:
-                track_name = sheet['F'][row].value.strip()
-                event_id = sheet['A'][row].value
-                event_name = sheet['B'][row].value.strip()
-                event_desc = sheet['C'][row].value
+                track_name = sheet["F"][row].value.strip()
+                event_id = sheet["A"][row].value
+                event_name = sheet["B"][row].value.strip()
+                event_desc = sheet["C"][row].value
                 # Parse the start time and end time in UTC
-                event_start = sheet['G'][row].value
-                event_start = datetime.datetime.strptime(event_start, '%B %d, %Y %H:%M')
-                event_end = sheet['H'][row].value
-                event_end = datetime.datetime.strptime(event_end, '%B %d, %Y %H:%M')
+                event_start = sheet["G"][row].value
+                event_start = datetime.datetime.strptime(event_start, "%B %d, %Y %H:%M")
+                event_end = sheet["H"][row].value
+                event_end = datetime.datetime.strptime(event_end, "%B %d, %Y %H:%M")
                 # We extract the date from the start date instead of the spreadsheet
                 event_date = event_start.date()
-                event = {'name': event_name,
-                         'desc': event_desc,
-                         'date': event_date.isoformat(),
-                         'start': event_start.astimezone(pytz.timezone('America/Toronto')).isoformat(),
-                         'end': event_end.astimezone(pytz.timezone('America/Toronto')).isoformat()}
-                spreadsheet_info[track_name]['events'][event_id].append(event)
+                event = {
+                    "name": event_name,
+                    "desc": event_desc,
+                    "date": event_date.isoformat(),
+                    "start": event_start.astimezone(
+                        pytz.timezone("America/Toronto")
+                    ).isoformat(),
+                    "end": event_end.astimezone(
+                        pytz.timezone("America/Toronto")
+                    ).isoformat(),
+                }
+                spreadsheet_info[track_name]["events"][event_id].append(event)
                 row += 1
         except IndexError:
             pass
@@ -488,22 +492,22 @@ class Acl2023Parser:
         self._parse_plenaries(spreadsheet_info)
 
     def _parse_socials(self, spreadsheet_info):
-        id_social = 'Social'
+        id_social = "Social"
         group_type = "Social Event"
-        for social_event_key in spreadsheet_info[id_social]['events']:
+        for social_event_key in spreadsheet_info[id_social]["events"]:
             # A social event is a session with a single event.
-            social_event = spreadsheet_info[id_social]['events'][social_event_key][0]
-            group_session = social_event['name']
+            social_event = spreadsheet_info[id_social]["events"][social_event_key][0]
+            group_session = social_event["name"]
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
-                start_time=social_event['start'],
-                end_time=social_event['end'],
-                events=[]
+                start_time=social_event["start"],
+                end_time=social_event["end"],
+                events=[],
             )
             session = self.sessions[group_session]
 
-            group_track = social_event['name']
+            group_track = social_event["name"]
             event_name = get_session_event_name(group_session, group_track, group_type)
             event_id = name_to_id(event_name)
             if event_id not in self.events:
@@ -511,8 +515,8 @@ class Acl2023Parser:
                     id=event_id,
                     session=group_session,
                     track=group_track,
-                    start_time=social_event['start'],
-                    end_time=social_event['end'],
+                    start_time=social_event["start"],
+                    end_time=social_event["end"],
                     chairs=[],
                     paper_ids=[],
                     link=None,
@@ -523,44 +527,48 @@ class Acl2023Parser:
             session.events[event_id] = event
 
     def _parse_tutorials(self, spreadsheet_info):
-        id_tutorials = 'Tutorials'
+        id_tutorials = "Tutorials"
         group_type = "Tutorial"
         # We first create the events. Since the program doesn't separate the
         # tutorials in sub-groups, we do it here according to the date.
         all_sessions = set()
         date_to_session = dict()
-        for tutorial_key in spreadsheet_info[id_tutorials]['events']:
-            for tutorial_event in spreadsheet_info[id_tutorials]['events'][tutorial_key]:
-                all_sessions.add((tutorial_event['start'], tutorial_event['end']))
+        for tutorial_key in spreadsheet_info[id_tutorials]["events"]:
+            for tutorial_event in spreadsheet_info[id_tutorials]["events"][
+                tutorial_key
+            ]:
+                all_sessions.add((tutorial_event["start"], tutorial_event["end"]))
         all_sessions = list(all_sessions)
         all_sessions.sort()
         counter = 1
         for session_start, session_end in all_sessions:
-            date_to_session[session_start] = f'Tutorials {counter}'
-            group_session = f'Tutorials {counter}'
+            date_to_session[session_start] = f"Tutorials {counter}"
+            group_session = f"Tutorials {counter}"
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
                 start_time=session_start,
                 end_time=session_end,
-                events=[]
+                events=[],
             )
             counter += 1
         # Now that we know which sessions exist, we can start parsing the schedule
-        for tutorial_key in spreadsheet_info[id_tutorials]['events']:
-            tutorial_events = spreadsheet_info[id_tutorials]['events'][tutorial_key]
+        for tutorial_key in spreadsheet_info[id_tutorials]["events"]:
+            tutorial_events = spreadsheet_info[id_tutorials]["events"][tutorial_key]
             for event in tutorial_events:
-                group_session = date_to_session[event['start']]
-                group_track = event['name']
-                event_name = get_session_event_name(group_session, group_track, group_type)
+                group_session = date_to_session[event["start"]]
+                group_track = event["name"]
+                event_name = get_session_event_name(
+                    group_session, group_track, group_type
+                )
                 event_id = name_to_id(event_name)
                 if event_id not in self.events:
                     self.events[event_id] = Event(
                         id=event_id,
                         session=group_session,
                         track=group_track,
-                        start_time=event['start'],
-                        end_time=event['end'],
+                        start_time=event["start"],
+                        end_time=event["end"],
                         chairs=[],
                         paper_ids=[],
                         link=None,
@@ -571,22 +579,22 @@ class Acl2023Parser:
                     session.events[event_id] = self.events[event_id]
 
     def _parse_plenaries(self, spreadsheet_info):
-        id_plenary = 'Plenary Sessions'
+        id_plenary = "Plenary Sessions"
         group_type = "Plenary Session"
-        for plenary_key in spreadsheet_info[id_plenary]['events']:
+        for plenary_key in spreadsheet_info[id_plenary]["events"]:
             # A social event is a session with a single event.
-            plenary_event = spreadsheet_info[id_plenary]['events'][plenary_key][0]
-            group_session = plenary_event['name']
+            plenary_event = spreadsheet_info[id_plenary]["events"][plenary_key][0]
+            group_session = plenary_event["name"]
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
-                start_time=plenary_event['start'],
-                end_time=plenary_event['end'],
-                events=[]
+                start_time=plenary_event["start"],
+                end_time=plenary_event["end"],
+                events=[],
             )
 
             session = self.sessions[group_session]
-            group_track = plenary_event['name']
+            group_track = plenary_event["name"]
             event_name = get_session_event_name(group_session, group_track, group_type)
             event_id = name_to_id(event_name)
             if event_id not in self.events:
@@ -594,8 +602,8 @@ class Acl2023Parser:
                     id=event_id,
                     session=group_session,
                     track=group_track,
-                    start_time=plenary_event['start'],
-                    end_time=plenary_event['end'],
+                    start_time=plenary_event["start"],
+                    end_time=plenary_event["end"],
                     chairs=[],
                     paper_ids=[],
                     link=None,
@@ -617,7 +625,7 @@ def main(
     poster_tsv: str = "private_data-acl2023/poster-demo-papers.tsv",
     virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
-    extras_xlsx : str = "private_data-acl2023/acl-2023-events-export-2023-06-22.xlsx",
+    extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-06-22.xlsx",
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
@@ -625,7 +633,7 @@ def main(
         poster_tsv_path=Path(poster_tsv),
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
-        extras_xlsx_path=Path(extras_xlsx)
+        extras_xlsx_path=Path(extras_xlsx),
     )
     conf = parser.parse()
     out_dir = Path(out_dir)

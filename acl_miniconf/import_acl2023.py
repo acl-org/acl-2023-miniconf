@@ -435,7 +435,7 @@ class Acl2023Parser:
             logging.error(
                 f"Could not read spreadsheet from file {self.extras_xlsx_path}. This data won't be added to the program."
             )
-            raise
+            return
         # Part 1: read all tracks from the spreadsheet
         sheet = workbook["Tracks"]
         spreadsheet_info = dict()
@@ -444,6 +444,9 @@ class Acl2023Parser:
             while True:
                 track_id = sheet["A"][row].value
                 track_name = sheet["B"][row].value.strip()
+                # Fixing a typo in the original data
+                if track_name == "Birds of Fearther":
+                    track_name = "Birds of a Feather"
                 track = {"id": track_id, "desc": None, "events": defaultdict(list)}
                 spreadsheet_info[track_name] = track
                 row += 1
@@ -461,6 +464,9 @@ class Acl2023Parser:
         try:
             while True:
                 track_name = sheet["F"][row].value.strip()
+                # Fixing a typo in the original data
+                if track_name == "Birds of Fearther":
+                    track_name = "Birds of a Feather"
                 event_id = sheet["A"][row].value
                 event_name = sheet["B"][row].value.strip()
                 event_desc = sheet["C"][row].value
@@ -487,63 +493,129 @@ class Acl2023Parser:
         except IndexError:
             pass
 
-        self._parse_socials(spreadsheet_info)
-        self._parse_tutorials(spreadsheet_info)
-        self._parse_plenaries(spreadsheet_info)
+        self._parse_event_without_papers(
+            spreadsheet_info, "Social", "Social Event", MAIN
+        )
+        self._parse_event_without_papers(
+            spreadsheet_info, "Plenary Sessions", "Plenary Session", MAIN
+        )
+        self._parse_event_without_papers(
+            spreadsheet_info, "Workshops", "Workshop", WORKSHOP
+        )
+        self._parse_multi_event_single_paper(
+            spreadsheet_info, "Tutorials", "Tutorial", MAIN
+        )
+        self._parse_event_without_papers(
+            spreadsheet_info, "Findings", "Workshop", FINDINGS
+        )
+        self._parse_event_without_papers(
+            spreadsheet_info, "Industry Track", "Poster", INDUSTRY
+        )
+        self._parse_event_without_papers(
+            spreadsheet_info, "Demo Sessions", "Poster", DEMO
+        )
+        self._parse_multi_event_single_paper(
+            spreadsheet_info, "Coffee Break", "Social Event", MAIN
+        )
+        self._parse_multi_event_single_paper(
+            spreadsheet_info, "Diversity and Inclusion", "Workshop", MAIN
+        )
+        self._parse_multi_event_single_paper(
+            spreadsheet_info, "Student Research Workshop", "Workshop", MAIN
+        )
+        self._parse_multi_event_single_paper(
+            spreadsheet_info, "Birds of a Feather", "Oral", MAIN
+        )
 
-    def _parse_socials(self, spreadsheet_info):
-        id_social = "Social"
-        group_type = "Social Event"
-        for social_event_key in spreadsheet_info[id_social]["events"]:
-            # A social event is a session with a single event.
-            social_event = spreadsheet_info[id_social]["events"][social_event_key][0]
-            group_session = social_event["name"]
+    def _parse_event_without_papers(
+        self, spreadsheet_info, event_key, event_type, program_type, event_name=None
+    ):
+        for session_key in spreadsheet_info[event_key]["events"]:
+            # Single session, single event, single dummy paper
+            # We first create the session and store a variable to reference it.
+            # Because this Session has a single event, we don't iterate here.
+            event_data = spreadsheet_info[event_key]["events"][session_key][0]
+            group_session = event_data["name"]
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
-                start_time=social_event["start"],
-                end_time=social_event["end"],
+                start_time=event_data["start"],
+                end_time=event_data["end"],
                 events=[],
             )
             session = self.sessions[group_session]
-
-            group_track = social_event["name"]
-            event_name = get_session_event_name(group_session, group_track, group_type)
-            event_id = name_to_id(event_name)
+            # This single session has a single event, which we now read.
+            # We also use the variable we just declared to add this Event as
+            # an event of the Session.
+            if event_name is None:
+                this_event_name = get_session_event_name(
+                    group_session, event_data["name"], event_type
+                )
+            else:
+                this_event_name = event_name
+            event_id = name_to_id(this_event_name)
             if event_id not in self.events:
                 self.events[event_id] = Event(
                     id=event_id,
-                    session=group_session,
-                    track=group_track,
-                    start_time=social_event["start"],
-                    end_time=social_event["end"],
+                    session=session.id,
+                    track=event_data["name"],
+                    start_time=event_data["start"],
+                    end_time=event_data["end"],
                     chairs=[],
                     paper_ids=[],
                     link=None,
                     room=None,
-                    type=group_type,
+                    type=event_type,
                 )
             event = self.events[event_id]
             session.events[event_id] = event
+            # Finally, we create a single dummy paper with the information of
+            # the Event. We then add it to the paper list of the Event above.
+            paper_id = f"p_{event_id}"
+            dummy_paper = Paper(
+                id=paper_id,
+                program=program_type,
+                title=event_data["name"],
+                authors=[],
+                track=name_to_id(group_session),
+                paper_type=event_type,
+                category="",
+                abstract=event_data["desc"] if event_data["desc"] is not None else "",
+                tldr="",
+                keywords=[],
+                pdf_url="",
+                demo_url="",
+                event_ids=[event.id],
+                similar_paper_ids=[],
+                forum="",
+                card_image_path="",
+                presentation_id="",
+            )
+            self.papers[paper_id] = dummy_paper
+            event.paper_ids.append(paper_id)
 
-    def _parse_tutorials(self, spreadsheet_info):
-        id_tutorials = "Tutorials"
-        group_type = "Tutorial"
-        # We first create the events. Since the program doesn't separate the
-        # tutorials in sub-groups, we do it here according to the date.
+    def _parse_multi_event_single_paper(
+        self, spreadsheet_info, event_key, event_type, program_type
+    ):
+        # This is almost the exact same code than _parse_event_without_papers,
+        # only with a slightly more complex event handling because a single
+        # session has several parallel events.
+
+        # We first create the events. Since the program doesn't separate them
+        # in sub-groups, we do it here according to the date.
         all_sessions = set()
         date_to_session = dict()
-        for tutorial_key in spreadsheet_info[id_tutorials]["events"]:
-            for tutorial_event in spreadsheet_info[id_tutorials]["events"][
-                tutorial_key
+        for event_session_key in spreadsheet_info[event_key]["events"]:
+            for session_event in spreadsheet_info[event_key]["events"][
+                event_session_key
             ]:
-                all_sessions.add((tutorial_event["start"], tutorial_event["end"]))
+                all_sessions.add((session_event["start"], session_event["end"]))
         all_sessions = list(all_sessions)
         all_sessions.sort()
         counter = 1
         for session_start, session_end in all_sessions:
-            date_to_session[session_start] = f"Tutorials {counter}"
-            group_session = f"Tutorials {counter}"
+            date_to_session[session_start] = f"{event_key} {counter}"
+            group_session = f"{event_key} {counter}"
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
@@ -553,13 +625,13 @@ class Acl2023Parser:
             )
             counter += 1
         # Now that we know which sessions exist, we can start parsing the schedule
-        for tutorial_key in spreadsheet_info[id_tutorials]["events"]:
-            tutorial_events = spreadsheet_info[id_tutorials]["events"][tutorial_key]
-            for event in tutorial_events:
+        for event_session_key in spreadsheet_info[event_key]["events"]:
+            all_events = spreadsheet_info[event_key]["events"][event_session_key]
+            for event in all_events:
                 group_session = date_to_session[event["start"]]
                 group_track = event["name"]
                 event_name = get_session_event_name(
-                    group_session, group_track, group_type
+                    group_session, group_track, event_type
                 )
                 event_id = name_to_id(event_name)
                 if event_id not in self.events:
@@ -573,45 +645,31 @@ class Acl2023Parser:
                         paper_ids=[],
                         link=None,
                         room=None,
-                        type=group_type,
+                        type=event_type,
                     )
                     session = self.sessions[group_session]
                     session.events[event_id] = self.events[event_id]
-
-    def _parse_plenaries(self, spreadsheet_info):
-        id_plenary = "Plenary Sessions"
-        group_type = "Plenary Session"
-        for plenary_key in spreadsheet_info[id_plenary]["events"]:
-            # A social event is a session with a single event.
-            plenary_event = spreadsheet_info[id_plenary]["events"][plenary_key][0]
-            group_session = plenary_event["name"]
-            self.sessions[group_session] = Session(
-                id=name_to_id(group_session),
-                name=group_session,
-                start_time=plenary_event["start"],
-                end_time=plenary_event["end"],
-                events=[],
-            )
-
-            session = self.sessions[group_session]
-            group_track = plenary_event["name"]
-            event_name = get_session_event_name(group_session, group_track, group_type)
-            event_id = name_to_id(event_name)
-            if event_id not in self.events:
-                self.events[event_id] = Event(
-                    id=event_id,
-                    session=group_session,
-                    track=group_track,
-                    start_time=plenary_event["start"],
-                    end_time=plenary_event["end"],
-                    chairs=[],
-                    paper_ids=[],
-                    link=None,
-                    room=None,
-                    type=group_type,
-                )
-            event = self.events[event_id]
-            session.events[event_id] = event
+                    dummy_paper = Paper(
+                        id=event_id,
+                        program=MAIN,
+                        title=event_name,
+                        authors=[],
+                        track=name_to_id(group_session),
+                        paper_type=event_type,
+                        category="",
+                        abstract="",
+                        tldr="",
+                        keywords=[],
+                        pdf_url="",
+                        demo_url="",
+                        event_ids=[event_id],
+                        similar_paper_ids=[],
+                        forum="",
+                        card_image_path="",
+                        presentation_id="",
+                    )
+                    self.papers[event_id] = dummy_paper
+                    self.events[event_id].paper_ids.append(event_id)
 
 
 class DateTimeEncoder(json.JSONEncoder):

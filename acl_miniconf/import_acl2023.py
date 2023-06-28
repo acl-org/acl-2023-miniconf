@@ -435,7 +435,7 @@ class Acl2023Parser:
             logging.error(
                 f"Could not read spreadsheet from file {self.extras_xlsx_path}. This data won't be added to the program."
             )
-            return
+            raise
         # Part 1: read all tracks from the spreadsheet
         sheet = workbook["Tracks"]
         spreadsheet_info = dict()

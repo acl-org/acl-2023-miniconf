@@ -23,17 +23,17 @@ body {
 }
 
 .bg-emnlp {
-  background-color: #2d3047 !important;
+  background-color: #eee !important;
 }
 
 .bg-emnlp .nav-link {
-  color: #cecece !important;
+  color: #2a313c !important;
 }
 
 .bg-emnlp .nav-link:hover,
 .nav-link:active,
 .nav-item.active > .nav-link {
-  color: #fff !important;
+  color: #2a313c !important;
 }
 
 .container a:hover {
@@ -653,4 +653,8 @@ div#papers_options > div {
 
 .dropdown-menu {
   margin-top: 0;
+}
+
+.customnav {
+  box-shadow: 0px 5px 5px gray;
 }

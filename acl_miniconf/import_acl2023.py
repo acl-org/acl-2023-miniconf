@@ -429,7 +429,13 @@ class Acl2023Parser:
         """ Extracts information from the spreadsheet and fills the events that
         were not already extracted from the other TSV files.
         """
-        workbook = load_workbook(filename=self.extras_xlsx_path)
+        try:
+            workbook = load_workbook(filename=self.extras_xlsx_path)
+        except FileNotFoundError:
+            logging.error(
+                f"Could not read spreadsheet from file {self.extras_xlsx_path}. This data won't be added to the program."
+            )
+            return
         # Part 1: read all tracks from the spreadsheet
         sheet = workbook['Tracks']
         spreadsheet_info = dict()

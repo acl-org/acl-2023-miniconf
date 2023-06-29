@@ -36,27 +36,29 @@ Each <a class="text" href="papers.html" >paper</a> has a pre-recorded 7-12 minut
                         </h5>
                     </a>
                     {% for event_type in event_types %}
-                        <div class="col-12">
-                            <h5>{{ event_type }} Presentations</h5>
-                        <hr/>
-                        </div>
-                        {% for event in session.events.values() %}
-                        {% if event_type == event.type %}
-                        <div class="col-12 mb-4">
-                            <strong>{{ event.track }} ({{ event.type }}), Room: {{ event.room }}</strong>
-                            <ul>
-                                {% for paper_id in event.paper_ids %}
-                                {% set paper = papers[paper_id] %}
-                                <li>
-                                    <a href="paper_{{paper.id}}.html" target="_blank">
-                                        {{ paper.title }}
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+                        {% if session.events.values()|selectattr('type', 'equalto', event_type)|list|length > 0 %}
+                            <div class="col-12">
+                                <h5>{{ event_type }} Presentations</h5>
+                            <hr/>
+                            </div>
+                            {% for event in session.events.values() %}
+                            {% if event_type == event.type %}
+                            <div class="col-12 mb-4">
+                                <strong>{{ event.track }} ({{ event.type }}), Room: {{ event.room }}</strong>
+                                <ul>
+                                    {% for paper_id in event.paper_ids %}
+                                    {% set paper = papers[paper_id] %}
+                                    <li>
+                                        <a href="paper_{{paper.id}}.html" target="_blank">
+                                            {{ paper.title }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
                         {% endif %}
-                        {% endfor %}
                     {% endfor %}
 
                 </div>

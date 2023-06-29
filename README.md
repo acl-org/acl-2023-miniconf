@@ -1,4 +1,4 @@
-## ACL 2023 Virtual Conference
+# ACL 2023 Virtual Conference
 
 This virtual conference page is based on [MiniConf](http://www.mini-conf.org/) by Alexander Rush and Hendrik Strobelt.
 It was extended by the [amazing team of ACL 2020](https://github.com/acl-org/acl-2020-virtual-conference).
@@ -14,10 +14,24 @@ The website is based on [Flask](https://flask.palletsprojects.com/) and [Frozen-
 1. Install [python poetry](https://python-poetry.org/)
 2. Run: `poetry install`
 3. Run: `make run`
+4. Visit `localhost:7777`
 
 When you are ready to deploy run `make freeze` to get a static version of the site in the `build` folder.
 
 This will not pickup any program changes, but it will pickup source code changes on the next GH Pages deploy.
+
+## Contributing
+
+We are very welcoming of community contributions!
+
+- Bug Reports & Feature Requests: Open an issue giving reproducible steps
+- Contributions:
+    - Clone the repo
+    - Run "Quick Start" steps above and check site works
+    - Make changes
+    - Ensure `make freeze` runs without errors (warnings are fine)
+    - Make a pull request.
+    - If the changes look good to us and the site builds on GH Actions, we will merge and your changes will be live for everyone to see!
 
 ## Update ACL 2023 from Source
 

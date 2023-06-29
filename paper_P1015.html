@@ -303,6 +303,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76519-what-makes-pre-trained-language-models-better-zero-shot-learnersquestion">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76519/poster_document/da6e772b8ed33b145720b3fbdef87a9c.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52259/file/09cc55560d888d1976ccf276af86e556.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085045Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=186ddf08037a70e63208cd7b87b35c6d268c19668846a1129b97a083d8227e82">
+        Video
+      </a>
+      
+      
       
       
 
@@ -431,6 +447,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76519/poster_document/da6e772b8ed33b145720b3fbdef87a9c.pdf",'#pdf_view');
+    })
+</script>
 
 
 

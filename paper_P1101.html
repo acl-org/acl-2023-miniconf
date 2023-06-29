@@ -279,6 +279,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76531-going-beyond-sentence-embeddings-a-token-level-matching-algorithm-for-calculating-semantic-textual-similarity">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76531/poster_document/a90d5469a31ec6a6b066b349470b0b3c.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52271/file/0e0b5b3d95aed898028c490209edbfb0.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085046Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=21c9377d58d34862a8df35ea3d5aa553391d7f6064104887bd65e5da5ab17db1">
+        Video
+      </a>
+      
+      
       
       
 
@@ -407,6 +423,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76531/poster_document/a90d5469a31ec6a6b066b349470b0b3c.pdf",'#pdf_view');
+    })
+</script>
 
 
 

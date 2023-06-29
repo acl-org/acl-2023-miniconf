@@ -303,6 +303,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/77323-text-augmented-open-knowledge-graph-completion-via-pre-trained-language-models">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/77323/poster_document/e63a86f4f91827a9b301ad5b85f3c62b.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52093/file/42cddfa323bd0d7ca7da74ae9b93a776.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085051Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=46659ab4d9e49ac1a6d8f331e21ac9ffa600704f2b7754ed5e9897205a3e9860">
+        Video
+      </a>
+      
+      
       
       
 
@@ -469,6 +485,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/77323/poster_document/e63a86f4f91827a9b301ad5b85f3c62b.pdf",'#pdf_view');
+    })
+</script>
 
 
 

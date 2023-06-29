@@ -297,6 +297,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76834-what-about-em-question-how-commercial-machine-translation-fails-to-handle-neo-pronouns">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76834/poster_document/a46e912f5727daad3589e1a44f6ab104.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52698/file/992d131f049e8d50e79b0f09a014ba9f.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085048Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=6fd37a2d9462f8536dfad633942684446da3200d67af9bdfaa2fe2bf043aa44e">
+        Video
+      </a>
+      
+      
       
       
 
@@ -425,6 +441,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76834/poster_document/a46e912f5727daad3589e1a44f6ab104.pdf",'#pdf_view');
+    })
+</script>
 
 
 

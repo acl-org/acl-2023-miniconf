@@ -291,6 +291,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76249-my-side-your-side-and-the-evidence-discovering-aligned-actor-groups-and-the-narratives-they-weave">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76249/poster_document/bc10d4405d6e7c613cb5909080d5bc7a.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52790/file/35ecf84133cf36c202f524c7d49c7eb0.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085044Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=d0055ca45986be82846ac4926cf3f30b7b1ff778c0160d8b3bfaa6120ad5da0a">
+        Video
+      </a>
+      
+      
       
       
 
@@ -419,6 +435,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76249/poster_document/bc10d4405d6e7c613cb5909080d5bc7a.pdf",'#pdf_view');
+    })
+</script>
 
 
 

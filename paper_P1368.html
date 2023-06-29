@@ -357,6 +357,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76577-bloom-1-adding-language-support-to-bloom-for-zero-shot-prompting">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76577/poster_document/2a5872b6ebde81496c284899f2fb1de9.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52377/file/c8847624fb7e43020d1e07a16fde23ed.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085046Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=98a98ff9f2f7632390eb247edf31b181e4df780cda622c32012651eba03730ac">
+        Video
+      </a>
+      
+      
       
       
 
@@ -485,6 +501,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76577/poster_document/2a5872b6ebde81496c284899f2fb1de9.pdf",'#pdf_view');
+    })
+</script>
 
 
 

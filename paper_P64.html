@@ -285,6 +285,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76366-did-the-models-understand-documentsquestion-benchmarking-models-for-language-understanding-in-document-level-relation-extraction">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76366/poster_document/3282dede188706b391099a6ce12823d0.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52190/file/ef97a9ab4fc87894da4d2e7c4b0794fd.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085044Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=cafd9f1208b018281305e43a4bc1e8504c0892e548d624a39b02948489d13aaf">
+        Video
+      </a>
+      
+      
       
       
 
@@ -413,6 +429,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76366/poster_document/3282dede188706b391099a6ce12823d0.pdf",'#pdf_view');
+    })
+</script>
 
 
 

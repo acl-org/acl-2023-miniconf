@@ -285,6 +285,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/78140-bidirectional-transformer-reranker-for-grammatical-error-correction">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/78140/poster_document/faf540a0dbecdc1fc7faae4109a3b645.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52247/file/6a2294ab18bf3be8ae4b4a75061171eb.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085056Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=66fdec4cf96d275ce69b49d55cbc7aee6b3c1f8fd52c2125f3e4348f7fdab179">
+        Video
+      </a>
+      
+      
       
       
 
@@ -394,6 +410,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/78140/poster_document/faf540a0dbecdc1fc7faae4109a3b645.pdf",'#pdf_view');
+    })
+</script>
 
 
 

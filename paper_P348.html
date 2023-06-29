@@ -315,6 +315,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/77301-structured-pruning-for-efficient-generative-pre-trained-language-models">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/77301/poster_document/567d726535ecdd4cabf7b58c1a47586e.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52081/file/01c5a120b605da8a25883bab85103a6f.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085051Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=2e325d115aaa3729d9f7a7f6002676ef0c584b8057225ee8b1764c98e49a1520">
+        Video
+      </a>
+      
+      
       
       
 
@@ -424,6 +440,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/77301/poster_document/567d726535ecdd4cabf7b58c1a47586e.pdf",'#pdf_view');
+    })
+</script>
 
 
 

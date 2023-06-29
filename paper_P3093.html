@@ -297,6 +297,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76818-enhancing-dialogue-generation-via-dynamic-graph-knowledge-aggregation">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76818/poster_document/23e7f0da57f8b11365c7052a626e7da0.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52650/file/d51f116830aec85625a115341ec145ef.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085048Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=eda75ae27b9aff07f508911d53df73a3d8969ede5784505e3245c82c4df32987">
+        Video
+      </a>
+      
+      
       
       
 
@@ -425,6 +441,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76818/poster_document/23e7f0da57f8b11365c7052a626e7da0.pdf",'#pdf_view');
+    })
+</script>
 
 
 

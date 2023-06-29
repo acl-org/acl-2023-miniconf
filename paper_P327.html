@@ -285,6 +285,22 @@
 
       
       
+      <a class="card-link" target="_blank" href="https://underline.io/lecture/76405-attention-as-a-guide-for-simultaneous-speech-translation">
+        Underline
+      </a>
+      
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/76405/poster_document/4fc15069d1e213abc211a2e21c757c75.pdf">
+        Poster
+      </a>
+      
+      
+      
+      <a class="card-link" target="_blank" href="https://s3.eu-west-1.amazonaws.com/underline.prod/video/52312/file/5882e6e3dc4d8807eb8a4568cb74b1e4.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAZP4XRUPAQFEPSF6P%2F20230622%2Feu-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230622T085045Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a89736b112c8272654f5115cf8af1ec89df838fdb943e9698ef19dbe76a13edb">
+        Video
+      </a>
+      
+      
       
       
 
@@ -413,6 +429,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/76405/poster_document/4fc15069d1e213abc211a2e21c757c75.pdf",'#pdf_view');
+    })
+</script>
 
 
 

@@ -1,11 +1,12 @@
-from typing import List, Dict
+from typing import List, Dict, Optional, Union
 import logging
-import pickle
 import json
 import datetime
+import re
 from pathlib import Path
 
-import yaml
+from pydantic import BaseModel
+import numpy as np
 import typer
 import pandas as pd
 import pytz
@@ -82,6 +83,31 @@ def determine_program(category: str):
         raise ValueError(f"Could not determine program from: {category}")
 
 
+def na_to_none(x):
+    if isinstance(x, str):
+        return x
+    elif np.isnan(x):
+        return None
+    else:
+        return x
+
+
+def to_underline_paper_id(paper_id: str):
+    if paper_id.startswith('P') or paper_id.startswith('C'):
+        return paper_id[1:]
+    else:
+        return paper_id
+
+class Assets(BaseModel):
+    underline_paper_id: Optional[str] = None
+    underline_id: Optional[int] = None
+    poster_preview_png: Optional[str] = None
+    poster_pdf: Optional[str] = None
+    slides_pdf: Optional[str] = None
+    underline_url: Optional[str] = None
+    video_url: Optional[str] = None
+
+
 class Acl2023Parser:
     def __init__(
         self,
@@ -100,9 +126,11 @@ class Acl2023Parser:
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
+        self.underline_assets: Dict[str, Assets] = {}
         self.zone = pytz.timezone("America/Toronto")
 
     def parse(self):
+        self._parse_underline_assets()
         self._parse_oral_papers()
         self._parse_poster_papers()
         self._parse_virtual_papers()
@@ -121,6 +149,35 @@ class Acl2023Parser:
         for p in self.papers.values():
             assert len(p.event_ids) > 0
             assert p.program in PROGRAMS
+
+    def _parse_underline_assets(self):
+        df = pd.read_excel(self.extras_xlsx_path, sheet_name="Lectures")
+        df = df[df["Paper number"].notnull()]
+        for _, paper in df[
+            [
+                "ID",
+                "Paper number",
+                "Video file link",
+                "Poster URL",
+                "Poster document URL",
+                "Slideshow URL",
+                "Frontend URI",
+            ]
+        ].iterrows():
+            # Underline strips the leading letter, keep in mind
+            underline_paper_id = str(paper["Paper number"])
+            assets = Assets(
+                underline_paper_id=underline_paper_id,
+                underline_id=paper["ID"],
+                poster_preview_png=na_to_none(paper["Poster URL"]),
+                poster_pdf=na_to_none(paper["Poster document URL"]),
+                slides_pdf=na_to_none(paper["Slideshow URL"]),
+                underline_url=na_to_none(paper["Frontend URI"]),
+                video_url=na_to_none(paper["Video file link"]),
+            )
+            if underline_paper_id in self.underline_assets:
+                raise ValueError(f'Repeat paper: {underline_paper_id}\nCurrent: {assets}\nPrior: {self.underline_assets[underline_paper_id]}')
+            self.underline_assets[underline_paper_id] = assets
 
     def _parse_start_end_dt(self, date_str: str, time_str: str):
         start_time, end_time = time_str.split("-")
@@ -190,6 +247,11 @@ class Acl2023Parser:
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
                 else:
+                    underline_paper_id = to_underline_paper_id(paper_id)
+                    if underline_paper_id in self.underline_assets:
+                        assets = self.underline_assets[underline_paper_id]
+                    else:
+                        assets = Assets()
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -201,14 +263,15 @@ class Acl2023Parser:
                         category=row.Category,
                         abstract="",
                         tldr="",
-                        keywords=[],
-                        pdf_url="",
-                        demo_url="",
                         event_ids=[event.id],
-                        similar_paper_ids=[],
                         forum="",
                         card_image_path="",
-                        presentation_id="",
+                        underline_id=assets.underline_id,
+                        underline_url=assets.underline_url,
+                        slides_pdf=assets.slides_pdf,
+                        video_url=assets.video_url,
+                        preview_image=assets.poster_preview_png,
+                        poster_pdf=assets.poster_pdf,
                     )
                     self.papers[row.PID] = paper
 
@@ -263,6 +326,11 @@ class Acl2023Parser:
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
                 else:
+                    underline_paper_id = to_underline_paper_id(paper_id)
+                    if underline_paper_id in self.underline_assets:
+                        assets = self.underline_assets[underline_paper_id]
+                    else:
+                        assets = Assets()
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -273,14 +341,16 @@ class Acl2023Parser:
                         category=row.Category,
                         abstract="",
                         tldr="",
-                        keywords=[],
-                        pdf_url="",
-                        demo_url="",
                         event_ids=[event.id],
                         similar_paper_ids=[],
                         forum="",
                         card_image_path="",
-                        presentation_id="",
+                        underline_id=assets.underline_id,
+                        underline_url=assets.underline_url,
+                        slides_pdf=assets.slides_pdf,
+                        video_url=assets.video_url,
+                        preview_image=assets.poster_preview_png,
+                        poster_pdf=assets.poster_pdf,
                     )
                     self.papers[row.PID] = paper
 
@@ -336,6 +406,11 @@ class Acl2023Parser:
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
                 else:
+                    underline_paper_id = to_underline_paper_id(paper_id)
+                    if underline_paper_id in self.underline_assets:
+                        assets = self.underline_assets[underline_paper_id]
+                    else:
+                        assets = Assets()
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -346,14 +421,15 @@ class Acl2023Parser:
                         category=row.Category,
                         abstract="",
                         tldr="",
-                        keywords=[],
-                        pdf_url="",
-                        demo_url="",
                         event_ids=[event.id],
-                        similar_paper_ids=[],
                         forum="",
                         card_image_path="",
-                        presentation_id="",
+                        underline_id=assets.underline_id,
+                        underline_url=assets.underline_url,
+                        slides_pdf=assets.slides_pdf,
+                        video_url=assets.video_url,
+                        preview_image=assets.poster_preview_png,
+                        poster_pdf=assets.poster_pdf,
                     )
                     self.papers[row.PID] = paper
 
@@ -404,6 +480,11 @@ class Acl2023Parser:
                     if event.id not in paper.event_ids:
                         paper.event_ids.append(event.id)
                 else:
+                    underline_paper_id = to_underline_paper_id(paper_id)
+                    if underline_paper_id in self.underline_assets:
+                        assets = self.underline_assets[underline_paper_id]
+                    else:
+                        assets = Assets()
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -414,14 +495,15 @@ class Acl2023Parser:
                         category=row.Category,
                         abstract="",
                         tldr="",
-                        keywords=[],
-                        pdf_url="",
-                        demo_url="",
                         event_ids=[event.id],
-                        similar_paper_ids=[],
                         forum="",
                         card_image_path="",
-                        presentation_id="",
+                        underline_id=assets.underline_id,
+                        underline_url=assets.underline_url,
+                        slides_pdf=assets.slides_pdf,
+                        video_url=assets.video_url,
+                        preview_image=assets.poster_preview_png,
+                        poster_pdf=assets.poster_pdf,
                     )
                     self.papers[row.PID] = paper
 

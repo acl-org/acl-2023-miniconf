@@ -85,6 +85,26 @@
         Paper
       </a>
       {% endif %}
+      {% if paper.underline_url %}
+      <a class="card-link" target="_blank" href="{{paper.underline_url}}">
+        Underline
+      </a>
+      {% endif %}
+      {% if paper.poster_pdf %}
+      <a class="card-link" target="_blank" href="{{paper.poster_pdf}}">
+        Poster
+      </a>
+      {% endif %}
+      {% if paper.slides_pdf %}
+      <a class="card-link" target="_blank" href="{{paper.slides_pdf}}">
+        Slides
+      </a>
+      {% endif %}
+      {% if paper.video_url %}
+      <a class="card-link" target="_blank" href="{{paper.video_url}}">
+        Video
+      </a>
+      {% endif %}
       {% if paper.code != blank %}
       <a href="{{paper.code}}" target="_blank" class="card-link">
         Code
@@ -213,7 +233,7 @@
 {% endif %}
 
 {% if paper.poster_pdf %}
-{{ components.section("Example Poster") }}
+{{ components.section("Poster") }}
 
 <div role="main" id="pdf_view"></div>
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
@@ -253,7 +273,7 @@
              {% endfor %}
           </h6>
           <center>
-              <img class="cards_img" src="{{recommended.card_image_path}}" onerror="javascript:this.onerror=null;this.src=''" width="80%"/>
+              <img class="cards_img" src="{{recommended.preview_image}}" onerror="javascript:this.onerror=null;this.src=''" width="80%"/>
           </center>
         </div>
       </div>

@@ -95,7 +95,6 @@ class Paper(BaseModel):
     id: str
     forum: str
     card_image_path: str
-    presentation_id: str
     title: str
     authors: List[str]
     track: str
@@ -103,12 +102,17 @@ class Paper(BaseModel):
     category: str
     abstract: str
     tldr: str
-    keywords: List[str]
+    keywords: List[str] = []
     underline_url: Optional[str] = None
-    pdf_url: Optional[str]
-    demo_url: Optional[str]
+    underline_id: Optional[int] = None
+    preview_image: Optional[str] = None
+    poster_pdf: Optional[str] = None
+    slides_pdf: Optional[str] = None
+    video_url: Optional[str] = None
+    paper_pdf: Optional[str] = None
+    demo_url: Optional[str] = None
     event_ids: List[str]
-    similar_paper_ids: List[str]
+    similar_paper_ids: List[str] = []
     program: str
     material: str = None
 

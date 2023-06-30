@@ -2,69 +2,66 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 
-    <!-- External Javascript libs  -->
-    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+  <!-- External Javascript libs  -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js"
+    integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"
+    integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js"
+    integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
 
-    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+  <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
-    <!-- Library libs -->
-    <script src="static/js/typeahead.bundle.js"></script>
+  <!-- Library libs -->
+  <script src="static/js/typeahead.bundle.js"></script>
 
-    <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
+  <script src="https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
 
-    <!-- External Fonts (no google for china) -->
-    <link
-      href="static/css/Lato.css"
-      rel="stylesheet"
-    />
-    <link href="static/css/Exo.css" rel="stylesheet" />
-    <link
-      href="static/css/Cuprum.css"
-      rel="stylesheet"
-    />
+  <!-- External Fonts (no google for china) -->
+  <link href="static/css/Lato.css" rel="stylesheet" />
+  <link href="static/css/Exo.css" rel="stylesheet" />
+  <link href="static/css/Cuprum.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="static/css/main.css" />
-    <link rel="stylesheet" href="static/css/chats-modal.css" />
-    <link rel="stylesheet" href="static/css/lazy_load.css" />
-    <link rel="stylesheet" href="static/css/typeahead.css" />
+  <link rel="stylesheet" href="static/css/main.css" />
+  <link rel="stylesheet" href="static/css/chats-modal.css" />
+  <link rel="stylesheet" href="static/css/lazy_load.css" />
+  <link rel="stylesheet" href="static/css/typeahead.css" />
 
-    <title>ACL2023: Papers</title>
-    
+  <title>ACL2023: Papers</title>
+  
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
 
@@ -87,22 +84,26 @@
 
 
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
-    <link rel="manifest" href="static/favicon/site.webmanifest">
-    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="static/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-  </head>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+  <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="static/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
 
-  <body>
-    <!-- NAV -->
-    
-    <!-- Add back ('livestream.html', 'Livestream'),
+<body>
+  <!-- NAV -->
+  
+  <!-- ('https://2023.aclweb.org/faq/', 'FAQ'), -->
+  <!-- ('https://2023.aclweb.org/committees/organization/', 'Organizers'), -->
+  <!-- ('https://2023.aclweb.org/sponsors/', 'Sponsors') -->
+
+  <!-- Add back ('livestream.html', 'Livestream'),
     ('about.html', 'Help'),
     ('plenary_sessions.html', 'Plenary'),
     ('livestream.html', 'Livestream'),
@@ -113,106 +114,73 @@
     for a new conference
     -->
 
-    <nav
-      class="navbar sticky-top navbar-expand-lg navbar-light  bg-emnlp mr-auto customnav"
-      id="main-nav"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-             class="logo" src="static/images/acl2023/acl-logo-2023.png"
-             height="45px"
-             width="auto"
-             alt="ACL 2023"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse text-right flex-grow-1"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav ml-auto">
-            
-              
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="index.html">Home</a>
-                  
-                </li>
-              
-            
-              
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="schedule.html">Schedule</a>
-                  
-                </li>
-              
-            
-              
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="sessions.html">Sessions</a>
-                  
-                </li>
-              
-            
-              
-                <li class="nav-item active">
-                  
-                  <a class="nav-link" href="papers.html">Papers</a>
-                  
-                </li>
-              
-            
-              
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="https://2023.aclweb.org/faq/" target="_blank">FAQ</a>
-                  
-                </li>
-              
-            
-              
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="https://2023.aclweb.org/committees/organization/" target="_blank">Organizers</a>
-                  
-                </li>
-              
-            
-              
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="https://2023.aclweb.org/sponsors/" target="_blank">Sponsors</a>
-                  
-                </li>
-              
-            
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-
-    
-    <!-- User Overrides -->
-     
-
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light  bg-emnlp mr-auto customnav" id="main-nav">
     <div class="container">
-      <!-- Heading -->
-      <div class="heading">
-        
+      <a class="navbar-brand" href="index.html">
+        <img class="logo" src="static/images/acl2023/acl-logo-2023.png" height="45px"
+          width="auto" alt="ACL 2023" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          
+          
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="index.html">Home</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="schedule.html">Schedule</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="sessions.html">Sessions</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item active">
+            
+            <a class="nav-link" href="papers.html">Papers</a>
+            
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="https://2023.aclweb.org/" target="_blank"><u>Main Program Home</u></a>
+            
+          </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  <!-- User Overrides -->
+   
+
+  <div class="container">
+    <!-- Heading -->
+    <div class="heading">
+      
    <div class="my-3"></div>
 <div class="row p-4">
   <div class="col-12 bd-content">
@@ -231,8 +199,8 @@
 
   </div>
 
-      </div>
-      <div class="tabs pt-3">
+    </div>
+    <div class="tabs pt-3">
       <!-- Tabs -->
       <div class="tabs pt-3">
         
@@ -740,5 +708,6 @@
         </div>
     </div>
 </div>
-  </body>
+</body>
+
 </html>

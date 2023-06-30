@@ -50,6 +50,16 @@ class Event(BaseModel):
     def day(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
         return start_time.strftime("%b %d")
+    
+    @property
+    def conference_datetime(self) -> str:
+        start = self.start_time
+        end = self.end_time
+        return "{}, {}-{}".format(
+            start.strftime("%b %d"),
+            start.strftime("%H:%M"),
+            end.strftime("%H:%M (%Z)"),
+            )
 
     @property
     def time_string(self) -> str:
@@ -218,6 +228,7 @@ class SiteData(BaseModel):
     programs: List[str] = []
     main_program_tracks: List[str] = []
     faq: Any
+    local_timezone: str = None
     code_of_conduct: Any
     sessions: Dict[str, Session]
     session_days: List[Any] = []

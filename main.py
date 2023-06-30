@@ -150,6 +150,8 @@ def paper(uid):
     data["paper"] = v
     data["events"] = [conference.events[e_id] for e_id in v.event_ids]
     data["paper_recs"] = [by_uid.papers[i] for i in v.similar_paper_ids[1:]]
+    # TODO: Fix
+    data['zone'] = site_data.local_timezone
 
     return render_template("paper.html", **data)
 
@@ -275,6 +277,7 @@ def hydra_main(cfg: DictConfig):
     global site_data
     global by_uid
     site_data = SiteData.from_conference(conference, data_dir)
+    site_data.local_timezone = cfg.time_zone
     by_uid = ByUid()
     extra_files = load_site_data(conference, site_data, by_uid)
 

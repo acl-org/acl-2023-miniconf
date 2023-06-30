@@ -463,7 +463,8 @@
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
     <span>{{event.session}}: {{event.track}} ({{event.type}})</span>
-    <span class="session_times">{{event.session}} {{event.time_string}}</span>
+    <div>Conference Time: {{ event.conference_datetime }} (America/Toronto)</div>
+    <div>Global Time: {{ event.day }}, <span class="session_times">{{event.session}} {{event.time_string}}</span></div>
 
   {% if event.link %}
   <a href="{{session.link}}"   class="card-link" target="_blank">

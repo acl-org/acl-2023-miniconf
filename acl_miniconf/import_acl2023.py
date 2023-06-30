@@ -618,7 +618,7 @@ class Acl2023Parser:
             spreadsheet_info, "Student Research Workshop", "Workshops", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Birds of a Feather", "Workshops", MAIN
+            spreadsheet_info, "Birds of a Feather", "Socials", MAIN
         )
 
     def _parse_event_without_papers(

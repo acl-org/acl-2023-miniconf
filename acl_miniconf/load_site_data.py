@@ -50,7 +50,11 @@ def load_site_data(
     # generate_tutorial_events(site_data)
     # generate_workshop_events(site_data)
     site_data.overall_calendar: List[FrontendCalendarEvent] = []
+    print(f"Start: {len(site_data.overall_calendar)}")
     site_data.overall_calendar.extend(generate_paper_events(site_data))
+    print(f"Before: {len(site_data.overall_calendar)}")
+    site_data.overall_calendar.extend(generate_social_events(site_data))
+    print(f"After: {len(site_data.overall_calendar)}")
     # generate_social_events(site_data)
 
     site_data.calendar = build_schedule(site_data.overall_calendar)
@@ -322,6 +326,8 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     # Add paper sessions to calendar
     overall_calendar = []
     for uid, session in site_data.sessions.items():
+        if session.type == "Socials":
+            continue
         start = session.start_time
         end = session.end_time
         tab_id = (
@@ -383,7 +389,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     return overall_calendar
 
 
-def generate_social_events(site_data: Dict[str, Any]):
+def generate_social_events_old(site_data: Dict[str, Any]):
     """We add social sessions and compute the overall paper social for the weekly view."""
     # Add paper sessions to calendar
 
@@ -435,6 +441,55 @@ def generate_social_events(site_data: Dict[str, Any]):
             "view": "week",
         }
         site_data["overall_calendar"].append(event)
+
+
+def generate_social_events(site_data: SiteData) -> List[Dict[str, Any]]:
+    """We add social sessions and compute the overall paper social for the weekly view."""
+    # Add paper sessions to calendar
+    overall_calendar = []
+    for uid, session in site_data.sessions.items():
+        if session.type != "Socials":
+            continue
+        start = session.start_time
+        end = session.end_time
+        tab_id = (
+            session.start_time.astimezone(pytz.utc)
+            .strftime("%b %d")
+            .replace(" ", "")
+            .lower()
+        )
+        event = FrontendCalendarEvent(
+            title=session.name,
+            start=session.start_time,
+            end=session.end_time,
+            location="",
+            url=f"socials.html",
+            category="time",
+            type=session.type,
+            view="week",
+        )
+        overall_calendar.append(event)
+        existing_events = set()
+        for event in session.events.values():
+            if (event.session, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    title=f"<b>{event.track}</b>",
+                    start=start,
+                    end=end,
+                    location="",
+                    # TODO: UID probably doesn't work here
+                    url=f"socials.html",
+                    category="time",
+                    type=session.type,
+                    view="day",
+                )
+                # We don't want repeats of types, just collect all matching session/track
+                # into one page
+                existing_events.add((event.session, event.track, event.start_time))
+                overall_calendar.append(frontend_event)
+
+                assert start < end, "Session start after session end"
+    return overall_calendar
 
 
 def build_schedule(

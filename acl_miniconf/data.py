@@ -277,6 +277,7 @@ class SiteData(BaseModel):
 
         with open(site_data_path / "configs" / "config.yml") as f:
             config = yaml.safe_load(f)
+        socials = {k: v for k, v in conference.sessions.items() if v.type == "Socials"}
         site_data = cls(
             config=config,
             pages=load_all_pages_texts(site_data_path),
@@ -294,7 +295,7 @@ class SiteData(BaseModel):
             tutorials=[],
             tutorials_calendar=[],
             workshops=[],
-            socials=[],
+            socials=socials,
             tracks=tracks,
             track_ids=track_ids,
             main_program_tracks=main_program_tracks,

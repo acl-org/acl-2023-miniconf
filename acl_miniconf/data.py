@@ -83,6 +83,7 @@ class Session(BaseModel):
     name: str
     start_time: Optional[datetime.datetime]
     end_time: Optional[datetime.datetime]
+    type: str
     events: Dict[str, Event]
 
     @property

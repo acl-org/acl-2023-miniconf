@@ -320,7 +320,6 @@ def generate_workshop_events(site_data: Dict[str, Any]):
 def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     """We add sessions from papers and compute the overall paper blocks for the weekly view."""
     # Add paper sessions to calendar
-
     overall_calendar = []
     for uid, session in site_data.sessions.items():
         start = session.start_time
@@ -338,7 +337,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
             location="",
             url=f"sessions.html#tab-{tab_id}",
             category="time",
-            type="Paper Sessions",
+            type=session.type,
             view="week",
         )
         overall_calendar.append(event)
@@ -353,7 +352,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
                     # TODO: UID probably doesn't work here
                     url=f"papers.html?session={uid}&program=all",
                     category="time",
-                    type="Paper Sessions",
+                    type=session.type,
                     view="day",
                 )
                 # We don't want repeats of types, just collect all matching session/track

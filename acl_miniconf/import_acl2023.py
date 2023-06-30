@@ -93,10 +93,11 @@ def na_to_none(x):
 
 
 def to_underline_paper_id(paper_id: str):
-    if paper_id.startswith('P') or paper_id.startswith('C'):
+    if paper_id.startswith("P") or paper_id.startswith("C"):
         return paper_id[1:]
     else:
         return paper_id
+
 
 class Assets(BaseModel):
     underline_paper_id: Optional[str] = None
@@ -137,7 +138,7 @@ class Acl2023Parser:
         # Order is intentional, spotlight papers also appear in virtual, so repeated papers
         # warnings aren't emitted
         self._parse_spotlight_papers()
-        #self._parse_extras_from_spreadsheet()
+        self._parse_extras_from_spreadsheet()
         self.validate()
         return Conference(
             sessions=self.sessions,
@@ -176,7 +177,9 @@ class Acl2023Parser:
                 video_url=na_to_none(paper["Video file link"]),
             )
             if underline_paper_id in self.underline_assets:
-                raise ValueError(f'Repeat paper: {underline_paper_id}\nCurrent: {assets}\nPrior: {self.underline_assets[underline_paper_id]}')
+                raise ValueError(
+                    f"Repeat paper: {underline_paper_id}\nCurrent: {assets}\nPrior: {self.underline_assets[underline_paper_id]}"
+                )
             self.underline_assets[underline_paper_id] = assets
 
     def _parse_start_end_dt(self, date_str: str, time_str: str):
@@ -235,6 +238,7 @@ class Acl2023Parser:
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -306,6 +310,7 @@ class Acl2023Parser:
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -386,6 +391,7 @@ class Acl2023Parser:
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -465,6 +471,7 @@ class Acl2023Parser:
                     name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -517,7 +524,7 @@ class Acl2023Parser:
             logging.error(
                 f"Could not read spreadsheet from file {self.extras_xlsx_path}. This data won't be added to the program."
             )
-            return
+            raise
         # Part 1: read all tracks from the spreadsheet
         sheet = workbook["Tracks"]
         spreadsheet_info = dict()
@@ -526,6 +533,8 @@ class Acl2023Parser:
             while True:
                 track_id = sheet["A"][row].value
                 track_name = sheet["B"][row].value.strip()
+                # Escape slashes, as they break the website
+                track_name = track_name.replace("/", "--")
                 # Fixing a typo in the original data
                 if track_name == "Birds of Fearther":
                     track_name = "Birds of a Feather"
@@ -546,11 +555,14 @@ class Acl2023Parser:
         try:
             while True:
                 track_name = sheet["F"][row].value.strip()
+                # Escape slashes, as they break the website
+                track_name = track_name.replace("/", "--")
                 # Fixing a typo in the original data
                 if track_name == "Birds of Fearther":
                     track_name = "Birds of a Feather"
                 event_id = sheet["A"][row].value
                 event_name = sheet["B"][row].value.strip()
+                event_name = event_name.replace("/", "--")
                 event_desc = sheet["C"][row].value
                 # Parse the start time and end time in UTC
                 event_start = sheet["G"][row].value
@@ -576,19 +588,19 @@ class Acl2023Parser:
             pass
 
         self._parse_event_without_papers(
-            spreadsheet_info, "Social", "Social Event", MAIN
+            spreadsheet_info, "Social", "Socials", MAIN
         )
         self._parse_event_without_papers(
-            spreadsheet_info, "Plenary Sessions", "Plenary Session", MAIN
+            spreadsheet_info, "Plenary Sessions", "Plenary Sessions", MAIN
         )
         self._parse_event_without_papers(
-            spreadsheet_info, "Workshops", "Workshop", WORKSHOP
+            spreadsheet_info, "Workshops", "Workshops", WORKSHOP
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Tutorials", "Tutorial", MAIN
+            spreadsheet_info, "Tutorials", "Tutorials", MAIN
         )
         self._parse_event_without_papers(
-            spreadsheet_info, "Findings", "Workshop", FINDINGS
+            spreadsheet_info, "Findings", "Workshops", FINDINGS
         )
         self._parse_event_without_papers(
             spreadsheet_info, "Industry Track", "Poster", INDUSTRY
@@ -597,16 +609,16 @@ class Acl2023Parser:
             spreadsheet_info, "Demo Sessions", "Poster", DEMO
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Coffee Break", "Social Event", MAIN
+            spreadsheet_info, "Coffee Break", "Socials", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Diversity and Inclusion", "Workshop", MAIN
+            spreadsheet_info, "Diversity and Inclusion", "Workshops", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Student Research Workshop", "Workshop", MAIN
+            spreadsheet_info, "Student Research Workshop", "Workshops", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Birds of a Feather", "Oral", MAIN
+            spreadsheet_info, "Birds of a Feather", "Workshops", MAIN
         )
 
     def _parse_event_without_papers(
@@ -623,6 +635,7 @@ class Acl2023Parser:
                 name=group_session,
                 start_time=event_data["start"],
                 end_time=event_data["end"],
+                type=event_type,
                 events=[],
             )
             session = self.sessions[group_session]
@@ -703,6 +716,7 @@ class Acl2023Parser:
                 name=group_session,
                 start_time=session_start,
                 end_time=session_end,
+                type=event_type,
                 events=[],
             )
             counter += 1

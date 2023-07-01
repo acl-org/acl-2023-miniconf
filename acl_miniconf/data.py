@@ -50,7 +50,7 @@ class Event(BaseModel):
     def day(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
         return start_time.strftime("%b %d")
-    
+
     @property
     def conference_datetime(self) -> str:
         start = self.start_time
@@ -59,7 +59,7 @@ class Event(BaseModel):
             start.strftime("%b %d"),
             start.strftime("%H:%M"),
             end.strftime("%H:%M (%Z)"),
-            )
+        )
 
     @property
     def time_string(self) -> str:
@@ -83,6 +83,7 @@ class Session(BaseModel):
     name: str
     start_time: Optional[datetime.datetime]
     end_time: Optional[datetime.datetime]
+    type: str
     events: Dict[str, Event]
 
     @property
@@ -276,6 +277,7 @@ class SiteData(BaseModel):
 
         with open(site_data_path / "configs" / "config.yml") as f:
             config = yaml.safe_load(f)
+        socials = {k: v for k, v in conference.sessions.items() if v.type == "Socials"}
         site_data = cls(
             config=config,
             pages=load_all_pages_texts(site_data_path),
@@ -293,7 +295,7 @@ class SiteData(BaseModel):
             tutorials=[],
             tutorials_calendar=[],
             workshops=[],
-            socials=[],
+            socials=socials,
             tracks=tracks,
             track_ids=track_ids,
             main_program_tracks=main_program_tracks,

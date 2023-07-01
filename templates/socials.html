@@ -13,15 +13,16 @@
 <div class="speakers">
 <div class="cards row">
   {% for social in socials %}
+  {% for event in socials[social]['events'] %}
   <div class="col-md-6 col-sm-12 p-3"
-       id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
+       id='{{socials[social]["name"]|replace(" ", "_")|replace("?", "")}}'>
     <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
          style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
-
       <h2 class="card-title" >
-        {{social.name}}
+        {{ socials[social]['name'] }}: {{ socials[social]['events'][event]['track'] }}
       </h2>
 
+      {% if social.organizers %}
       <h6 class="text-muted font-italic">
         {{social.organizers.members|join(" & ")}}
         {% if social.organizers.website %}
@@ -29,6 +30,7 @@
           (<a href="{{social.organizers.website}}" target="_blank">{{social.organizers.website}}</a>)
         {% endif %}
       </h6>
+      {% endif %}
 
       {% if social.image %}
         <div class="m-4">
@@ -38,14 +40,15 @@
       {% endif %}
 
       <div class="mx-4 text-left card-subtitle">
-        <p>{{social.description|safe}}</p>
+        <p>{{socials[social]['desc']|safe}}</p>
 
-        <p class="text-center">This event takes place in {{ social.location }}.</p>
+        {% if socials[social]['events'][event]['room'] %}
+        <p class="text-center">This event takes place in {{ socials[social]['events'][event]['room'] }}.</p>
+        {% endif %}
 
-        {% for session in social.sessions %}
+        {% for session in socials[social]['events'] %}
           <div class="m-3 text-muted text-center">
-          {{session.session}}
-          <span class="session_times">{{session.time_string}}</span>
+          <span class="session_times">{{socials[social]['events'][session]['start_time'].strftime('%A %d, %H:%m')}}</span>
           {% if session.link %}
             <div>
             <a href="{{session.link}}" target="_blank"  class="card-link">
@@ -64,7 +67,7 @@
             <div class="text-center text-muted text-monospace">
               <div class="paper-cal-links">
                 <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-                <span id="session-cal-link-{{ social.id }}-{{loop.index}}"></span>
+                <span id="session-cal-link-{{ socials[social]['id'] }}-{{loop.index}}"></span>
               </div>
             </div>
 
@@ -93,6 +96,7 @@
     </div>
   </div>
   {% endfor %}
+  {% endfor %}
 </div>
 </div>
 </div>
@@ -116,7 +120,7 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   {% for social in socials %}
-    {% for session in social.sessions %}
+    {% for social_event in socials[social]['events'] %}
       // create a calendar by hand
       ouicalData = addToCalendarData({
         options: {
@@ -124,11 +128,11 @@
           id: 'my-id'                               // If you don't pass an id, one will be generated for you.
         },
         data: {
-          title: '{{ social.name }}'.replace("#", " "),
+          title: '{{ socials[social]['name'] }}: {{ socials[social]["events"][social_event]['track'] }}'.replace("#", " "),
 
           // Event start date
-          start: new Date("{{session.start_time_string}}"),
-          end: new Date("{{session.end_time_string}}"),
+          start: new Date("{{socials[social]['events'][social_event]['start_time'].isoformat()}}"),
+          end: new Date("{{socials[social]['events'][social_event]['end_time'].isoformat()}}"),
           // duration: 120,                           // Event duration (IN MINUTES)
           // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
@@ -141,11 +145,11 @@
 
           // Event Description
           // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-          description: '{{ social.abstract }}'
+          description: '{{ socials[social]["events"][social_event]['track'] }}'
         }
       });
 
-      targetNode = document.querySelector('#session-cal-link-{{ social.id }}-{{ loop.index }}');
+      targetNode = document.querySelector('#session-cal-link-{{ socials[social]["id"] }}-{{ loop.index }}');
       for (const name of calendarNames) {
         calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
         calendarNodeSpan = document.createElement("span");

@@ -50,7 +50,7 @@ class Event(BaseModel):
     def day(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
         return start_time.strftime("%b %d")
-    
+
     @property
     def conference_datetime(self) -> str:
         start = self.start_time
@@ -59,7 +59,7 @@ class Event(BaseModel):
             start.strftime("%b %d"),
             start.strftime("%H:%M"),
             end.strftime("%H:%M (%Z)"),
-            )
+        )
 
     @property
     def time_string(self) -> str:

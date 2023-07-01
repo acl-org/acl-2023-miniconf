@@ -587,9 +587,7 @@ class Acl2023Parser:
         except IndexError:
             pass
 
-        self._parse_event_without_papers(
-            spreadsheet_info, "Social", "Socials", MAIN
-        )
+        self._parse_event_without_papers(spreadsheet_info, "Social", "Socials", MAIN)
         self._parse_event_without_papers(
             spreadsheet_info, "Plenary Sessions", "Plenary Sessions", MAIN
         )

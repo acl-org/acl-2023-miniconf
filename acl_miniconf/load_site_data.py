@@ -50,11 +50,8 @@ def load_site_data(
     # generate_tutorial_events(site_data)
     # generate_workshop_events(site_data)
     site_data.overall_calendar: List[FrontendCalendarEvent] = []
-    print(f"Start: {len(site_data.overall_calendar)}")
     site_data.overall_calendar.extend(generate_paper_events(site_data))
-    print(f"Before: {len(site_data.overall_calendar)}")
     site_data.overall_calendar.extend(generate_social_events(site_data))
-    print(f"After: {len(site_data.overall_calendar)}")
     # generate_social_events(site_data)
 
     site_data.calendar = build_schedule(site_data.overall_calendar)

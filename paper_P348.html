@@ -85,7 +85,9 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="The increasing sizes of large generative Pre-trained Language Models (PLMs) hinder their deployment
+in real-world applications. To obtain efficient PLMs, previous studies mostly focus on pruning the 
+attention heads and  feed-forward networks~(FFNs) of the Transformer. Nevertheless, we find that in generative PLMs, the hidden dimension shared by many other modules (e.g., embedding layer and layer normalization) contains persistent outliers regardless of the network input. This study comprehensively investigates the structured pruning of generative PLMs with all the above compressible components.  To identify redundant network structures, we assign learnable masks over compressible components followed by sparse training. Various sizes of PLMs can be flexibly extracted via different thresholds, and are then task-specifically fine-tuned for further improvement. Extensive experiments on language modeling, summarization and machine translation validate the effectiveness of the proposed method. For example,  the pruned BART brings 1.51x/6.96x inference speedup on GPU/CPU with 67\% size reduction, and can be further combined with quantization for more than 25$\times$ compression." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -280,6 +282,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -396,12 +402,14 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        The increasing sizes of large generative Pre-trained Language Models (PLMs) hinder their deployment
+in real-world applications. To obtain efficient PLMs, previous studies mostly focus on pruning the 
+attention heads and  feed-forward networks~(FFNs) of the Transformer. Nevertheless, we find that in generative PLMs, the hidden dimension shared by many other modules (e.g., embedding layer and layer normalization) contains persistent outliers regardless of the network input. This study comprehensively investigates the structured pruning of generative PLMs with all the above compressible components.  To identify redundant network structures, we assign learnable masks over compressible components followed by sparse training. Various sizes of PLMs can be flexibly extracted via different thresholds, and are then task-specifically fine-tuned for further improvement. Extensive experiments on language modeling, summarization and machine translation validate the effectiveness of the proposed method. For example,  the pruned BART brings 1.51x/6.96x inference speedup on GPU/CPU with 67\% size reduction, and can be further combined with quantization for more than 25$\times$ compression.
       </div>
     </div>
   </div>

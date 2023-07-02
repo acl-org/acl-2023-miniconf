@@ -75,7 +75,7 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Although recent neural models for coreference resolution have led to substantial improvements on benchmark datasets, it remains a challenge to successfully transfer these models to new target domains containing many out-of-vocabulary spans and requiring differing annotation schemes. Typical approaches involve continued training on annotated target-domain data, but obtaining annotations is costly and time-consuming. In this work, we show that adapting mention detection is the key component to successful domain adaptation of coreference models, rather than antecedent linking. We also show annotating mentions alone is nearly twice as fast as annotating full coreference chains. Based on these insights, we propose a method for efficiently adapting coreference models, which includes a high-precision mention detection objective  and requires only mention annotations in the target domain. Extensive evaluation across three English coreference datasets: CoNLL-2012 (news/conversation), i2b2/VA (medical notes), and child welfare notes, reveals that our approach facilitates annotation-efficient transfer and results in a 7-14\% improvement in average F1  without increasing annotator time." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -250,6 +250,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -366,12 +370,12 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Although recent neural models for coreference resolution have led to substantial improvements on benchmark datasets, it remains a challenge to successfully transfer these models to new target domains containing many out-of-vocabulary spans and requiring differing annotation schemes. Typical approaches involve continued training on annotated target-domain data, but obtaining annotations is costly and time-consuming. In this work, we show that adapting mention detection is the key component to successful domain adaptation of coreference models, rather than antecedent linking. We also show annotating mentions alone is nearly twice as fast as annotating full coreference chains. Based on these insights, we propose a method for efficiently adapting coreference models, which includes a high-precision mention detection objective  and requires only mention annotations in the target domain. Extensive evaluation across three English coreference datasets: CoNLL-2012 (news/conversation), i2b2/VA (medical notes), and child welfare notes, reveals that our approach facilitates annotation-efficient transfer and results in a 7-14\% improvement in average F1  without increasing annotator time.
       </div>
     </div>
   </div>

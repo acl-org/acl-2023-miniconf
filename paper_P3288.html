@@ -73,7 +73,12 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="When textual classifiers are deployed in safety-critical workflows, they must withstand the onslaught of AI-enabled model confusion caused by adversarial examples with minor alterations. In this paper, the main objective is to provide a formal verification framework, called TextVerifier, with certifiable guarantees on deep neural networks in natural language processing against word-level alteration attacks. We aim to provide an approximation of the maximal safe radius by deriving provable bounds both mathematically and automatically, where a minimum word-level L\_{0} distance is quantified as a guarantee for the classification invariance of victim models. 
+Here, we illustrate three strengths of our strategy: 
+i) certifiable guarantee: effective verification with convergence to ensure approximation of maximal safe radius with tight bounds ultimately; 
+ii) high-efficiency: it yields an efficient speed edge by a novel parallelization strategy that can process a set of candidate texts simultaneously on GPUs; 
+and iii) reliable anytime estimation: the verification can return intermediate bounds, and robustness estimates that are gradually, but strictly, improved as the computation proceeds. 
+Furthermore, experiments are conducted on text classification on four datasets over three victim models to demonstrate the validity of tightening bounds. Our tool TextVerifier is available at https://github.com/TrustAI/TextVerifer." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -244,6 +249,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -410,12 +419,17 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        When textual classifiers are deployed in safety-critical workflows, they must withstand the onslaught of AI-enabled model confusion caused by adversarial examples with minor alterations. In this paper, the main objective is to provide a formal verification framework, called TextVerifier, with certifiable guarantees on deep neural networks in natural language processing against word-level alteration attacks. We aim to provide an approximation of the maximal safe radius by deriving provable bounds both mathematically and automatically, where a minimum word-level L\_{0} distance is quantified as a guarantee for the classification invariance of victim models. 
+Here, we illustrate three strengths of our strategy: 
+i) certifiable guarantee: effective verification with convergence to ensure approximation of maximal safe radius with tight bounds ultimately; 
+ii) high-efficiency: it yields an efficient speed edge by a novel parallelization strategy that can process a set of candidate texts simultaneously on GPUs; 
+and iii) reliable anytime estimation: the verification can return intermediate bounds, and robustness estimates that are gradually, but strictly, improved as the computation proceeds. 
+Furthermore, experiments are conducted on text classification on four datasets over three victim models to demonstrate the validity of tightening bounds. Our tool TextVerifier is available at https://github.com/TrustAI/TextVerifer.
       </div>
     </div>
   </div>

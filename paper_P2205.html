@@ -79,7 +79,13 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="We investigate response generation for multi-turn dialogue in generative chatbots. Existing generative models
+based on RNNs (Recurrent Neural Networks) usually employ the last hidden state to summarize the history, which makes
+models unable to capture the subtle variability observed in different dialogues and cannot distinguish the differences
+between dialogues that are similar in composition. In this paper, we propose Pseudo-Variational Gated Recurrent Unit (PVGRU). The key novelty of PVGRU is a recurrent summarizing variable that
+aggregates the accumulated distribution variations of subsequences. We train PVGRU without relying on posterior knowledge, thus avoiding the training-inference inconsistency problem. PVGRU can perceive subtle semantic variability through summarizing variables that are optimized by two objectives we employ for training: distribution consistency and reconstruction. In addition, we build a Pseudo-Variational Hierarchical Dialogue
+(PVHD) model based on PVGRU. Experimental results demonstrate that PVGRU can broadly improve the diversity and
+relevance of responses on two benchmark datasets." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -262,6 +268,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -378,12 +388,18 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        We investigate response generation for multi-turn dialogue in generative chatbots. Existing generative models
+based on RNNs (Recurrent Neural Networks) usually employ the last hidden state to summarize the history, which makes
+models unable to capture the subtle variability observed in different dialogues and cannot distinguish the differences
+between dialogues that are similar in composition. In this paper, we propose Pseudo-Variational Gated Recurrent Unit (PVGRU). The key novelty of PVGRU is a recurrent summarizing variable that
+aggregates the accumulated distribution variations of subsequences. We train PVGRU without relying on posterior knowledge, thus avoiding the training-inference inconsistency problem. PVGRU can perceive subtle semantic variability through summarizing variables that are optimized by two objectives we employ for training: distribution consistency and reconstruction. In addition, we build a Pseudo-Variational Hierarchical Dialogue
+(PVHD) model based on PVGRU. Experimental results demonstrate that PVGRU can broadly improve the diversity and
+relevance of responses on two benchmark datasets.
       </div>
     </div>
   </div>

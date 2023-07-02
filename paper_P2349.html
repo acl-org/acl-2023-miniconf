@@ -83,7 +83,13 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="A real-world text corpus sometimes comprises not only text documents, but also semantic links between them (e.g., academic papers in a bibliographic network are linked by citations and co-authorships).
+Text documents and semantic connections form a text-rich network, which empowers a wide range of downstream tasks such as classification and retrieval.
+However, pretraining methods for such structures are still lacking, making it difficult to build one generic model that can be adapted to various tasks on text-rich networks.
+Current pretraining objectives, such as masked language modeling, purely model texts and do not take inter-document structure information into consideration.
+To this end, we propose our PretrAining on TexT-Rich NetwOrk framework Patton.
+Patton includes two pretraining strategies: network-contextualized masked language modeling and masked node prediction, to capture the inherent dependency between textual attributes and network structure.
+We conduct experiments on four downstream tasks in five datasets from both academic and e-commerce domains, where Patton outperforms baselines significantly and consistently." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -274,6 +280,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -382,12 +392,18 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        A real-world text corpus sometimes comprises not only text documents, but also semantic links between them (e.g., academic papers in a bibliographic network are linked by citations and co-authorships).
+Text documents and semantic connections form a text-rich network, which empowers a wide range of downstream tasks such as classification and retrieval.
+However, pretraining methods for such structures are still lacking, making it difficult to build one generic model that can be adapted to various tasks on text-rich networks.
+Current pretraining objectives, such as masked language modeling, purely model texts and do not take inter-document structure information into consideration.
+To this end, we propose our PretrAining on TexT-Rich NetwOrk framework Patton.
+Patton includes two pretraining strategies: network-contextualized masked language modeling and masked node prediction, to capture the inherent dependency between textual attributes and network structure.
+We conduct experiments on four downstream tasks in five datasets from both academic and e-commerce domains, where Patton outperforms baselines significantly and consistently.
       </div>
     </div>
   </div>

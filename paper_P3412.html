@@ -79,7 +79,8 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="In this paper, we propose a novel language model guided captioning approach, LAMOC,  for knowledge-based visual question answering (VQA). Our approach employs the generated captions by a captioning model as the context of an answer prediction model, which is a Pre-Trained Language model (PLM). 
+As the major contribution, we  leverage the guidance and feedback of the prediction model to improve the capability of the captioning model. In this way, the captioning model can become aware of the task goal and information need from the PLM. To develop our approach, we design two specific training stages, where the first stage adapts the captioning model to the prediction model (selecting more suitable caption propositions for training) and the second stage tunes the  captioning model according to the task goal (learning from feedback of the PLM). Extensive experiments demonstrate the effectiveness of the proposed approach on the knowledge-based VQA task. Specifically, on the challenging A-OKVQA dataset, LAMOC outperforms several competitive zero-shot methods and even achieves comparable results to a fine-tuned VLP model. Our code is publicly available at https://github.com/RUCAIBox/LAMOC." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -262,6 +263,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -428,12 +433,13 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        In this paper, we propose a novel language model guided captioning approach, LAMOC,  for knowledge-based visual question answering (VQA). Our approach employs the generated captions by a captioning model as the context of an answer prediction model, which is a Pre-Trained Language model (PLM). 
+As the major contribution, we  leverage the guidance and feedback of the prediction model to improve the capability of the captioning model. In this way, the captioning model can become aware of the task goal and information need from the PLM. To develop our approach, we design two specific training stages, where the first stage adapts the captioning model to the prediction model (selecting more suitable caption propositions for training) and the second stage tunes the  captioning model according to the task goal (learning from feedback of the PLM). Extensive experiments demonstrate the effectiveness of the proposed approach on the knowledge-based VQA task. Specifically, on the challenging A-OKVQA dataset, LAMOC outperforms several competitive zero-shot methods and even achieves comparable results to a fine-tuned VLP model. Our code is publicly available at https://github.com/RUCAIBox/LAMOC.
       </div>
     </div>
   </div>

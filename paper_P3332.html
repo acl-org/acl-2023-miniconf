@@ -75,7 +75,13 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Natural language explanations have the potential to provide rich information that in principle guides model reasoning.
+Yet, recent work by Lampinen et al. has shown limited utility of natural language explanations in improving classification.
+To effectively learn from explanations, we present FLamE, a two-stage few-shot learning framework that first generates explanations using GPT-3, and then fine-tunes a smaller model (e.g., RoBERTa) with generated explanations.
+Our experiments on natural language inference demonstrate effectiveness over strong baselines, 
+increasing accuracy by 17.6\% over GPT-3 Babbage and 5.7\% over GPT-3 Davinci in e-SNLI.
+Despite improving classification performance, human evaluation surprisingly reveals that the majority of generated explanations does not adequately justify classification decisions.
+Additional analyses point to the important role of label-specific cues (e.g., ``not know&#39;&#39; for the neutral label) in generated explanations." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -250,6 +256,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -366,12 +376,18 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Natural language explanations have the potential to provide rich information that in principle guides model reasoning.
+Yet, recent work by Lampinen et al. has shown limited utility of natural language explanations in improving classification.
+To effectively learn from explanations, we present FLamE, a two-stage few-shot learning framework that first generates explanations using GPT-3, and then fine-tunes a smaller model (e.g., RoBERTa) with generated explanations.
+Our experiments on natural language inference demonstrate effectiveness over strong baselines, 
+increasing accuracy by 17.6\% over GPT-3 Babbage and 5.7\% over GPT-3 Davinci in e-SNLI.
+Despite improving classification performance, human evaluation surprisingly reveals that the majority of generated explanations does not adequately justify classification decisions.
+Additional analyses point to the important role of label-specific cues (e.g., ``not know&#39;&#39; for the neutral label) in generated explanations.
       </div>
     </div>
   </div>

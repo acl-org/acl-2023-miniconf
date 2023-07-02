@@ -77,7 +77,14 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Recognizing flat, overlapped and discontinuous entities uniformly has been paid increasing attention.
+Among these works, Seq2Seq formulation prevails for its flexibility and effectiveness.
+It arranges the output entities into a specific target sequence.
+However, it introduces bias by assigning all the probability mass to the observed sequence.
+To alleviate the bias, previous works either augment the data with possible sequences or resort to other formulations.
+In this paper, we stick to the Seq2Seq formulation and propose a reranking-based approach.
+It redistributes the likelihood among candidate sequences depending on their performance via a contrastive loss.
+Extensive experiments show that our simple yet effective method consistently boosts the baseline, and yields competitive or better results compared with the state-of-the-art methods on 8 widely-used datasets for Named Entity Recognition." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -256,6 +263,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -368,12 +379,19 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Recognizing flat, overlapped and discontinuous entities uniformly has been paid increasing attention.
+Among these works, Seq2Seq formulation prevails for its flexibility and effectiveness.
+It arranges the output entities into a specific target sequence.
+However, it introduces bias by assigning all the probability mass to the observed sequence.
+To alleviate the bias, previous works either augment the data with possible sequences or resort to other formulations.
+In this paper, we stick to the Seq2Seq formulation and propose a reranking-based approach.
+It redistributes the likelihood among candidate sequences depending on their performance via a contrastive loss.
+Extensive experiments show that our simple yet effective method consistently boosts the baseline, and yields competitive or better results compared with the state-of-the-art methods on 8 widely-used datasets for Named Entity Recognition.
       </div>
     </div>
   </div>

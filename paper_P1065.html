@@ -75,7 +75,17 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Layer Normalization (LayerNorm) is an inherent component in all Transformer-based models.
+In this paper, we show that LayerNorm is crucial to the expressivity of the multi-head attention layer that follows it. 
+This is in contrast to the common belief that LayerNorm&#39;s only role is to normalize the activations during the forward pass, and their gradients during the backward pass.
+
+We consider a geometric interpretation of LayerNorm and show that it consists of two components: 
+(a) projection of the input vectors to a d-1 space that is orthogonal to the [1,1,...,1] vector, and
+(b) scaling of all vectors to the same norm of \sqrt{d}. 
+We show that each of these components is important for the attention layer that follows it in Transformers:
+(a) projection allows the attention mechanism to create an attention query that attends to all keys equally, offloading the need to learn this operation in the attention; and
+(b) scaling allows each key to potentially receive the highest attention, and prevents keys from being &#34;un-select-able&#39;&#39;.
+We show empirically that Transformers do indeed benefit from these properties of LayeNorm in general language modeling and even in computing simple functions such as &#34;majority&#39;&#39;. Our code is available at https://github.com/tech-srl/layer\_norm\_expressivity\_role ." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -249,6 +259,10 @@
     </h3>
    
     <div class="text-center p-3">
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
       
 
       
@@ -424,12 +438,22 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Layer Normalization (LayerNorm) is an inherent component in all Transformer-based models.
+In this paper, we show that LayerNorm is crucial to the expressivity of the multi-head attention layer that follows it. 
+This is in contrast to the common belief that LayerNorm&#39;s only role is to normalize the activations during the forward pass, and their gradients during the backward pass.
+
+We consider a geometric interpretation of LayerNorm and show that it consists of two components: 
+(a) projection of the input vectors to a d-1 space that is orthogonal to the [1,1,...,1] vector, and
+(b) scaling of all vectors to the same norm of \sqrt{d}. 
+We show that each of these components is important for the attention layer that follows it in Transformers:
+(a) projection allows the attention mechanism to create an attention query that attends to all keys equally, offloading the need to learn this operation in the attention; and
+(b) scaling allows each key to potentially receive the highest attention, and prevents keys from being &#34;un-select-able&#39;&#39;.
+We show empirically that Transformers do indeed benefit from these properties of LayeNorm in general language modeling and even in computing simple functions such as &#34;majority&#39;&#39;. Our code is available at https://github.com/tech-srl/layer\_norm\_expressivity\_role .
       </div>
     </div>
   </div>

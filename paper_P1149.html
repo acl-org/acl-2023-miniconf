@@ -83,7 +83,8 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Previous work on controllable text generation has explored the idea of control from the latent space, such as optimizing a representation with attribute-specific classifiers or sampling one from relevant discrete samples. However, they cannot effectively model a complex space with diverse attributes, high dimensionality, and asymmetric structure, leaving subsequent controls unsatisfying. In this work, we propose a novel control framework using probability density estimation in the latent space. Our method utilizes an invertible transformation function, the Normalizing Flow, that maps the complex distributions in the latent space to simple Gaussian distributions in the prior space. Thus, we can perform sophisticated and flexible controls in the prior space and feed the control effects back into the latent space owing to the 
+bijection property of invertible transformations. Experiments on single-attribute and multi-attribute control reveal that our method outperforms several strong baselines on attribute relevance and text quality, achieving a new SOTA. Further analysis of control strength adjustment demonstrates the flexibility of our control strategy." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -274,6 +275,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -390,12 +395,13 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Previous work on controllable text generation has explored the idea of control from the latent space, such as optimizing a representation with attribute-specific classifiers or sampling one from relevant discrete samples. However, they cannot effectively model a complex space with diverse attributes, high dimensionality, and asymmetric structure, leaving subsequent controls unsatisfying. In this work, we propose a novel control framework using probability density estimation in the latent space. Our method utilizes an invertible transformation function, the Normalizing Flow, that maps the complex distributions in the latent space to simple Gaussian distributions in the prior space. Thus, we can perform sophisticated and flexible controls in the prior space and feed the control effects back into the latent space owing to the 
+bijection property of invertible transformations. Experiments on single-attribute and multi-attribute control reveal that our method outperforms several strong baselines on attribute relevance and text quality, achieving a new SOTA. Further analysis of control strength adjustment demonstrates the flexibility of our control strategy.
       </div>
     </div>
   </div>

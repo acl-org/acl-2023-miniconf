@@ -83,7 +83,15 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="We introduce the task of correcting named entity recognition (NER) errors without re-training model.
+After an NER model is trained and deployed in production,
+it makes prediction errors, which usually need to be fixed quickly.
+To address this problem, we firstly construct a gazetteer containing named entities and corresponding possible entity types.
+And then, we propose type enhanced BERT (TyBERT),
+a method that integrates the named entity&#39;s type information into BERT by an adapter layer.
+When errors are identified, we can repair the model by updating the gazetteer.
+In other words, the gazetteer becomes a trigger to control NER model&#39;s output.
+The experiment results in multiple corpus show the effectiveness of our method, which outperforms strong baselines.x" />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -274,6 +282,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -382,12 +394,20 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        We introduce the task of correcting named entity recognition (NER) errors without re-training model.
+After an NER model is trained and deployed in production,
+it makes prediction errors, which usually need to be fixed quickly.
+To address this problem, we firstly construct a gazetteer containing named entities and corresponding possible entity types.
+And then, we propose type enhanced BERT (TyBERT),
+a method that integrates the named entity&#39;s type information into BERT by an adapter layer.
+When errors are identified, we can repair the model by updating the gazetteer.
+In other words, the gazetteer becomes a trigger to control NER model&#39;s output.
+The experiment results in multiple corpus show the effectiveness of our method, which outperforms strong baselines.x
       </div>
     </div>
   </div>

@@ -79,7 +79,13 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Jointly extracting entity pairs and their relations is challenging when working on distantly-supervised data with ambiguous or noisy labels.
+To mitigate such impact, we propose uncertainty-aware bootstrap learning, which is motivated by the intuition that the higher uncertainty of an instance, the more likely the model confidence is inconsistent with the ground truths.
+Specifically, we first explore instance-level data uncertainty to create an initial high-confident examples. 
+Such subset serves as filtering noisy instances and facilitating the model to converge fast at the early stage.
+During bootstrap learning, we propose self-ensembling as a regularizer to alleviate inter-model uncertainty produced by noisy labels. 
+We further define probability variance of joint tagging probabilities to estimate inner-model parametric uncertainty, which is used to select and build up new reliable training instances for the next iteration.
+Experimental results on two large datasets reveal that our approach outperforms existing strong baselines and related methods." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -262,6 +268,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -378,12 +388,18 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Jointly extracting entity pairs and their relations is challenging when working on distantly-supervised data with ambiguous or noisy labels.
+To mitigate such impact, we propose uncertainty-aware bootstrap learning, which is motivated by the intuition that the higher uncertainty of an instance, the more likely the model confidence is inconsistent with the ground truths.
+Specifically, we first explore instance-level data uncertainty to create an initial high-confident examples. 
+Such subset serves as filtering noisy instances and facilitating the model to converge fast at the early stage.
+During bootstrap learning, we propose self-ensembling as a regularizer to alleviate inter-model uncertainty produced by noisy labels. 
+We further define probability variance of joint tagging probabilities to estimate inner-model parametric uncertainty, which is used to select and build up new reliable training instances for the next iteration.
+Experimental results on two large datasets reveal that our approach outperforms existing strong baselines and related methods.
       </div>
     </div>
   </div>

@@ -83,7 +83,12 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Current clustering-based Open Relation Extraction (OpenRE) methods usually adopt a two-stage pipeline, which simultaneously learns relation representations and assignments in the first stage, then manually labels relation for each cluster.
+However, unsupervised objectives struggle to explicitly optimize clusters to align with relational semantics, and the number of clusters K has to be supplied in advance.
+In this paper, we present a novel setting, named actively supervised clustering for OpenRE. Our insight lies in that clustering learning and relation labeling can be performed simultaneously, which provides the necessary guidance for clustering without a significant increase in human effort. 
+Along with this setting, we propose an active labeling strategy tailored for clustering. 
+Instead of only focusing on improving the clustering of relations that have been discovered, our strategy is encouraged to discover new relations through diversity regularization. This is particularly beneficial for long-tail relations in the real world.
+Experimental results show that our method is able to discover almost all relational clusters in the data and improve the SOTA methods by 13.8\% and 10.6\%, on two datasets respectively." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -274,6 +279,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -386,12 +395,17 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Current clustering-based Open Relation Extraction (OpenRE) methods usually adopt a two-stage pipeline, which simultaneously learns relation representations and assignments in the first stage, then manually labels relation for each cluster.
+However, unsupervised objectives struggle to explicitly optimize clusters to align with relational semantics, and the number of clusters K has to be supplied in advance.
+In this paper, we present a novel setting, named actively supervised clustering for OpenRE. Our insight lies in that clustering learning and relation labeling can be performed simultaneously, which provides the necessary guidance for clustering without a significant increase in human effort. 
+Along with this setting, we propose an active labeling strategy tailored for clustering. 
+Instead of only focusing on improving the clustering of relations that have been discovered, our strategy is encouraged to discover new relations through diversity regularization. This is particularly beneficial for long-tail relations in the real world.
+Experimental results show that our method is able to discover almost all relational clusters in the data and improve the SOTA methods by 13.8\% and 10.6\%, on two datasets respectively.
       </div>
     </div>
   </div>

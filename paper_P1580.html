@@ -81,7 +81,7 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Recently, model-based retrieval has emerged as a new paradigm in text retrieval that discards the index in the traditional retrieval model and instead memorizes the candidate corpora using model parameters. This design employs a sequence-to-sequence paradigm to generate document identifiers, which enables the complete capture of the relevance between queries and documents and simplifies the classic index-retrieval-rerank pipeline. Despite its attractive qualities, there remain several major challenges in model-based retrieval, including the discrepancy between pre-training and fine-tuning, and the discrepancy between training and inference. To deal with the above challenges, we propose a novel two-stage model-based retrieval approach called TOME, which makes two major technical contributions, including the utilization of tokenized URLs as identifiers and the design of a two-stage generation architecture. We also propose a number of training strategies to deal with the training difficulty as the corpus size increases. Extensive experiments and analysis on MS MARCO and Natural Questions demonstrate the effectiveness of our proposed approach, and we investigate the scaling laws of TOME by examining various influencing factors." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -268,6 +268,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -384,12 +388,12 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Recently, model-based retrieval has emerged as a new paradigm in text retrieval that discards the index in the traditional retrieval model and instead memorizes the candidate corpora using model parameters. This design employs a sequence-to-sequence paradigm to generate document identifiers, which enables the complete capture of the relevance between queries and documents and simplifies the classic index-retrieval-rerank pipeline. Despite its attractive qualities, there remain several major challenges in model-based retrieval, including the discrepancy between pre-training and fine-tuning, and the discrepancy between training and inference. To deal with the above challenges, we propose a novel two-stage model-based retrieval approach called TOME, which makes two major technical contributions, including the utilization of tokenized URLs as identifiers and the design of a two-stage generation architecture. We also propose a number of training strategies to deal with the training difficulty as the corpus size increases. Extensive experiments and analysis on MS MARCO and Natural Questions demonstrate the effectiveness of our proposed approach, and we investigate the scaling laws of TOME by examining various influencing factors.
       </div>
     </div>
   </div>

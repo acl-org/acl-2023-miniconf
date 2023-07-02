@@ -85,7 +85,15 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="User simulators are agents designed to imitate human users; recent advances have found that Task-oriented Dialogue (ToD) systems optimized toward a user simulator could better satisfy the need of human users. 
+However, this might result in a sub-optimal ToD system if it is tailored to only one \textit{ad hoc} user simulator, since human users can behave differently. 
+In this paper, we propose a framework called MUST to optimize ToD systems via leveraging Multiple User SimulaTors. 
+
+The main challenges of implementing MUST fall in 1) how to adaptively determine which user simulator to interact with the ToD system at each optimization step, since the ToD system might be over-fitted to some specific user simulators, and simultaneously under-fitted to some others; 2) how to avoid catastrophic forgetting of the adaption for a simulator that is not selected for several consecutive optimization steps.
+To tackle these challenges, we formulate MUST as a Multi-armed bandits (MAB) problem and provide a method called MUST$_{\mathrm{adaptive}}$ that balances 
+\textit{i}) the \textit{boosting adaption} for adaptive interactions between different user simulators and the ToD system and
+\textit{ii}) the \textit{uniform adaption} to avoid the catastrophic forgetting issue.
+With both automatic evaluations and human evaluations, our experimental results on MultiWOZ show that the dialogue system trained by MUST achieves a better performance than those trained by a single user simulator. It also has a better generalization ability when testing with unseen user simulators." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -280,6 +288,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -388,12 +400,20 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        User simulators are agents designed to imitate human users; recent advances have found that Task-oriented Dialogue (ToD) systems optimized toward a user simulator could better satisfy the need of human users. 
+However, this might result in a sub-optimal ToD system if it is tailored to only one \textit{ad hoc} user simulator, since human users can behave differently. 
+In this paper, we propose a framework called MUST to optimize ToD systems via leveraging Multiple User SimulaTors. 
+
+The main challenges of implementing MUST fall in 1) how to adaptively determine which user simulator to interact with the ToD system at each optimization step, since the ToD system might be over-fitted to some specific user simulators, and simultaneously under-fitted to some others; 2) how to avoid catastrophic forgetting of the adaption for a simulator that is not selected for several consecutive optimization steps.
+To tackle these challenges, we formulate MUST as a Multi-armed bandits (MAB) problem and provide a method called MUST$_{\mathrm{adaptive}}$ that balances 
+\textit{i}) the \textit{boosting adaption} for adaptive interactions between different user simulators and the ToD system and
+\textit{ii}) the \textit{uniform adaption} to avoid the catastrophic forgetting issue.
+With both automatic evaluations and human evaluations, our experimental results on MultiWOZ show that the dialogue system trained by MUST achieves a better performance than those trained by a single user simulator. It also has a better generalization ability when testing with unseen user simulators.
       </div>
     </div>
   </div>

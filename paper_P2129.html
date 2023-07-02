@@ -75,7 +75,12 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Methods for erasing human-interpretable concepts from neural representations that assume linearity have been found to be tractable and useful.
+However, the impact of this removal on the behavior of downstream classifiers trained on the modified representations is not fully understood.
+In this work, we formally define the notion of linear guardedness as the inability of an adversary to predict the concept directly from the representation, and study its implications.
+We show that, in the binary case, under certain assumptions, a downstream log-linear model cannot recover the erased concept.
+However, we constructively demonstrate that a multiclass log-linear model \emph{can} be constructed that indirectly recovers the concept in some cases, pointing to the inherent limitations of linear guardedness as a downstream bias mitigation technique.
+These findings shed light on the theoretical limitations of linear erasure methods and highlight the need for further research on the connections between intrinsic and extrinsic bias in neural models." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -250,6 +255,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -366,12 +375,17 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Methods for erasing human-interpretable concepts from neural representations that assume linearity have been found to be tractable and useful.
+However, the impact of this removal on the behavior of downstream classifiers trained on the modified representations is not fully understood.
+In this work, we formally define the notion of linear guardedness as the inability of an adversary to predict the concept directly from the representation, and study its implications.
+We show that, in the binary case, under certain assumptions, a downstream log-linear model cannot recover the erased concept.
+However, we constructively demonstrate that a multiclass log-linear model \emph{can} be constructed that indirectly recovers the concept in some cases, pointing to the inherent limitations of linear guardedness as a downstream bias mitigation technique.
+These findings shed light on the theoretical limitations of linear erasure methods and highlight the need for further research on the connections between intrinsic and extrinsic bias in neural models.
       </div>
     </div>
   </div>

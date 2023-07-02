@@ -79,7 +79,12 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="By scaling the model size, large pre-trained language models~(PLMs) have shown remarkable performance in various natural language processing tasks, mostly outperforming small PLMs by a large margin.
+However, due to the high computational cost, the huge number of parameters also restricts the applicability of large PLMs in real-world systems. 
+In this paper, we focus on scaling up the parameters of PLMs \emph{only during} fine-tuning, to benefit from the over-parameterization, while without increasing \emph{the inference latency}.  Given a relatively small PLM, we over-parameterize it by employing a matrix product operator, an efficient and almost lossless decomposition method to factorize its contained parameter matrices into a set of higher-dimensional tensors.
+Considering the efficiency, we further propose both static and dynamic strategies to select the most important parameter matrices for over-parameterization.
+Extensive experiments have demonstrated that our approach can significantly boost the fine-tuning performance of small PLMs and even help small PLMs outperform $3\times$ parameterized larger ones.
+Our code is publicly available at {https://github.com/zfgao66/OPF}." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -262,6 +267,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -378,12 +387,17 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        By scaling the model size, large pre-trained language models~(PLMs) have shown remarkable performance in various natural language processing tasks, mostly outperforming small PLMs by a large margin.
+However, due to the high computational cost, the huge number of parameters also restricts the applicability of large PLMs in real-world systems. 
+In this paper, we focus on scaling up the parameters of PLMs \emph{only during} fine-tuning, to benefit from the over-parameterization, while without increasing \emph{the inference latency}.  Given a relatively small PLM, we over-parameterize it by employing a matrix product operator, an efficient and almost lossless decomposition method to factorize its contained parameter matrices into a set of higher-dimensional tensors.
+Considering the efficiency, we further propose both static and dynamic strategies to select the most important parameter matrices for over-parameterization.
+Extensive experiments have demonstrated that our approach can significantly boost the fine-tuning performance of small PLMs and even help small PLMs outperform $3\times$ parameterized larger ones.
+Our code is publicly available at {https://github.com/zfgao66/OPF}.
       </div>
     </div>
   </div>

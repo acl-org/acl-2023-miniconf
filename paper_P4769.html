@@ -79,7 +79,7 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="This paper presents a whitening-based contrastive learning method for sentence embedding learning (WhitenedCSE), which combines contrastive learning with a novel shuffled group whitening. Generally, contrastive learning pulls distortions of a single sample (i.e., positive samples) close and push negative samples far away, correspondingly facilitating the alignment and uniformity in the feature space. A popular alternative to the &#34;pushing&#39;&#39; operation is whitening the feature space, which scatters all the samples for uniformity. Since the whitening and the contrastive learning have large redundancy w.r.t. the uniformity, they are usually used separately and do not easily work together. For the first time, this paper integrates whitening into the contrastive learning scheme and facilitates two benefits. 1) Better uniformity. We find that these two approaches are not totally redundant but actually have some complementarity due to different uniformity mechanism. 2) Better alignment. We randomly divide the feature into multiple groups along the channel axis and perform whitening independently within each group. By shuffling the group division, we derive multiple distortions of a single sample and thus increase the positive sample diversity. Consequently, using multiple positive samples with enhanced diversity further improves contrastive learning due to better alignment. Extensive experiments on seven semantic textual similarity tasks show our method achieves consistent improvement over the contrastive learning baseline and sets new states of the art, e.g., 78.78\% (+2.53\% based on BERT\{pasted macro `BA&#39;\}) Spearman correlation on STS tasks." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -262,6 +262,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -374,12 +378,12 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        This paper presents a whitening-based contrastive learning method for sentence embedding learning (WhitenedCSE), which combines contrastive learning with a novel shuffled group whitening. Generally, contrastive learning pulls distortions of a single sample (i.e., positive samples) close and push negative samples far away, correspondingly facilitating the alignment and uniformity in the feature space. A popular alternative to the &#34;pushing&#39;&#39; operation is whitening the feature space, which scatters all the samples for uniformity. Since the whitening and the contrastive learning have large redundancy w.r.t. the uniformity, they are usually used separately and do not easily work together. For the first time, this paper integrates whitening into the contrastive learning scheme and facilitates two benefits. 1) Better uniformity. We find that these two approaches are not totally redundant but actually have some complementarity due to different uniformity mechanism. 2) Better alignment. We randomly divide the feature into multiple groups along the channel axis and perform whitening independently within each group. By shuffling the group division, we derive multiple distortions of a single sample and thus increase the positive sample diversity. Consequently, using multiple positive samples with enhanced diversity further improves contrastive learning due to better alignment. Extensive experiments on seven semantic textual similarity tasks show our method achieves consistent improvement over the contrastive learning baseline and sets new states of the art, e.g., 78.78\% (+2.53\% based on BERT\{pasted macro `BA&#39;\}) Spearman correlation on STS tasks.
       </div>
     </div>
   </div>

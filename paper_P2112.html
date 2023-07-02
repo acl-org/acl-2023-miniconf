@@ -75,7 +75,14 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Cosine similarity between two words, computed using their contextualised token embeddings obtained from masked language models (MLMs) such as BERT has shown to underestimate the actual similarity between those words~CITATION.
+This similarity underestimation problem is particularly severe for high frequent words.
+Although this problem has been noted in prior work, no solution has been proposed thus far.
+We observe that the $\ell_2$ norm of contextualised embeddings of a word correlates with its log-frequency in the pretraining corpus.
+Consequently, the larger $\ell_2$ norms associated with the high frequent words reduce the cosine similarity values measured between them, thus underestimating the similarity scores.
+To solve this issue, we propose a method to \emph{discount} the $\ell_2$ norm of a contextualised word embedding by the frequency of that word in a corpus when measuring the cosine similarities between words.
+We show that the so called \emph{stop} words behave differently from the rest of the words, which require special consideration during their discounting process.
+Experimental results on a contextualised word similarity dataset show that our proposed discounting method accurately solves the similarity underestimation problem.{An anonymized version of the source code of our proposed method is submitted to the reviewing system." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -250,6 +257,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -416,12 +427,19 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Cosine similarity between two words, computed using their contextualised token embeddings obtained from masked language models (MLMs) such as BERT has shown to underestimate the actual similarity between those words~CITATION.
+This similarity underestimation problem is particularly severe for high frequent words.
+Although this problem has been noted in prior work, no solution has been proposed thus far.
+We observe that the $\ell_2$ norm of contextualised embeddings of a word correlates with its log-frequency in the pretraining corpus.
+Consequently, the larger $\ell_2$ norms associated with the high frequent words reduce the cosine similarity values measured between them, thus underestimating the similarity scores.
+To solve this issue, we propose a method to \emph{discount} the $\ell_2$ norm of a contextualised word embedding by the frequency of that word in a corpus when measuring the cosine similarities between words.
+We show that the so called \emph{stop} words behave differently from the rest of the words, which require special consideration during their discounting process.
+Experimental results on a contextualised word similarity dataset show that our proposed discounting method accurately solves the similarity underestimation problem.{An anonymized version of the source code of our proposed method is submitted to the reviewing system.
       </div>
     </div>
   </div>

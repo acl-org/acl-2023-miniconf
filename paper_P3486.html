@@ -75,7 +75,7 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Clinical practice frequently uses medical imaging for diagnosis and treatment. A significant challenge for automatic radiology report generation is that the radiology reports are long narratives consisting of multiple sentences for both abnormal and normal findings. Therefore, applying conventional image captioning approaches to generate the whole report proves to be insufficient, as these are designed to briefly describe images with short sentences. We propose a template-based approach to generate radiology reports from radiographs. Our approach involves the following: i) using a multilabel image classifier, produce the tags for the input radiograph; ii) using a transformer-based model, generate pathological descriptions (a description of abnormal findings seen on radiographs) from the tags generated in step (i); iii) using a BERT-based multi-label text classifier, find the spans in the normal report template to replace with the generated pathological descriptions; and iv) using a rule-based system, replace the identified span with the generated pathological description. We performed experiments with the two most popular radiology report datasets, IU Chest X-ray and MIMIC-CXR and demonstrated that the BLEU-1, ROUGE-L, METEOR, and CIDEr scores are better than the State-of-the-Art models by 25\%, 36\%, 44\% and 48\% respectively, on the IU X-RAY dataset. To the best of our knowledge, this is the first attempt to generate chest X-ray radiology reports by first creating small sentences for abnormal findings and then replacing them in the normal report template." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -250,6 +250,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -366,12 +370,12 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Clinical practice frequently uses medical imaging for diagnosis and treatment. A significant challenge for automatic radiology report generation is that the radiology reports are long narratives consisting of multiple sentences for both abnormal and normal findings. Therefore, applying conventional image captioning approaches to generate the whole report proves to be insufficient, as these are designed to briefly describe images with short sentences. We propose a template-based approach to generate radiology reports from radiographs. Our approach involves the following: i) using a multilabel image classifier, produce the tags for the input radiograph; ii) using a transformer-based model, generate pathological descriptions (a description of abnormal findings seen on radiographs) from the tags generated in step (i); iii) using a BERT-based multi-label text classifier, find the spans in the normal report template to replace with the generated pathological descriptions; and iv) using a rule-based system, replace the identified span with the generated pathological description. We performed experiments with the two most popular radiology report datasets, IU Chest X-ray and MIMIC-CXR and demonstrated that the BLEU-1, ROUGE-L, METEOR, and CIDEr scores are better than the State-of-the-Art models by 25\%, 36\%, 44\% and 48\% respectively, on the IU X-RAY dataset. To the best of our knowledge, this is the first attempt to generate chest X-ray radiology reports by first creating small sentences for abnormal findings and then replacing them in the normal report template.
       </div>
     </div>
   </div>

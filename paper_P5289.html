@@ -77,7 +77,12 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Prediction head is a crucial component of Transformer language models.
+Despite its direct impact on prediction, this component has often been overlooked in analyzing Transformers.
+In this study, we investigate the inner workings of the prediction head, specifically focusing on bias parameters.
+Our experiments with BERT and GPT-2 models reveal that the biases in their word prediction heads play a significant role in the models&#39; ability to reflect word frequency in a corpus, aligning with the logit adjustment method commonly used in long-tailed learning. 
+We also quantify the effect of controlling the biases in practical auto-regressive text generation scenarios;
+under a particular setting, more diverse text can be generated without compromising text quality." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -256,6 +261,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -426,12 +435,17 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Prediction head is a crucial component of Transformer language models.
+Despite its direct impact on prediction, this component has often been overlooked in analyzing Transformers.
+In this study, we investigate the inner workings of the prediction head, specifically focusing on bias parameters.
+Our experiments with BERT and GPT-2 models reveal that the biases in their word prediction heads play a significant role in the models&#39; ability to reflect word frequency in a corpus, aligning with the logit adjustment method commonly used in long-tailed learning. 
+We also quantify the effect of controlling the biases in practical auto-regressive text generation scenarios;
+under a particular setting, more diverse text can be generated without compromising text quality.
       </div>
     </div>
   </div>

@@ -77,7 +77,14 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Pre-trained autoregressive (AR) language models such as BART and GPTs have dominated OPen-ended Long Text Generation (Open-LTG).
+However, the AR nature will decrease the inference efficiency along with the increase of generation length, which hinder their application in Open-LTG.
+To improve inference efficiency, we alternatively explore the potential of the pre-trained masked language models (MLMs) along with a representative iterative non-autoregressive (NAR) decoding strategy for Open-LTG.
+Our preliminary study shows that pre-trained MLMs can merely generate short text and will collapse for long text modeling.
+To enhance the long text generation capability of MLMs, we introduce two simple yet effective strategies for the iterative NAR model: dynamic sliding window attention (DSWA) and linear temperature decay (LTD). 
+It can alleviate long-distance collapse problems and achieve longer text generation with a flexible trade-off between performance and inference speedup.
+Experiments on the storytelling and multi-paragraph opinionated article writing tasks show that pre-trained MLMs can achieve more than 
+3 $\times$ $\to$ 13 $\times$ speedup with better performance than strong AR models." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -256,6 +263,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -368,12 +379,19 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        Pre-trained autoregressive (AR) language models such as BART and GPTs have dominated OPen-ended Long Text Generation (Open-LTG).
+However, the AR nature will decrease the inference efficiency along with the increase of generation length, which hinder their application in Open-LTG.
+To improve inference efficiency, we alternatively explore the potential of the pre-trained masked language models (MLMs) along with a representative iterative non-autoregressive (NAR) decoding strategy for Open-LTG.
+Our preliminary study shows that pre-trained MLMs can merely generate short text and will collapse for long text modeling.
+To enhance the long text generation capability of MLMs, we introduce two simple yet effective strategies for the iterative NAR model: dynamic sliding window attention (DSWA) and linear temperature decay (LTD). 
+It can alleviate long-distance collapse problems and achieve longer text generation with a flexible trade-off between performance and inference speedup.
+Experiments on the storytelling and multi-paragraph opinionated article writing tasks show that pre-trained MLMs can achieve more than 
+3 $\times$ $\to$ 13 $\times$ speedup with better performance than strong AR models.
       </div>
     </div>
   </div>

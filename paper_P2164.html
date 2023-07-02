@@ -83,7 +83,16 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="A robust summarization system should be able to capture the gist of the document, regardless of the specific word choices or noise in the input.
+In this work, we first explore the summarization models&#39; robustness against perturbations including word-level synonym substitution and noise.
+To create semantic-consistent substitutes, we propose a SummAttacker, which is an efficient approach to generating adversarial samples based on pre-trained language models.
+Experimental results show that state-of-the-art summarization models have a significant decrease in performance on adversarial and noisy test sets.
+Next, we analyze the vulnerability of the summarization systems and explore improving the robustness by data augmentation.
+Specifically, the first vulnerability factor we found is the low diversity of the training inputs.
+Correspondingly, we expose the encoder to more diverse cases created by SummAttacker in the input space.
+The second factor is the vulnerability of the decoder, and we propose an augmentation in the latent space of the decoder to improve its robustness.
+Concretely, we create virtual cases by manifold softmixing two decoder hidden states of similar semantic meanings.
+Experimental results on Gigaword and CNN/DM datasets demonstrate that our approach achieves significant improvements over strong baselines and exhibits higher robustness on noisy, attacked, and clean datasets" />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -274,6 +283,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -390,12 +403,21 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        A robust summarization system should be able to capture the gist of the document, regardless of the specific word choices or noise in the input.
+In this work, we first explore the summarization models&#39; robustness against perturbations including word-level synonym substitution and noise.
+To create semantic-consistent substitutes, we propose a SummAttacker, which is an efficient approach to generating adversarial samples based on pre-trained language models.
+Experimental results show that state-of-the-art summarization models have a significant decrease in performance on adversarial and noisy test sets.
+Next, we analyze the vulnerability of the summarization systems and explore improving the robustness by data augmentation.
+Specifically, the first vulnerability factor we found is the low diversity of the training inputs.
+Correspondingly, we expose the encoder to more diverse cases created by SummAttacker in the input space.
+The second factor is the vulnerability of the decoder, and we propose an augmentation in the latent space of the decoder to improve its robustness.
+Concretely, we create virtual cases by manifold softmixing two decoder hidden states of similar semantic meanings.
+Experimental results on Gigaword and CNN/DM datasets demonstrate that our approach achieves significant improvements over strong baselines and exhibits higher robustness on noisy, attacked, and clean datasets
       </div>
     </div>
   </div>

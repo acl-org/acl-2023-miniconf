@@ -83,7 +83,16 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="In open-domain question answering, due to the ambiguity of questions, multiple plausible answers may exist.
+To provide feasible answers to an ambiguous question,
+one approach is to directly predict all valid answers, but this can struggle with balancing relevance and diversity.
+An alternative is to gather candidate answers and aggregate them, but this method can be computationally costly and may neglect dependencies among answers.
+In this paper, we present AmbigPrompt to address the imperfections of existing approaches to answering ambiguous questions.
+Specifically, we integrate an answering model with a prompting model in an iterative manner.
+The prompting model adaptively tracks the reading process and progressively triggers the answering model to compose distinct and relevant answers. 
+Additionally, we develop a task-specific post-pretraining approach for both the answering model and the prompting model, which greatly improves the performance of our framework. 
+Empirical studies on two commonly-used open benchmarks show that AmbigPrompt achieves state-of-the-art or competitive results while using less memory and having a lower inference latency than competing approaches. 
+Additionally, AmbigPrompt also performs well in low-resource settings." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -274,6 +283,10 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
 
       
       
@@ -386,12 +399,21 @@
 
   </div>
 </div>
-<div id="details" class="pp-card m-3 collapse">
+<div id="details" class="pp-card m-3">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        
+        In open-domain question answering, due to the ambiguity of questions, multiple plausible answers may exist.
+To provide feasible answers to an ambiguous question,
+one approach is to directly predict all valid answers, but this can struggle with balancing relevance and diversity.
+An alternative is to gather candidate answers and aggregate them, but this method can be computationally costly and may neglect dependencies among answers.
+In this paper, we present AmbigPrompt to address the imperfections of existing approaches to answering ambiguous questions.
+Specifically, we integrate an answering model with a prompting model in an iterative manner.
+The prompting model adaptively tracks the reading process and progressively triggers the answering model to compose distinct and relevant answers. 
+Additionally, we develop a task-specific post-pretraining approach for both the answering model and the prompting model, which greatly improves the performance of our framework. 
+Empirical studies on two commonly-used open benchmarks show that AmbigPrompt achieves state-of-the-art or competitive results while using less memory and having a lower inference latency than competing approaches. 
+Additionally, AmbigPrompt also performs well in low-resource settings.
       </div>
     </div>
   </div>

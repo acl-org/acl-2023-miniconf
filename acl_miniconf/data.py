@@ -81,6 +81,7 @@ class Event(BaseModel):
 class Session(BaseModel):
     id: str
     name: str
+    display_name: str
     start_time: Optional[datetime.datetime]
     end_time: Optional[datetime.datetime]
     type: str

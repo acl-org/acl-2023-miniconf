@@ -5,6 +5,7 @@ import datetime
 import re
 from pathlib import Path
 
+import yaml
 from pydantic import BaseModel
 import numpy as np
 import typer
@@ -40,7 +41,25 @@ logging.basicConfig(
 )
 
 
+TLDR_LENGTH = 200
 DATE_FMT = "%Y-%m-%d %H:%M"
+
+INTERNAL_TO_EXTERNAL_SESSIONS = {
+    'Session 3': 'Session 1',
+    'Session 4': 'Session 2',
+    'Session 5': 'Session 3',
+    'Session 6': 'Session 4',
+    'Session 8': 'Session 5',
+    'Session 9': 'Session 6',
+    'Session 10': 'Session 7',
+}
+
+
+def internal_to_external_session(name: str):
+    if name in INTERNAL_TO_EXTERNAL_SESSIONS:
+        return INTERNAL_TO_EXTERNAL_SESSIONS[name]
+    else:
+        return name
 
 
 def clean_authors(authors: List[str]):
@@ -108,6 +127,21 @@ class Assets(BaseModel):
     underline_url: Optional[str] = None
     video_url: Optional[str] = None
 
+class AnthologyEntry(BaseModel):
+    # Without letter prefix
+    paper_id: str
+    abstract: str
+    # TODO: This is likely the field needed + prefix URL to get Paper PDFs
+    file: str
+    # TODO: When these are in anthology, use these to link to assets
+    attachments: Dict[str, str]
+
+
+def to_anthology_id(paper_id: str):
+    if paper_id.startswith('P'):
+        return paper_id[1:]
+    else:
+        return None
 
 class Acl2023Parser:
     def __init__(
@@ -118,12 +152,15 @@ class Acl2023Parser:
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
         extras_xlsx_path: Path,
+        acl_main_proceedings_yaml_path: Path
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
         self.virtual_tsv_path = virtual_tsv_path
         self.spotlight_tsv_path = spotlight_tsv_path
         self.extras_xlsx_path = extras_xlsx_path
+        self.acl_main_proceedings_yaml_path = acl_main_proceedings_yaml_path
+        self.anthology_data: Dict[str, AnthologyEntry] = {}
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
@@ -131,13 +168,20 @@ class Acl2023Parser:
         self.zone = pytz.timezone("America/Toronto")
 
     def parse(self):
+        # Anthology has to be parsed first to fill in abstracts/files/links
+        self._add_anthology_data()
+        # Underline has to be parsed early to fill in links/files/etc
         self._parse_underline_assets()
+
+        # Parse order intentional, don't change
         self._parse_oral_papers()
         self._parse_poster_papers()
         self._parse_virtual_papers()
         # Order is intentional, spotlight papers also appear in virtual, so repeated papers
         # warnings aren't emitted
         self._parse_spotlight_papers()
+
+        # Parse extra events
         self._parse_extras_from_spreadsheet()
         self.validate()
         return Conference(
@@ -150,8 +194,22 @@ class Acl2023Parser:
         for p in self.papers.values():
             assert len(p.event_ids) > 0
             assert p.program in PROGRAMS
+    
+    def _add_anthology_data(self):
+        logging.info("Parsing ACL Anthology Data")
+        with open(self.acl_main_proceedings_yaml_path) as f:
+            entries = yaml.safe_load(f)
+        for e in entries:
+            self.anthology_data[str(e['id'])] = AnthologyEntry(
+                paper_id=str(e['id']),
+                abstract=e['abstract'],
+                file=e['file'],
+                attachments=e['attachments'],
+            )
+            
 
     def _parse_underline_assets(self):
+        logging.info("Parsing Underline XLSX File")
         df = pd.read_excel(self.extras_xlsx_path, sheet_name="Lectures")
         df = df[df["Paper number"].notnull()]
         for _, paper in df[
@@ -193,6 +251,7 @@ class Acl2023Parser:
         return start_parsed_dt, end_parsed_dt
 
     def _parse_spotlight_papers(self):
+        logging.info("Parsing spotlight papers")
         df = pd.read_csv(self.spotlight_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
         group_type = "Spotlight"
@@ -236,6 +295,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -256,6 +316,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + '...'
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -265,8 +332,8 @@ class Acl2023Parser:
                         track=row.Track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         forum="",
                         card_image_path="",
@@ -280,6 +347,7 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_virtual_papers(self):
+        logging.info("Parsing virtual poster papers")
         df = pd.read_csv(self.virtual_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
         group_type = "Virtual Poster"
@@ -308,6 +376,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -336,6 +405,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + '...'
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -344,8 +420,8 @@ class Acl2023Parser:
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         similar_paper_ids=[],
                         forum="",
@@ -360,6 +436,7 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_poster_papers(self):
+        logging.info("Parsing poster papers")
         df = pd.read_csv(self.poster_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
         group_type = "Poster"
@@ -389,6 +466,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -417,6 +495,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + '...'
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -425,8 +510,8 @@ class Acl2023Parser:
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         forum="",
                         card_image_path="",
@@ -440,6 +525,7 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_oral_papers(self):
+        logging.info("Parsing oral papers")
         df = pd.read_csv(self.oral_tsv_path, sep="\t")
         df = df[df.PID.notnull()]
         group_type = "Oral"
@@ -469,6 +555,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -492,6 +579,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + '...'
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -500,8 +594,8 @@ class Acl2023Parser:
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         forum="",
                         card_image_path="",
@@ -631,6 +725,7 @@ class Acl2023Parser:
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
+                display_name=internal_to_external_session(group_session),
                 start_time=event_data["start"],
                 end_time=event_data["end"],
                 type=event_type,
@@ -712,6 +807,7 @@ class Acl2023Parser:
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
+                display_name=internal_to_external_session(group_session),
                 start_time=session_start,
                 end_time=session_end,
                 type=event_type,
@@ -778,6 +874,7 @@ def main(
     virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
     extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-06-22.xlsx",
+    acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
@@ -786,14 +883,16 @@ def main(
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
         extras_xlsx_path=Path(extras_xlsx),
+        acl_main_proceedings_yaml_path=Path(acl_main_proceedings_yaml),
     )
     conf = parser.parse()
     out_dir = Path(out_dir)
     out_dir.mkdir(exist_ok=True, parents=True)
     conf_dict = conf.dict()
 
+    logging.info("Writing to conference.json")
     with open(out_dir / "conference.json", "w") as f:
-        json.dump(conf_dict, f, cls=DateTimeEncoder)
+        json.dump(conf_dict, f, cls=DateTimeEncoder, sort_keys=True, indent=2)
 
 
 if __name__ == "__main__":

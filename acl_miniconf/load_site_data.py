@@ -96,6 +96,11 @@ def load_site_data(
     # tutorial_<uid>.html
     # by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
 
+    workshop_dict = {}
+    for workshop in site_data.workshops:
+        workshop_dict[workshop.id] = workshop
+    by_uid.workshops = workshop_dict
+
     # workshops.html
     # workshops = build_workshops(
     #     raw_workshops=site_data["workshops"],

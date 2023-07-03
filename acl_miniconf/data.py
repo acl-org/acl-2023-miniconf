@@ -5,7 +5,7 @@ import datetime
 from pathlib import Path
 
 from pydantic import BaseModel
-from .import_booklet_acl2023 import generate_plenaries, generate_tutorials
+from .import_booklet_acl2023 import generate_plenaries, generate_tutorials, generate_workshops
 import json
 import pytz
 import yaml
@@ -225,7 +225,7 @@ class SiteData(BaseModel):
     workshop_papers: List[Paper] = []
     tutorials: Any
     tutorials_calendar: Any
-    workshops: List[str] = []
+    workshops: List[Any] = []
     socials: Any
     tracks: List[str] = []
     track_ids: List[str] = []
@@ -292,10 +292,12 @@ class SiteData(BaseModel):
             days.sort()  # Hack fix
             plenary_session_days = [(idx, day, True) for idx, day in enumerate(days)]
             tutorials = generate_tutorials(booklet_data['tutorials'])
+            workshops = generate_workshops(booklet_data['workshops'])
         except FileNotFoundError:
             plenary_sessions = {}
             plenary_session_days = []
             tutorials = {}
+            workshops = []
         else:
             pass
         site_data = cls(
@@ -314,7 +316,7 @@ class SiteData(BaseModel):
             workshop_papers=conference.workshop_papers,
             tutorials=tutorials,
             tutorials_calendar=[],
-            workshops=[],
+            workshops=workshops,
             socials=socials,
             tracks=tracks,
             track_ids=track_ids,

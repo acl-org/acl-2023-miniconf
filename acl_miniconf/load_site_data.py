@@ -59,6 +59,13 @@ def load_site_data(
     # paper_<uid>.html
     by_uid.papers = conference.papers
 
+    # Load the plenary sessions by id
+    plenary_dict = {}
+    for day in site_data.plenary_sessions:
+        for plenary in site_data.plenary_sessions[day]:
+            plenary_dict[plenary.id] = plenary
+    by_uid.plenary_sessions = plenary_dict
+
     # plenary_sessions.html
     # plenary_sessions = build_plenary_sessions(
     #    raw_plenary_sessions=site_data["plenary_sessions"],
@@ -75,6 +82,10 @@ def load_site_data(
     #     [day.replace(" ", "").lower(), day, ""] for day in plenary_sessions
     # ]
     # site_data["plenary_session_days"][0][-1] = "active"
+    tutorial_dict = {}
+    for tutorial in site_data.tutorials:
+        tutorial_dict[tutorial.id] = tutorial
+    by_uid.tutorials = tutorial_dict
 
     # tutorials.html
     # tutorials = build_tutorials(site_data["tutorials"])

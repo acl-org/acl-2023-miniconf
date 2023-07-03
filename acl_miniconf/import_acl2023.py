@@ -152,7 +152,8 @@ class Acl2023Parser:
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
         extras_xlsx_path: Path,
-        acl_main_proceedings_yaml_path: Path
+        acl_main_proceedings_yaml_path: Path,
+        workshop_papers_yaml_path: Path,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
@@ -160,6 +161,7 @@ class Acl2023Parser:
         self.spotlight_tsv_path = spotlight_tsv_path
         self.extras_xlsx_path = extras_xlsx_path
         self.acl_main_proceedings_yaml_path = acl_main_proceedings_yaml_path
+        self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.anthology_data: Dict[str, AnthologyEntry] = {}
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
@@ -183,6 +185,9 @@ class Acl2023Parser:
 
         # Parse extra events
         self._parse_extras_from_spreadsheet()
+
+        self._parse_workshop_papers()
+
         self.validate()
         return Conference(
             sessions=self.sessions,
@@ -192,8 +197,21 @@ class Acl2023Parser:
 
     def validate(self):
         for p in self.papers.values():
-            assert len(p.event_ids) > 0
+            # TODO: Remove check once associate workshop papers with event
+            if p.program != WORKSHOP:
+                assert len(p.event_ids) > 0
             assert p.program in PROGRAMS
+
+    def _parse_workshop_papers(self):
+        logging.info("Parsing workshop papers")
+        with open(self.workshop_papers_yaml_path) as f:
+            papers = yaml.safe_load(f)
+        workshop_papers: List[Paper] = []
+        for p in papers:
+            workshop_papers.append(Paper(**p))
+        
+        for p in workshop_papers:
+            self.papers[p.id] = p
     
     def _add_anthology_data(self):
         logging.info("Parsing ACL Anthology Data")
@@ -875,6 +893,7 @@ def main(
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
     extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-06-22.xlsx",
     acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
+    workshop_papers_yml: str = 'data/acl_2023/data/workshop_papers.yaml',
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
@@ -884,6 +903,7 @@ def main(
         spotlight_tsv_path=Path(spotlight_tsv),
         extras_xlsx_path=Path(extras_xlsx),
         acl_main_proceedings_yaml_path=Path(acl_main_proceedings_yaml),
+        workshop_papers_yaml_path=Path(workshop_papers_yml)
     )
     conf = parser.parse()
     out_dir = Path(out_dir)

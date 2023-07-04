@@ -279,7 +279,7 @@ class Acl2023Parser:
         logging.info("Parsing spotlight papers")
         df = pd.read_csv(self.spotlight_tsv_path, sep="\t")
         # Industry papers are missing their track
-        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
         df = fix_col_names(df[df.PID.notnull()])
         group_type = "Spotlight"
         # start_dt and end_dt are not in the sheets, but hardcoded instead
@@ -378,7 +378,7 @@ class Acl2023Parser:
         logging.info("Parsing virtual poster papers")
         df = pd.read_csv(self.virtual_tsv_path, sep="\t")
         # Industry papers are missing their track
-        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
         df = fix_col_names(df[df.PID.notnull()])
         group_type = "Virtual Poster"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
@@ -475,7 +475,7 @@ class Acl2023Parser:
         logging.info("Parsing poster papers")
         df = pd.read_csv(self.poster_tsv_path, sep="\t")
         # Industry papers are missing their track
-        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
         df = fix_col_names(df[df.PID.notnull()])
         group_type = "Poster"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
@@ -575,7 +575,7 @@ class Acl2023Parser:
         df = pd.read_csv(self.oral_tsv_path, sep="\t")
         df = fix_col_names(df[df.PID.notnull()])
         # Industry papers are missing their track
-        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
         group_type = "Oral"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
             group = group.sort_values("Presentation Order")

@@ -277,8 +277,9 @@ def hydra_main(cfg: DictConfig):
         )
     global site_data
     global by_uid
-    site_data = SiteData.from_conference(conference, data_dir,
-                                         booklet_info=data_dir / "data" / "booklet_data.json")
+    site_data = SiteData.from_conference(
+        conference, data_dir, booklet_info=data_dir / "data" / "booklet_data.json"
+    )
     site_data.local_timezone = cfg.time_zone
     by_uid = ByUid()
     extra_files = load_site_data(conference, site_data, by_uid)

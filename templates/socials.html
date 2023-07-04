@@ -12,14 +12,19 @@
 <div id="day">
 <div class="speakers">
 <div class="cards row">
-  {% for social in socials %}
+  <!-- I am so sorry for this Jinja hack of skipping those starting with "Coffee" -->
+  {% for social in socials if social[0:6] != 'Coffee' %}
   {% for event in socials[social]['events'] %}
   <div class="col-md-6 col-sm-12 p-3"
        id='{{socials[social]["name"]|replace(" ", "_")|replace("?", "")}}'>
     <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
          style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
       <h2 class="card-title" >
-        {{ socials[social]['name'] }}: {{ socials[social]['events'][event]['track'] }}
+        {% if social[0] == 'B' %}
+          {{ socials[social]['name'] }}: {{ socials[social]['events'][event]['track'] }}
+        {% else %}
+          {{ socials[social]['name'] }}
+        {% endif %}
       </h2>
 
       {% if social.organizers %}
@@ -90,7 +95,9 @@
         {% endif %}
       </p>
       {% endif %}
-
+      <p class="text-center text-muted card-title">
+        <a href="https://acl.rocket.chat/channel/{{socials[social]['id']}}" target="_blank"> Chat </a>  
+      </p>    
 
 
     </div>
@@ -118,8 +125,8 @@
   let calendarNodeSpan;
   let parser = new DOMParser();
   let calendarNames = Array("google", "off365", "outlook", "ical");
-
-  {% for social in socials %}
+  // Again, I'm so sorry for this Jinja hack
+  {% for social in socials if social[0:6] != 'Coffee' %}
     {% for social_event in socials[social]['events'] %}
       // create a calendar by hand
       ouicalData = addToCalendarData({

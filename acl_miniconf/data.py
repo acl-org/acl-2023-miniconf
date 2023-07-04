@@ -129,6 +129,7 @@ class Paper(BaseModel):
     similar_paper_ids: List[str] = []
     program: str
     material: str = None
+    is_paper: bool = True
 
     @property
     def rocketchat_channel(self) -> str:

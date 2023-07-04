@@ -339,8 +339,6 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     # Add paper sessions to calendar
     overall_calendar = []
     for uid, session in site_data.sessions.items():
-        if session.type == "Socials":
-            continue
         start = session.start_time
         end = session.end_time
         tab_id = (
@@ -349,12 +347,23 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
             .replace(" ", "")
             .lower()
         )
+        if session.type == "Plenary Sessions":
+            url = f"plenary_sessions.html#tab-{tab_id}"
+        elif session.type == "Workshops":
+            url = f"workshops.html#tab-{tab_id}"
+        elif session.type == "Tutorials":
+            url = f"tutorials.html#tab-{tab_id}"
+        elif session.type == "Socials":
+            url = f"socials.html#tab-{tab_id}"
+        else:
+            url = f"sessions.html#tab-{tab_id}"
+
         event = FrontendCalendarEvent(
             title=session.name,
             start=session.start_time,
             end=session.end_time,
             location="",
-            url=f"sessions.html#tab-{tab_id}",
+            url=url,
             category="time",
             type=session.type,
             view="week",

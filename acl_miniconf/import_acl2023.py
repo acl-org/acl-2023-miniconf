@@ -791,7 +791,12 @@ class Acl2023Parser:
                 )
             else:
                 this_event_name = event_name
-            event_id = name_to_id(this_event_name)
+            if group_session[0].casefold() == 'w' and len(group_session.split(':')[0]) < 4:
+                # Workshop
+                workshop_number = group_session.split(':')[0][1:].strip()
+                event_id = name_to_id(f'workshop-{workshop_number}')
+            else:
+                event_id = name_to_id(group_session)
             if event_id not in self.events:
                 self.events[event_id] = Event(
                     id=event_id,

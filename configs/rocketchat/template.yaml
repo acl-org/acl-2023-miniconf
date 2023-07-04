@@ -4,4 +4,4 @@ server: ???
 conference_file: ???
 command: ???
 dry_run: false
-program_pkl_path: auto_data/acl_2023/program.pkl
+program_pkl_path: data/acl_2023/data/conference.json

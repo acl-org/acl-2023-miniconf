@@ -27,15 +27,14 @@ class AclRcHelper:
     def __init__(
         self,
         *,
-        program_pkl_path: str,
+        program_json_path: str,
         user_id: str,
         auth_token: str,
         server: str,
         session: sessions.Session,
         dry_run: bool = False,
     ):
-        with open(program_pkl_path, "rb") as f:
-            self.conference: Conference = pickle.load(f)
+        self.conference: Conference = Conference.parse_file(program_json_path)
         self.dry_run = dry_run
         self.auth_token = auth_token
         self.user_id = user_id
@@ -127,7 +126,7 @@ def hydra_main(cfg: DictConfig):
                 auth_token=cfg.auth_token,
                 server=cfg.server,
                 session=session,
-                program_pkl_path=Path(cfg.program_pkl_path),
+                program_json_path=Path(cfg.program_pkl_path),
                 dry_run=cfg.dry_run,
             )
             helper.create_paper_channels()
@@ -138,7 +137,7 @@ def hydra_main(cfg: DictConfig):
                 auth_token=cfg.auth_token,
                 server=cfg.server,
                 session=session,
-                program_pkl_path=Path(cfg.program_pkl_path),
+                program_json_path=Path(cfg.program_pkl_path),
                 dry_run=cfg.dry_run,
             )
             helper.add_custom_emojis()

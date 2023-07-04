@@ -39,7 +39,7 @@ def generate_tutorials(tutorial_list):
                                   title=tutorial_dict['title'],
                                   organizers=', '.join(tutorial_dict['hosts']),
                                   abstract=tutorial_dict['desc'],
-                                  rocketchat_channel=None,
+                                  rocketchat_channel=tutorial_dict['rocketchat'],
                                   sessions=[],
                                   blocks=blocks,
                                   virtual_format_description=None,

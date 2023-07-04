@@ -67,14 +67,15 @@ class AclRcHelper:
         skipped = 0
         created = 0
         for paper in track(self.conference.papers.values()):
-            channel_name = paper_id_to_channel_name(paper.id)
-            if channel_name in existing_channels:
-                skipped += 1
-            else:
-                author_string = ", ".join(paper.authors)
-                topic = f"{paper.title} - {author_string}"
-                self.create_channel(channel_name, topic, paper.abstract)
-                created += 1
+            if paper.is_paper:
+                channel_name = paper_id_to_channel_name(paper.id)
+                if channel_name in existing_channels:
+                    skipped += 1
+                else:
+                    author_string = ", ".join(paper.authors)
+                    topic = f"{paper.title} - {author_string}"
+                    self.create_channel(channel_name, topic, paper.abstract)
+                    created += 1
 
         print(
             f"Total papers: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"

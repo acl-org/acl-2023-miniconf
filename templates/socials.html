@@ -96,7 +96,11 @@
       </p>
       {% endif %}
       <p class="text-center text-muted card-title">
-        <a href="https://acl.rocket.chat/channel/{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
+      {% if socials[social]['events'][event]['id'][0] != 'b' %}
+        <a href="https://acl.rocket.chat/channel/paper-event_{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
+      {% else %}
+        <a href="https://acl.rocket.chat/channel/paper-{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
+      {% endif %}
       </p>    
 
 

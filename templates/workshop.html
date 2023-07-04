@@ -111,8 +111,8 @@
   and
   {% endif %}
   the
-  <a href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}" target="_blank">
-    #{{ workshop.rocketchat_channel }}
+  <a href="https://{{config.chat_server}}/channel/paper-event_{{workshop.id|replace('_', '-')}}" target="_blank">
+    #paper-event_{{workshop.id|replace('_', '-')}}
   </a>
   channel
   {% if workshop.livestream %}

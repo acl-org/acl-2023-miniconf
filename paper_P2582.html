@@ -66,11 +66,11 @@
   
 <meta name="citation_title" content="Interpretable Automatic Fine-grained Inconsistency Detection in Text Summarization" />
 
-<meta name="citation_author" content="Hou Pong Chan" />
+<meta name="citation_author" content="Hou PongChan" />
 
-<meta name="citation_author" content="Qi Zeng" />
+<meta name="citation_author" content="QiZeng" />
 
-<meta name="citation_author" content="Heng Ji" />
+<meta name="citation_author" content="HengJi" />
 
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
@@ -234,16 +234,16 @@
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
       
-      <a href="papers.html?filter=authors&search=Hou Pong Chan&program=all" class="text-primary"
-        >Hou Pong Chan</a
+      <a href="papers.html?filter=authors&search=Hou PongChan&program=all" class="text-primary"
+        >Hou PongChan</a
       >,
       
-      <a href="papers.html?filter=authors&search=Qi Zeng&program=all" class="text-primary"
-        >Qi Zeng</a
+      <a href="papers.html?filter=authors&search=QiZeng&program=all" class="text-primary"
+        >QiZeng</a
       >,
       
-      <a href="papers.html?filter=authors&search=Heng Ji&program=all" class="text-primary"
-        >Heng Ji</a
+      <a href="papers.html?filter=authors&search=HengJi&program=all" class="text-primary"
+        >HengJi</a
       >
       
     </h3>
@@ -293,9 +293,9 @@
     
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-    <span>Session 3: Summarization (Virtual Poster)</span>
+    <span>Session 1: Summarization (Virtual Poster)</span>
     <div>Conference Time: Jul 10, 11:00-12:30 (UTC-04:00) (America/Toronto)</div>
-    <div>Global Time: Jul 10, <span class="session_times">Session 3 (15:00-16:30 UTC)</span></div>
+    <div>Global Time: Jul 10, <span class="session_times">Session 1 (15:00-16:30 UTC)</span></div>
 
   
 
@@ -309,27 +309,6 @@
   <div class="paper-cal-links">
   <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
   <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Spotlight: Spotlight (Spotlight)</span>
-    <div>Conference Time: Jul 10, 19:00-21:00 (UTC-04:00) (America/Toronto)</div>
-    <div>Global Time: Jul 10, <span class="session_times">Spotlight (23:00-01:00 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-2"></span>
   </div>
   </div>
 
@@ -372,43 +351,6 @@
     });
 
     targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'Interpretable Automatic Fine-grained Inconsistency Detection in Text Summarization'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-10T23:00:00"),
-        end: new Date("2023-07-11T01:00:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://underline.io'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-2');
     for (const name of calendarNames) {
       calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
       calendarNodeSpan = document.createElement("span");

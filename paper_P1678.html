@@ -66,19 +66,19 @@
   
 <meta name="citation_title" content="Zero-Shot Text Classification via Self-Supervised Tuning" />
 
-<meta name="citation_author" content="Chaoqun Liu" />
+<meta name="citation_author" content="ChaoqunLiu" />
 
-<meta name="citation_author" content="Wenxuan Zhang" />
+<meta name="citation_author" content="WenxuanZhang" />
 
-<meta name="citation_author" content="Guizhen Chen" />
+<meta name="citation_author" content="GuizhenChen" />
 
-<meta name="citation_author" content="Xiaobao Wu" />
+<meta name="citation_author" content="XiaobaoWu" />
 
-<meta name="citation_author" content="Anh Tuan Luu" />
+<meta name="citation_author" content="Anh TuanLuu" />
 
-<meta name="citation_author" content="Chip Hong Chang" />
+<meta name="citation_author" content="Chip HongChang" />
 
-<meta name="citation_author" content="Lidong Bing" />
+<meta name="citation_author" content="LidongBing" />
 
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
@@ -242,32 +242,32 @@
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
       
-      <a href="papers.html?filter=authors&search=Chaoqun Liu&program=all" class="text-primary"
-        >Chaoqun Liu</a
+      <a href="papers.html?filter=authors&search=ChaoqunLiu&program=all" class="text-primary"
+        >ChaoqunLiu</a
       >,
       
-      <a href="papers.html?filter=authors&search=Wenxuan Zhang&program=all" class="text-primary"
-        >Wenxuan Zhang</a
+      <a href="papers.html?filter=authors&search=WenxuanZhang&program=all" class="text-primary"
+        >WenxuanZhang</a
       >,
       
-      <a href="papers.html?filter=authors&search=Guizhen Chen&program=all" class="text-primary"
-        >Guizhen Chen</a
+      <a href="papers.html?filter=authors&search=GuizhenChen&program=all" class="text-primary"
+        >GuizhenChen</a
       >,
       
-      <a href="papers.html?filter=authors&search=Xiaobao Wu&program=all" class="text-primary"
-        >Xiaobao Wu</a
+      <a href="papers.html?filter=authors&search=XiaobaoWu&program=all" class="text-primary"
+        >XiaobaoWu</a
       >,
       
-      <a href="papers.html?filter=authors&search=Anh Tuan Luu&program=all" class="text-primary"
-        >Anh Tuan Luu</a
+      <a href="papers.html?filter=authors&search=Anh TuanLuu&program=all" class="text-primary"
+        >Anh TuanLuu</a
       >,
       
-      <a href="papers.html?filter=authors&search=Chip Hong Chang&program=all" class="text-primary"
-        >Chip Hong Chang</a
+      <a href="papers.html?filter=authors&search=Chip HongChang&program=all" class="text-primary"
+        >Chip HongChang</a
       >,
       
-      <a href="papers.html?filter=authors&search=Lidong Bing&program=all" class="text-primary"
-        >Lidong Bing</a
+      <a href="papers.html?filter=authors&search=LidongBing&program=all" class="text-primary"
+        >LidongBing</a
       >
       
     </h3>
@@ -317,9 +317,9 @@
     
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-    <span>Session 10: NLP Applications (Virtual Poster)</span>
+    <span>Session 7: NLP Applications (Virtual Poster)</span>
     <div>Conference Time: Jul 12, 11:00-12:30 (UTC-04:00) (America/Toronto)</div>
-    <div>Global Time: Jul 12, <span class="session_times">Session 10 (15:00-16:30 UTC)</span></div>
+    <div>Global Time: Jul 12, <span class="session_times">Session 7 (15:00-16:30 UTC)</span></div>
 
   
 
@@ -333,27 +333,6 @@
   <div class="paper-cal-links">
   <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
   <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Spotlight: Spotlight (Spotlight)</span>
-    <div>Conference Time: Jul 10, 19:00-21:00 (UTC-04:00) (America/Toronto)</div>
-    <div>Global Time: Jul 10, <span class="session_times">Spotlight (23:00-01:00 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-2"></span>
   </div>
   </div>
 
@@ -396,43 +375,6 @@
     });
 
     targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'Zero-Shot Text Classification via Self-Supervised Tuning'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-10T23:00:00"),
-        end: new Date("2023-07-11T01:00:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://underline.io'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-2');
     for (const name of calendarNames) {
       calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
       calendarNodeSpan = document.createElement("span");

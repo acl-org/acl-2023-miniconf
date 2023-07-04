@@ -66,19 +66,19 @@
   
 <meta name="citation_title" content="Evaluation of Question Generation Needs More References" />
 
-<meta name="citation_author" content="Shinhyeok Oh" />
+<meta name="citation_author" content="ShinhyeokOh" />
 
-<meta name="citation_author" content="Hyojun Go" />
+<meta name="citation_author" content="HyojunGo" />
 
-<meta name="citation_author" content="Hyeongdon Moon" />
+<meta name="citation_author" content="HyeongdonMoon" />
 
-<meta name="citation_author" content="Yunsung Lee" />
+<meta name="citation_author" content="YunsungLee" />
 
-<meta name="citation_author" content="Myeongho Jeong" />
+<meta name="citation_author" content="MyeonghoJeong" />
 
-<meta name="citation_author" content="Hyun Seung Lee" />
+<meta name="citation_author" content="Hyun SeungLee" />
 
-<meta name="citation_author" content="Seungtaek Choi" />
+<meta name="citation_author" content="SeungtaekChoi" />
 
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
@@ -242,32 +242,32 @@
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
       
-      <a href="papers.html?filter=authors&search=Shinhyeok Oh&program=all" class="text-primary"
-        >Shinhyeok Oh</a
+      <a href="papers.html?filter=authors&search=ShinhyeokOh&program=all" class="text-primary"
+        >ShinhyeokOh</a
       >,
       
-      <a href="papers.html?filter=authors&search=Hyojun Go&program=all" class="text-primary"
-        >Hyojun Go</a
+      <a href="papers.html?filter=authors&search=HyojunGo&program=all" class="text-primary"
+        >HyojunGo</a
       >,
       
-      <a href="papers.html?filter=authors&search=Hyeongdon Moon&program=all" class="text-primary"
-        >Hyeongdon Moon</a
+      <a href="papers.html?filter=authors&search=HyeongdonMoon&program=all" class="text-primary"
+        >HyeongdonMoon</a
       >,
       
-      <a href="papers.html?filter=authors&search=Yunsung Lee&program=all" class="text-primary"
-        >Yunsung Lee</a
+      <a href="papers.html?filter=authors&search=YunsungLee&program=all" class="text-primary"
+        >YunsungLee</a
       >,
       
-      <a href="papers.html?filter=authors&search=Myeongho Jeong&program=all" class="text-primary"
-        >Myeongho Jeong</a
+      <a href="papers.html?filter=authors&search=MyeonghoJeong&program=all" class="text-primary"
+        >MyeonghoJeong</a
       >,
       
-      <a href="papers.html?filter=authors&search=Hyun Seung Lee&program=all" class="text-primary"
-        >Hyun Seung Lee</a
+      <a href="papers.html?filter=authors&search=Hyun SeungLee&program=all" class="text-primary"
+        >Hyun SeungLee</a
       >,
       
-      <a href="papers.html?filter=authors&search=Seungtaek Choi&program=all" class="text-primary"
-        >Seungtaek Choi</a
+      <a href="papers.html?filter=authors&search=SeungtaekChoi&program=all" class="text-primary"
+        >SeungtaekChoi</a
       >
       
     </h3>
@@ -317,9 +317,9 @@
     
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
-    <span>Session 3: Generation (Virtual Poster)</span>
+    <span>Session 1: Generation (Virtual Poster)</span>
     <div>Conference Time: Jul 10, 11:00-12:30 (UTC-04:00) (America/Toronto)</div>
-    <div>Global Time: Jul 10, <span class="session_times">Session 3 (15:00-16:30 UTC)</span></div>
+    <div>Global Time: Jul 10, <span class="session_times">Session 1 (15:00-16:30 UTC)</span></div>
 
   
 
@@ -333,27 +333,6 @@
   <div class="paper-cal-links">
   <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
   <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Spotlight: Spotlight (Spotlight)</span>
-    <div>Conference Time: Jul 10, 19:00-21:00 (UTC-04:00) (America/Toronto)</div>
-    <div>Global Time: Jul 10, <span class="session_times">Spotlight (23:00-01:00 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-2"></span>
   </div>
   </div>
 
@@ -396,43 +375,6 @@
     });
 
     targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'Evaluation of Question Generation Needs More References'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-10T23:00:00"),
-        end: new Date("2023-07-11T01:00:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://underline.io'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-2');
     for (const name of calendarNames) {
       calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
       calendarNodeSpan = document.createElement("span");

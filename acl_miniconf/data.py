@@ -189,6 +189,7 @@ WORKSHOPS = "Workshops"
 PAPER_SESSIONS = "Paper Sessions"
 SOCIALS = "Socials"
 SPONSORS = "Sponsors"
+BREAKS = "Breaks"
 EVENT_TYPES = {
     PLENARIES,
     TUTORIALS,
@@ -196,6 +197,7 @@ EVENT_TYPES = {
     PAPER_SESSIONS,
     SOCIALS,
     SPONSORS,
+    BREAKS
 }
 
 

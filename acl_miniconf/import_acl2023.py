@@ -751,7 +751,7 @@ class Acl2023Parser:
             spreadsheet_info, "Demo Sessions", "Poster", DEMO
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Coffee Break", "Socials", MAIN
+            spreadsheet_info, "Coffee Break", "Breaks", MAIN
         )
         self._parse_multi_event_single_paper(
             spreadsheet_info, "Diversity and Inclusion", "Workshops", MAIN

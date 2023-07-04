@@ -278,6 +278,8 @@ class Acl2023Parser:
     def _parse_spotlight_papers(self):
         logging.info("Parsing spotlight papers")
         df = pd.read_csv(self.spotlight_tsv_path, sep="\t")
+        # Industry papers are missing their track
+        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
         df = fix_col_names(df[df.PID.notnull()])
         group_type = "Spotlight"
         # start_dt and end_dt are not in the sheets, but hardcoded instead
@@ -375,6 +377,8 @@ class Acl2023Parser:
     def _parse_virtual_papers(self):
         logging.info("Parsing virtual poster papers")
         df = pd.read_csv(self.virtual_tsv_path, sep="\t")
+        # Industry papers are missing their track
+        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
         df = fix_col_names(df[df.PID.notnull()])
         group_type = "Virtual Poster"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
@@ -470,6 +474,8 @@ class Acl2023Parser:
     def _parse_poster_papers(self):
         logging.info("Parsing poster papers")
         df = pd.read_csv(self.poster_tsv_path, sep="\t")
+        # Industry papers are missing their track
+        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
         df = fix_col_names(df[df.PID.notnull()])
         group_type = "Poster"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
@@ -568,6 +574,8 @@ class Acl2023Parser:
         logging.info("Parsing oral papers")
         df = pd.read_csv(self.oral_tsv_path, sep="\t")
         df = fix_col_names(df[df.PID.notnull()])
+        # Industry papers are missing their track
+        df.loc[df.Category == 'Industry', 'Track'] = "Industry"
         group_type = "Oral"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
             group = group.sort_values("Presentation Order")
@@ -801,7 +809,7 @@ class Acl2023Parser:
             session.events[event_id] = event
             # Finally, we create a single dummy paper with the information of
             # the Event. We then add it to the paper list of the Event above.
-            paper_id = f"p_{event_id}"
+            paper_id = f"event_{event_id}"
             dummy_paper = Paper(
                 id=paper_id,
                 program=program_type,
@@ -820,6 +828,7 @@ class Acl2023Parser:
                 forum="",
                 card_image_path="",
                 presentation_id="",
+                is_paper=False,
             )
             self.papers[paper_id] = dummy_paper
             event.paper_ids.append(paper_id)
@@ -899,6 +908,7 @@ class Acl2023Parser:
                         forum="",
                         card_image_path="",
                         presentation_id="",
+                        is_paper=False,
                     )
                     self.papers[event_id] = dummy_paper
                     self.events[event_id].paper_ids.append(event_id)

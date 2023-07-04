@@ -72,7 +72,7 @@
             <div class="text-center text-muted text-monospace">
               <div class="paper-cal-links">
                 <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-                <span id="session-cal-link-{{ socials[social]['id'] }}-{{loop.index}}"></span>
+                <span id="session-cal-link-{{socials[social]['events'][event]['id']}}-{{loop.index}}"></span>
               </div>
             </div>
 
@@ -96,7 +96,7 @@
       </p>
       {% endif %}
       <p class="text-center text-muted card-title">
-        <a href="https://acl.rocket.chat/channel/{{socials[social]['id']}}" target="_blank"> Chat </a>  
+        <a href="https://acl.rocket.chat/channel/{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
       </p>    
 
 
@@ -156,7 +156,7 @@
         }
       });
 
-      targetNode = document.querySelector('#session-cal-link-{{ socials[social]["id"] }}-{{ loop.index }}');
+      targetNode = document.querySelector('#session-cal-link-{{ socials[social]["events"][social_event]["id"] }}-{{ loop.index }}');
       for (const name of calendarNames) {
         calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
         calendarNodeSpan = document.createElement("span");

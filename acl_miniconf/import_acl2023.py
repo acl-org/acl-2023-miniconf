@@ -875,6 +875,12 @@ class Acl2023Parser:
                     group_session, group_track, event_type
                 )
                 event_id = name_to_id(event_name)
+                # Hack to fix a single issue in the templates that generates two
+                # events with the same ID
+                if event_id == 'birds-of-a-feather-6_-ethics-discussion-(socials)':
+                    event_id = 'birds-of-a-feather-9'
+                else:
+                    event_id = name_to_id(group_session)
                 if event_id not in self.events:
                     self.events[event_id] = Event(
                         id=event_id,

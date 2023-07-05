@@ -74,12 +74,6 @@
     </h3>
    
     <div class="text-center p-3">
-      {% if paper.abstract %}
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      {% endif %}
-
       {% if paper.pdf_url %}
       <a class="card-link" target="_blank" href="{{paper.pdf_url}}">
         Paper
@@ -148,72 +142,33 @@
         false
         )
     }}
-
-        <p class="card-text text-center h5 pt-2">
-
-    {% if paper.presentation_id %}
-      <span>
-      You can open the
-    <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank">pre-recorded video</a>
-    and the
-    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
-       target="_blank">#{{paper.rocketchat_channel}}</a>
-    channel
-    in separate windows.
-    </span>
-    {% endif %}
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        {{paper.abstract}}
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          {{paper.tldr}}
+        </div>
   </div>
 </div>
 
-{% if paper.program != "Findings" %}
-{% if paper.presentation_id %}
-<div class="container" style="padding: 0px;">
-  <div class="text-muted text-center">
-  </div>
-  <div class="row m-2">
-    <!-- Slides Live-->
-    <div class="col-md-7 col-xs-12 my-auto p-2" >
-      <div id="presentation-embed" class="slp my-auto"></div>
-      <script src='https://slideslive.com/embed_presentation.js'></script>
-      <script>
-        embed = new SlidesLiveEmbed('presentation-embed', {
-        presentationId: '{{paper.presentation_id | default(config.default_presentation_id)}}',
-        autoPlay: false, // change to true to autoplay the embedded presentation
-        verticalEnabled: true,
-        verticalWhenWidthLte: 500,
-        allowHiddenControlsWhenPaused: true,
-        hideTitle: true
-        });
-      </script>
-
-      <div class="text-muted">
-      NOTE: Video may display a random order of authors.
-      Correct author list is at the top of this page.
-      </div>
-    </div>
-
-    <!-- Chat -->
-    <div class="col-md-5 col-xs-12 p-2">
-      <div id="gitter" class="slp">
-        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-{% else %}
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  {% if paper.poster_pdf %}
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  {% endif %}
+  {% if paper.slides_pdf %}
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  {% endif %}
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 {% if config.enable_chat %}
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -229,23 +184,32 @@
     </div>
 </div>
 {% endif %}
-{% endif %}
-{% endif %}
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            {{paper.abstract}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if paper.poster_pdf %}
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="{{paper.poster_pdf}}" type="application/pdf" width="100%" height="850px">
+  </div>
+  {% endif %}
+  {% if paper.slides_pdf %}
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="{{paper.slides_pdf}}" type="application/pdf" width="100%" height="700px">
+  </div>
+  {% endif %}
+</div>
 
-{% if paper.poster_pdf %}
-{{ components.section("Poster") }}
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("{{paper.poster_pdf}}",'#pdf_view');
-    })
-</script>
-{% endif %}
 
 {% if config.connected_papers_conference_name and paper.program == "main" %}
 <div class="container">

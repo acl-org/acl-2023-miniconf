@@ -60,19 +60,6 @@ def internal_to_external_session(name: str):
     return name
 
 
-def clean_authors(authors: List[str]):
-    return [a.strip() for a in authors]
-
-
-def parse_authors(author_string: str):
-    authors = author_string.split(",")
-    if len(authors) == 1:
-        authors = authors[0].split(" and ")
-        return clean_authors(authors)
-    else:
-        front_authors = authors[:-1]
-        last_authors = authors[-1].split(" and ")
-        return clean_authors(front_authors + last_authors)
 
 
 def parse_sessions_and_tracks(df: pd.DataFrame):
@@ -132,7 +119,16 @@ class Assets(BaseModel):
     poster_pdf: Optional[str] = None
     slides_pdf: Optional[str] = None
     underline_url: Optional[str] = None
+    # TODO: Post-conference, set this to anthology video
     video_url: Optional[str] = None
+
+
+class AnthologyAuthor(BaseModel):
+    first_name: Optional[str]
+    middle_name: Optional[str]
+    last_name: Optional[str]
+    google_scholar: Optional[str] = None
+    semantic_scholar: Optional[str] = None
 
 
 class AnthologyEntry(BaseModel):
@@ -143,6 +139,7 @@ class AnthologyEntry(BaseModel):
     file: str
     # TODO: When these are in anthology, use these to link to assets
     attachments: Dict[str, str]
+    authors: List[AnthologyAuthor]
 
 
 def to_anthology_id(paper_id: str):
@@ -150,6 +147,36 @@ def to_anthology_id(paper_id: str):
         return paper_id[1:]
     else:
         return None
+
+def clean_authors(authors: List[str]):
+    return [a.strip() for a in authors]
+
+def parse_authors(
+    anthology_data: Dict[str, AnthologyEntry], paper_id: str, author_string: str
+) -> List[str]:
+    anthology_id = to_anthology_id(paper_id)
+    if anthology_id is None:
+        authors = author_string.split(",")
+        if len(authors) == 1:
+            authors = authors[0].split(" and ")
+            return clean_authors(authors)
+        else:
+            front_authors = authors[:-1]
+            last_authors = authors[-1].split(" and ")
+            return clean_authors(front_authors + last_authors)
+    else:
+        authors = []
+        for a in anthology_data[anthology_id].authors:
+            temp_author = None
+            for name in [a.first_name, a.middle_name, a.last_name]:
+                if temp_author is None:
+                    temp_author = name
+                else:
+                    temp_author += f' {name}'
+            if temp_author is None:
+                raise ValueError('Empty author found')
+            authors.append(temp_author)
+        return authors
 
 
 class Acl2023Parser:
@@ -232,6 +259,16 @@ class Acl2023Parser:
                 abstract=e["abstract"],
                 file=e["file"],
                 attachments=e["attachments"],
+                authors=[
+                    AnthologyAuthor(
+                        first_name=a["first_name"],
+                        middle_name=a["middle_name"],
+                        last_name=a["last_name"],
+                        semantic_scholar=a["semantic_scholar"],
+                        google_scholar=a["google_scholar"],
+                    )
+                    for a in e["authors"]
+                ],
             )
 
     def _parse_underline_assets(self):
@@ -355,7 +392,9 @@ class Acl2023Parser:
                         id=paper_id,
                         program=determine_program(row.Category),
                         title=row.Title,
-                        authors=parse_authors(row.Author),
+                        authors=parse_authors(
+                            self.anthology_data, paper_id, row.Author
+                        ),
                         # TODO: group_track
                         track=row.Track,
                         paper_type=row.Length,
@@ -452,7 +491,9 @@ class Acl2023Parser:
                         id=paper_id,
                         program=determine_program(row.Category),
                         title=row.Title,
-                        authors=parse_authors(row.Author),
+                        authors=parse_authors(
+                            self.anthology_data, paper_id, row.Author
+                        ),
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
@@ -465,7 +506,6 @@ class Acl2023Parser:
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
                         slides_pdf=assets.slides_pdf,
-                        video_url=assets.video_url,
                         preview_image=assets.poster_preview_png,
                         poster_pdf=assets.poster_pdf,
                     )
@@ -552,7 +592,9 @@ class Acl2023Parser:
                         id=paper_id,
                         program=determine_program(row.Category),
                         title=row.Title,
-                        authors=parse_authors(row.Author),
+                        authors=parse_authors(
+                            self.anthology_data, paper_id, row.Author
+                        ),
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
@@ -564,7 +606,6 @@ class Acl2023Parser:
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
                         slides_pdf=assets.slides_pdf,
-                        video_url=assets.video_url,
                         preview_image=assets.poster_preview_png,
                         poster_pdf=assets.poster_pdf,
                     )
@@ -640,7 +681,9 @@ class Acl2023Parser:
                         id=paper_id,
                         program=determine_program(row.Category),
                         title=row.Title,
-                        authors=parse_authors(row.Author),
+                        authors=parse_authors(
+                            self.anthology_data, paper_id, row.Author
+                        ),
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
@@ -652,7 +695,6 @@ class Acl2023Parser:
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
                         slides_pdf=assets.slides_pdf,
-                        video_url=assets.video_url,
                         preview_image=assets.poster_preview_png,
                         poster_pdf=assets.poster_pdf,
                     )
@@ -939,7 +981,7 @@ def main(
     poster_tsv: str = "private_data-acl2023/poster-demo-papers.tsv",
     virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
-    extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-06-22.xlsx",
+    extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-07-05.xlsx",
     acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     out_dir: str = "data/acl_2023/data/",

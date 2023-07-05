@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Did the Models Understand Documents? Benchmarking Models for Language Understanding in Document-Level Relation Extraction</title>
   
@@ -251,12 +253,6 @@ Specifically, we first conduct annotations to provide the rationales considered 
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15237/lecture/76366-did-the-models-understand-documentsquestion-benchmarking-models-for-language-understanding-in-document-level-relation-extraction">
         Underline
@@ -363,29 +359,33 @@ Specifically, we first conduct annotations to provide the rationales considered 
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Document-level relation extraction (DocRE) attracts more research interest recently. While models achieve consistent performance gains in DocRE, their underlying decision rules are still understudied: Do they make the right predictions according to rationales? In this paper, we take the first step toward answering this question and then introduce a new perspective on comprehensively evaluating a model.
-Specifically, we first conduct annotations to provide the rationales considered by humans in DocRE. Then, we conduct investigations and discover the fact that: In contrast to humans, the representative state-of-the-art (SOTA) models in DocRE exhibit different reasoning processes. Through our proposed RE-specific attacks, we next demonstrate that the significant discrepancy in decision rules between models and humans severely damages the robustness of models. After that, we introduce mean average precision (MAP) to evaluate the understanding and reasoning capabilities of models. According to the extensive experimental results, we finally appeal to future work to consider evaluating the understanding ability of models because the improved ability renders models more trustworthy and robust to be deployed in real-world scenarios. We make our annotations and code publicly available.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Document-level relation extraction (DocRE) attracts more research interest recently. While models achieve consistent performance gains in DocRE, their underlying decision rules are still understudied:...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -401,27 +401,32 @@ Specifically, we first conduct annotations to provide the rationales considered 
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Document-level relation extraction (DocRE) attracts more research interest recently. While models achieve consistent performance gains in DocRE, their underlying decision rules are still understudied: Do they make the right predictions according to rationales? In this paper, we take the first step toward answering this question and then introduce a new perspective on comprehensively evaluating a model.
+Specifically, we first conduct annotations to provide the rationales considered by humans in DocRE. Then, we conduct investigations and discover the fact that: In contrast to humans, the representative state-of-the-art (SOTA) models in DocRE exhibit different reasoning processes. Through our proposed RE-specific attacks, we next demonstrate that the significant discrepancy in decision rules between models and humans severely damages the robustness of models. After that, we introduce mean average precision (MAP) to evaluate the understanding and reasoning capabilities of models. According to the extensive experimental results, we finally appeal to future work to consider evaluating the understanding ability of models because the improved ability renders models more trustworthy and robust to be deployed in real-world scenarios. We make our annotations and code publicly available.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76366/poster_document/a5ba93e6469262a286167a61cb61c090.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76366/slideshow/01f8f422d50480b382ad863825e8227a.pptx" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76366/poster_document/a5ba93e6469262a286167a61cb61c090.pdf",'#pdf_view');
-    })
-</script>
 
 
 

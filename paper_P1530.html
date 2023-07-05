@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: OpenPI-C: A Better Benchmark and Stronger Baseline for Open-Vocabulary State Tracking</title>
   
@@ -252,12 +254,6 @@ Model-wise, we enhance the seq2seq generation baseline by reinstating two key pr
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77487-openpi-c-a-better-benchmark-and-stronger-baseline-for-open-vocabulary-state-tracking">
         Underline
@@ -422,47 +418,75 @@ Model-wise, we enhance the seq2seq generation baseline by reinstating two key pr
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Open-vocabulary state tracking is a more practical version of state tracking that aims to track state changes of entities throughout a process without restricting the state space and entity space. Ope...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Open-vocabulary state tracking is a more practical version of state tracking that aims to track state changes of entities throughout a process without restricting the state space and entity space. OpenPI (Tandon et al., 2020) is to date the only dataset annotated for open-vocabulary state tracking. However, we identify issues with the dataset quality and evaluation metric. For the dataset, we categorize 3 types of problems on the procedure level, step level and state change level respectively, and build a clean dataset OpenPI-C using multiple rounds of human judgment. For the evaluation metric, we propose a cluster-based metric to fix the original metric&#39;s preference for repetition.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P1530"
+       target="_blank">#paper-P1530</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P1530?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Open-vocabulary state tracking is a more practical version of state tracking that aims to track state changes of entities throughout a process without restricting the state space and entity space. OpenPI (Tandon et al., 2020) is to date the only dataset annotated for open-vocabulary state tracking. However, we identify issues with the dataset quality and evaluation metric. For the dataset, we categorize 3 types of problems on the procedure level, step level and state change level respectively, and build a clean dataset OpenPI-C using multiple rounds of human judgment. For the evaluation metric, we propose a cluster-based metric to fix the original metric&#39;s preference for repetition.
 
 Model-wise, we enhance the seq2seq generation baseline by reinstating two key properties for state tracking: temporal dependency and entity awareness. The state of the world after an action is inherently dependent on the previous state. We model this dependency through a dynamic memory bank and allow the model to attend to the memory slots during decoding. On the other hand, the state of the world is naturally a union of the states of involved entities. Since the entities are unknown in the open-vocabulary setting, we propose a two-stage model that refines the state change prediction conditioned on entities predicted from the first stage. Empirical results show the effectiveness of our proposed model, especially on the cleaned dataset and the cluster-based metric. The code and data are released at https://github.com/shirley-wu/openpi-c
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77487/poster_document/230bfa3a997136d079ef4916c99c4bb0.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77487/slideshow/8c2f48c2823d0424b87e05ab7005c40d.pptx" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77487/poster_document/230bfa3a997136d079ef4916c99c4bb0.pdf",'#pdf_view');
-    })
-</script>
 
 
 

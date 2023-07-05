@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Exploring Partial Knowledge Base Inference in Biomedical Entity Linking</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Biomedical entity linking (EL) consists of named entity recognition (NER) and named entity disambiguation (NED). EL models are trained on corpora labeled by a predefined KB. However, it is a common scenario that only entities within a subset of the KB are precious to stakeholders. We name this scenario partial knowledge base inference; training an EL model with one KB and inferring on the part of it without further training. In this work, we give a detailed definition and evaluation procedures for this practically valuable but significantly understudied scenario and evaluate methods from three representative EL paradigms. We construct partial KB inference benchmarks and witness a catastrophic degradation in EL performance due to dramatically precision drop.Our findings reveal these EL paradigms can not correctly handle unlinkable mentions (NIL), so they are not robust to partial KB inference. We also propose two simple-and-effective redemption methods to combat the NIL issue with little computational overhead.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Biomedical entity linking (EL) consists of named entity recognition (NER) and named entity disambiguation (NED). EL models are trained on corpora labeled by a predefined KB. However, it is a common sc
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Biomedical entity linking (EL) consists of named entity recognition (NER) and named entity disambiguation (NED). EL models are trained on corpora labeled by a predefined KB. However, it is a common scenario that only entities within a subset of the KB are precious to stakeholders. We name this scenario partial knowledge base inference; training an EL model with one KB and inferring on the part of it without further training. In this work, we give a detailed definition and evaluation procedures for this practically valuable but significantly understudied scenario and evaluate methods from three representative EL paradigms. We construct partial KB inference benchmarks and witness a catastrophic degradation in EL performance due to dramatically precision drop.Our findings reveal these EL paradigms can not correctly handle unlinkable mentions (NIL), so they are not robust to partial KB inference. We also propose two simple-and-effective redemption methods to combat the NIL issue with little computational overhead.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

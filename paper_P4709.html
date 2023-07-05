@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Knowledge Transfer in Incremental Learning for Multilingual Neural Machine Translation</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15206/lecture/76335-knowledge-transfer-in-incremental-learning-for-multilingual-neural-machine-translation">
         Underline
@@ -374,28 +370,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In the real-world scenario, a longstanding goal of multilingual neural machine translation (MNMT) is that a single model can incrementally adapt to new language pairs without accessing previous training data. In this scenario, previous studies concentrate on overcoming catastrophic forgetting while lacking encouragement to learn new knowledge from incremental language pairs, especially when the incremental language is not related to the set of original languages. To better acquire new knowledge, we propose a knowledge transfer method that can efficiently adapt original MNMT models to diverse incremental language pairs. The method flexibly introduces the knowledge from an external model into original models, which encourages the models to learn new language pairs, completing the procedure of knowledge transfer. Moreover, all original parameters are frozen to ensure that translation qualities on original language pairs are not degraded. Experimental results show that our method can learn new knowledge from diverse language pairs incrementally meanwhile maintaining performance on original language pairs, outperforming various strong baselines in incremental learning for MNMT.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In the real-world scenario, a longstanding goal of multilingual neural machine translation (MNMT) is that a single model can incrementally adapt to new language pairs without accessing previous traini...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -411,27 +412,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In the real-world scenario, a longstanding goal of multilingual neural machine translation (MNMT) is that a single model can incrementally adapt to new language pairs without accessing previous training data. In this scenario, previous studies concentrate on overcoming catastrophic forgetting while lacking encouragement to learn new knowledge from incremental language pairs, especially when the incremental language is not related to the set of original languages. To better acquire new knowledge, we propose a knowledge transfer method that can efficiently adapt original MNMT models to diverse incremental language pairs. The method flexibly introduces the knowledge from an external model into original models, which encourages the models to learn new language pairs, completing the procedure of knowledge transfer. Moreover, all original parameters are frozen to ensure that translation qualities on original language pairs are not degraded. Experimental results show that our method can learn new knowledge from diverse language pairs incrementally meanwhile maintaining performance on original language pairs, outperforming various strong baselines in incremental learning for MNMT.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76335/poster_document/528ab6e4b887ae9c39ae4d80e2b2b220.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76335/slideshow/d1034608ebd9176b17b2ba367bc37420.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76335/poster_document/528ab6e4b887ae9c39ae4d80e2b2b220.pdf",'#pdf_view');
-    })
-</script>
 
 
 

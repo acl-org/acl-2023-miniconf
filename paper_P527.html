@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: CONE: An Efficient COarse-to-fiNE Alignment Framework for Long Video Temporal Grounding</title>
   
@@ -286,12 +288,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/76439-cone-an-efficient-coarse-to-fine-alignment-framework-for-long-video-temporal-grounding">
         Underline
@@ -398,28 +394,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper tackles an emerging and challenging problem of long video temporal grounding~(VTG) that localizes video moments related to a natural language (NL) query. Compared with short videos, long videos are also highly demanded but less explored, which brings new challenges in higher inference computation cost and weaker multi-modal alignment. To address these challenges, we propose CONE, an efficient  COarse-to-fiNE alignment framework. CONE is a plug-and-play framework on top of existing VTG models to handle long videos through a sliding window mechanism. Specifically, CONE (1) introduces a query-guided window selection strategy to speed up inference, and (2) proposes a coarse-to-fine mechanism via a novel incorporation of contrastive learning to enhance multi-modal alignment for long videos. Extensive experiments on two large-scale long VTG benchmarks consistently show both substantial performance gains (e.g., from 3.13 to 6.87\% on MAD) and state-of-the-art results. Analyses also reveal higher efficiency as the query-guided window selection mechanism accelerates inference time by 2x on Ego4D-NLQ and 15x on MAD while keeping SOTA results. Codes have been released at https://github.com/houzhijian/CONE.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper tackles an emerging and challenging problem of long video temporal grounding~(VTG) that localizes video moments related to a natural language (NL) query. Compared with short videos, long vi...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -435,27 +436,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper tackles an emerging and challenging problem of long video temporal grounding~(VTG) that localizes video moments related to a natural language (NL) query. Compared with short videos, long videos are also highly demanded but less explored, which brings new challenges in higher inference computation cost and weaker multi-modal alignment. To address these challenges, we propose CONE, an efficient  COarse-to-fiNE alignment framework. CONE is a plug-and-play framework on top of existing VTG models to handle long videos through a sliding window mechanism. Specifically, CONE (1) introduces a query-guided window selection strategy to speed up inference, and (2) proposes a coarse-to-fine mechanism via a novel incorporation of contrastive learning to enhance multi-modal alignment for long videos. Extensive experiments on two large-scale long VTG benchmarks consistently show both substantial performance gains (e.g., from 3.13 to 6.87\% on MAD) and state-of-the-art results. Analyses also reveal higher efficiency as the query-guided window selection mechanism accelerates inference time by 2x on Ego4D-NLQ and 15x on MAD while keeping SOTA results. Codes have been released at https://github.com/houzhijian/CONE.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76439/poster_document/2ef08640235448996cbddf9c9ec77dc8.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76439/slideshow/79438fc76222b966a05bece0f571a8b3.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76439/poster_document/2ef08640235448996cbddf9c9ec77dc8.pdf",'#pdf_view');
-    })
-</script>
 
 
 

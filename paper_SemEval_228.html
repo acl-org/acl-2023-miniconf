@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Seals_Lab at SemEval-2023 Task 12:  Sentiment Analysis for Low-resource African Languages, Hausa and Igbo</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        One of the most extensively researched applications in natural language processing (NLP) is sentiment analysis. While the majority of the study focuses on high-resource languages (e.g., English), this research will focus on low-resource African languages namely Igbo and Hausa. The annotated tweets of both languages have a significant number of code-mixed tweets. The curated datasets necessary to build complex AI applications are not available for the majority of African languages. To optimize the use of such datasets, research is needed to determine the viability of present NLP procedures as well as the development of novel techniques. This paper outlines our efforts to develop a sentiment analysis (for positive and negative as well as neutral) system for tweets from the Hausa, and Igbo languages. Sentiment analysis can computationally analyze and discover sentiments in a text or document. We worked on the first thorough compilation of AfriSenti-SemEval 2023 Shared Task 12 Twitter datasets that are human-annotated for the most widely spoken languages in Nigeria, such as Hausa and Igbo. Here we trained the modern pre-trained language model AfriBERTa large on the AfriSenti-SemEval Shared Task 12 Twitter dataset to create sentiment classification. In particular, the results demonstrate that our model trained on AfriSenti-SemEval Shared Task 12 datasets and produced with an F1 score of 80.85\% for Hausa and 80.82\% for Igbo languages on the sentiment analysis test. In AfriSenti-SemEval 2023 shared task 12 (Task A), we consistently ranked top 10 by achieving a mean F1 score of more than 80\% for both the Hausa and Igbo languages.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          One of the most extensively researched applications in natural language processing (NLP) is sentiment analysis. While the majority of the study focuses on high-resource languages (e.g., English), this
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            One of the most extensively researched applications in natural language processing (NLP) is sentiment analysis. While the majority of the study focuses on high-resource languages (e.g., English), this research will focus on low-resource African languages namely Igbo and Hausa. The annotated tweets of both languages have a significant number of code-mixed tweets. The curated datasets necessary to build complex AI applications are not available for the majority of African languages. To optimize the use of such datasets, research is needed to determine the viability of present NLP procedures as well as the development of novel techniques. This paper outlines our efforts to develop a sentiment analysis (for positive and negative as well as neutral) system for tweets from the Hausa, and Igbo languages. Sentiment analysis can computationally analyze and discover sentiments in a text or document. We worked on the first thorough compilation of AfriSenti-SemEval 2023 Shared Task 12 Twitter datasets that are human-annotated for the most widely spoken languages in Nigeria, such as Hausa and Igbo. Here we trained the modern pre-trained language model AfriBERTa large on the AfriSenti-SemEval Shared Task 12 Twitter dataset to create sentiment classification. In particular, the results demonstrate that our model trained on AfriSenti-SemEval Shared Task 12 datasets and produced with an F1 score of 80.85\% for Hausa and 80.82\% for Igbo languages on the sentiment analysis test. In AfriSenti-SemEval 2023 shared task 12 (Task A), we consistently ranked top 10 by achieving a mean F1 score of more than 80\% for both the Hausa and Igbo languages.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

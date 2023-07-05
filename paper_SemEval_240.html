@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Clemson NLP at SemEval-2023 Task 7: Applying GatorTron to Multi-Evidence Clinical NLI</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents our system descriptions for SemEval 2023-Task 7: Multi-evidence Natural Language Inference for Clinical Trial Data sub-tasks one and two. Provided with a collection of Clinical Trial Reports (CTRs) and corresponding expert-annotated claim statements, sub-task one involves determining an inferential relationship between the statement and CTR premise: contradiction or entailment. Sub-task two involves retrieving evidence from the CTR which is necessary to determine the entailment in sub-task one. For sub-task two we employ a recent transformer-based language model pretrained on biomedical literature, which we domain-adapt on a set of clinical trial reports. For sub-task one, we take an ensemble approach in which we leverage the evidence retrieval model from sub-task two to extract relevant sections, which are then passed to a second model of equivalent architecture to determine entailment. Our system achieves a ranking of seventh on sub-task one with an F1-score of 0.705 and sixth on sub-task two with an F1-score of 0.806. In addition, we find that the high rate of success of language models on this dataset may be partially attributable to the existence of annotation artifacts.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents our system descriptions for SemEval 2023-Task 7: Multi-evidence Natural Language Inference for Clinical Trial Data sub-tasks one and two. Provided with a collection of Clinical Tri
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents our system descriptions for SemEval 2023-Task 7: Multi-evidence Natural Language Inference for Clinical Trial Data sub-tasks one and two. Provided with a collection of Clinical Trial Reports (CTRs) and corresponding expert-annotated claim statements, sub-task one involves determining an inferential relationship between the statement and CTR premise: contradiction or entailment. Sub-task two involves retrieving evidence from the CTR which is necessary to determine the entailment in sub-task one. For sub-task two we employ a recent transformer-based language model pretrained on biomedical literature, which we domain-adapt on a set of clinical trial reports. For sub-task one, we take an ensemble approach in which we leverage the evidence retrieval model from sub-task two to extract relevant sections, which are then passed to a second model of equivalent architecture to determine entailment. Our system achieves a ranking of seventh on sub-task one with an F1-score of 0.705 and sixth on sub-task two with an F1-score of 0.806. In addition, we find that the high rate of success of language models on this dataset may be partially attributable to the existence of annotation artifacts.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

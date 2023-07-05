@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Do Androids Laugh at Electric Sheep? Humor &#34;Understanding&#34; Benchmarks from The New Yorker Caption Contest</title>
   
@@ -280,12 +282,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15337/lecture/76397-do-androids-laugh-at-electric-sheepquestion-humor-understanding-benchmarks-from-the-new-yorker-caption-contest">
         Underline
@@ -392,28 +388,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Large neural networks can now generate jokes, but do they really &#34;understand&#34; humor? We challenge AI models with three tasks derived from the New Yorker Cartoon Caption Contest: matching a joke to a cartoon, identifying a winning caption, and explaining why a winning caption is funny. These tasks encapsulate progressively more sophisticated aspects of &#34;understanding&#34; a cartoon; key elements are the complex, often surprising relationships between images and captions and the frequent inclusion of indirect and playful allusions to human experience and culture. We investigate both multimodal and language-only models: the former are challenged with the cartoon images directly, while the latter are given multifaceted descriptions of the visual scene to simulate human-level visual understanding. We find that both types of models struggle at all three tasks. For example, our best multimodal models fall 30 accuracy points behind human performance on the matching task, and, even when provided ground-truth visual scene descriptors, human-authored explanations are preferred head-to-head over the best machine-authored ones (few-shot GPT-4) in more than 2/3 of cases. We release models, code, leaderboard, and corpus, which includes newly-gathered annotations describing the image&#39;s locations/entities, what&#39;s unusual in the scene, and an explanation of the joke.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Large neural networks can now generate jokes, but do they really &#34;understand&#34; humor? We challenge AI models with three tasks derived from the New Yorker Cartoon Caption Contest: matching a joke to a c...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -429,27 +430,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Large neural networks can now generate jokes, but do they really &#34;understand&#34; humor? We challenge AI models with three tasks derived from the New Yorker Cartoon Caption Contest: matching a joke to a cartoon, identifying a winning caption, and explaining why a winning caption is funny. These tasks encapsulate progressively more sophisticated aspects of &#34;understanding&#34; a cartoon; key elements are the complex, often surprising relationships between images and captions and the frequent inclusion of indirect and playful allusions to human experience and culture. We investigate both multimodal and language-only models: the former are challenged with the cartoon images directly, while the latter are given multifaceted descriptions of the visual scene to simulate human-level visual understanding. We find that both types of models struggle at all three tasks. For example, our best multimodal models fall 30 accuracy points behind human performance on the matching task, and, even when provided ground-truth visual scene descriptors, human-authored explanations are preferred head-to-head over the best machine-authored ones (few-shot GPT-4) in more than 2/3 of cases. We release models, code, leaderboard, and corpus, which includes newly-gathered annotations describing the image&#39;s locations/entities, what&#39;s unusual in the scene, and an explanation of the joke.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76397/poster_document/85c1fb50a389b644d5e503fe1d77d879.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76397/slideshow/c9a1d3dab90f2552662b2134c84dd14c.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76397/poster_document/85c1fb50a389b644d5e503fe1d77d879.pdf",'#pdf_view');
-    })
-</script>
 
 
 

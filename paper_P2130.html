@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Learning Dynamic Contextualised Word Embeddings via Template-based Temporal Adaptation</title>
   
@@ -256,12 +258,6 @@ Multiple experiments show that our proposed method significantly reduces the per
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15250/lecture/76241-learning-dynamic-contextualised-word-embeddings-via-template-based-temporal-adaptation">
         Underline
@@ -364,34 +360,30 @@ Multiple experiments show that our proposed method significantly reduces the per
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Dynamic contextualised word embeddings (DCWEs) represent the temporal semantic variations of words.
-We propose a method for learning DCWEs by time-adapting a pretrained Masked Language Model (MLM) using time-sensitive templates.
-Given two snapshots $C_1$ and $C_2$ of a corpus taken respectively at two distinct timestamps $T_1$ and $T_2$, we first propose an unsupervised method to select (a) \emph{pivot} terms related to both $C_1$ and $C_2$, and (b) \emph{anchor} terms that are associated with a specific pivot term in each individual snapshot.
-We then generate prompts by filling manually compiled templates using the extracted pivot and anchor terms.
-Moreover, we propose an automatic method to learn time-sensitive templates from $C_1$ and $C_2$, without requiring any human supervision.
-Next, we use the generated prompts to adapt a pretrained MLM to $T_2$ by fine-tuning using those prompts.
-Multiple experiments show that our proposed method significantly reduces the perplexity of test sentences in $C_2$, outperforming the current state-of-the-art.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Dynamic contextualised word embeddings (DCWEs) represent the temporal semantic variations of words.
+We propose a method for learning DCWEs by time-adapting a pretrained Masked Language Model (MLM) usi...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -407,27 +399,33 @@ Multiple experiments show that our proposed method significantly reduces the per
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Dynamic contextualised word embeddings (DCWEs) represent the temporal semantic variations of words.
+We propose a method for learning DCWEs by time-adapting a pretrained Masked Language Model (MLM) using time-sensitive templates.
+Given two snapshots $C_1$ and $C_2$ of a corpus taken respectively at two distinct timestamps $T_1$ and $T_2$, we first propose an unsupervised method to select (a) \emph{pivot} terms related to both $C_1$ and $C_2$, and (b) \emph{anchor} terms that are associated with a specific pivot term in each individual snapshot.
+We then generate prompts by filling manually compiled templates using the extracted pivot and anchor terms.
+Moreover, we propose an automatic method to learn time-sensitive templates from $C_1$ and $C_2$, without requiring any human supervision.
+Next, we use the generated prompts to adapt a pretrained MLM to $T_2$ by fine-tuning using those prompts.
+Multiple experiments show that our proposed method significantly reduces the perplexity of test sentences in $C_2$, outperforming the current state-of-the-art.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76241/poster_document/c310f87bbeb6ccea69ba7c02efaa110e.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76241/poster_document/c310f87bbeb6ccea69ba7c02efaa110e.pdf",'#pdf_view');
-    })
-</script>
 
 
 

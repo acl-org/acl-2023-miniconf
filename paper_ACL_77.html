@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: DREAM: Improving Situational QA by First Elaborating the Situation</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        When people answer questions about a specific situation, e.g., &#34;I cheated on my mid-term exam last week. Was that wrong?, cognitive science suggests that they form a mental picture of that situation before answering. While we do not know how language models (LMs) answer such questions, we conjecture that they may answer more accurately if they are also provided with additional details about the question situation, elaborating the &#34;scene. To test this conjecture, we train a new model, DREAM, to answer questions that elaborate the scenes that situated questions are about, and then provide those elaborations as additional context to a question-answering (QA) model. We find that DREAM is able to create better scene elaborations (more accurate, useful, and consistent) than a representative state-of-the-art, zero-shot model (Macaw). We also find that using the scene elaborations as additional context improves the answer accuracy of a downstream QA system, including beyond that obtainable by simply further fine-tuning the QA system on DREAM&#39;s training data. These results suggest that adding focused elaborations about a situation can improve a system&#39;s reasoning about it, and may serve as an effective way of injecting new scenario-based knowledge into QA models.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          When people answer questions about a specific situation, e.g., &#34;I cheated on my mid-term exam last week. Was that wrong?, cognitive science suggests that they form a mental picture of that situation b
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            When people answer questions about a specific situation, e.g., &#34;I cheated on my mid-term exam last week. Was that wrong?, cognitive science suggests that they form a mental picture of that situation before answering. While we do not know how language models (LMs) answer such questions, we conjecture that they may answer more accurately if they are also provided with additional details about the question situation, elaborating the &#34;scene. To test this conjecture, we train a new model, DREAM, to answer questions that elaborate the scenes that situated questions are about, and then provide those elaborations as additional context to a question-answering (QA) model. We find that DREAM is able to create better scene elaborations (more accurate, useful, and consistent) than a representative state-of-the-art, zero-shot model (Macaw). We also find that using the scene elaborations as additional context improves the answer accuracy of a downstream QA system, including beyond that obtainable by simply further fine-tuning the QA system on DREAM&#39;s training data. These results suggest that adding focused elaborations about a situation can improve a system&#39;s reasoning about it, and may serve as an effective way of injecting new scenario-based knowledge into QA models.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

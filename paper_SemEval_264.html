@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Hitachi at SemEval-2023 Task 4: Exploring Various Task Formulations Reveals the Importance of Description Texts on Human Values</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper describes our participation in SemEval-2023 Task 4, ValueEval: Identification of Human Values behind Arguments. The aim of this task is to identify whether or not an input text supports each of the 20 pre-defined human values. Previous work on human value detection has shown the effectiveness of a sequence classification approach using BERT. However, little is known about what type of task formulation is suitable for the task. To this end, this paper explores various task formulations, including sequence classification, question answering, and question answering with chain-of-thought prompting and evaluates their performances on the shared task dataset. Experiments show that a zero-shot approach is not as effective as other methods, and there is no one approach that is optimal in every scenario. Our analysis also reveals that utilizing the descriptions of human values can help to improve performance.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper describes our participation in SemEval-2023 Task 4, ValueEval: Identification of Human Values behind Arguments. The aim of this task is to identify whether or not an input text supports eac
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper describes our participation in SemEval-2023 Task 4, ValueEval: Identification of Human Values behind Arguments. The aim of this task is to identify whether or not an input text supports each of the 20 pre-defined human values. Previous work on human value detection has shown the effectiveness of a sequence classification approach using BERT. However, little is known about what type of task formulation is suitable for the task. To this end, this paper explores various task formulations, including sequence classification, question answering, and question answering with chain-of-thought prompting and evaluates their performances on the shared task dataset. Experiments show that a zero-shot approach is not as effective as other methods, and there is no one approach that is optimal in every scenario. Our analysis also reveals that utilizing the descriptions of human values can help to improve performance.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

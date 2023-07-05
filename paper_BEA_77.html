@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Transformer-based Hebrew NLP models for Short Answer Scoring in Biology</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Pre-trained large language models (PLMs) are adaptable to a wide range of downstream tasks by fine-tuning their rich contextual embeddings to the task, often without requiring much task-specific data. In this paper, we explore the use of a recently developed Hebrew PLM  aleph-BERT  for automated short answer grading of high school biology items. We show that the alephBERT-based system outperforms a strong CNN-based baseline, and that it general-izes unexpectedly well in a zero-shot paradigm to items on an unseen topic that address the same underlying biological concepts, opening up the possibility of automatically assessing new items without item-specific fine-tuning.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Pre-trained large language models (PLMs) are adaptable to a wide range of downstream tasks by fine-tuning their rich contextual embeddings to the task, often without requiring much task-specific data.
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Pre-trained large language models (PLMs) are adaptable to a wide range of downstream tasks by fine-tuning their rich contextual embeddings to the task, often without requiring much task-specific data. In this paper, we explore the use of a recently developed Hebrew PLM  aleph-BERT  for automated short answer grading of high school biology items. We show that the alephBERT-based system outperforms a strong CNN-based baseline, and that it general-izes unexpectedly well in a zero-shot paradigm to items on an unseen topic that address the same underlying biological concepts, opening up the possibility of automatically assessing new items without item-specific fine-tuning.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

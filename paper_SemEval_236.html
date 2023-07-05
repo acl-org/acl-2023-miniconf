@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: CL-UZH at SemEval-2023 Task 10: Sexism Detection through Incremental Fine-Tuning and Multi-Task Learning with Label Descriptions</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The widespread popularity of social media has led to an increase in hateful, abusive, and sexist language, motivating methods for the automatic detection of such phenomena. The goal of the SemEval shared task Towards Explainable Detection of Online Sexism (EDOS 2023) is to detect sexism in English social media posts (subtask A), and to categorize such posts into four coarse-grained sexism categories (subtask B), and eleven fine-grained subcategories (subtask C). In this paper, we present our submitted systems for all three subtasks, based on a multi-task model that has been fine-tuned on a range of related tasks and datasets before being fine-tuned on the specific EDOS subtasks. We implement multi-task learning by formulating each task as binary pairwise text classification, where the dataset and label descriptions are given along with the input text. The results show clear improvements over a fine-tuned DeBERTa-V3 serving as a baseline leading to F1-scores of 85.9\% in subtask A (rank 13/84), 64.8\% in subtask B (rank 19/69), and 44.9\% in subtask C (26/63).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The widespread popularity of social media has led to an increase in hateful, abusive, and sexist language, motivating methods for the automatic detection of such phenomena. The goal of the SemEval sha
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The widespread popularity of social media has led to an increase in hateful, abusive, and sexist language, motivating methods for the automatic detection of such phenomena. The goal of the SemEval shared task Towards Explainable Detection of Online Sexism (EDOS 2023) is to detect sexism in English social media posts (subtask A), and to categorize such posts into four coarse-grained sexism categories (subtask B), and eleven fine-grained subcategories (subtask C). In this paper, we present our submitted systems for all three subtasks, based on a multi-task model that has been fine-tuned on a range of related tasks and datasets before being fine-tuned on the specific EDOS subtasks. We implement multi-task learning by formulating each task as binary pairwise text classification, where the dataset and label descriptions are given along with the input text. The results show clear improvements over a fine-tuned DeBERTa-V3 serving as a baseline leading to F1-scores of 85.9\% in subtask A (rank 13/84), 64.8\% in subtask B (rank 19/69), and 44.9\% in subtask C (26/63).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Multilingual Knowledge Graph Completion from Pretrained Language Models with Knowledge Constraints</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77507-multilingual-knowledge-graph-completion-from-pretrained-language-models-with-knowledge-constraints">
         Underline
@@ -382,45 +378,65 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Multilingual Knowledge Graph Completion (mKGC) aim at solving queries  in different languages by reasoning a tail entity thus improving multilingual knowledge graphs. Previous studies leverage multili...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Multilingual Knowledge Graph Completion (mKGC) aim at solving queries  in different languages by reasoning a tail entity thus improving multilingual knowledge graphs. Previous studies leverage multilingual pretrained language models (PLMs) and the generative paradigm to achieve mKGC. Although multilingual pretrained language models contain extensive knowledge of different languages, its pretraining tasks cannot be directly aligned with the mKGC tasks. Moreover, the majority of KGs and PLMs currently available exhibit a pronounced English-centric bias. This makes it difficult for mKGC to achieve good results, particularly in the context of low-resource languages. To overcome previous problems, this paper introduces global and local knowledge constraints for mKGC. The former is used to constrain the reasoning of answer entities , while the latter is used to enhance the representation of query contexts. The proposed method makes the pretrained model better adapt to the mKGC task. Experimental results on public datasets  demonstrate that our method outperforms the previous SOTA on Hits@1 and Hits@10 by an average of 12.32\% and 16.03\%, which indicates that our proposed method has significant enhancement on mKGC.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P1623"
+       target="_blank">#paper-P1623</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P1623?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Multilingual Knowledge Graph Completion (mKGC) aim at solving queries  in different languages by reasoning a tail entity thus improving multilingual knowledge graphs. Previous studies leverage multilingual pretrained language models (PLMs) and the generative paradigm to achieve mKGC. Although multilingual pretrained language models contain extensive knowledge of different languages, its pretraining tasks cannot be directly aligned with the mKGC tasks. Moreover, the majority of KGs and PLMs currently available exhibit a pronounced English-centric bias. This makes it difficult for mKGC to achieve good results, particularly in the context of low-resource languages. To overcome previous problems, this paper introduces global and local knowledge constraints for mKGC. The former is used to constrain the reasoning of answer entities , while the latter is used to enhance the representation of query contexts. The proposed method makes the pretrained model better adapt to the mKGC task. Experimental results on public datasets  demonstrate that our method outperforms the previous SOTA on Hits@1 and Hits@10 by an average of 12.32\% and 16.03\%, which indicates that our proposed method has significant enhancement on mKGC.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77507/poster_document/5a6b8d374c891e256bc27cd7f4f2a655.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77507/poster_document/5a6b8d374c891e256bc27cd7f4f2a655.pdf",'#pdf_view');
-    })
-</script>
 
 
 

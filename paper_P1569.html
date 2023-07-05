@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Facilitating Fine-grained Detection of Chinese Toxic Language: Hierarchical Taxonomy, Resources, and Benchmarks</title>
   
@@ -268,12 +270,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15237/lecture/76604-facilitating-fine-grained-detection-of-chinese-toxic-language-hierarchical-taxonomy-resources-and-benchmarks">
         Underline
@@ -376,28 +372,29 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The widespread dissemination of toxic online posts is increasingly damaging to society. However, research on detecting toxic language in Chinese has lagged significantly due to limited datasets. Existing datasets suffer from a lack of fine-grained annotations, such as the toxic type and expressions with indirect toxicity. These fine-grained annotations are crucial factors for accurately detecting the toxicity of posts involved with lexical knowledge, which has been a challenge for researchers. To tackle this problem, we facilitate the fine-grained detection of Chinese toxic language by building a new dataset with benchmark results. First, we devised Monitor Toxic Frame, a hierarchical taxonomy to analyze the toxic type and expressions. Then, we built a fine-grained dataset ToxiCN, including both direct and indirect toxic samples. ToxiCN is based on an insulting vocabulary containing implicit profanity. We further propose a benchmark model, Toxic Knowledge Enhancement (TKE), by incorporating lexical features to detect toxic language. We demonstrate the usability of ToxiCN and the effectiveness of TKE based on a systematic quantitative and qualitative analysis.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The widespread dissemination of toxic online posts is increasingly damaging to society. However, research on detecting toxic language in Chinese has lagged significantly due to limited datasets. Exist...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -413,27 +410,27 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The widespread dissemination of toxic online posts is increasingly damaging to society. However, research on detecting toxic language in Chinese has lagged significantly due to limited datasets. Existing datasets suffer from a lack of fine-grained annotations, such as the toxic type and expressions with indirect toxicity. These fine-grained annotations are crucial factors for accurately detecting the toxicity of posts involved with lexical knowledge, which has been a challenge for researchers. To tackle this problem, we facilitate the fine-grained detection of Chinese toxic language by building a new dataset with benchmark results. First, we devised Monitor Toxic Frame, a hierarchical taxonomy to analyze the toxic type and expressions. Then, we built a fine-grained dataset ToxiCN, including both direct and indirect toxic samples. ToxiCN is based on an insulting vocabulary containing implicit profanity. We further propose a benchmark model, Toxic Knowledge Enhancement (TKE), by incorporating lexical features to detect toxic language. We demonstrate the usability of ToxiCN and the effectiveness of TKE based on a systematic quantitative and qualitative analysis.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76604/poster_document/1a4a6a033d532ac3bddfe6dd6713a35f.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76604/poster_document/1a4a6a033d532ac3bddfe6dd6713a35f.pdf",'#pdf_view');
-    })
-</script>
 
 
 

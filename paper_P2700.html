@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: HuaSLIM: Human Attention Motivated Shortcut Learning Identification and Mitigation for Large Language models</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77686-huaslim-human-attention-motivated-shortcut-learning-identification-and-mitigation-for-large-language-models">
         Underline
@@ -352,45 +348,65 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Large language models have made remarkable progress on a variety of NLP tasks. However, it has been found that they tend to rely on shortcut features that spuriously correlate with labels for predicti...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Large language models have made remarkable progress on a variety of NLP tasks. However, it has been found that they tend to rely on shortcut features that spuriously correlate with labels for prediction, which weakens their generalization on out-of-distribution samples. In this paper, we propose a human attention guided approach to identifying and mitigating shortcut learning, which encourages the LLM-based target model to learn relevant features. We define an attention-based measurement to capture both model and data bias and identify shortcut tokens by exploring both human and neural attention. In a self-distillation framework, we mitigate shortcut learning by dynamically adjusting the distillation temperature according to the detected shortcut tokens and estimated shortcut degree. Additionally, we utilize human attention as a supervisory signal to constrain large language models to pay more attention to relevant tokens. Experimental results on multiple NLP tasks show that our proposed method can effectively identify shortcut tokens, and significantly improve the robustness of large language models on OOD samples, while not undermining the performance on IID data.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P2700"
+       target="_blank">#paper-P2700</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P2700?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Large language models have made remarkable progress on a variety of NLP tasks. However, it has been found that they tend to rely on shortcut features that spuriously correlate with labels for prediction, which weakens their generalization on out-of-distribution samples. In this paper, we propose a human attention guided approach to identifying and mitigating shortcut learning, which encourages the LLM-based target model to learn relevant features. We define an attention-based measurement to capture both model and data bias and identify shortcut tokens by exploring both human and neural attention. In a self-distillation framework, we mitigate shortcut learning by dynamically adjusting the distillation temperature according to the detected shortcut tokens and estimated shortcut degree. Additionally, we utilize human attention as a supervisory signal to constrain large language models to pay more attention to relevant tokens. Experimental results on multiple NLP tasks show that our proposed method can effectively identify shortcut tokens, and significantly improve the robustness of large language models on OOD samples, while not undermining the performance on IID data.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77686/poster_document/3042342c5a128c0656ac86bdc03af604.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77686/poster_document/3042342c5a128c0656ac86bdc03af604.pdf",'#pdf_view');
-    })
-</script>
 
 
 

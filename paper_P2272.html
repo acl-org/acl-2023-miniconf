@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: A Little is Enough: Few-Shot Quality Estimation based Corpus Filtering improves Machine Translation</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77618-a-little-is-enough-few-shot-quality-estimation-based-corpus-filtering-improves-machine-translation">
         Underline
@@ -356,45 +352,73 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Quality Estimation (QE) is the task of evaluating the quality of a translation when reference translation is not available. The goal of QE aligns with the task of corpus filtering, where we assign the...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Quality Estimation (QE) is the task of evaluating the quality of a translation when reference translation is not available. The goal of QE aligns with the task of corpus filtering, where we assign the quality score to the sentence pairs present in the pseudo-parallel corpus. We propose a Quality Estimation based Filtering approach to extract high-quality parallel data from the pseudo-parallel corpus. To the best of our knowledge, this is a novel adaptation of QE framework to extracting quality parallel corpus from the pseudo-parallel corpus.. By training with this filtered corpus, we observe an improvement in the Machine Translation (MT) system&#39;s performance by up to 1.8 BLEU points, for English-Marathi, Chinese-English, and Hindi-Bengali language pairs, over the baseline model. The baseline model is the one that is trained on the whole pseudo-parallel corpus. Our Few-shot QE model transfer learned from the English-Marathi QE model and fine-tuned on only 500 Hindi-Bengali training instances, shows an improvement of up to 0.6 BLEU points for Hindi-Bengali language pair, compared to the baseline model. This demonstrates the promise of transfer learning in the setting under discussion. QE systems typically require in the order of (7K-25K) of training data. Our Hindi-Bengali QE is trained on only 500 instances of training that is 1/40th of the normal requirement and achieves comparable performance. All the scripts and datasets utilized in this study will be publicly available.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P2272"
+       target="_blank">#paper-P2272</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P2272?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Quality Estimation (QE) is the task of evaluating the quality of a translation when reference translation is not available. The goal of QE aligns with the task of corpus filtering, where we assign the quality score to the sentence pairs present in the pseudo-parallel corpus. We propose a Quality Estimation based Filtering approach to extract high-quality parallel data from the pseudo-parallel corpus. To the best of our knowledge, this is a novel adaptation of QE framework to extracting quality parallel corpus from the pseudo-parallel corpus.. By training with this filtered corpus, we observe an improvement in the Machine Translation (MT) system&#39;s performance by up to 1.8 BLEU points, for English-Marathi, Chinese-English, and Hindi-Bengali language pairs, over the baseline model. The baseline model is the one that is trained on the whole pseudo-parallel corpus. Our Few-shot QE model transfer learned from the English-Marathi QE model and fine-tuned on only 500 Hindi-Bengali training instances, shows an improvement of up to 0.6 BLEU points for Hindi-Bengali language pair, compared to the baseline model. This demonstrates the promise of transfer learning in the setting under discussion. QE systems typically require in the order of (7K-25K) of training data. Our Hindi-Bengali QE is trained on only 500 instances of training that is 1/40th of the normal requirement and achieves comparable performance. All the scripts and datasets utilized in this study will be publicly available.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77618/poster_document/8277da91b1c2dddf0d124f11dd25942d.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77618/slideshow/08e2810f482dae8baeba3c70a6cff886.pptx" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77618/poster_document/8277da91b1c2dddf0d124f11dd25942d.pdf",'#pdf_view');
-    })
-</script>
 
 
 

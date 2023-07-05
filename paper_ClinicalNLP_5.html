@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Breaking Barriers: Exploring the Diagnostic Potential of Speech Narratives in Hindi for Alzheimer&#39;s Disease</title>
   
@@ -268,12 +270,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -310,28 +306,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Alzheimer&#39;s Disease (AD) is a neurodegenerative disorder that affects cognitive abilities and memory, especially in older adults. One of the challenges of AD is that it can be difficult to diagnose in its early stages. However, recent research has shown that changes in language, including speech decline and difficulty in processing information, can be important indicators of AD and may help with early detection. Hence, the speech narratives of the patients can be useful in diagnosing the early stages of Alzheimer&#39;s disease. While the previous works have presented the potential of using speech narratives to diagnose AD in high-resource languages, this work explores the possibility of using a low-resourced language, i.e., Hindi language, to diagnose AD. In this paper, we present a dataset specifically for analyzing AD in the Hindi language, along with experimental results using various state-of-the-art algorithms to assess the diagnostic potential of speech narratives in Hindi. Our analysis suggests that speech narratives in the Hindi language have the potential to aid in the diagnosis of AD. Our dataset and code are made publicly available at https://github.com/rkritesh210/DementiaBankHindi.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Alzheimer&#39;s Disease (AD) is a neurodegenerative disorder that affects cognitive abilities and memory, especially in older adults. One of the challenges of AD is that it can be difficult to diagnose in
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -347,8 +340,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Alzheimer&#39;s Disease (AD) is a neurodegenerative disorder that affects cognitive abilities and memory, especially in older adults. One of the challenges of AD is that it can be difficult to diagnose in its early stages. However, recent research has shown that changes in language, including speech decline and difficulty in processing information, can be important indicators of AD and may help with early detection. Hence, the speech narratives of the patients can be useful in diagnosing the early stages of Alzheimer&#39;s disease. While the previous works have presented the potential of using speech narratives to diagnose AD in high-resource languages, this work explores the possibility of using a low-resourced language, i.e., Hindi language, to diagnose AD. In this paper, we present a dataset specifically for analyzing AD in the Hindi language, along with experimental results using various state-of-the-art algorithms to assess the diagnostic potential of speech narratives in Hindi. Our analysis suggests that speech narratives in the Hindi language have the potential to aid in the diagnosis of AD. Our dataset and code are made publicly available at https://github.com/rkritesh210/DementiaBankHindi.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

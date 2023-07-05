@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: A Transfer Learning Pipeline for Educational Resource Discovery with Application in Survey Generation</title>
   
@@ -292,12 +294,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -334,28 +330,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Effective human learning depends on a wide selection of educational materials that align with the learner&#39;s current understanding of the topic. While the Internet has revolutionized human learning or education, a substantial resource accessibility barrier still exists. Namely, the excess of online information can make it challenging to navigate and discover high-quality learning materials in a given subject area. In this paper, we propose an automatic pipeline for building an educational resource discovery system for new domains. The pipeline consists of three main steps: resource searching, feature extraction, and resource classification. We first collect frequent queries from a set of seed documents, and search the web with these queries to obtain candidate resources such as lecture slides and introductory blog posts. Then, we process these resources for BERT-based features and meta-features. Next, we train a tree-based classifier to decide whether they are suitable learning materials. The pipeline achieves F1 scores of 0.94 and 0.82 when evaluated on two similar but novel domains. Finally, we demonstrate how this pipeline can benefit two applications: prerequisite chain learning and leading paragraph generation for surveys. We also release a corpus of 39,728 manually labeled web resources and 659 queries from NLP, Computer Vision (CV), and Statistics (STATS).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Effective human learning depends on a wide selection of educational materials that align with the learner&#39;s current understanding of the topic. While the Internet has revolutionized human learning or 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -371,8 +364,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Effective human learning depends on a wide selection of educational materials that align with the learner&#39;s current understanding of the topic. While the Internet has revolutionized human learning or education, a substantial resource accessibility barrier still exists. Namely, the excess of online information can make it challenging to navigate and discover high-quality learning materials in a given subject area. In this paper, we propose an automatic pipeline for building an educational resource discovery system for new domains. The pipeline consists of three main steps: resource searching, feature extraction, and resource classification. We first collect frequent queries from a set of seed documents, and search the web with these queries to obtain candidate resources such as lecture slides and introductory blog posts. Then, we process these resources for BERT-based features and meta-features. Next, we train a tree-based classifier to decide whether they are suitable learning materials. The pipeline achieves F1 scores of 0.94 and 0.82 when evaluated on two similar but novel domains. Finally, we demonstrate how this pipeline can benefit two applications: prerequisite chain learning and leading paragraph generation for surveys. We also release a corpus of 39,728 manually labeled web resources and 659 queries from NLP, Computer Vision (CV), and Statistics (STATS).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

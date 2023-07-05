@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: UnedMediaBiasTeam @ SemEval-2023 Task 3: Can We Detect Persuasive Techniques Transferring Knowledge From Media Bias Detection?</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        How similar is the detection of media bias to the detection of persuasive techniques? We have explored how transferring knowledge from one task to the other may help to improve the performance. This paper presents the systems developed for participating in the SemEval-2023 Task 3: Detecting the Genre, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup. We have participated in both the subtask 1: News Genre Categorisation, and the subtask 3: Persuasion Techniques Detection. Our solutions are based on two-stage fine-tuned multilingual models. We evaluated our approach on the 9 languages provided in the task. Our results show that the use of transfer learning from media bias detection to persuasion techniques detection is beneficial for the subtask of detecting the genre (macro F1-score of 0.523 in the English test set) as it improves previous results, but not for the detection of persuasive techniques (micro F1-score of 0.24 in the English test set).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          How similar is the detection of media bias to the detection of persuasive techniques? We have explored how transferring knowledge from one task to the other may help to improve the performance. This p
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            How similar is the detection of media bias to the detection of persuasive techniques? We have explored how transferring knowledge from one task to the other may help to improve the performance. This paper presents the systems developed for participating in the SemEval-2023 Task 3: Detecting the Genre, the Framing, and the Persuasion Techniques in Online News in a Multi-lingual Setup. We have participated in both the subtask 1: News Genre Categorisation, and the subtask 3: Persuasion Techniques Detection. Our solutions are based on two-stage fine-tuned multilingual models. We evaluated our approach on the 9 languages provided in the task. Our results show that the use of transfer learning from media bias detection to persuasion techniques detection is beneficial for the subtask of detecting the genre (macro F1-score of 0.523 in the English test set) as it improves previous results, but not for the detection of persuasive techniques (micro F1-score of 0.24 in the English test set).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

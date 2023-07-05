@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Denoising Bottleneck with Mutual Information Maximization for Video Multimodal Fusion</title>
   
@@ -283,12 +285,6 @@ The code for this paper will be publicly available at https://github.com/WSXRHFG
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15298/lecture/76907-denoising-bottleneck-with-mutual-information-maximization-for-video-multimodal-fusion">
         Underline
@@ -391,37 +387,30 @@ The code for this paper will be publicly available at https://github.com/WSXRHFG
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Video multimodal fusion aims to integrate multimodal signals in videos, such as visual, audio and text, to make a complementary prediction with multiple modalities contents.
-However, unlike other image-text multimodal tasks, video has longer multimodal sequences with more redundancy and noise in both visual and audio modalities.
-Prior denoising methods like forget gate are coarse in the granularity of noise filtering. 
-They often suppress the redundant and noisy information at the risk of losing critical information.
-Therefore, we propose a denoising bottleneck fusion (DBF) model for fine-grained video multimodal fusion. 
-On the one hand, we employ a bottleneck mechanism to filter out noise and redundancy with a restrained receptive field. 
-On the other hand, we use a mutual information maximization module to regulate the filter-out module to preserve key information within different modalities.
-Our DBF model achieves significant improvement over current state-of-the-art baselines on multiple benchmarks covering multimodal sentiment analysis and multimodal summarization tasks. 
-It proves that our model can effectively capture salient features from noisy and redundant video, audio, and text inputs.
-The code for this paper will be publicly available at https://github.com/WSXRHFG/DBF
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Video multimodal fusion aims to integrate multimodal signals in videos, such as visual, audio and text, to make a complementary prediction with multiple modalities contents.
+However, unlike other imag...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -437,27 +426,36 @@ The code for this paper will be publicly available at https://github.com/WSXRHFG
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Video multimodal fusion aims to integrate multimodal signals in videos, such as visual, audio and text, to make a complementary prediction with multiple modalities contents.
+However, unlike other image-text multimodal tasks, video has longer multimodal sequences with more redundancy and noise in both visual and audio modalities.
+Prior denoising methods like forget gate are coarse in the granularity of noise filtering. 
+They often suppress the redundant and noisy information at the risk of losing critical information.
+Therefore, we propose a denoising bottleneck fusion (DBF) model for fine-grained video multimodal fusion. 
+On the one hand, we employ a bottleneck mechanism to filter out noise and redundancy with a restrained receptive field. 
+On the other hand, we use a mutual information maximization module to regulate the filter-out module to preserve key information within different modalities.
+Our DBF model achieves significant improvement over current state-of-the-art baselines on multiple benchmarks covering multimodal sentiment analysis and multimodal summarization tasks. 
+It proves that our model can effectively capture salient features from noisy and redundant video, audio, and text inputs.
+The code for this paper will be publicly available at https://github.com/WSXRHFG/DBF
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76907/poster_document/2fbc134814bfc446d9361630afa0e4ab.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76907/poster_document/2fbc134814bfc446d9361630afa0e4ab.pdf",'#pdf_view');
-    })
-</script>
 
 
 

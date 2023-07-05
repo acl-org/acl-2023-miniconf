@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Stephen Colbert at SemEval-2023 Task 5: Using Markup for Classifying Clickbait</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        For SemEval-2023 Task 5, we have submitted three DeBERTaV3[LARGE] models to tackle the first subtask, classifying spoiler types (passage, phrase, multi) of clickbait web articles. The choice of basic parameters like sequence length with BERT[BASE] uncased and further approaches were then tested with DeBERTaV3[BASE] only moving the most promising ones to DeBERTaV3[LARGE]. Our research showed that information-placement on webpages is often optimized regarding e.g. ad-placement Those informations are usually described within the webpages markup which is why we conducted an approach that takes this into account. Overall we could not manage to beat the baseline, which we lead down to three reasons: First we only crawled markup for Huffington Post articles, extracting only \textless{}p\textgreater{}- and \textless{}a\textgreater{}-tags which will not cover enough aspects of a webpages design. Second Huffington Post articles are overrepresented in the given dataset, which, third, shows an imbalance towards the spoiler tags.We highly suggest re-annotating the given dataset to use markup-optimized models like MarkupLM or TIE and to clear it from embedded articles like &#34;Yahoo&#34; or archives like &#34;archive.is&#34; or &#34;web.archive&#34; to avoid noise. Also, the imbalance should be tackled by adding articles from sources other than Huffington Post, considering that also multi-tagged entries should be balanced towards passage- and phrase-tagged ones.\textbackslash{}end\{abstract\}
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          For SemEval-2023 Task 5, we have submitted three DeBERTaV3[LARGE] models to tackle the first subtask, classifying spoiler types (passage, phrase, multi) of clickbait web articles. The choice of basic 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            For SemEval-2023 Task 5, we have submitted three DeBERTaV3[LARGE] models to tackle the first subtask, classifying spoiler types (passage, phrase, multi) of clickbait web articles. The choice of basic parameters like sequence length with BERT[BASE] uncased and further approaches were then tested with DeBERTaV3[BASE] only moving the most promising ones to DeBERTaV3[LARGE]. Our research showed that information-placement on webpages is often optimized regarding e.g. ad-placement Those informations are usually described within the webpages markup which is why we conducted an approach that takes this into account. Overall we could not manage to beat the baseline, which we lead down to three reasons: First we only crawled markup for Huffington Post articles, extracting only \textless{}p\textgreater{}- and \textless{}a\textgreater{}-tags which will not cover enough aspects of a webpages design. Second Huffington Post articles are overrepresented in the given dataset, which, third, shows an imbalance towards the spoiler tags.We highly suggest re-annotating the given dataset to use markup-optimized models like MarkupLM or TIE and to clear it from embedded articles like &#34;Yahoo&#34; or archives like &#34;archive.is&#34; or &#34;web.archive&#34; to avoid noise. Also, the imbalance should be tackled by adding articles from sources other than Huffington Post, considering that also multi-tagged entries should be balanced towards passage- and phrase-tagged ones.\textbackslash{}end\{abstract\}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

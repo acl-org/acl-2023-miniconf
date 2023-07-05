@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: With Prejudice to None: A Few-Shot, Multilingual Transfer Learning Approach to Detect Social Bias in Low Resource Languages</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77896-with-prejudice-to-none-a-few-shot-multilingual-transfer-learning-approach-to-detect-social-bias-in-low-resource-languages">
         Underline
@@ -358,26 +354,64 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, we describe our work on social bias detection in a low-resource multilingual setting in which the languages are from two very divergent families- Indo-European (English, Hindi, and Ital...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, we describe our work on social bias detection in a low-resource multilingual setting in which the languages are from two very divergent families- Indo-European (English, Hindi, and Italian) and Altaic (Korean). Currently, the majority of the social bias datasets available are in English and this inhibits progress on social bias detection in low-resource languages. To address this problem, we introduce a new dataset for social bias detection in Hindi and investigate multilingual transfer learning using publicly available English, Italian, and Korean datasets. The Hindi dataset contains ~ 9k social media posts annotated for (i) binary bias labels (bias/neutral), (ii) binary labels for sentiment (positive/negative), (iii) target groups for each bias category, and (iv) rationale for annotated bias labels (a short piece of text). We benchmark our Hindi dataset using different multilingual models, with XLM-R achieving the best performance of 80.8 macro-F1 score. Our results show that the detection of social biases in resource-constrained languages such as Hindi and Korean may be improved with the use of a similar dataset in English. We also show that translating all datasets into English does not work effectively for detecting social bias, since the nuances of source language are lost in translation. All the scripts and datasets utilized in this study will be publicly available.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P4032"
+       target="_blank">#paper-P4032</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P4032?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, we describe our work on social bias detection in a low-resource multilingual setting in which the languages are from two very divergent families- Indo-European (English, Hindi, and Italian) and Altaic (Korean). Currently, the majority of the social bias datasets available are in English and this inhibits progress on social bias detection in low-resource languages. To address this problem, we introduce a new dataset for social bias detection in Hindi and investigate multilingual transfer learning using publicly available English, Italian, and Korean datasets. The Hindi dataset contains ~ 9k social media posts annotated for (i) binary bias labels (bias/neutral), (ii) binary labels for sentiment (positive/negative), (iii) target groups for each bias category, and (iv) rationale for annotated bias labels (a short piece of text). We benchmark our Hindi dataset using different multilingual models, with XLM-R achieving the best performance of 80.8 macro-F1 score. Our results show that the detection of social biases in resource-constrained languages such as Hindi and Korean may be improved with the use of a similar dataset in English. We also show that translating all datasets into English does not work effectively for detecting social bias, since the nuances of source language are lost in translation. All the scripts and datasets utilized in this study will be publicly available.
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77896/slideshow/0fa6f10bc16078d3c64374d76452074b.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
-
-
 
 
 

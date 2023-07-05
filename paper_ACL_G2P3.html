@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: A future for universal grapheme-phoneme transduction modeling with neuralized finite-state transducers</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We propose a universal grapheme-phoneme transduction model using neuralized finite-state transducers.  Many computational models of grapheme-phoneme transduction nowadays are based on the (autoregressive) sequence-to-sequence string transduction paradigm. While such models have achieved state-of-the-art performance, they suffer from theoretical limitations of autoregressive models. On the other hand, neuralized finite-state transducers (NFSTs) have shown promising results on various string transduction tasks. NFSTs can be seen as a generalization of weighted finite-state transducers (WFSTs), and can be seen as pairs of a featurized finite-state machine (‘marked finite-state transducer’ or MFST in NFST terminology), and a string scoring function. Instead of taking a product of local contextual feature weights on FST arcs, NFSTs can employ arbitrary scoring functions to weight global contextual features of a string transduction, and therefore break the Markov property. Furthermore, NFSTs can be formally shown to be more expressive than (autoregressive) seq2seq models. Empirically, joint grapheme-phoneme transduction NFSTs have consistently outperformed vanilla seq2seq models on grapheme-tophoneme and phoneme-to-grapheme transduction tasks for English. Furthermore, they provide interpretable aligned string transductions, thanks to their finite-state machine component. In this talk, we propose a multilingual extension of the joint grapheme-phoneme NFST. We achieve this goal by modeling typological and phylogenetic features of languages and scripts as optional latent variables using a finite-state machine. The result is a versatile graphemephoneme transduction model: in addition to standard monolingual and multilingual transduction, the proposed multilingual NFST can also be used in various controlled generation scenarios, such as phoneme-to-grapheme transduction of an unseen language-script pair. We also plan to release an NFST software package.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We propose a universal grapheme-phoneme transduction model using neuralized finite-state transducers.  Many computational models of grapheme-phoneme transduction nowadays are based on the (autoregress
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We propose a universal grapheme-phoneme transduction model using neuralized finite-state transducers.  Many computational models of grapheme-phoneme transduction nowadays are based on the (autoregressive) sequence-to-sequence string transduction paradigm. While such models have achieved state-of-the-art performance, they suffer from theoretical limitations of autoregressive models. On the other hand, neuralized finite-state transducers (NFSTs) have shown promising results on various string transduction tasks. NFSTs can be seen as a generalization of weighted finite-state transducers (WFSTs), and can be seen as pairs of a featurized finite-state machine (‘marked finite-state transducer’ or MFST in NFST terminology), and a string scoring function. Instead of taking a product of local contextual feature weights on FST arcs, NFSTs can employ arbitrary scoring functions to weight global contextual features of a string transduction, and therefore break the Markov property. Furthermore, NFSTs can be formally shown to be more expressive than (autoregressive) seq2seq models. Empirically, joint grapheme-phoneme transduction NFSTs have consistently outperformed vanilla seq2seq models on grapheme-tophoneme and phoneme-to-grapheme transduction tasks for English. Furthermore, they provide interpretable aligned string transductions, thanks to their finite-state machine component. In this talk, we propose a multilingual extension of the joint grapheme-phoneme NFST. We achieve this goal by modeling typological and phylogenetic features of languages and scripts as optional latent variables using a finite-state machine. The result is a versatile graphemephoneme transduction model: in addition to standard monolingual and multilingual transduction, the proposed multilingual NFST can also be used in various controlled generation scenarios, such as phoneme-to-grapheme transduction of an unseen language-script pair. We also plan to release an NFST software package.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

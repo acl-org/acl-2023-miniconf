@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: A Multi-modal Debiasing Model with Dynamical Constraint for Robust Visual Question Answering</title>
   
@@ -275,12 +277,6 @@ Although efforts have been devoted to easing the negative bias effect brought by
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77789-a-multi-modal-debiasing-model-with-dynamical-constraint-for-robust-visual-question-answering">
         Underline
@@ -383,46 +379,66 @@ Although efforts have been devoted to easing the negative bias effect brought by
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Recent studies have pointed out that many well-developed Visual Question Answering (VQA) systems suffer from bias problem. Despite the remarkable performance gained on In-Distribution (ID) datasets,  ...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Recent studies have pointed out that many well-developed Visual Question Answering (VQA) systems suffer from bias problem. Despite the remarkable performance gained on In-Distribution (ID) datasets,  the VQA model might merely capture the superficial correlation from question to answer rather than showing real reasoning abilities. Therefore, when switching to Out-of-Distribution (OOD) dataset, whose test distribution is unknown or even reversed with the training set, significant drops might be demonstrated.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P3397"
+       target="_blank">#paper-P3397</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P3397?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Recent studies have pointed out that many well-developed Visual Question Answering (VQA) systems suffer from bias problem. Despite the remarkable performance gained on In-Distribution (ID) datasets,  the VQA model might merely capture the superficial correlation from question to answer rather than showing real reasoning abilities. Therefore, when switching to Out-of-Distribution (OOD) dataset, whose test distribution is unknown or even reversed with the training set, significant drops might be demonstrated.
 Although efforts have been devoted to easing the negative bias effect brought by language prior and analysing its  inherent cause, they are still limited by the following two aspects. First, most current debiasing methods achieve promising OOD generalization ability with a major sacrifice of the ID performance. Second, existing researches are restricted by exploiting comprehensive biases, since weakening the language bias is mainly focused, while only a few works consider vision bias. In this paper, we investigate a straightforward way to mitigate bias problem for VQA task. Specifically, we reduce bias effect by subtracting bias score from standard VQA base score. Based on such a direct strategy, we design two bias learning branches to detect more bias information, which are combined with a dynamical constraint loss to alleviate the problem of over-correction and insufficient debiasing effect. We evaluate our method on the challenging VQA v2.0 and VQA-CP V2,0 datasets and the proposed method achievessignificant improvement.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77789/poster_document/0fc008b5e1c801805f67426d364ec12d.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77789/poster_document/0fc008b5e1c801805f67426d364ec12d.pdf",'#pdf_view');
-    })
-</script>
 
 
 

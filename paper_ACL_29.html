@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Cross-Platform and Cross-Domain Abusive Language Detection with Supervised Contrastive Learning</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The prevalence of abusive language on different online platforms has been a major concern that raises the need for automated cross-platform abusive language detection. However, prior works focus on concatenating data from multiple platforms, inherently adopting Empirical Risk Minimization (ERM) method. In this work, we address this challenge from the perspective of domain generalization objective. We design SCL-Fish, a supervised contrastive learning integrated meta-learning algorithm to detect abusive language on unseen platforms. Our experimental analysis shows that SCL-Fish achieves better performance over ERM and the existing state-of-the-art models. We also show that SCL-Fish is data-efficient and achieves comparable performance with the large-scale pre-trained models upon finetuning for the abusive language detection task.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The prevalence of abusive language on different online platforms has been a major concern that raises the need for automated cross-platform abusive language detection. However, prior works focus on co
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The prevalence of abusive language on different online platforms has been a major concern that raises the need for automated cross-platform abusive language detection. However, prior works focus on concatenating data from multiple platforms, inherently adopting Empirical Risk Minimization (ERM) method. In this work, we address this challenge from the perspective of domain generalization objective. We design SCL-Fish, a supervised contrastive learning integrated meta-learning algorithm to detect abusive language on unseen platforms. Our experimental analysis shows that SCL-Fish achieves better performance over ERM and the existing state-of-the-art models. We also show that SCL-Fish is data-efficient and achieves comparable performance with the large-scale pre-trained models upon finetuning for the abusive language detection task.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

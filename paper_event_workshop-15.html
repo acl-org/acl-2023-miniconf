@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: W15: The 3rd Workshop on Trustworthy NLP (TrustNLP)</title>
   
@@ -233,12 +235,6 @@ For more details visit our workshop website: https://trustnlpworkshop.github.io/
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -333,29 +329,25 @@ For more details visit our workshop website: https://trustnlpworkshop.github.io/
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Recent advances in Natural Language Processing, and the emergence of pretrained Large Language Models (LLM) specifically, have made NLP systems omnipresent in various aspects of our everyday life. In addition to traditional examples such as personal voice assistants, recommender systems, etc, more recent developments include content-generation models such as ChatGPT, text-to-image models (Dall-E), and so on. While these emergent technologies have an unquestionable potential to power various innovative NLP and AI applications, they also pose a number of challenges in terms of their safe and ethical use. To address such challenges, NLP researchers have formulated various objectives, e.g., intended to make models more fair, safe, and privacy-preserving. However, these objectives are often considered separately, which is a major limitation since it is often important to understand the interplay and/or tension between them. For instance, meeting a fairness objective might require access to users’ demographic information, which creates tension with privacy objectives. The goal of this workshop is to move toward a more comprehensive notion of Trustworthy NLP, by bringing together researchers working on those distinct yet related topics, as well as their intersection.&lt;br&gt;
-For more details visit our workshop website: https://trustnlpworkshop.github.io/
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -371,8 +363,23 @@ For more details visit our workshop website: https://trustnlpworkshop.github.io/
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Recent advances in Natural Language Processing, and the emergence of pretrained Large Language Models (LLM) specifically, have made NLP systems omnipresent in various aspects of our everyday life. In addition to traditional examples such as personal voice assistants, recommender systems, etc, more recent developments include content-generation models such as ChatGPT, text-to-image models (Dall-E), and so on. While these emergent technologies have an unquestionable potential to power various innovative NLP and AI applications, they also pose a number of challenges in terms of their safe and ethical use. To address such challenges, NLP researchers have formulated various objectives, e.g., intended to make models more fair, safe, and privacy-preserving. However, these objectives are often considered separately, which is a major limitation since it is often important to understand the interplay and/or tension between them. For instance, meeting a fairness objective might require access to users’ demographic information, which creates tension with privacy objectives. The goal of this workshop is to move toward a more comprehensive notion of Trustworthy NLP, by bringing together researchers working on those distinct yet related topics, as well as their intersection.&lt;br&gt;
+For more details visit our workshop website: https://trustnlpworkshop.github.io/
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Learning from a Friend: Improving Event Extraction via Self-Training with Feedback from Abstract Meaning Representation</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77391-learning-from-a-friend-improving-event-extraction-via-self-training-with-feedback-from-abstract-meaning-representation">
         Underline
@@ -362,45 +358,73 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Data scarcity has been the main factor that hinders the progress of event extraction. To overcome this issue, we propose a Self-Training with Feedback (STF) framework that leverages the large-scale un...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Data scarcity has been the main factor that hinders the progress of event extraction. To overcome this issue, we propose a Self-Training with Feedback (STF) framework that leverages the large-scale unlabeled data and acquires feedback for each new event prediction from the unlabeled data by comparing it to the Abstract Meaning Representation (AMR) graph of the same sentence. Specifically, STF consists of (1) a base event extraction model trained on existing event annotations and then applied to large-scale unlabeled corpora to predict new event mentions as pseudo training samples, and (2) a novel scoring model that takes in each new predicted event trigger, an argument, its argument role, as well as their paths in the AMR graph to estimate a compatibility score indicating the correctness of the pseudo label. The compatibility scores further act as feedback to encourage or discourage the model learning on the pseudo labels during self-training. Experimental results on three benchmark datasets, including ACE05-E, ACE05-E+, and ERE, demonstrate the effectiveness of the STF framework on event extraction, especially event argument extraction, with significant performance gain over the base event extraction models and strong baselines. Our experimental analysis further shows that STF is a generic framework as it can be applied to improve most, if not all, event extraction models by leveraging large-scale unlabeled data, even when high-quality AMR graph annotations are not available.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P982"
+       target="_blank">#paper-P982</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P982?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Data scarcity has been the main factor that hinders the progress of event extraction. To overcome this issue, we propose a Self-Training with Feedback (STF) framework that leverages the large-scale unlabeled data and acquires feedback for each new event prediction from the unlabeled data by comparing it to the Abstract Meaning Representation (AMR) graph of the same sentence. Specifically, STF consists of (1) a base event extraction model trained on existing event annotations and then applied to large-scale unlabeled corpora to predict new event mentions as pseudo training samples, and (2) a novel scoring model that takes in each new predicted event trigger, an argument, its argument role, as well as their paths in the AMR graph to estimate a compatibility score indicating the correctness of the pseudo label. The compatibility scores further act as feedback to encourage or discourage the model learning on the pseudo labels during self-training. Experimental results on three benchmark datasets, including ACE05-E, ACE05-E+, and ERE, demonstrate the effectiveness of the STF framework on event extraction, especially event argument extraction, with significant performance gain over the base event extraction models and strong baselines. Our experimental analysis further shows that STF is a generic framework as it can be applied to improve most, if not all, event extraction models by leveraging large-scale unlabeled data, even when high-quality AMR graph annotations are not available.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77391/poster_document/8e5da14920b93258ca05e3643cba1749.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77391/slideshow/e183986d0ccd1588e1ef84809bb4177c.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77391/poster_document/8e5da14920b93258ca05e3643cba1749.pdf",'#pdf_view');
-    })
-</script>
 
 
 

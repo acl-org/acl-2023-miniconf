@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Disentangling Disagreements on Offensiveness: A Cross-Cultural Study</title>
   
@@ -257,12 +259,6 @@ We summarize the findings from a cross-cultural study of offensiveness annotatio
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -299,29 +295,25 @@ We summarize the findings from a cross-cultural study of offensiveness annotatio
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        What is deemed offensive depends inherently on the socio-cultural contexts within which those assessments are made. However, the subjective nature of this task is often overlooked in traditional NLP studies. While there has been recent work on socio-demographic correlates of offensiveness, the contribution of socio-cultural factors to perceiving offensiveness, when considered as a moral judgement, across the globe is still under-explored. 
-We summarize the findings from a cross-cultural study of offensiveness annotations by 4295 participants from 21 different countries across 8 geo-cultural regions. Our results show that (1) perceptions of offensiveness vary significantly across geo-cultural regions, despite controlling for gender, age, and socio-economic status, and (2) these differences are significantly mediated by annotators&#39; individual moral concerns that vary across cultures.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          What is deemed offensive depends inherently on the socio-cultural contexts within which those assessments are made. However, the subjective nature of this task is often overlooked in traditional NLP s
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -337,8 +329,23 @@ We summarize the findings from a cross-cultural study of offensiveness annotatio
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            What is deemed offensive depends inherently on the socio-cultural contexts within which those assessments are made. However, the subjective nature of this task is often overlooked in traditional NLP studies. While there has been recent work on socio-demographic correlates of offensiveness, the contribution of socio-cultural factors to perceiving offensiveness, when considered as a moral judgement, across the globe is still under-explored. 
+We summarize the findings from a cross-cultural study of offensiveness annotations by 4295 participants from 21 different countries across 8 geo-cultural regions. Our results show that (1) perceptions of offensiveness vary significantly across geo-cultural regions, despite controlling for gender, age, and socio-economic status, and (2) these differences are significantly mediated by annotators&#39; individual moral concerns that vary across cultures.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

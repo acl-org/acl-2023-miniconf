@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Hierarchical Prompting Assists Large Language Model on Web Navigation</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Prompting has been utilized to exploit large language models (LLM) for sequential planning tasks within interactive settings. In this paper, we propose a novel prompting approach, Actor-Summarizer-Hierarchical prompting, for interactive web navigation. Diverging from previous prompting approaches that always put the full state (eg a web page) to the prompt, we propose to first construct an action-aware state which is more condensed and relevant with a dedicated summarizer prompt. The resulting state is concatenated to the summarized history and fed to an actor prompt to predict the next action. This hierarchical mechanism is especially useful since the full state of a step in web navigation often contains redundant and irrelevant information. Our approach outperforms the previous state-of-the-art prompting mechanism with the same LLM by 6.2\% on task success rate, demonstrating its potential on interactive decision making tasks with long observation traces.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Prompting has been utilized to exploit large language models (LLM) for sequential planning tasks within interactive settings. In this paper, we propose a novel prompting approach, Actor-Summarizer-Hie
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Prompting has been utilized to exploit large language models (LLM) for sequential planning tasks within interactive settings. In this paper, we propose a novel prompting approach, Actor-Summarizer-Hierarchical prompting, for interactive web navigation. Diverging from previous prompting approaches that always put the full state (eg a web page) to the prompt, we propose to first construct an action-aware state which is more condensed and relevant with a dedicated summarizer prompt. The resulting state is concatenated to the summarized history and fed to an actor prompt to predict the next action. This hierarchical mechanism is especially useful since the full state of a step in web navigation often contains redundant and irrelevant information. Our approach outperforms the previous state-of-the-art prompting mechanism with the same LLM by 6.2\% on task success rate, demonstrating its potential on interactive decision making tasks with long observation traces.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

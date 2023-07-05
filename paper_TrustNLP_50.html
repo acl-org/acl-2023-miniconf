@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Keeping Up with the Language Models: Robustness-Bias Interplay in NLI Data and Models</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Auditing unwanted social bias in language models (LMs) is inherently hard due to the multi-disciplinary nature of the work. In addition, the rapid evolution of LMs can make benchmarks irrelevant in no time. Bias auditing is further complicated by LM brittleness: when a presumably biased outcome is observed, is it due to model bias or model brittleness?We propose enlisting the models themselves to help construct bias auditing datasets that remain challenging, and introduce bias measures that distinguish between types of model errors. First, we extend an existing bias benchmark for NLI (BBNLI) using a combination of LM-generated lexical variations, adversarial filtering, and human validation.We demonstrate that the newly created dataset (BBNLI-next) is more challenging than BBNLI: on average, BBNLI-next reduces the accuracy of state-of-the-art NLI models from 95.3\%, as observed by BBNLI, to 58.6\%.Second, we employ BBNLI-next to showcase the interplay between robustness and bias, and the subtlety in differentiating between the two. Third, we point out shortcomings in current bias scores used in the literature and propose bias measures that take into account pro-/anti-stereotype bias and model brittleness.  We will publicly release the BBNLI-next dataset to inspire research on rapidly expanding benchmarks to keep up with model evolution, along with research on the robustness-bias interplay in bias auditing.Note: This paper contains offensive text examples.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Auditing unwanted social bias in language models (LMs) is inherently hard due to the multi-disciplinary nature of the work. In addition, the rapid evolution of LMs can make benchmarks irrelevant in no
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Auditing unwanted social bias in language models (LMs) is inherently hard due to the multi-disciplinary nature of the work. In addition, the rapid evolution of LMs can make benchmarks irrelevant in no time. Bias auditing is further complicated by LM brittleness: when a presumably biased outcome is observed, is it due to model bias or model brittleness?We propose enlisting the models themselves to help construct bias auditing datasets that remain challenging, and introduce bias measures that distinguish between types of model errors. First, we extend an existing bias benchmark for NLI (BBNLI) using a combination of LM-generated lexical variations, adversarial filtering, and human validation.We demonstrate that the newly created dataset (BBNLI-next) is more challenging than BBNLI: on average, BBNLI-next reduces the accuracy of state-of-the-art NLI models from 95.3\%, as observed by BBNLI, to 58.6\%.Second, we employ BBNLI-next to showcase the interplay between robustness and bias, and the subtlety in differentiating between the two. Third, we point out shortcomings in current bias scores used in the literature and propose bias measures that take into account pro-/anti-stereotype bias and model brittleness.  We will publicly release the BBNLI-next dataset to inspire research on rapidly expanding benchmarks to keep up with model evolution, along with research on the robustness-bias interplay in bias auditing.Note: This paper contains offensive text examples.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

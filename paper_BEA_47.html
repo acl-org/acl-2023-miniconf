@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Recognizing Learner Handwriting Retaining Orthographic Errors for Enabling Fine-Grained Error Feedback</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper addresses the problem of providing automatic feedback on orthographic errors in handwritten text. Despite the availability of automatic error detection systems, the practical problem of digitizing the handwriting remains. Current handwriting recognition (HWR) systems produce highly accurate transcriptions but normalize away the very errors that are essential for providing useful feedback, e.g. orthographic errors. Our contribution is twofold:First, we create a comprehensive dataset of handwritten text with transcripts retaining orthographic errors by transcribing 1,350 pages from the German learner dataset FD-LEX. Second, we train a simple HWR system on our dataset, allowing it to transcribe words with orthographic errors.Thereby, we evaluate the effect of different dictionaries on recognition output, highlighting the importance of addressing spelling errors in these dictionaries.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper addresses the problem of providing automatic feedback on orthographic errors in handwritten text. Despite the availability of automatic error detection systems, the practical problem of dig
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper addresses the problem of providing automatic feedback on orthographic errors in handwritten text. Despite the availability of automatic error detection systems, the practical problem of digitizing the handwriting remains. Current handwriting recognition (HWR) systems produce highly accurate transcriptions but normalize away the very errors that are essential for providing useful feedback, e.g. orthographic errors. Our contribution is twofold:First, we create a comprehensive dataset of handwritten text with transcripts retaining orthographic errors by transcribing 1,350 pages from the German learner dataset FD-LEX. Second, we train a simple HWR system on our dataset, allowing it to transcribe words with orthographic errors.Thereby, we evaluate the effect of different dictionaries on recognition output, highlighting the importance of addressing spelling errors in these dictionaries.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

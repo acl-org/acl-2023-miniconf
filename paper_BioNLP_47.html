@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: BIOptimus: Pre-training an Optimal Biomedical Language Model with Curriculum Learning for Named Entity Recognition</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Using language models (LMs) pre-trained in a self-supervised setting on large corpora and then fine-tuning for a downstream task has helped to deal with the problem of limited label data for supervised learning tasks such as Named Entity Recognition (NER). Recent research in biomedical language processing has offered a number of biomedical LMs pre-trained using different methods and techniques that advance results on many BioNLP tasks, including NER. However, there is still a lack of a comprehensive comparison of pre-training approaches that would work more optimally in the biomedical domain. This paper aims to investigate different pre-training methods, such as pre-training the biomedical LM from scratch and pre-training it in a continued fashion. We compare existing methods with our proposed pre-training method of initializing weights for new tokens by distilling existing weights from the BERT model inside the context where the tokens were found. The method helps to speed up the pre-training stage and improve performance on NER. In addition, we compare how masking rate, corruption strategy, and masking strategies impact the performance of the biomedical LM. Finally, using the insights from our experiments, we introduce a new biomedical LM (BIOptimus), which is pre-trained using Curriculum Learning (CL) and contextualized weight distillation method. Our model sets new states of the art on several biomedical Named Entity Recognition (NER) tasks. We release our code and all pre-trained models.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Using language models (LMs) pre-trained in a self-supervised setting on large corpora and then fine-tuning for a downstream task has helped to deal with the problem of limited label data for supervise
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Using language models (LMs) pre-trained in a self-supervised setting on large corpora and then fine-tuning for a downstream task has helped to deal with the problem of limited label data for supervised learning tasks such as Named Entity Recognition (NER). Recent research in biomedical language processing has offered a number of biomedical LMs pre-trained using different methods and techniques that advance results on many BioNLP tasks, including NER. However, there is still a lack of a comprehensive comparison of pre-training approaches that would work more optimally in the biomedical domain. This paper aims to investigate different pre-training methods, such as pre-training the biomedical LM from scratch and pre-training it in a continued fashion. We compare existing methods with our proposed pre-training method of initializing weights for new tokens by distilling existing weights from the BERT model inside the context where the tokens were found. The method helps to speed up the pre-training stage and improve performance on NER. In addition, we compare how masking rate, corruption strategy, and masking strategies impact the performance of the biomedical LM. Finally, using the insights from our experiments, we introduce a new biomedical LM (BIOptimus), which is pre-trained using Curriculum Learning (CL) and contextualized weight distillation method. Our model sets new states of the art on several biomedical Named Entity Recognition (NER) tasks. We release our code and all pre-trained models.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

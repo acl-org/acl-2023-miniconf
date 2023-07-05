@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: W13: The 22nd Workshop on Biomedical Natural Language Processing and Shared Tasks (BioNLP-ST)</title>
   
@@ -235,12 +237,6 @@ BioNLP 2023 will be particularly interested in language processing that supports
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -335,31 +331,25 @@ BioNLP 2023 will be particularly interested in language processing that supports
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        ### [Program](https://aclweb.org/aclwiki/BioNLP_Workshop#BioNLP_2023:_Program)
-The BioNLP workshop associated with the ACL SIGBIOMED special interest group has established itself as the primary venue for presenting foundational research in language processing for the biological and medical domains. The workshop is running every year since 2002 and continues getting stronger. BioNLP welcomes and encourages work on languages other than English, and inclusion and diversity. BioNLP truly encompasses the breadth of the domain and brings together researchers in bio- and clinical NLP from all over the world. The workshop will continue presenting work on a broad and interesting range of topics in NLP. The interest to biomedical language has broadened significantly due to the COVID-19 pandemic and continues to grow: as access to information becomes easier and more people generate and access health-related text, it becomes clearer that only language technologies can enable and support adequate use of the biomedical text.
-
-BioNLP 2023 will be particularly interested in language processing that supports DEIA (Diversity, Equity, Inclusion and Accessibility). The work on detection and mitigation of bias and misinformation continues to be of interest. Research in languages other than English, particularly, under-represented languages, and health disparities are always of interest to BioNLP.&lt;br&gt;For more details visit our workshop website: https://aclweb.org/aclwiki/BioNLP_Workshop
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -375,8 +365,25 @@ BioNLP 2023 will be particularly interested in language processing that supports
     </div>
 </div>
 
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            ### [Program](https://aclweb.org/aclwiki/BioNLP_Workshop#BioNLP_2023:_Program)
+The BioNLP workshop associated with the ACL SIGBIOMED special interest group has established itself as the primary venue for presenting foundational research in language processing for the biological and medical domains. The workshop is running every year since 2002 and continues getting stronger. BioNLP welcomes and encourages work on languages other than English, and inclusion and diversity. BioNLP truly encompasses the breadth of the domain and brings together researchers in bio- and clinical NLP from all over the world. The workshop will continue presenting work on a broad and interesting range of topics in NLP. The interest to biomedical language has broadened significantly due to the COVID-19 pandemic and continues to grow: as access to information becomes easier and more people generate and access health-related text, it becomes clearer that only language technologies can enable and support adequate use of the biomedical text.
 
-
+BioNLP 2023 will be particularly interested in language processing that supports DEIA (Diversity, Equity, Inclusion and Accessibility). The work on detection and mitigation of bias and misinformation continues to be of interest. Research in languages other than English, particularly, under-represented languages, and health disparities are always of interest to BioNLP.&lt;br&gt;For more details visit our workshop website: https://aclweb.org/aclwiki/BioNLP_Workshop
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

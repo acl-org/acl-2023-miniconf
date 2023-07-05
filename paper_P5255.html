@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Predicting Numerals in Text Using Nearest Neighbor Language Models</title>
   
@@ -251,12 +253,6 @@ Our results reveal that using only the embeddings of mask tokens for numerals in
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/78067-predicting-numerals-in-text-using-nearest-neighbor-language-models">
         Underline
@@ -359,20 +355,53 @@ Our results reveal that using only the embeddings of mask tokens for numerals in
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Commonsense about quantitative properties is essential for a deep understanding of texts containing numerals.
+However, naive language models (LMs) treat numerals as string tokens; therefore, they lack...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Commonsense about quantitative properties is essential for a deep understanding of texts containing numerals.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P5255"
+       target="_blank">#paper-P5255</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P5255?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Commonsense about quantitative properties is essential for a deep understanding of texts containing numerals.
 However, naive language models (LMs) treat numerals as string tokens; therefore, they lack an understanding of the magnitudes of numerals, resulting in a difficulty in acquiring the commonsense.
 In this study, we apply the $k$-nearest neighbor LM ($k$NN-LM) to the masked numeral prediction (MNP) task, which measures the quantitative commonsense of LMs.
 $k$NN-LM extends pre-trained neural LMs with the $k$-nearest neighbor ($k$NN) search.
@@ -380,31 +409,19 @@ Since it can utilize patterns that appear in the datastore for prediction, we ex
 Through experiments, we verified that the retrieval-based method is effective for fine-grained predictions of numerals from context, especially for the OOV numerals.
 We also compared two different context spans for context representations to improve the accuracy of $k$NN search by using only the words that are closely related to the masked numeral: the mask and its surrounding words, and the mask and its subsequent words.
 Our results reveal that using only the embeddings of mask tokens for numerals in $k$NN search is the most effective approach for realizing MNP tasks.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/78067/poster_document/41fd5b675c90c3fe71b0a8e9d69a9310.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/78067/poster_document/41fd5b675c90c3fe71b0a8e9d69a9310.pdf",'#pdf_view');
-    })
-</script>
 
 
 

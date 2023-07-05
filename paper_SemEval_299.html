@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: HausaNLP at SemEval-2023 Task 10: Transfer Learning, Synthetic Data and Side-information for Multi-level Sexism Classification</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -316,28 +312,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We present the findings of our participation in the SemEval-2023 Task 10: Explainable Detection of Online Sexism (EDOS) task, a shared task on offensive language (sexism) detection on English Gab and Reddit dataset. We investigated the effects of transferring two language models: XLM-T (sentiment classification) and HateBERT (same domain - Reddit) for multilevel classification into Sexist or not Sexist, and other subsequent sub-classifications of the sexist data. We also use synthetic classification of unlabelled dataset and intermediary class information to maximize the performance of our models. We submitted a system in Task A, and it ranked 49th with F1-score of 0.82. This result showed to be competitive as it only under-performed the best system by 0.052\%F1-score.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We present the findings of our participation in the SemEval-2023 Task 10: Explainable Detection of Online Sexism (EDOS) task, a shared task on offensive language (sexism) detection on English Gab and 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -353,8 +346,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We present the findings of our participation in the SemEval-2023 Task 10: Explainable Detection of Online Sexism (EDOS) task, a shared task on offensive language (sexism) detection on English Gab and Reddit dataset. We investigated the effects of transferring two language models: XLM-T (sentiment classification) and HateBERT (same domain - Reddit) for multilevel classification into Sexist or not Sexist, and other subsequent sub-classifications of the sexist data. We also use synthetic classification of unlabelled dataset and intermediary class information to maximize the performance of our models. We submitted a system in Task A, and it ranked 49th with F1-score of 0.82. This result showed to be competitive as it only under-performed the best system by 0.052\%F1-score.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Instruction Tuning for Few-Shot Aspect-Based Sentiment Analysis</title>
   
@@ -307,12 +309,6 @@ proposed multi-task prompting approach brings performance boost
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -349,43 +345,27 @@ proposed multi-task prompting approach brings performance boost
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Aspect-based Sentiment Analysis (ABSA) is a fine-grained sentiment 
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Aspect-based Sentiment Analysis (ABSA) is a fine-grained sentiment 
 analysis task which involves four elements from user-generated texts:
-aspect term, aspect category, opinion term, and sentiment polarity. 
-Most computational approaches focus on some of the ABSA sub-tasks
-such as tuple (aspect term, sentiment polarity) or triplet (aspect term, 
-opinion term, sentiment polarity) extraction using either pipeline or 
-joint modeling approaches. Recently, generative approaches have 
-been proposed to extract all four elements as (one or more) quadruplets
-from text as a single task. In this work, we take a step further and 
-propose a unified framework for solving ABSA, and the associated sub-tasks
-to improve the performance in few-shot scenarios. To this end, we fine-tune 
-a T5 model with instructional prompts in a multi-task learning fashion covering 
-all the sub-tasks, as well as the entire quadruple prediction task. In 
-experiments with multiple benchmark datasets, we show that the 
-proposed multi-task prompting approach brings performance boost 
-(by absolute 8.29 F1) in the few-shot learning setting.
-      </div>
-    </div>
+aspect term, aspect category, opinion term, and sentiment pola
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -401,8 +381,37 @@ proposed multi-task prompting approach brings performance boost
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Aspect-based Sentiment Analysis (ABSA) is a fine-grained sentiment 
+analysis task which involves four elements from user-generated texts:
+aspect term, aspect category, opinion term, and sentiment polarity. 
+Most computational approaches focus on some of the ABSA sub-tasks
+such as tuple (aspect term, sentiment polarity) or triplet (aspect term, 
+opinion term, sentiment polarity) extraction using either pipeline or 
+joint modeling approaches. Recently, generative approaches have 
+been proposed to extract all four elements as (one or more) quadruplets
+from text as a single task. In this work, we take a step further and 
+propose a unified framework for solving ABSA, and the associated sub-tasks
+to improve the performance in few-shot scenarios. To this end, we fine-tune 
+a T5 model with instructional prompts in a multi-task learning fashion covering 
+all the sub-tasks, as well as the entire quadruple prediction task. In 
+experiments with multiple benchmark datasets, we show that the 
+proposed multi-task prompting approach brings performance boost 
+(by absolute 8.29 F1) in the few-shot learning setting.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

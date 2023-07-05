@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Reviewriter: AI-Generated Instructions For Peer Review Writing</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Large Language Models (LLMs) offer novel opportunities for educational applications that have the potential to transform traditional learning for students. Despite AI-enhanced applications having the potential to provide personalized learning experiences, more studies are needed on the design of generative AI systems and evidence for using them in real educational settings. In this paper, we design, implement and evaluate \textbackslash{}texttt\{Reviewriter\}, a novel tool to provide students with AI-generated instructions for writing peer reviews in German. Our study identifies three key aspects: a) we provide insights into student needs when writing peer reviews with generative models which we then use to develop a novel system to provide adaptive instructions b) we fine-tune three German language models on a selected corpus of 11,925 student-written peer review texts in German and choose German-GPT2 based on quantitative measures and human evaluation, and c) we evaluate our tool with fourteen students, revealing positive technology acceptance based on quantitative measures. Additionally, the qualitative feedback presents the benefits and limitations of generative AI in peer review writing.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Large Language Models (LLMs) offer novel opportunities for educational applications that have the potential to transform traditional learning for students. Despite AI-enhanced applications having the 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Large Language Models (LLMs) offer novel opportunities for educational applications that have the potential to transform traditional learning for students. Despite AI-enhanced applications having the potential to provide personalized learning experiences, more studies are needed on the design of generative AI systems and evidence for using them in real educational settings. In this paper, we design, implement and evaluate \textbackslash{}texttt\{Reviewriter\}, a novel tool to provide students with AI-generated instructions for writing peer reviews in German. Our study identifies three key aspects: a) we provide insights into student needs when writing peer reviews with generative models which we then use to develop a novel system to provide adaptive instructions b) we fine-tune three German language models on a selected corpus of 11,925 student-written peer review texts in German and choose German-GPT2 based on quantitative measures and human evaluation, and c) we evaluate our tool with fourteen students, revealing positive technology acceptance based on quantitative measures. Additionally, the qualitative feedback presents the benefits and limitations of generative AI in peer review writing.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

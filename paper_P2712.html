@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: A Simple Yet Strong Domain-Agnostic De-bias Method for Zero-Shot Sentiment Classification</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77688-a-simple-yet-strong-domain-agnostic-de-bias-method-for-zero-shot-sentiment-classification">
         Underline
@@ -422,26 +418,64 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Zero-shot prompt-based learning has made much progress in sentiment analysis, and considerable effort has been dedicated to designing high-performing prompt templates. However, two problems exist; Fir...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Zero-shot prompt-based learning has made much progress in sentiment analysis, and considerable effort has been dedicated to designing high-performing prompt templates. However, two problems exist; First, large language models are often biased to their pre-training data, leading to poor performance in prompt templates that models have rarely seen. Second, in order to adapt to different domains, re-designing prompt templates is usually required, which is time-consuming and inefficient. To remedy both shortcomings, we propose a simple yet strong data construction method to de-bias a given prompt template, yielding a large performance improvement in sentiment analysis tasks across different domains, pre-trained language models, and prompt templates. Also, we demonstrate the advantage of using domain-agnostic generic responses over the in-domain ground-truth data.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P2712"
+       target="_blank">#paper-P2712</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P2712?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Zero-shot prompt-based learning has made much progress in sentiment analysis, and considerable effort has been dedicated to designing high-performing prompt templates. However, two problems exist; First, large language models are often biased to their pre-training data, leading to poor performance in prompt templates that models have rarely seen. Second, in order to adapt to different domains, re-designing prompt templates is usually required, which is time-consuming and inefficient. To remedy both shortcomings, we propose a simple yet strong data construction method to de-bias a given prompt template, yielding a large performance improvement in sentiment analysis tasks across different domains, pre-trained language models, and prompt templates. Also, we demonstrate the advantage of using domain-agnostic generic responses over the in-domain ground-truth data.
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77688/slideshow/5bba6f6cea840ac1b29925765b08e8d8.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
-
-
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: TAM of SCNU at SemEval-2023 Task 1: FCLL: A Fine-grained Contrastive Language-Image Learning Model for Cross-language Visual Word Sense Disambiguation</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Visual Word Sense Disambiguation (WSD), as a fine-grained image-text retrieval task, aims to identify the images that are relevant to ambiguous target words or phrases. However, the difficulties of limited contextual information and cross-linguistic background knowledge in text processing make this task challenging. To alleviate this issue, we propose a Fine-grained Contrastive Language-Image Learning (FCLL) model, which learns fine-grained image-text knowledge by employing a new fine-grained contrastive learning mechanism and enriches contextual information by establishing relationship between concepts and sentences. In addition, a new multimodal-multilingual knowledge base involving ambiguous target words is constructed for visual WSD. Experiment results on the benchmark datasets from SemEval-2023 Task 1 show that our FCLL ranks at the first in overall evaluation with an average H@1 of 72.56\% and an average MRR of 82.22\%. The results demonstrate that FCLL is effective in inference on fine-grained language-vision knowledge. Source codes and the knowledge base are publicly available at https://github.com/CharlesYang030/FCLL.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Visual Word Sense Disambiguation (WSD), as a fine-grained image-text retrieval task, aims to identify the images that are relevant to ambiguous target words or phrases. However, the difficulties of li
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Visual Word Sense Disambiguation (WSD), as a fine-grained image-text retrieval task, aims to identify the images that are relevant to ambiguous target words or phrases. However, the difficulties of limited contextual information and cross-linguistic background knowledge in text processing make this task challenging. To alleviate this issue, we propose a Fine-grained Contrastive Language-Image Learning (FCLL) model, which learns fine-grained image-text knowledge by employing a new fine-grained contrastive learning mechanism and enriches contextual information by establishing relationship between concepts and sentences. In addition, a new multimodal-multilingual knowledge base involving ambiguous target words is constructed for visual WSD. Experiment results on the benchmark datasets from SemEval-2023 Task 1 show that our FCLL ranks at the first in overall evaluation with an average H@1 of 72.56\% and an average MRR of 82.22\%. The results demonstrate that FCLL is effective in inference on fine-grained language-vision knowledge. Source codes and the knowledge base are publicly available at https://github.com/CharlesYang030/FCLL.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

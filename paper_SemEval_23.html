@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: LRL_NC at SemEval-2023 Task 6: Sequential Sentence Classification for Legal Documents Using Topic Modeling Features</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Natural Language Processing techniques can be leveraged to process legal proceedings for various downstream applications, such as sum- marization of a given judgement, prediction of the judgement for a given legal case, prece- dent search, among others. These applications will benefit from legal judgement documents already segmented into topically coherent units. The current task, namely, Rhetorical Role Pre- diction, aims at categorising each sentence in the sequence of sentences in a judgement document into different labels. The system proposed in this work combines topic mod- eling and RoBERTa to encode sentences in each document. A BiLSTM layer has been utilised to get contextualised sentence repre- sentations. The Rhetorical Role predictions for each sentence in each document are gen- erated by a final CRF layer of the proposed neuro-computing system. This system secured the rank 12 in the official task ranking, achiev- ing the micro-F1 score 0.7980. The code for the proposed systems has been made available at https://github.com/KushagriT/SemEval23\_ LegalEval\_TeamLRL\_NC
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Natural Language Processing techniques can be leveraged to process legal proceedings for various downstream applications, such as sum- marization of a given judgement, prediction of the judgement for 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Natural Language Processing techniques can be leveraged to process legal proceedings for various downstream applications, such as sum- marization of a given judgement, prediction of the judgement for a given legal case, prece- dent search, among others. These applications will benefit from legal judgement documents already segmented into topically coherent units. The current task, namely, Rhetorical Role Pre- diction, aims at categorising each sentence in the sequence of sentences in a judgement document into different labels. The system proposed in this work combines topic mod- eling and RoBERTa to encode sentences in each document. A BiLSTM layer has been utilised to get contextualised sentence repre- sentations. The Rhetorical Role predictions for each sentence in each document are gen- erated by a final CRF layer of the proposed neuro-computing system. This system secured the rank 12 in the official task ranking, achiev- ing the micro-F1 score 0.7980. The code for the proposed systems has been made available at https://github.com/KushagriT/SemEval23\_ LegalEval\_TeamLRL\_NC
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

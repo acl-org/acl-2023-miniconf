@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: NITS_Legal at SemEval-2023 Task 6: Rhetorical Roles Prediction of Indian Legal Documents via Sentence Sequence Labeling Approach</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Legal documents are notorious for their complexity and domain-specific language, making them challenging for legal practitioners as well as non-experts to comprehend. To address this issue, the LegalEval 2023 track proposed several shared tasks, including the task of Rhetorical Roles Prediction (Task A). We participated as NITS\_Legal team in Task A and conducted exploratory experiments to improve our understanding of the task. Our results suggest that sequence context is crucial in performing rhetorical roles prediction. Given the lengthy nature of legal documents, we propose a BiLSTM-based sentence sequence labeling approach that uses a local context-incorporated dataset created from the original dataset. To better represent the sentences during training, we extract legal domain-specific sentence embeddings from a Legal BERT model. Our experimental findings emphasize the importance of considering local context instead of treating each sentence independently to achieve better performance in this task. Our approach has the potential to improve the accessibility and usability of legal documents.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Legal documents are notorious for their complexity and domain-specific language, making them challenging for legal practitioners as well as non-experts to comprehend. To address this issue, the LegalE
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Legal documents are notorious for their complexity and domain-specific language, making them challenging for legal practitioners as well as non-experts to comprehend. To address this issue, the LegalEval 2023 track proposed several shared tasks, including the task of Rhetorical Roles Prediction (Task A). We participated as NITS\_Legal team in Task A and conducted exploratory experiments to improve our understanding of the task. Our results suggest that sequence context is crucial in performing rhetorical roles prediction. Given the lengthy nature of legal documents, we propose a BiLSTM-based sentence sequence labeling approach that uses a local context-incorporated dataset created from the original dataset. To better represent the sentences during training, we extract legal domain-specific sentence embeddings from a Legal BERT model. Our experimental findings emphasize the importance of considering local context instead of treating each sentence independently to achieve better performance in this task. Our approach has the potential to improve the accessibility and usability of legal documents.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

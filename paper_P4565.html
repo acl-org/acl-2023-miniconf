@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: ELQA: A Corpus of Metalinguistic Questions and Answers about English</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15227/lecture/77045-elqa-a-corpus-of-metalinguistic-questions-and-answers-about-english">
         Underline
@@ -364,28 +360,29 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We present ELQA, a corpus of questions and answers in and about the English language. Collected from two online forums, the &gt;70k questions (from English learners and others) cover wide-ranging topics including grammar, meaning, fluency, and etymology. The answers include descriptions of general properties of English vocabulary and grammar as well as explanations about specific (correct and incorrect) usage examples. Unlike most NLP datasets, this corpus is metalinguistic---it consists of language about language. As such, it can facilitate investigations of the metalinguistic capabilities of NLU models, as well as educational applications in the language learning domain. To study this, we define a free-form question answering task on our dataset and conduct evaluations on multiple LLMs (Large Language Models) to analyze their capacity to generate metalinguistic answers.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We present ELQA, a corpus of questions and answers in and about the English language. Collected from two online forums, the &gt;70k questions (from English learners and others) cover wide-ranging topics ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -401,27 +398,27 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We present ELQA, a corpus of questions and answers in and about the English language. Collected from two online forums, the &gt;70k questions (from English learners and others) cover wide-ranging topics including grammar, meaning, fluency, and etymology. The answers include descriptions of general properties of English vocabulary and grammar as well as explanations about specific (correct and incorrect) usage examples. Unlike most NLP datasets, this corpus is metalinguistic---it consists of language about language. As such, it can facilitate investigations of the metalinguistic capabilities of NLU models, as well as educational applications in the language learning domain. To study this, we define a free-form question answering task on our dataset and conduct evaluations on multiple LLMs (Large Language Models) to analyze their capacity to generate metalinguistic answers.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77045/poster_document/54efb9c8792cdba6380675ebe57e72d9.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77045/poster_document/54efb9c8792cdba6380675ebe57e72d9.pdf",'#pdf_view');
-    })
-</script>
 
 
 

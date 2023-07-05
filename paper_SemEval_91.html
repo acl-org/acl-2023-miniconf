@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: UMUTeam at SemEval-2023 Task 10: Fine-grained detection of sexism in English</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this manuscript, we describe the participation of UMUTeam in the Explainable Detection of Online Sexism shared task proposed at SemEval 2023. This task concerns the precise and explainable detection of sexist content on Gab and Reddit, i.e., developing detailed classifiers that not only identify what is sexist, but also explain why it is sexism. Our participation in the three EDOS subtasks is based on extending new unlabeled sexism data in the Masked Language Model task of a pre-trained model, such as RoBERTa-large to improve its generalization capacity and its performance on classification tasks. Once the model has been pre-trained with the new data, fine-tuning of this model is performed for different specific sexism classification tasks. Our system has achieved excellent results in this competitive task, reaching top 24 (84) in Task A, top 23 (69) in Task B, and top 13 (63) in Task C.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this manuscript, we describe the participation of UMUTeam in the Explainable Detection of Online Sexism shared task proposed at SemEval 2023. This task concerns the precise and explainable detectio
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this manuscript, we describe the participation of UMUTeam in the Explainable Detection of Online Sexism shared task proposed at SemEval 2023. This task concerns the precise and explainable detection of sexist content on Gab and Reddit, i.e., developing detailed classifiers that not only identify what is sexist, but also explain why it is sexism. Our participation in the three EDOS subtasks is based on extending new unlabeled sexism data in the Masked Language Model task of a pre-trained model, such as RoBERTa-large to improve its generalization capacity and its performance on classification tasks. Once the model has been pre-trained with the new data, fine-tuning of this model is performed for different specific sexism classification tasks. Our system has achieved excellent results in this competitive task, reaching top 24 (84) in Task A, top 23 (69) in Task B, and top 13 (63) in Task C.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Are You Copying My Model? Protecting the Copyright of Large Language Models for EaaS via Backdoor Watermark</title>
   
@@ -300,12 +302,6 @@ Our code is available at https://github.com/yjw1029/EmbMarker." />
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15279/lecture/76459-are-you-copying-my-modelquestion-protecting-the-copyright-of-large-language-models-for-eaas-via-backdoor-watermark">
         Underline
@@ -412,36 +408,34 @@ Our code is available at https://github.com/yjw1029/EmbMarker." />
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Large language models (LLMs) have demonstrated powerful capabilities in both text understanding and generation. 
-Companies have begun to offer Embedding as a Service (EaaS) based on these LLMs, which can benefit various natural language processing (NLP) tasks for customers. 
-However, previous studies have shown that EaaS is vulnerable to model extraction attacks, which can cause significant losses for the owners of LLMs, as training these models is extremely expensive. 
-To protect the copyright of LLMs for EaaS, we propose an Embedding Watermark method called \{pasted macro `METHOD&#39;\} that implants backdoors on embeddings. 
-Our method selects a group of moderate-frequency words from a general text corpus to form a trigger set, then selects a target embedding as the watermark, and inserts it into the embeddings of texts containing trigger words as the backdoor. 
-The weight of insertion is proportional to the number of trigger words included in the text. 
-This allows the watermark backdoor to be effectively transferred to EaaS-stealer&#39;s model for copyright verification while minimizing the adverse impact on the original embeddings&#39; utility. 
-Our extensive experiments on various datasets show that our method can effectively protect the copyright of EaaS models without compromising service quality.
-Our code is available at https://github.com/yjw1029/EmbMarker.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Large language models (LLMs) have demonstrated powerful capabilities in both text understanding and generation. 
+Companies have begun to offer Embedding as a Service (EaaS) based on these LLMs, which ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -457,27 +451,39 @@ Our code is available at https://github.com/yjw1029/EmbMarker.
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Large language models (LLMs) have demonstrated powerful capabilities in both text understanding and generation. 
+Companies have begun to offer Embedding as a Service (EaaS) based on these LLMs, which can benefit various natural language processing (NLP) tasks for customers. 
+However, previous studies have shown that EaaS is vulnerable to model extraction attacks, which can cause significant losses for the owners of LLMs, as training these models is extremely expensive. 
+To protect the copyright of LLMs for EaaS, we propose an Embedding Watermark method called \{pasted macro `METHOD&#39;\} that implants backdoors on embeddings. 
+Our method selects a group of moderate-frequency words from a general text corpus to form a trigger set, then selects a target embedding as the watermark, and inserts it into the embeddings of texts containing trigger words as the backdoor. 
+The weight of insertion is proportional to the number of trigger words included in the text. 
+This allows the watermark backdoor to be effectively transferred to EaaS-stealer&#39;s model for copyright verification while minimizing the adverse impact on the original embeddings&#39; utility. 
+Our extensive experiments on various datasets show that our method can effectively protect the copyright of EaaS models without compromising service quality.
+Our code is available at https://github.com/yjw1029/EmbMarker.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76459/poster_document/89f48e7d244056d7af7b22d03e647663.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76459/slideshow/cf6f13b92d77231a60a573baf9a3adb0.pptx" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76459/poster_document/89f48e7d244056d7af7b22d03e647663.pdf",'#pdf_view');
-    })
-</script>
 
 
 

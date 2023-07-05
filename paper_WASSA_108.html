@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Converge at WASSA 2023 Empathy, Emotion and Personality Shared Task: A Transformer-based Approach for Multi-Label Emotion Classification</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, we highlight our approach for the &#34;WASSA 2023 Shared-Task 1: Empathy Detection and Emotion Classification&#34;. By accurately identifying emotions from textual sources of data, deep learning models can be trained to understand and interpret human emotions more effectively. The classification of emotions facilitates the creation of more emotionally intelligent systems that can better understand and respond to human emotions. We compared multiple transformer-based models for multi-label classification. Ensembling and oversampling were used to improve the performance of the system. A threshold-based voting mechanism performed on three models (Longformer, BERT, BigBird) yields the highest overall macro F1-score of 0.6605.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, we highlight our approach for the &#34;WASSA 2023 Shared-Task 1: Empathy Detection and Emotion Classification&#34;. By accurately identifying emotions from textual sources of data, deep learnin
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, we highlight our approach for the &#34;WASSA 2023 Shared-Task 1: Empathy Detection and Emotion Classification&#34;. By accurately identifying emotions from textual sources of data, deep learning models can be trained to understand and interpret human emotions more effectively. The classification of emotions facilitates the creation of more emotionally intelligent systems that can better understand and respond to human emotions. We compared multiple transformer-based models for multi-label classification. Ensembling and oversampling were used to improve the performance of the system. A threshold-based voting mechanism performed on three models (Longformer, BERT, BigBird) yields the highest overall macro F1-score of 0.6605.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

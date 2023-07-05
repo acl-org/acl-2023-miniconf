@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Additive manifesto decomposition: A policy domain aware method for understanding party positioning</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Automatic extraction of party (dis)similarities from texts such as party election manifestos or parliamentary speeches plays an increasing role in computational political science. However, existing approaches are fundamentally limited to targeting only global party (dis)similarity: they condense the relationship between a pair of parties into a single figure, their similarity. In aggregating over all policy domains (e.g., health or foreign policy), they do not provide any qualitative insights into which domains parties agree or disagree on. This paper proposes a workflow for estimating policy domain aware party similarity that overcomes this limitation. The workflow covers (a) definition of suitable policy domains; (b) automatic labeling of domains, if no manual labels are available; (c) computation of domain-level similarities and aggregation at a global level; (d) extraction of interpretable party positions on major policy axes via multidimensional scaling. We evaluate our workflow on manifestos from the German federal elections. We find that our method (a) yields high correlation when predicting party similarity at a global level and (b) provides accurate party-specific positions, even with automatically labelled policy domains.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Automatic extraction of party (dis)similarities from texts such as party election manifestos or parliamentary speeches plays an increasing role in computational political science. However, existing ap
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Automatic extraction of party (dis)similarities from texts such as party election manifestos or parliamentary speeches plays an increasing role in computational political science. However, existing approaches are fundamentally limited to targeting only global party (dis)similarity: they condense the relationship between a pair of parties into a single figure, their similarity. In aggregating over all policy domains (e.g., health or foreign policy), they do not provide any qualitative insights into which domains parties agree or disagree on. This paper proposes a workflow for estimating policy domain aware party similarity that overcomes this limitation. The workflow covers (a) definition of suitable policy domains; (b) automatic labeling of domains, if no manual labels are available; (c) computation of domain-level similarities and aggregation at a global level; (d) extraction of interpretable party positions on major policy axes via multidimensional scaling. We evaluate our workflow on manifestos from the German federal elections. We find that our method (a) yields high correlation when predicting party similarity at a global level and (b) provides accurate party-specific positions, even with automatically labelled policy domains.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

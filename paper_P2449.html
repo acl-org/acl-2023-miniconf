@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Two-Stage Fine-Tuning for Improved Bias and Variance for Large Pretrained Language Models</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15237/lecture/76726-two-stage-fine-tuning-for-improved-bias-and-variance-for-large-pretrained-language-models">
         Underline
@@ -370,28 +366,29 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The bias-variance tradeoff is the idea that learning methods need to balance model complexity with data size to minimize both under-fitting and over-fitting. Recent empirical work and theoretical analysis with over-parameterized neural networks challenges the classic bias-variance trade-off notion suggesting that no such trade-off holds: as the width of the network grows, bias monotonically decreases while variance initially increases followed by a decrease. In this work, we first provide a variance decomposition-based justification criteria to examine whether large pretrained neural models in a fine-tuning setting are generalizable enough to have low bias and variance. We then perform theoretical and empirical analysis using ensemble methods explicitly designed to decrease variance due to optimization. This results in essentially a two-stage fine-tuning algorithm that first ratchets down bias and variance iteratively, and then uses a selected fixed-bias model to further reduce variance due to optimization by ensembling. We also analyze the nature of variance change with the ensemble size in low- and high-resource classes. Empirical results show that this two-stage method obtains strong results on SuperGLUE tasks and clinical information extraction tasks. Code and settings are available: https://github.com/christa60/bias-var-fine-tuning-plms.git
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The bias-variance tradeoff is the idea that learning methods need to balance model complexity with data size to minimize both under-fitting and over-fitting. Recent empirical work and theoretical anal...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -407,27 +404,27 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The bias-variance tradeoff is the idea that learning methods need to balance model complexity with data size to minimize both under-fitting and over-fitting. Recent empirical work and theoretical analysis with over-parameterized neural networks challenges the classic bias-variance trade-off notion suggesting that no such trade-off holds: as the width of the network grows, bias monotonically decreases while variance initially increases followed by a decrease. In this work, we first provide a variance decomposition-based justification criteria to examine whether large pretrained neural models in a fine-tuning setting are generalizable enough to have low bias and variance. We then perform theoretical and empirical analysis using ensemble methods explicitly designed to decrease variance due to optimization. This results in essentially a two-stage fine-tuning algorithm that first ratchets down bias and variance iteratively, and then uses a selected fixed-bias model to further reduce variance due to optimization by ensembling. We also analyze the nature of variance change with the ensemble size in low- and high-resource classes. Empirical results show that this two-stage method obtains strong results on SuperGLUE tasks and clinical information extraction tasks. Code and settings are available: https://github.com/christa60/bias-var-fine-tuning-plms.git
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76726/poster_document/a1e2b3616c79c456e82a34d868fde8f2.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76726/poster_document/a1e2b3616c79c456e82a34d868fde8f2.pdf",'#pdf_view');
-    })
-</script>
 
 
 

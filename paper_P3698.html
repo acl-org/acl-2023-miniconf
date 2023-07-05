@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Using counterfactual contrast to improve compositional generalization for multi-step quantitative reasoning</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/76902-using-counterfactual-contrast-to-improve-compositional-generalization-for-multi-step-quantitative-reasoning">
         Underline
@@ -362,28 +358,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In quantitative question answering, compositional generalization is one of the main challenges of state of the art models, especially when longer sequences of reasoning steps are required. In this paper we propose CounterComp, a method that uses counterfactual scenarios to generate samples with compositional contrast. Instead of a data augmentation approach, CounterComp is based on metric learning, which allows for direct sampling from the training set and circumvents the need for additional human labels. Our proposed auxiliary metric learning loss improves the performance of three state of the art models on four recently released datasets. We also show how the approach can improve OOD performance on unseen domains, as well as unseen compositions. Lastly, we demonstrate how the method can lead to better compositional attention patterns during training.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In quantitative question answering, compositional generalization is one of the main challenges of state of the art models, especially when longer sequences of reasoning steps are required. In this pap...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -399,27 +400,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In quantitative question answering, compositional generalization is one of the main challenges of state of the art models, especially when longer sequences of reasoning steps are required. In this paper we propose CounterComp, a method that uses counterfactual scenarios to generate samples with compositional contrast. Instead of a data augmentation approach, CounterComp is based on metric learning, which allows for direct sampling from the training set and circumvents the need for additional human labels. Our proposed auxiliary metric learning loss improves the performance of three state of the art models on four recently released datasets. We also show how the approach can improve OOD performance on unseen domains, as well as unseen compositions. Lastly, we demonstrate how the method can lead to better compositional attention patterns during training.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76902/poster_document/7a2c7cc89965b55a02df84273ceb9514.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76902/slideshow/a32ecacd5b74563cd4606edfeff7703b.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76902/poster_document/7a2c7cc89965b55a02df84273ceb9514.pdf",'#pdf_view');
-    })
-</script>
 
 
 

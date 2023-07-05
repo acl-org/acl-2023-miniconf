@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Let Me Check the Examples: Enhancing Demonstration Learning via Explicit Imitation</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15279/lecture/77083-let-me-check-the-examples-enhancing-demonstration-learning-via-explicit-imitation">
         Underline
@@ -370,28 +366,29 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Demonstration learning aims to guide the prompt prediction by providing answered demonstrations in the few shot settings. Despite achieving promising results, existing work only concatenates the answered examples as demonstrations to the prompt template (including the raw context) without any additional operation, neglecting the prompt-demonstration dependencies. Besides, prior research found that randomly replacing the labels of demonstrations marginally hurts performance, illustrating that the model could not properly learn the knowledge brought by the demonstrations. Inspired by the human learning process, in this paper, we introduce Imitation DEMOnstration learning (Imitation-Demo) to strengthen demonstration learning via explicitly imitating human review behaviour, which includes: (1) contrastive learning mechanism to concentrate on similar demonstrations.(2) demonstration-label re-prediction method to consolidate known knowledge. Experiment results show that our proposed method achieves state-of-the-art performance on 5 out of 14 classification corpus. Further studies also prove that Imitation-Demo strengthens the associations between the prompt and demonstrations, which could provide the basis for exploring how demonstration learning works.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Demonstration learning aims to guide the prompt prediction by providing answered demonstrations in the few shot settings. Despite achieving promising results, existing work only concatenates the answe...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -407,27 +404,27 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Demonstration learning aims to guide the prompt prediction by providing answered demonstrations in the few shot settings. Despite achieving promising results, existing work only concatenates the answered examples as demonstrations to the prompt template (including the raw context) without any additional operation, neglecting the prompt-demonstration dependencies. Besides, prior research found that randomly replacing the labels of demonstrations marginally hurts performance, illustrating that the model could not properly learn the knowledge brought by the demonstrations. Inspired by the human learning process, in this paper, we introduce Imitation DEMOnstration learning (Imitation-Demo) to strengthen demonstration learning via explicitly imitating human review behaviour, which includes: (1) contrastive learning mechanism to concentrate on similar demonstrations.(2) demonstration-label re-prediction method to consolidate known knowledge. Experiment results show that our proposed method achieves state-of-the-art performance on 5 out of 14 classification corpus. Further studies also prove that Imitation-Demo strengthens the associations between the prompt and demonstrations, which could provide the basis for exploring how demonstration learning works.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77083/poster_document/6abd0bf4a2edc37240ea73270f058aa3.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77083/poster_document/6abd0bf4a2edc37240ea73270f058aa3.pdf",'#pdf_view');
-    })
-</script>
 
 
 

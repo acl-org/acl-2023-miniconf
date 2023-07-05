@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Towards L2-friendly pipelines for learner corpora: A case of written production by L2-Korean learners</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We introduce the Korean-Learner-Morpheme (KLM) corpus, a manually annotated dataset consisting of 129,784 morphemes from second language (L2) learners of Korean, featuring morpheme tokenization and part-of-speech (POS) tagging. We evaluate the performance of four Korean morphological analyzers in tokenization and POS tagging on the L2- Korean corpus. Results highlight the analyzers&#39; reduced performance on L2 data, indicating the limitation of advanced deep-learning models when dealing with L2-Korean corpora. We further show that fine-tuning one of the models with the KLM corpus improves its accuracy of tokenization and POS tagging on L2-Korean dataset.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We introduce the Korean-Learner-Morpheme (KLM) corpus, a manually annotated dataset consisting of 129,784 morphemes from second language (L2) learners of Korean, featuring morpheme tokenization and pa
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We introduce the Korean-Learner-Morpheme (KLM) corpus, a manually annotated dataset consisting of 129,784 morphemes from second language (L2) learners of Korean, featuring morpheme tokenization and part-of-speech (POS) tagging. We evaluate the performance of four Korean morphological analyzers in tokenization and POS tagging on the L2- Korean corpus. Results highlight the analyzers&#39; reduced performance on L2 data, indicating the limitation of advanced deep-learning models when dealing with L2-Korean corpora. We further show that fine-tuning one of the models with the KLM corpus improves its accuracy of tokenization and POS tagging on L2-Korean dataset.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

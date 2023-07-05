@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: MLlab4CS at SemEval-2023 Task 2: Named Entity Recognition in Low-resource Language Bangla Using Multilingual Language Models</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Extracting of NERs from low-resource languages and recognizing their types is one of the important tasks in the entity extraction domain. Recently many studies have been conducted in this area of research. In our study, we introduce a system for identifying complex entities and recognizing their types from low-resource language Bangla, which was published in SemEval Task 2 MulitCoNER II 2023. For this sequence labeling task, we use a pre-trained language model built on a natural language processing framework. Our team name in this competition is \textbackslash{}textbf\{MLlab4CS\}. Our model \textbackslash{}textbf\{\textbackslash{}Muril\} produces a macro average F-score of 76.27\textbackslash{}\%, which is a comparable result for this competition.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Extracting of NERs from low-resource languages and recognizing their types is one of the important tasks in the entity extraction domain. Recently many studies have been conducted in this area of rese
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Extracting of NERs from low-resource languages and recognizing their types is one of the important tasks in the entity extraction domain. Recently many studies have been conducted in this area of research. In our study, we introduce a system for identifying complex entities and recognizing their types from low-resource language Bangla, which was published in SemEval Task 2 MulitCoNER II 2023. For this sequence labeling task, we use a pre-trained language model built on a natural language processing framework. Our team name in this competition is \textbackslash{}textbf\{MLlab4CS\}. Our model \textbackslash{}textbf\{\textbackslash{}Muril\} produces a macro average F-score of 76.27\textbackslash{}\%, which is a comparable result for this competition.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

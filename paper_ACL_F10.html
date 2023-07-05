@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: [Findings] The State of Profanity Obfuscation in Natural Language Processing Scientific Publications</title>
   
@@ -246,12 +248,6 @@ We discuss the problems with obfuscation and suggest a multilingual community re
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -288,30 +284,25 @@ We discuss the problems with obfuscation and suggest a multilingual community re
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Work on hate speech has made considering rude and harmful examples in scientific publications inevitable. This situation raises various problems, such as whether or not to obscure profanities. While science must accurately disclose what it does, the unwarranted spread of hate speech can harm readers and increases its internet frequency. While maintaining publications&#39;&#39; professional appearance, obfuscating profanities makes it challenging to evaluate the content, especially for non-native speakers.
-Surveying 150 ACL papers, we discovered that obfuscation is usually used for English but not other languages, and even then, quite unevenly.
-We discuss the problems with obfuscation and suggest a multilingual community resource called PrOf with a Python module to standardize profanity obfuscation processes. We believe PrOf can help scientific publication policies to make hate speech work accessible and comparable, irrespective of language.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Work on hate speech has made considering rude and harmful examples in scientific publications inevitable. This situation raises various problems, such as whether or not to obscure profanities. While s
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -327,8 +318,24 @@ We discuss the problems with obfuscation and suggest a multilingual community re
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Work on hate speech has made considering rude and harmful examples in scientific publications inevitable. This situation raises various problems, such as whether or not to obscure profanities. While science must accurately disclose what it does, the unwarranted spread of hate speech can harm readers and increases its internet frequency. While maintaining publications&#39;&#39; professional appearance, obfuscating profanities makes it challenging to evaluate the content, especially for non-native speakers.
+Surveying 150 ACL papers, we discovered that obfuscation is usually used for English but not other languages, and even then, quite unevenly.
+We discuss the problems with obfuscation and suggest a multilingual community resource called PrOf with a Python module to standardize profanity obfuscation processes. We believe PrOf can help scientific publication policies to make hate speech work accessible and comparable, irrespective of language.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

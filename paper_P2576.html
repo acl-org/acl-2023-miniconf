@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Dual Class Knowledge Propagation Network for Multi-label Few-shot Intent Detection</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/76742-dual-class-knowledge-propagation-network-for-multi-label-few-shot-intent-detection">
         Underline
@@ -368,28 +364,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Multi-label intent detection aims to assign multiple labels to utterances and attracts increasing attention as a practical task in task-oriented dialogue systems. As dialogue domains change rapidly and new intents emerge fast, the lack of annotated data motivates multi-label few-shot intent detection. However, previous studies are confused by the identical representation of the utterance with multiple labels and overlook the intrinsic intra-class and inter-class interactions. To address these two limitations, we propose a novel dual class knowledge propagation network in this paper. In order to learn well-separated representations for utterances with multiple intents, we first introduce a label-semantic augmentation module incorporating class name information. For better consideration of the inherent intra-class and inter-class relations, an instance-level and a class-level graph neural network are constructed, which not only propagate label information but also propagate feature structure. And we use a simple yet effective method to predict the intent count of each utterance. Extensive experimental results on two multi-label intent datasets have demonstrated that our proposed method outperforms strong baselines by a large margin.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Multi-label intent detection aims to assign multiple labels to utterances and attracts increasing attention as a practical task in task-oriented dialogue systems. As dialogue domains change rapidly an...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -405,27 +406,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Multi-label intent detection aims to assign multiple labels to utterances and attracts increasing attention as a practical task in task-oriented dialogue systems. As dialogue domains change rapidly and new intents emerge fast, the lack of annotated data motivates multi-label few-shot intent detection. However, previous studies are confused by the identical representation of the utterance with multiple labels and overlook the intrinsic intra-class and inter-class interactions. To address these two limitations, we propose a novel dual class knowledge propagation network in this paper. In order to learn well-separated representations for utterances with multiple intents, we first introduce a label-semantic augmentation module incorporating class name information. For better consideration of the inherent intra-class and inter-class relations, an instance-level and a class-level graph neural network are constructed, which not only propagate label information but also propagate feature structure. And we use a simple yet effective method to predict the intent count of each utterance. Extensive experimental results on two multi-label intent datasets have demonstrated that our proposed method outperforms strong baselines by a large margin.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76742/poster_document/f6c76cd646b6ac8da251d608a3b34bc8.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76742/slideshow/c328c1ac92cee47cc6cff636cb73f2de.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76742/poster_document/f6c76cd646b6ac8da251d608a3b34bc8.pdf",'#pdf_view');
-    })
-</script>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Few-shot Joint Multimodal Aspect-Sentiment Analysis Based on Generative Multimodal Prompt</title>
   
@@ -281,12 +283,6 @@ Extensive experiments on two datasets demonstrate that our approach outperforms 
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77522-few-shot-joint-multimodal-aspect-sentiment-analysis-based-on-generative-multimodal-prompt">
         Underline
@@ -447,46 +443,66 @@ Extensive experiments on two datasets demonstrate that our approach outperforms 
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We have witnessed the rapid proliferation of multimodal data on numerous social media platforms. Conventional studies typically require massive labeled data to train models for Multimodal Aspect-Based...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We have witnessed the rapid proliferation of multimodal data on numerous social media platforms. Conventional studies typically require massive labeled data to train models for Multimodal Aspect-Based Sentiment Analysis (MABSA). However, collecting and annotating fine-grained multimodal data for MABSA is tough. To alleviate the above issue, we perform three MABSA-related tasks with quite a small number of labeled multimodal samples. We first build diverse and comprehensive multimodal few-shot datasets according to the data distribution. To capture the specific prompt for each aspect term in a few-shot scenario, we propose a novel Generative Multimodal Prompt (GMP) model for MABSA, which includes the Multimodal Encoder module and the N-Stream Decoders module. We further introduce a subtask to predict the number of aspect terms in each instance to construct the multimodal prompt.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P1694"
+       target="_blank">#paper-P1694</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P1694?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We have witnessed the rapid proliferation of multimodal data on numerous social media platforms. Conventional studies typically require massive labeled data to train models for Multimodal Aspect-Based Sentiment Analysis (MABSA). However, collecting and annotating fine-grained multimodal data for MABSA is tough. To alleviate the above issue, we perform three MABSA-related tasks with quite a small number of labeled multimodal samples. We first build diverse and comprehensive multimodal few-shot datasets according to the data distribution. To capture the specific prompt for each aspect term in a few-shot scenario, we propose a novel Generative Multimodal Prompt (GMP) model for MABSA, which includes the Multimodal Encoder module and the N-Stream Decoders module. We further introduce a subtask to predict the number of aspect terms in each instance to construct the multimodal prompt.
 Extensive experiments on two datasets demonstrate that our approach outperforms strong baselines on two MABSA-related tasks in the few-shot setting.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77522/poster_document/5b29e454a0fde66f7da6ed2840288ce1.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77522/poster_document/5b29e454a0fde66f7da6ed2840288ce1.pdf",'#pdf_view');
-    })
-</script>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: On the Compositional Generalization in Versatile Open-domain Dialogue</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77223-on-the-compositional-generalization-in-versatile-open-domain-dialogue">
         Underline
@@ -368,28 +364,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Previous research has demonstrated the potential of multi-task learning to foster a conversational agent&#39;s ability to acquire a variety of skills. However, these approaches either suffer from interference among different datasets (also known as negative transfer), or fail to effectively reuse knowledge and skills learned from other datasets. In contrast to previous works, we develop a sparsely activated modular network: (1) We propose a well-rounded set of operators and instantiate each operator with an independent module; (2) We formulate dialogue generation as the execution of a generated programme which recursively composes and assembles modules. Extensive experiments on 9 datasets verify the efficacy of our methods through automatic evaluation and human evaluation. Notably, our model outperforms state-of-the-art supervised approaches on 4 datasets with only 10\% training data thanks to the modular architecture and multi-task learning.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Previous research has demonstrated the potential of multi-task learning to foster a conversational agent&#39;s ability to acquire a variety of skills. However, these approaches either suffer from interfer...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -405,27 +406,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Previous research has demonstrated the potential of multi-task learning to foster a conversational agent&#39;s ability to acquire a variety of skills. However, these approaches either suffer from interference among different datasets (also known as negative transfer), or fail to effectively reuse knowledge and skills learned from other datasets. In contrast to previous works, we develop a sparsely activated modular network: (1) We propose a well-rounded set of operators and instantiate each operator with an independent module; (2) We formulate dialogue generation as the execution of a generated programme which recursively composes and assembles modules. Extensive experiments on 9 datasets verify the efficacy of our methods through automatic evaluation and human evaluation. Notably, our model outperforms state-of-the-art supervised approaches on 4 datasets with only 10\% training data thanks to the modular architecture and multi-task learning.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77223/poster_document/73155ebf0890a4e74e7637136375da83.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77223/slideshow/6d10ea8c86a95158ccb7a2eebce735b0.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77223/poster_document/73155ebf0890a4e74e7637136375da83.pdf",'#pdf_view');
-    })
-</script>
 
 
 

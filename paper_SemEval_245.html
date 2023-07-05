@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: YNUNLP at SemEval-2023 Task 2: The Pseudo Twin Tower Pre-training Model for Chinese Named Entity Recognition</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper introduces our method in the system for SemEval 2023 Task 2: MultiCoNER II Multilingual Complex Named Entity Recognition, Track 9-Chinese. This task focuses on detecting fine-grained named entities whose data set has a fine-grained taxonomy of 36 NE classes, representing a realistic challenge for NER. In this task, we need to identify entity boundaries and category labels for the six identified categories. We use BERT embedding to represent each character in the original sentence and train CRF-Rdrop to predict named entity categories using the data set provided by the organizer. Our best submission, with a macro average F1 score of 0.5657, ranked 15th out of 22 teams.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper introduces our method in the system for SemEval 2023 Task 2: MultiCoNER II Multilingual Complex Named Entity Recognition, Track 9-Chinese. This task focuses on detecting fine-grained named 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper introduces our method in the system for SemEval 2023 Task 2: MultiCoNER II Multilingual Complex Named Entity Recognition, Track 9-Chinese. This task focuses on detecting fine-grained named entities whose data set has a fine-grained taxonomy of 36 NE classes, representing a realistic challenge for NER. In this task, we need to identify entity boundaries and category labels for the six identified categories. We use BERT embedding to represent each character in the original sentence and train CRF-Rdrop to predict named entity categories using the data set provided by the organizer. Our best submission, with a macro average F1 score of 0.5657, ranked 15th out of 22 teams.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

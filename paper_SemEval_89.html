@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Sartipi-Sedighin at SemEval-2023 Task 2: Fine-grained Named Entity Recognition with Pre-trained Contextual Language Models and Data Augmentation from Wikipedia</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents the system developed by the Sartipi-Sedighin team for SemEval 2023 Task 2, which is a shared task focused on multilingual complex named entity recognition (NER), or MultiCoNER II. The goal of this task is to identify and classify complex named entities (NEs) in text across multiple languages. To tackle the MultiCoNER II task, we leveraged pre-trained language models (PLMs) fine-tuned for each language included in the dataset. In addition, we also applied a data augmentation technique to increase the amount of training data available to our models. Specifically, we searched for relevant NEs that already existed in the training data within Wikipedia, and we added new instances of these entities to our training corpus.Our team achieved an overall F1 score of 61.25\% in the English track and 71.79\% in the multilingual track across all 13 tracks of the shared task that we submitted to.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents the system developed by the Sartipi-Sedighin team for SemEval 2023 Task 2, which is a shared task focused on multilingual complex named entity recognition (NER), or MultiCoNER II. 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents the system developed by the Sartipi-Sedighin team for SemEval 2023 Task 2, which is a shared task focused on multilingual complex named entity recognition (NER), or MultiCoNER II. The goal of this task is to identify and classify complex named entities (NEs) in text across multiple languages. To tackle the MultiCoNER II task, we leveraged pre-trained language models (PLMs) fine-tuned for each language included in the dataset. In addition, we also applied a data augmentation technique to increase the amount of training data available to our models. Specifically, we searched for relevant NEs that already existed in the training data within Wikipedia, and we added new instances of these entities to our training corpus.Our team achieved an overall F1 score of 61.25\% in the English track and 71.79\% in the multilingual track across all 13 tracks of the shared task that we submitted to.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

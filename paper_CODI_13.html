@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Chinese-DiMLex: A Lexicon of Chinese Discourse Connectives</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Machine-readable inventories of discourse connectives that provide information on multiple levels are valuable resources for automated discourse analysis, e.g. discourse parsing, machine translation, text summarization and argumentation mining. While there are already several connective lexicons available for certain languages (such as German, English, French, Czech, Portuguese, Hebrew, and Spanish), currently, there is no such resource available for Chinese, despite it being one of the most widely spoken languages in the world. To address this gap, we developed the Chinese-DimLex, a discourse lexicon for Chinese (Mandarin). It features 137 Chinese connectives () and is augmented with five layers of information, specifically morphological variations, syntactic categories (part-of-speech), semantic relations (PDTB3.0 sense inventory), usage examples, and English translations. Chinese-DimLex is publicly accessible in both XML format and through an easy-to-use web-interface, which enables browsing and searching of the lexicon, as well as comparison of discourse connectives across different languages based on their syntactic and semantic properties. In this extended abstract, we provide an overview of the data and the workflow used to populate the lexicon, followed by discussion of several Chinese-specific considerations and issues that arose during the process. By submitting this abstract, we aim to a) contribute to discourse research and b) receive feedback to promote and expand the lexicon for future work.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Machine-readable inventories of discourse connectives that provide information on multiple levels are valuable resources for automated discourse analysis, e.g. discourse parsing, machine translation, 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Machine-readable inventories of discourse connectives that provide information on multiple levels are valuable resources for automated discourse analysis, e.g. discourse parsing, machine translation, text summarization and argumentation mining. While there are already several connective lexicons available for certain languages (such as German, English, French, Czech, Portuguese, Hebrew, and Spanish), currently, there is no such resource available for Chinese, despite it being one of the most widely spoken languages in the world. To address this gap, we developed the Chinese-DimLex, a discourse lexicon for Chinese (Mandarin). It features 137 Chinese connectives () and is augmented with five layers of information, specifically morphological variations, syntactic categories (part-of-speech), semantic relations (PDTB3.0 sense inventory), usage examples, and English translations. Chinese-DimLex is publicly accessible in both XML format and through an easy-to-use web-interface, which enables browsing and searching of the lexicon, as well as comparison of discourse connectives across different languages based on their syntactic and semantic properties. In this extended abstract, we provide an overview of the data and the workflow used to populate the lexicon, followed by discussion of several Chinese-specific considerations and issues that arose during the process. By submitting this abstract, we aim to a) contribute to discourse research and b) receive feedback to promote and expand the lexicon for future work.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: SUTNLP at SemEval-2023 Task 4: LG-Transformer for Human Value Detection</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        When we interact with other humans, humanvalues guide us to consider the human element.As we shall see, value analysis in NLP hasbeen applied to personality profiling but not toargument mining. As part of SemEval-2023Shared Task 4, our system paper describes amulti-label classifier for identifying human val-ues. Human value detection requires multi-label classification since each argument maycontain multiple values. In this paper, we pro-pose an architecture called Label Graph Trans-former (LG-Transformer). LG-Transformeris a two-stage pipeline consisting of a trans-former jointly encoding argument and labelsand a graph module encoding and obtainingfurther interactions between labels. Using ad-versarial training, we can boost performanceeven further. Our best method scored 50.00 us-ing F1 score on the test set, which is 7.8 higherthan the best baseline method. Our code ispublicly available on Github.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          When we interact with other humans, humanvalues guide us to consider the human element.As we shall see, value analysis in NLP hasbeen applied to personality profiling but not toargument mining. As par
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            When we interact with other humans, humanvalues guide us to consider the human element.As we shall see, value analysis in NLP hasbeen applied to personality profiling but not toargument mining. As part of SemEval-2023Shared Task 4, our system paper describes amulti-label classifier for identifying human val-ues. Human value detection requires multi-label classification since each argument maycontain multiple values. In this paper, we pro-pose an architecture called Label Graph Trans-former (LG-Transformer). LG-Transformeris a two-stage pipeline consisting of a trans-former jointly encoding argument and labelsand a graph module encoding and obtainingfurther interactions between labels. Using ad-versarial training, we can boost performanceeven further. Our best method scored 50.00 us-ing F1 score on the test set, which is 7.8 higherthan the best baseline method. Our code ispublicly available on Github.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

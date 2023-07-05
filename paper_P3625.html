@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Causality-Guided Multi-Memory Interaction Network for Multivariate Stock Price Movement Prediction</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/76892-causality-guided-multi-memory-interaction-network-for-multivariate-stock-price-movement-prediction">
         Underline
@@ -374,28 +370,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Over the past few years, we&#39;ve witnessed an enormous interest in stock price movement prediction using AI techniques. In recent literature, auxiliary data has been used to improve prediction accuracy, such as textual news. When predicting a particular stock, we assume that information from other stocks should also be utilized as auxiliary data to enhance performance. In this paper, we propose the Causality-guided Multi-memory Interaction Network (CMIN), a novel end-to-end deep neural network for stock movement prediction which, for the first time, models the multi-modality between financial text data and causality-enhanced stock correlations to achieve higher prediction accuracy. CMIN transforms the basic attention mechanism into Causal Attention by calculating transfer entropy between multivariate stocks in order to avoid attention on spurious correlations. Furthermore, we introduce a fusion mechanism to model the multi-directional interactions through which CMIN learns not only the self-influence but also the interactive influence in information flows representing the interrelationship between text and stock correlations. The effectiveness of the proposed approach is demonstrated by experiments on three real-world datasets collected from the U.S. and Chinese markets, where CMIN outperforms existing models to establish a new state-of-the-art prediction accuracy.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Over the past few years, we&#39;ve witnessed an enormous interest in stock price movement prediction using AI techniques. In recent literature, auxiliary data has been used to improve prediction accuracy,...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -411,27 +412,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Over the past few years, we&#39;ve witnessed an enormous interest in stock price movement prediction using AI techniques. In recent literature, auxiliary data has been used to improve prediction accuracy, such as textual news. When predicting a particular stock, we assume that information from other stocks should also be utilized as auxiliary data to enhance performance. In this paper, we propose the Causality-guided Multi-memory Interaction Network (CMIN), a novel end-to-end deep neural network for stock movement prediction which, for the first time, models the multi-modality between financial text data and causality-enhanced stock correlations to achieve higher prediction accuracy. CMIN transforms the basic attention mechanism into Causal Attention by calculating transfer entropy between multivariate stocks in order to avoid attention on spurious correlations. Furthermore, we introduce a fusion mechanism to model the multi-directional interactions through which CMIN learns not only the self-influence but also the interactive influence in information flows representing the interrelationship between text and stock correlations. The effectiveness of the proposed approach is demonstrated by experiments on three real-world datasets collected from the U.S. and Chinese markets, where CMIN outperforms existing models to establish a new state-of-the-art prediction accuracy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76892/poster_document/e16923fd9a2d5e5831eadd681180d7bc.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76892/slideshow/a83697585ad71d854f8df7cb589cdf5f.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76892/poster_document/e16923fd9a2d5e5831eadd681180d7bc.pdf",'#pdf_view');
-    })
-</script>
 
 
 

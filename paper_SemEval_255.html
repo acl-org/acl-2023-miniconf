@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Chride at SemEval-2023 Task 10: Fine-tuned Deberta-V3 on Detection of Online Sexism with Hierarchical Loss</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Sexism is one of the most concerning problems in the internet society. By detecting sexist expressions, we can reduce the offense toward females and provide useful information to understand how sexism occurs. Our work focuses on a newly-published dataset, EDOS, which annotates English sexist expressions from Reddit and categorizes their specific types. Our method is to train a DeBERTaV3 classifier with all three kinds of labels provided by the dataset, including sexist, category, and granular vectors. Our classifier predicts the probability distribution on vector labels and further applies it to represent category and sexist distributions. Our classifier uses its label and finer-grained labels for each classification to calculate the hierarchical loss for optimization. Our experiments and analyses show that using a combination of loss with finer-grained labels generally achieves better performance on sexism detection and categorization. Codes for our implementation can be found at https://github.com/KomeijiForce/SemEval2023\_Task10.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Sexism is one of the most concerning problems in the internet society. By detecting sexist expressions, we can reduce the offense toward females and provide useful information to understand how sexism
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Sexism is one of the most concerning problems in the internet society. By detecting sexist expressions, we can reduce the offense toward females and provide useful information to understand how sexism occurs. Our work focuses on a newly-published dataset, EDOS, which annotates English sexist expressions from Reddit and categorizes their specific types. Our method is to train a DeBERTaV3 classifier with all three kinds of labels provided by the dataset, including sexist, category, and granular vectors. Our classifier predicts the probability distribution on vector labels and further applies it to represent category and sexist distributions. Our classifier uses its label and finer-grained labels for each classification to calculate the hierarchical loss for optimization. Our experiments and analyses show that using a combination of loss with finer-grained labels generally achieves better performance on sexism detection and categorization. Codes for our implementation can be found at https://github.com/KomeijiForce/SemEval2023\_Task10.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

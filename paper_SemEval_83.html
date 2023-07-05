@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: JUST_ONE at SemEval-2023 Task 10: Explainable Detection of Online Sexism (EDOS)</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The problem of online sexism, which refers to offensive content targeting women based on their gender or the intersection of their gender with one or more additional identity characteristics, such as race or religion, has become a widespread phenomenon on social media. This can include sexist comments and memes. To address this issue, the SemEval-2023 international workshop introduced the &#34;Explainable Detection of Online Sexism Challenge&#34;, which aims to explain the classifications given by AI models for detecting sexism. In this paper, we present the contributions of our team, JUST\textbackslash{}\_ONE, to all three sub-tasks of the challenge: subtask A, a binary classification task; subtask B, a four-class classification task; and subtask C, a fine-grained classification task. To accomplish this, we utilized pre-trained language models, specifically BERT and RoBERTa from Hugging Face, and a selective ensemble method in task 10 of the SemEval 2023 competition. As a result, our team achieved the following rankings and scores in different tasks: 19th out of 84 with a Macro-F1 score of 0.8538 in task A, 22nd out of 69 with a Macro-F1 score of 0.6417 in task B, and 14th out of 63 with a Macro-F1 score of 0.4774 in task C.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The problem of online sexism, which refers to offensive content targeting women based on their gender or the intersection of their gender with one or more additional identity characteristics, such as 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The problem of online sexism, which refers to offensive content targeting women based on their gender or the intersection of their gender with one or more additional identity characteristics, such as race or religion, has become a widespread phenomenon on social media. This can include sexist comments and memes. To address this issue, the SemEval-2023 international workshop introduced the &#34;Explainable Detection of Online Sexism Challenge&#34;, which aims to explain the classifications given by AI models for detecting sexism. In this paper, we present the contributions of our team, JUST\textbackslash{}\_ONE, to all three sub-tasks of the challenge: subtask A, a binary classification task; subtask B, a four-class classification task; and subtask C, a fine-grained classification task. To accomplish this, we utilized pre-trained language models, specifically BERT and RoBERTa from Hugging Face, and a selective ensemble method in task 10 of the SemEval 2023 competition. As a result, our team achieved the following rankings and scores in different tasks: 19th out of 84 with a Macro-F1 score of 0.8538 in task A, 22nd out of 69 with a Macro-F1 score of 0.6417 in task B, and 14th out of 63 with a Macro-F1 score of 0.4774 in task C.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

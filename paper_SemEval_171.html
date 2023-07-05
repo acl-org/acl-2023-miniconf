@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Brainstormers_msec at SemEval-2023 Task 10: Detection of sexism related comments in social media using deep learning</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Social media is the media through which people share their thoughts and opinions. This has both its pros and cons which depends on the type of information being conveyed. If any information conveyed over social media hurts or affects a person, such information can be removed as it may disturb their mental health and may decrease their self confidence. During the last decade, hateful and sexist content towards women in being increasingly spread on social networks. The exposure to sexist speech has serious consequences to women&#39;s life and limits their freedom of speech. Sexism is expressed in very different forms: it includes subtle stereotypes and attitudes that, although frequently unnoticed, are extremely harmful for both women and society. Sexist comments have a major impact on women being subjected to it. We as a team participated in the shared task Explainable Detection of Online Sexism (EDOS) at SemEval 2023 and have proposed a model which identifies the sexist comments and its type from English social media posts using the data set shared for the task. Different transformer model like BERT , DistilBERT and RoBERT are used by the proposed model for implementing all the three tasks shared by EDOS. On using the BERT model, macro F1 score of 0.8073, 0.5876 and 0.3729 are achieved for Task A, Task B and Task C respectively.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Social media is the media through which people share their thoughts and opinions. This has both its pros and cons which depends on the type of information being conveyed. If any information conveyed o
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Social media is the media through which people share their thoughts and opinions. This has both its pros and cons which depends on the type of information being conveyed. If any information conveyed over social media hurts or affects a person, such information can be removed as it may disturb their mental health and may decrease their self confidence. During the last decade, hateful and sexist content towards women in being increasingly spread on social networks. The exposure to sexist speech has serious consequences to women&#39;s life and limits their freedom of speech. Sexism is expressed in very different forms: it includes subtle stereotypes and attitudes that, although frequently unnoticed, are extremely harmful for both women and society. Sexist comments have a major impact on women being subjected to it. We as a team participated in the shared task Explainable Detection of Online Sexism (EDOS) at SemEval 2023 and have proposed a model which identifies the sexist comments and its type from English social media posts using the data set shared for the task. Different transformer model like BERT , DistilBERT and RoBERT are used by the proposed model for implementing all the three tasks shared by EDOS. On using the BERT model, macro F1 score of 0.8073, 0.5876 and 0.3729 are achieved for Task A, Task B and Task C respectively.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

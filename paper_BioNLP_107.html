@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Team Converge at ProbSum 2023: Abstractive Text Summarization of Patient Progress Notes</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, we elaborate on our approach for the shared task 1A issued by BioNLP Workshop 2023 titled Problem List Summarization. With an increase in the digitization of health records, a need arises for quick and precise summarization of large amounts of records. With the help of summarization, medical professionals can sieve through multiple records in a short span of time without overlooking any crucial point. We use abstractive text summarization for this task and experiment with multiple state-of-the-art models like Pegasus, BART, and T5, along with various pre-processing and data augmentation techniques to generate summaries from patients&#39; progress notes. For this task, the metric used was the ROUGE-L score. From our experiments, we conclude that Pegasus is the best-performing model on the dataset, achieving a ROUGE-L F1 score of 0.2744 on the test dataset (3rd rank on the leaderboard).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, we elaborate on our approach for the shared task 1A issued by BioNLP Workshop 2023 titled Problem List Summarization. With an increase in the digitization of health records, a need aris
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, we elaborate on our approach for the shared task 1A issued by BioNLP Workshop 2023 titled Problem List Summarization. With an increase in the digitization of health records, a need arises for quick and precise summarization of large amounts of records. With the help of summarization, medical professionals can sieve through multiple records in a short span of time without overlooking any crucial point. We use abstractive text summarization for this task and experiment with multiple state-of-the-art models like Pegasus, BART, and T5, along with various pre-processing and data augmentation techniques to generate summaries from patients&#39; progress notes. For this task, the metric used was the ROUGE-L score. From our experiments, we conclude that Pegasus is the best-performing model on the dataset, achieving a ROUGE-L F1 score of 0.2744 on the test dataset (3rd rank on the leaderboard).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Is the ranking of PubMed similar articles good enough? An evaluation of text similarity methods for three datasets</title>
   
@@ -268,12 +270,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -310,28 +306,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The use of seed articles in information retrieval provides many advantages, such as a longercontext and more details about the topic being searched for. Given a seed article (i.e., a PMID), PubMed provides a pre-compiled list of similar articles to support the user in finding equivalent papers in the biomedical literature. We aimed at performing a quantitative evaluation of the PubMed Similar Articles based on three existing biomedical text similarity datasets, namely, RELISH, TREC-COVID, and SMAFIRA-c. Further, we carried out a survey and an evaluation of various text similarity methods on these three datasets. Our experiments considered the original title and abstract from PubMed as well as automatically detected sections and manually annotated relevant sentences. We provide an overview about which methods better performfor each dataset and compare them to the ranking in PubMed similar articles. While resultsvaried considerably among the datasets, we were able to obtain a better performance thanPubMed for all of them. Datasets and source codes are available at: https://github.com/mariananeves/reranking
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The use of seed articles in information retrieval provides many advantages, such as a longercontext and more details about the topic being searched for. Given a seed article (i.e., a PMID), PubMed pro
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -347,8 +340,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The use of seed articles in information retrieval provides many advantages, such as a longercontext and more details about the topic being searched for. Given a seed article (i.e., a PMID), PubMed provides a pre-compiled list of similar articles to support the user in finding equivalent papers in the biomedical literature. We aimed at performing a quantitative evaluation of the PubMed Similar Articles based on three existing biomedical text similarity datasets, namely, RELISH, TREC-COVID, and SMAFIRA-c. Further, we carried out a survey and an evaluation of various text similarity methods on these three datasets. Our experiments considered the original title and abstract from PubMed as well as automatically detected sections and manually annotated relevant sentences. We provide an overview about which methods better performfor each dataset and compare them to the ranking in PubMed similar articles. While resultsvaried considerably among the datasets, we were able to obtain a better performance thanPubMed for all of them. Datasets and source codes are available at: https://github.com/mariananeves/reranking
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

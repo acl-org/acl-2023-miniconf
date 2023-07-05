@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: NLP-LTU at SemEval-2023 Task 10: The Impact of Data Augmentation and Semi-Supervised Learning Techniques on Text Classification Performance on an Imbalanced Dataset</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, we propose a methodology fortask 10 of SemEval23, focusing on detectingand classifying online sexism in social me-dia posts. The task is tackling a serious is-sue, as detecting harmful content on socialmedia platforms is crucial for mitigating theharm of these posts on users. Our solutionfor this task is based on an ensemble of fine-tuned transformer-based models (BERTweet,RoBERTa, and DeBERTa). To alleviate prob-lems related to class imbalance, and to improvethe generalization capability of our model, wealso experiment with data augmentation andsemi-supervised learning. In particular, fordata augmentation, we use back-translation, ei-ther on all classes, or on the underrepresentedclasses only. We analyze the impact of thesestrategies on the overall performance of thepipeline through extensive experiments. whilefor semi-supervised learning, we found thatwith a substantial amount of unlabelled, in-domain data available, semi-supervised learn-ing can enhance the performance of certainmodels. Our proposed method (for which thesource code is available on Github12) attainsan F 1-score of 0.8613 for sub-taskA, whichranked us 10th in the competition.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, we propose a methodology fortask 10 of SemEval23, focusing on detectingand classifying online sexism in social me-dia posts. The task is tackling a serious is-sue, as detecting harmful 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, we propose a methodology fortask 10 of SemEval23, focusing on detectingand classifying online sexism in social me-dia posts. The task is tackling a serious is-sue, as detecting harmful content on socialmedia platforms is crucial for mitigating theharm of these posts on users. Our solutionfor this task is based on an ensemble of fine-tuned transformer-based models (BERTweet,RoBERTa, and DeBERTa). To alleviate prob-lems related to class imbalance, and to improvethe generalization capability of our model, wealso experiment with data augmentation andsemi-supervised learning. In particular, fordata augmentation, we use back-translation, ei-ther on all classes, or on the underrepresentedclasses only. We analyze the impact of thesestrategies on the overall performance of thepipeline through extensive experiments. whilefor semi-supervised learning, we found thatwith a substantial amount of unlabelled, in-domain data available, semi-supervised learn-ing can enhance the performance of certainmodels. Our proposed method (for which thesource code is available on Github12) attainsan F 1-score of 0.8613 for sub-taskA, whichranked us 10th in the competition.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

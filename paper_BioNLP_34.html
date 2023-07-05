@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Automatic Glossary of Clinical Terminology: a Large-Scale Dictionary of Biomedical Definitions Generated from Ontological Knowledge</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Background: More than 400.000 biomedical concepts and some of their relationships are contained in SnomedCT, a comprehensive biomedical ontology. However, their concept names are not always readily interpretable by non-experts, or patients looking at their own electronic health records (EHR). Clear definitions or descriptions in understandable language or often not available. Therefore, generating human-readable definitions for biomedical concepts might help make the information they encode more accessible and understandable to a wider public.Objective: In this article, we introduce the Automatic Glossary of Clinical Terminology (AGCT), a large-scale biomedical dictionary of clinical concepts generated using high-quality information extracted from the biomedical knowledge contained in SnomedCT.Methods: We generate a novel definition for every SnomedCT concept, after prompting the OpenAI Turbo model, a variant of GPT 3.5, using a high-quality verbalization of the SnomedCT relationships of the to-be-defined concept. A significant subset of the generated definitions was subsequently evaluated by NLP researchers with biomedical expertise on 5-point scales along the following three axes: factuality, insight, and fluency.Results: AGCT contains 422,070 computer-generated definitions for SnomedCT concepts, covering various domains such as diseases, procedures, drugs, and anatomy. The average length of the definitions is 49 words. The definitions were assigned average scores of over 4.5 out of 5 on all three axes, indicating a majority of factual, insightful, and fluent definitions.Conclusion: AGCT is a novel and valuable resource for biomedical tasks that require human-readable definitions for SnomedCT concepts. It can also serve as a base for developing robust biomedical retrieval models or other applications that leverage natural language understanding of biomedical knowledge.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Background: More than 400.000 biomedical concepts and some of their relationships are contained in SnomedCT, a comprehensive biomedical ontology. However, their concept names are not always readily in
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Background: More than 400.000 biomedical concepts and some of their relationships are contained in SnomedCT, a comprehensive biomedical ontology. However, their concept names are not always readily interpretable by non-experts, or patients looking at their own electronic health records (EHR). Clear definitions or descriptions in understandable language or often not available. Therefore, generating human-readable definitions for biomedical concepts might help make the information they encode more accessible and understandable to a wider public.Objective: In this article, we introduce the Automatic Glossary of Clinical Terminology (AGCT), a large-scale biomedical dictionary of clinical concepts generated using high-quality information extracted from the biomedical knowledge contained in SnomedCT.Methods: We generate a novel definition for every SnomedCT concept, after prompting the OpenAI Turbo model, a variant of GPT 3.5, using a high-quality verbalization of the SnomedCT relationships of the to-be-defined concept. A significant subset of the generated definitions was subsequently evaluated by NLP researchers with biomedical expertise on 5-point scales along the following three axes: factuality, insight, and fluency.Results: AGCT contains 422,070 computer-generated definitions for SnomedCT concepts, covering various domains such as diseases, procedures, drugs, and anatomy. The average length of the definitions is 49 words. The definitions were assigned average scores of over 4.5 out of 5 on all three axes, indicating a majority of factual, insightful, and fluent definitions.Conclusion: AGCT is a novel and valuable resource for biomedical tasks that require human-readable definitions for SnomedCT concepts. It can also serve as a base for developing robust biomedical retrieval models or other applications that leverage natural language understanding of biomedical knowledge.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

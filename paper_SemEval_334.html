@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: PingAnLifeInsurance at SemEval-2023 Task 10: Using Multi-Task Learning to Better Detect Online Sexism</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper describes our system used in the SemEval-2023 Task 10: Towards ExplainableDetection of Online Sexism (Kirk et al., 2023). The harmful effects of sexism on the internet have impacted both men and women, yet current research lacks a fine-grained classification of sexist content. The task involves three hierarchical sub-tasks, which we addressed by employing a multitask-learning framework. To further enhance our system&#39;s performance, we pre-trained the roberta-large (Liu et al., 2019b) and deberta-v3-large (He et al., 2021) models on two million unlabeled data, resulting in significant improvements on sub-tasks A and C. In addition, the multitask-learning approach boosted the performance of our models on subtasks A and B. Our system exhibits promising results in achieving explainable detection of online sexism, attaining a test f1-score of 0.8746 on sub-task A (ranking 1st on the leaderboard), and ranking 5th on sub-tasks B and C.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper describes our system used in the SemEval-2023 Task 10: Towards ExplainableDetection of Online Sexism (Kirk et al., 2023). The harmful effects of sexism on the internet have impacted both me
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper describes our system used in the SemEval-2023 Task 10: Towards ExplainableDetection of Online Sexism (Kirk et al., 2023). The harmful effects of sexism on the internet have impacted both men and women, yet current research lacks a fine-grained classification of sexist content. The task involves three hierarchical sub-tasks, which we addressed by employing a multitask-learning framework. To further enhance our system&#39;s performance, we pre-trained the roberta-large (Liu et al., 2019b) and deberta-v3-large (He et al., 2021) models on two million unlabeled data, resulting in significant improvements on sub-tasks A and C. In addition, the multitask-learning approach boosted the performance of our models on subtasks A and B. Our system exhibits promising results in achieving explainable detection of online sexism, attaining a test f1-score of 0.8746 on sub-task A (ranking 1st on the leaderboard), and ranking 5th on sub-tasks B and C.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Harmful Language Datasets: An Assessment of Robustness</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -316,28 +312,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The automated detection of harmful language has been of great importance for the online world, especially with the growing importance of social media and, consequently, polarisation. There are many open challenges to high quality detection of harmful text, from dataset creation to generalisable application, thus calling for more systematic studies. In this paper, we explore re-annotation as a means of examining the robustness of already existing labelled datasets, showing that, despite using alternative definitions, the inter-annotator agreement remains very inconsistent, highlighting the intrinsically subjective and variable nature of the task. In addition, we build automatic toxicity detectors using the existing datasets, with their original labels, and we evaluate them on our multi-definition and multi-source datasets. Surprisingly, while other studies show that hate speech detection models perform better on data that are derived from the same distribution as the training set, our analysis demonstrates this is not necessarily true.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The automated detection of harmful language has been of great importance for the online world, especially with the growing importance of social media and, consequently, polarisation. There are many op
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -353,8 +346,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The automated detection of harmful language has been of great importance for the online world, especially with the growing importance of social media and, consequently, polarisation. There are many open challenges to high quality detection of harmful text, from dataset creation to generalisable application, thus calling for more systematic studies. In this paper, we explore re-annotation as a means of examining the robustness of already existing labelled datasets, showing that, despite using alternative definitions, the inter-annotator agreement remains very inconsistent, highlighting the intrinsically subjective and variable nature of the task. In addition, we build automatic toxicity detectors using the existing datasets, with their original labels, and we evaluate them on our multi-definition and multi-source datasets. Surprisingly, while other studies show that hate speech detection models perform better on data that are derived from the same distribution as the training set, our analysis demonstrates this is not necessarily true.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

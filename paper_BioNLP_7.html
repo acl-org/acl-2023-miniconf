@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Boosting Radiology Report Generation by Infusing Comparison Prior</title>
   
@@ -280,12 +282,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -322,28 +318,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Recent transformer-based models have made significant strides in generating radiology reports from chest X-ray images. However, a prominent challenge remains; these models often lack prior knowledge, resulting in the generation of synthetic reports that mistakenly reference non-existent prior exams. This discrepancy can be attributed to a knowledge gap between radiologists and the generation models. While radiologists possess patient-specific prior information, the models solely receive X-ray images at a specific time point. To tackle this issue, we propose a novel approach that leverages a rule-based labeler to extract comparison prior information from radiology reports. This extracted comparison prior is then seamlessly integrated into state-of-the-art transformer-based models, enabling them to produce more realistic and comprehensive reports. Our method is evaluated on English report datasets, such as IU X-ray and MIMIC-CXR. The results demonstrate that our approach surpasses baseline models in terms of natural language generation metrics. Notably, our model generates reports that are free from false references to non-existent prior exams, setting it apart from previous models. By addressing this limitation, our approach represents a significant step towards bridging the gap between radiologists and generation models in the domain of medical report generation.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Recent transformer-based models have made significant strides in generating radiology reports from chest X-ray images. However, a prominent challenge remains; these models often lack prior knowledge, 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -359,8 +352,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Recent transformer-based models have made significant strides in generating radiology reports from chest X-ray images. However, a prominent challenge remains; these models often lack prior knowledge, resulting in the generation of synthetic reports that mistakenly reference non-existent prior exams. This discrepancy can be attributed to a knowledge gap between radiologists and the generation models. While radiologists possess patient-specific prior information, the models solely receive X-ray images at a specific time point. To tackle this issue, we propose a novel approach that leverages a rule-based labeler to extract comparison prior information from radiology reports. This extracted comparison prior is then seamlessly integrated into state-of-the-art transformer-based models, enabling them to produce more realistic and comprehensive reports. Our method is evaluated on English report datasets, such as IU X-ray and MIMIC-CXR. The results demonstrate that our approach surpasses baseline models in terms of natural language generation metrics. Notably, our model generates reports that are free from false references to non-existent prior exams, setting it apart from previous models. By addressing this limitation, our approach represents a significant step towards bridging the gap between radiologists and generation models in the domain of medical report generation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: You&#39;ve Got a Friend in ... a Language Model? A Comparison of Explanations of Multiple-Choice Items of Reading Comprehension between ChatGPT and Humans</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Creating high-quality multiple-choice items requires careful attention to several factors, including ensuring that there is only one correct option, that options are independent of each other, that there is no overlap between options, and that each option is plausible. This attention is reflected in the explanations provided by human item-writers for each option. This study aimed to compare the creation of explanations of multiple-choice item options for reading comprehension by ChatGPT with those created by humans. We used two context-dependent multiple-choice item sets created based on EvidenceCentered Design. Results indicate that ChatGPT is capable of producing explanations with different type of information that are comparable to those created by humans. So that humans could benefit from additional information given to enhance their explanations. We conclude that ChatGPT ability to generate explanations for multiple-choice item options in reading comprehension tests is comparable to that of humans.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Creating high-quality multiple-choice items requires careful attention to several factors, including ensuring that there is only one correct option, that options are independent of each other, that th
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Creating high-quality multiple-choice items requires careful attention to several factors, including ensuring that there is only one correct option, that options are independent of each other, that there is no overlap between options, and that each option is plausible. This attention is reflected in the explanations provided by human item-writers for each option. This study aimed to compare the creation of explanations of multiple-choice item options for reading comprehension by ChatGPT with those created by humans. We used two context-dependent multiple-choice item sets created based on EvidenceCentered Design. Results indicate that ChatGPT is capable of producing explanations with different type of information that are comparable to those created by humans. So that humans could benefit from additional information given to enhance their explanations. We conclude that ChatGPT ability to generate explanations for multiple-choice item options in reading comprehension tests is comparable to that of humans.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

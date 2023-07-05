@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Enhancing text comprehension for Question Answering with Contrastive Learning </title>
   
@@ -245,12 +247,6 @@ We thus introduce ContrastiveQA, which uses contrastive learning with sampling d
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -287,29 +283,25 @@ We thus introduce ContrastiveQA, which uses contrastive learning with sampling d
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Although Question Answering (QA) have advanced to the human-level language skills in NLP tasks, there is still a problem: the QA model gets confused when there are similar sentences or paragraphs. Existing studies focus on enhancing the text understanding of the candidate answers to improve the overall performance of the QA models. However, since these methods focus on re-ranking queries or candidate answers, they fail to resolve the confusion when many generated answers are similar to the expected answer. To address these issues, we propose a novel contrastive learning framework called ContrastiveQA that alleviates the confusion problem in answer extraction. We propose a supervised method where we generate positive and negative samples from the candidate answers and the given answer, respectively. 
-We thus introduce ContrastiveQA, which uses contrastive learning with sampling data to reduce incorrect answers. Experimental results on four QA benchmarks show the effectiveness of the proposed method.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Although Question Answering (QA) have advanced to the human-level language skills in NLP tasks, there is still a problem: the QA model gets confused when there are similar sentences or paragraphs. Exi
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -325,8 +317,23 @@ We thus introduce ContrastiveQA, which uses contrastive learning with sampling d
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Although Question Answering (QA) have advanced to the human-level language skills in NLP tasks, there is still a problem: the QA model gets confused when there are similar sentences or paragraphs. Existing studies focus on enhancing the text understanding of the candidate answers to improve the overall performance of the QA models. However, since these methods focus on re-ranking queries or candidate answers, they fail to resolve the confusion when many generated answers are similar to the expected answer. To address these issues, we propose a novel contrastive learning framework called ContrastiveQA that alleviates the confusion problem in answer extraction. We propose a supervised method where we generate positive and negative samples from the candidate answers and the given answer, respectively. 
+We thus introduce ContrastiveQA, which uses contrastive learning with sampling data to reduce incorrect answers. Experimental results on four QA benchmarks show the effectiveness of the proposed method.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

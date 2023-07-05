@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: eevvgg at SemEval-2023 Task 11: Offensive Language Classification with Rater-based Information</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        A standard majority-based approach to text classification is challenged with an individualised approach in the Semeval-2023 Task 11. Here, disagreements are treated as a useful source of information that could be utilised in the training pipeline. The team proposal makes use of partially disaggregated data and additional information about annotators provided by the organisers to train a BERT-based model for offensive text classification. The approach extends previous studies examining the impact of using raters&#39; demographic features on classification performance (Hovy, 2015) or training machine learning models on disaggregated data (Davani et al., 2022). The proposed approach was ranked 11 across all 4 datasets, scoring best for cases with a large pool of annotators (6th place in the MD-Agreement dataset) utilising features based on raters&#39; annotation behaviour.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          A standard majority-based approach to text classification is challenged with an individualised approach in the Semeval-2023 Task 11. Here, disagreements are treated as a useful source of information t
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            A standard majority-based approach to text classification is challenged with an individualised approach in the Semeval-2023 Task 11. Here, disagreements are treated as a useful source of information that could be utilised in the training pipeline. The team proposal makes use of partially disaggregated data and additional information about annotators provided by the organisers to train a BERT-based model for offensive text classification. The approach extends previous studies examining the impact of using raters&#39; demographic features on classification performance (Hovy, 2015) or training machine learning models on disaggregated data (Davani et al., 2022). The proposed approach was ranked 11 across all 4 datasets, scoring best for cases with a large pool of annotators (6th place in the MD-Agreement dataset) utilising features based on raters&#39; annotation behaviour.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

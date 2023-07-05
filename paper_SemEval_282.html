@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Sebis at SemEval-2023 Task 7: A Joint System for Natural Language Inference and Evidence Retrieval from Clinical Trial Reports</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        With the increasing number of clinical trial reports generated every day, it is becoming hard to keep up with novel discoveries that inform evidence-based healthcare recommendations. To help automate this process and assist medical experts, NLP solutions are being developed. This motivated the SemEval-2023 Task 7, where the goal was to develop an NLP system for two tasks: evidence retrieval and natural language inference from clinical trial data. In this paper, we describe our two developed systems. The first one is a pipeline system that models the two tasks separately, while the second one is a joint system that learns the two tasks simultaneously with a shared representation and a multi-task learning approach. The final system combines their outputs in an ensemble system. We formalize the models, present their characteristics and challenges, and provide an analysis of achieved results. Our system ranked 3rd out of 40 participants with a final submission.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          With the increasing number of clinical trial reports generated every day, it is becoming hard to keep up with novel discoveries that inform evidence-based healthcare recommendations. To help automate 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            With the increasing number of clinical trial reports generated every day, it is becoming hard to keep up with novel discoveries that inform evidence-based healthcare recommendations. To help automate this process and assist medical experts, NLP solutions are being developed. This motivated the SemEval-2023 Task 7, where the goal was to develop an NLP system for two tasks: evidence retrieval and natural language inference from clinical trial data. In this paper, we describe our two developed systems. The first one is a pipeline system that models the two tasks separately, while the second one is a joint system that learns the two tasks simultaneously with a shared representation and a multi-task learning approach. The final system combines their outputs in an ensemble system. We formalize the models, present their characteristics and challenges, and provide an analysis of achieved results. Our system ranked 3rd out of 40 participants with a final submission.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

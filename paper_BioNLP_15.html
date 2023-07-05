@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Exploring Drug Switching in Patients: A Deep Learning-based Approach to Extract Drug Changes and Reasons from Social Media</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Social media (SM) can provide valuable information about patients&#39; experiences with multiple drugs during treatments. Although information extraction from SM has been well-studied, drug switches detection and reasons behind these switches from SM have not been studied yet. Therefore, in this paper, we present a new SM listening approach for analyzing online patient conversations that contain information about drug switching, drug effectiveness, side effects, and adverse drug reactions. We describe a deep learning-based approach for identifying instances of drug switching in SM posts, as well as a method for extracting the reasons behind these switches. To train and test our models, we used annotated SM data from internal dataset which is automatically created using a rule-based method. We evaluated our models using Text-to-Text Transfer Transformer (T5) and found that our SM listening approach can extract medication change information and reasons with high accuracy, achieving  an F1-score of 98% and a ROUGE-1 score of 93%, respectively. Overall, our results suggest that our SM listening approach has the potential to provide valuable insights into patients&#39; experiences with drug treatments, which can be used to improve patient outcomes and the effectiveness of drug treatments.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Social media (SM) can provide valuable information about patients&#39; experiences with multiple drugs during treatments. Although information extraction from SM has been well-studied, drug switches detec
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Social media (SM) can provide valuable information about patients&#39; experiences with multiple drugs during treatments. Although information extraction from SM has been well-studied, drug switches detection and reasons behind these switches from SM have not been studied yet. Therefore, in this paper, we present a new SM listening approach for analyzing online patient conversations that contain information about drug switching, drug effectiveness, side effects, and adverse drug reactions. We describe a deep learning-based approach for identifying instances of drug switching in SM posts, as well as a method for extracting the reasons behind these switches. To train and test our models, we used annotated SM data from internal dataset which is automatically created using a rule-based method. We evaluated our models using Text-to-Text Transfer Transformer (T5) and found that our SM listening approach can extract medication change information and reasons with high accuracy, achieving  an F1-score of 98% and a ROUGE-1 score of 93%, respectively. Overall, our results suggest that our SM listening approach has the potential to provide valuable insights into patients&#39; experiences with drug treatments, which can be used to improve patient outcomes and the effectiveness of drug treatments.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: DS at SemEval-2023 Task 10: Explaining Online Sexism using Transformer based Approach</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, I describe the approach used in the SemEval 2023 - Task 10 Explainable Detection of Online Sexism (EDOS) competition (Kirk et al., 2023). I use different transformermodels, including BERT and RoBERTa which were fine-tuned on the EDOS dataset to classify text into different categories of sexism. I participated in three subtasks: subtask A is to classify given text as either sexist or not, while subtask B is to identify the specific category of sexism, such as (1) threats, (2) derogation, (3) animosity, (4) prejudiced discussions. Finally, subtask C involves predicting a finegrained vector representation of sexism, which included information about the severity, target and type of sexism present in the text. The use of transformer models allows the system to learn from the input data and make predictions on unseen text. By fine-tuning the models on the EDOS dataset, the system can improve its performance on the specific task of detecting online sexism. I got the following macro F1 scores: subtask A:77.16, subtask B: 46.11, and subtask C: 30.2.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, I describe the approach used in the SemEval 2023 - Task 10 Explainable Detection of Online Sexism (EDOS) competition (Kirk et al., 2023). I use different transformermodels, including BE
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, I describe the approach used in the SemEval 2023 - Task 10 Explainable Detection of Online Sexism (EDOS) competition (Kirk et al., 2023). I use different transformermodels, including BERT and RoBERTa which were fine-tuned on the EDOS dataset to classify text into different categories of sexism. I participated in three subtasks: subtask A is to classify given text as either sexist or not, while subtask B is to identify the specific category of sexism, such as (1) threats, (2) derogation, (3) animosity, (4) prejudiced discussions. Finally, subtask C involves predicting a finegrained vector representation of sexism, which included information about the severity, target and type of sexism present in the text. The use of transformer models allows the system to learn from the input data and make predictions on unseen text. By fine-tuning the models on the EDOS dataset, the system can improve its performance on the specific task of detecting online sexism. I got the following macro F1 scores: subtask A:77.16, subtask B: 46.11, and subtask C: 30.2.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

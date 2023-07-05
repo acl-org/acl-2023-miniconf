@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: PCJ at SemEval-2023 Task 10: A Ensemble Model Based on Pre-trained Model for Sexism Detection and Classification in English</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper describes the system and the resulting model submitted by our team &#34;PCJ&#34; to the SemEval-2023 Task 10 sub-task A contest. In this task, we need to test the English text content in the posts to determine whether there is sexism, which involves emotional text classification. Our submission system utilizes methods based on RoBERTa, SimCSE-RoBERTa pre-training models, and model ensemble to classify and train on datasets provided by the organizers. In the final assessment, our submission achieved a macro average F1 score of 0.8449, ranking 28th out of 84 teams in Task A.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper describes the system and the resulting model submitted by our team &#34;PCJ&#34; to the SemEval-2023 Task 10 sub-task A contest. In this task, we need to test the English text content in the posts 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper describes the system and the resulting model submitted by our team &#34;PCJ&#34; to the SemEval-2023 Task 10 sub-task A contest. In this task, we need to test the English text content in the posts to determine whether there is sexism, which involves emotional text classification. Our submission system utilizes methods based on RoBERTa, SimCSE-RoBERTa pre-training models, and model ensemble to classify and train on datasets provided by the organizers. In the final assessment, our submission achieved a macro average F1 score of 0.8449, ranking 28th out of 84 teams in Task A.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

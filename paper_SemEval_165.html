@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: xiacui at SemEval-2023 Task 11: Learning a Model in Mixed-Annotator Datasets Using Annotator Ranking Scores as Training Weights</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper describes the development of a system for SemEval-2023 Shared Task 11 on Learning with Disagreements (Le-Wi-Di). Labelled data plays a vital role in the development of machine learning systems. The human-annotated labels are usually considered the truth for training or validation. To obtain truth labels, a traditional way is to hire domain experts to perform an expensive annotation process. Crowd-sourcing labelling is comparably cheap, whereas it raises a question on the reliability of annotators. A common strategy in a mixed-annotator dataset with various sets of annotators for each instance is to aggregate the labels among multiple groups of annotators to obtain the truth labels.  However, these annotators might not reach an agreement, and there is no guarantee of the reliability of these labels either. With further problems caused by human label variation, subjective tasks usually suffer from the different opinions provided by the annotators. In this paper, we propose two simple heuristic functions to compute the annotator ranking scores, namely AnnoHard and AnnoSoft, based on the hard labels (i.e., aggregative labels) and soft labels (i.e., cross-entropy values). By introducing these scores, we adjust the weights of the training instances to improve the learning with disagreements among the annotators.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper describes the development of a system for SemEval-2023 Shared Task 11 on Learning with Disagreements (Le-Wi-Di). Labelled data plays a vital role in the development of machine learning syst
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper describes the development of a system for SemEval-2023 Shared Task 11 on Learning with Disagreements (Le-Wi-Di). Labelled data plays a vital role in the development of machine learning systems. The human-annotated labels are usually considered the truth for training or validation. To obtain truth labels, a traditional way is to hire domain experts to perform an expensive annotation process. Crowd-sourcing labelling is comparably cheap, whereas it raises a question on the reliability of annotators. A common strategy in a mixed-annotator dataset with various sets of annotators for each instance is to aggregate the labels among multiple groups of annotators to obtain the truth labels.  However, these annotators might not reach an agreement, and there is no guarantee of the reliability of these labels either. With further problems caused by human label variation, subjective tasks usually suffer from the different opinions provided by the annotators. In this paper, we propose two simple heuristic functions to compute the annotator ranking scores, namely AnnoHard and AnnoSoft, based on the hard labels (i.e., aggregative labels) and soft labels (i.e., cross-entropy values). By introducing these scores, we adjust the weights of the training instances to improve the learning with disagreements among the annotators.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

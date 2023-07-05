@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Characterizing Political Bias in Automatic Summaries: A Case Study of Trump and Biden</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Growing literature has shown that powerful NLP systems may encode social biases; however, the political bias of summarization models remains relatively unknown. In this work, we use an entity replacement method to investigate the portrayal of politicians in automatically generated summaries of news articles. We develop a computational framework based on political entities and lexical resources, and use it to assess biases about Donald Trump and Joe Biden in both extractive and abstractive summarization models. We find consistent differences, such as stronger associations of a collective US government (i.e., administration) with Biden than with Trump. These summary dissimilarities are most prominent when the entity is heavily featured in the source article. Our systematic characterization provides a framework for future studies of bias in summarization.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Growing literature has shown that powerful NLP systems may encode social biases; however, the political bias of summarization models remains relatively unknown. In this work, we use an entity replacem
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Growing literature has shown that powerful NLP systems may encode social biases; however, the political bias of summarization models remains relatively unknown. In this work, we use an entity replacement method to investigate the portrayal of politicians in automatically generated summaries of news articles. We develop a computational framework based on political entities and lexical resources, and use it to assess biases about Donald Trump and Joe Biden in both extractive and abstractive summarization models. We find consistent differences, such as stronger associations of a collective US government (i.e., administration) with Biden than with Trump. These summary dissimilarities are most prominent when the entity is heavily featured in the source article. Our systematic characterization provides a framework for future studies of bias in summarization.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

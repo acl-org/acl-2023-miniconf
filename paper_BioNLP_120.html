@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: VBD-NLP at BioLaySumm Task 1: Explicit and Implicit Key Information Selection for Lay Summarization on Biomedical Long Documents</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We describe our systems participated in the BioLaySumm 2023 Task 1, which aims at automatically generating lay summaries of scientific articles in a simplified way so that its content becomes easier to comprehend for non-expert readers. Our approaches are based on selecting key information by both explicit and implicit strategies. For explicit selection strategies, we conduct extractive summarization based on selecting key sentences for training abstractive summarization models. For implicit selection strategies, we utilize a method based on a factorized energy-based model, which is able to extract important information from long documents to generate summaries and achieve promising results. We build our systems using sequence-to-sequence models, which enable us to leverage powerful and biomedical domain pre-trained language models and apply different strategies to generate lay summaries from long documents. We conducted various experiments to carefully investigate the effects of different aspects of this long-document summarization task such as extracting different document lengths and utilizing different pre-trained language models. We achieve the third rank in the shared task (and the second rank excluding the baseline submission of the organizers).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We describe our systems participated in the BioLaySumm 2023 Task 1, which aims at automatically generating lay summaries of scientific articles in a simplified way so that its content becomes easier t
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We describe our systems participated in the BioLaySumm 2023 Task 1, which aims at automatically generating lay summaries of scientific articles in a simplified way so that its content becomes easier to comprehend for non-expert readers. Our approaches are based on selecting key information by both explicit and implicit strategies. For explicit selection strategies, we conduct extractive summarization based on selecting key sentences for training abstractive summarization models. For implicit selection strategies, we utilize a method based on a factorized energy-based model, which is able to extract important information from long documents to generate summaries and achieve promising results. We build our systems using sequence-to-sequence models, which enable us to leverage powerful and biomedical domain pre-trained language models and apply different strategies to generate lay summaries from long documents. We conducted various experiments to carefully investigate the effects of different aspects of this long-document summarization task such as extracting different document lengths and utilizing different pre-trained language models. We achieve the third rank in the shared task (and the second rank excluding the baseline submission of the organizers).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

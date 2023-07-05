@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Unisa at SemEval-2023 Task 3: A SHAP-based method for Propaganda Detection</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -316,28 +312,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents proposed solutions for addressing two subtasks in SemEval-2023 Task 3: &#34;Detecting the Genre, the Framing, and the Persuasion techniques in online news in a multi-lingual setup. In subtask 1, &#34;News Genre Categorisation, the goal is to classify a news article as an opinion, a report, or a satire. In subtask 3, &#34;Detection of Persuasion Technique, the system must reveal persuasion techniques used in each news article paragraph choosing among23 defined methods. Solutions leverage the application of the eXplainable Artificial Intelligence (XAI) method, Shapley Additive Explanations (SHAP). In subtask 1, SHAP was used to understand what was driving the model to fail so that it could be improved accordingly. In contrast, in subtask 3, a re-calibration of the Attention Mechanism was realized by extracting critical tokens for each persuasion technique. The underlying idea is the exploitation of XAI for countering the overfitting of the resulting model and attempting to improve the performance when there are few samples in the training data. The achieved performance on English for subtask 1 ranked 6th with an F1-score of 58.6\% (despite 78.4\% of the 1st) and for subtask 3 ranked 12th with a micro-averaged F1-score of 29.8\% (despite 37.6\% of the 1st).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents proposed solutions for addressing two subtasks in SemEval-2023 Task 3: &#34;Detecting the Genre, the Framing, and the Persuasion techniques in online news in a multi-lingual setup. In 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -353,8 +346,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents proposed solutions for addressing two subtasks in SemEval-2023 Task 3: &#34;Detecting the Genre, the Framing, and the Persuasion techniques in online news in a multi-lingual setup. In subtask 1, &#34;News Genre Categorisation, the goal is to classify a news article as an opinion, a report, or a satire. In subtask 3, &#34;Detection of Persuasion Technique, the system must reveal persuasion techniques used in each news article paragraph choosing among23 defined methods. Solutions leverage the application of the eXplainable Artificial Intelligence (XAI) method, Shapley Additive Explanations (SHAP). In subtask 1, SHAP was used to understand what was driving the model to fail so that it could be improved accordingly. In contrast, in subtask 3, a re-calibration of the Attention Mechanism was realized by extracting critical tokens for each persuasion technique. The underlying idea is the exploitation of XAI for countering the overfitting of the resulting model and attempting to improve the performance when there are few samples in the training data. The achieved performance on English for subtask 1 ranked 6th with an F1-score of 58.6\% (despite 78.4\% of the 1st) and for subtask 3 ranked 12th with a micro-averaged F1-score of 29.8\% (despite 37.6\% of the 1st).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

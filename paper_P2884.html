@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Commonsense Knowledge Graph Completion Via Contrastive Pretraining and Node Clustering</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77717-commonsense-knowledge-graph-completion-via-contrastive-pretraining-and-node-clustering">
         Underline
@@ -362,45 +358,73 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The nodes in the commonsense knowledge graph (CSKG) are normally represented by free-form short text (e.g., word or phrase). Different nodes may represent the same concept. This leads to the problems ...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The nodes in the commonsense knowledge graph (CSKG) are normally represented by free-form short text (e.g., word or phrase). Different nodes may represent the same concept. This leads to the problems of edge sparsity and node redundancy, which challenges CSKG representation and completion. On the one hand, edge sparsity limits the performance of graph representation learning; On the other hand, node redundancy makes different nodes corresponding to the same concept have inconsistent relations with other nodes. To address the two problems, we propose a new CSKG completion framework based on Contrastive Pretraining and Node Clustering (CPNC). Contrastive Pretraining constructs positive and negative head-tail node pairs on CSKG and utilizes contrastive learning to obtain better semantic node representation. Node Clustering aggregates nodes with the same concept into a latent concept, assisting the task of CSKG completion. We evaluate our CPNC approach on two CSKG completion benchmarks (CN-100K and ATOMIC), where CPNC outperforms the state-of-the-art methods. Extensive experiments demonstrate that both Contrastive Pretraining and Node Clustering can significantly improve the performance of CSKG completion. The source code of CPNC is publicly available on {https://github.com/NUSTM/CPNC}.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P2884"
+       target="_blank">#paper-P2884</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P2884?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The nodes in the commonsense knowledge graph (CSKG) are normally represented by free-form short text (e.g., word or phrase). Different nodes may represent the same concept. This leads to the problems of edge sparsity and node redundancy, which challenges CSKG representation and completion. On the one hand, edge sparsity limits the performance of graph representation learning; On the other hand, node redundancy makes different nodes corresponding to the same concept have inconsistent relations with other nodes. To address the two problems, we propose a new CSKG completion framework based on Contrastive Pretraining and Node Clustering (CPNC). Contrastive Pretraining constructs positive and negative head-tail node pairs on CSKG and utilizes contrastive learning to obtain better semantic node representation. Node Clustering aggregates nodes with the same concept into a latent concept, assisting the task of CSKG completion. We evaluate our CPNC approach on two CSKG completion benchmarks (CN-100K and ATOMIC), where CPNC outperforms the state-of-the-art methods. Extensive experiments demonstrate that both Contrastive Pretraining and Node Clustering can significantly improve the performance of CSKG completion. The source code of CPNC is publicly available on {https://github.com/NUSTM/CPNC}.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77717/poster_document/f80ff93cab87b27f48e997a2e6c4b9d6.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77717/slideshow/0f3296dbd27c2cc8d21b0639985cea03.pptx" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77717/poster_document/f80ff93cab87b27f48e997a2e6c4b9d6.pdf",'#pdf_view');
-    })
-</script>
 
 
 

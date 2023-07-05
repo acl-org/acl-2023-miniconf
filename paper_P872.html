@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Generating Deep Questions with Commonsense Reasoning Ability from the Text by Disentangled Adversarial Inference</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77382-generating-deep-questions-with-commonsense-reasoning-ability-from-the-text-by-disentangled-adversarial-inference">
         Underline
@@ -386,45 +382,73 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper proposes a new task of commonsense question generation, which aims to yield deep-level and to-the-point questions from the text. Their answers need to reason over disjoint relevant contexts...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper proposes a new task of commonsense question generation, which aims to yield deep-level and to-the-point questions from the text. Their answers need to reason over disjoint relevant contexts and external commonsense knowledge, such as encyclopedic facts and causality. The knowledge may not be explicitly mentioned in the text but is used by most humans for problem-shooting. Such complex reasoning with hidden contexts involves deep semantic understanding. Thus, this task has great application value, such as making high-quality quizzes in advanced exams. Due to the lack of modeling complexity, existing methods may produce shallow questions that can be answered by simple word matching. To address these challenges, we propose a new QG model by simultaneously considering asking contents, expressive ways, and answering complexity. We first retrieve text-related commonsense context. Then we disentangle the key factors that control questions in terms of reasoning content and verbalized way. Independence priors and constraints are imposed to facilitate disentanglement. We further develop a discriminator to promote the deep results by considering their answering complexity. Through adversarial inference, we learn the latent factors from data. By sampling the expressive factor from the data distributions, diverse questions can be yielded. Evaluations of two typical data sets show the effectiveness of our approach.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P872"
+       target="_blank">#paper-P872</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P872?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper proposes a new task of commonsense question generation, which aims to yield deep-level and to-the-point questions from the text. Their answers need to reason over disjoint relevant contexts and external commonsense knowledge, such as encyclopedic facts and causality. The knowledge may not be explicitly mentioned in the text but is used by most humans for problem-shooting. Such complex reasoning with hidden contexts involves deep semantic understanding. Thus, this task has great application value, such as making high-quality quizzes in advanced exams. Due to the lack of modeling complexity, existing methods may produce shallow questions that can be answered by simple word matching. To address these challenges, we propose a new QG model by simultaneously considering asking contents, expressive ways, and answering complexity. We first retrieve text-related commonsense context. Then we disentangle the key factors that control questions in terms of reasoning content and verbalized way. Independence priors and constraints are imposed to facilitate disentanglement. We further develop a discriminator to promote the deep results by considering their answering complexity. Through adversarial inference, we learn the latent factors from data. By sampling the expressive factor from the data distributions, diverse questions can be yielded. Evaluations of two typical data sets show the effectiveness of our approach.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77382/poster_document/a6641fcfb345d38ace4605dc45a2ae3e.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77382/slideshow/2e3f17949fbc9378e6bd06ffb3f4cb38.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77382/poster_document/a6641fcfb345d38ace4605dc45a2ae3e.pdf",'#pdf_view');
-    })
-</script>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Labels are not necessary: Assessing peer-review helpfulness using domain adaptation based on self-training</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -316,28 +312,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        A peer-assessment system allows students to provide feedback on each other&#39;s work. An effective peer assessment system urgently requires helpful reviews to facilitate students to make improvements and progress. Automated evaluation of review helpfulness, with the help of deep learning models and natural language processing techniques, gains much interest in the field of peer assessment. However, collecting labeled data with the &#34;helpfulness&#34; tag to build these prediction models remains challenging. A straightforward solution would be using a supervised learning algorithm to train a prediction model on a similar domain and apply it to our peer review domain for inference. But naively doing so can degrade the model performance in the presence of the distributional gap between domains. Such a distributional gap can be effectively addressed by Domain Adaptation (DA). Self-training has recently been shown as a powerful branch of DA to address the distributional gap. The first goal of this study is to evaluate the performance of self-training-based DA in predicting the helpfulness of peer reviews as well as the ability to overcome the distributional gap. Our second goal is to propose an advanced self-training framework to overcome the weakness of the existing self-training by tailoring knowledge distillation and noise injection, to further improve the model performance and better address the distributional gap.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          A peer-assessment system allows students to provide feedback on each other&#39;s work. An effective peer assessment system urgently requires helpful reviews to facilitate students to make improvements and
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -353,8 +346,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            A peer-assessment system allows students to provide feedback on each other&#39;s work. An effective peer assessment system urgently requires helpful reviews to facilitate students to make improvements and progress. Automated evaluation of review helpfulness, with the help of deep learning models and natural language processing techniques, gains much interest in the field of peer assessment. However, collecting labeled data with the &#34;helpfulness&#34; tag to build these prediction models remains challenging. A straightforward solution would be using a supervised learning algorithm to train a prediction model on a similar domain and apply it to our peer review domain for inference. But naively doing so can degrade the model performance in the presence of the distributional gap between domains. Such a distributional gap can be effectively addressed by Domain Adaptation (DA). Self-training has recently been shown as a powerful branch of DA to address the distributional gap. The first goal of this study is to evaluate the performance of self-training-based DA in predicting the helpfulness of peer reviews as well as the ability to overcome the distributional gap. Our second goal is to propose an advanced self-training framework to overcome the weakness of the existing self-training by tailoring knowledge distillation and noise injection, to further improve the model performance and better address the distributional gap.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

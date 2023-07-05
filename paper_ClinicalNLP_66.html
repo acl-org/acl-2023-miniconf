@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Interactive Span Recommendation for Biomedical Text</title>
   
@@ -292,12 +294,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -334,28 +330,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Motivated by the scarcity of high-quality labeled biomedical text, as well as the success of data programming, we introduce KRISS-Search. By leveraging the Unified Medical Language Systems (UMLS) ontology, KRISS-Search addresses an interactive few-shot span recommendation task that we propose. We first introduce unsupervised KRISS-Search and show that our method outperforms existing methods in identifying spans that are semantically similar to a given span of interest, with &gt;50% AUPRC improvement relative to PubMedBERT. We then introduce supervised KRISS-Search, which leverages human interaction to improve the notion of similarity used by unsupervised KRISS-Search. Through simulated human feedback, we demonstrate an enhanced F1 score of 0.68 in classifying spans as semantically similar or different in the low-label setting, outperforming PubMedBERT by 2 F1 points. Finally, supervised KRISS-Search demonstrates competitive or superior performance compared to PubMedBERT in few-shot biomedical named entity recognition (NER) across five benchmark datasets, with an average improvement of 5.6 F1 points. We envision KRISS-Search increasing the efficiency of programmatic data labeling and also providing broader utility as an interactive biomedical search engine.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Motivated by the scarcity of high-quality labeled biomedical text, as well as the success of data programming, we introduce KRISS-Search. By leveraging the Unified Medical Language Systems (UMLS) onto
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -371,8 +364,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Motivated by the scarcity of high-quality labeled biomedical text, as well as the success of data programming, we introduce KRISS-Search. By leveraging the Unified Medical Language Systems (UMLS) ontology, KRISS-Search addresses an interactive few-shot span recommendation task that we propose. We first introduce unsupervised KRISS-Search and show that our method outperforms existing methods in identifying spans that are semantically similar to a given span of interest, with &gt;50% AUPRC improvement relative to PubMedBERT. We then introduce supervised KRISS-Search, which leverages human interaction to improve the notion of similarity used by unsupervised KRISS-Search. Through simulated human feedback, we demonstrate an enhanced F1 score of 0.68 in classifying spans as semantically similar or different in the low-label setting, outperforming PubMedBERT by 2 F1 points. Finally, supervised KRISS-Search demonstrates competitive or superior performance compared to PubMedBERT in few-shot biomedical named entity recognition (NER) across five benchmark datasets, with an average improvement of 5.6 F1 points. We envision KRISS-Search increasing the efficiency of programmatic data labeling and also providing broader utility as an interactive biomedical search engine.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

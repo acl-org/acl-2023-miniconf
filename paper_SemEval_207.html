@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: NLP-Titan at SemEval-2023 Task 6: Identification of Rhetorical Roles Using Sequential Sentence Classification</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The analysis of legal cases poses a considerable challenge for researchers, practitioners, and academicians due to the lengthy and intricate nature of these documents. Developing countries such as India are experiencing a significant increase in the number of pending legal cases, which are often unstructured and difficult to process using conventional methods. To address this issue, the authors have implemented a sequential sentence classification process, which categorizes legal documents into 13 segments, known as Rhetorical Roles. This approach enables the extraction of valuable insights from the various classes of the structured document. The performance of this approach was evaluated using the F1 score, which measures the model&#39;s precision and recall. The authors&#39; approach achieved an F1 score of 0.83, which surpasses the baseline score of 0.79 established by the task organizers. The authors have combined sequential sentence classification and the SetFit method in a hierarchical manner by combining similar classes to achieve this score.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The analysis of legal cases poses a considerable challenge for researchers, practitioners, and academicians due to the lengthy and intricate nature of these documents. Developing countries such as Ind
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The analysis of legal cases poses a considerable challenge for researchers, practitioners, and academicians due to the lengthy and intricate nature of these documents. Developing countries such as India are experiencing a significant increase in the number of pending legal cases, which are often unstructured and difficult to process using conventional methods. To address this issue, the authors have implemented a sequential sentence classification process, which categorizes legal documents into 13 segments, known as Rhetorical Roles. This approach enables the extraction of valuable insights from the various classes of the structured document. The performance of this approach was evaluated using the F1 score, which measures the model&#39;s precision and recall. The authors&#39; approach achieved an F1 score of 0.83, which surpasses the baseline score of 0.79 established by the task organizers. The authors have combined sequential sentence classification and the SetFit method in a hierarchical manner by combining similar classes to achieve this score.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

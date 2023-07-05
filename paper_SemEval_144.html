@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Lazybob at SemEval-2023 Task 9: Quantifying Intimacy of Multilingual Tweets with Multi-Task Learning</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This study presents a systematic method for analyzing the level of intimacy in tweets across ten different languages, using multi-task learning for SemEval 2023 Task 9: Multilingual Tweet Intimacy Analysis. The system begins with the utilization of the official training data, and then we experiment with different fine-tuning tricks and effective strategies, such as data augmentation, multi-task learning, etc. Through additional experiments, the approach is shown to be effective for the task. To enhance the model&#39;s robustness, different transformer-based language models and some widely-used plug-and-play priors are incorporated into our system. Our final submission achieved a Pearson R of 0.6160 for the intimacy score on the official test set, placing us at the top of the leader board among 45 teams.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This study presents a systematic method for analyzing the level of intimacy in tweets across ten different languages, using multi-task learning for SemEval 2023 Task 9: Multilingual Tweet Intimacy Ana
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This study presents a systematic method for analyzing the level of intimacy in tweets across ten different languages, using multi-task learning for SemEval 2023 Task 9: Multilingual Tweet Intimacy Analysis. The system begins with the utilization of the official training data, and then we experiment with different fine-tuning tricks and effective strategies, such as data augmentation, multi-task learning, etc. Through additional experiments, the approach is shown to be effective for the task. To enhance the model&#39;s robustness, different transformer-based language models and some widely-used plug-and-play priors are incorporated into our system. Our final submission achieved a Pearson R of 0.6160 for the intimacy score on the official test set, placing us at the top of the leader board among 45 teams.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

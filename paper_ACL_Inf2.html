@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: SIGMORPHON–UniMorph 2023 Shared Task 0, Part 2: Cognitively Plausible Morphophonological Generalization in Korean</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper summarises data collection and curation for Part 2 of the 2023 SIGMORPHON-UniMorph Shared Task 0, which focused on modeling speaker knowledge and generalization of a pair of interacting phonological processes in Korean. We briefly describe how modeling the generalization task could be of interest to researchers in both Natural Language Processing and linguistics, and then summarise the traditional description of the phonological processes that are at the center of the modeling challenge. We then describe the criteria we used to select and code cases of process application in two Korean speech corpora, which served as the primary learning data. We also report the technical details of the experiment we carried out that served as the primary test data.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper summarises data collection and curation for Part 2 of the 2023 SIGMORPHON-UniMorph Shared Task 0, which focused on modeling speaker knowledge and generalization of a pair of interacting pho
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper summarises data collection and curation for Part 2 of the 2023 SIGMORPHON-UniMorph Shared Task 0, which focused on modeling speaker knowledge and generalization of a pair of interacting phonological processes in Korean. We briefly describe how modeling the generalization task could be of interest to researchers in both Natural Language Processing and linguistics, and then summarise the traditional description of the phonological processes that are at the center of the modeling challenge. We then describe the criteria we used to select and code cases of process application in two Korean speech corpora, which served as the primary learning data. We also report the technical details of the experiment we carried out that served as the primary test data.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

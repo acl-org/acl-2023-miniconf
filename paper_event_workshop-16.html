@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: W16: The 13th Workshop on Computational Approaches to Subjectivity, Sentiment &amp; Social Media Analysis (WASSA)</title>
   
@@ -233,12 +235,6 @@ Subjectivity and Sentiment Analysis has become a highly developed research area,
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -333,29 +329,25 @@ Subjectivity and Sentiment Analysis has become a highly developed research area,
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        ### [Program](https://wassa-workshop.github.io/2023/schedule/)
-Subjectivity and Sentiment Analysis has become a highly developed research area, ranging from binary classification of reviews to the detection of complex emotion structures between entities found in text. This field has expanded both on a practical level, finding numerous successful applications in business, as well as on a theoretical level, allowing researchers to explore more complex research questions related to affective computing. Its continuing importance is also shown by the interest it generates in other disciplines such as Economics, Sociology, Psychology, Marketing, Crisis Management &amp; Digital Humanities.&lt;br&gt;For more details visit our workshop website: https://wassa-workshop.github.io/
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -371,8 +363,23 @@ Subjectivity and Sentiment Analysis has become a highly developed research area,
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            ### [Program](https://wassa-workshop.github.io/2023/schedule/)
+Subjectivity and Sentiment Analysis has become a highly developed research area, ranging from binary classification of reviews to the detection of complex emotion structures between entities found in text. This field has expanded both on a practical level, finding numerous successful applications in business, as well as on a theoretical level, allowing researchers to explore more complex research questions related to affective computing. Its continuing importance is also shown by the interest it generates in other disciplines such as Economics, Sociology, Psychology, Marketing, Crisis Management &amp; Digital Humanities.&lt;br&gt;For more details visit our workshop website: https://wassa-workshop.github.io/
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

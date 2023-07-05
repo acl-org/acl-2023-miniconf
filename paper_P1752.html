@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Leveraging Prefix Transfer for Multi-Intent Text Revision</title>
   
@@ -292,12 +294,6 @@ The system can significantly improve the SARI score with more than 3\% improveme
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/76630-leveraging-prefix-transfer-for-multi-intent-text-revision">
         Underline
@@ -400,34 +396,31 @@ The system can significantly improve the SARI score with more than 3\% improveme
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Text revision is a necessary process to improve text quality. 
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Text revision is a necessary process to improve text quality. 
 During this process, writers constantly edit texts out of different edit intentions.
-Identifying edit intention for a raw text is always an ambiguous work, and most previous work on revision systems mainly focuses on editing texts according to one specific edit intention.
-In this work, we aim to build a multi-intent text revision system that could revise texts without explicit intent annotation.
-Our system is based on prefix-tuning, which first gets prefixes for every edit intent, and then trains a prefix transfer module, enabling the system to selectively leverage the knowledge from various prefixes according to the input text.
-We conduct experiments on the IteraTeR dataset, and the results show that our system outperforms baselines. 
-The system can significantly improve the SARI score with more than 3\% improvements, which thrives on the learned editing intention prefixes.
-      </div>
-    </div>
+Identifying edit intention for a raw text is always ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -443,27 +436,33 @@ The system can significantly improve the SARI score with more than 3\% improveme
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Text revision is a necessary process to improve text quality. 
+During this process, writers constantly edit texts out of different edit intentions.
+Identifying edit intention for a raw text is always an ambiguous work, and most previous work on revision systems mainly focuses on editing texts according to one specific edit intention.
+In this work, we aim to build a multi-intent text revision system that could revise texts without explicit intent annotation.
+Our system is based on prefix-tuning, which first gets prefixes for every edit intent, and then trains a prefix transfer module, enabling the system to selectively leverage the knowledge from various prefixes according to the input text.
+We conduct experiments on the IteraTeR dataset, and the results show that our system outperforms baselines. 
+The system can significantly improve the SARI score with more than 3\% improvements, which thrives on the learned editing intention prefixes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76630/poster_document/fb2a69758cd43708d35cf6011eb6f5a2.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76630/poster_document/fb2a69758cd43708d35cf6011eb6f5a2.pdf",'#pdf_view');
-    })
-</script>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Text Style Transfer with Contrastive Transfer Pattern Mining</title>
   
@@ -268,12 +270,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15197/lecture/76822-text-style-transfer-with-contrastive-transfer-pattern-mining">
         Underline
@@ -376,28 +372,29 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Text style transfer (TST) is an important task in natural language generation, which aims to alter the stylistic attributes (e.g., sentiment) of a sentence and keep its semantic meaning unchanged. Most existing studies mainly focus on the transformation between styles, yet ignore that this transformation can be actually carried out via different hidden transfer patterns. To address this problem, we propose a novel approach, contrastive transfer pattern mining (CTPM), which automatically mines and utilizes inherent latent transfer patterns to improve the performance of TST. Specifically, we design an adaptive clustering module to automatically discover hidden transfer patterns from the data, and introduce contrastive learning based on the discovered patterns to obtain more accurate sentence representations, and thereby benefit the TST task. To the best of our knowledge, this is the first work that proposes the concept of transfer patterns in TST, and our approach can be applied in a plug-and-play manner to enhance other TST methods to further improve their performance. Extensive experiments on benchmark datasets verify the effectiveness and generality of our approach.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Text style transfer (TST) is an important task in natural language generation, which aims to alter the stylistic attributes (e.g., sentiment) of a sentence and keep its semantic meaning unchanged. Mos...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -413,27 +410,27 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Text style transfer (TST) is an important task in natural language generation, which aims to alter the stylistic attributes (e.g., sentiment) of a sentence and keep its semantic meaning unchanged. Most existing studies mainly focus on the transformation between styles, yet ignore that this transformation can be actually carried out via different hidden transfer patterns. To address this problem, we propose a novel approach, contrastive transfer pattern mining (CTPM), which automatically mines and utilizes inherent latent transfer patterns to improve the performance of TST. Specifically, we design an adaptive clustering module to automatically discover hidden transfer patterns from the data, and introduce contrastive learning based on the discovered patterns to obtain more accurate sentence representations, and thereby benefit the TST task. To the best of our knowledge, this is the first work that proposes the concept of transfer patterns in TST, and our approach can be applied in a plug-and-play manner to enhance other TST methods to further improve their performance. Extensive experiments on benchmark datasets verify the effectiveness and generality of our approach.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76822/poster_document/760c270350fb6409caa40bc180f7b63d.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76822/poster_document/760c270350fb6409caa40bc180f7b63d.pdf",'#pdf_view');
-    })
-</script>
 
 
 

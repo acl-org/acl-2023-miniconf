@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Improving the Detection of Multilingual Online Attacks with Rich Social Media Data from Singapore</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15199/lecture/76297-improving-the-detection-of-multilingual-online-attacks-with-rich-social-media-data-from-singapore">
         Underline
@@ -386,28 +382,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Toxic content is a global problem, but most resources for detecting toxic content are in English. When datasets are created in other languages, they often focus exclusively on one language or dialect. In many cultural and geographical settings, however, it is common to code-mix languages, combining and interchanging them throughout conversations. To shine a light on this practice, and enable more research into code-mixed toxic content, we introduce SOA, a new multilingual dataset of online attacks. Using the multilingual city-state of Singapore as a starting point, we collect a large corpus of Reddit comments in Indonesian, Malay, Singlish, and other languages, and provide fine-grained hierarchical labels for online attacks. We publish the corpus with rich metadata, as well as additional unlabelled data for domain adaptation. We share comprehensive baseline results, show how the metadata can be used for granular error analysis, and demonstrate the benefits of domain adaptation for detecting multilingual online attacks.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Toxic content is a global problem, but most resources for detecting toxic content are in English. When datasets are created in other languages, they often focus exclusively on one language or dialect....
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -423,27 +424,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Toxic content is a global problem, but most resources for detecting toxic content are in English. When datasets are created in other languages, they often focus exclusively on one language or dialect. In many cultural and geographical settings, however, it is common to code-mix languages, combining and interchanging them throughout conversations. To shine a light on this practice, and enable more research into code-mixed toxic content, we introduce SOA, a new multilingual dataset of online attacks. Using the multilingual city-state of Singapore as a starting point, we collect a large corpus of Reddit comments in Indonesian, Malay, Singlish, and other languages, and provide fine-grained hierarchical labels for online attacks. We publish the corpus with rich metadata, as well as additional unlabelled data for domain adaptation. We share comprehensive baseline results, show how the metadata can be used for granular error analysis, and demonstrate the benefits of domain adaptation for detecting multilingual online attacks.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76297/poster_document/e7785cc8e0dbe9e0db7cecf9516a3814.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76297/slideshow/0e1550a3ebeb32ab4c0f5067c6174c5c.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76297/poster_document/e7785cc8e0dbe9e0db7cecf9516a3814.pdf",'#pdf_view');
-    })
-</script>
 
 
 

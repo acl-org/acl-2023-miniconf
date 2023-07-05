@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: ISIKSumm at BioLaySumm Task 1: BART-based Summarization System Enhanced with Bio-Entity Labels</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Communicating scientific research to the general public is an essential yet challenging task.Lay summaries, which provide a simplified version of research findings, can bridge the gapbetween scientific knowledge and public understanding. The BioLaySumm task (Goldsack et al., 2023) is a shared task that seeks to automate this process by generating lay summaries from biomedical articles. Two different datasets that have been created from curating two biomedical journals (PLOS and eLife) are provided by the task organizers. As a participant in this shared task, we developed a system to generate a lay summary from an article&#39;s abstract and main text.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Communicating scientific research to the general public is an essential yet challenging task.Lay summaries, which provide a simplified version of research findings, can bridge the gapbetween scientifi
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Communicating scientific research to the general public is an essential yet challenging task.Lay summaries, which provide a simplified version of research findings, can bridge the gapbetween scientific knowledge and public understanding. The BioLaySumm task (Goldsack et al., 2023) is a shared task that seeks to automate this process by generating lay summaries from biomedical articles. Two different datasets that have been created from curating two biomedical journals (PLOS and eLife) are provided by the task organizers. As a participant in this shared task, we developed a system to generate a lay summary from an article&#39;s abstract and main text.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

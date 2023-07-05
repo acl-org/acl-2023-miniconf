@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Dynamic Heterogeneous-Graph Reasoning with Language Models and Knowledge Representation Learning for Commonsense Question Answering</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/76865-dynamic-heterogeneous-graph-reasoning-with-language-models-and-knowledge-representation-learning-for-commonsense-question-answering">
         Underline
@@ -368,28 +364,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Recently, knowledge graphs (KGs) have won noteworthy success in commonsense question answering. Existing methods retrieve relevant subgraphs in the KGs through key entities and reason about the answer  with language models (LMs) and graph neural networks. However, they ignore (i) optimizing the knowledge representation and structure of subgraphs and (ii) deeply fusing heterogeneous QA context with subgraphs. In this paper, we propose a dynamic heterogeneous-graph reasoning method with LMs and knowledge representation learning (DHLK), which constructs a heterogeneous knowledge graph (HKG) based on multiple knowledge sources and optimizes the structure and knowledge representation of the HKG using a two-stage pruning strategy and knowledge representation learning (KRL). It then performs joint reasoning by LMs and Relation Mask Self-Attention (RMSA). Specifically, DHLK filters key entities based on the dictionary vocabulary to achieve the first-stage pruning while incorporating the paraphrases in the dictionary into the subgraph to construct the HKG. Then, DHLK encodes and fuses the QA context and HKG using LM, and dynamically removes irrelevant KG entities based on the attention weights of LM for the second-stage pruning. Finally, DHLK introduces KRL to optimize the knowledge representation and perform answer reasoning on the HKG by RMSA.We evaluate DHLK at CommonsenseQA and OpenBookQA, and show its improvement on existing LM and LM+KG methods.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Recently, knowledge graphs (KGs) have won noteworthy success in commonsense question answering. Existing methods retrieve relevant subgraphs in the KGs through key entities and reason about the answer...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -405,27 +406,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Recently, knowledge graphs (KGs) have won noteworthy success in commonsense question answering. Existing methods retrieve relevant subgraphs in the KGs through key entities and reason about the answer  with language models (LMs) and graph neural networks. However, they ignore (i) optimizing the knowledge representation and structure of subgraphs and (ii) deeply fusing heterogeneous QA context with subgraphs. In this paper, we propose a dynamic heterogeneous-graph reasoning method with LMs and knowledge representation learning (DHLK), which constructs a heterogeneous knowledge graph (HKG) based on multiple knowledge sources and optimizes the structure and knowledge representation of the HKG using a two-stage pruning strategy and knowledge representation learning (KRL). It then performs joint reasoning by LMs and Relation Mask Self-Attention (RMSA). Specifically, DHLK filters key entities based on the dictionary vocabulary to achieve the first-stage pruning while incorporating the paraphrases in the dictionary into the subgraph to construct the HKG. Then, DHLK encodes and fuses the QA context and HKG using LM, and dynamically removes irrelevant KG entities based on the attention weights of LM for the second-stage pruning. Finally, DHLK introduces KRL to optimize the knowledge representation and perform answer reasoning on the HKG by RMSA.We evaluate DHLK at CommonsenseQA and OpenBookQA, and show its improvement on existing LM and LM+KG methods.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76865/poster_document/a527946d65922084c36e6eb8c6418e32.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76865/slideshow/bc86a1c7ad5e53be825532c64d792276.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76865/poster_document/a527946d65922084c36e6eb8c6418e32.pdf",'#pdf_view');
-    })
-</script>
 
 
 

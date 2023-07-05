@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: A Facial Expression-Aware Multimodal Multi-task Learning Framework for Emotion Recognition in Multi-party Conversations</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15237/lecture/77034-a-facial-expression-aware-multimodal-multi-task-learning-framework-for-emotion-recognition-in-multi-party-conversations">
         Underline
@@ -368,28 +364,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Multimodal Emotion Recognition in Multiparty Conversations (MERMC) has recently attracted considerable attention. Due to the complexity of visual scenes in multi-party conversations, most previous MERMC studies mainly focus on text and audio modalities while ignoring visual information. Recently, several works proposed to extract face sequences as visual features and have shown the importance of visual information in MERMC. However, given an utterance, the face sequence extracted by previous methods may contain multiple people&#39;s faces, which will inevitably introduce noise to the emotion prediction of the real speaker. To tackle this issue, we propose a two-stage framework named Facial expressionaware Multimodal Multi-Task learning (FacialMMT). Specifically, a pipeline method is first designed to extract the face sequence of the real speaker of each utterance, which consists of multimodal face recognition, unsupervised face clustering, and face matching. With the extracted face sequences, we propose a multimodal facial expression-aware emotion recognition model, which leverages the frame-level facial emotion distributions to help improve utterance-level emotion recognition based on multi-task learning. Experiments demonstrate the effectiveness of the proposed FacialMMT framework on the benchmark MELD dataset. The source code is publicly released at https://github.com/NUSTM/FacialMMT.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Multimodal Emotion Recognition in Multiparty Conversations (MERMC) has recently attracted considerable attention. Due to the complexity of visual scenes in multi-party conversations, most previous MER...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -405,27 +406,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Multimodal Emotion Recognition in Multiparty Conversations (MERMC) has recently attracted considerable attention. Due to the complexity of visual scenes in multi-party conversations, most previous MERMC studies mainly focus on text and audio modalities while ignoring visual information. Recently, several works proposed to extract face sequences as visual features and have shown the importance of visual information in MERMC. However, given an utterance, the face sequence extracted by previous methods may contain multiple people&#39;s faces, which will inevitably introduce noise to the emotion prediction of the real speaker. To tackle this issue, we propose a two-stage framework named Facial expressionaware Multimodal Multi-Task learning (FacialMMT). Specifically, a pipeline method is first designed to extract the face sequence of the real speaker of each utterance, which consists of multimodal face recognition, unsupervised face clustering, and face matching. With the extracted face sequences, we propose a multimodal facial expression-aware emotion recognition model, which leverages the frame-level facial emotion distributions to help improve utterance-level emotion recognition based on multi-task learning. Experiments demonstrate the effectiveness of the proposed FacialMMT framework on the benchmark MELD dataset. The source code is publicly released at https://github.com/NUSTM/FacialMMT.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77034/poster_document/7661a8de4d3ec1a591df000deb669b56.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77034/slideshow/632a8d03e3cf76732005efac499155c2.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77034/poster_document/7661a8de4d3ec1a591df000deb669b56.pdf",'#pdf_view');
-    })
-</script>
 
 
 

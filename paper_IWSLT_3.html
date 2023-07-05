@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: The MineTrans Systems for IWSLT 2023 Offline Speech Translation and Speech-to-Speech Translation Tasks</title>
   
@@ -286,12 +288,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -328,28 +324,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents the 	extsc{MineTrans} English-to-Chinese speech translation systems developed for two challenge tracks of IWSLT 2023, i.e., Offline Speech Translation (S2T) and Speech-to-Speech Translation (S2ST).  For the S2T track, 	extsc{MineTrans} employs a practical cascaded system to explore the limits of translation performance in both constrained and unconstrained settings, where the whole system consists of automatic speech recognition (ASR), punctuation recognition (PC), and machine translation (MT) modules.  We also investigate the effectiveness of multiple ASR architectures and explore two MT strategies: supervised in-domain fine-tuning and prompt-guided translation using a large language model.  For the S2ST track, we explore a speech-to-unit (S2U) framework to build an end-to-end S2ST system. This system encodes the target speech as discrete units via our trained HuBERT. Then it leverages the standard sequence-to-sequence model to directly learn the mapping between source speech and discrete units without any auxiliary recognition tasks (i.e., ASR and MT tasks). Various efforts are made to improve the 	extsc{MineTrans}&#39;s performance, such as acoustic model pre-training on large-scale data, data filtering, data augmentation, speech segmentation, knowledge distillation, consistency training, model ensembles, etc.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents the 	extsc{MineTrans} English-to-Chinese speech translation systems developed for two challenge tracks of IWSLT 2023, i.e., Offline Speech Translation (S2T) and Speech-to-Speech Tr
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -365,8 +358,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents the 	extsc{MineTrans} English-to-Chinese speech translation systems developed for two challenge tracks of IWSLT 2023, i.e., Offline Speech Translation (S2T) and Speech-to-Speech Translation (S2ST).  For the S2T track, 	extsc{MineTrans} employs a practical cascaded system to explore the limits of translation performance in both constrained and unconstrained settings, where the whole system consists of automatic speech recognition (ASR), punctuation recognition (PC), and machine translation (MT) modules.  We also investigate the effectiveness of multiple ASR architectures and explore two MT strategies: supervised in-domain fine-tuning and prompt-guided translation using a large language model.  For the S2ST track, we explore a speech-to-unit (S2U) framework to build an end-to-end S2ST system. This system encodes the target speech as discrete units via our trained HuBERT. Then it leverages the standard sequence-to-sequence model to directly learn the mapping between source speech and discrete units without any auxiliary recognition tasks (i.e., ASR and MT tasks). Various efforts are made to improve the 	extsc{MineTrans}&#39;s performance, such as acoustic model pre-training on large-scale data, data filtering, data augmentation, speech segmentation, knowledge distillation, consistency training, model ensembles, etc.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

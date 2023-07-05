@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: AliBERT: A Pre-trained Language Model for French Biomedical Text</title>
   
@@ -268,12 +270,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -310,28 +306,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Over the past few years, domain specific pretrained language models have been investigated and have shown remarkable achievements in different downstream tasks, especially in biomedical domain. These achievements stem on the well known BERT architecture which uses an attention based self-supervision for context learning of textual documents. However, these domain specific biomedical pretrained language models mainly use English corpora. Therefore, non-English, domain-specific pretrained models remain quite rare, both of these requirements being hard to achieve. In this work, we proposed AliBERT, a biomedical pretrained language model for French and investigated different learning strategies. AliBERT is trained using regularized Unigram based tokenizer trained for this purpose. AliBERT has achieved state of the art F1 and accuracy scores in different down-stream biomedical tasks. Our pretrained model manages to outperform some French non domain-specific models such as CamemBERT and FlauBERT on diverse down-stream tasks, with less pretraining and training time and with much smaller corpora.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Over the past few years, domain specific pretrained language models have been investigated and have shown remarkable achievements in different downstream tasks, especially in biomedical domain. These 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -347,8 +340,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Over the past few years, domain specific pretrained language models have been investigated and have shown remarkable achievements in different downstream tasks, especially in biomedical domain. These achievements stem on the well known BERT architecture which uses an attention based self-supervision for context learning of textual documents. However, these domain specific biomedical pretrained language models mainly use English corpora. Therefore, non-English, domain-specific pretrained models remain quite rare, both of these requirements being hard to achieve. In this work, we proposed AliBERT, a biomedical pretrained language model for French and investigated different learning strategies. AliBERT is trained using regularized Unigram based tokenizer trained for this purpose. AliBERT has achieved state of the art F1 and accuracy scores in different down-stream biomedical tasks. Our pretrained model manages to outperform some French non domain-specific models such as CamemBERT and FlauBERT on diverse down-stream tasks, with less pretraining and training time and with much smaller corpora.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

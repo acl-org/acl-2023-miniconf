@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Kb at SemEval-2023 Task 3: On Multitask Hierarchical BERT Base Neural Network for Multi-label Persuasion Techniques Detection</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents a solution for Semeval 2023 subtask3 of task 3: persuasion techniques in paragraphs detection. The aim of this task is to identify all persuasion techniques in each paragraph of a given news article. We use hierarchical multitask neural networks combined with transformers. Span detection is an auxiliary task that helps in the main task: identifying propaganda techniques. Our experiments show that if we change the index of BERT embedding from the first token of the whole input to the first token of the identified  span, it can improve performance. Span and label detection can be performed using one network, so we save data and, when data is limited, we can use more of it for training.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents a solution for Semeval 2023 subtask3 of task 3: persuasion techniques in paragraphs detection. The aim of this task is to identify all persuasion techniques in each paragraph of a 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents a solution for Semeval 2023 subtask3 of task 3: persuasion techniques in paragraphs detection. The aim of this task is to identify all persuasion techniques in each paragraph of a given news article. We use hierarchical multitask neural networks combined with transformers. Span detection is an auxiliary task that helps in the main task: identifying propaganda techniques. Our experiments show that if we change the index of BERT embedding from the first token of the whole input to the first token of the identified  span, it can improve performance. Span and label detection can be performed using one network, so we save data and, when data is limited, we can use more of it for training.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

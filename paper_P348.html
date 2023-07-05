@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Structured Pruning for Efficient Generative Pre-trained Language Models</title>
   
@@ -282,12 +284,6 @@ attention heads and  feed-forward networks~(FFNs) of the Transformer. Neverthele
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/77301-structured-pruning-for-efficient-generative-pre-trained-language-models">
         Underline
@@ -394,47 +390,77 @@ attention heads and  feed-forward networks~(FFNs) of the Transformer. Neverthele
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The increasing sizes of large generative Pre-trained Language Models (PLMs) hinder their deployment
+in real-world applications. To obtain efficient PLMs, previous studies mostly focus on pruning the 
+...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The increasing sizes of large generative Pre-trained Language Models (PLMs) hinder their deployment
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P348"
+       target="_blank">#paper-P348</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P348?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The increasing sizes of large generative Pre-trained Language Models (PLMs) hinder their deployment
 in real-world applications. To obtain efficient PLMs, previous studies mostly focus on pruning the 
 attention heads and  feed-forward networks~(FFNs) of the Transformer. Nevertheless, we find that in generative PLMs, the hidden dimension shared by many other modules (e.g., embedding layer and layer normalization) contains persistent outliers regardless of the network input. This study comprehensively investigates the structured pruning of generative PLMs with all the above compressible components.  To identify redundant network structures, we assign learnable masks over compressible components followed by sparse training. Various sizes of PLMs can be flexibly extracted via different thresholds, and are then task-specifically fine-tuned for further improvement. Extensive experiments on language modeling, summarization and machine translation validate the effectiveness of the proposed method. For example,  the pruned BART brings 1.51x/6.96x inference speedup on GPU/CPU with 67\% size reduction, and can be further combined with quantization for more than 25$\times$ compression.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77301/poster_document/c11f707ac22613cdcbe8d319a21d5dd8.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77301/slideshow/502fdeea3722e9993e6b75addef1b3da.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77301/poster_document/c11f707ac22613cdcbe8d319a21d5dd8.pdf",'#pdf_view');
-    })
-</script>
 
 
 

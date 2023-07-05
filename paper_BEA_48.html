@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: ExASAG: Explainable Framework for Automatic Short Answer Grading</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        As in other NLP tasks, Automatic Short Answer Grading (ASAG) systems have evolved from using rule-based and interpretable machine learning models to utilizing deep learning architectures to boost accuracy. Since proper feedback is critical to student assessment, explainability will be crucial for deploying ASAG in real-world applications. This paper proposes a framework to generate explainable outcomes for assessing question-answer pairs of a Data Mining course in a binary manner. Our framework utilizes a fine-tuned Transformer-based classifier and an explainability module using SHAP or Integrated Gradients to generate language explanations for each prediction. We assess the outcome of our framework by calculating accuracy-based metrics for classification performance. Furthermore, we evaluate the quality of the explanations by measuring their agreement with human-annotated justifications using Intersection-Over-Union at a token level to derive a plausibility score.Despite the relatively limited sample, results show that our framework derives explanations that are, to some degree, aligned with domain-expert judgment. Furthermore, both explainability methods perform similarly in their agreement with human-annotated explanations. A natural progression of our work is to analyze the use of our explainable ASAG framework on a larger sample to determine the feasibility of implementing a pilot study in a real-world setting.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          As in other NLP tasks, Automatic Short Answer Grading (ASAG) systems have evolved from using rule-based and interpretable machine learning models to utilizing deep learning architectures to boost accu
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            As in other NLP tasks, Automatic Short Answer Grading (ASAG) systems have evolved from using rule-based and interpretable machine learning models to utilizing deep learning architectures to boost accuracy. Since proper feedback is critical to student assessment, explainability will be crucial for deploying ASAG in real-world applications. This paper proposes a framework to generate explainable outcomes for assessing question-answer pairs of a Data Mining course in a binary manner. Our framework utilizes a fine-tuned Transformer-based classifier and an explainability module using SHAP or Integrated Gradients to generate language explanations for each prediction. We assess the outcome of our framework by calculating accuracy-based metrics for classification performance. Furthermore, we evaluate the quality of the explanations by measuring their agreement with human-annotated justifications using Intersection-Over-Union at a token level to derive a plausibility score.Despite the relatively limited sample, results show that our framework derives explanations that are, to some degree, aligned with domain-expert judgment. Furthermore, both explainability methods perform similarly in their agreement with human-annotated explanations. A natural progression of our work is to analyze the use of our explainable ASAG framework on a larger sample to determine the feasibility of implementing a pilot study in a real-world setting.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

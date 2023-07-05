@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: FII_Better at SemEval-2023 Task 2: MultiCoNER II Multilingual Complex Named Entity Recognition</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This task focuses on identifying complex named entities (NEs) in several languages. In the context of SemEval-2023 competition, our team presents an exploration of a base transformer model&#39;s capabilities regarding the task, focused more specifically on five languages (English, Spanish, Swedish, German, Italian). We take DistilBERT and BERT as two examples of basic transformer models, using DistilBERT as a baseline and BERT as the platform to create an improved model. The dataset that we are using, MultiCoNER II, is a large multilingual dataset used for NER, that covers domains like: Wiki sentences, questions and search queries across 12 languages. This dataset contains 26M tokens and it is assembled from public resources. MultiCoNER II defines a NER tag-set with 6 classes and 67 tags.We have managed to get moderate results in the English track (we ranked 17th out of 34), while our results in the other tracks could be further improved in the future (overall third to last).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This task focuses on identifying complex named entities (NEs) in several languages. In the context of SemEval-2023 competition, our team presents an exploration of a base transformer model&#39;s capabilit
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This task focuses on identifying complex named entities (NEs) in several languages. In the context of SemEval-2023 competition, our team presents an exploration of a base transformer model&#39;s capabilities regarding the task, focused more specifically on five languages (English, Spanish, Swedish, German, Italian). We take DistilBERT and BERT as two examples of basic transformer models, using DistilBERT as a baseline and BERT as the platform to create an improved model. The dataset that we are using, MultiCoNER II, is a large multilingual dataset used for NER, that covers domains like: Wiki sentences, questions and search queries across 12 languages. This dataset contains 26M tokens and it is assembled from public resources. MultiCoNER II defines a NER tag-set with 6 classes and 67 tags.We have managed to get moderate results in the English track (we ranked 17th out of 34), while our results in the other tracks could be further improved in the future (overall third to last).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

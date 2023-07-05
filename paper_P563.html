@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Exploring the Capacity of Pretrained Language Models for Reasoning about Actions and Change</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/76447-exploring-the-capacity-of-pretrained-language-models-for-reasoning-about-actions-and-change">
         Underline
@@ -368,28 +364,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Reasoning about actions and change (RAC) is essential to understand and interact with the ever-changing environment. Previous AI research has shown the importance of fundamental and indispensable knowledge of actions, i.e., preconditions and effects. However, traditional methods rely on logical formalization which hinders practical applications. With recent transformer-based language models (LMs), reasoning over text is desirable and seemingly feasible, leading to the question of whether LMs can effectively and efficiently learn to solve RAC problems. We propose four essential RAC tasks as a comprehensive textual benchmark and generate problems in a way that minimizes the influence of other linguistic requirements (e.g., grounding) to focus on RAC. The resulting benchmark, TRAC, encompassing problems of various complexities, facilitates a more granular evaluation of LMs, precisely targeting the structural generalization ability much needed for RAC. Experiments with three high-performing transformers indicate that additional efforts are needed to tackle challenges raised by TRAC.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Reasoning about actions and change (RAC) is essential to understand and interact with the ever-changing environment. Previous AI research has shown the importance of fundamental and indispensable know...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -405,27 +406,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Reasoning about actions and change (RAC) is essential to understand and interact with the ever-changing environment. Previous AI research has shown the importance of fundamental and indispensable knowledge of actions, i.e., preconditions and effects. However, traditional methods rely on logical formalization which hinders practical applications. With recent transformer-based language models (LMs), reasoning over text is desirable and seemingly feasible, leading to the question of whether LMs can effectively and efficiently learn to solve RAC problems. We propose four essential RAC tasks as a comprehensive textual benchmark and generate problems in a way that minimizes the influence of other linguistic requirements (e.g., grounding) to focus on RAC. The resulting benchmark, TRAC, encompassing problems of various complexities, facilitates a more granular evaluation of LMs, precisely targeting the structural generalization ability much needed for RAC. Experiments with three high-performing transformers indicate that additional efforts are needed to tackle challenges raised by TRAC.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76447/poster_document/89b0d07cfa86cf1cb2f658563786920a.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76447/slideshow/9715e060082cf2e63d28e4daafca330e.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76447/poster_document/89b0d07cfa86cf1cb2f658563786920a.pdf",'#pdf_view');
-    })
-</script>
 
 
 

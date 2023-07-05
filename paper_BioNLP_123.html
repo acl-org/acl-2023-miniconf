@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Pathology Dynamics at BioLaySumm: the trade-off between Readability, Relevance, and Factuality in Lay Summarization</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Lay summarization aims to simplify complex scientific information for non-expert audiences. This paper investigates the trade-off between readability and relevance in the lay summarization of long biomedical documents. We introduce a two-stage framework that attains the best readability metrics in the first subtask of BioLaySumm 2023, with 8.924 FleschKincaid Grade Level and 9.188 DaleChall Readability Score. However, this comes at the cost of reduced relevance and factuality, emphasizing the inherent challenges of balancing readability and content preservation in lay summarization. The first stage generates summaries using a large language model, such as BART with LSG attention. The second stage uses a zero-shot sentence simplification method to improve the readability of the summaries. In the second subtask, a hybrid dataset is employed to train a model capable of generating both lay summaries and abstracts. This approach achieves the best readability score and shares the top overall rank with other leading methods. Our study underscores the importance of developing effective methods for creating accessible lay summaries while maintaining information integrity. Future work will integrate simplification and summary generation within a joint optimization framework that generates high-quality lay summaries that effectively communicate scientific content to a broader audience.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Lay summarization aims to simplify complex scientific information for non-expert audiences. This paper investigates the trade-off between readability and relevance in the lay summarization of long bio
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Lay summarization aims to simplify complex scientific information for non-expert audiences. This paper investigates the trade-off between readability and relevance in the lay summarization of long biomedical documents. We introduce a two-stage framework that attains the best readability metrics in the first subtask of BioLaySumm 2023, with 8.924 FleschKincaid Grade Level and 9.188 DaleChall Readability Score. However, this comes at the cost of reduced relevance and factuality, emphasizing the inherent challenges of balancing readability and content preservation in lay summarization. The first stage generates summaries using a large language model, such as BART with LSG attention. The second stage uses a zero-shot sentence simplification method to improve the readability of the summaries. In the second subtask, a hybrid dataset is employed to train a model capable of generating both lay summaries and abstracts. This approach achieves the best readability score and shares the top overall rank with other leading methods. Our study underscores the importance of developing effective methods for creating accessible lay summaries while maintaining information integrity. Future work will integrate simplification and summary generation within a joint optimization framework that generates high-quality lay summaries that effectively communicate scientific content to a broader audience.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

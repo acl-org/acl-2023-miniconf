@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: SIMMC-VR: A Task-oriented Multimodal Dialog Dataset with Situated and Immersive VR Streams</title>
   
@@ -290,12 +292,6 @@ We benchmark the proposed tasks with strong multimodal models, and highlight the
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15227/lecture/76882-simmc-vr-a-task-oriented-multimodal-dialog-dataset-with-situated-and-immersive-vr-streams">
         Underline
@@ -398,38 +394,30 @@ We benchmark the proposed tasks with strong multimodal models, and highlight the
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Building an AI assistant that can seamlessly converse and instruct humans, in a user-centric situated scenario, requires several essential abilities:
-(1) spatial and temporal understanding of the situated and real-time user scenes,
-(2) capability of grounding the actively perceived visuals of users to conversation contexts,
-and (3) conversational reasoning over past utterances to perform just-in-time assistance.
-However, we currently lack a large-scale benchmark that captures user--assistant interactions with all of the aforementioned features.
-To this end, we propose SIMMC-VR, an extension of the SIMMC-2.0 dataset, to a video-grounded task-oriented dialog dataset that captures real-world AI-assisted user scenarios in VR.
-We propose a novel data collection paradigm that involves
-(1) generating object-centric multimodal dialog flows with egocentric visual streams and visually-grounded templates,
-and (2) manually paraphrasing the simulated dialogs for naturalness and diversity while preserving multimodal dependencies. 
-To measure meaningful progress in the field, we propose four tasks to address the new challenges in SIMMC-VR, which require complex spatial-temporal dialog reasoning in active egocentric scenes.
-We benchmark the proposed tasks with strong multimodal models, and highlight the key capabilities that current models lack for future research directions.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Building an AI assistant that can seamlessly converse and instruct humans, in a user-centric situated scenario, requires several essential abilities:
+(1) spatial and temporal understanding of the situ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -445,27 +433,37 @@ We benchmark the proposed tasks with strong multimodal models, and highlight the
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Building an AI assistant that can seamlessly converse and instruct humans, in a user-centric situated scenario, requires several essential abilities:
+(1) spatial and temporal understanding of the situated and real-time user scenes,
+(2) capability of grounding the actively perceived visuals of users to conversation contexts,
+and (3) conversational reasoning over past utterances to perform just-in-time assistance.
+However, we currently lack a large-scale benchmark that captures user--assistant interactions with all of the aforementioned features.
+To this end, we propose SIMMC-VR, an extension of the SIMMC-2.0 dataset, to a video-grounded task-oriented dialog dataset that captures real-world AI-assisted user scenarios in VR.
+We propose a novel data collection paradigm that involves
+(1) generating object-centric multimodal dialog flows with egocentric visual streams and visually-grounded templates,
+and (2) manually paraphrasing the simulated dialogs for naturalness and diversity while preserving multimodal dependencies. 
+To measure meaningful progress in the field, we propose four tasks to address the new challenges in SIMMC-VR, which require complex spatial-temporal dialog reasoning in active egocentric scenes.
+We benchmark the proposed tasks with strong multimodal models, and highlight the key capabilities that current models lack for future research directions.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76882/poster_document/c24c819a4e2a0612790d67980f3a5742.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76882/poster_document/c24c819a4e2a0612790d67980f3a5742.pdf",'#pdf_view');
-    })
-</script>
 
 
 

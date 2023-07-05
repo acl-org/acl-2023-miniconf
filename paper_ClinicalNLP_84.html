@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: IUTEAM1 at MEDIQA-Chat 2023: Is simple fine tuning effective for multi layer summarization of clinical conversations?</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Clinical conversation summarization has become an important application of Natural language Processing. In this work, we intend to analyze summarization model ensembling approaches, that can be utilized to improve the overall accuracy of the generated medical report called chart note. The work starts with a single summarization model creating the baseline. Then leads to an ensemble of summarization models trained on a separate section of the chart note. This leads to the final approach of passing the generated results to another summarization model in a multi-layer/stage fashion for better coherency of the generated text. Our results indicate that although an ensemble of models specialized in each section produces better results, the multi-layer/stage approach does not improve accuracy. The code for the above paper is available at https://github.com/dhananjay-srivastava/MEDIQA-Chat-2023-iuteam1.git
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Clinical conversation summarization has become an important application of Natural language Processing. In this work, we intend to analyze summarization model ensembling approaches, that can be utiliz
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Clinical conversation summarization has become an important application of Natural language Processing. In this work, we intend to analyze summarization model ensembling approaches, that can be utilized to improve the overall accuracy of the generated medical report called chart note. The work starts with a single summarization model creating the baseline. Then leads to an ensemble of summarization models trained on a separate section of the chart note. This leads to the final approach of passing the generated results to another summarization model in a multi-layer/stage fashion for better coherency of the generated text. Our results indicate that although an ensemble of models specialized in each section produces better results, the multi-layer/stage approach does not improve accuracy. The code for the above paper is available at https://github.com/dhananjay-srivastava/MEDIQA-Chat-2023-iuteam1.git
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

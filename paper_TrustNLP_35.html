@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Can NLP Models &#39;Identify&#39;, &#39;Distinguish&#39;, and &#39;Justify&#39; Questions that Don&#39;t have a Definitive Answer?</title>
   
@@ -292,12 +294,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -334,28 +330,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Though state-of-the-art (SOTA) NLP systems have achieved remarkable performance on a variety of language understanding tasks, they primarily focus on questions that have a correct and a definitive answer. However, in real-world applications, users often ask questions that don&#39;t have a definitive answer such as questions about future events, questions lacking necessary details to find the answer, and questions that are ambiguous. Incorrectly answering such questions certainly hampers a system&#39;s reliability and trustworthiness. Can SOTA models accurately identify such questions and provide a reasonable response?To investigate the above question, we introduce QnotA, a dataset consisting of five different categories of questions that don&#39;t have definitive answers. Furthermore, for each QnotA instance, we also provide a corresponding &#39;QA&#39; instance i.e. an alternate question that &#34;can be&#34; answered. With this data, we formulate three evaluation tasks that test a system&#39;s ability to &#39;identify&#39;, &#39;distinguish&#39;, and &#39;justify&#39; QnotA questions. Through comprehensive experiments, we show that even SOTA models including GPT-3 and Flan T5 do not fare well on these tasks and lack considerably behind the human performance baseline. We conduct a thorough analysis which further leads to several interesting findings such as, despite not being able to accurately identify a QnotA question, GPT-3 on being prompted to output a justification of why the given QnotA question doesn&#39;t have a definitive answer is able to provide a reasonable justification. Finally, we believe our work and findings will encourage and facilitate development of more robust NLP systems that can also reasonably respond to questions that don&#39;t have a definitive answer.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Though state-of-the-art (SOTA) NLP systems have achieved remarkable performance on a variety of language understanding tasks, they primarily focus on questions that have a correct and a definitive ans
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -371,8 +364,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Though state-of-the-art (SOTA) NLP systems have achieved remarkable performance on a variety of language understanding tasks, they primarily focus on questions that have a correct and a definitive answer. However, in real-world applications, users often ask questions that don&#39;t have a definitive answer such as questions about future events, questions lacking necessary details to find the answer, and questions that are ambiguous. Incorrectly answering such questions certainly hampers a system&#39;s reliability and trustworthiness. Can SOTA models accurately identify such questions and provide a reasonable response?To investigate the above question, we introduce QnotA, a dataset consisting of five different categories of questions that don&#39;t have definitive answers. Furthermore, for each QnotA instance, we also provide a corresponding &#39;QA&#39; instance i.e. an alternate question that &#34;can be&#34; answered. With this data, we formulate three evaluation tasks that test a system&#39;s ability to &#39;identify&#39;, &#39;distinguish&#39;, and &#39;justify&#39; QnotA questions. Through comprehensive experiments, we show that even SOTA models including GPT-3 and Flan T5 do not fare well on these tasks and lack considerably behind the human performance baseline. We conduct a thorough analysis which further leads to several interesting findings such as, despite not being able to accurately identify a QnotA question, GPT-3 on being prompted to output a justification of why the given QnotA question doesn&#39;t have a definitive answer is able to provide a reasonable justification. Finally, we believe our work and findings will encourage and facilitate development of more robust NLP systems that can also reasonably respond to questions that don&#39;t have a definitive answer.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

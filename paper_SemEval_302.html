@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: CKingCoder at SemEval-2023 Task 9: Multilingual Tweet Intimacy Analysis</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The SemEval 2023 Task 9 Multilingual Tweet Intimacy Analysis, is a shared task for analysing the intimacy in the tweets posted on Twitter. The dataset was provided by Pei and Jurgens, who are part of the task organisers, for this task consists of tweets in various languages, such as Chinese, English, French, Italian, Portuguese, and Spanish. The testing dataset also had unseen languages such as Hindi, Arabic, Dutch and Korean. The tweets may or may not be related to intimacy. The task of our team was to score the intimacy in tweets and place it in the range of 05 based on the level of intimacy in the tweet using the dataset provided which consisted of tweets along with its scores. The intimacy score is used to indicate whether a tweet is intimate or not. Our team participated in the task and proposed the ROBERTa model to analyse the intimacy of the tweets.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The SemEval 2023 Task 9 Multilingual Tweet Intimacy Analysis, is a shared task for analysing the intimacy in the tweets posted on Twitter. The dataset was provided by Pei and Jurgens, who are part of 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The SemEval 2023 Task 9 Multilingual Tweet Intimacy Analysis, is a shared task for analysing the intimacy in the tweets posted on Twitter. The dataset was provided by Pei and Jurgens, who are part of the task organisers, for this task consists of tweets in various languages, such as Chinese, English, French, Italian, Portuguese, and Spanish. The testing dataset also had unseen languages such as Hindi, Arabic, Dutch and Korean. The tweets may or may not be related to intimacy. The task of our team was to score the intimacy in tweets and place it in the range of 05 based on the level of intimacy in the tweet using the dataset provided which consisted of tweets along with its scores. The intimacy score is used to indicate whether a tweet is intimate or not. Our team participated in the task and proposed the ROBERTa model to analyse the intimacy of the tweets.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

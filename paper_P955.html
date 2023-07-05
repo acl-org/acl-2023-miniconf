@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Efficient Diagnosis Assignment Using Unstructured Clinical Notes</title>
   
@@ -268,12 +270,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15298/lecture/76510-efficient-diagnosis-assignment-using-unstructured-clinical-notes">
         Underline
@@ -376,28 +372,29 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Electronic phenotyping entails using electronic health records (EHRs) to identify patients with specific health outcomes and determine when those outcomes occurred. Unstructured clinical notes, which contain a vast amount of information, are a valuable resource for electronic phenotyping. However, traditional methods, such as rule-based labeling functions or neural networks, require significant manual effort to tune and may not generalize well to multiple indications. To address these challenges, we propose \textit{HyDE} (hybrid diagnosis extractor). HyDE is a simple framework for electronic phenotyping that integrates labeling functions and a disease-agnostic neural network to assign diagnoses to patients. By training HyDE&#39;s model to correct predictions made by labeling functions, we are able to disambiguate hypertension true positives and false positives with a supervised area under the precision-recall curve (AUPRC) of 0.85. We extend this hypertension-trained model to zero-shot evaluation of four other diseases, generating AUPRC values ranging from 0.82 - 0.95 and outperforming a labeling function baseline by 44 points in F1 score and a Word2Vec baseline by 24 points in F1 score on average. Furthermore, we demonstrate a speedup of &gt;4x by pruning the length of inputs into our language model to  ~2.3\% of the full clinical notes, with negligible impact to the AUPRC. HyDE has the potential to improve the efficiency and efficacy of interpreting large-scale unstructured clinical notes for accurate EHR phenotyping.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Electronic phenotyping entails using electronic health records (EHRs) to identify patients with specific health outcomes and determine when those outcomes occurred. Unstructured clinical notes, which ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -413,27 +410,27 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Electronic phenotyping entails using electronic health records (EHRs) to identify patients with specific health outcomes and determine when those outcomes occurred. Unstructured clinical notes, which contain a vast amount of information, are a valuable resource for electronic phenotyping. However, traditional methods, such as rule-based labeling functions or neural networks, require significant manual effort to tune and may not generalize well to multiple indications. To address these challenges, we propose \textit{HyDE} (hybrid diagnosis extractor). HyDE is a simple framework for electronic phenotyping that integrates labeling functions and a disease-agnostic neural network to assign diagnoses to patients. By training HyDE&#39;s model to correct predictions made by labeling functions, we are able to disambiguate hypertension true positives and false positives with a supervised area under the precision-recall curve (AUPRC) of 0.85. We extend this hypertension-trained model to zero-shot evaluation of four other diseases, generating AUPRC values ranging from 0.82 - 0.95 and outperforming a labeling function baseline by 44 points in F1 score and a Word2Vec baseline by 24 points in F1 score on average. Furthermore, we demonstrate a speedup of &gt;4x by pruning the length of inputs into our language model to  ~2.3\% of the full clinical notes, with negligible impact to the AUPRC. HyDE has the potential to improve the efficiency and efficacy of interpreting large-scale unstructured clinical notes for accurate EHR phenotyping.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76510/poster_document/a8029b3507fb851fa9f2ffcd36c20764.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76510/poster_document/a8029b3507fb851fa9f2ffcd36c20764.pdf",'#pdf_view');
-    })
-</script>
 
 
 

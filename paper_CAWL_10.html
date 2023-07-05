@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Back-Transliteration of English Loanwords in Japanese</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We propose methods for transliterating English loanwords in Japanese from their Japanese written form (katakana/romaji) to their original English written form. Our data is a Japanese-English loanwords dictionary that we have created ourselves. We employ two approaches: the direct transliteration, which directly converts words from katakana to English, and the indirect transliteration, which utilizes the English pronunciation as an intermediate step. Additionally, we compare the effectiveness of using katakana versus romaji as input characters. We develop 6 models of 2 types for our experiments: one with an English lexicon-filter, and the other without. For each type, we built 3 models, including a pair n-gram based on WFSTs and two sequence-to-sequence models leveraging LSTM and transformer. Our best performing model was the pair n-gram model with a lexicon-filter, directly transliterating from katakana to English.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We propose methods for transliterating English loanwords in Japanese from their Japanese written form (katakana/romaji) to their original English written form. Our data is a Japanese-English loanwords
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We propose methods for transliterating English loanwords in Japanese from their Japanese written form (katakana/romaji) to their original English written form. Our data is a Japanese-English loanwords dictionary that we have created ourselves. We employ two approaches: the direct transliteration, which directly converts words from katakana to English, and the indirect transliteration, which utilizes the English pronunciation as an intermediate step. Additionally, we compare the effectiveness of using katakana versus romaji as input characters. We develop 6 models of 2 types for our experiments: one with an English lexicon-filter, and the other without. For each type, we built 3 models, including a pair n-gram based on WFSTs and two sequence-to-sequence models leveraging LSTM and transformer. Our best performing model was the pair n-gram model with a lexicon-filter, directly transliterating from katakana to English.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

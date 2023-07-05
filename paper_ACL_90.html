@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Designing harder benchmarks for evaluating zero-shot generalizability in Question Answering over Knowledge Bases</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Most benchmarks for question answering on knowledge bases (KBQA) operate with the i.i.d. assumption. Recently, the GrailQA dataset was established to evaluate  zero-shot generalization capabilities of KBQA models. Reasonable performance of current KBQA systems on the zero-shot GrailQA split hints that the field might be moving towards more generalizable systems. In this work, we observe a bias in the GrailQA dataset towards simpler one or two-hop questions which results in an inaccurate assessment of the aforementioned prowess. We propose GrailQA++, a challenging zero-shot KBQA test set that contains a larger number of questions relying on complex reasoning.  We leverage the concept of reasoning paths to control the complexity of the questions and to ensure that our proposed test set has a fair distribution of simple and complex questions. Evaluating existing KBQA models on this new test set shows that they suffer a substantial drop in performance as compared to the GrailQA zero-shot split. This highlights the non-generalizability of existing models and the necessity for harder benchmarks. Our analysis reveals how reasoning paths can be used to understand complementary strengths of different KBQA models, and provide a deeper insight into model mispredictions.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Most benchmarks for question answering on knowledge bases (KBQA) operate with the i.i.d. assumption. Recently, the GrailQA dataset was established to evaluate  zero-shot generalization capabilities of
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Most benchmarks for question answering on knowledge bases (KBQA) operate with the i.i.d. assumption. Recently, the GrailQA dataset was established to evaluate  zero-shot generalization capabilities of KBQA models. Reasonable performance of current KBQA systems on the zero-shot GrailQA split hints that the field might be moving towards more generalizable systems. In this work, we observe a bias in the GrailQA dataset towards simpler one or two-hop questions which results in an inaccurate assessment of the aforementioned prowess. We propose GrailQA++, a challenging zero-shot KBQA test set that contains a larger number of questions relying on complex reasoning.  We leverage the concept of reasoning paths to control the complexity of the questions and to ensure that our proposed test set has a fair distribution of simple and complex questions. Evaluating existing KBQA models on this new test set shows that they suffer a substantial drop in performance as compared to the GrailQA zero-shot split. This highlights the non-generalizability of existing models and the necessity for harder benchmarks. Our analysis reveals how reasoning paths can be used to understand complementary strengths of different KBQA models, and provide a deeper insight into model mispredictions.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

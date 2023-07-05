@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Attention at SemEval-2023 Task 10: Explainable Detection of Online Sexism (EDOS)</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, we have worked on explainability and understanding of the decisions made by models in the form of classification tasks. The task is divided into 3 subtasks. The first task consists of determining Binary Sexism Detection. The second task describes the Category of Sexism. The third task describes a more Fine-grained Category of Sexism. Our work explores solving these tasks as a classification problem by fine-tuning transformer-based architecture. We have performed several experiments with our architecture, including combining multiple transformers, using domain adaptive pretraining on the unlabelled dataset provided by Reddit and Gab, Joint learning, and taking different layers of transformers as input to a classification head. Our system (with the team name Attention&#39;) was able to achieve a macro F1 score of 0.839 for task A, 0.5835 macro F1 score for task B and 0.3356 macro F1 score for task C at the Codalab SemEval Competition. Later we improved the accuracy of Task B to 0.6228 and Task C to 0.3693 in the test set.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, we have worked on explainability and understanding of the decisions made by models in the form of classification tasks. The task is divided into 3 subtasks. The first task consists of d
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, we have worked on explainability and understanding of the decisions made by models in the form of classification tasks. The task is divided into 3 subtasks. The first task consists of determining Binary Sexism Detection. The second task describes the Category of Sexism. The third task describes a more Fine-grained Category of Sexism. Our work explores solving these tasks as a classification problem by fine-tuning transformer-based architecture. We have performed several experiments with our architecture, including combining multiple transformers, using domain adaptive pretraining on the unlabelled dataset provided by Reddit and Gab, Joint learning, and taking different layers of transformers as input to a classification head. Our system (with the team name Attention&#39;) was able to achieve a macro F1 score of 0.839 for task A, 0.5835 macro F1 score for task B and 0.3356 macro F1 score for task C at the Codalab SemEval Competition. Later we improved the accuracy of Task B to 0.6228 and Task C to 0.3693 in the test set.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

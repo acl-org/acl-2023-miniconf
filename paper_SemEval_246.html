@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Mr-wallace at SemEval-2023 Task 5: Novel Clickbait Spoiling Algorithm Using Natural Language Processing</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents a model for clickbait spoiling,which aims at generating short texts that satisfy thecuriosity induced by a clickbait post. The modelis split into two tasks: identifying the clickbaittype and spoiling the clickbait. The first task isto classify the spoiler type that the clickbait postwarrants, and the second task is to generate thespoiler for the clickbait post. The model utilizesthe Distilbert-base-uncased model for the first taskand the Bert-base-uncased model for the secondtask. The trained model is optimized through trialand error on different model selections, and hyper-parameters and results are presented in a confusionmatrix. The main reason we utilized Distilbert-base-uncased is that it analyzes words in the con-text of what&#39;s around it. The objective of this modelis to save readers time and spoil the clickbait of dif-ferent articles they may see on different platformslike Twitter and Reddit
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents a model for clickbait spoiling,which aims at generating short texts that satisfy thecuriosity induced by a clickbait post. The modelis split into two tasks: identifying the clickba
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents a model for clickbait spoiling,which aims at generating short texts that satisfy thecuriosity induced by a clickbait post. The modelis split into two tasks: identifying the clickbaittype and spoiling the clickbait. The first task isto classify the spoiler type that the clickbait postwarrants, and the second task is to generate thespoiler for the clickbait post. The model utilizesthe Distilbert-base-uncased model for the first taskand the Bert-base-uncased model for the secondtask. The trained model is optimized through trialand error on different model selections, and hyper-parameters and results are presented in a confusionmatrix. The main reason we utilized Distilbert-base-uncased is that it analyzes words in the con-text of what&#39;s around it. The objective of this modelis to save readers time and spoil the clickbait of dif-ferent articles they may see on different platformslike Twitter and Reddit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

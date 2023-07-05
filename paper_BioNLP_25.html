@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Privacy Aware Question-Answering System for Online Mental Health Risk Assessment</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Social media platforms have enabled individuals suffering from mental illnesses to share their lived experiences and find the online support necessary to cope. However, many users fail to receive genuine clinical support, thus exacerbating their symptoms. Screening users based on what they post online can aid providers in administering targeted healthcare and minimize false positives. Pre-trained Language Models (LMs) can assess users&#39; social media data and classify them in terms of their mental health risk. We propose a Question-Answering (QA) approach to assess mental health risk using the Unified-QA model on two large mental health datasets. To protect user data, we extend Unified-QA by anonymizing the model training process using differential privacy. Our results demonstrate the effectiveness of modeling risk assessment as a QA task, specifically for mental health use cases. Furthermore, the model&#39;s performance decreases by less than 1% with the inclusion of differential privacy. The proposed system&#39;s performance is indicative of a promising research direction that will lead to the development of privacy-aware diagnostic systems.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Social media platforms have enabled individuals suffering from mental illnesses to share their lived experiences and find the online support necessary to cope. However, many users fail to receive genu
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Social media platforms have enabled individuals suffering from mental illnesses to share their lived experiences and find the online support necessary to cope. However, many users fail to receive genuine clinical support, thus exacerbating their symptoms. Screening users based on what they post online can aid providers in administering targeted healthcare and minimize false positives. Pre-trained Language Models (LMs) can assess users&#39; social media data and classify them in terms of their mental health risk. We propose a Question-Answering (QA) approach to assess mental health risk using the Unified-QA model on two large mental health datasets. To protect user data, we extend Unified-QA by anonymizing the model training process using differential privacy. Our results demonstrate the effectiveness of modeling risk assessment as a QA task, specifically for mental health use cases. Furthermore, the model&#39;s performance decreases by less than 1% with the inclusion of differential privacy. The proposed system&#39;s performance is indicative of a promising research direction that will lead to the development of privacy-aware diagnostic systems.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

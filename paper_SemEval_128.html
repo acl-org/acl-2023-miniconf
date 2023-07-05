@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: CNLP-NITS at SemEval-2023 Task 10: Online sexism prediction, PREDHATE!</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Online sexism is a rising issue that threatens women&#39;s safety, fosters hostile situations, and upholds social inequities. We describe a task SemEval-2023 Task 10 for creating English-language models that can precisely identify and categorize sexist content on internet forums and social platforms like Gab and Reddit as well to provide an explainability in order to address this problem. The problem is divided into three hierarchically organized subtasks: binary sexism detection, sexism by category, and sexism by fine-grained vector. The dataset consists of 20,000 labelled entries. For Task A, pertained models like Convolutional Neural Network (CNN) and Bidirectional Long Short-Term Memory (BiLSTM), which is called CNN-BiLSTM and Generative Pretrained Transformer 2 (GPT-2) models were used, as well as the GPT-2 model for Task B and C, and have provided experimental configurations. According to our findings, the GPT-2 model performs better than the CNN-BiLSTM model for Task A, while GPT-2 is highly accurate for Tasks B and C on the training, validation and testing splits of the training data provided in the task. Our proposed models allow researchers to create more precise and understandable models for identifying and categorizing sexist content in online forums, thereby empowering users and moderators.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Online sexism is a rising issue that threatens women&#39;s safety, fosters hostile situations, and upholds social inequities. We describe a task SemEval-2023 Task 10 for creating English-language models t
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Online sexism is a rising issue that threatens women&#39;s safety, fosters hostile situations, and upholds social inequities. We describe a task SemEval-2023 Task 10 for creating English-language models that can precisely identify and categorize sexist content on internet forums and social platforms like Gab and Reddit as well to provide an explainability in order to address this problem. The problem is divided into three hierarchically organized subtasks: binary sexism detection, sexism by category, and sexism by fine-grained vector. The dataset consists of 20,000 labelled entries. For Task A, pertained models like Convolutional Neural Network (CNN) and Bidirectional Long Short-Term Memory (BiLSTM), which is called CNN-BiLSTM and Generative Pretrained Transformer 2 (GPT-2) models were used, as well as the GPT-2 model for Task B and C, and have provided experimental configurations. According to our findings, the GPT-2 model performs better than the CNN-BiLSTM model for Task A, while GPT-2 is highly accurate for Tasks B and C on the training, validation and testing splits of the training data provided in the task. Our proposed models allow researchers to create more precise and understandable models for identifying and categorizing sexist content in online forums, thereby empowering users and moderators.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

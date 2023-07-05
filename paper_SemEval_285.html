@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Billy-Batson at SemEval-2023 Task 5: An Information Condensation based System for Clickbait Spoiling</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The Clickbait Challenge targets spoiling the clickbaits using short pieces of information known as spoilers to satisfy the curiosity induced by a clickbait post.The large context of the article associated with the clickbait and differences in the spoiler forms, make the task challenging.Hence, to tackle the large context, we propose an Information Condensation-based approach, which prunes down the unnecessary context.Given an article, our filtering module optimised with a contrastive learning objective first selects the parapraphs that are the most relevant to the corresponding clickbait.The resulting condensed article is then fed to the two downstream tasks of spoiler type classification and spoiler generation.We demonstrate and analyze the gains from this approach on both the tasks.Overall, we win the task of spoiler type classification and achieve competitive results on spoiler generation.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The Clickbait Challenge targets spoiling the clickbaits using short pieces of information known as spoilers to satisfy the curiosity induced by a clickbait post.The large context of the article associ
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The Clickbait Challenge targets spoiling the clickbaits using short pieces of information known as spoilers to satisfy the curiosity induced by a clickbait post.The large context of the article associated with the clickbait and differences in the spoiler forms, make the task challenging.Hence, to tackle the large context, we propose an Information Condensation-based approach, which prunes down the unnecessary context.Given an article, our filtering module optimised with a contrastive learning objective first selects the parapraphs that are the most relevant to the corresponding clickbait.The resulting condensed article is then fed to the two downstream tasks of spoiler type classification and spoiler generation.We demonstrate and analyze the gains from this approach on both the tasks.Overall, we win the task of spoiler type classification and achieve competitive results on spoiler generation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

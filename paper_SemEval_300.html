@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: CSECU-DSG at SemEval-2023 Task 4: Fine-tuning DeBERTa Transformer Model with Cross-fold Training and Multi-sample Dropout for Human Values Identification</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Human values identification from a set of argument is becoming a prominent area of research in argument mining. Among some options, values convey what may be the most desirable and widely accepted answer. The diversity of human beliefs, random texture and implicit meaning within the arguments makes it more difficult to identify human values from the arguments. To address these challenges, SemEval-2023 Task 4 introduced a shared task ValueEval focusing on identifying human values categories based on given arguments. This paper presents our participation in this task where we propose a finetuned DeBERTa transformers-based classification approach to identify the desire human value category. We utilize different training strategy with the finetuned DeBERTa model to enhance contextual representation on this downstream task. Our proposed method achieved competitive performance among the participants&#39; methods.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Human values identification from a set of argument is becoming a prominent area of research in argument mining. Among some options, values convey what may be the most desirable and widely accepted ans
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Human values identification from a set of argument is becoming a prominent area of research in argument mining. Among some options, values convey what may be the most desirable and widely accepted answer. The diversity of human beliefs, random texture and implicit meaning within the arguments makes it more difficult to identify human values from the arguments. To address these challenges, SemEval-2023 Task 4 introduced a shared task ValueEval focusing on identifying human values categories based on given arguments. This paper presents our participation in this task where we propose a finetuned DeBERTa transformers-based classification approach to identify the desire human value category. We utilize different training strategy with the finetuned DeBERTa model to enhance contextual representation on this downstream task. Our proposed method achieved competitive performance among the participants&#39; methods.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

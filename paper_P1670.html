@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Don&#39;t Lose Yourself! Empathetic Response Generation via Explicit Self-Other Awareness</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15279/lecture/77515-don-t-lose-yourself-empathetic-response-generation-via-explicit-self-other-awareness">
         Underline
@@ -426,45 +422,73 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          As a critical step to achieve human-like chatbots, empathetic response generation has attained increasing interests. Previous attempts are incomplete and not sufficient enough to elicit empathy becaus...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        As a critical step to achieve human-like chatbots, empathetic response generation has attained increasing interests. Previous attempts are incomplete and not sufficient enough to elicit empathy because they only stay on the initial stage of empathy to automatically sense and simulate the feelings and thoughts of others via other-awareness. However, they ignore to include self-awareness to consider the own views of the self in their responses, which is a crucial process to achieve the empathy. To this end, we propose to generate Empathetic response with explicit Self-Other Awareness (EmpSOA). Specifically, three stages, self-other differentiation, self-other modulation and self-other generation, are devised to clearly maintain, regulate and inject the self-other aware information into the process of empathetic response generation. Both automatic and human evaluations on the benchmark dataset demonstrate the superiority of EmpSOA to generate more empathetic responses. {Our source code will be publicly available.}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P1670"
+       target="_blank">#paper-P1670</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P1670?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            As a critical step to achieve human-like chatbots, empathetic response generation has attained increasing interests. Previous attempts are incomplete and not sufficient enough to elicit empathy because they only stay on the initial stage of empathy to automatically sense and simulate the feelings and thoughts of others via other-awareness. However, they ignore to include self-awareness to consider the own views of the self in their responses, which is a crucial process to achieve the empathy. To this end, we propose to generate Empathetic response with explicit Self-Other Awareness (EmpSOA). Specifically, three stages, self-other differentiation, self-other modulation and self-other generation, are devised to clearly maintain, regulate and inject the self-other aware information into the process of empathetic response generation. Both automatic and human evaluations on the benchmark dataset demonstrate the superiority of EmpSOA to generate more empathetic responses. {Our source code will be publicly available.}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77515/poster_document/e31615f4e9240cfe8df946d773d254bb.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77515/slideshow/b8aa58dcb16460b3b7701f8f734ab387.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77515/poster_document/e31615f4e9240cfe8df946d773d254bb.pdf",'#pdf_view');
-    })
-</script>
 
 
 

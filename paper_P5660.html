@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Easy to Decide, Hard to Agree: Reducing Disagreements Between Saliency Methods</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/78111-easy-to-decide-hard-to-agree-reducing-disagreements-between-saliency-methods">
         Underline
@@ -362,45 +358,73 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          A popular approach to unveiling the black box of neural NLP models is to leverage saliency methods, which assign scalar importance scores to each input component. A common practice for evaluating whet...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        A popular approach to unveiling the black box of neural NLP models is to leverage saliency methods, which assign scalar importance scores to each input component. A common practice for evaluating whether an interpretability method is faithful has been to use evaluation-by-agreement -- if multiple methods agree on an explanation, its credibility increases. However, recent work has found that saliency methods exhibit weak rank correlations even when applied to the same model instance and advocated for alternative diagnostic methods. In our work, we demonstrate that rank correlation is not a good fit for evaluating agreement and argue that Pearson-r is a better-suited alternative. We further show that regularization techniques that increase faithfulness of attention explanations also increase agreement between saliency methods. By connecting our findings to instance categories based on training dynamics, we show that the agreement of saliency method explanations is very low for easy-to-learn instances. Finally, we connect the improvement in agreement across instance categories to local representation space statistics of instances, paving the way for work on analyzing which intrinsic model properties improve their predisposition to interpretability methods.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P5660"
+       target="_blank">#paper-P5660</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P5660?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            A popular approach to unveiling the black box of neural NLP models is to leverage saliency methods, which assign scalar importance scores to each input component. A common practice for evaluating whether an interpretability method is faithful has been to use evaluation-by-agreement -- if multiple methods agree on an explanation, its credibility increases. However, recent work has found that saliency methods exhibit weak rank correlations even when applied to the same model instance and advocated for alternative diagnostic methods. In our work, we demonstrate that rank correlation is not a good fit for evaluating agreement and argue that Pearson-r is a better-suited alternative. We further show that regularization techniques that increase faithfulness of attention explanations also increase agreement between saliency methods. By connecting our findings to instance categories based on training dynamics, we show that the agreement of saliency method explanations is very low for easy-to-learn instances. Finally, we connect the improvement in agreement across instance categories to local representation space statistics of instances, paving the way for work on analyzing which intrinsic model properties improve their predisposition to interpretability methods.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/78111/poster_document/bd8c61bbe66d72c6c00e2f8652373e7b.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/78111/slideshow/3aebf6e43b632d3617c814d051183c85.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/78111/poster_document/bd8c61bbe66d72c6c00e2f8652373e7b.pdf",'#pdf_view');
-    })
-</script>
 
 
 

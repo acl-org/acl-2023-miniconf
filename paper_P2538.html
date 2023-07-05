@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Sentiment Knowledge Enhanced Self-supervised Learning for Multimodal Sentiment Analysis</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77665-sentiment-knowledge-enhanced-self-supervised-learning-for-multimodal-sentiment-analysis">
         Underline
@@ -370,45 +366,65 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Multimodal Sentiment Analysis (MSA) has made great progress that benefits from extraordinary fusion scheme. However, there is a lack of labeled data, resulting in severe overfitting and poor generaliz...
+        </div>
   </div>
 </div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Multimodal Sentiment Analysis (MSA) has made great progress that benefits from extraordinary fusion scheme. However, there is a lack of labeled data, resulting in severe overfitting and poor generalization for supervised models applied in this field. In this paper, we propose Sentiment Knowledge Enhanced Self-supervised Learning (SKESL) to capture common sentimental patterns in unlabeled videos, which facilitates further learning on limited labeled data. Specifically, with the help of sentiment knowledge and non-verbal behavior, SKESL conducts sentiment word masking and predicts fine-grained word sentiment intensity, so as to embed sentiment information at the word level into pre-trained multimodal representation. In addition, a non-verbal injection method is also proposed to integrate non-verbal information into the word semantics. Experiments on two standard benchmarks of MSA clearly show that SKESL significantly outperforms the baseline, and achieves new State-Of-The-Art (SOTA) results.
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://acl.rocket.chat/channel/paper-P2538"
+       target="_blank">#paper-P2538</a>
+    channel in a separate window.
+  </div>
+
+  <!-- Chat -->
+    <div id="gitter" class="slp">
+      <iframe frameborder="0" src="https://acl.rocket.chat/channel/paper-P2538?layout=embedded" height="700px" width="100%" ></iframe>
+    </div>
+</div>
+
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Multimodal Sentiment Analysis (MSA) has made great progress that benefits from extraordinary fusion scheme. However, there is a lack of labeled data, resulting in severe overfitting and poor generalization for supervised models applied in this field. In this paper, we propose Sentiment Knowledge Enhanced Self-supervised Learning (SKESL) to capture common sentimental patterns in unlabeled videos, which facilitates further learning on limited labeled data. Specifically, with the help of sentiment knowledge and non-verbal behavior, SKESL conducts sentiment word masking and predicts fine-grained word sentiment intensity, so as to embed sentiment information at the word level into pre-trained multimodal representation. In addition, a non-verbal injection method is also proposed to integrate non-verbal information into the word semantics. Experiments on two standard benchmarks of MSA clearly show that SKESL significantly outperforms the baseline, and achieves new State-Of-The-Art (SOTA) results.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77665/poster_document/440c9fde69595c01a837f6f412a5a109.pdf" type="application/pdf" width="100%" height="850px">
   </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77665/poster_document/440c9fde69595c01a837f6f412a5a109.pdf",'#pdf_view');
-    })
-</script>
 
 
 

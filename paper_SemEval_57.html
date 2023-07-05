@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: JCT at SemEval-2023 Tasks 12 A and 12B: Sentiment Analysis for Tweets Written in Low-resource African Languages using Various Machine Learning and Deep Learning Methods, Resampling, and HyperParameter Tuning</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this paper, we describe our submissions to the SemEval-2023 contest. We tackled subtask 12 - &#34;AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset&#34;. We developed different models for 12 African languages and a 13th model for a multilingual dataset built from these 12 languages. We applied a wide variety of word and char n-grams based on their tf-idf values, 4 classical machine learning methods, 2 deep learning methods, and 3 oversampling methods. We used 12 sentiment lexicons and applied extensive hyperparameter tuning.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this paper, we describe our submissions to the SemEval-2023 contest. We tackled subtask 12 - &#34;AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset&#34;. We dev
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this paper, we describe our submissions to the SemEval-2023 contest. We tackled subtask 12 - &#34;AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset&#34;. We developed different models for 12 African languages and a 13th model for a multilingual dataset built from these 12 languages. We applied a wide variety of word and char n-grams based on their tf-idf values, 4 classical machine learning methods, 2 deep learning methods, and 3 oversampling methods. We used 12 sentiment lexicons and applied extensive hyperparameter tuning.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

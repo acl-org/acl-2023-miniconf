@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Sadness and Anxiety Language in Reddit Messages Before and After Quitting a Job</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        People globally quit their jobs at high rates during the COVID-19 pandemic, yet there is scant research about emotional trajectories surrounding voluntary resignations before or during that era. To explore long-term emotional language patterns before and after quitting a job, we amassed a Reddit sample of people who indicated resigning on a specific day (n = 7,436), each of whom was paired with a comparison user matched on posting history. After excluding people on the basis of low posting frequency and word count, we analyzed 150.3 million words (53.1% from 5,134 target users who indicated quitting) using SALLEE, a dictionary-based syntax-aware tool, and Linguistic Inquiry and Word Count (LIWC) dictionaries. Based on posts in the year before and after quitting, people who had quit their jobs used more sadness and anxiety language than matched comparison users. Lower rates of &#34;I&#34; pronouns and cognitive processing language were associated with less sadness and anxiety surrounding quitting. Emotional trajectories during and before the pandemic were parallel, though pandemic messages were more negative. The results have relevance for strategic self-distancing as a means of regulating negative emotions around major life changes.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          People globally quit their jobs at high rates during the COVID-19 pandemic, yet there is scant research about emotional trajectories surrounding voluntary resignations before or during that era. To ex
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            People globally quit their jobs at high rates during the COVID-19 pandemic, yet there is scant research about emotional trajectories surrounding voluntary resignations before or during that era. To explore long-term emotional language patterns before and after quitting a job, we amassed a Reddit sample of people who indicated resigning on a specific day (n = 7,436), each of whom was paired with a comparison user matched on posting history. After excluding people on the basis of low posting frequency and word count, we analyzed 150.3 million words (53.1% from 5,134 target users who indicated quitting) using SALLEE, a dictionary-based syntax-aware tool, and Linguistic Inquiry and Word Count (LIWC) dictionaries. Based on posts in the year before and after quitting, people who had quit their jobs used more sadness and anxiety language than matched comparison users. Lower rates of &#34;I&#34; pronouns and cognitive processing language were associated with less sadness and anxiety surrounding quitting. Emotional trajectories during and before the pandemic were parallel, though pandemic messages were more negative. The results have relevance for strategic self-distancing as a means of regulating negative emotions around major life changes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

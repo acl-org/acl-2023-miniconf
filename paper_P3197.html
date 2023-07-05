@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: CAT: A Contextualized Conceptualization and Instantiation Framework for Commonsense Reasoning</title>
   
@@ -274,12 +276,6 @@ Our code, data, and fine-tuned models are publicly available at [https://github.
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15263/lecture/76280-cat-a-contextualized-conceptualization-and-instantiation-framework-for-commonsense-reasoning">
         Underline
@@ -386,34 +382,34 @@ Our code, data, and fine-tuned models are publicly available at [https://github.
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Commonsense reasoning, aiming at endowing machines with a human-like ability to make situational presumptions, is extremely challenging to generalize.
-For someone who barely knows about &#34;meditation,&#34; while is knowledgeable about &#34;singing,&#34; he can still infer that &#34;meditation makes people relaxed&#34; from the existing knowledge that &#34;singing makes people relaxed&#34; by first conceptualizing &#34;singing&#34; as a &#34;relaxing event&#34; and then instantiating that event to &#34;meditation.&#34;
-This process, known as conceptual induction and deduction, is fundamental to commonsense reasoning while lacking both labeled data and methodologies to enhance commonsense modeling.
-To fill such a research gap, we propose CAT (Contextualized ConceptuAlization and InsTantiation),
-a semi-supervised learning framework that integrates event conceptualization and instantiation to conceptualize commonsense knowledge bases at scale.
-Extensive experiments show that our framework achieves state-of-the-art performances on two conceptualization tasks, and the acquired abstract commonsense knowledge can significantly improve commonsense inference modeling.
-Our code, data, and fine-tuned models are publicly available at [https://github.com/HKUST-KnowComp/CAT](https://github.com/HKUST-KnowComp/CAT).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Commonsense reasoning, aiming at endowing machines with a human-like ability to make situational presumptions, is extremely challenging to generalize.
+For someone who barely knows about &#34;meditation,&#34; ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -429,27 +425,37 @@ Our code, data, and fine-tuned models are publicly available at [https://github.
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Commonsense reasoning, aiming at endowing machines with a human-like ability to make situational presumptions, is extremely challenging to generalize.
+For someone who barely knows about &#34;meditation,&#34; while is knowledgeable about &#34;singing,&#34; he can still infer that &#34;meditation makes people relaxed&#34; from the existing knowledge that &#34;singing makes people relaxed&#34; by first conceptualizing &#34;singing&#34; as a &#34;relaxing event&#34; and then instantiating that event to &#34;meditation.&#34;
+This process, known as conceptual induction and deduction, is fundamental to commonsense reasoning while lacking both labeled data and methodologies to enhance commonsense modeling.
+To fill such a research gap, we propose CAT (Contextualized ConceptuAlization and InsTantiation),
+a semi-supervised learning framework that integrates event conceptualization and instantiation to conceptualize commonsense knowledge bases at scale.
+Extensive experiments show that our framework achieves state-of-the-art performances on two conceptualization tasks, and the acquired abstract commonsense knowledge can significantly improve commonsense inference modeling.
+Our code, data, and fine-tuned models are publicly available at [https://github.com/HKUST-KnowComp/CAT](https://github.com/HKUST-KnowComp/CAT).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76280/poster_document/5c931372136db9981188850aa251bf16.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76280/slideshow/71c8a8fdeb0a508c05bf7842cfe80310.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76280/poster_document/5c931372136db9981188850aa251bf16.pdf",'#pdf_view');
-    })
-</script>
 
 
 

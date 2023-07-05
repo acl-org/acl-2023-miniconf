@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: DEPTH+: An Enhanced Depth Metric for Wikipedia Corpora Quality</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Wikipedia articles are a common source of training data for Natural Language Processing (NLP) research, especially as a source for corpora in languages other than English. However, research has shown that not all Wikipedia editions are produced organically by native speakers, and there are substantial levels of automation and translation activities in the Wikipedia project that could negatively impact the degree to which they truly represent the language and the culture of native speakers. To encourage transparency in the Wikipedia project, Wikimedia Foundation introduced the depth metric as an indication of the degree of collaboration or how frequently users edit a Wikipedia edition&#39;s articles. While a promising start, this depth metric suffers from a few serious problems, like a lack of adequate handling of inflation of edits metric and a lack of full utilization of users-related metrics. In this paper, we propose the DEPTH+ metric, provide its mathematical definitions, and describe how it reflects a better representation of the depth of human collaborativeness. We also quantify the bot activities in Wikipedia and offer a bot-free depth metric after the removal of the bot-created articles and the bot-made edits on the Wikipedia articles.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Wikipedia articles are a common source of training data for Natural Language Processing (NLP) research, especially as a source for corpora in languages other than English. However, research has shown 
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Wikipedia articles are a common source of training data for Natural Language Processing (NLP) research, especially as a source for corpora in languages other than English. However, research has shown that not all Wikipedia editions are produced organically by native speakers, and there are substantial levels of automation and translation activities in the Wikipedia project that could negatively impact the degree to which they truly represent the language and the culture of native speakers. To encourage transparency in the Wikipedia project, Wikimedia Foundation introduced the depth metric as an indication of the degree of collaboration or how frequently users edit a Wikipedia edition&#39;s articles. While a promising start, this depth metric suffers from a few serious problems, like a lack of adequate handling of inflation of edits metric and a lack of full utilization of users-related metrics. In this paper, we propose the DEPTH+ metric, provide its mathematical definitions, and describe how it reflects a better representation of the depth of human collaborativeness. We also quantify the bot activities in Wikipedia and offer a bot-free depth metric after the removal of the bot-created articles and the bot-made edits on the Wikipedia articles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

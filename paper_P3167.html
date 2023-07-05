@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: RED&lt;sup&gt;FM&lt;/sup&gt;: a Filtered and Multilingual Relation Extraction Dataset</title>
   
@@ -261,12 +263,6 @@ that extracts triplets, including entity types, in multiple languages. We releas
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15254/lecture/76828-redlesssupgreaterfmlessdashsupgreater-a-filtered-and-multilingual-relation-extraction-dataset">
         Underline
@@ -369,33 +365,29 @@ that extracts triplets, including entity types, in multiple languages. We releas
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Relation Extraction (RE) is a task that identifies relationships between entities in a text, enabling the acquisition of relational facts and bridging the gap between natural language and structured knowledge. However, current RE models often rely on small datasets with low coverage of relation types, particularly when working with languages other than English.
-
-In this paper, we address the above issue and provide two new resources that enable the training and evaluation of multilingual RE systems.
-First, we present SRED&lt;sup&gt;FM&lt;/sup&gt;, an automatically annotated dataset covering 18 languages, 400 relation types, 13 entity types, totaling more than 40 million triplet instances. Second, we propose RED&lt;sup&gt;FM&lt;/sup&gt;, a smaller, human-revised dataset for seven languages that allows for the evaluation of multilingual RE systems. 
-To demonstrate the utility of these novel datasets, we experiment with the first end-to-end multilingual RE model, mREBEL, 
-that extracts triplets, including entity types, in multiple languages. We release our resources and model checkpoints at [https://www.github.com/babelscape/rebel](https://www.github.com/babelscape/rebel).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Relation Extraction (RE) is a task that identifies relationships between entities in a text, enabling the acquisition of relational facts and bridging the gap between natural language and structured k...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -411,27 +403,32 @@ that extracts triplets, including entity types, in multiple languages. We releas
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Relation Extraction (RE) is a task that identifies relationships between entities in a text, enabling the acquisition of relational facts and bridging the gap between natural language and structured knowledge. However, current RE models often rely on small datasets with low coverage of relation types, particularly when working with languages other than English.
+
+In this paper, we address the above issue and provide two new resources that enable the training and evaluation of multilingual RE systems.
+First, we present SRED&lt;sup&gt;FM&lt;/sup&gt;, an automatically annotated dataset covering 18 languages, 400 relation types, 13 entity types, totaling more than 40 million triplet instances. Second, we propose RED&lt;sup&gt;FM&lt;/sup&gt;, a smaller, human-revised dataset for seven languages that allows for the evaluation of multilingual RE systems. 
+To demonstrate the utility of these novel datasets, we experiment with the first end-to-end multilingual RE model, mREBEL, 
+that extracts triplets, including entity types, in multiple languages. We release our resources and model checkpoints at [https://www.github.com/babelscape/rebel](https://www.github.com/babelscape/rebel).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76828/poster_document/ce9b5c7c8b5b215e3a9ce001a73339d0.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76828/poster_document/ce9b5c7c8b5b215e3a9ce001a73339d0.pdf",'#pdf_view');
-    })
-</script>
 
 
 

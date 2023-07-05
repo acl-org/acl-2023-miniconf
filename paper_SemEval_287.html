@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: DH-FBK at SemEval-2023 Task 10: Multi-Task Learning with Classifier Ensemble Agreement for Sexism Detection</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents the submissions of the DH-FBK team for the three tasks of Task 10 at SemEval 2023. The Explainable Detection of Online Sexism (EDOS) task aims at detecting sexism in English text in an accurate and explainable way, thanks to a fine-grained annotation that follows a three-level schema: sexist or not (Task A), category of sexism (Task B) and vector of sexism (Task C) exhibited.We use a multi-task learning approach in which models share representations from all three tasks, allowing for knowledge to be shared across them. Notably, with our approach a single model can solve all three tasks.In addition, motivated by the subjective nature of the task, we incorporate inter-annotator agreement information in our multi-task architecture. Although disaggregated annotations are not available, we artificially estimate them using a 5-classifier ensemble, and show that ensemble agreement can be a good approximation of crowd agreement.  Our approach achieves competitive results, ranking 32nd out of 84, 24th out of 69 and 11th out of 63 for Tasks A, B and C respectively. We finally show that low inter-annotator agreement levels are associated with more challenging examples for models, making agreement information use ful for this kind of task.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents the submissions of the DH-FBK team for the three tasks of Task 10 at SemEval 2023. The Explainable Detection of Online Sexism (EDOS) task aims at detecting sexism in English text i
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents the submissions of the DH-FBK team for the three tasks of Task 10 at SemEval 2023. The Explainable Detection of Online Sexism (EDOS) task aims at detecting sexism in English text in an accurate and explainable way, thanks to a fine-grained annotation that follows a three-level schema: sexist or not (Task A), category of sexism (Task B) and vector of sexism (Task C) exhibited.We use a multi-task learning approach in which models share representations from all three tasks, allowing for knowledge to be shared across them. Notably, with our approach a single model can solve all three tasks.In addition, motivated by the subjective nature of the task, we incorporate inter-annotator agreement information in our multi-task architecture. Although disaggregated annotations are not available, we artificially estimate them using a 5-classifier ensemble, and show that ensemble agreement can be a good approximation of crowd agreement.  Our approach achieves competitive results, ranking 32nd out of 84, 24th out of 69 and 11th out of 63 for Tasks A, B and C respectively. We finally show that low inter-annotator agreement levels are associated with more challenging examples for models, making agreement information use ful for this kind of task.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: DuluthNLP at SemEval-2023 Task 12: AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper describes the DuluthNLP system that participated in Task 12 of SemEval-2023 on AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset. Given a set of tweets, the task requires participating systems to classify each tweet as negative, positive or neutral. We evaluate a range of monolingual and multilingual pretrained models on the Twi language dataset, one among the 14 African languages included in the SemEval task. We introduce TwiBERT, a new pretrained model trained from scratch. We show that TwiBERT, along with mBERT, generally perform best when trained on the Twi dataset, achieving an F1 score of 64.29\% on the official evaluation test data, which ranks 14 out of 30 of the total submissions for Track 10. The TwiBERT model is released at https://huggingface.co/sakrah/TwiBERT
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper describes the DuluthNLP system that participated in Task 12 of SemEval-2023 on AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset. Given a set of
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper describes the DuluthNLP system that participated in Task 12 of SemEval-2023 on AfriSenti-SemEval: Sentiment Analysis for Low-resource African Languages using Twitter Dataset. Given a set of tweets, the task requires participating systems to classify each tweet as negative, positive or neutral. We evaluate a range of monolingual and multilingual pretrained models on the Twi language dataset, one among the 14 African languages included in the SemEval task. We introduce TwiBERT, a new pretrained model trained from scratch. We show that TwiBERT, along with mBERT, generally perform best when trained on the Twi dataset, achieving an F1 score of 64.29\% on the official evaluation test data, which ranks 14 out of 30 of the total submissions for Track 10. The TwiBERT model is released at https://huggingface.co/sakrah/TwiBERT
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

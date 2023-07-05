@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Probing neural language models for understanding of words of estimative probability</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Words of Estimative Probability (WEP) are phrases used to express the plausibility of a statement. Examples include terms like \textbackslash{}textit\{probably, maybe, likely, doubt, unlikely\}, and \textbackslash{}textit\{impossible\}. Surveys have shown that human evaluators tend to agree when assigning numerical probability levels to these WEPs. For instance, the term \textbackslash{}textit\{highly likely\} equates to a median probability of \$0.90\{\textbackslash{}pm\}0.08\$ according to a survey by \textbackslash{}citet\{fagen-ulmschneider\}.In this study, our focus is to gauge the competency of neural language processing models in accurately capturing the consensual probability level associated with each WEP. Our first approach is utilizing the UNLI dataset \textbackslash{}cite\{chen-etal-2020-uncertain\}, which links premises and hypotheses with their perceived joint probability \$p\$. From this, we craft prompts in the form: &#34;[\textbackslash{}textsc\{Premise\}]. [\textbackslash{}textsc\{Wep\}], [\textbackslash{}textsc\{Hypothesis\}].&#34; This allows us to evaluate whether language models can predict if the consensual probability level of a WEP aligns closely with \$p\$.In our second approach, we develop a dataset based on WEP-focused probabilistic reasoning to assess if language models can logically process WEP compositions. For example, given the prompt &#34;[\textbackslash{}textsc\{EventA\}] \textbackslash{}textit\{is likely\}. [\textbackslash{}textsc\{EventB\}] \textbackslash{}textit\{is impossible\}.&#34;, a well-functioning language model should not conclude that [\textbackslash{}textsc\{EventA\$\textbackslash{}\&amp;\$B\}] is likely.Through our study, we observe that both tasks present challenges to out-of-the-box English language models. However, we also demonstrate that fine-tuning these models can lead to significant and transferable improvements.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Words of Estimative Probability (WEP) are phrases used to express the plausibility of a statement. Examples include terms like \textbackslash{}textit\{probably, maybe, likely, doubt, unlikely\}, and \
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Words of Estimative Probability (WEP) are phrases used to express the plausibility of a statement. Examples include terms like \textbackslash{}textit\{probably, maybe, likely, doubt, unlikely\}, and \textbackslash{}textit\{impossible\}. Surveys have shown that human evaluators tend to agree when assigning numerical probability levels to these WEPs. For instance, the term \textbackslash{}textit\{highly likely\} equates to a median probability of \$0.90\{\textbackslash{}pm\}0.08\$ according to a survey by \textbackslash{}citet\{fagen-ulmschneider\}.In this study, our focus is to gauge the competency of neural language processing models in accurately capturing the consensual probability level associated with each WEP. Our first approach is utilizing the UNLI dataset \textbackslash{}cite\{chen-etal-2020-uncertain\}, which links premises and hypotheses with their perceived joint probability \$p\$. From this, we craft prompts in the form: &#34;[\textbackslash{}textsc\{Premise\}]. [\textbackslash{}textsc\{Wep\}], [\textbackslash{}textsc\{Hypothesis\}].&#34; This allows us to evaluate whether language models can predict if the consensual probability level of a WEP aligns closely with \$p\$.In our second approach, we develop a dataset based on WEP-focused probabilistic reasoning to assess if language models can logically process WEP compositions. For example, given the prompt &#34;[\textbackslash{}textsc\{EventA\}] \textbackslash{}textit\{is likely\}. [\textbackslash{}textsc\{EventB\}] \textbackslash{}textit\{is impossible\}.&#34;, a well-functioning language model should not conclude that [\textbackslash{}textsc\{EventA\$\textbackslash{}\&amp;\$B\}] is likely.Through our study, we observe that both tasks present challenges to out-of-the-box English language models. However, we also demonstrate that fine-tuning these models can lead to significant and transferable improvements.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

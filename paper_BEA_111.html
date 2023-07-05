@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Enhancing Educational Dialogues: A Reinforcement Learning Approach for Generating AI Teacher Responses</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Reinforcement Learning remains an underutilized method of training and fine-tuning Language Models (LMs) despite recent successes. This paper presents a simple approach of fine-tuning a language model with Reinforcement Learning to achieve competitive performance on the BEA 2023 Shared Task whose goal is to automatically generate teacher responses in educational dialogues. We utilized the novel NLPO algorithm that masks out tokens during generation to direct the model towards generations that maximize a reward function. We show results for both the t5-base model with 220 million parameters from the HuggingFace repository submitted to the leaderboard that, despite its comparatively small size, has achieved a good performance on both test and dev set, as well as GPT-2 with 124 million parameters. The presented results show that despite maximizing only one of the metrics used in the evaluation as a reward function our model scores highly in the other metrics as well.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Reinforcement Learning remains an underutilized method of training and fine-tuning Language Models (LMs) despite recent successes. This paper presents a simple approach of fine-tuning a language model
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Reinforcement Learning remains an underutilized method of training and fine-tuning Language Models (LMs) despite recent successes. This paper presents a simple approach of fine-tuning a language model with Reinforcement Learning to achieve competitive performance on the BEA 2023 Shared Task whose goal is to automatically generate teacher responses in educational dialogues. We utilized the novel NLPO algorithm that masks out tokens during generation to direct the model towards generations that maximize a reward function. We show results for both the t5-base model with 220 million parameters from the HuggingFace repository submitted to the leaderboard that, despite its comparatively small size, has achieved a good performance on both test and dev set, as well as GPT-2 with 124 million parameters. The presented results show that despite maximizing only one of the metrics used in the evaluation as a reward function our model scores highly in the other metrics as well.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

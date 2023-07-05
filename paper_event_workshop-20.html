@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: W20: The 3rd Workshop on NLP for Indigenous Languages of the Americas (AmericasNLP)</title>
   
@@ -237,12 +239,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -337,33 +333,25 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        AmericasNLP aims to...
-
-* ...encourage research on NLP, computational linguistics, corpus linguistics, and speech around the globe to work on native American languages.
-* ...connect researchers and professionals from underrepresented communities and native speakers of endangered languages with the machine learning and natural language processing communities.
-* ...promote research on both neural and non-neural machine learning approaches suitable for low-resource languages.
-&lt;br&gt;.For more details visit our workshop website: https://turing.iimas.unam.mx/americasnlp/
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -379,8 +367,27 @@
     </div>
 </div>
 
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            AmericasNLP aims to...
 
-
+* ...encourage research on NLP, computational linguistics, corpus linguistics, and speech around the globe to work on native American languages.
+* ...connect researchers and professionals from underrepresented communities and native speakers of endangered languages with the machine learning and natural language processing communities.
+* ...promote research on both neural and non-neural machine learning approaches suitable for low-resource languages.
+&lt;br&gt;.For more details visit our workshop website: https://turing.iimas.unam.mx/americasnlp/
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

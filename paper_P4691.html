@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Early Discovery of Disappearing Entities in Microblogs</title>
   
@@ -258,12 +260,6 @@ the effectiveness of the collected labeled data and refined word embeddings; the
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15279/lecture/77062-early-discovery-of-disappearing-entities-in-microblogs">
         Underline
@@ -370,36 +366,34 @@ the effectiveness of the collected labeled data and refined word embeddings; the
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We make decisions by reacting to changes in the real world, particularly the emergence and disappearance of impermanent entities such as restaurants, services, and events. 
-Because we want to avoid missing out on opportunities or making fruitless actions after those entities have disappeared, it is important to know when entities disappear as early as possible.
-We thus tackle the task of detecting disappearing entities from microblogs where various information is shared timely.
-The major challenge is detecting uncertain contexts of disappearing entities from noisy microblog posts.
-To collect such disappearing contexts, we design time-sensitive distant supervision, which utilizes entities from the knowledge base and time-series posts.
-Using this method, we actually build large-scale Twitter datasets of disappearing entities.
-To ensure robust detection in noisy environments, we refine pretrained word embeddings for the detection model on microblog streams in a timely manner.
-Experimental results on the Twitter datasets confirmed 
-the effectiveness of the collected labeled data and refined word embeddings; the proposed method outperformed a baseline in terms of accuracy, and more than 70\% of the detected disappearing entities in Wikipedia are discovered earlier than the update on Wikipedia, with the average lead-time is over one month.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We make decisions by reacting to changes in the real world, particularly the emergence and disappearance of impermanent entities such as restaurants, services, and events. 
+Because we want to avoid mi...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -415,27 +409,39 @@ the effectiveness of the collected labeled data and refined word embeddings; the
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We make decisions by reacting to changes in the real world, particularly the emergence and disappearance of impermanent entities such as restaurants, services, and events. 
+Because we want to avoid missing out on opportunities or making fruitless actions after those entities have disappeared, it is important to know when entities disappear as early as possible.
+We thus tackle the task of detecting disappearing entities from microblogs where various information is shared timely.
+The major challenge is detecting uncertain contexts of disappearing entities from noisy microblog posts.
+To collect such disappearing contexts, we design time-sensitive distant supervision, which utilizes entities from the knowledge base and time-series posts.
+Using this method, we actually build large-scale Twitter datasets of disappearing entities.
+To ensure robust detection in noisy environments, we refine pretrained word embeddings for the detection model on microblog streams in a timely manner.
+Experimental results on the Twitter datasets confirmed 
+the effectiveness of the collected labeled data and refined word embeddings; the proposed method outperformed a baseline in terms of accuracy, and more than 70\% of the detected disappearing entities in Wikipedia are discovered earlier than the update on Wikipedia, with the average lead-time is over one month.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/77062/poster_document/05ce2a351122e4f47fdc1c2781f16f1f.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/77062/slideshow/61d86ab25deaf58026be7d695e4bcfed.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/77062/poster_document/05ce2a351122e4f47fdc1c2781f16f1f.pdf",'#pdf_view');
-    })
-</script>
 
 
 

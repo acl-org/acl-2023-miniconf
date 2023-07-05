@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Identifying Visual Depictions of Animate Entities in Narrative Comics: An Annotation Study</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Animate entities in narrative comics stories are expressed through a number of visual representations across panels. Identifying these entities is necessary for recognizing characters and analysing narrative affordances unique to comics, and integrating these with linguistic reference annotation, however an annotation process for animate entity identification has not received adequate attention. This research explores methods for identifying animate entities visually in comics using annotation experiments. Two rounds of inter-annotator agreement experiments are run: the first asks annotators to outline areas on comic pages using a Polygon segmentation tool, and the second prompts annotators to assign each outlined entity&#39;s animacy type to derive a quantitative measure of agreement. The first experiment results show that Polygon-based outlines successfully produce a qualitative measure of agreement; the second experiment supports that animacy status is best conceptualised as a graded, rather than binary, concept.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Animate entities in narrative comics stories are expressed through a number of visual representations across panels. Identifying these entities is necessary for recognizing characters and analysing na
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Animate entities in narrative comics stories are expressed through a number of visual representations across panels. Identifying these entities is necessary for recognizing characters and analysing narrative affordances unique to comics, and integrating these with linguistic reference annotation, however an annotation process for animate entity identification has not received adequate attention. This research explores methods for identifying animate entities visually in comics using annotation experiments. Two rounds of inter-annotator agreement experiments are run: the first asks annotators to outline areas on comic pages using a Polygon segmentation tool, and the second prompts annotators to assign each outlined entity&#39;s animacy type to derive a quantitative measure of agreement. The first experiment results show that Polygon-based outlines successfully produce a qualitative measure of agreement; the second experiment supports that animacy status is best conceptualised as a graded, rather than binary, concept.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

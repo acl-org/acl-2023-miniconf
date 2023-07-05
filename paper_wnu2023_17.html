@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Transferring Procedural Knowledge across Commonsense Tasks</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Stories about everyday situations are an essential part of human communication, motivating the need to develop AI agents that can reliably understand these stories. Despite the long list of supervised methods for story completion and procedural understanding, current AI has no mechanisms to automatically track and explain procedures in unseen stories. To bridge this gap, we study the ability of AI models to transfer procedural knowledge to novel narrative tasks in a transparent manner. We design LEAP: a comprehensive framework that integrates state-of-the-art modeling architectures, training regimes, and augmentation strategies based on both natural and synthetic stories. To address the lack of densely annotated training data, we devise a robust automatic labeler based on few-shot prompting to enhance the augmented data. Our experiments with in- and out-of-domain tasks reveal insights into the interplay of different architectures, training regimes, and augmentation strategies. LEAP&#39;s labeler has a clear positive impact on out-of-domain datasets, while the resulting dense annotation provides native explainability
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Stories about everyday situations are an essential part of human communication, motivating the need to develop AI agents that can reliably understand these stories. Despite the long list of supervised
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Stories about everyday situations are an essential part of human communication, motivating the need to develop AI agents that can reliably understand these stories. Despite the long list of supervised methods for story completion and procedural understanding, current AI has no mechanisms to automatically track and explain procedures in unseen stories. To bridge this gap, we study the ability of AI models to transfer procedural knowledge to novel narrative tasks in a transparent manner. We design LEAP: a comprehensive framework that integrates state-of-the-art modeling architectures, training regimes, and augmentation strategies based on both natural and synthetic stories. To address the lack of densely annotated training data, we devise a robust automatic labeler based on few-shot prompting to enhance the augmented data. Our experiments with in- and out-of-domain tasks reveal insights into the interplay of different architectures, training regimes, and augmentation strategies. LEAP&#39;s labeler has a clear positive impact on out-of-domain datasets, while the resulting dense annotation provides native explainability
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

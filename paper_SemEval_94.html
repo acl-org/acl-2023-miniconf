@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: UMUTeam at SemEval-2023 Task 3: Multilingual transformer-based model for detecting the Genre, the Framing, and the Persuasion Techniques in Online News</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        In this manuscript, we describe the participation of the UMUTeam in SemEval-2023 Task 3, a shared task on detecting different aspects of news articles and other web documents, such as document category, framing dimensions, and persuasion technique in a multilingual setup. The task has been organized into three related subtasks, and we have been involved in the first two. Our approach is based on a fine-tuned multilingual transformer-based model that uses the dataset of all languages at once and a sentence transformer model to extract the most relevant chunk of a text for subtasks 1 and 2. The input data was truncated to 200 tokens with 50 overlaps using the sentence-transformer model to obtain the subset of text most related to the articles&#39; titles. Our system has performed good results in subtask 1 in most languages, and in some cases, such as French and German, we have archived first place in the official leader board. As for task 2, our system has also performed very well in all languages, ranking in all the top 10.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          In this manuscript, we describe the participation of the UMUTeam in SemEval-2023 Task 3, a shared task on detecting different aspects of news articles and other web documents, such as document categor
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            In this manuscript, we describe the participation of the UMUTeam in SemEval-2023 Task 3, a shared task on detecting different aspects of news articles and other web documents, such as document category, framing dimensions, and persuasion technique in a multilingual setup. The task has been organized into three related subtasks, and we have been involved in the first two. Our approach is based on a fine-tuned multilingual transformer-based model that uses the dataset of all languages at once and a sentence transformer model to extract the most relevant chunk of a text for subtasks 1 and 2. The input data was truncated to 200 tokens with 50 overlaps using the sentence-transformer model to obtain the subset of text most related to the articles&#39; titles. Our system has performed good results in subtask 1 in most languages, and in some cases, such as French and German, we have archived first place in the official leader board. As for task 2, our system has also performed very well in all languages, ranking in all the top 10.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

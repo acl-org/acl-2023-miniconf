@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Detecting Personal Information in Training Corpora: an Analysis</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -298,28 +294,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Large language models are trained on increasing quantities of unstructured text, the largest sources of which are scraped from the Web. These Web scrapes are mainly composed of heterogeneous collections of text from multiple domains with minimal documentation. While some work has been done to identify and remove toxic, biased, or sexual language, the topic of personal information (PI) in textual data used for training Natural Language Processing (NLP) models is relatively under-explored. In this work, we draw from definitions of PI across multiple countries to define the first PI taxonomy of its kind, categorized by type and risk level. We then conduct a case study on the Colossal Clean Crawled Corpus (C4) and the Pile, to detect some of the highest-risk personal information, such as email addresses and credit card numbers, and examine the differences between automatic and regular expression-based approaches for their detection. We identify shortcomings in modern approaches for PI detection, and propose a reframing of the problem that is informed by global perspectives and the goals in personal information detection.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Large language models are trained on increasing quantities of unstructured text, the largest sources of which are scraped from the Web. These Web scrapes are mainly composed of heterogeneous collectio
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -335,8 +328,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Large language models are trained on increasing quantities of unstructured text, the largest sources of which are scraped from the Web. These Web scrapes are mainly composed of heterogeneous collections of text from multiple domains with minimal documentation. While some work has been done to identify and remove toxic, biased, or sexual language, the topic of personal information (PI) in textual data used for training Natural Language Processing (NLP) models is relatively under-explored. In this work, we draw from definitions of PI across multiple countries to define the first PI taxonomy of its kind, categorized by type and risk level. We then conduct a case study on the Colossal Clean Crawled Corpus (C4) and the Pile, to detect some of the highest-risk personal information, such as email addresses and credit card numbers, and examine the differences between automatic and regular expression-based approaches for their detection. We identify shortcomings in modern approaches for PI detection, and propose a reframing of the problem that is informed by global perspectives and the goals in personal information detection.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

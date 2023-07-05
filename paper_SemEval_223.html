@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Uppsala University at SemEval-2023 Task12: Zero-shot Sentiment Classification for Nigerian Pidgin Tweets</title>
   
@@ -244,12 +246,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -286,28 +282,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        While sentiment classification has been considered a practically solved task for high-resource languages such as English, the scarcity of data for many languages still makes it a challenging task. The AfriSenti-SemEval shared task aims to classify sentiment on Twitter data for 14 low-resource African languages. In our participation, we focus on Nigerian Pidgin as the target language. We have investigated the effect of English monolingual and multilingual pre-trained models on the sentiment classification task for Nigerian Pidgin. Our setup includes zero-shot models (using English, Igbo and Hausa data) and a Nigerian Pidgin fine-tuned model. Our results show that English fine-tuned models perform slightly better than models fine-tuned on other Nigerian languages, which could be explained by the lexical and structural closeness between Nigerian Pidgin and English. The best results were reported on the monolingual Nigerian Pidgin data. The model pre-trained on English and fine-tuned on Nigerian Pidgin was submitted to Task A Track 4 of the AfriSenti-SemEval Shared Task 12, and scored 25 out of 32 in the ranking.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          While sentiment classification has been considered a practically solved task for high-resource languages such as English, the scarcity of data for many languages still makes it a challenging task. The
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -323,8 +316,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            While sentiment classification has been considered a practically solved task for high-resource languages such as English, the scarcity of data for many languages still makes it a challenging task. The AfriSenti-SemEval shared task aims to classify sentiment on Twitter data for 14 low-resource African languages. In our participation, we focus on Nigerian Pidgin as the target language. We have investigated the effect of English monolingual and multilingual pre-trained models on the sentiment classification task for Nigerian Pidgin. Our setup includes zero-shot models (using English, Igbo and Hausa data) and a Nigerian Pidgin fine-tuned model. Our results show that English fine-tuned models perform slightly better than models fine-tuned on other Nigerian languages, which could be explained by the lexical and structural closeness between Nigerian Pidgin and English. The best results were reported on the monolingual Nigerian Pidgin data. The model pre-trained on English and fine-tuned on Nigerian Pidgin was submitted to Task A Track 4 of the AfriSenti-SemEval Shared Task 12, and scored 25 out of 32 in the ranking.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

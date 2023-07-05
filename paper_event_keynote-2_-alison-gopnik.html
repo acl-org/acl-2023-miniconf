@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Keynote 2: Alison Gopnik</title>
   
@@ -233,12 +235,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -333,29 +329,25 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        **Title:** Large Language Models as Cultural Technologies: Imitation and Innovation in Children and Models&lt;br&gt;**Speaker:** Alison Gopnik
-&lt;br&gt;&lt;br&gt;**Abstract:** Its natural to ask whether large language models like LaMDA or GPT-3 are intelligent agents. But I argue that this is the wrong question. Intelligence and agency are the wrong categories for understanding them. Instead, these Al systems are what we might call cultural technologies, like writing, print, libraries, internet search engines or even language itself. They are new techniques for passing on information from one group of people to another. Cultural technologies arent like intelligent humans, but they are essential for human intelligence. Many animals can transmit some information from one individual or one generation to another, but no animal does it as much as we do or accumulates as much information over time, . New technologies that make cultural transmission easier and more effective have been among the greatest engines of human progress, but they have also led to negative as well as positive social consequences. Moreover, while cultural technologies allow transmission of existing information cultural evolution, which is central to human success, also depends on innovation, exploration and causal learning. Comparing LLM’s responses in prompts based on developmental psychology experiments to the responses of children may provide insight into which capacities can be learned through language and cultural transmission, and which require innovation and exploration in the physical world. I will present results from several studies making such comparisons.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -371,8 +363,23 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            **Title:** Large Language Models as Cultural Technologies: Imitation and Innovation in Children and Models&lt;br&gt;**Speaker:** Alison Gopnik
+&lt;br&gt;&lt;br&gt;**Abstract:** Its natural to ask whether large language models like LaMDA or GPT-3 are intelligent agents. But I argue that this is the wrong question. Intelligence and agency are the wrong categories for understanding them. Instead, these Al systems are what we might call cultural technologies, like writing, print, libraries, internet search engines or even language itself. They are new techniques for passing on information from one group of people to another. Cultural technologies arent like intelligent humans, but they are essential for human intelligence. Many animals can transmit some information from one individual or one generation to another, but no animal does it as much as we do or accumulates as much information over time, . New technologies that make cultural transmission easier and more effective have been among the greatest engines of human progress, but they have also led to negative as well as positive social consequences. Moreover, while cultural technologies allow transmission of existing information cultural evolution, which is central to human success, also depends on innovation, exploration and causal learning. Comparing LLM’s responses in prompts based on developmental psychology experiments to the responses of children may provide insight into which capacities can be learned through language and cultural transmission, and which require innovation and exploration in the physical world. I will present results from several studies making such comparisons.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

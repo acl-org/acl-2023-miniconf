@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: SRCB at SemEval-2023 Task 1: Prompt Based and Cross-Modal Retrieval Enhanced Visual Word Sense Disambiguation</title>
   
@@ -262,12 +264,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -304,28 +300,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        The Visual Word Sense Disambiguation (VWSD) shared task aims at selecting the image among candidates that best interprets the semantics of a target word with a short-length phrase for English, Italian, and Farsi. The limited phrase context, which only contains 2-3 words, challenges the model&#39;s understanding ability, and the visual label requires image-text matching performance across different modalities. In this paper, we propose a prompt based and multimodal retrieval enhanced VWSD system, which uses the rich potential knowledge of large-scale pretrained models by prompting and additional text-image information from knowledge bases and open datasets. Under the English situation and given an input phrase, (1) the context retrieval module predicts the correct definition from sense inventory by matching phrase and context through a biencoder architecture. (2) The image retrieval module retrieves the relevant images from an image dataset.(3) The matching module decides that either text or image is used to pair with image labels by a rule-based strategy, then ranks the candidate images according to the similarity score.Our system ranks first in the English track and second in the average of all languages (English, Italian, and Farsi).
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          The Visual Word Sense Disambiguation (VWSD) shared task aims at selecting the image among candidates that best interprets the semantics of a target word with a short-length phrase for English, Italian
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -341,8 +334,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            The Visual Word Sense Disambiguation (VWSD) shared task aims at selecting the image among candidates that best interprets the semantics of a target word with a short-length phrase for English, Italian, and Farsi. The limited phrase context, which only contains 2-3 words, challenges the model&#39;s understanding ability, and the visual label requires image-text matching performance across different modalities. In this paper, we propose a prompt based and multimodal retrieval enhanced VWSD system, which uses the rich potential knowledge of large-scale pretrained models by prompting and additional text-image information from knowledge bases and open datasets. Under the English situation and given an input phrase, (1) the context retrieval module predicts the correct definition from sense inventory by matching phrase and context through a biencoder architecture. (2) The image retrieval module retrieves the relevant images from an image dataset.(3) The matching module decides that either text or image is used to pair with image labels by a rule-based strategy, then ranks the candidate images according to the similarity score.Our system ranks first in the English track and second in the average of all languages (English, Italian, and Farsi).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: John Boy Walton at SemEval-2023 Task 5: An Ensemble Approach to Spoiler Classification and Retrieval for Clickbait Spoiling</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Clickbait spoiling is a task of generating or retrieving a fairly short text with a purpose to satisfy curiosity of a content consumer without their addressing to the document linked to a clickbait post or headline. In this paper we introduce an ensemble approach to clickbait spoiling task at SemEval-2023. The tasks consists of spoiler classification and retrieval on Webis-Clickbait-22 dataset. We show that such an ensemble solution is quite successful at classification, whereas it might perform poorly at retrieval with no additional features. In conclusion we outline our thoughts on possible directions to improving the approach and shape a set of suggestions to the said features.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Clickbait spoiling is a task of generating or retrieving a fairly short text with a purpose to satisfy curiosity of a content consumer without their addressing to the document linked to a clickbait po
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Clickbait spoiling is a task of generating or retrieving a fairly short text with a purpose to satisfy curiosity of a content consumer without their addressing to the document linked to a clickbait post or headline. In this paper we introduce an ensemble approach to clickbait spoiling task at SemEval-2023. The tasks consists of spoiler classification and retrieval on Webis-Clickbait-22 dataset. We show that such an ensemble solution is quite successful at classification, whereas it might perform poorly at retrieval with no additional features. In conclusion we outline our thoughts on possible directions to improving the approach and shape a set of suggestions to the said features.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

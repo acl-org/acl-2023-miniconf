@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: I Cast Detect Thoughts: Learning to Converse and Guide with Intents and Theory-of-Mind in Dungeons and Dragons</title>
   
@@ -280,12 +282,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15254/lecture/77001-i-cast-detect-thoughts-learning-to-converse-and-guide-with-intents-and-theory-of-mind-in-dungeons-and-dragons">
         Underline
@@ -384,28 +380,25 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        We propose a novel task, G4C, to study teacher-student natural language interactions in a goal-driven and grounded environment. Dungeons and Dragons (D\&amp;D), a role-playing game, provides an ideal setting to investigate such interactions. Here, the Dungeon Master (DM), i.e., the teacher, guides the actions of several players---students, each with their own personas and abilities---to achieve shared goals grounded in a fantasy world. Our approach is to decompose and model these interactions into (1) the DM&#39;s intent to guide players toward a given goal; (2) the DM&#39;s guidance utterance to the players expressing this intent; and (3) a theory-of-mind (ToM) model that anticipates the players&#39; reaction to the guidance one turn into the future. We develop a novel reinforcement learning (RL) method for training a DM that generates guidance for players by rewarding utterances where the intent matches the ToM-anticipated player actions. Human and automated evaluations show that a DM trained to explicitly model intents and incorporate ToM of the players using RL generates better-quality guidance that is 3x more likely to fulfill the DM&#39;s intent than a vanilla natural language generation (NLG) approach.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          We propose a novel task, G4C, to study teacher-student natural language interactions in a goal-driven and grounded environment. Dungeons and Dragons (D\&amp;D), a role-playing game, provides an ideal sett...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -421,8 +414,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            We propose a novel task, G4C, to study teacher-student natural language interactions in a goal-driven and grounded environment. Dungeons and Dragons (D\&amp;D), a role-playing game, provides an ideal setting to investigate such interactions. Here, the Dungeon Master (DM), i.e., the teacher, guides the actions of several players---students, each with their own personas and abilities---to achieve shared goals grounded in a fantasy world. Our approach is to decompose and model these interactions into (1) the DM&#39;s intent to guide players toward a given goal; (2) the DM&#39;s guidance utterance to the players expressing this intent; and (3) a theory-of-mind (ToM) model that anticipates the players&#39; reaction to the guidance one turn into the future. We develop a novel reinforcement learning (RL) method for training a DM that generates guidance for players by rewarding utterances where the intent matches the ToM-anticipated player actions. Human and automated evaluations show that a DM trained to explicitly model intents and incorporate ToM of the players using RL generates better-quality guidance that is 3x more likely to fulfill the DM&#39;s intent than a vanilla natural language generation (NLG) approach.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

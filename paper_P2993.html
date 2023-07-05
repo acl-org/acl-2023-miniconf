@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: UMRSpell: Unifying the Detection and Correction Parts of Pre-trained Models towards Chinese Missing, Redundant, and Spelling Correction</title>
   
@@ -256,12 +258,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15240/lecture/76804-umrspell-unifying-the-detection-and-correction-parts-of-pre-trained-models-towards-chinese-missing-redundant-and-spelling-correction">
         Underline
@@ -368,28 +364,33 @@
     }
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Chinese Spelling Correction (CSC) is the task of detecting and correcting misspelled charac- ters in Chinese texts. As an important step for various downstream tasks, CSC confronts two challenges: 1) Character-level errors consist not only of spelling errors but also of missing and redundant ones that cause variable length between input and output texts, for which most CSC methods could not handle well because of the consistence length of texts required by their inherent detection-correction framework. Con- sequently, the two errors are considered out- side the scope and left to future work, despite the fact that they are widely found and bound to CSC task in Chinese industrial scenario, such as Automatic Speech Recognition (ASR) and Optical Character Recognition (OCR). 2) Most existing CSC methods focus on either detector or corrector and train different mod- els for each one, respectively, leading to in- sufficiency of parameters sharing. To address these issues, we propose a novel model UMR- Spell to learn detection and correction parts together at the same time from a multi-task learning perspective by using a detection trans- mission self-attention matrix, and flexibly deal with both missing, redundant, and spelling er- rors through re-tagging rules. Furthermore, we build a new dataset ECMR-2023 containing five kinds of character-level errors to enrich the CSC task closer to real-world applications. Ex- periments on both SIGHAN benchmarks and ECMR-2023 demonstrate the significant effec- tiveness of UMRSpell over previous represen- tative baselines.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Chinese Spelling Correction (CSC) is the task of detecting and correcting misspelled charac- ters in Chinese texts. As an important step for various downstream tasks, CSC confronts two challenges: 1) ...
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
+  </li>
+  
+  
+  <li class="nav-item">
+    <a class="nav-link" id="slides-tab" data-toggle="tab" href="#slides" role="tab" aria-controls="slides" aria-selected="false">Slides</a>
+  </li>
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -405,27 +406,31 @@
     </div>
 </div>
 
-
-
-
-
-<div class="my-3"></div>
-<div class="row p-4">
-  <div class="col-12 bd-content">
-    <h1 class="text-center">Poster</h1>
   </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Chinese Spelling Correction (CSC) is the task of detecting and correcting misspelled charac- ters in Chinese texts. As an important step for various downstream tasks, CSC confronts two challenges: 1) Character-level errors consist not only of spelling errors but also of missing and redundant ones that cause variable length between input and output texts, for which most CSC methods could not handle well because of the consistence length of texts required by their inherent detection-correction framework. Con- sequently, the two errors are considered out- side the scope and left to future work, despite the fact that they are widely found and bound to CSC task in Chinese industrial scenario, such as Automatic Speech Recognition (ASR) and Optical Character Recognition (OCR). 2) Most existing CSC methods focus on either detector or corrector and train different mod- els for each one, respectively, leading to in- sufficiency of parameters sharing. To address these issues, we propose a novel model UMR- Spell to learn detection and correction parts together at the same time from a multi-task learning perspective by using a detection trans- mission self-attention matrix, and flexibly deal with both missing, redundant, and spelling er- rors through re-tagging rules. Furthermore, we build a new dataset ECMR-2023 containing five kinds of character-level errors to enrich the CSC task closer to real-world applications. Ex- periments on both SIGHAN benchmarks and ECMR-2023 demonstrate the significant effec- tiveness of UMRSpell over previous represen- tative baselines.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
+    <embed src="https://assets.underline.io/lecture/76804/poster_document/c070813a4bd46059d66c770be4da63a1.pdf" type="application/pdf" width="100%" height="850px">
+  </div>
+  
+  
+  <div class="tab-pane fade" id="slides" role="tabpanel" aria-labelledby="slides-tab">
+    <embed src="https://assets.underline.io/lecture/76804/slideshow/fefd3a4d1af77391e936c44a24e5f052.pdf" type="application/pdf" width="100%" height="700px">
+  </div>
+  
 </div>
 
-<div role="main" id="pdf_view"></div>
-<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
-<script src="static/js/pdf_render.js"></script>
-<script>
-    $(document).ready(() => {
-        // render first page of PDF to div
-        // PDF name can be bound to variable -- e.g. paper.poster_link
-        initPDFViewer("https://assets.underline.io/lecture/76804/poster_document/c070813a4bd46059d66c770be4da63a1.pdf",'#pdf_view');
-    })
-</script>
 
 
 

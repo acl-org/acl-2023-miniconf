@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Multiple Evidence Combination for Fact-Checking of Health-Related Information</title>
   
@@ -250,12 +252,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -292,28 +288,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Fact-checking of health-related claims has become necessary in this digital age, where any information posted online is easily available to everyone. The most effective way to verify such claims is by using evidences obtained from reliable sources of medical knowledge, such as PubMed. Recent advances in the field of NLP have helped automate such fact-checking tasks. In this work, we propose a domain-specific BERT-based model using a transfer learning approach for the task of predicting the veracity of claim-evidence pairs for the verification of health-related facts. We also improvise on a method to combine multiple evidences retrieved for a single claim, taking into consideration conflicting evidences as well. We also show how our model can be exploited when labelled data is available and how back-translation can be used to augment data when there is data scarcity.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Fact-checking of health-related claims has become necessary in this digital age, where any information posted online is easily available to everyone. The most effective way to verify such claims is by
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -329,8 +322,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Fact-checking of health-related claims has become necessary in this digital age, where any information posted online is easily available to everyone. The most effective way to verify such claims is by using evidences obtained from reliable sources of medical knowledge, such as PubMed. Recent advances in the field of NLP have helped automate such fact-checking tasks. In this work, we propose a domain-specific BERT-based model using a transfer learning approach for the task of predicting the veracity of claim-evidence pairs for the verification of health-related facts. We also improvise on a method to combine multiple evidences retrieved for a single claim, taking into consideration conflicting evidences as well. We also show how our model can be exploited when labelled data is available and how back-translation can be used to augment data when there is data scarcity.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

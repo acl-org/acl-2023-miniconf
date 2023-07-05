@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: UIO at SemEval-2023 Task 12:  Multilingual fine-tuning for sentiment classification in low-resource Languages</title>
   
@@ -238,12 +240,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -280,28 +276,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        Our contribution to the 2023 AfriSenti-SemEval shared task 12:  Sentiment Analysis for African Languages, provides insight into how a  multilingual large language model can be a resource for sentiment analysis in languages not seen during pretraining. The shared task provides datasets of a variety of African languages from different language families. The languages are to various degrees related to languages used during pretraining, and the language data contain various degrees of code-switching.  We experiment with both monolingual and multilingual datasets for the final fine-tuning, and find that with the provided datasets that contain samples in the thousands, monolingual fine-tuning yields the best results.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          Our contribution to the 2023 AfriSenti-SemEval shared task 12:  Sentiment Analysis for African Languages, provides insight into how a  multilingual large language model can be a resource for sentiment
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -317,8 +310,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            Our contribution to the 2023 AfriSenti-SemEval shared task 12:  Sentiment Analysis for African Languages, provides insight into how a  multilingual large language model can be a resource for sentiment analysis in languages not seen during pretraining. The shared task provides datasets of a variety of African languages from different language families. The languages are to various degrees related to languages used during pretraining, and the language data contain various degrees of code-switching.  We experiment with both monolingual and multilingual datasets for the final fine-tuning, and find that with the provided datasets that contain samples in the thousands, monolingual fine-tuning yields the best results.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

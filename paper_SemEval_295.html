@@ -61,6 +61,8 @@
   <link rel="stylesheet" href="static/css/chats-modal.css" />
   <link rel="stylesheet" href="static/css/lazy_load.css" />
   <link rel="stylesheet" href="static/css/typeahead.css" />
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+  <script src="static/js/pdf_render.js"></script>
 
   <title>ACL2023: Ebhaam at SemEval-2023 Task 1: A CLIP-Based Approach for Comparing Cross-modality and Unimodality in Visual Word Sense Disambiguation</title>
   
@@ -274,12 +276,6 @@
    
     <div class="text-center p-3">
       
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract
-      </a>
-      
-
-      
       
       
       
@@ -316,28 +312,25 @@
 
   
 </script>
-
-        <p class="card-text text-center h5 pt-2">
-
-    
-    </p>
-
-  </div>
-</div>
-<div id="details" class="pp-card m-3">
-  <div class="card-body">
-    <div class="card-text">
-      <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        This paper presents an approach to tackle the task of Visual Word Sense Disambiguation (Visual-WSD), which involves determining the most appropriate image to represent a given polysemous word in one of its particular senses. The proposed approach leverages the CLIP model, prompt engineering, and text-to-image models such as GLIDE and DALL-E 2 for both image retrieval and generation. To evaluate our approach, we participated in the SemEval 2023 shared task on ``Visual Word Sense Disambiguation (Visual-WSD)&#39;&#39; using a zero-shot learning setting, where we compared the accuracy of different combinations of tools, including ``Simple prompt-based&#39;&#39; methods and ``Generated prompt-based&#39;&#39; methods for prompt engineering using completion models, and text-to-image models for changing input modality from text to image. Moreover, we explored the benefits of cross-modality evaluation between text and candidate images using CLIP. Our experimental results demonstrate that the proposed approach reaches better results than cross-modality approaches, highlighting the potential of prompt engineering and text-to-image models to improve accuracy in Visual-WSD tasks. We assessed our approach in a zero-shot learning scenario and attained an accuracy of 68.75\textbackslash{}\% in our best attempt.
-      </div>
-    </div>
+        <div>
+          <span class="font-weight-bold">TLDR:</span>
+          This paper presents an approach to tackle the task of Visual Word Sense Disambiguation (Visual-WSD), which involves determining the most appropriate image to represent a given polysemous word in one o
+        </div>
   </div>
 </div>
 
-
-
-
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="chat-tab" data-toggle="tab" href="#chat" role="tab" aria-controls="chat" aria-selected="true">RocketChat</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="chat" role="tabpanel" aria-labelledby="chat-tab">
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -353,8 +346,22 @@
     </div>
 </div>
 
-
-
+  </div>
+  <div class="tab-pane fade" id="abstract" role="tabpanel" aria-labelledby="abstract-tab">
+    <div id="details" class="pp-card m-3">
+      <div class="card-body">
+        <div class="card-text">
+          <div id="abstractExample">
+            <span class="font-weight-bold">Abstract:</span>
+            This paper presents an approach to tackle the task of Visual Word Sense Disambiguation (Visual-WSD), which involves determining the most appropriate image to represent a given polysemous word in one of its particular senses. The proposed approach leverages the CLIP model, prompt engineering, and text-to-image models such as GLIDE and DALL-E 2 for both image retrieval and generation. To evaluate our approach, we participated in the SemEval 2023 shared task on ``Visual Word Sense Disambiguation (Visual-WSD)&#39;&#39; using a zero-shot learning setting, where we compared the accuracy of different combinations of tools, including ``Simple prompt-based&#39;&#39; methods and ``Generated prompt-based&#39;&#39; methods for prompt engineering using completion models, and text-to-image models for changing input modality from text to image. Moreover, we explored the benefits of cross-modality evaluation between text and candidate images using CLIP. Our experimental results demonstrate that the proposed approach reaches better results than cross-modality approaches, highlighting the potential of prompt engineering and text-to-image models to improve accuracy in Visual-WSD tasks. We assessed our approach in a zero-shot learning scenario and attained an accuracy of 68.75\textbackslash{}\% in our best attempt.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
 
 
 

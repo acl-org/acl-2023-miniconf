@@ -28,6 +28,7 @@ class AclRcHelper:
         self,
         *,
         program_json_path: str,
+        booklet_json_path: str,
         user_id: str,
         auth_token: str,
         server: str,
@@ -35,6 +36,8 @@ class AclRcHelper:
         dry_run: bool = False,
     ):
         self.conference: Conference = Conference.parse_file(program_json_path)
+        with open(booklet_json_path) as f:
+            self.booklet = json.load(f)
         self.dry_run = dry_run
         self.auth_token = auth_token
         self.user_id = user_id
@@ -51,16 +54,41 @@ class AclRcHelper:
             c["name"] for c in self.rocket.channels_list(count=0).json()["channels"]
         ]
 
-    def create_channel(self, name: str, topic: str, description: str):
+    def create_channel(self, name: str, topic: str, description: str, create: bool = True):
         if self.dry_run:
             print("Dry Run: Creating " + name + " topic " + topic)
         else:
-            created = self.rocket.channels_create(name).json()
-            if not created["success"]:
-                raise ValueError(f"Bad response: name={name} response={created}")
-            channel_id = created["channel"]["_id"]
+            if create:
+                created = self.rocket.channels_create(name).json()
+                if not created["success"]:
+                    raise ValueError(f"Bad response: name={name} response={created}")
+                channel_id = created["channel"]["_id"]
+            else:
+                channel_id = self.rocket.channels_info(channel=name).json()['channel']['_id']
             self.rocket.channels_set_topic(channel_id, topic).json()
             self.rocket.channels_set_description(channel_id, description).json()
+    
+    def create_tutorial_channels(self):
+        existing_channels = set(self.get_channel_names())
+        skipped = 0
+        created = 0
+        for tutorial in track(self.booklet['tutorials']):
+            tutorial_id = tutorial['id'].replace('t', '')
+            channel_name = f'tutorial-{tutorial_id}'
+            author_string = ", ".join(tutorial['hosts'])
+            title = tutorial['title']
+            topic = f"{title} - {author_string}"
+            create = channel_name not in existing_channels
+            self.create_channel(channel_name, topic, tutorial['desc'], create=create)
+            created += 1
+
+        print(
+            f"Total tutorials: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
+        )
+    
+    def create_workshop_channels(self):
+        pass
+        
 
     def create_paper_channels(self):
         existing_channels = set(self.get_channel_names())
@@ -120,17 +148,42 @@ class AclRcHelper:
 def hydra_main(cfg: DictConfig):
     command = cfg.command
 
-    if command == "create_channels":
+    if command == "create_paper_channels":
         with sessions.Session() as session:
             helper = AclRcHelper(
                 user_id=cfg.user_id,
                 auth_token=cfg.auth_token,
                 server=cfg.server,
                 session=session,
-                program_json_path=Path(cfg.program_pkl_path),
+                program_json_path=Path(cfg.program_json_path),
+                booklet_json_path=Path(cfg.booklet_json_path),
                 dry_run=cfg.dry_run,
             )
             helper.create_paper_channels()
+    elif command == "create_tutorial_channels":
+        with sessions.Session() as session:
+            helper = AclRcHelper(
+                user_id=cfg.user_id,
+                auth_token=cfg.auth_token,
+                server=cfg.server,
+                session=session,
+                program_json_path=Path(cfg.program_json_path),
+                booklet_json_path=Path(cfg.booklet_json_path),
+                dry_run=cfg.dry_run,
+            )
+            helper.create_tutorial_channels()
+    elif command == "create_workshop_channels":
+        with sessions.Session() as session:
+            helper = AclRcHelper(
+                user_id=cfg.user_id,
+                auth_token=cfg.auth_token,
+                server=cfg.server,
+                session=session,
+                program_json_path=Path(cfg.program_json_path),
+                booklet_json_path=Path(cfg.booklet_json_path),
+                dry_run=cfg.dry_run,
+            )
+            helper.create_workshop_channels()
     elif command == "add_emojis":
         with sessions.Session() as session:
             helper = AclRcHelper(
@@ -138,7 +191,8 @@ def hydra_main(cfg: DictConfig):
                 auth_token=cfg.auth_token,
                 server=cfg.server,
                 session=session,
-                program_json_path=Path(cfg.program_pkl_path),
+                program_json_path=Path(cfg.program_json_path),
+                booklet_json_path=Path(cfg.booklet_json_path),
                 dry_run=cfg.dry_run,
             )
             helper.add_custom_emojis()

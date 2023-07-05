@@ -277,10 +277,14 @@
 
       
       
-      <a class="card-link" target="_blank" href="https://underline.io/lecture/78182-inscit-information-seeking-conversations-with-mixed-initiative-interactions">
+      <a class="card-link" target="_blank" href="https://underline.io/events/395/sessions/15197/lecture/78182-inscit-information-seeking-conversations-with-mixed-initiative-interactions">
         Underline
       </a>
       
+      
+      <a class="card-link" target="_blank" href="https://assets.underline.io/lecture/78182/poster_document/3900a3f11d1a57050f659d1155f76e6d.pdf">
+        Poster
+      </a>
       
       
       
@@ -414,6 +418,24 @@
 
 
 
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Poster</h1>
+  </div>
+</div>
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.poster_link
+        initPDFViewer("https://assets.underline.io/lecture/78182/poster_document/3900a3f11d1a57050f659d1155f76e6d.pdf",'#pdf_view');
+    })
+</script>
 
 
 

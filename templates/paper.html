@@ -56,6 +56,18 @@
     chat_view.removeClass("col-md-12")
   }
 
+  function expandORCollapse() {
+    let control_link = $('#view_control')
+    let control_text = control_link.text()
+    if (control_text == 'Expand') {
+      expandPoster()
+      $('#view_control').text("Collapse")
+    } else {
+      collapsePoster()
+      $('#view_control').text("Expand")
+    }
+  }
+
   $(document).ready(function () {
 
     const favPersistor = new Persistor('Mini-Conf-Favorite-Papers');
@@ -242,6 +254,7 @@
     {% if paper.poster_pdf %}
     <div id="poster_view" class="col-md-7 col-xs-12 p-2">
       {{ components.section("Poster") }}
+      <a href="javascript:expandORCollapse()" id="view_control">Expand</a>
       <div role="main" id="pdf_view"></div>
       <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
       <script src="static/js/pdf_render.js"></script>

@@ -4,4 +4,5 @@ server: ???
 conference_file: ???
 command: ???
 dry_run: false
-program_pkl_path: data/acl_2023/data/conference.json
+program_json_path: data/acl_2023/data/conference.json
+booklet_json_path: data/acl_2023/data/booklet_data.json

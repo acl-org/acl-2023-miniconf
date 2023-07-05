@@ -104,6 +104,14 @@ class Session(BaseModel):
         return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
 
 
+
+class AnthologyAuthor(BaseModel):
+    first_name: Optional[str]
+    middle_name: Optional[str]
+    last_name: Optional[str]
+    google_scholar: Optional[str] = None
+    semantic_scholar: Optional[str] = None
+
 class Paper(BaseModel):
     """The content of a paper.
 

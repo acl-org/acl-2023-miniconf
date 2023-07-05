@@ -30,6 +30,7 @@ from acl_miniconf.data import (
     INDUSTRY,
     PROGRAMS,
     name_to_id,
+    AnthologyAuthor,
 )
 
 logging.basicConfig(
@@ -121,14 +122,6 @@ class Assets(BaseModel):
     underline_url: Optional[str] = None
     # TODO: Post-conference, set this to anthology video
     video_url: Optional[str] = None
-
-
-class AnthologyAuthor(BaseModel):
-    first_name: Optional[str]
-    middle_name: Optional[str]
-    last_name: Optional[str]
-    google_scholar: Optional[str] = None
-    semantic_scholar: Optional[str] = None
 
 
 class AnthologyEntry(BaseModel):

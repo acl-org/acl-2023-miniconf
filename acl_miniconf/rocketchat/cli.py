@@ -9,6 +9,7 @@ import hydra
 from omegaconf import DictConfig
 from requests import sessions
 from rocketchat_API.rocketchat import RocketChat
+import yaml
 from acl_miniconf.data import Conference
 from rich.progress import track
 
@@ -29,6 +30,7 @@ class AclRcHelper:
         *,
         program_json_path: str,
         booklet_json_path: str,
+        workshops_yaml_path: str,
         user_id: str,
         auth_token: str,
         server: str,
@@ -38,6 +40,9 @@ class AclRcHelper:
         self.conference: Conference = Conference.parse_file(program_json_path)
         with open(booklet_json_path) as f:
             self.booklet = json.load(f)
+        
+        with open(workshops_yaml_path) as f:
+            self.workshops = yaml.safe_load(f)
         self.dry_run = dry_run
         self.auth_token = auth_token
         self.user_id = user_id
@@ -87,7 +92,25 @@ class AclRcHelper:
         )
     
     def create_workshop_channels(self):
-        pass
+        existing_channels = set(self.get_channel_names())
+        skipped = 0
+        created = 0
+
+        for ws in track(self.workshops):
+            if ws['short_name'] == 'inputs':
+                workshop_id = ws['anthology_venue_id']
+            else:
+                workshop_id = ws['short_name']
+            channel_name = f'workshop-{workshop_id}'
+            title = ws['name']
+            topic = f"{title} - {workshop_id}"
+            create = channel_name not in existing_channels
+            self.create_channel(channel_name, topic, topic, create=create)
+            created += 1
+
+        print(
+            f"Total workshops: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
+        )
         
 
     def create_paper_channels(self):
@@ -157,6 +180,7 @@ def hydra_main(cfg: DictConfig):
                 session=session,
                 program_json_path=Path(cfg.program_json_path),
                 booklet_json_path=Path(cfg.booklet_json_path),
+                workshops_yaml_path=Path(cfg.workshops_yaml_path),
                 dry_run=cfg.dry_run,
             )
             helper.create_paper_channels()
@@ -169,6 +193,7 @@ def hydra_main(cfg: DictConfig):
                 session=session,
                 program_json_path=Path(cfg.program_json_path),
                 booklet_json_path=Path(cfg.booklet_json_path),
+                workshops_yaml_path=Path(cfg.workshops_yaml_path),
                 dry_run=cfg.dry_run,
             )
             helper.create_tutorial_channels()
@@ -181,6 +206,7 @@ def hydra_main(cfg: DictConfig):
                 session=session,
                 program_json_path=Path(cfg.program_json_path),
                 booklet_json_path=Path(cfg.booklet_json_path),
+                workshops_yaml_path=Path(cfg.workshops_yaml_path),
                 dry_run=cfg.dry_run,
             )
             helper.create_workshop_channels()
@@ -193,6 +219,7 @@ def hydra_main(cfg: DictConfig):
                 session=session,
                 program_json_path=Path(cfg.program_json_path),
                 booklet_json_path=Path(cfg.booklet_json_path),
+                workshops_yaml_path=Path(cfg.workshops_yaml_path),
                 dry_run=cfg.dry_run,
             )
             helper.add_custom_emojis()

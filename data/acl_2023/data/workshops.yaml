@@ -1,0 +1,712 @@
+- anthology_venue_id: DialDoc
+  committee:
+  - first_name: Smaranda
+    google_scholar: null
+    last_name: Muresan
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Vivian
+    google_scholar: null
+    last_name: Chen
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Kennington
+    google_scholar: null
+    last_name: Casey
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Vandyke
+    google_scholar: null
+    last_name: David
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Dethlefs
+    google_scholar: null
+    last_name: Nina
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Inoue
+    google_scholar: null
+    last_name: Koji
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Ekstedt
+    google_scholar: null
+    last_name: Erik
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Ultes
+    google_scholar: null
+    last_name: Stefan
+    middle_name: null
+    semantic_scholar: null
+  name: Proceedings of the Third DialDoc Workshop on Document-grounded Dialogue and
+    Conversational Question Answering
+  short_name: DialDoc
+- anthology_venue_id: MATCHING
+  committee:
+  - first_name: Estevam
+    google_scholar: null
+    last_name: Hruschka
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Tom
+    google_scholar: null
+    last_name: Mitchell
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Sajjadur
+    google_scholar: null
+    last_name: Rahman
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Dunja
+    google_scholar: null
+    last_name: "Mladeni\u0107"
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Marko
+    google_scholar: null
+    last_name: Grobelnik
+    middle_name: null
+    semantic_scholar: null
+  name: The First Workshop on Matching From Unstructured and Structured Data (MATCHING
+    2023)
+  short_name: MATCHING
+- anthology_venue_id: BioNLP
+  committee:
+  - first_name: Dina
+    google_scholar: null
+    last_name: Demner-fushman
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Sophia
+    google_scholar: null
+    last_name: Ananiadou
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Kevin
+    google_scholar: null
+    last_name: Cohen
+    middle_name: null
+    semantic_scholar: null
+  name: BioNLP and BioNLP-ST 2023
+  short_name: BioNLP-ST
+- anthology_venue_id: ACL
+  committee:
+  - first_name: Bhavana
+    google_scholar: null
+    last_name: Dalvi Mishra
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Greg
+    google_scholar: null
+    last_name: Durrett
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Peter
+    google_scholar: null
+    last_name: Jansen
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Danilo
+    google_scholar: null
+    last_name: Neves Ribeiro
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Jason
+    google_scholar: null
+    last_name: Wei
+    middle_name: null
+    semantic_scholar: null
+  name: 1st Workshop on Natural Language Reasoning and Structured Explanations (@ACL
+    2023)
+  short_name: NLRSE
+- anthology_venue_id: ACL
+  committee:
+  - first_name: Manuel
+    google_scholar: null
+    last_name: Mager
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Abteen
+    google_scholar: null
+    last_name: Ebrahimi
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Arturo
+    google_scholar: null
+    last_name: Oncevay
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Enora
+    google_scholar: null
+    last_name: Rice
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Shruti
+    google_scholar: null
+    last_name: Rijhwani
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Alexis
+    google_scholar: null
+    last_name: Palmer
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Katharina
+    google_scholar: null
+    last_name: Kann
+    middle_name: null
+    semantic_scholar: null
+  name: Third Workshop on Natural Language Processing for Indigenous Languages of
+    the Americas
+  short_name: AmericasNLP
+- anthology_venue_id: WASSA
+  committee:
+  - first_name: Jeremy
+    google_scholar: null
+    last_name: Barnes
+    middle_name: null
+    semantic_scholar: null
+  - first_name: "Orph\xE9e"
+    google_scholar: null
+    last_name: De Clercq
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Roman
+    google_scholar: null
+    last_name: Klinger
+    middle_name: null
+    semantic_scholar: null
+  name: The 13th Workshop on Computational Approaches to Subjectivity, Sentiment,
+    & Social Media Analysis
+  short_name: WASSA
+- anthology_venue_id: ACL-CODI
+  committee:
+  - first_name: "Chlo\xE9"
+    google_scholar: null
+    last_name: Braud
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Yang Janet
+    google_scholar: null
+    last_name: Liu
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Eleni
+    google_scholar: null
+    last_name: Metheniti
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Philippe
+    google_scholar: null
+    last_name: Muller
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Laura
+    google_scholar: null
+    last_name: "Rivi\xE8re"
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Attapol
+    google_scholar: null
+    last_name: Rutherford
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Amir
+    google_scholar: null
+    last_name: Zeldes
+    middle_name: null
+    semantic_scholar: null
+  name: The Shared Task on Discourse Relation Parsing and Treebanking
+  short_name: DISRPT
+- anthology_venue_id: ClinicalNLP
+  committee:
+  - first_name: Tristan
+    google_scholar: null
+    last_name: Naumann
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Asma
+    google_scholar: null
+    last_name: Ben Abacha
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Steven
+    google_scholar: null
+    last_name: Bethard
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Kirk
+    google_scholar: null
+    last_name: Roberts
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Anna
+    google_scholar: null
+    last_name: Rumshisky
+    middle_name: null
+    semantic_scholar: null
+  name: The 5th Workshop on Clinical Natural Language Processing (ClinicalNLP)
+  short_name: Clinical-NLP
+- anthology_venue_id: StarSEM
+  committee:
+  - first_name: Alexis
+    google_scholar: null
+    last_name: Palmer
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Jose
+    google_scholar: null
+    last_name: Camacho-collados
+    middle_name: null
+    semantic_scholar: null
+  name: The 12th Joint Conference on Lexical and Computational Semantics
+  short_name: SEM
+- anthology_venue_id: NLP4ConvAI
+  committee:
+  - first_name: Yun-Nung
+    google_scholar: null
+    last_name: Chen
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Abhinav
+    google_scholar: null
+    last_name: Rastogi
+    middle_name: null
+    semantic_scholar: null
+  name: The 5th Workshop on NLP for Conversational AI
+  short_name: NLP4ConvAI
+- anthology_venue_id: LAW
+  committee:
+  - first_name: Jakob
+    google_scholar: null
+    last_name: Prange
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Annemarie
+    google_scholar: null
+    last_name: Friedrich
+    middle_name: null
+    semantic_scholar: null
+  name: The 17th Linguistic Annotation Workshop (LAW-XVII) \\ @ ACL 2023
+  short_name: LAW
+- anthology_venue_id: ACL
+  committee:
+  - first_name: Garrett
+    google_scholar: null
+    last_name: Nicolai
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Eleanor
+    google_scholar: null
+    last_name: Chodroff
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Frederic
+    google_scholar: null
+    last_name: Mailhot
+    middle_name: null
+    semantic_scholar: null
+  - first_name: "\xC7a\u011Fr\u0131"
+    google_scholar: null
+    last_name: "\xC7\xF6ltekin"
+    middle_name: null
+    semantic_scholar: null
+  name: The 20th SIGMORPHON workshop on Computational Morphology, Phonology, and Phonetics
+  short_name: SIGMORPHON
+- anthology_venue_id: SICon
+  committee:
+  - first_name: Kushal
+    google_scholar: null
+    last_name: Chawla
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Weiyan
+    google_scholar: null
+    last_name: Shi
+    middle_name: null
+    semantic_scholar: null
+  name: The 1st Workshop on Social Influence in Conversations (SICon)
+  short_name: SICon
+- anthology_venue_id: TrustNLP
+  committee:
+  - first_name: Anaelia
+    google_scholar: null
+    last_name: Ovalle
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Kai-Wei
+    google_scholar: null
+    last_name: Chang
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Ninareh
+    google_scholar: null
+    last_name: Mehrabi
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Yada
+    google_scholar: null
+    last_name: Pruksachatkun
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Aram
+    google_scholar: null
+    last_name: Galystan
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Jwala
+    google_scholar: null
+    last_name: Dhamala
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Apurv
+    google_scholar: null
+    last_name: Verma
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Trista
+    google_scholar: null
+    last_name: Cao
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Anoop
+    google_scholar: null
+    last_name: Kumar
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Rahul
+    google_scholar: null
+    last_name: Gupta
+    middle_name: null
+    semantic_scholar: null
+  name: The Third Workshop on Trustworthy Natural Language Processing
+  short_name: TrustNLP
+- anthology_venue_id: wnu2023
+  committee:
+  - first_name: Nader
+    google_scholar: null
+    last_name: Akoury
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Elizabeth
+    google_scholar: null
+    last_name: Clark
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Mohit
+    google_scholar: null
+    last_name: Iyyer
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Snigdha
+    google_scholar: null
+    last_name: Chaturvedi
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Faeze
+    google_scholar: null
+    last_name: Brahman
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Khyathi
+    google_scholar: null
+    last_name: Chandu
+    middle_name: null
+    semantic_scholar: null
+  name: The 5th Workshop on Narrative Understanding
+  short_name: Narrative-Understanding
+- anthology_venue_id: CAWL
+  committee:
+  - first_name: Kyle
+    google_scholar: null
+    last_name: Gorman
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Richard
+    google_scholar: null
+    last_name: Sproat
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Brian
+    google_scholar: null
+    last_name: Roark
+    middle_name: null
+    semantic_scholar: null
+  name: The Workshop on Computation and Written Language (CAWL)
+  short_name: CAWL
+- anthology_venue_id: BEA
+  committee:
+  - first_name: Ekaterina
+    google_scholar: null
+    last_name: Kochmar
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Jill
+    google_scholar: null
+    last_name: Burstein
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Andrea
+    google_scholar: null
+    last_name: Horbach
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Ronja
+    google_scholar: null
+    last_name: Laarmann-Quante
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Nitin
+    google_scholar: null
+    last_name: Madnani
+    middle_name: null
+    semantic_scholar: null
+  - first_name: "Ana\xEFs"
+    google_scholar: null
+    last_name: Tack
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Victoria
+    google_scholar: null
+    last_name: Yaneva
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Zheng
+    google_scholar: null
+    last_name: Yuan
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Torsten
+    google_scholar: null
+    last_name: Zesch
+    middle_name: null
+    semantic_scholar: null
+  name: 18th Workshop on Innovative Use of NLP for Building Educational Applications
+  short_name: BEA
+- anthology_venue_id: ACL
+  committee:
+  - first_name: Burcu
+    google_scholar: null
+    last_name: Can
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Maximilian
+    google_scholar: null
+    last_name: Mozes
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Samuel
+    google_scholar: null
+    last_name: Cahyawijaya
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Naomi
+    google_scholar: null
+    last_name: Saphra
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Nora
+    google_scholar: null
+    last_name: Kassner
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Shauli
+    google_scholar: null
+    last_name: Ravfogel
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Abhilasha
+    google_scholar: null
+    last_name: Ravichander
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Chen
+    google_scholar: null
+    last_name: Zhao
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Isabelle
+    google_scholar: null
+    last_name: Augenstein
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Anna
+    google_scholar: null
+    last_name: Rogers
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Kyunghyun
+    google_scholar: null
+    last_name: Cho
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Edward
+    google_scholar: null
+    last_name: Grefenstette
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Lena
+    google_scholar: null
+    last_name: Voita
+    middle_name: null
+    semantic_scholar: null
+  name: The 8th Workshop on Representation Learning for NLP (RepL4NLP 2023)
+  short_name: RepL4NLP
+- anthology_venue_id: ACL
+  committee:
+  - first_name: Yi-ling
+    google_scholar: null
+    last_name: Chung
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Paul
+    google_scholar: null
+    last_name: R{\"ottger}
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Debora
+    google_scholar: null
+    last_name: Nozza
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Zeerak
+    google_scholar: null
+    last_name: Talat
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Aida
+    google_scholar: null
+    last_name: Mostafazadeh Davani
+    middle_name: null
+    semantic_scholar: null
+  name: The 7th Workshop on Online Abuse and Harms (WOAH)
+  short_name: WOAH
+- anthology_venue_id: SustaiNLP
+  committee:
+  - first_name: Nafise
+    google_scholar: null
+    last_name: Sadat Moosavi
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Iryna
+    google_scholar: null
+    last_name: Gurevych
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Yufang
+    google_scholar: null
+    last_name: Hou
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Gyuwan
+    google_scholar: null
+    last_name: Kim
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Young Jin
+    google_scholar: null
+    last_name: Kim
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Tal
+    google_scholar: null
+    last_name: Schuster
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Ameeta
+    google_scholar: null
+    last_name: Agrawal
+    middle_name: null
+    semantic_scholar: null
+  name: The Fourth Workshop on Simple and Efficient Natural Language Processing
+  short_name: SustaiNLP
+- anthology_venue_id: IWSLT
+  committee:
+  - first_name: Elizabeth
+    google_scholar: null
+    last_name: Salesky
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Marcello
+    google_scholar: null
+    last_name: Federico
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Marine
+    google_scholar: null
+    last_name: Carpuat
+    middle_name: null
+    semantic_scholar: null
+  name: The 20th International Conference on Spoken Language Translation
+  short_name: IWSLT
+- anthology_venue_id: SemEval
+  committee:
+  - first_name: Atul Kr.
+    google_scholar: null
+    last_name: Ojha
+    middle_name: null
+    semantic_scholar: null
+  - first_name: A. Seza
+    google_scholar: null
+    last_name: "Do\u011Fru\xF6z"
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Giovanni
+    google_scholar: null
+    last_name: Da San Martino
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Harish
+    google_scholar: null
+    last_name: Tayyar Madabushi
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Ritesh
+    google_scholar: null
+    last_name: Kumar
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Elisa
+    google_scholar: null
+    last_name: Sartori
+    middle_name: null
+    semantic_scholar: null
+  name: The 17th International Workshop on Semantic Evaluation (SemEval-2023)
+  short_name: SemEval
+- anthology_venue_id: CODI
+  committee:
+  - first_name: Michael
+    google_scholar: null
+    last_name: Strube
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Chloe
+    google_scholar: null
+    last_name: Braud
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Christian
+    google_scholar: null
+    last_name: Hardmeier
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Junyi Jessy
+    google_scholar: null
+    last_name: Li
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Sharid
+    google_scholar: null
+    last_name: Loaiciga
+    middle_name: null
+    semantic_scholar: null
+  - first_name: Amir
+    google_scholar: null
+    last_name: Zeldes
+    middle_name: null
+    semantic_scholar: null
+  name: 4th Workshop on Computational Approaches to Discourse
+  short_name: CODI

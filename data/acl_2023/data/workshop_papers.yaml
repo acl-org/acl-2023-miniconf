@@ -19,6 +19,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -66,6 +67,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -104,6 +106,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -153,6 +156,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -197,6 +201,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -238,6 +243,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -280,6 +286,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -331,6 +338,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -377,6 +385,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -420,6 +429,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -468,6 +478,7 @@
   event_ids: []
   forum: ''
   id: DialDoc_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -512,6 +523,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -554,6 +566,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -597,6 +610,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -641,6 +655,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -683,6 +698,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -724,6 +740,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -769,6 +786,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -799,6 +817,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -844,6 +863,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_M16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -894,6 +914,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_F1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -938,6 +959,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_F3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -969,6 +991,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_F4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1009,6 +1032,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_F5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1056,6 +1080,7 @@
   event_ids: []
   forum: ''
   id: MATCHING_F6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1096,6 +1121,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1136,6 +1162,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1176,6 +1203,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1225,6 +1253,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1271,6 +1300,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1310,6 +1340,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1348,6 +1379,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1389,6 +1421,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1432,6 +1465,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1477,6 +1511,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1522,6 +1557,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1567,6 +1603,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1605,6 +1642,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1643,6 +1681,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1677,6 +1716,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1725,6 +1765,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1766,6 +1807,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1811,6 +1853,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1855,6 +1898,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1893,6 +1937,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1926,6 +1971,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -1969,6 +2015,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2020,6 +2067,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2063,6 +2111,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2102,6 +2151,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2148,6 +2198,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2186,6 +2237,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2224,6 +2276,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2267,6 +2320,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2309,6 +2363,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_46
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2355,6 +2410,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2402,6 +2458,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2443,6 +2500,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2479,6 +2537,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2520,6 +2579,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2564,6 +2624,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2607,6 +2668,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2648,6 +2710,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2686,6 +2749,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2729,6 +2793,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_58
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2773,6 +2838,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_59
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2821,6 +2887,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_61
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2862,6 +2929,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_62
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2907,6 +2975,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_63
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2950,6 +3019,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_64
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -2991,6 +3061,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_101
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3028,6 +3099,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_102
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3064,6 +3136,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_104
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3113,6 +3186,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_106
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3154,6 +3228,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_107
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3195,6 +3270,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_108
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3230,6 +3306,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_110
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3268,6 +3345,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_111
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3308,6 +3386,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_112
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3341,6 +3420,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_113
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3376,6 +3456,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_114
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3416,6 +3497,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_116
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3456,6 +3538,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_117
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3501,6 +3584,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_118
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3545,6 +3629,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_120
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3590,6 +3675,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_121
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3624,6 +3710,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_122
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3669,6 +3756,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_123
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3704,6 +3792,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_124
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3744,6 +3833,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_125
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3778,6 +3868,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_126
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3821,6 +3912,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_127
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3858,6 +3950,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_128
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3894,6 +3987,7 @@
   event_ids: []
   forum: ''
   id: BioNLP_130
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3935,6 +4029,7 @@
   event_ids: []
   forum: ''
   id: ACL_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -3981,6 +4076,7 @@
   event_ids: []
   forum: ''
   id: ACL_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4022,6 +4118,7 @@
   event_ids: []
   forum: ''
   id: ACL_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4061,6 +4158,7 @@
   event_ids: []
   forum: ''
   id: ACL_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4108,6 +4206,7 @@
   event_ids: []
   forum: ''
   id: ACL_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4152,6 +4251,7 @@
   event_ids: []
   forum: ''
   id: ACL_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4193,6 +4293,7 @@
   event_ids: []
   forum: ''
   id: ACL_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4229,6 +4330,7 @@
   event_ids: []
   forum: ''
   id: ACL_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4266,6 +4368,7 @@
   event_ids: []
   forum: ''
   id: ACL_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4316,6 +4419,7 @@
   event_ids: []
   forum: ''
   id: ACL_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4361,6 +4465,7 @@
   event_ids: []
   forum: ''
   id: ACL_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4402,6 +4507,7 @@
   event_ids: []
   forum: ''
   id: ACL_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4443,6 +4549,7 @@
   event_ids: []
   forum: ''
   id: ACL_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4487,6 +4594,7 @@
   event_ids: []
   forum: ''
   id: ACL_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4523,6 +4631,7 @@
   event_ids: []
   forum: ''
   id: ACL_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4562,6 +4671,7 @@
   event_ids: []
   forum: ''
   id: ACL_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4606,6 +4716,7 @@
   event_ids: []
   forum: ''
   id: ACL_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4657,6 +4768,7 @@
   event_ids: []
   forum: ''
   id: ACL_58
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4695,6 +4807,7 @@
   event_ids: []
   forum: ''
   id: ACL_59
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4734,6 +4847,7 @@
   event_ids: []
   forum: ''
   id: ACL_61
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4779,6 +4893,7 @@
   event_ids: []
   forum: ''
   id: ACL_62
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4827,6 +4942,7 @@
   event_ids: []
   forum: ''
   id: ACL_65
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4869,6 +4985,7 @@
   event_ids: []
   forum: ''
   id: ACL_66
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4908,6 +5025,7 @@
   event_ids: []
   forum: ''
   id: ACL_67
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4951,6 +5069,7 @@
   event_ids: []
   forum: ''
   id: ACL_68
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -4999,6 +5118,7 @@
   event_ids: []
   forum: ''
   id: ACL_71
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5044,6 +5164,7 @@
   event_ids: []
   forum: ''
   id: ACL_72
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5088,6 +5209,7 @@
   event_ids: []
   forum: ''
   id: ACL_73
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5134,6 +5256,7 @@
   event_ids: []
   forum: ''
   id: ACL_74
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5179,6 +5302,7 @@
   event_ids: []
   forum: ''
   id: ACL_75
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5223,6 +5347,7 @@
   event_ids: []
   forum: ''
   id: ACL_76
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5267,6 +5392,7 @@
   event_ids: []
   forum: ''
   id: ACL_77
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5316,6 +5442,7 @@
   event_ids: []
   forum: ''
   id: ACL_78
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5353,6 +5480,7 @@
   event_ids: []
   forum: ''
   id: ACL_79
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5396,6 +5524,7 @@
   event_ids: []
   forum: ''
   id: ACL_80
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5445,6 +5574,7 @@
   event_ids: []
   forum: ''
   id: ACL_82
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5498,6 +5628,7 @@
   event_ids: []
   forum: ''
   id: ACL_83
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5542,6 +5673,7 @@
   event_ids: []
   forum: ''
   id: ACL_87
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5588,6 +5720,7 @@
   event_ids: []
   forum: ''
   id: ACL_90
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5636,6 +5769,7 @@
   event_ids: []
   forum: ''
   id: ACL_91
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5681,6 +5815,7 @@
   event_ids: []
   forum: ''
   id: ACL_92
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5720,6 +5855,7 @@
   event_ids: []
   forum: ''
   id: ACL_93
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5764,6 +5900,7 @@
   event_ids: []
   forum: ''
   id: ACL_95
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5810,6 +5947,7 @@
   event_ids: []
   forum: ''
   id: ACL_97
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5856,6 +5994,7 @@
   event_ids: []
   forum: ''
   id: ACL_98
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5902,6 +6041,7 @@
   event_ids: []
   forum: ''
   id: ACL_99
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5943,6 +6083,7 @@
   event_ids: []
   forum: ''
   id: ACL_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -5984,6 +6125,7 @@
   event_ids: []
   forum: ''
   id: ACL_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6026,6 +6168,7 @@
   event_ids: []
   forum: ''
   id: ACL_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6065,6 +6208,7 @@
   event_ids: []
   forum: ''
   id: ACL_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6104,6 +6248,7 @@
   event_ids: []
   forum: ''
   id: ACL_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6142,6 +6287,7 @@
   event_ids: []
   forum: ''
   id: ACL_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6184,6 +6330,7 @@
   event_ids: []
   forum: ''
   id: ACL_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6227,6 +6374,7 @@
   event_ids: []
   forum: ''
   id: ACL_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6281,6 +6429,7 @@
   event_ids: []
   forum: ''
   id: ACL_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6318,6 +6467,7 @@
   event_ids: []
   forum: ''
   id: ACL_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6358,6 +6508,7 @@
   event_ids: []
   forum: ''
   id: ACL_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6399,6 +6550,7 @@
   event_ids: []
   forum: ''
   id: ACL_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6446,6 +6598,7 @@
   event_ids: []
   forum: ''
   id: ACL_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6482,6 +6635,7 @@
   event_ids: []
   forum: ''
   id: ACL_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6522,6 +6676,7 @@
   event_ids: []
   forum: ''
   id: ACL_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6566,6 +6721,7 @@
   event_ids: []
   forum: ''
   id: ACL_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6600,6 +6756,7 @@
   event_ids: []
   forum: ''
   id: ACL_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6648,6 +6805,7 @@
   event_ids: []
   forum: ''
   id: ACL_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6686,6 +6844,7 @@
   event_ids: []
   forum: ''
   id: ACL_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6733,6 +6892,7 @@
   event_ids: []
   forum: ''
   id: ACL_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6771,6 +6931,7 @@
   event_ids: []
   forum: ''
   id: ACL_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6802,6 +6963,7 @@
   event_ids: []
   forum: ''
   id: ACL_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6838,6 +7000,7 @@
   event_ids: []
   forum: ''
   id: ACL_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6878,6 +7041,7 @@
   event_ids: []
   forum: ''
   id: ACL_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6915,6 +7079,7 @@
   event_ids: []
   forum: ''
   id: ACL_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -6955,6 +7120,7 @@
   event_ids: []
   forum: ''
   id: ACL_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7004,6 +7170,7 @@
   event_ids: []
   forum: ''
   id: ACL_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7045,6 +7212,7 @@
   event_ids: []
   forum: ''
   id: WASSA_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7084,6 +7252,7 @@
   event_ids: []
   forum: ''
   id: WASSA_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7135,6 +7304,7 @@
   event_ids: []
   forum: ''
   id: WASSA_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7174,6 +7344,7 @@
   event_ids: []
   forum: ''
   id: WASSA_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7215,6 +7386,7 @@
   event_ids: []
   forum: ''
   id: WASSA_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7258,6 +7430,7 @@
   event_ids: []
   forum: ''
   id: WASSA_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7301,6 +7474,7 @@
   event_ids: []
   forum: ''
   id: WASSA_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7342,6 +7516,7 @@
   event_ids: []
   forum: ''
   id: WASSA_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7384,6 +7559,7 @@
   event_ids: []
   forum: ''
   id: WASSA_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7426,6 +7602,7 @@
   event_ids: []
   forum: ''
   id: WASSA_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7468,6 +7645,7 @@
   event_ids: []
   forum: ''
   id: WASSA_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7504,6 +7682,7 @@
   event_ids: []
   forum: ''
   id: WASSA_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7555,6 +7734,7 @@
   event_ids: []
   forum: ''
   id: WASSA_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7598,6 +7778,7 @@
   event_ids: []
   forum: ''
   id: WASSA_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7637,6 +7818,7 @@
   event_ids: []
   forum: ''
   id: WASSA_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7677,6 +7859,7 @@
   event_ids: []
   forum: ''
   id: WASSA_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7719,6 +7902,7 @@
   event_ids: []
   forum: ''
   id: WASSA_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7757,6 +7941,7 @@
   event_ids: []
   forum: ''
   id: WASSA_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7799,6 +7984,7 @@
   event_ids: []
   forum: ''
   id: WASSA_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7845,6 +8031,7 @@
   event_ids: []
   forum: ''
   id: WASSA_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7896,6 +8083,7 @@
   event_ids: []
   forum: ''
   id: WASSA_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7938,6 +8126,7 @@
   event_ids: []
   forum: ''
   id: WASSA_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -7981,6 +8170,7 @@
   event_ids: []
   forum: ''
   id: WASSA_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8016,6 +8206,7 @@
   event_ids: []
   forum: ''
   id: WASSA_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8057,6 +8248,7 @@
   event_ids: []
   forum: ''
   id: WASSA_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8096,6 +8288,7 @@
   event_ids: []
   forum: ''
   id: WASSA_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8139,6 +8332,7 @@
   event_ids: []
   forum: ''
   id: WASSA_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8184,6 +8378,7 @@
   event_ids: []
   forum: ''
   id: WASSA_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8228,6 +8423,7 @@
   event_ids: []
   forum: ''
   id: WASSA_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8269,6 +8465,7 @@
   event_ids: []
   forum: ''
   id: WASSA_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8312,6 +8509,7 @@
   event_ids: []
   forum: ''
   id: WASSA_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8355,6 +8553,7 @@
   event_ids: []
   forum: ''
   id: WASSA_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8397,6 +8596,7 @@
   event_ids: []
   forum: ''
   id: WASSA_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8439,6 +8639,7 @@
   event_ids: []
   forum: ''
   id: WASSA_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8483,6 +8684,7 @@
   event_ids: []
   forum: ''
   id: WASSA_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8522,6 +8724,7 @@
   event_ids: []
   forum: ''
   id: WASSA_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8561,6 +8764,7 @@
   event_ids: []
   forum: ''
   id: WASSA_60
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8603,6 +8807,7 @@
   event_ids: []
   forum: ''
   id: WASSA_61
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8638,6 +8843,7 @@
   event_ids: []
   forum: ''
   id: WASSA_62
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8673,6 +8879,7 @@
   event_ids: []
   forum: ''
   id: WASSA_65
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8717,6 +8924,7 @@
   event_ids: []
   forum: ''
   id: WASSA_66
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8759,6 +8967,7 @@
   event_ids: []
   forum: ''
   id: WASSA_67
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8807,6 +9016,7 @@
   event_ids: []
   forum: ''
   id: WASSA_69
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8855,6 +9065,7 @@
   event_ids: []
   forum: ''
   id: WASSA_101
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8894,6 +9105,7 @@
   event_ids: []
   forum: ''
   id: WASSA_102
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8937,6 +9149,7 @@
   event_ids: []
   forum: ''
   id: WASSA_103
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -8982,6 +9195,7 @@
   event_ids: []
   forum: ''
   id: WASSA_104
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9025,6 +9239,7 @@
   event_ids: []
   forum: ''
   id: WASSA_105
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9062,6 +9277,7 @@
   event_ids: []
   forum: ''
   id: WASSA_106
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9104,6 +9320,7 @@
   event_ids: []
   forum: ''
   id: WASSA_107
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9144,6 +9361,7 @@
   event_ids: []
   forum: ''
   id: WASSA_108
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9182,6 +9400,7 @@
   event_ids: []
   forum: ''
   id: WASSA_109
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9222,6 +9441,7 @@
   event_ids: []
   forum: ''
   id: WASSA_110
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9264,6 +9484,7 @@
   event_ids: []
   forum: ''
   id: WASSA_111
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9304,6 +9525,7 @@
   event_ids: []
   forum: ''
   id: WASSA_112
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9342,6 +9564,7 @@
   event_ids: []
   forum: ''
   id: WASSA_201
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9384,6 +9607,7 @@
   event_ids: []
   forum: ''
   id: WASSA_202
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9426,6 +9650,7 @@
   event_ids: []
   forum: ''
   id: WASSA_203
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9464,6 +9689,7 @@
   event_ids: []
   forum: ''
   id: WASSA_204
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9505,6 +9731,7 @@
   event_ids: []
   forum: ''
   id: WASSA_205
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9546,6 +9773,7 @@
   event_ids: []
   forum: ''
   id: WASSA_206
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9590,6 +9818,7 @@
   event_ids: []
   forum: ''
   id: ACL-CODI_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9631,6 +9860,7 @@
   event_ids: []
   forum: ''
   id: ACL-CODI_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9675,6 +9905,7 @@
   event_ids: []
   forum: ''
   id: ACL-CODI_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9711,6 +9942,7 @@
   event_ids: []
   forum: ''
   id: ACL-CODI_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9754,6 +9986,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9795,6 +10028,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9834,6 +10068,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9879,6 +10114,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9937,6 +10173,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -9980,6 +10217,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10020,6 +10258,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10061,6 +10300,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10106,6 +10346,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10149,6 +10390,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10187,6 +10429,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10227,6 +10470,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10269,6 +10513,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10313,6 +10558,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10354,6 +10600,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10392,6 +10639,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10436,6 +10684,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10481,6 +10730,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10516,6 +10766,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10557,6 +10808,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10598,6 +10850,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10644,6 +10897,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10690,6 +10944,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10737,6 +10992,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10776,6 +11032,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10822,6 +11079,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10872,6 +11130,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10913,6 +11172,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -10958,6 +11218,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11003,6 +11264,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11045,6 +11307,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11091,6 +11354,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11137,6 +11401,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11183,6 +11448,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11229,6 +11495,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11271,6 +11538,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11321,6 +11589,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_58
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11361,6 +11630,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_62
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11407,6 +11677,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_65
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11457,6 +11728,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_66
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11499,6 +11771,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_68
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11543,6 +11816,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_69
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11587,6 +11861,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_70
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11625,6 +11900,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_71
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11662,6 +11938,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_72
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11707,6 +11984,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_74
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11752,6 +12030,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_75
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11793,6 +12072,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_76
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11832,6 +12112,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_78
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11871,6 +12152,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_79
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11918,6 +12200,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_80
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11958,6 +12241,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_81
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -11993,6 +12277,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_83
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12029,6 +12314,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_84
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12066,6 +12352,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_85
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12104,6 +12391,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_86
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12139,6 +12427,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_87
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12180,6 +12469,7 @@
   event_ids: []
   forum: ''
   id: ClinicalNLP_88
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12222,6 +12512,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12266,6 +12557,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12303,6 +12595,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12340,6 +12633,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12379,6 +12673,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12417,6 +12712,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12462,6 +12758,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12501,6 +12798,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12542,6 +12840,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12581,6 +12880,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12626,6 +12926,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12667,6 +12968,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12704,6 +13006,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12747,6 +13050,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12786,6 +13090,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12825,6 +13130,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12866,6 +13172,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12909,6 +13216,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12948,6 +13256,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -12988,6 +13297,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13028,6 +13338,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13070,6 +13381,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_46
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13110,6 +13422,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13151,6 +13464,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13191,6 +13505,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_64
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13231,6 +13546,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_67
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13269,6 +13585,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_68
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13311,6 +13628,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_69
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13356,6 +13674,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_70
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13401,6 +13720,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_71
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13443,6 +13763,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_72
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13484,6 +13805,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_74
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13529,6 +13851,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_75
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13565,6 +13888,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_76
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13604,6 +13928,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_79
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13637,6 +13962,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_80
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13678,6 +14004,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_81
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13720,6 +14047,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_83
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13756,6 +14084,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_85
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13795,6 +14124,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_86
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13844,6 +14174,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_100
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13886,6 +14217,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_101
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13926,6 +14258,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_104
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -13961,6 +14294,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_105
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14008,6 +14342,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_106
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14048,6 +14383,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14093,6 +14429,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14139,6 +14476,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14174,6 +14512,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14213,6 +14552,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14256,6 +14596,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14304,6 +14645,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14342,6 +14684,7 @@
   event_ids: []
   forum: ''
   id: StarSEM_F8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14371,6 +14714,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14399,6 +14743,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14425,6 +14770,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14452,6 +14798,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14477,6 +14824,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14503,6 +14851,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14530,6 +14879,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14557,6 +14907,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14583,6 +14934,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14608,6 +14960,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14635,6 +14988,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14661,6 +15015,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14691,6 +15046,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14718,6 +15074,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14743,6 +15100,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14773,6 +15131,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14801,6 +15160,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14832,6 +15192,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14859,6 +15220,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14884,6 +15246,7 @@
   event_ids: []
   forum: ''
   id: NLP4ConvAI_F7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14921,6 +15284,7 @@
   event_ids: []
   forum: ''
   id: LAW_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14954,6 +15318,7 @@
   event_ids: []
   forum: ''
   id: LAW_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -14990,6 +15355,7 @@
   event_ids: []
   forum: ''
   id: LAW_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15026,6 +15392,7 @@
   event_ids: []
   forum: ''
   id: LAW_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15064,6 +15431,7 @@
   event_ids: []
   forum: ''
   id: LAW_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15109,6 +15477,7 @@
   event_ids: []
   forum: ''
   id: LAW_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15143,6 +15512,7 @@
   event_ids: []
   forum: ''
   id: LAW_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15181,6 +15551,7 @@
   event_ids: []
   forum: ''
   id: LAW_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15223,6 +15594,7 @@
   event_ids: []
   forum: ''
   id: LAW_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15265,6 +15637,7 @@
   event_ids: []
   forum: ''
   id: LAW_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15308,6 +15681,7 @@
   event_ids: []
   forum: ''
   id: LAW_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15350,6 +15724,7 @@
   event_ids: []
   forum: ''
   id: LAW_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15384,6 +15759,7 @@
   event_ids: []
   forum: ''
   id: LAW_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15423,6 +15799,7 @@
   event_ids: []
   forum: ''
   id: LAW_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15459,6 +15836,7 @@
   event_ids: []
   forum: ''
   id: LAW_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15494,6 +15872,7 @@
   event_ids: []
   forum: ''
   id: LAW_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15536,6 +15915,7 @@
   event_ids: []
   forum: ''
   id: LAW_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15574,6 +15954,7 @@
   event_ids: []
   forum: ''
   id: LAW_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15616,6 +15997,7 @@
   event_ids: []
   forum: ''
   id: LAW_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15656,6 +16038,7 @@
   event_ids: []
   forum: ''
   id: LAW_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15696,6 +16079,7 @@
   event_ids: []
   forum: ''
   id: LAW_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15735,6 +16119,7 @@
   event_ids: []
   forum: ''
   id: LAW_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15774,6 +16159,7 @@
   event_ids: []
   forum: ''
   id: LAW_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15810,6 +16196,7 @@
   event_ids: []
   forum: ''
   id: LAW_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15849,6 +16236,7 @@
   event_ids: []
   forum: ''
   id: LAW_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15889,6 +16277,7 @@
   event_ids: []
   forum: ''
   id: LAW_58
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15928,6 +16317,7 @@
   event_ids: []
   forum: ''
   id: LAW_F1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -15973,6 +16363,7 @@
   event_ids: []
   forum: ''
   id: LAW_F2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16015,6 +16406,7 @@
   event_ids: []
   forum: ''
   id: LAW_F3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16058,6 +16450,7 @@
   event_ids: []
   forum: ''
   id: LAW_F4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16107,6 +16500,7 @@
   event_ids: []
   forum: ''
   id: LAW_F5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16156,6 +16550,7 @@
   event_ids: []
   forum: ''
   id: LAW_F6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16193,6 +16588,7 @@
   event_ids: []
   forum: ''
   id: LAW_F7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16232,6 +16628,7 @@
   event_ids: []
   forum: ''
   id: LAW_F8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16275,6 +16672,7 @@
   event_ids: []
   forum: ''
   id: LAW_F9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16321,6 +16719,7 @@
   event_ids: []
   forum: ''
   id: ACL_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16359,6 +16758,7 @@
   event_ids: []
   forum: ''
   id: ACL_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16403,6 +16803,7 @@
   event_ids: []
   forum: ''
   id: ACL_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16448,6 +16849,7 @@
   event_ids: []
   forum: ''
   id: ACL_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16485,6 +16887,7 @@
   event_ids: []
   forum: ''
   id: ACL_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16526,6 +16929,7 @@
   event_ids: []
   forum: ''
   id: ACL_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16569,6 +16973,7 @@
   event_ids: []
   forum: ''
   id: ACL_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16606,6 +17011,7 @@
   event_ids: []
   forum: ''
   id: ACL_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16654,6 +17060,7 @@
   event_ids: []
   forum: ''
   id: ACL_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16693,6 +17100,7 @@
   event_ids: []
   forum: ''
   id: ACL_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16746,6 +17154,7 @@
   event_ids: []
   forum: ''
   id: ACL_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16782,6 +17191,7 @@
   event_ids: []
   forum: ''
   id: ACL_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16823,6 +17233,7 @@
   event_ids: []
   forum: ''
   id: ACL_Inf1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16861,6 +17272,7 @@
   event_ids: []
   forum: ''
   id: ACL_Inf2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16899,6 +17311,7 @@
   event_ids: []
   forum: ''
   id: ACL_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16942,6 +17355,7 @@
   event_ids: []
   forum: ''
   id: ACL_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -16981,6 +17395,7 @@
   event_ids: []
   forum: ''
   id: ACL_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17017,6 +17432,7 @@
   event_ids: []
   forum: ''
   id: ACL_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17056,6 +17472,7 @@
   event_ids: []
   forum: ''
   id: ACL_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17097,6 +17514,7 @@
   event_ids: []
   forum: ''
   id: ACL_Gloss
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17135,6 +17553,7 @@
   event_ids: []
   forum: ''
   id: ACL_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17179,6 +17598,7 @@
   event_ids: []
   forum: ''
   id: ACL_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17211,6 +17631,7 @@
   event_ids: []
   forum: ''
   id: ACL_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17248,6 +17669,7 @@
   event_ids: []
   forum: ''
   id: ACL_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17290,6 +17712,7 @@
   event_ids: []
   forum: ''
   id: ACL_F1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17333,6 +17756,7 @@
   event_ids: []
   forum: ''
   id: ACL_F2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17379,6 +17803,7 @@
   event_ids: []
   forum: ''
   id: ACL_G2P
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17414,6 +17839,7 @@
   event_ids: []
   forum: ''
   id: ACL_G2P1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17449,6 +17875,7 @@
   event_ids: []
   forum: ''
   id: ACL_G2P2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17500,6 +17927,7 @@
   event_ids: []
   forum: ''
   id: ACL_G2P3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17544,6 +17972,7 @@
   event_ids: []
   forum: ''
   id: ACL_G2P4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17582,6 +18011,7 @@
   event_ids: []
   forum: ''
   id: SICon_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17617,6 +18047,7 @@
   event_ids: []
   forum: ''
   id: SICon_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17665,6 +18096,7 @@
   event_ids: []
   forum: ''
   id: SICon_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17702,6 +18134,7 @@
   event_ids: []
   forum: ''
   id: SICon_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17744,6 +18177,7 @@
   event_ids: []
   forum: ''
   id: SICon_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17781,6 +18215,7 @@
   event_ids: []
   forum: ''
   id: SICon_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17827,6 +18262,7 @@
   event_ids: []
   forum: ''
   id: SICon_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17872,6 +18308,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17910,6 +18347,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17949,6 +18387,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -17993,6 +18432,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18030,6 +18470,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18069,6 +18510,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18114,6 +18556,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18154,6 +18597,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18196,6 +18640,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18236,6 +18681,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18283,6 +18729,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18324,6 +18771,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18361,6 +18809,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18405,6 +18854,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18447,6 +18897,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18482,6 +18933,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18527,6 +18979,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18571,6 +19024,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18613,6 +19067,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18656,6 +19111,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18698,6 +19154,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18735,6 +19192,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18792,6 +19250,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18834,6 +19293,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18869,6 +19329,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18912,6 +19373,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18952,6 +19414,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -18987,6 +19450,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19027,6 +19491,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19068,6 +19533,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19121,6 +19587,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_46
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19163,6 +19630,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19207,6 +19675,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19241,6 +19710,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19289,6 +19759,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19333,6 +19804,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19374,6 +19846,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19421,6 +19894,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19463,6 +19937,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19505,6 +19980,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19542,6 +20018,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19590,6 +20067,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19637,6 +20115,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_59
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19677,6 +20156,7 @@
   event_ids: []
   forum: ''
   id: TrustNLP_60
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19719,6 +20199,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19760,6 +20241,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19800,6 +20282,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19844,6 +20327,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19885,6 +20369,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19924,6 +20409,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19965,6 +20451,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -19997,6 +20484,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20038,6 +20526,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20077,6 +20566,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20119,6 +20609,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20152,6 +20643,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20189,6 +20681,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20229,6 +20722,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20273,6 +20767,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20313,6 +20808,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20354,6 +20850,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20398,6 +20895,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20433,6 +20931,7 @@
   event_ids: []
   forum: ''
   id: wnu2023_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20465,6 +20964,7 @@
   event_ids: []
   forum: ''
   id: CAWL_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20502,6 +21002,7 @@
   event_ids: []
   forum: ''
   id: CAWL_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20547,6 +21048,7 @@
   event_ids: []
   forum: ''
   id: CAWL_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20585,6 +21087,7 @@
   event_ids: []
   forum: ''
   id: CAWL_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20630,6 +21133,7 @@
   event_ids: []
   forum: ''
   id: CAWL_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20667,6 +21171,7 @@
   event_ids: []
   forum: ''
   id: CAWL_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20704,6 +21209,7 @@
   event_ids: []
   forum: ''
   id: CAWL_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20746,6 +21252,7 @@
   event_ids: []
   forum: ''
   id: CAWL_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20793,6 +21300,7 @@
   event_ids: []
   forum: ''
   id: CAWL_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20823,6 +21331,7 @@
   event_ids: []
   forum: ''
   id: CAWL_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20865,6 +21374,7 @@
   event_ids: []
   forum: ''
   id: CAWL_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20904,6 +21414,7 @@
   event_ids: []
   forum: ''
   id: CAWL_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20945,6 +21456,7 @@
   event_ids: []
   forum: ''
   id: BEA_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -20980,6 +21492,7 @@
   event_ids: []
   forum: ''
   id: BEA_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21031,6 +21544,7 @@
   event_ids: []
   forum: ''
   id: BEA_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21067,6 +21581,7 @@
   event_ids: []
   forum: ''
   id: BEA_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21111,6 +21626,7 @@
   event_ids: []
   forum: ''
   id: BEA_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21146,6 +21662,7 @@
   event_ids: []
   forum: ''
   id: BEA_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21198,6 +21715,7 @@
   event_ids: []
   forum: ''
   id: BEA_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21238,6 +21756,7 @@
   event_ids: []
   forum: ''
   id: BEA_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21283,6 +21802,7 @@
   event_ids: []
   forum: ''
   id: BEA_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21326,6 +21846,7 @@
   event_ids: []
   forum: ''
   id: BEA_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21366,6 +21887,7 @@
   event_ids: []
   forum: ''
   id: BEA_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21403,6 +21925,7 @@
   event_ids: []
   forum: ''
   id: BEA_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21441,6 +21964,7 @@
   event_ids: []
   forum: ''
   id: BEA_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21483,6 +22007,7 @@
   event_ids: []
   forum: ''
   id: BEA_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21532,6 +22057,7 @@
   event_ids: []
   forum: ''
   id: BEA_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21569,6 +22095,7 @@
   event_ids: []
   forum: ''
   id: BEA_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21613,6 +22140,7 @@
   event_ids: []
   forum: ''
   id: BEA_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21655,6 +22183,7 @@
   event_ids: []
   forum: ''
   id: BEA_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21697,6 +22226,7 @@
   event_ids: []
   forum: ''
   id: BEA_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21732,6 +22262,7 @@
   event_ids: []
   forum: ''
   id: BEA_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21771,6 +22302,7 @@
   event_ids: []
   forum: ''
   id: BEA_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21814,6 +22346,7 @@
   event_ids: []
   forum: ''
   id: BEA_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21857,6 +22390,7 @@
   event_ids: []
   forum: ''
   id: BEA_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21896,6 +22430,7 @@
   event_ids: []
   forum: ''
   id: BEA_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21937,6 +22472,7 @@
   event_ids: []
   forum: ''
   id: BEA_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -21976,6 +22512,7 @@
   event_ids: []
   forum: ''
   id: BEA_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22025,6 +22562,7 @@
   event_ids: []
   forum: ''
   id: BEA_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22064,6 +22602,7 @@
   event_ids: []
   forum: ''
   id: BEA_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22111,6 +22650,7 @@
   event_ids: []
   forum: ''
   id: BEA_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22151,6 +22691,7 @@
   event_ids: []
   forum: ''
   id: BEA_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22195,6 +22736,7 @@
   event_ids: []
   forum: ''
   id: BEA_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22236,6 +22778,7 @@
   event_ids: []
   forum: ''
   id: BEA_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22282,6 +22825,7 @@
   event_ids: []
   forum: ''
   id: BEA_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22324,6 +22868,7 @@
   event_ids: []
   forum: ''
   id: BEA_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22361,6 +22906,7 @@
   event_ids: []
   forum: ''
   id: BEA_58
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22400,6 +22946,7 @@
   event_ids: []
   forum: ''
   id: BEA_61
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22439,6 +22986,7 @@
   event_ids: []
   forum: ''
   id: BEA_62
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22475,6 +23023,7 @@
   event_ids: []
   forum: ''
   id: BEA_63
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22518,6 +23067,7 @@
   event_ids: []
   forum: ''
   id: BEA_65
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22555,6 +23105,7 @@
   event_ids: []
   forum: ''
   id: BEA_66
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22601,6 +23152,7 @@
   event_ids: []
   forum: ''
   id: BEA_67
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22639,6 +23191,7 @@
   event_ids: []
   forum: ''
   id: BEA_69
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22676,6 +23229,7 @@
   event_ids: []
   forum: ''
   id: BEA_74
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22718,6 +23272,7 @@
   event_ids: []
   forum: ''
   id: BEA_75
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22761,6 +23316,7 @@
   event_ids: []
   forum: ''
   id: BEA_76
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22799,6 +23355,7 @@
   event_ids: []
   forum: ''
   id: BEA_77
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22840,6 +23397,7 @@
   event_ids: []
   forum: ''
   id: BEA_78
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22879,6 +23437,7 @@
   event_ids: []
   forum: ''
   id: BEA_81
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22919,6 +23478,7 @@
   event_ids: []
   forum: ''
   id: BEA_86
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -22954,6 +23514,7 @@
   event_ids: []
   forum: ''
   id: BEA_88
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23001,6 +23562,7 @@
   event_ids: []
   forum: ''
   id: BEA_90
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23046,6 +23608,7 @@
   event_ids: []
   forum: ''
   id: BEA_93
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23090,6 +23653,7 @@
   event_ids: []
   forum: ''
   id: BEA_97
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23134,6 +23698,7 @@
   event_ids: []
   forum: ''
   id: BEA_99
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23174,6 +23739,7 @@
   event_ids: []
   forum: ''
   id: BEA_100
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23219,6 +23785,7 @@
   event_ids: []
   forum: ''
   id: BEA_102
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23258,6 +23825,7 @@
   event_ids: []
   forum: ''
   id: BEA_106
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23299,6 +23867,7 @@
   event_ids: []
   forum: ''
   id: BEA_110
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23340,6 +23909,7 @@
   event_ids: []
   forum: ''
   id: BEA_111
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23386,6 +23956,7 @@
   event_ids: []
   forum: ''
   id: BEA_112
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23424,6 +23995,7 @@
   event_ids: []
   forum: ''
   id: BEA_113
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23461,6 +24033,7 @@
   event_ids: []
   forum: ''
   id: BEA_114
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23500,6 +24073,7 @@
   event_ids: []
   forum: ''
   id: BEA_115
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23544,6 +24118,7 @@
   event_ids: []
   forum: ''
   id: BEA_116
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23581,6 +24156,7 @@
   event_ids: []
   forum: ''
   id: BEA_117
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23623,6 +24199,7 @@
   event_ids: []
   forum: ''
   id: ACL_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23663,6 +24240,7 @@
   event_ids: []
   forum: ''
   id: ACL_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23706,6 +24284,7 @@
   event_ids: []
   forum: ''
   id: ACL_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23745,6 +24324,7 @@
   event_ids: []
   forum: ''
   id: ACL_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23796,6 +24376,7 @@
   event_ids: []
   forum: ''
   id: ACL_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23839,6 +24420,7 @@
   event_ids: []
   forum: ''
   id: ACL_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23878,6 +24460,7 @@
   event_ids: []
   forum: ''
   id: ACL_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23917,6 +24500,7 @@
   event_ids: []
   forum: ''
   id: ACL_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -23961,6 +24545,7 @@
   event_ids: []
   forum: ''
   id: ACL_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24000,6 +24585,7 @@
   event_ids: []
   forum: ''
   id: ACL_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24039,6 +24625,7 @@
   event_ids: []
   forum: ''
   id: ACL_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24078,6 +24665,7 @@
   event_ids: []
   forum: ''
   id: ACL_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24129,6 +24717,7 @@
   event_ids: []
   forum: ''
   id: ACL_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24167,6 +24756,7 @@
   event_ids: []
   forum: ''
   id: ACL_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24203,6 +24793,7 @@
   event_ids: []
   forum: ''
   id: ACL_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24243,6 +24834,7 @@
   event_ids: []
   forum: ''
   id: ACL_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24290,6 +24882,7 @@
   event_ids: []
   forum: ''
   id: ACL_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24336,6 +24929,7 @@
   event_ids: []
   forum: ''
   id: ACL_46
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24383,6 +24977,7 @@
   event_ids: []
   forum: ''
   id: ACL_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24411,6 +25006,7 @@
   event_ids: []
   forum: ''
   id: ACL_4560
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24438,6 +25034,7 @@
   event_ids: []
   forum: ''
   id: ACL_3114
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24464,6 +25061,7 @@
   event_ids: []
   forum: ''
   id: ACL_3566
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24491,6 +25089,7 @@
   event_ids: []
   forum: ''
   id: ACL_1454
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24518,6 +25117,7 @@
   event_ids: []
   forum: ''
   id: ACL_1380
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24546,6 +25146,7 @@
   event_ids: []
   forum: ''
   id: ACL_2575
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24573,6 +25174,7 @@
   event_ids: []
   forum: ''
   id: ACL_1282
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24602,6 +25204,7 @@
   event_ids: []
   forum: ''
   id: ACL_4158
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24638,6 +25241,7 @@
   event_ids: []
   forum: ''
   id: ACL_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24678,6 +25282,7 @@
   event_ids: []
   forum: ''
   id: ACL_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24724,6 +25329,7 @@
   event_ids: []
   forum: ''
   id: ACL_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24764,6 +25370,7 @@
   event_ids: []
   forum: ''
   id: ACL_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24803,6 +25410,7 @@
   event_ids: []
   forum: ''
   id: ACL_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24845,6 +25453,7 @@
   event_ids: []
   forum: ''
   id: ACL_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24882,6 +25491,7 @@
   event_ids: []
   forum: ''
   id: ACL_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24916,6 +25526,7 @@
   event_ids: []
   forum: ''
   id: ACL_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24954,6 +25565,7 @@
   event_ids: []
   forum: ''
   id: ACL_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -24995,6 +25607,7 @@
   event_ids: []
   forum: ''
   id: ACL_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25037,6 +25650,7 @@
   event_ids: []
   forum: ''
   id: ACL_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25075,6 +25689,7 @@
   event_ids: []
   forum: ''
   id: ACL_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25113,6 +25728,7 @@
   event_ids: []
   forum: ''
   id: ACL_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25156,6 +25772,7 @@
   event_ids: []
   forum: ''
   id: ACL_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25201,6 +25818,7 @@
   event_ids: []
   forum: ''
   id: ACL_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25241,6 +25859,7 @@
   event_ids: []
   forum: ''
   id: ACL_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25281,6 +25900,7 @@
   event_ids: []
   forum: ''
   id: ACL_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25321,6 +25941,7 @@
   event_ids: []
   forum: ''
   id: ACL_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25363,6 +25984,7 @@
   event_ids: []
   forum: ''
   id: ACL_46
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25405,6 +26027,7 @@
   event_ids: []
   forum: ''
   id: ACL_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25440,6 +26063,7 @@
   event_ids: []
   forum: ''
   id: ACL_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25478,6 +26102,7 @@
   event_ids: []
   forum: ''
   id: ACL_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25511,6 +26136,7 @@
   event_ids: []
   forum: ''
   id: ACL_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25555,6 +26181,7 @@
   event_ids: []
   forum: ''
   id: ACL_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25592,6 +26219,7 @@
   event_ids: []
   forum: ''
   id: ACL_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25633,6 +26261,7 @@
   event_ids: []
   forum: ''
   id: ACL_F1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25671,6 +26300,7 @@
   event_ids: []
   forum: ''
   id: ACL_F2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25712,6 +26342,7 @@
   event_ids: []
   forum: ''
   id: ACL_F3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25755,6 +26386,7 @@
   event_ids: []
   forum: ''
   id: ACL_F4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25783,6 +26415,7 @@
   event_ids: []
   forum: ''
   id: ACL_F5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25821,6 +26454,7 @@
   event_ids: []
   forum: ''
   id: ACL_F6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25863,6 +26497,7 @@
   event_ids: []
   forum: ''
   id: ACL_F7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25904,6 +26539,7 @@
   event_ids: []
   forum: ''
   id: ACL_F8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25946,6 +26582,7 @@
   event_ids: []
   forum: ''
   id: ACL_F9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -25987,6 +26624,7 @@
   event_ids: []
   forum: ''
   id: ACL_F10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26037,6 +26675,7 @@
   event_ids: []
   forum: ''
   id: ACL_F11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26084,6 +26723,7 @@
   event_ids: []
   forum: ''
   id: ACL_F12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26116,6 +26756,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26142,6 +26783,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26169,6 +26811,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26196,6 +26839,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26222,6 +26866,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26247,6 +26892,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26274,6 +26920,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26302,6 +26949,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26327,6 +26975,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26354,6 +27003,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26380,6 +27030,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26407,6 +27058,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26435,6 +27087,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26459,6 +27112,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26484,6 +27138,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26510,6 +27165,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26538,6 +27194,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26565,6 +27222,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26592,6 +27250,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26618,6 +27277,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26645,6 +27305,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26670,6 +27331,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26700,6 +27362,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26732,6 +27395,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26758,6 +27422,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26783,6 +27448,7 @@
   event_ids: []
   forum: ''
   id: SustaiNLP_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26874,6 +27540,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26909,6 +27576,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_2
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -26961,6 +27629,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_3
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27002,6 +27671,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27046,6 +27716,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27094,6 +27765,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27130,6 +27802,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27168,6 +27841,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27217,6 +27891,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27256,6 +27931,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27296,6 +27972,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27338,6 +28015,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27393,6 +28071,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27440,6 +28119,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27484,6 +28164,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27522,6 +28203,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27565,6 +28247,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27614,6 +28297,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27657,6 +28341,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27701,6 +28386,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27744,6 +28430,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27787,6 +28474,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27834,6 +28522,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27876,6 +28565,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27922,6 +28612,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -27963,6 +28654,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28000,6 +28692,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28040,6 +28733,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28090,6 +28784,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28134,6 +28829,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28178,6 +28874,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28217,6 +28914,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28252,6 +28950,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28294,6 +28993,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28343,6 +29043,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28391,6 +29092,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28431,6 +29133,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28471,6 +29174,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_45
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28519,6 +29223,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_46
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28558,6 +29263,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_47
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28600,6 +29306,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28636,6 +29343,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28681,6 +29389,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28719,6 +29428,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_52
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28750,6 +29460,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28801,6 +29512,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28847,6 +29559,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28886,6 +29599,7 @@
   event_ids: []
   forum: ''
   id: IWSLT_56
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28932,6 +29646,7 @@
   event_ids: []
   forum: ''
   id: SemEval_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -28973,6 +29688,7 @@
   event_ids: []
   forum: ''
   id: SemEval_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29015,6 +29731,7 @@
   event_ids: []
   forum: ''
   id: SemEval_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29058,6 +29775,7 @@
   event_ids: []
   forum: ''
   id: SemEval_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29099,6 +29817,7 @@
   event_ids: []
   forum: ''
   id: SemEval_7
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29150,6 +29869,7 @@
   event_ids: []
   forum: ''
   id: SemEval_8
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29196,6 +29916,7 @@
   event_ids: []
   forum: ''
   id: SemEval_9
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29234,6 +29955,7 @@
   event_ids: []
   forum: ''
   id: SemEval_11
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29274,6 +29996,7 @@
   event_ids: []
   forum: ''
   id: SemEval_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29310,6 +30033,7 @@
   event_ids: []
   forum: ''
   id: SemEval_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29348,6 +30072,7 @@
   event_ids: []
   forum: ''
   id: SemEval_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29384,6 +30109,7 @@
   event_ids: []
   forum: ''
   id: SemEval_15
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29422,6 +30148,7 @@
   event_ids: []
   forum: ''
   id: SemEval_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29460,6 +30187,7 @@
   event_ids: []
   forum: ''
   id: SemEval_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29503,6 +30231,7 @@
   event_ids: []
   forum: ''
   id: SemEval_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29536,6 +30265,7 @@
   event_ids: []
   forum: ''
   id: SemEval_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29573,6 +30303,7 @@
   event_ids: []
   forum: ''
   id: SemEval_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29611,6 +30342,7 @@
   event_ids: []
   forum: ''
   id: SemEval_21
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29652,6 +30384,7 @@
   event_ids: []
   forum: ''
   id: SemEval_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29693,6 +30426,7 @@
   event_ids: []
   forum: ''
   id: SemEval_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29727,6 +30461,7 @@
   event_ids: []
   forum: ''
   id: SemEval_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29762,6 +30497,7 @@
   event_ids: []
   forum: ''
   id: SemEval_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29800,6 +30536,7 @@
   event_ids: []
   forum: ''
   id: SemEval_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29837,6 +30574,7 @@
   event_ids: []
   forum: ''
   id: SemEval_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29872,6 +30610,7 @@
   event_ids: []
   forum: ''
   id: SemEval_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29907,6 +30646,7 @@
   event_ids: []
   forum: ''
   id: SemEval_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29946,6 +30686,7 @@
   event_ids: []
   forum: ''
   id: SemEval_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -29978,6 +30719,7 @@
   event_ids: []
   forum: ''
   id: SemEval_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30016,6 +30758,7 @@
   event_ids: []
   forum: ''
   id: SemEval_32
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30054,6 +30797,7 @@
   event_ids: []
   forum: ''
   id: SemEval_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30090,6 +30834,7 @@
   event_ids: []
   forum: ''
   id: SemEval_34
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30129,6 +30874,7 @@
   event_ids: []
   forum: ''
   id: SemEval_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30170,6 +30916,7 @@
   event_ids: []
   forum: ''
   id: SemEval_36
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30209,6 +30956,7 @@
   event_ids: []
   forum: ''
   id: SemEval_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30242,6 +30990,7 @@
   event_ids: []
   forum: ''
   id: SemEval_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30282,6 +31031,7 @@
   event_ids: []
   forum: ''
   id: SemEval_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30321,6 +31071,7 @@
   event_ids: []
   forum: ''
   id: SemEval_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30363,6 +31114,7 @@
   event_ids: []
   forum: ''
   id: SemEval_41
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30404,6 +31156,7 @@
   event_ids: []
   forum: ''
   id: SemEval_42
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30438,6 +31191,7 @@
   event_ids: []
   forum: ''
   id: SemEval_43
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30476,6 +31230,7 @@
   event_ids: []
   forum: ''
   id: SemEval_44
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30514,6 +31269,7 @@
   event_ids: []
   forum: ''
   id: SemEval_48
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30551,6 +31307,7 @@
   event_ids: []
   forum: ''
   id: SemEval_49
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30591,6 +31348,7 @@
   event_ids: []
   forum: ''
   id: SemEval_50
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30628,6 +31386,7 @@
   event_ids: []
   forum: ''
   id: SemEval_51
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30668,6 +31427,7 @@
   event_ids: []
   forum: ''
   id: SemEval_53
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30709,6 +31469,7 @@
   event_ids: []
   forum: ''
   id: SemEval_54
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30745,6 +31506,7 @@
   event_ids: []
   forum: ''
   id: SemEval_55
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30781,6 +31543,7 @@
   event_ids: []
   forum: ''
   id: SemEval_57
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30816,6 +31579,7 @@
   event_ids: []
   forum: ''
   id: SemEval_58
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30854,6 +31618,7 @@
   event_ids: []
   forum: ''
   id: SemEval_60
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30891,6 +31656,7 @@
   event_ids: []
   forum: ''
   id: SemEval_61
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30932,6 +31698,7 @@
   event_ids: []
   forum: ''
   id: SemEval_62
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -30974,6 +31741,7 @@
   event_ids: []
   forum: ''
   id: SemEval_63
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31007,6 +31775,7 @@
   event_ids: []
   forum: ''
   id: SemEval_64
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31038,6 +31807,7 @@
   event_ids: []
   forum: ''
   id: SemEval_65
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31072,6 +31842,7 @@
   event_ids: []
   forum: ''
   id: SemEval_66
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31107,6 +31878,7 @@
   event_ids: []
   forum: ''
   id: SemEval_67
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31143,6 +31915,7 @@
   event_ids: []
   forum: ''
   id: SemEval_68
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31189,6 +31962,7 @@
   event_ids: []
   forum: ''
   id: SemEval_69
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31229,6 +32003,7 @@
   event_ids: []
   forum: ''
   id: SemEval_70
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31264,6 +32039,7 @@
   event_ids: []
   forum: ''
   id: SemEval_71
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31302,6 +32078,7 @@
   event_ids: []
   forum: ''
   id: SemEval_72
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31344,6 +32121,7 @@
   event_ids: []
   forum: ''
   id: SemEval_73
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31386,6 +32164,7 @@
   event_ids: []
   forum: ''
   id: SemEval_75
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31418,6 +32197,7 @@
   event_ids: []
   forum: ''
   id: SemEval_76
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31453,6 +32233,7 @@
   event_ids: []
   forum: ''
   id: SemEval_77
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31498,6 +32279,7 @@
   event_ids: []
   forum: ''
   id: SemEval_78
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31535,6 +32317,7 @@
   event_ids: []
   forum: ''
   id: SemEval_79
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31579,6 +32362,7 @@
   event_ids: []
   forum: ''
   id: SemEval_80
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31615,6 +32399,7 @@
   event_ids: []
   forum: ''
   id: SemEval_81
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31655,6 +32440,7 @@
   event_ids: []
   forum: ''
   id: SemEval_82
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31700,6 +32486,7 @@
   event_ids: []
   forum: ''
   id: SemEval_83
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31739,6 +32526,7 @@
   event_ids: []
   forum: ''
   id: SemEval_84
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31777,6 +32565,7 @@
   event_ids: []
   forum: ''
   id: SemEval_85
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31816,6 +32605,7 @@
   event_ids: []
   forum: ''
   id: SemEval_87
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31855,6 +32645,7 @@
   event_ids: []
   forum: ''
   id: SemEval_88
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31895,6 +32686,7 @@
   event_ids: []
   forum: ''
   id: SemEval_89
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31933,6 +32725,7 @@
   event_ids: []
   forum: ''
   id: SemEval_90
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -31973,6 +32766,7 @@
   event_ids: []
   forum: ''
   id: SemEval_91
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32013,6 +32807,7 @@
   event_ids: []
   forum: ''
   id: SemEval_92
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32051,6 +32846,7 @@
   event_ids: []
   forum: ''
   id: SemEval_93
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32093,6 +32889,7 @@
   event_ids: []
   forum: ''
   id: SemEval_94
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32133,6 +32930,7 @@
   event_ids: []
   forum: ''
   id: SemEval_95
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32172,6 +32970,7 @@
   event_ids: []
   forum: ''
   id: SemEval_96
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32212,6 +33011,7 @@
   event_ids: []
   forum: ''
   id: SemEval_97
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32252,6 +33052,7 @@
   event_ids: []
   forum: ''
   id: SemEval_99
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32292,6 +33093,7 @@
   event_ids: []
   forum: ''
   id: SemEval_101
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32337,6 +33139,7 @@
   event_ids: []
   forum: ''
   id: SemEval_102
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32377,6 +33180,7 @@
   event_ids: []
   forum: ''
   id: SemEval_103
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32415,6 +33219,7 @@
   event_ids: []
   forum: ''
   id: SemEval_104
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32459,6 +33264,7 @@
   event_ids: []
   forum: ''
   id: SemEval_105
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32506,6 +33312,7 @@
   event_ids: []
   forum: ''
   id: SemEval_106
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32545,6 +33352,7 @@
   event_ids: []
   forum: ''
   id: SemEval_107
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32581,6 +33389,7 @@
   event_ids: []
   forum: ''
   id: SemEval_108
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32621,6 +33430,7 @@
   event_ids: []
   forum: ''
   id: SemEval_109
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32659,6 +33469,7 @@
   event_ids: []
   forum: ''
   id: SemEval_110
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32696,6 +33507,7 @@
   event_ids: []
   forum: ''
   id: SemEval_111
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32736,6 +33548,7 @@
   event_ids: []
   forum: ''
   id: SemEval_112
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32772,6 +33585,7 @@
   event_ids: []
   forum: ''
   id: SemEval_113
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32808,6 +33622,7 @@
   event_ids: []
   forum: ''
   id: SemEval_114
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32851,6 +33666,7 @@
   event_ids: []
   forum: ''
   id: SemEval_115
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32893,6 +33709,7 @@
   event_ids: []
   forum: ''
   id: SemEval_116
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32932,6 +33749,7 @@
   event_ids: []
   forum: ''
   id: SemEval_117
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -32974,6 +33792,7 @@
   event_ids: []
   forum: ''
   id: SemEval_118
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33015,6 +33834,7 @@
   event_ids: []
   forum: ''
   id: SemEval_119
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33055,6 +33875,7 @@
   event_ids: []
   forum: ''
   id: SemEval_120
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33091,6 +33912,7 @@
   event_ids: []
   forum: ''
   id: SemEval_121
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33132,6 +33954,7 @@
   event_ids: []
   forum: ''
   id: SemEval_122
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33168,6 +33991,7 @@
   event_ids: []
   forum: ''
   id: SemEval_125
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33208,6 +34032,7 @@
   event_ids: []
   forum: ''
   id: SemEval_126
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33249,6 +34074,7 @@
   event_ids: []
   forum: ''
   id: SemEval_127
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33295,6 +34121,7 @@
   event_ids: []
   forum: ''
   id: SemEval_128
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33336,6 +34163,7 @@
   event_ids: []
   forum: ''
   id: SemEval_129
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33369,6 +34197,7 @@
   event_ids: []
   forum: ''
   id: SemEval_130
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33404,6 +34233,7 @@
   event_ids: []
   forum: ''
   id: SemEval_131
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33440,6 +34270,7 @@
   event_ids: []
   forum: ''
   id: SemEval_132
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33476,6 +34307,7 @@
   event_ids: []
   forum: ''
   id: SemEval_133
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33519,6 +34351,7 @@
   event_ids: []
   forum: ''
   id: SemEval_134
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33556,6 +34389,7 @@
   event_ids: []
   forum: ''
   id: SemEval_135
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33596,6 +34430,7 @@
   event_ids: []
   forum: ''
   id: SemEval_136
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33644,6 +34479,7 @@
   event_ids: []
   forum: ''
   id: SemEval_137
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33688,6 +34524,7 @@
   event_ids: []
   forum: ''
   id: SemEval_138
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33734,6 +34571,7 @@
   event_ids: []
   forum: ''
   id: SemEval_139
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33770,6 +34608,7 @@
   event_ids: []
   forum: ''
   id: SemEval_141
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33807,6 +34646,7 @@
   event_ids: []
   forum: ''
   id: SemEval_142
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33841,6 +34681,7 @@
   event_ids: []
   forum: ''
   id: SemEval_143
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33880,6 +34721,7 @@
   event_ids: []
   forum: ''
   id: SemEval_144
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33922,6 +34764,7 @@
   event_ids: []
   forum: ''
   id: SemEval_145
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -33960,6 +34803,7 @@
   event_ids: []
   forum: ''
   id: SemEval_146
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34005,6 +34849,7 @@
   event_ids: []
   forum: ''
   id: SemEval_147
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34041,6 +34886,7 @@
   event_ids: []
   forum: ''
   id: SemEval_148
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34080,6 +34926,7 @@
   event_ids: []
   forum: ''
   id: SemEval_149
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34121,6 +34968,7 @@
   event_ids: []
   forum: ''
   id: SemEval_150
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34162,6 +35010,7 @@
   event_ids: []
   forum: ''
   id: SemEval_152
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34199,6 +35048,7 @@
   event_ids: []
   forum: ''
   id: SemEval_153
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34235,6 +35085,7 @@
   event_ids: []
   forum: ''
   id: SemEval_154
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34275,6 +35126,7 @@
   event_ids: []
   forum: ''
   id: SemEval_155
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34317,6 +35169,7 @@
   event_ids: []
   forum: ''
   id: SemEval_156
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34360,6 +35213,7 @@
   event_ids: []
   forum: ''
   id: SemEval_157
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34397,6 +35251,7 @@
   event_ids: []
   forum: ''
   id: SemEval_158
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34437,6 +35292,7 @@
   event_ids: []
   forum: ''
   id: SemEval_159
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34472,6 +35328,7 @@
   event_ids: []
   forum: ''
   id: SemEval_160
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34507,6 +35364,7 @@
   event_ids: []
   forum: ''
   id: SemEval_161
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34548,6 +35406,7 @@
   event_ids: []
   forum: ''
   id: SemEval_162
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34583,6 +35442,7 @@
   event_ids: []
   forum: ''
   id: SemEval_163
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34623,6 +35483,7 @@
   event_ids: []
   forum: ''
   id: SemEval_164
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34665,6 +35526,7 @@
   event_ids: []
   forum: ''
   id: SemEval_165
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34701,6 +35563,7 @@
   event_ids: []
   forum: ''
   id: SemEval_166
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34744,6 +35607,7 @@
   event_ids: []
   forum: ''
   id: SemEval_167
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34775,6 +35639,7 @@
   event_ids: []
   forum: ''
   id: SemEval_168
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34816,6 +35681,7 @@
   event_ids: []
   forum: ''
   id: SemEval_169
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34858,6 +35724,7 @@
   event_ids: []
   forum: ''
   id: SemEval_170
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34905,6 +35772,7 @@
   event_ids: []
   forum: ''
   id: SemEval_171
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34945,6 +35813,7 @@
   event_ids: []
   forum: ''
   id: SemEval_172
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -34980,6 +35849,7 @@
   event_ids: []
   forum: ''
   id: SemEval_174
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35017,6 +35887,7 @@
   event_ids: []
   forum: ''
   id: SemEval_175
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35055,6 +35926,7 @@
   event_ids: []
   forum: ''
   id: SemEval_176
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35092,6 +35964,7 @@
   event_ids: []
   forum: ''
   id: SemEval_177
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35134,6 +36007,7 @@
   event_ids: []
   forum: ''
   id: SemEval_178
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35171,6 +36045,7 @@
   event_ids: []
   forum: ''
   id: SemEval_179
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35205,6 +36080,7 @@
   event_ids: []
   forum: ''
   id: SemEval_180
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35244,6 +36120,7 @@
   event_ids: []
   forum: ''
   id: SemEval_181
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35281,6 +36158,7 @@
   event_ids: []
   forum: ''
   id: SemEval_182
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35317,6 +36195,7 @@
   event_ids: []
   forum: ''
   id: SemEval_183
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35357,6 +36236,7 @@
   event_ids: []
   forum: ''
   id: SemEval_184
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35393,6 +36273,7 @@
   event_ids: []
   forum: ''
   id: SemEval_185
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35430,6 +36311,7 @@
   event_ids: []
   forum: ''
   id: SemEval_186
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35466,6 +36348,7 @@
   event_ids: []
   forum: ''
   id: SemEval_187
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35504,6 +36387,7 @@
   event_ids: []
   forum: ''
   id: SemEval_188
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35540,6 +36424,7 @@
   event_ids: []
   forum: ''
   id: SemEval_189
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35582,6 +36467,7 @@
   event_ids: []
   forum: ''
   id: SemEval_190
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35626,6 +36512,7 @@
   event_ids: []
   forum: ''
   id: SemEval_191
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35662,6 +36549,7 @@
   event_ids: []
   forum: ''
   id: SemEval_192
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35708,6 +36596,7 @@
   event_ids: []
   forum: ''
   id: SemEval_193
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35744,6 +36633,7 @@
   event_ids: []
   forum: ''
   id: SemEval_194
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35782,6 +36672,7 @@
   event_ids: []
   forum: ''
   id: SemEval_195
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35823,6 +36714,7 @@
   event_ids: []
   forum: ''
   id: SemEval_196
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35862,6 +36754,7 @@
   event_ids: []
   forum: ''
   id: SemEval_197
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35907,6 +36800,7 @@
   event_ids: []
   forum: ''
   id: SemEval_198
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35945,6 +36839,7 @@
   event_ids: []
   forum: ''
   id: SemEval_199
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -35994,6 +36889,7 @@
   event_ids: []
   forum: ''
   id: SemEval_200
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36036,6 +36932,7 @@
   event_ids: []
   forum: ''
   id: SemEval_201
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36071,6 +36968,7 @@
   event_ids: []
   forum: ''
   id: SemEval_202
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36112,6 +37010,7 @@
   event_ids: []
   forum: ''
   id: SemEval_203
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36154,6 +37053,7 @@
   event_ids: []
   forum: ''
   id: SemEval_204
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36196,6 +37096,7 @@
   event_ids: []
   forum: ''
   id: SemEval_205
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36230,6 +37131,7 @@
   event_ids: []
   forum: ''
   id: SemEval_206
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36270,6 +37172,7 @@
   event_ids: []
   forum: ''
   id: SemEval_207
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36306,6 +37209,7 @@
   event_ids: []
   forum: ''
   id: SemEval_208
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36350,6 +37254,7 @@
   event_ids: []
   forum: ''
   id: SemEval_209
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36388,6 +37293,7 @@
   event_ids: []
   forum: ''
   id: SemEval_210
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36424,6 +37330,7 @@
   event_ids: []
   forum: ''
   id: SemEval_211
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36472,6 +37379,7 @@
   event_ids: []
   forum: ''
   id: SemEval_212
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36515,6 +37423,7 @@
   event_ids: []
   forum: ''
   id: SemEval_213
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36559,6 +37468,7 @@
   event_ids: []
   forum: ''
   id: SemEval_214
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36594,6 +37504,7 @@
   event_ids: []
   forum: ''
   id: SemEval_215
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36630,6 +37541,7 @@
   event_ids: []
   forum: ''
   id: SemEval_216
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36669,6 +37581,7 @@
   event_ids: []
   forum: ''
   id: SemEval_217
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36710,6 +37623,7 @@
   event_ids: []
   forum: ''
   id: SemEval_218
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36749,6 +37663,7 @@
   event_ids: []
   forum: ''
   id: SemEval_219
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36790,6 +37705,7 @@
   event_ids: []
   forum: ''
   id: SemEval_220
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36826,6 +37742,7 @@
   event_ids: []
   forum: ''
   id: SemEval_221
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36865,6 +37782,7 @@
   event_ids: []
   forum: ''
   id: SemEval_222
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36906,6 +37824,7 @@
   event_ids: []
   forum: ''
   id: SemEval_223
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36943,6 +37862,7 @@
   event_ids: []
   forum: ''
   id: SemEval_226
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -36990,6 +37910,7 @@
   event_ids: []
   forum: ''
   id: SemEval_227
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37042,6 +37963,7 @@
   event_ids: []
   forum: ''
   id: SemEval_228
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37088,6 +38010,7 @@
   event_ids: []
   forum: ''
   id: SemEval_229
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37123,6 +38046,7 @@
   event_ids: []
   forum: ''
   id: SemEval_230
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37166,6 +38090,7 @@
   event_ids: []
   forum: ''
   id: SemEval_231
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37195,6 +38120,7 @@
   event_ids: []
   forum: ''
   id: SemEval_232
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37234,6 +38160,7 @@
   event_ids: []
   forum: ''
   id: SemEval_233
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37277,6 +38204,7 @@
   event_ids: []
   forum: ''
   id: SemEval_234
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37314,6 +38242,7 @@
   event_ids: []
   forum: ''
   id: SemEval_235
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37354,6 +38283,7 @@
   event_ids: []
   forum: ''
   id: SemEval_236
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37394,6 +38324,7 @@
   event_ids: []
   forum: ''
   id: SemEval_237
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37438,6 +38369,7 @@
   event_ids: []
   forum: ''
   id: SemEval_238
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37475,6 +38407,7 @@
   event_ids: []
   forum: ''
   id: SemEval_239
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37516,6 +38449,7 @@
   event_ids: []
   forum: ''
   id: SemEval_240
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37563,6 +38497,7 @@
   event_ids: []
   forum: ''
   id: SemEval_241
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37595,6 +38530,7 @@
   event_ids: []
   forum: ''
   id: SemEval_242
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37632,6 +38568,7 @@
   event_ids: []
   forum: ''
   id: SemEval_244
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37669,6 +38606,7 @@
   event_ids: []
   forum: ''
   id: SemEval_245
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37708,6 +38646,7 @@
   event_ids: []
   forum: ''
   id: SemEval_246
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37749,6 +38688,7 @@
   event_ids: []
   forum: ''
   id: SemEval_247
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37787,6 +38727,7 @@
   event_ids: []
   forum: ''
   id: SemEval_248
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37823,6 +38764,7 @@
   event_ids: []
   forum: ''
   id: SemEval_249
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37860,6 +38802,7 @@
   event_ids: []
   forum: ''
   id: SemEval_250
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37892,6 +38835,7 @@
   event_ids: []
   forum: ''
   id: SemEval_251
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37938,6 +38882,7 @@
   event_ids: []
   forum: ''
   id: SemEval_252
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -37978,6 +38923,7 @@
   event_ids: []
   forum: ''
   id: SemEval_255
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38015,6 +38961,7 @@
   event_ids: []
   forum: ''
   id: SemEval_256
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38063,6 +39010,7 @@
   event_ids: []
   forum: ''
   id: SemEval_257
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38107,6 +39055,7 @@
   event_ids: []
   forum: ''
   id: SemEval_258
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38145,6 +39094,7 @@
   event_ids: []
   forum: ''
   id: SemEval_260
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38186,6 +39136,7 @@
   event_ids: []
   forum: ''
   id: SemEval_261
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38227,6 +39178,7 @@
   event_ids: []
   forum: ''
   id: SemEval_262
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38260,6 +39212,7 @@
   event_ids: []
   forum: ''
   id: SemEval_263
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38301,6 +39254,7 @@
   event_ids: []
   forum: ''
   id: SemEval_264
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38338,6 +39292,7 @@
   event_ids: []
   forum: ''
   id: SemEval_265
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38376,6 +39331,7 @@
   event_ids: []
   forum: ''
   id: SemEval_266
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38419,6 +39375,7 @@
   event_ids: []
   forum: ''
   id: SemEval_267
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38454,6 +39411,7 @@
   event_ids: []
   forum: ''
   id: SemEval_268
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38501,6 +39459,7 @@
   event_ids: []
   forum: ''
   id: SemEval_269
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38540,6 +39499,7 @@
   event_ids: []
   forum: ''
   id: SemEval_270
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38576,6 +39536,7 @@
   event_ids: []
   forum: ''
   id: SemEval_271
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38617,6 +39578,7 @@
   event_ids: []
   forum: ''
   id: SemEval_272
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38652,6 +39614,7 @@
   event_ids: []
   forum: ''
   id: SemEval_273
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38691,6 +39654,7 @@
   event_ids: []
   forum: ''
   id: SemEval_274
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38730,6 +39694,7 @@
   event_ids: []
   forum: ''
   id: SemEval_275
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38765,6 +39730,7 @@
   event_ids: []
   forum: ''
   id: SemEval_276
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38805,6 +39771,7 @@
   event_ids: []
   forum: ''
   id: SemEval_277
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38850,6 +39817,7 @@
   event_ids: []
   forum: ''
   id: SemEval_278
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38891,6 +39859,7 @@
   event_ids: []
   forum: ''
   id: SemEval_279
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38928,6 +39897,7 @@
   event_ids: []
   forum: ''
   id: SemEval_281
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -38967,6 +39937,7 @@
   event_ids: []
   forum: ''
   id: SemEval_282
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39002,6 +39973,7 @@
   event_ids: []
   forum: ''
   id: SemEval_284
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39043,6 +40015,7 @@
   event_ids: []
   forum: ''
   id: SemEval_285
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39078,6 +40051,7 @@
   event_ids: []
   forum: ''
   id: SemEval_286
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39121,6 +40095,7 @@
   event_ids: []
   forum: ''
   id: SemEval_287
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39164,6 +40139,7 @@
   event_ids: []
   forum: ''
   id: SemEval_288
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39203,6 +40179,7 @@
   event_ids: []
   forum: ''
   id: SemEval_289
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39240,6 +40217,7 @@
   event_ids: []
   forum: ''
   id: SemEval_290
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39285,6 +40263,7 @@
   event_ids: []
   forum: ''
   id: SemEval_291
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39329,6 +40308,7 @@
   event_ids: []
   forum: ''
   id: SemEval_292
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39372,6 +40352,7 @@
   event_ids: []
   forum: ''
   id: SemEval_293
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39411,6 +40392,7 @@
   event_ids: []
   forum: ''
   id: SemEval_294
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39459,6 +40441,7 @@
   event_ids: []
   forum: ''
   id: SemEval_295
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39494,6 +40477,7 @@
   event_ids: []
   forum: ''
   id: SemEval_296
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39535,6 +40519,7 @@
   event_ids: []
   forum: ''
   id: SemEval_297
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39569,6 +40554,7 @@
   event_ids: []
   forum: ''
   id: SemEval_298
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39611,6 +40597,7 @@
   event_ids: []
   forum: ''
   id: SemEval_299
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39651,6 +40638,7 @@
   event_ids: []
   forum: ''
   id: SemEval_300
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39696,6 +40684,7 @@
   event_ids: []
   forum: ''
   id: SemEval_301
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39737,6 +40726,7 @@
   event_ids: []
   forum: ''
   id: SemEval_302
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39791,6 +40781,7 @@
   event_ids: []
   forum: ''
   id: SemEval_303
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39827,6 +40818,7 @@
   event_ids: []
   forum: ''
   id: SemEval_305
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39862,6 +40854,7 @@
   event_ids: []
   forum: ''
   id: SemEval_306
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39902,6 +40895,7 @@
   event_ids: []
   forum: ''
   id: SemEval_307
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39943,6 +40937,7 @@
   event_ids: []
   forum: ''
   id: SemEval_308
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -39983,6 +40978,7 @@
   event_ids: []
   forum: ''
   id: SemEval_309
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40020,6 +41016,7 @@
   event_ids: []
   forum: ''
   id: SemEval_310
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40056,6 +41053,7 @@
   event_ids: []
   forum: ''
   id: SemEval_311
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40093,6 +41091,7 @@
   event_ids: []
   forum: ''
   id: SemEval_312
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40135,6 +41134,7 @@
   event_ids: []
   forum: ''
   id: SemEval_313
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40180,6 +41180,7 @@
   event_ids: []
   forum: ''
   id: SemEval_314
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40223,6 +41224,7 @@
   event_ids: []
   forum: ''
   id: SemEval_315
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40258,6 +41260,7 @@
   event_ids: []
   forum: ''
   id: SemEval_316
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40299,6 +41302,7 @@
   event_ids: []
   forum: ''
   id: SemEval_317
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40337,6 +41341,7 @@
   event_ids: []
   forum: ''
   id: SemEval_318
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40372,6 +41377,7 @@
   event_ids: []
   forum: ''
   id: SemEval_319
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40410,6 +41416,7 @@
   event_ids: []
   forum: ''
   id: SemEval_320
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40450,6 +41457,7 @@
   event_ids: []
   forum: ''
   id: SemEval_321
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40486,6 +41494,7 @@
   event_ids: []
   forum: ''
   id: SemEval_322
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40532,6 +41541,7 @@
   event_ids: []
   forum: ''
   id: SemEval_323
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40566,6 +41576,7 @@
   event_ids: []
   forum: ''
   id: SemEval_325
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40604,6 +41615,7 @@
   event_ids: []
   forum: ''
   id: SemEval_327
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40645,6 +41657,7 @@
   event_ids: []
   forum: ''
   id: SemEval_328
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40690,6 +41703,7 @@
   event_ids: []
   forum: ''
   id: SemEval_330
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40726,6 +41740,7 @@
   event_ids: []
   forum: ''
   id: SemEval_331
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40765,6 +41780,7 @@
   event_ids: []
   forum: ''
   id: SemEval_332
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40800,6 +41816,7 @@
   event_ids: []
   forum: ''
   id: SemEval_333
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40838,6 +41855,7 @@
   event_ids: []
   forum: ''
   id: SemEval_334
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40877,6 +41895,7 @@
   event_ids: []
   forum: ''
   id: SemEval_335
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40915,6 +41934,7 @@
   event_ids: []
   forum: ''
   id: SemEval_336
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -40965,6 +41985,7 @@
   event_ids: []
   forum: ''
   id: SemEval_338
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41004,6 +42025,7 @@
   event_ids: []
   forum: ''
   id: SemEval_339
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41048,6 +42070,7 @@
   event_ids: []
   forum: ''
   id: SemEval_340
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41095,6 +42118,7 @@
   event_ids: []
   forum: ''
   id: SemEval_341
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41137,6 +42161,7 @@
   event_ids: []
   forum: ''
   id: SemEval_342
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41174,6 +42199,7 @@
   event_ids: []
   forum: ''
   id: SemEval_343
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41216,6 +42242,7 @@
   event_ids: []
   forum: ''
   id: SemEval_344
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41268,6 +42295,7 @@
   event_ids: []
   forum: ''
   id: SemEval_345
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41315,6 +42343,7 @@
   event_ids: []
   forum: ''
   id: SemEval_346
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41351,6 +42380,7 @@
   event_ids: []
   forum: ''
   id: SemEval_347
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41393,6 +42423,7 @@
   event_ids: []
   forum: ''
   id: SemEval_348
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41441,6 +42472,7 @@
   event_ids: []
   forum: ''
   id: SemEval_349
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41486,6 +42518,7 @@
   event_ids: []
   forum: ''
   id: CODI_1
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41524,6 +42557,7 @@
   event_ids: []
   forum: ''
   id: CODI_4
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41571,6 +42605,7 @@
   event_ids: []
   forum: ''
   id: CODI_5
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41607,6 +42642,7 @@
   event_ids: []
   forum: ''
   id: CODI_6
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41641,6 +42677,7 @@
   event_ids: []
   forum: ''
   id: CODI_10
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41683,6 +42720,7 @@
   event_ids: []
   forum: ''
   id: CODI_12
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41732,6 +42770,7 @@
   event_ids: []
   forum: ''
   id: CODI_13
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41767,6 +42806,7 @@
   event_ids: []
   forum: ''
   id: CODI_14
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41802,6 +42842,7 @@
   event_ids: []
   forum: ''
   id: CODI_16
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41848,6 +42889,7 @@
   event_ids: []
   forum: ''
   id: CODI_17
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41883,6 +42925,7 @@
   event_ids: []
   forum: ''
   id: CODI_18
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41922,6 +42965,7 @@
   event_ids: []
   forum: ''
   id: CODI_19
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -41964,6 +43008,7 @@
   event_ids: []
   forum: ''
   id: CODI_20
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42007,6 +43052,7 @@
   event_ids: []
   forum: ''
   id: CODI_22
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42050,6 +43096,7 @@
   event_ids: []
   forum: ''
   id: CODI_23
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42088,6 +43135,7 @@
   event_ids: []
   forum: ''
   id: CODI_24
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42134,6 +43182,7 @@
   event_ids: []
   forum: ''
   id: CODI_25
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42180,6 +43229,7 @@
   event_ids: []
   forum: ''
   id: CODI_26
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42222,6 +43272,7 @@
   event_ids: []
   forum: ''
   id: CODI_27
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42264,6 +43315,7 @@
   event_ids: []
   forum: ''
   id: CODI_28
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42301,6 +43353,7 @@
   event_ids: []
   forum: ''
   id: CODI_29
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42342,6 +43395,7 @@
   event_ids: []
   forum: ''
   id: CODI_30
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42372,6 +43426,7 @@
   event_ids: []
   forum: ''
   id: CODI_31
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42416,6 +43471,7 @@
   event_ids: []
   forum: ''
   id: CODI_33
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42458,6 +43514,7 @@
   event_ids: []
   forum: ''
   id: CODI_35
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42486,6 +43543,7 @@
   event_ids: []
   forum: ''
   id: CODI_37
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42523,6 +43581,7 @@
   event_ids: []
   forum: ''
   id: CODI_38
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42567,6 +43626,7 @@
   event_ids: []
   forum: ''
   id: CODI_39
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null
@@ -42614,6 +43674,7 @@
   event_ids: []
   forum: ''
   id: CODI_40
+  is_paper: true
   keywords: []
   material: null
   paper_pdf: null

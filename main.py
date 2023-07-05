@@ -151,7 +151,7 @@ def paper(uid):
     data["events"] = [conference.events[e_id] for e_id in v.event_ids]
     data["paper_recs"] = [by_uid.papers[i] for i in v.similar_paper_ids[1:]]
     # TODO: Fix
-    data['zone'] = site_data.local_timezone
+    data["zone"] = site_data.local_timezone
 
     return render_template("paper.html", **data)
 
@@ -159,6 +159,7 @@ def paper(uid):
 @app.route("/plenary_session_<uid>.html")
 def plenary_session(uid):
     data = _data()
+    print(by_uid.plenary_sessions.keys())
     data["plenary_session"] = by_uid.plenary_sessions[uid]
     return render_template("plenary_session.html", **data)
 
@@ -276,7 +277,9 @@ def hydra_main(cfg: DictConfig):
         )
     global site_data
     global by_uid
-    site_data = SiteData.from_conference(conference, data_dir)
+    site_data = SiteData.from_conference(
+        conference, data_dir, booklet_info=data_dir / "data" / "booklet_data.json"
+    )
     site_data.local_timezone = cfg.time_zone
     by_uid = ByUid()
     extra_files = load_site_data(conference, site_data, by_uid)

@@ -51,12 +51,20 @@ def load_site_data(
     # generate_workshop_events(site_data)
     site_data.overall_calendar: List[FrontendCalendarEvent] = []
     site_data.overall_calendar.extend(generate_paper_events(site_data))
+    site_data.overall_calendar.extend(generate_social_events(site_data))
     # generate_social_events(site_data)
 
     site_data.calendar = build_schedule(site_data.overall_calendar)
     site_data.session_types = list({event.type for event in site_data.overall_calendar})
     # paper_<uid>.html
     by_uid.papers = conference.papers
+
+    # Load the plenary sessions by id
+    plenary_dict = {}
+    for day in site_data.plenary_sessions:
+        for plenary in site_data.plenary_sessions[day]:
+            plenary_dict[plenary.id] = plenary
+    by_uid.plenary_sessions = plenary_dict
 
     # plenary_sessions.html
     # plenary_sessions = build_plenary_sessions(
@@ -74,6 +82,10 @@ def load_site_data(
     #     [day.replace(" ", "").lower(), day, ""] for day in plenary_sessions
     # ]
     # site_data["plenary_session_days"][0][-1] = "active"
+    tutorial_dict = {}
+    for tutorial in site_data.tutorials:
+        tutorial_dict[tutorial.id] = tutorial
+    by_uid.tutorials = tutorial_dict
 
     # tutorials.html
     # tutorials = build_tutorials(site_data["tutorials"])
@@ -83,6 +95,11 @@ def load_site_data(
     # )
     # tutorial_<uid>.html
     # by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
+
+    workshop_dict = {}
+    for workshop in site_data.workshops:
+        workshop_dict[workshop.id] = workshop
+    by_uid.workshops = workshop_dict
 
     # workshops.html
     # workshops = build_workshops(
@@ -320,7 +337,6 @@ def generate_workshop_events(site_data: Dict[str, Any]):
 def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     """We add sessions from papers and compute the overall paper blocks for the weekly view."""
     # Add paper sessions to calendar
-
     overall_calendar = []
     for uid, session in site_data.sessions.items():
         start = session.start_time
@@ -331,14 +347,25 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
             .replace(" ", "")
             .lower()
         )
+        if session.type == "Plenary Sessions":
+            url = f"plenary_sessions.html#tab-{tab_id}"
+        elif session.type == "Workshops":
+            url = f"workshops.html#tab-{tab_id}"
+        elif session.type == "Tutorials":
+            url = f"tutorials.html#tab-{tab_id}"
+        elif session.type == "Socials":
+            url = f"socials.html#tab-{tab_id}"
+        else:
+            url = f"sessions.html#tab-{tab_id}"
+
         event = FrontendCalendarEvent(
             title=session.name,
             start=session.start_time,
             end=session.end_time,
             location="",
-            url=f"sessions.html#tab-{tab_id}",
+            url=url,
             category="time",
-            type="Paper Sessions",
+            type=session.type,
             view="week",
         )
         overall_calendar.append(event)
@@ -353,7 +380,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
                     # TODO: UID probably doesn't work here
                     url=f"papers.html?session={uid}&program=all",
                     category="time",
-                    type="Paper Sessions",
+                    type=session.type,
                     view="day",
                 )
                 # We don't want repeats of types, just collect all matching session/track
@@ -384,7 +411,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     return overall_calendar
 
 
-def generate_social_events(site_data: Dict[str, Any]):
+def generate_social_events_old(site_data: Dict[str, Any]):
     """We add social sessions and compute the overall paper social for the weekly view."""
     # Add paper sessions to calendar
 
@@ -436,6 +463,55 @@ def generate_social_events(site_data: Dict[str, Any]):
             "view": "week",
         }
         site_data["overall_calendar"].append(event)
+
+
+def generate_social_events(site_data: SiteData) -> List[Dict[str, Any]]:
+    """We add social sessions and compute the overall paper social for the weekly view."""
+    # Add paper sessions to calendar
+    overall_calendar = []
+    for uid, session in site_data.sessions.items():
+        if session.type != "Socials":
+            continue
+        start = session.start_time
+        end = session.end_time
+        tab_id = (
+            session.start_time.astimezone(pytz.utc)
+            .strftime("%b %d")
+            .replace(" ", "")
+            .lower()
+        )
+        event = FrontendCalendarEvent(
+            title=session.name,
+            start=session.start_time,
+            end=session.end_time,
+            location="",
+            url=f"socials.html",
+            category="time",
+            type=session.type,
+            view="week",
+        )
+        overall_calendar.append(event)
+        existing_events = set()
+        for event in session.events.values():
+            if (event.session, event.track, event.start_time) not in existing_events:
+                frontend_event = FrontendCalendarEvent(
+                    title=f"<b>{event.track}</b>",
+                    start=start,
+                    end=end,
+                    location="",
+                    # TODO: UID probably doesn't work here
+                    url=f"socials.html",
+                    category="time",
+                    type=session.type,
+                    view="day",
+                )
+                # We don't want repeats of types, just collect all matching session/track
+                # into one page
+                existing_events.add((event.session, event.track, event.start_time))
+                overall_calendar.append(frontend_event)
+
+                assert start < end, "Session start after session end"
+    return overall_calendar
 
 
 def build_schedule(

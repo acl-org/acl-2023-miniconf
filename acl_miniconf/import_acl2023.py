@@ -5,6 +5,7 @@ import datetime
 import re
 from pathlib import Path
 
+import yaml
 from pydantic import BaseModel
 import numpy as np
 import typer
@@ -40,7 +41,23 @@ logging.basicConfig(
 )
 
 
+TLDR_LENGTH = 200
 DATE_FMT = "%Y-%m-%d %H:%M"
+
+INTERNAL_TO_EXTERNAL_SESSIONS = {
+    "Session 3": "Session 1",
+    "Session 4": "Session 2",
+    "Session 5": "Session 3",
+    "Session 6": "Session 4",
+    "Session 8": "Session 5",
+    "Session 9": "Session 6",
+    "Session 10": "Session 7",
+}
+
+
+# No Op Fixed in new program
+def internal_to_external_session(name: str):
+    return name
 
 
 def clean_authors(authors: List[str]):
@@ -83,6 +100,15 @@ def determine_program(category: str):
         raise ValueError(f"Could not determine program from: {category}")
 
 
+def fix_col_names(df: pd.DataFrame) -> pd.DataFrame:
+    return df.rename(
+        columns={
+            "Start Time": "Start_Time",
+            "End Time": "End_Time",
+        }
+    )
+
+
 def na_to_none(x):
     if isinstance(x, str):
         return x
@@ -93,10 +119,11 @@ def na_to_none(x):
 
 
 def to_underline_paper_id(paper_id: str):
-    if paper_id.startswith('P') or paper_id.startswith('C'):
+    if paper_id.startswith("P") or paper_id.startswith("C"):
         return paper_id[1:]
     else:
         return paper_id
+
 
 class Assets(BaseModel):
     underline_paper_id: Optional[str] = None
@@ -108,6 +135,23 @@ class Assets(BaseModel):
     video_url: Optional[str] = None
 
 
+class AnthologyEntry(BaseModel):
+    # Without letter prefix
+    paper_id: str
+    abstract: str
+    # TODO: This is likely the field needed + prefix URL to get Paper PDFs
+    file: str
+    # TODO: When these are in anthology, use these to link to assets
+    attachments: Dict[str, str]
+
+
+def to_anthology_id(paper_id: str):
+    if paper_id.startswith("P"):
+        return paper_id[1:]
+    else:
+        return None
+
+
 class Acl2023Parser:
     def __init__(
         self,
@@ -117,12 +161,17 @@ class Acl2023Parser:
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
         extras_xlsx_path: Path,
+        acl_main_proceedings_yaml_path: Path,
+        workshop_papers_yaml_path: Path,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
         self.virtual_tsv_path = virtual_tsv_path
         self.spotlight_tsv_path = spotlight_tsv_path
         self.extras_xlsx_path = extras_xlsx_path
+        self.acl_main_proceedings_yaml_path = acl_main_proceedings_yaml_path
+        self.workshop_papers_yaml_path = workshop_papers_yaml_path
+        self.anthology_data: Dict[str, AnthologyEntry] = {}
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
@@ -130,14 +179,24 @@ class Acl2023Parser:
         self.zone = pytz.timezone("America/Toronto")
 
     def parse(self):
+        # Anthology has to be parsed first to fill in abstracts/files/links
+        self._add_anthology_data()
+        # Underline has to be parsed early to fill in links/files/etc
         self._parse_underline_assets()
+
+        # Parse order intentional, don't change
         self._parse_oral_papers()
         self._parse_poster_papers()
         self._parse_virtual_papers()
         # Order is intentional, spotlight papers also appear in virtual, so repeated papers
         # warnings aren't emitted
         self._parse_spotlight_papers()
-        #self._parse_extras_from_spreadsheet()
+
+        # Parse extra events
+        self._parse_extras_from_spreadsheet()
+
+        self._parse_workshop_papers()
+
         self.validate()
         return Conference(
             sessions=self.sessions,
@@ -147,10 +206,36 @@ class Acl2023Parser:
 
     def validate(self):
         for p in self.papers.values():
-            assert len(p.event_ids) > 0
+            # TODO: Remove check once associate workshop papers with event
+            if p.program != WORKSHOP:
+                assert len(p.event_ids) > 0
             assert p.program in PROGRAMS
 
+    def _parse_workshop_papers(self):
+        logging.info("Parsing workshop papers")
+        with open(self.workshop_papers_yaml_path) as f:
+            papers = yaml.safe_load(f)
+        workshop_papers: List[Paper] = []
+        for p in papers:
+            workshop_papers.append(Paper(**p))
+
+        for p in workshop_papers:
+            self.papers[p.id] = p
+
+    def _add_anthology_data(self):
+        logging.info("Parsing ACL Anthology Data")
+        with open(self.acl_main_proceedings_yaml_path) as f:
+            entries = yaml.safe_load(f)
+        for e in entries:
+            self.anthology_data[str(e["id"])] = AnthologyEntry(
+                paper_id=str(e["id"]),
+                abstract=e["abstract"],
+                file=e["file"],
+                attachments=e["attachments"],
+            )
+
     def _parse_underline_assets(self):
+        logging.info("Parsing Underline XLSX File")
         df = pd.read_excel(self.extras_xlsx_path, sheet_name="Lectures")
         df = df[df["Paper number"].notnull()]
         for _, paper in df[
@@ -176,11 +261,12 @@ class Acl2023Parser:
                 video_url=na_to_none(paper["Video file link"]),
             )
             if underline_paper_id in self.underline_assets:
-                raise ValueError(f'Repeat paper: {underline_paper_id}\nCurrent: {assets}\nPrior: {self.underline_assets[underline_paper_id]}')
+                raise ValueError(
+                    f"Repeat paper: {underline_paper_id}\nCurrent: {assets}\nPrior: {self.underline_assets[underline_paper_id]}"
+                )
             self.underline_assets[underline_paper_id] = assets
 
-    def _parse_start_end_dt(self, date_str: str, time_str: str):
-        start_time, end_time = time_str.split("-")
+    def _parse_start_end_dt(self, date_str: str, start_time: str, end_time: str):
         start_parsed_dt = self.zone.localize(
             datetime.datetime.strptime(f"{date_str} {start_time}", DATE_FMT)
         )
@@ -190,8 +276,11 @@ class Acl2023Parser:
         return start_parsed_dt, end_parsed_dt
 
     def _parse_spotlight_papers(self):
+        logging.info("Parsing spotlight papers")
         df = pd.read_csv(self.spotlight_tsv_path, sep="\t")
-        df = df[df.PID.notnull()]
+        # Industry papers are missing their track
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
+        df = fix_col_names(df[df.PID.notnull()])
         group_type = "Spotlight"
         # start_dt and end_dt are not in the sheets, but hardcoded instead
         start_dt = self.zone.localize(
@@ -201,20 +290,21 @@ class Acl2023Parser:
             datetime.datetime(year=2023, month=7, day=10, hour=21, minute=0)
         )
         # TODO: Fix Session once the sheet has it
-        for group_room, group in df.groupby(["Room"]):
+        for group_room, group in df.groupby(["Location"]):
             group_session = "Spotlight"
-            group = group.sort_values("Local order")
-            room = group.iloc[0].Room
+            group = group.sort_values("Presentation Order")
+            room = group.iloc[0].Location
             group_track = "Spotlight"
             # There are multiple concurrent spotlight events, each in a different room.
             # Thus, the one spotlight session should have multiple events that are differentiated by room
             event_name = get_session_event_name(group_session, group_room, group_type)
             event_id = name_to_id(event_name)
 
-            # TODO: Add back date/time when the sheet has it
-            # start_dt, end_dt = self._parse_start_end_dt(
-            #    group.iloc[0].Date, group.iloc[0].Time
-            # )
+            start_dt, end_dt = self._parse_start_end_dt(
+                group.iloc[0].Date,
+                group.iloc[0]["Start_Time"],
+                group.iloc[0]["End_Time"],
+            )
             if event_id not in self.events:
                 self.events[event_id] = Event(
                     id=event_id,
@@ -233,8 +323,10 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -252,6 +344,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + "..."
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -261,8 +360,8 @@ class Acl2023Parser:
                         track=row.Track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         forum="",
                         card_image_path="",
@@ -276,15 +375,22 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_virtual_papers(self):
+        logging.info("Parsing virtual poster papers")
         df = pd.read_csv(self.virtual_tsv_path, sep="\t")
-        df = df[df.PID.notnull()]
+        # Industry papers are missing their track
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
+        df = fix_col_names(df[df.PID.notnull()])
         group_type = "Virtual Poster"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
-            group = group.sort_values("Local order")
+            group = group.sort_values("Presentation Order")
+            assert len(set(group.Location.values)) == 1
+            room = group.iloc[0].Location
             event_name = get_session_event_name(group_session, group_track, group_type)
             event_id = name_to_id(event_name)
             start_dt, end_dt = self._parse_start_end_dt(
-                group.iloc[0].Date, group.iloc[0].Time
+                group.iloc[0].Date,
+                group.iloc[0]["Start_Time"],
+                group.iloc[0]["End_Time"],
             )
             if event_id not in self.events:
                 self.events[event_id] = Event(
@@ -296,7 +402,7 @@ class Acl2023Parser:
                     chairs=[],
                     paper_ids=[],
                     link=None,
-                    room="Virtual Poster Session",
+                    room=room,
                     type=group_type,
                 )
             event = self.events[event_id]
@@ -304,8 +410,10 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -315,7 +423,9 @@ class Acl2023Parser:
 
             for row in group.itertuples():
                 paper_id = row.PID
-                start_dt, end_dt = self._parse_start_end_dt(row.Date, row.Time)
+                start_dt, end_dt = self._parse_start_end_dt(
+                    row.Date, row.Start_Time, row.End_Time
+                )
                 event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
@@ -331,6 +441,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + "..."
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -339,8 +456,8 @@ class Acl2023Parser:
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         similar_paper_ids=[],
                         forum="",
@@ -355,15 +472,22 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_poster_papers(self):
+        logging.info("Parsing poster papers")
         df = pd.read_csv(self.poster_tsv_path, sep="\t")
-        df = df[df.PID.notnull()]
+        # Industry papers are missing their track
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
+        df = fix_col_names(df[df.PID.notnull()])
         group_type = "Poster"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
-            group = group.sort_values("Local order")
+            group = group.sort_values("Presentation Order")
+            assert len(set(group.Location.values)) == 1
+            room = group.iloc[0].Location
             event_name = get_session_event_name(group_session, group_track, group_type)
             event_id = name_to_id(event_name)
             start_dt, end_dt = self._parse_start_end_dt(
-                group.iloc[0].Date, group.iloc[0].Time
+                group.iloc[0].Date,
+                group.iloc[0]["Start_Time"],
+                group.iloc[0]["End_Time"],
             )
             if event_id not in self.events:
                 self.events[event_id] = Event(
@@ -375,7 +499,7 @@ class Acl2023Parser:
                     chairs=[],
                     paper_ids=[],
                     link=None,
-                    room="Poster Session",
+                    room=room,
                     type=group_type,
                 )
             event = self.events[event_id]
@@ -384,8 +508,10 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -395,7 +521,11 @@ class Acl2023Parser:
 
             for row in group.itertuples():
                 paper_id = row.PID
-                start_dt, end_dt = self._parse_start_end_dt(row.Date, row.Time)
+                start_dt, end_dt = self._parse_start_end_dt(
+                    row.Date,
+                    row.Start_Time,
+                    row.End_Time,
+                )
                 event = self.events[event_id]
                 event.paper_ids.append(paper_id)
                 if row.PID in self.papers:
@@ -411,6 +541,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + "..."
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -419,8 +556,8 @@ class Acl2023Parser:
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         forum="",
                         card_image_path="",
@@ -434,16 +571,21 @@ class Acl2023Parser:
                     self.papers[row.PID] = paper
 
     def _parse_oral_papers(self):
+        logging.info("Parsing oral papers")
         df = pd.read_csv(self.oral_tsv_path, sep="\t")
-        df = df[df.PID.notnull()]
+        df = fix_col_names(df[df.PID.notnull()])
+        # Industry papers are missing their track
+        df.loc[df.Category == "Industry", "Track"] = "Industry"
         group_type = "Oral"
         for (group_session, group_track), group in df.groupby(["Session", "Track"]):
-            group = group.sort_values("Track Order")
-            room = group.iloc[0].Room
+            group = group.sort_values("Presentation Order")
+            room = group.iloc[0].Location
             event_name = get_session_event_name(group_session, group_track, group_type)
             event_id = name_to_id(event_name)
             start_dt, end_dt = self._parse_start_end_dt(
-                group.iloc[0].Date, group.iloc[0].Time
+                group.iloc[0].Date,
+                group.iloc[0]["Start_Time"],
+                group.iloc[-1]["End_Time"],
             )
             if event_id not in self.events:
                 self.events[event_id] = Event(
@@ -463,8 +605,10 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
+                    display_name=internal_to_external_session(group_session),
                     start_time=start_dt,
                     end_time=end_dt,
+                    type="Paper Sessions",
                     events=[],
                 )
             session = self.sessions[group_session]
@@ -485,6 +629,13 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    anthology_id = to_anthology_id(paper_id)
+                    if anthology_id in self.anthology_data:
+                        abstract = self.anthology_data[anthology_id].abstract
+                        tldr = abstract[:TLDR_LENGTH] + "..."
+                    else:
+                        abstract = ""
+                        tldr = ""
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -493,8 +644,8 @@ class Acl2023Parser:
                         track=group_track,
                         paper_type=row.Length,
                         category=row.Category,
-                        abstract="",
-                        tldr="",
+                        abstract=abstract,
+                        tldr=tldr,
                         event_ids=[event.id],
                         forum="",
                         card_image_path="",
@@ -517,7 +668,7 @@ class Acl2023Parser:
             logging.error(
                 f"Could not read spreadsheet from file {self.extras_xlsx_path}. This data won't be added to the program."
             )
-            return
+            raise
         # Part 1: read all tracks from the spreadsheet
         sheet = workbook["Tracks"]
         spreadsheet_info = dict()
@@ -526,6 +677,8 @@ class Acl2023Parser:
             while True:
                 track_id = sheet["A"][row].value
                 track_name = sheet["B"][row].value.strip()
+                # Escape slashes, as they break the website
+                track_name = track_name.replace("/", "--")
                 # Fixing a typo in the original data
                 if track_name == "Birds of Fearther":
                     track_name = "Birds of a Feather"
@@ -546,11 +699,14 @@ class Acl2023Parser:
         try:
             while True:
                 track_name = sheet["F"][row].value.strip()
+                # Escape slashes, as they break the website
+                track_name = track_name.replace("/", "--")
                 # Fixing a typo in the original data
                 if track_name == "Birds of Fearther":
                     track_name = "Birds of a Feather"
                 event_id = sheet["A"][row].value
                 event_name = sheet["B"][row].value.strip()
+                event_name = event_name.replace("/", "--")
                 event_desc = sheet["C"][row].value
                 # Parse the start time and end time in UTC
                 event_start = sheet["G"][row].value
@@ -575,20 +731,18 @@ class Acl2023Parser:
         except IndexError:
             pass
 
+        self._parse_event_without_papers(spreadsheet_info, "Social", "Socials", MAIN)
         self._parse_event_without_papers(
-            spreadsheet_info, "Social", "Social Event", MAIN
+            spreadsheet_info, "Plenary Sessions", "Plenary Sessions", MAIN
         )
         self._parse_event_without_papers(
-            spreadsheet_info, "Plenary Sessions", "Plenary Session", MAIN
-        )
-        self._parse_event_without_papers(
-            spreadsheet_info, "Workshops", "Workshop", WORKSHOP
+            spreadsheet_info, "Workshops", "Workshops", WORKSHOP
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Tutorials", "Tutorial", MAIN
+            spreadsheet_info, "Tutorials", "Tutorials", MAIN
         )
         self._parse_event_without_papers(
-            spreadsheet_info, "Findings", "Workshop", FINDINGS
+            spreadsheet_info, "Findings", "Workshops", FINDINGS
         )
         self._parse_event_without_papers(
             spreadsheet_info, "Industry Track", "Poster", INDUSTRY
@@ -597,16 +751,16 @@ class Acl2023Parser:
             spreadsheet_info, "Demo Sessions", "Poster", DEMO
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Coffee Break", "Social Event", MAIN
+            spreadsheet_info, "Coffee Break", "Breaks", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Diversity and Inclusion", "Workshop", MAIN
+            spreadsheet_info, "Diversity and Inclusion", "Workshops", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Student Research Workshop", "Workshop", MAIN
+            spreadsheet_info, "Student Research Workshop", "Workshops", MAIN
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Birds of a Feather", "Oral", MAIN
+            spreadsheet_info, "Birds of a Feather", "Socials", MAIN
         )
 
     def _parse_event_without_papers(
@@ -621,8 +775,10 @@ class Acl2023Parser:
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
+                display_name=internal_to_external_session(group_session),
                 start_time=event_data["start"],
                 end_time=event_data["end"],
+                type=event_type,
                 events=[],
             )
             session = self.sessions[group_session]
@@ -635,7 +791,15 @@ class Acl2023Parser:
                 )
             else:
                 this_event_name = event_name
-            event_id = name_to_id(this_event_name)
+            if (
+                group_session[0].casefold() == "w"
+                and len(group_session.split(":")[0]) < 4
+            ):
+                # Workshop
+                workshop_number = group_session.split(":")[0][1:].strip()
+                event_id = name_to_id(f"workshop-{workshop_number}")
+            else:
+                event_id = name_to_id(group_session)
             if event_id not in self.events:
                 self.events[event_id] = Event(
                     id=event_id,
@@ -653,7 +817,7 @@ class Acl2023Parser:
             session.events[event_id] = event
             # Finally, we create a single dummy paper with the information of
             # the Event. We then add it to the paper list of the Event above.
-            paper_id = f"p_{event_id}"
+            paper_id = f"event_{event_id}"
             dummy_paper = Paper(
                 id=paper_id,
                 program=program_type,
@@ -672,6 +836,7 @@ class Acl2023Parser:
                 forum="",
                 card_image_path="",
                 presentation_id="",
+                is_paper=False,
             )
             self.papers[paper_id] = dummy_paper
             event.paper_ids.append(paper_id)
@@ -701,8 +866,10 @@ class Acl2023Parser:
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
+                display_name=internal_to_external_session(group_session),
                 start_time=session_start,
                 end_time=session_end,
+                type=event_type,
                 events=[],
             )
             counter += 1
@@ -716,6 +883,12 @@ class Acl2023Parser:
                     group_session, group_track, event_type
                 )
                 event_id = name_to_id(event_name)
+                # Hack to fix a single issue in the templates that generates two
+                # events with the same ID
+                if event_id == "birds-of-a-feather-6_-ethics-discussion-(socials)":
+                    event_id = "birds-of-a-feather-9"
+                else:
+                    event_id = name_to_id(group_session)
                 if event_id not in self.events:
                     self.events[event_id] = Event(
                         id=event_id,
@@ -749,6 +922,7 @@ class Acl2023Parser:
                         forum="",
                         card_image_path="",
                         presentation_id="",
+                        is_paper=False,
                     )
                     self.papers[event_id] = dummy_paper
                     self.events[event_id].paper_ids.append(event_id)
@@ -766,6 +940,8 @@ def main(
     virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
     extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-06-22.xlsx",
+    acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
+    workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
@@ -774,14 +950,17 @@ def main(
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
         extras_xlsx_path=Path(extras_xlsx),
+        acl_main_proceedings_yaml_path=Path(acl_main_proceedings_yaml),
+        workshop_papers_yaml_path=Path(workshop_papers_yml),
     )
     conf = parser.parse()
     out_dir = Path(out_dir)
     out_dir.mkdir(exist_ok=True, parents=True)
     conf_dict = conf.dict()
 
+    logging.info("Writing to conference.json")
     with open(out_dir / "conference.json", "w") as f:
-        json.dump(conf_dict, f, cls=DateTimeEncoder)
+        json.dump(conf_dict, f, cls=DateTimeEncoder, sort_keys=True, indent=2)
 
 
 if __name__ == "__main__":

@@ -5,6 +5,12 @@ import datetime
 from pathlib import Path
 
 from pydantic import BaseModel
+from .import_booklet_acl2023 import (
+    generate_plenaries,
+    generate_tutorials,
+    generate_workshops,
+)
+import json
 import pytz
 import yaml
 
@@ -50,7 +56,7 @@ class Event(BaseModel):
     def day(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
         return start_time.strftime("%b %d")
-    
+
     @property
     def conference_datetime(self) -> str:
         start = self.start_time
@@ -59,7 +65,7 @@ class Event(BaseModel):
             start.strftime("%b %d"),
             start.strftime("%H:%M"),
             end.strftime("%H:%M (%Z)"),
-            )
+        )
 
     @property
     def time_string(self) -> str:
@@ -81,8 +87,10 @@ class Event(BaseModel):
 class Session(BaseModel):
     id: str
     name: str
+    display_name: str
     start_time: Optional[datetime.datetime]
     end_time: Optional[datetime.datetime]
+    type: str
     events: Dict[str, Event]
 
     @property
@@ -125,6 +133,7 @@ class Paper(BaseModel):
     similar_paper_ids: List[str] = []
     program: str
     material: str = None
+    is_paper: bool = True
 
     @property
     def rocketchat_channel(self) -> str:
@@ -146,6 +155,7 @@ class ByUid(BaseModel):
     tutorials: Dict[str, Any] = {}
     workshops: Dict[str, Any] = {}
     sponsors: Dict[str, Any] = {}
+    plenaries: Dict[str, Any] = {}
 
 
 class Conference(BaseModel):
@@ -183,6 +193,7 @@ WORKSHOPS = "Workshops"
 PAPER_SESSIONS = "Paper Sessions"
 SOCIALS = "Socials"
 SPONSORS = "Sponsors"
+BREAKS = "Breaks"
 EVENT_TYPES = {
     PLENARIES,
     TUTORIALS,
@@ -190,6 +201,7 @@ EVENT_TYPES = {
     PAPER_SESSIONS,
     SOCIALS,
     SPONSORS,
+    BREAKS,
 }
 
 
@@ -213,7 +225,7 @@ class SiteData(BaseModel):
     overall_calendar: List[FrontendCalendarEvent]
     session_types: List[str] = []
     plenary_sessions: Dict
-    plenary_session_days: List[str]
+    plenary_session_days: Any
     papers: List[Paper] = []
     main_papers: List[Paper] = []
     demo_papers: List[Paper] = []
@@ -221,7 +233,7 @@ class SiteData(BaseModel):
     workshop_papers: List[Paper] = []
     tutorials: Any
     tutorials_calendar: Any
-    workshops: List[str] = []
+    workshops: List[Any] = []
     socials: Any
     tracks: List[str] = []
     track_ids: List[str] = []
@@ -237,7 +249,9 @@ class SiteData(BaseModel):
     sponsor_levels: Any
 
     @classmethod
-    def from_conference(cls, conference: Conference, site_data_path: Path):
+    def from_conference(
+        cls, conference: Conference, site_data_path: Path, booklet_info: Path = None
+    ):
         days = set()
         for s in conference.sessions.values():
             days.add(s.day)
@@ -276,6 +290,25 @@ class SiteData(BaseModel):
 
         with open(site_data_path / "configs" / "config.yml") as f:
             config = yaml.safe_load(f)
+        socials = {k: v for k, v in conference.sessions.items() if v.type == "Socials"}
+        # Load information about plenary sessions and tutorials from the booklet
+        # if the information is available.
+        try:
+            with open(booklet_info, "r") as fp:
+                booklet_data = json.load(fp)
+            plenary_sessions = generate_plenaries(booklet_data["plenaries"])
+            days = list(plenary_sessions.keys())
+            days.sort()  # Hack fix
+            plenary_session_days = [(idx, day, True) for idx, day in enumerate(days)]
+            tutorials = generate_tutorials(booklet_data["tutorials"])
+            workshops = generate_workshops(booklet_data["workshops"])
+        except FileNotFoundError:
+            plenary_sessions = {}
+            plenary_session_days = []
+            tutorials = {}
+            workshops = []
+        else:
+            pass
         site_data = cls(
             config=config,
             pages=load_all_pages_texts(site_data_path),
@@ -284,16 +317,16 @@ class SiteData(BaseModel):
             papers=list(conference.papers.values()),
             overall_calendar=[],
             session_types=[],
-            plenary_sessions={},
-            plenary_session_days=[],
+            plenary_sessions=plenary_sessions,
+            plenary_session_days=plenary_session_days,
             main_papers=conference.main_papers,
             demo_papers=conference.demo_papers,
             findings_papers=conference.findings_papers,
             workshop_papers=conference.workshop_papers,
-            tutorials=[],
+            tutorials=tutorials,
             tutorials_calendar=[],
-            workshops=[],
-            socials=[],
+            workshops=workshops,
+            socials=socials,
             tracks=tracks,
             track_ids=track_ids,
             main_program_tracks=main_program_tracks,

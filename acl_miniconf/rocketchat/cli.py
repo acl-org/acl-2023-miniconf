@@ -27,15 +27,14 @@ class AclRcHelper:
     def __init__(
         self,
         *,
-        program_pkl_path: str,
+        program_json_path: str,
         user_id: str,
         auth_token: str,
         server: str,
         session: sessions.Session,
         dry_run: bool = False,
     ):
-        with open(program_pkl_path, "rb") as f:
-            self.conference: Conference = pickle.load(f)
+        self.conference: Conference = Conference.parse_file(program_json_path)
         self.dry_run = dry_run
         self.auth_token = auth_token
         self.user_id = user_id
@@ -68,14 +67,15 @@ class AclRcHelper:
         skipped = 0
         created = 0
         for paper in track(self.conference.papers.values()):
-            channel_name = paper_id_to_channel_name(paper.id)
-            if channel_name in existing_channels:
-                skipped += 1
-            else:
-                author_string = ", ".join(paper.authors)
-                topic = f"{paper.title} - {author_string}"
-                self.create_channel(channel_name, topic, paper.abstract)
-                created += 1
+            if paper.is_paper:
+                channel_name = paper_id_to_channel_name(paper.id)
+                if channel_name in existing_channels:
+                    skipped += 1
+                else:
+                    author_string = ", ".join(paper.authors)
+                    topic = f"{paper.title} - {author_string}"
+                    self.create_channel(channel_name, topic, paper.abstract)
+                    created += 1
 
         print(
             f"Total papers: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
@@ -127,7 +127,7 @@ def hydra_main(cfg: DictConfig):
                 auth_token=cfg.auth_token,
                 server=cfg.server,
                 session=session,
-                program_pkl_path=Path(cfg.program_pkl_path),
+                program_json_path=Path(cfg.program_pkl_path),
                 dry_run=cfg.dry_run,
             )
             helper.create_paper_channels()
@@ -138,7 +138,7 @@ def hydra_main(cfg: DictConfig):
                 auth_token=cfg.auth_token,
                 server=cfg.server,
                 session=session,
-                program_pkl_path=Path(cfg.program_pkl_path),
+                program_json_path=Path(cfg.program_pkl_path),
                 dry_run=cfg.dry_run,
             )
             helper.add_custom_emojis()

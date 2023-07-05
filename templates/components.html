@@ -40,7 +40,9 @@
     <div class="card p-3 shadow bg-light rounded">
         <div class="row">
           <div class="col-md-2 col-sm-5">
-            <img src="{{plenary_session.image}}" width="100%" class="mt-3" />
+            {% if plenary_session.image is not none %}
+            <img src="static/images/invited/{{plenary_session.image}}" width="100%" class="mt-3" />
+            {% endif %}
           </div>
           <div class="col-md-10 col-sm-6">
             <div class="m-3 text-muted">
@@ -271,8 +273,8 @@
         title: '{{ title }}'.replace("#", " "),
 
         // Event start date
-        start: new Date("{{session.start_time_string}}"),
-        end: new Date("{{session.end_time_string}}"),
+        start: new Date("{{session.start_time}}"),
+        end: new Date("{{session.end_time}}"),
         // duration: 120,                           // Event duration (IN MINUTES)
         // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
@@ -315,7 +317,8 @@
           <div class="m-3 text-muted text-center">
             <h4>
               <a href="tutorial_{{tutorial.id}}.html" class="main-title" >
-                {{tutorial.id}}: {{tutorial.title}}
+                <!--{{tutorial.id}}: {{tutorial.title}}-->
+                {{tutorial.title}}
               </a>
             </h4>
           </div>
@@ -385,8 +388,7 @@
           description: 'https://virtual.2020.emnlp.org/tutorial_{{ tutorial.id }}.html'
         }
       });
-
-      targetNode = document.querySelector('#session-cal-link-{{ tutorial.id }}-{{ loop.index }}');
+      targetNode = document.querySelector('#session-cal-link-{{ tutorial.id | replace(",","\\\\,") }}-{{ loop.index }}');
       for (const name of calendarNames) {
         calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
         calendarNodeSpan = document.createElement("span");

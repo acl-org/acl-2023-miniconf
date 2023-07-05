@@ -12,14 +12,19 @@
 <div id="day">
 <div class="speakers">
 <div class="cards row">
-  {% for social in socials %}
+  <!-- I am so sorry for this Jinja hack of skipping those starting with "Coffee" -->
+  {% for social in socials if social[0:6] != 'Coffee' %}
   {% for event in socials[social]['events'] %}
   <div class="col-md-6 col-sm-12 p-3"
        id='{{socials[social]["name"]|replace(" ", "_")|replace("?", "")}}'>
     <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
          style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
       <h2 class="card-title" >
-        {{ socials[social]['name'] }}: {{ socials[social]['events'][event]['track'] }}
+        {% if social[0] == 'B' %}
+          {{ socials[social]['name'] }}: {{ socials[social]['events'][event]['track'] }}
+        {% else %}
+          {{ socials[social]['name'] }}
+        {% endif %}
       </h2>
 
       {% if social.organizers %}
@@ -67,7 +72,7 @@
             <div class="text-center text-muted text-monospace">
               <div class="paper-cal-links">
                 <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-                <span id="session-cal-link-{{ socials[social]['id'] }}-{{loop.index}}"></span>
+                <span id="session-cal-link-{{socials[social]['events'][event]['id']}}-{{loop.index}}"></span>
               </div>
             </div>
 
@@ -90,7 +95,13 @@
         {% endif %}
       </p>
       {% endif %}
-
+      <p class="text-center text-muted card-title">
+      {% if socials[social]['events'][event]['id'][0] != 'b' %}
+        <a href="https://acl.rocket.chat/channel/paper-event_{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
+      {% else %}
+        <a href="https://acl.rocket.chat/channel/paper-{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
+      {% endif %}
+      </p>    
 
 
     </div>
@@ -118,8 +129,8 @@
   let calendarNodeSpan;
   let parser = new DOMParser();
   let calendarNames = Array("google", "off365", "outlook", "ical");
-
-  {% for social in socials %}
+  // Again, I'm so sorry for this Jinja hack
+  {% for social in socials if social[0:6] != 'Coffee' %}
     {% for social_event in socials[social]['events'] %}
       // create a calendar by hand
       ouicalData = addToCalendarData({
@@ -149,7 +160,7 @@
         }
       });
 
-      targetNode = document.querySelector('#session-cal-link-{{ socials[social]["id"] }}-{{ loop.index }}');
+      targetNode = document.querySelector('#session-cal-link-{{ socials[social]["events"][social_event]["id"] }}-{{ loop.index }}');
       for (const name of calendarNames) {
         calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
         calendarNodeSpan = document.createElement("span");

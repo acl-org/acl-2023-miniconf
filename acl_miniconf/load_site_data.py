@@ -59,6 +59,13 @@ def load_site_data(
     # paper_<uid>.html
     by_uid.papers = conference.papers
 
+    # Load the plenary sessions by id
+    plenary_dict = {}
+    for day in site_data.plenary_sessions:
+        for plenary in site_data.plenary_sessions[day]:
+            plenary_dict[plenary.id] = plenary
+    by_uid.plenary_sessions = plenary_dict
+
     # plenary_sessions.html
     # plenary_sessions = build_plenary_sessions(
     #    raw_plenary_sessions=site_data["plenary_sessions"],
@@ -75,6 +82,10 @@ def load_site_data(
     #     [day.replace(" ", "").lower(), day, ""] for day in plenary_sessions
     # ]
     # site_data["plenary_session_days"][0][-1] = "active"
+    tutorial_dict = {}
+    for tutorial in site_data.tutorials:
+        tutorial_dict[tutorial.id] = tutorial
+    by_uid.tutorials = tutorial_dict
 
     # tutorials.html
     # tutorials = build_tutorials(site_data["tutorials"])
@@ -84,6 +95,11 @@ def load_site_data(
     # )
     # tutorial_<uid>.html
     # by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
+
+    workshop_dict = {}
+    for workshop in site_data.workshops:
+        workshop_dict[workshop.id] = workshop
+    by_uid.workshops = workshop_dict
 
     # workshops.html
     # workshops = build_workshops(
@@ -323,8 +339,6 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
     # Add paper sessions to calendar
     overall_calendar = []
     for uid, session in site_data.sessions.items():
-        if session.type == "Socials":
-            continue
         start = session.start_time
         end = session.end_time
         tab_id = (
@@ -333,12 +347,23 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
             .replace(" ", "")
             .lower()
         )
+        if session.type == "Plenary Sessions":
+            url = f"plenary_sessions.html#tab-{tab_id}"
+        elif session.type == "Workshops":
+            url = f"workshops.html#tab-{tab_id}"
+        elif session.type == "Tutorials":
+            url = f"tutorials.html#tab-{tab_id}"
+        elif session.type == "Socials":
+            url = f"socials.html#tab-{tab_id}"
+        else:
+            url = f"sessions.html#tab-{tab_id}"
+
         event = FrontendCalendarEvent(
             title=session.name,
             start=session.start_time,
             end=session.end_time,
             location="",
-            url=f"sessions.html#tab-{tab_id}",
+            url=url,
             category="time",
             type=session.type,
             view="week",

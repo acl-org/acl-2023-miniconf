@@ -791,10 +791,13 @@ class Acl2023Parser:
                 )
             else:
                 this_event_name = event_name
-            if group_session[0].casefold() == 'w' and len(group_session.split(':')[0]) < 4:
+            if (
+                group_session[0].casefold() == "w"
+                and len(group_session.split(":")[0]) < 4
+            ):
                 # Workshop
-                workshop_number = group_session.split(':')[0][1:].strip()
-                event_id = name_to_id(f'workshop-{workshop_number}')
+                workshop_number = group_session.split(":")[0][1:].strip()
+                event_id = name_to_id(f"workshop-{workshop_number}")
             else:
                 event_id = name_to_id(group_session)
             if event_id not in self.events:
@@ -882,8 +885,8 @@ class Acl2023Parser:
                 event_id = name_to_id(event_name)
                 # Hack to fix a single issue in the templates that generates two
                 # events with the same ID
-                if event_id == 'birds-of-a-feather-6_-ethics-discussion-(socials)':
-                    event_id = 'birds-of-a-feather-9'
+                if event_id == "birds-of-a-feather-6_-ethics-discussion-(socials)":
+                    event_id = "birds-of-a-feather-9"
                 else:
                     event_id = name_to_id(group_session)
                 if event_id not in self.events:

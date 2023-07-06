@@ -162,10 +162,11 @@ def parse_authors(
         for a in anthology_data[anthology_id].authors:
             temp_author = None
             for name in [a.first_name, a.middle_name, a.last_name]:
-                if temp_author is None:
-                    temp_author = name
-                else:
-                    temp_author += f' {name}'
+                if name is not None:
+                    if temp_author is None:
+                        temp_author = name
+                    else:
+                        temp_author += f' {name}'
             if temp_author is None:
                 raise ValueError('Empty author found')
             authors.append(temp_author)

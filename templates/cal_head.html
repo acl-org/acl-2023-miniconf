@@ -1,6 +1,7 @@
 {{ components.calendar_scripts() }}
 <script>
   var events = JSON.parse('{{ calendar | tojson }}');
+  var event_lookup = Object.fromEntries(events.map(e => [e.title, e]));
   var initial_view = 'timeGridWeek';
   window.fc_current_view = initial_view;
   
@@ -85,10 +86,11 @@
             }
         },
         eventDidMount: function(info) {
+          var title = info.event.title;
           $(info.el).popover({
-            title: info.event.title,
+            title: title,
             html: true,
-            content: info.timeText,
+            content: info.timeText,//+ "<br/> Room: " + event_lookup[title].location,
             placement: 'top',
             trigger:'hover',
             container:'body'

@@ -146,7 +146,11 @@
   <!-- User Overrides -->
   {% block top %} {% endblock %}
 
-  <div class="container">
+      {% if container_class %}
+      <div class="{{ container_class }}">
+        {% else %}
+      <div class="container">
+        {% endif %}
     <!-- Heading -->
     <div class="heading">
       {% block heading %} {% endblock %}

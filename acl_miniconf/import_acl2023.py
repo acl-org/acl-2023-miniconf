@@ -61,8 +61,6 @@ def internal_to_external_session(name: str):
     return name
 
 
-
-
 def parse_sessions_and_tracks(df: pd.DataFrame):
     sessions = sorted(set(df.Session.values), key=lambda x: int(x.split()[1]))
     tracks = sorted(set(df.Track.values))
@@ -141,8 +139,10 @@ def to_anthology_id(paper_id: str):
     else:
         return None
 
+
 def clean_authors(authors: List[str]):
     return [a.strip() for a in authors]
+
 
 def parse_authors(
     anthology_data: Dict[str, AnthologyEntry], paper_id: str, author_string: str
@@ -166,9 +166,9 @@ def parse_authors(
                     if temp_author is None:
                         temp_author = name
                     else:
-                        temp_author += f' {name}'
+                        temp_author += f" {name}"
             if temp_author is None:
-                raise ValueError('Empty author found')
+                raise ValueError("Empty author found")
             authors.append(temp_author)
         return authors
 
@@ -728,10 +728,6 @@ class Acl2023Parser:
         # Part 2: assign events to tracks
         sheet = workbook["Event Sessions"]
         row = 1
-        # Set the time to our desired timezone. Useful for parsing the dates
-        # in the proper locale
-        os.environ["TZ"] = "America/Toronto"
-        time.tzset()
         try:
             while True:
                 track_name = sheet["F"][row].value.strip()
@@ -746,21 +742,23 @@ class Acl2023Parser:
                 event_desc = sheet["C"][row].value
                 # Parse the start time and end time in UTC
                 event_start = sheet["G"][row].value
-                event_start = datetime.datetime.strptime(event_start, "%B %d, %Y %H:%M")
+                # The sheet shows times in UTC, so we have to localize to UTC
+                # Generally, UTC is the assumed format and then conversions made from it
+                event_start = pytz.utc.localize(
+                    datetime.datetime.strptime(event_start, "%B %d, %Y %H:%M")
+                )
                 event_end = sheet["H"][row].value
-                event_end = datetime.datetime.strptime(event_end, "%B %d, %Y %H:%M")
+                event_end = pytz.utc.localize(
+                    datetime.datetime.strptime(event_end, "%B %d, %Y %H:%M")
+                )
                 # We extract the date from the start date instead of the spreadsheet
                 event_date = event_start.date()
                 event = {
                     "name": event_name,
                     "desc": event_desc,
                     "date": event_date.isoformat(),
-                    "start": event_start.astimezone(
-                        pytz.timezone("America/Toronto")
-                    ).isoformat(),
-                    "end": event_end.astimezone(
-                        pytz.timezone("America/Toronto")
-                    ).isoformat(),
+                    "start": event_start.isoformat(),
+                    "end": event_end.isoformat(),
                 }
                 spreadsheet_info[track_name]["events"][event_id].append(event)
                 row += 1

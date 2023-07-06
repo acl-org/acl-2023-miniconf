@@ -47,12 +47,12 @@
 
 {% block content %}
 
-<div class="row">
+<div class="row" style="display: none;">
   <div class="col-md-12 col-sm-12">
     <div class="alert alert-primary" role="alert">
       We are working on updating MiniConf posters with new versions on Underline. We appreciate your patience on this issue.
     </div>
-</div>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-7 col-sm-12 pr-5 lead">
@@ -78,57 +78,10 @@
       <dt>Schedule</dt>
       <dd>Use the <a class="text" href="schedule.html">Schedule</a> to find live sessions and set your timezone.
       </dd>
-      <dt>RocketChat</dt>
-      <dd>RocketChat for ACL 2023 is not ready yet, so do not try to login or create account, it will not work.
-      </dd>
-
-      {#
-      <dt>Plenary Sessions</dt>
-      <dd>Plenary Sessions include Keynote Talks and the Business meeting (pre-recorded talks + live Q&A), plus Awards
-        ceremonies.
-        <!-- Use the <a class="text" href="livestream.html" >Livestream</a> to watch live sessions in real time. -->
-        Pre-recorded videos are available under <a class="text" href="plenary_sessions.html">Plenary Sessions</a>.
-      </dd>
-      #}
-
-      {#
-      <dt>Main Conference Papers</dt>
-      <dd>Each <a class="text" href="papers.html">paper</a> has a pre-recorded 7-12 minute talk,
-        one live Q&A video sessions (on Zoom or in Gather.Town) at different times, and a linked RocketChat channel (for
-        chatting anytime with the author).
-        This includes <a class="text" href="papers.html?filter=titles&program=demo&track=All+tracks">System
-          Demonstrations</a> papers</a>.
-      </dd>
-      #}
-
-      {#
-      <dt>Tutorials and Workshops</dt>
-      <dd>The 7 <a class="text" href="tutorials.html">tutorials</a> and 25 <a class="text"
-          href="workshops.html">workshops</a> (November 19-20) are all included under conference registration.
-        Some are fully pre-recorded, others include live sessions as well!
-      </dd>
-      <dt> Gather.town</dt>
-      <dd>Join the virtual conference venue in <a class="text" href="{{ config.gather_town }}"
-          target="_blank">Gather.Town</a>!
-        Come <a
-          href="https://emnlp2020-public.s3.amazonaws.com/guides/EMNLP+Virtual+Chair+Pre-event+communications.pdf">here</a>
-        to learn a bit about accessing EMNLP events in Gather.Town, via 'Virtual Chair'."
-      </dd>
-      <dt> Sponsors</dt>
-      <dd>Meet our <a class="text" href="sponsors.html">sponsors</a>.</dd>
       <dt>Chat</dt>
       <dd>Chat with attendees using various <a class="text" href="chat.html">RocketChat</a> channels!
-        When you access RocketChat for the first time, click on 'Login via EMNLP2020 account' and your EMNLP2020
+        When you access RocketChat for the first time, click on 'Login with Underline' and your Underline
         credentials will be automatically used to log you in to RocketChat.</dd>
-      <dt>Socials</dt>
-      <dd>Meet new people using <a class="text" href="socials.html">social events</a> throughout the week.</dd>
-      <dt> Help</dt>
-      <dd> Look under <a class="text" href="about.html">Help</a> for FAQs and technical support.</dd>
-      <dt> Social Media</dt>
-      <dd> Use the hashtag <span
-          style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">{{
-          config.social_tag }}</span></dd>
-          #}
     </dl>
   </div>
   <!-- <div class="col-md-1"></div> -->

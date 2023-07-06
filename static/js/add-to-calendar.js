@@ -170,12 +170,14 @@
         startTime = formatTime(event.tzstart);
         endTime = formatTime(event.tzend);
       }
-      
+
+      // We remove everything in the URL after '#' because it otherwise breaks
+      // the calendar data
       var cal = [
           'BEGIN:VCALENDAR',
           'VERSION:2.0',
           'BEGIN:VEVENT',
-          'URL:' + document.URL,
+          'URL:' + document.URL.split('#')[0],
           'DTSTART:' + (startTime || ''),
           'DTEND:' + (endTime || ''),
           'SUMMARY:' + (event.title || ''),
@@ -184,14 +186,13 @@
           'UID:' + (event.id || '') + '-' + document.URL,
           'END:VEVENT',
           'END:VCALENDAR'].join('\n');
-          
+
       if (ieMustDownload) {
         return '<a class="' + eClass + '" onclick="ieDownloadCalendar(\'' +
           escapeJSValue(cal) + '\')">' + calendarName + '</a>';
       }
       
       var href = encodeURI('data:text/calendar;charset=utf8,' + cal);
-      
       return '<a class="' + eClass + '" download="'+CONFIG.texts.download+'" href="' + 
         href + '">' + calendarName + '</a>';
      

@@ -65,10 +65,24 @@
   {% if plenary_session.videos != none %}
 
   {% if plenary_session.rocketchat_channel is defined %}
+  <!-- We follow the RC IDs in the main conference -->
+  {% if plenary_session.id == 'two-paths-to-intelligence' %}
+    {% set rocketchat_fixed = 'paper-event_keynote-1_-geoffrey-hinton' %}
+  {% elif plenary_session.id == 'acl-rolling-review-update-and-discussion' %}
+    {% set rocketchat_fixed = 'paper-event_arr-discussion' %}
+  {% elif plenary_session.id == 'memorial' %}
+    {% set rocketchat_fixed = 'paper-event_drago-memorial' %}
+  {% elif plenary_session.id == 'the-future-of-computational-linguistics-in-the-llm-age' %}
+    {% set rocketchat_fixed = 'paper-event_plenary_-llm-panel' %}
+  {% elif plenary_session.id == 'large-language-models-as-cultural-technologies_-imitation-and-innovation-in-children-and-models' %}
+    {% set rocketchat_fixed = 'paper-event_keynote-2_-alison-gopnik' %}
+  {% else %}
+    {% set rocketchat_fixed = plenary_session.id %}
+  {% endif %}
   <div class="text-muted text-center">
     You can open the
-    <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
-       target="_blank">#{{ plenary_session.rocketchat_channel }}
+    <a href="https://{{config.chat_server}}/channel/{{rocketchat_fixed}}"
+       target="_blank">#{{ rocketchat_fixed }}
     </a>
     channel below in a separate window.
   </div>

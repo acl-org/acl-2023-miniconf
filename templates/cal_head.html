@@ -1,12 +1,13 @@
 {{ components.calendar_scripts() }}
 <script>
-  var events = JSON.parse('{{ calendar | tojson }}');
-  var event_lookup = Object.fromEntries(events.map(e => [e.title, e]));
-  var initial_view = 'timeGridWeek';
-  window.fc_current_view = initial_view;
   
   // We use https://fullcalendar.io/
   document.addEventListener('DOMContentLoaded', function() {
+      $.get("/schedule.json", function(data, status) {
+        var events = data;
+      var event_lookup = Object.fromEntries(events.map(e => [e.title, e]));
+      var initial_view = 'timeGridWeek';
+      window.fc_current_view = initial_view;
       var initialTimeZone = moment.tz.guess();
       var timeZoneSelectorEl = document.getElementById('time-zone-selector');
       var eventTypeSelectorEl = document.getElementById('event-type-selector');
@@ -131,6 +132,7 @@
     // I did not find a better way than using global variables
     window.fc_current_view = calendar.view.type;
     calendar.render();
+      });
   });
 
 </script>

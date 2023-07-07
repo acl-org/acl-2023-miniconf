@@ -2,10 +2,10 @@ from pathlib import Path
 import re
 from typing import List
 
-from pydantic import BaseModel
 from rich.progress import track
 import yaml
 import typer
+from pydantic import BaseModel
 
 from acl_miniconf.data import Paper, WORKSHOP, AnthologyAuthor
 from acl_miniconf.import_acl2023 import TLDR_LENGTH
@@ -55,18 +55,19 @@ def load_papers(path: Path):
     return papers
 
 
-class Workshop(BaseModel):
+class AnthologyWorkshop(BaseModel):
+    name: str
     short_name: str
     anthology_venue_id: str
-    name: str
     committee: List[AnthologyAuthor]
+
 
 
 def main(
     workshop_data_dir: Path = Path("workshop-data"),
     output_dir: Path = Path("data/acl_2023/data"),
 ):
-    workshops: List[Workshop] = []
+    workshops: List[AnthologyWorkshop] = []
     workshop_papers: List[Paper] = []
     for workshop_dir in track(list(workshop_data_dir.glob("*"))):
         short_name = workshop_dir.name
@@ -91,7 +92,7 @@ def main(
                     AnthologyAuthor(first_name=first_name, last_name=last_name)
                 )
             workshops.append(
-                Workshop(anthology_venue_id=prefix, name=workshop_name, committee=committee, short_name=short_name).dict()
+                AnthologyWorkshop(anthology_venue_id=prefix, name=workshop_name, committee=committee, short_name=short_name).dict()
             )
 
         papers = load_papers(workshop_dir / "papers.yml")
@@ -117,7 +118,7 @@ def main(
                     tldr=maybe_abstract[:TLDR_LENGTH]
                     if isinstance(maybe_abstract, str)
                     else "",
-                    event_ids=[],
+                    event_ids=[short_name],
                     program=WORKSHOP,
                 ).dict()
             )

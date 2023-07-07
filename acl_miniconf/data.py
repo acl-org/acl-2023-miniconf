@@ -5,11 +5,6 @@ import datetime
 from pathlib import Path
 
 from pydantic import BaseModel
-from .import_booklet_acl2023 import (
-    generate_plenaries,
-    generate_tutorials,
-    generate_workshops,
-)
 import json
 import pytz
 import yaml
@@ -20,6 +15,30 @@ FINDINGS = "Findings"
 DEMO = "Demo"
 INDUSTRY = "Industry"
 PROGRAMS = {MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY}
+
+
+PLENARY_TRACK = 'Plenary'
+WORKSHOP_TRACK = 'Workshop'
+TUTORIAL_TRACK = 'Tutorial'
+
+PLENARIES = "Plenary Sessions"
+TUTORIALS = "Tutorials"
+WORKSHOPS = "Workshops"
+PAPER_SESSIONS = "Paper Sessions"
+SOCIALS = "Socials"
+SPONSORS = "Sponsors"
+BREAKS = "Breaks"
+EVENT_TYPES = {
+    PLENARIES,
+    TUTORIALS,
+    WORKSHOPS,
+    PAPER_SESSIONS,
+    SOCIALS,
+    SPONSORS,
+    BREAKS,
+}
+# TODO: Remove this hack/grab from configuration
+CONFERENCE_TZ = pytz.timezone("America/Toronto")
 
 
 def name_to_id(name: str):
@@ -47,8 +66,8 @@ class Event(BaseModel):
     type: str
     start_time: Optional[datetime.datetime]
     end_time: Optional[datetime.datetime]
-    chairs: List[str] = None
-    paper_ids: List[str] = None
+    chairs: List[str] = []
+    paper_ids: List[str] = []
     link: Optional[str] = None
     room: Optional[str] = None
 
@@ -62,9 +81,9 @@ class Event(BaseModel):
         start = self.start_time
         end = self.end_time
         return "{}, {}-{}".format(
-            start.strftime("%b %d"),
-            start.strftime("%H:%M"),
-            end.strftime("%H:%M (%Z)"),
+            start.astimezone(CONFERENCE_TZ).strftime("%b %d"),
+            start.astimezone(CONFERENCE_TZ).strftime("%H:%M"),
+            end.astimezone(CONFERENCE_TZ).strftime("%H:%M (%Z)"),
         )
 
     @property
@@ -84,6 +103,66 @@ class Event(BaseModel):
         return end.strftime("%Y-%m-%dT%H:%M:%S")
 
 
+class Plenary(Event):
+    title: str
+    image_url: Optional[str] = None
+    presenter: Optional[str]
+    institution: Optional[str]
+    abstract: Optional[str]
+    bio: Optional[str] = None
+    # SlidesLive presentation ID
+    video_url: Optional[str] = None
+    # Overrides
+    type: str = PLENARIES
+    track: str = PLENARY_TRACK
+
+
+class Tutorial(Event):
+    title: str
+    organizers: List[str]
+    description: str
+    rocketchat_channel: Optional[str] = None
+    type: str = TUTORIALS
+    track: str = TUTORIAL_TRACK
+
+
+class AnthologyAuthor(BaseModel):
+    first_name: Optional[str]
+    middle_name: Optional[str]
+    last_name: Optional[str]
+    full_name: Optional[str] = None
+    google_scholar: Optional[str] = None
+    semantic_scholar: Optional[str] = None
+
+    @property
+    def name(self) -> str:
+        if self.full_name is None:
+            temp_author = None
+            for name in [self.first_name, self.middle_name, self.last_name]:
+                if name is not None:
+                    if temp_author is None:
+                        temp_author = name
+                    else:
+                        temp_author += f" {name}"
+            if temp_author is None:
+                raise ValueError("Empty author found")
+            else:
+                return temp_author
+        else:
+            return self.full_name
+
+
+class Workshop(Event):
+    short_name: str
+    booklet_id: str
+    anthology_venue_id: str
+    committee: List[AnthologyAuthor]
+    workshop_site_url: str
+    description: str
+    type: str = WORKSHOPS
+    track: str = WORKSHOP_TRACK
+
+
 class Session(BaseModel):
     id: str
     name: str
@@ -91,7 +170,20 @@ class Session(BaseModel):
     start_time: Optional[datetime.datetime]
     end_time: Optional[datetime.datetime]
     type: str
-    events: Dict[str, Event]
+    events: Dict[str, Event] = {}
+    plenary_events: Dict[str, Plenary] = {}
+    tutorial_events: Dict[str, Tutorial] = {}
+    workshop_events: Dict[str, Workshop] = {}
+
+    @property
+    def conference_datetime(self) -> str:
+        start = self.start_time
+        end = self.end_time
+        return "{}, {}-{}".format(
+            start.astimezone(CONFERENCE_TZ).strftime("%b %d"),
+            start.astimezone(CONFERENCE_TZ).strftime("%H:%M"),
+            end.astimezone(CONFERENCE_TZ).strftime("%H:%M (%Z)"),
+        )
 
     @property
     def day(self) -> str:
@@ -103,14 +195,6 @@ class Session(BaseModel):
         end = self.end_time.astimezone(pytz.utc)
         return "({}-{} UTC)".format(start.strftime("%H:%M"), end.strftime("%H:%M"))
 
-
-
-class AnthologyAuthor(BaseModel):
-    first_name: Optional[str]
-    middle_name: Optional[str]
-    last_name: Optional[str]
-    google_scholar: Optional[str] = None
-    semantic_scholar: Optional[str] = None
 
 class Paper(BaseModel):
     """The content of a paper.
@@ -159,11 +243,9 @@ class CommitteeMember(BaseModel):
 
 class ByUid(BaseModel):
     papers: Dict[str, Paper] = {}
-    plenary_sessions: Dict[str, Any] = {}
-    tutorials: Dict[str, Any] = {}
-    workshops: Dict[str, Any] = {}
-    sponsors: Dict[str, Any] = {}
-    plenaries: Dict[str, Any] = {}
+    plenaries: Dict[str, Plenary] = {}
+    tutorials: Dict[str, Tutorial] = {}
+    workshops: Dict[str, Workshop] = {}
 
 
 class Conference(BaseModel):
@@ -173,6 +255,9 @@ class Conference(BaseModel):
     papers: Dict[str, Paper]
     # Sessions have events (e.g., Oral session for NLP Applications, or a poster session)
     events: Dict[str, Event]
+    workshops: Dict[str, Workshop] = {}
+    plenaries: Dict[str, Plenary] = {}
+    tutorials: Dict[str, Tutorial] = {}
 
     @property
     def main_papers(self):
@@ -195,22 +280,6 @@ class Conference(BaseModel):
         return [p for p in self.papers.values() if p.program == INDUSTRY]
 
 
-PLENARIES = "Plenary Sessions"
-TUTORIALS = "Tutorials"
-WORKSHOPS = "Workshops"
-PAPER_SESSIONS = "Paper Sessions"
-SOCIALS = "Socials"
-SPONSORS = "Sponsors"
-BREAKS = "Breaks"
-EVENT_TYPES = {
-    PLENARIES,
-    TUTORIALS,
-    WORKSHOPS,
-    PAPER_SESSIONS,
-    SOCIALS,
-    SPONSORS,
-    BREAKS,
-}
 
 
 class FrontendCalendarEvent(BaseModel):
@@ -232,16 +301,16 @@ class SiteData(BaseModel):
     calendar: List[FrontendCalendarEvent]
     overall_calendar: List[FrontendCalendarEvent]
     session_types: List[str] = []
-    plenary_sessions: Dict
-    plenary_session_days: Any
+    # by plenary_id
+    plenaries: Dict[str, Plenary]
     papers: List[Paper] = []
     main_papers: List[Paper] = []
     demo_papers: List[Paper] = []
     findings_papers: List[Paper] = []
     workshop_papers: List[Paper] = []
-    tutorials: Any
+    tutorials: Dict[str, Tutorial] = {}
     tutorials_calendar: Any
-    workshops: List[Any] = []
+    workshops: Dict[str, Workshop] = {}
     socials: Any
     tracks: List[str] = []
     track_ids: List[str] = []
@@ -258,7 +327,7 @@ class SiteData(BaseModel):
 
     @classmethod
     def from_conference(
-        cls, conference: Conference, site_data_path: Path, booklet_info: Path = None
+        cls, conference: Conference, site_data_path: Path,
     ):
         days = set()
         for s in conference.sessions.values():
@@ -301,22 +370,6 @@ class SiteData(BaseModel):
         socials = {k: v for k, v in conference.sessions.items() if v.type == "Socials"}
         # Load information about plenary sessions and tutorials from the booklet
         # if the information is available.
-        try:
-            with open(booklet_info, "r") as fp:
-                booklet_data = json.load(fp)
-            plenary_sessions = generate_plenaries(booklet_data["plenaries"])
-            days = list(plenary_sessions.keys())
-            days.sort()  # Hack fix
-            plenary_session_days = [(idx, day, True) for idx, day in enumerate(days)]
-            tutorials = generate_tutorials(booklet_data["tutorials"])
-            workshops = generate_workshops(booklet_data["workshops"])
-        except FileNotFoundError:
-            plenary_sessions = {}
-            plenary_session_days = []
-            tutorials = {}
-            workshops = []
-        else:
-            pass
         site_data = cls(
             config=config,
             pages=load_all_pages_texts(site_data_path),
@@ -325,15 +378,14 @@ class SiteData(BaseModel):
             papers=list(conference.papers.values()),
             overall_calendar=[],
             session_types=[],
-            plenary_sessions=plenary_sessions,
-            plenary_session_days=plenary_session_days,
+            plenaries=conference.plenaries,
             main_papers=conference.main_papers,
             demo_papers=conference.demo_papers,
             findings_papers=conference.findings_papers,
             workshop_papers=conference.workshop_papers,
-            tutorials=tutorials,
+            tutorials=conference.tutorials,
             tutorials_calendar=[],
-            workshops=workshops,
+            workshops=conference.workshops,
             socials=socials,
             tracks=tracks,
             track_ids=track_ids,

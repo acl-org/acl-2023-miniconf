@@ -19,10 +19,16 @@ from collections import defaultdict
 from openpyxl import load_workbook
 
 from acl_miniconf.data import (
+    PLENARIES,
+    TUTORIALS,
+    WORKSHOPS,
     Session,
     Event,
     Paper,
     Conference,
+    Workshop,
+    Tutorial,
+    Plenary,
     MAIN,
     WORKSHOP,
     FINDINGS,
@@ -32,6 +38,7 @@ from acl_miniconf.data import (
     name_to_id,
     AnthologyAuthor,
 )
+from acl_miniconf.import_booklet_acl2023 import Booklet
 
 logging.basicConfig(
     format="%(message)s",
@@ -42,19 +49,23 @@ logging.basicConfig(
 )
 
 
-TLDR_LENGTH = 200
+TLDR_LENGTH = 300
 DATE_FMT = "%Y-%m-%d %H:%M"
 
-INTERNAL_TO_EXTERNAL_SESSIONS = {
-    "Session 3": "Session 1",
-    "Session 4": "Session 2",
-    "Session 5": "Session 3",
-    "Session 6": "Session 4",
-    "Session 8": "Session 5",
-    "Session 9": "Session 6",
-    "Session 10": "Session 7",
+# These should be skipped, eg plenaries in the booklet where
+# the booklet has more information (e.g., abstracts)
+UNDERLINE_EVENTS_TO_SKIP = {
+    # Plenaries
+    '15192',
+    '15244',
+    '15246',
+    '15270',
+    '15247',
+    # Spotlights
+    '15510',
+    '15511',
+    '15221',
 }
-
 
 # No Op Fixed in new program
 def internal_to_external_session(name: str):
@@ -160,16 +171,7 @@ def parse_authors(
     else:
         authors = []
         for a in anthology_data[anthology_id].authors:
-            temp_author = None
-            for name in [a.first_name, a.middle_name, a.last_name]:
-                if name is not None:
-                    if temp_author is None:
-                        temp_author = name
-                    else:
-                        temp_author += f" {name}"
-            if temp_author is None:
-                raise ValueError("Empty author found")
-            authors.append(temp_author)
+            authors.append(a.name)
         return authors
 
 
@@ -184,6 +186,8 @@ class Acl2023Parser:
         extras_xlsx_path: Path,
         acl_main_proceedings_yaml_path: Path,
         workshop_papers_yaml_path: Path,
+        workshops_yaml_path: Path,
+        booklet_json_path: Path,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
@@ -192,18 +196,30 @@ class Acl2023Parser:
         self.extras_xlsx_path = extras_xlsx_path
         self.acl_main_proceedings_yaml_path = acl_main_proceedings_yaml_path
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
+        self.workshops_yaml_path = workshops_yaml_path
+        self.booklet_json_path = booklet_json_path
+        self.booklet: Booklet = Booklet.from_booklet_data(booklet_json_path, workshops_yaml_path)
         self.anthology_data: Dict[str, AnthologyEntry] = {}
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
         self.events: Dict[str, Event] = {}
+        self.tutorials: Dict[str, Tutorial] = {}
+        self.plenaries: Dict[str, Plenary] = {}
         self.underline_assets: Dict[str, Assets] = {}
         self.zone = pytz.timezone("America/Toronto")
+        self.workshops: Dict[str, Workshop] = {}
+        self.spreadsheet_info: Dict = {}
 
     def parse(self):
         # Anthology has to be parsed first to fill in abstracts/files/links
         self._add_anthology_data()
         # Underline has to be parsed early to fill in links/files/etc
         self._parse_underline_assets()
+        self._parse_underline_spreadsheet()
+        # Early parse special sessions, so they can be filled in
+        self._parse_workshops()
+        self._parse_plenaries()
+        self._parse_tutorials()
 
         # Parse order intentional, don't change
         self._parse_oral_papers()
@@ -223,6 +239,9 @@ class Acl2023Parser:
             sessions=self.sessions,
             papers=self.papers,
             events=self.events,
+            workshops=self.workshops,
+            plenaries=self.plenaries,
+            tutorials=self.tutorials,
         )
 
     def validate(self):
@@ -231,6 +250,32 @@ class Acl2023Parser:
             if p.program != WORKSHOP:
                 assert len(p.event_ids) > 0
             assert p.program in PROGRAMS
+        
+        for e in self.events.values():
+            assert not isinstance(e, Plenary)
+            assert not isinstance(e, Tutorial)
+            assert not isinstance(e, Workshop)
+    
+    def _parse_tutorials(self):
+        self.tutorials = self.booklet.tutorials
+        for session in self.booklet.tutorial_sessions.values():
+            if session.id in self.sessions:
+                raise ValueError('Duplicate tutorial session')
+            self.sessions[session.id] = session
+    
+    def _parse_plenaries(self):
+        self.plenaries = self.booklet.plenaries
+        for session in self.booklet.plenary_sessions.values():
+            if session.id in self.sessions:
+                raise ValueError('Duplicate plenary session')
+            self.sessions[session.id] = session
+
+    def _parse_workshops(self):
+        self.workshops = self.booklet.workshops
+        for session in self.booklet.workshop_sessions.values():
+            if session.id in self.sessions:
+                raise ValueError('Duplicate workshop session')
+            self.sessions[session.id] = session
 
     def _parse_workshop_papers(self):
         logging.info("Parsing workshop papers")
@@ -305,6 +350,7 @@ class Acl2023Parser:
             datetime.datetime.strptime(f"{date_str} {end_time}", DATE_FMT)
         )
         return start_parsed_dt, end_parsed_dt
+    
 
     def _parse_spotlight_papers(self):
         logging.info("Parsing spotlight papers")
@@ -694,7 +740,7 @@ class Acl2023Parser:
                     )
                     self.papers[row.PID] = paper
 
-    def _parse_extras_from_spreadsheet(self):
+    def _parse_underline_spreadsheet(self):
         """Extracts information from the spreadsheet and fills the events that
         were not already extracted from the other TSV files.
         """
@@ -759,52 +805,43 @@ class Acl2023Parser:
                     "date": event_date.isoformat(),
                     "start": event_start.isoformat(),
                     "end": event_end.isoformat(),
+                    "underline_id": str(sheet['A'][row].value)
                 }
                 spreadsheet_info[track_name]["events"][event_id].append(event)
                 row += 1
         except IndexError:
             pass
+        self.spreadsheet_info = spreadsheet_info
 
-        self._parse_event_without_papers(spreadsheet_info, "Social", "Socials", MAIN)
+    def _parse_extras_from_spreadsheet(self):
+        self._parse_event_without_papers(self.spreadsheet_info, "Social", "Socials")
+        # Parse sessions not in the booklet
         self._parse_event_without_papers(
-            spreadsheet_info, "Plenary Sessions", "Plenary Sessions", MAIN
-        )
-        self._parse_event_without_papers(
-            spreadsheet_info, "Workshops", "Workshops", WORKSHOP
-        )
-        self._parse_multi_event_single_paper(
-            spreadsheet_info, "Tutorials", "Tutorials", MAIN
+            self.spreadsheet_info, "Plenary Sessions", "Plenary Sessions",
         )
         self._parse_event_without_papers(
-            spreadsheet_info, "Findings", "Workshops", FINDINGS
-        )
-        self._parse_event_without_papers(
-            spreadsheet_info, "Industry Track", "Poster", INDUSTRY
-        )
-        self._parse_event_without_papers(
-            spreadsheet_info, "Demo Sessions", "Poster", DEMO
+            self.spreadsheet_info, "Findings", "Workshops",
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Coffee Break", "Breaks", MAIN
+            self.spreadsheet_info, "Coffee Break", "Breaks",
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Diversity and Inclusion", "Workshops", MAIN
+            self.spreadsheet_info, "Diversity and Inclusion", "Workshops",
         )
         self._parse_multi_event_single_paper(
-            spreadsheet_info, "Student Research Workshop", "Workshops", MAIN
-        )
-        self._parse_multi_event_single_paper(
-            spreadsheet_info, "Birds of a Feather", "Socials", MAIN
+            self.spreadsheet_info, "Birds of a Feather", "Socials",
         )
 
     def _parse_event_without_papers(
-        self, spreadsheet_info, event_key, event_type, program_type, event_name=None
+        self, spreadsheet_info, event_key, event_type, event_name=None
     ):
         for session_key in spreadsheet_info[event_key]["events"]:
             # Single session, single event, single dummy paper
             # We first create the session and store a variable to reference it.
             # Because this Session has a single event, we don't iterate here.
             event_data = spreadsheet_info[event_key]["events"][session_key][0]
+            if event_data['underline_id'] in UNDERLINE_EVENTS_TO_SKIP:
+                continue
             group_session = event_data["name"]
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
@@ -849,34 +886,9 @@ class Acl2023Parser:
                 )
             event = self.events[event_id]
             session.events[event_id] = event
-            # Finally, we create a single dummy paper with the information of
-            # the Event. We then add it to the paper list of the Event above.
-            paper_id = f"event_{event_id}"
-            dummy_paper = Paper(
-                id=paper_id,
-                program=program_type,
-                title=event_data["name"],
-                authors=[],
-                track=name_to_id(group_session),
-                paper_type=event_type,
-                category="",
-                abstract=event_data["desc"] if event_data["desc"] is not None else "",
-                tldr="",
-                keywords=[],
-                pdf_url="",
-                demo_url="",
-                event_ids=[event.id],
-                similar_paper_ids=[],
-                forum="",
-                card_image_path="",
-                presentation_id="",
-                is_paper=False,
-            )
-            self.papers[paper_id] = dummy_paper
-            event.paper_ids.append(paper_id)
 
     def _parse_multi_event_single_paper(
-        self, spreadsheet_info, event_key, event_type, program_type
+        self, spreadsheet_info, event_key, event_type,
     ):
         # This is almost the exact same code than _parse_event_without_papers,
         # only with a slightly more complex event handling because a single
@@ -938,28 +950,6 @@ class Acl2023Parser:
                     )
                     session = self.sessions[group_session]
                     session.events[event_id] = self.events[event_id]
-                    dummy_paper = Paper(
-                        id=event_id,
-                        program=MAIN,
-                        title=event_name,
-                        authors=[],
-                        track=name_to_id(group_session),
-                        paper_type=event_type,
-                        category="",
-                        abstract="",
-                        tldr="",
-                        keywords=[],
-                        pdf_url="",
-                        demo_url="",
-                        event_ids=[event_id],
-                        similar_paper_ids=[],
-                        forum="",
-                        card_image_path="",
-                        presentation_id="",
-                        is_paper=False,
-                    )
-                    self.papers[event_id] = dummy_paper
-                    self.events[event_id].paper_ids.append(event_id)
 
 
 class DateTimeEncoder(json.JSONEncoder):
@@ -976,6 +966,8 @@ def main(
     extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-07-05.xlsx",
     acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
+    workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
+    booklet_json: str = "data/acl_2023/data/booklet_data.json",
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
@@ -986,6 +978,8 @@ def main(
         extras_xlsx_path=Path(extras_xlsx),
         acl_main_proceedings_yaml_path=Path(acl_main_proceedings_yaml),
         workshop_papers_yaml_path=Path(workshop_papers_yml),
+        workshops_yaml_path=Path(workshops_yaml),
+        booklet_json_path=Path(booklet_json),
     )
     conf = parser.parse()
     out_dir = Path(out_dir)

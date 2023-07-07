@@ -138,17 +138,20 @@ class Assets(BaseModel):
 class AnthologyEntry(BaseModel):
     # Without letter prefix
     paper_id: str
-    abstract: str
+    title: Optional[str] = None
+    abstract: Optional[str] = None
     # TODO: This is likely the field needed + prefix URL to get Paper PDFs
-    file: str
+    file: Optional[str] = None
     # TODO: When these are in anthology, use these to link to assets
-    attachments: Dict[str, str]
-    authors: List[AnthologyAuthor]
+    attachments: Dict[str, str] = {}
+    authors: List[AnthologyAuthor] = []
 
 
 def to_anthology_id(paper_id: str):
     if paper_id.startswith("P"):
         return paper_id[1:]
+    elif paper_id.startswith("D"):
+        return paper_id
     else:
         return None
 
@@ -177,6 +180,19 @@ def parse_authors(
         return authors
 
 
+def underline_paper_id_to_sheets_id(paper_id: Union[str, int]) -> str:
+    if isinstance(paper_id, int):
+        return str(paper_id)
+    elif paper_id.startswith('demo-'):
+        return 'D' + paper_id[5:]
+    elif paper_id.startswith('srw-'):
+        return 'S' + paper_id[4:]
+    elif paper_id.startswith('industry-'):
+        return 'I' + paper_id[9:]
+    else:
+        return paper_id
+
+
 class Acl2023Parser:
     def __init__(
         self,
@@ -187,6 +203,7 @@ class Acl2023Parser:
         spotlight_tsv_path: Path,
         extras_xlsx_path: Path,
         acl_main_proceedings_yaml_path: Path,
+        acl_demo_proceedings_yaml_path: Path,
         workshop_papers_yaml_path: Path,
         workshops_yaml_path: Path,
         booklet_json_path: Path,
@@ -197,6 +214,7 @@ class Acl2023Parser:
         self.spotlight_tsv_path = spotlight_tsv_path
         self.extras_xlsx_path = extras_xlsx_path
         self.acl_main_proceedings_yaml_path = acl_main_proceedings_yaml_path
+        self.acl_demo_proceedings_yaml_path = acl_demo_proceedings_yaml_path
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
@@ -293,7 +311,7 @@ class Acl2023Parser:
             self.papers[p.id] = p
 
     def _add_anthology_data(self):
-        logging.info("Parsing ACL Anthology Data")
+        logging.info("Parsing ACL Anthology main track data")
         with open(self.acl_main_proceedings_yaml_path) as f:
             entries = yaml.safe_load(f)
         for e in entries:
@@ -313,11 +331,28 @@ class Acl2023Parser:
                     for a in e["authors"]
                 ],
             )
+        logging.info("Parsing ACL Anthology demo track data")
+        with open(self.acl_demo_proceedings_yaml_path) as f:
+            entries = yaml.safe_load(f)
+        for e in entries:
+            self.anthology_data[str(e["id"])] = AnthologyEntry(
+                paper_id=str(e["id"]),
+                abstract=e["abstract"],
+                file=e["file"],
+                authors=[
+                    AnthologyAuthor(
+                        first_name=a["first_name"],
+                        last_name=a["last_name"],
+                    )
+                    for a in e["authors"]
+                ],
+            )
 
     def _parse_underline_assets(self):
         logging.info("Parsing Underline XLSX File")
         df = pd.read_excel(self.extras_xlsx_path, sheet_name="Lectures")
         df = df[df["Paper number"].notnull()]
+        df['Paper number'] = df['Paper number'].map(underline_paper_id_to_sheets_id)
         for _, paper in df[
             [
                 "ID",
@@ -330,7 +365,7 @@ class Acl2023Parser:
             ]
         ].iterrows():
             # Underline strips the leading letter, keep in mind
-            underline_paper_id = str(paper["Paper number"])
+            underline_paper_id = paper["Paper number"]
             assets = Assets(
                 underline_paper_id=underline_paper_id,
                 underline_id=paper["ID"],
@@ -431,6 +466,14 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+                    
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
+
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -440,7 +483,7 @@ class Acl2023Parser:
                         ),
                         # TODO: group_track
                         track=row.Track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -530,6 +573,13 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -538,7 +588,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -631,6 +681,12 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -639,7 +695,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -720,6 +776,13 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -728,7 +791,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -981,6 +1044,7 @@ def main(
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
     extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-07-05.xlsx",
     acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
+    acl_demo_proceedings_yaml: str = "private_data-acl2023/demo/papers.yml",
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
     booklet_json: str = "data/acl_2023/data/booklet_data.json",
@@ -993,6 +1057,7 @@ def main(
         spotlight_tsv_path=Path(spotlight_tsv),
         extras_xlsx_path=Path(extras_xlsx),
         acl_main_proceedings_yaml_path=Path(acl_main_proceedings_yaml),
+        acl_demo_proceedings_yaml_path=Path(acl_demo_proceedings_yaml),
         workshop_papers_yaml_path=Path(workshop_papers_yml),
         workshops_yaml_path=Path(workshops_yaml),
         booklet_json_path=Path(booklet_json),

@@ -32,42 +32,41 @@
 <div class="row p-4">
   <div class="col-md-12">
     <div class="card p-3 shadow bg-light rounded">
-        <div class="row">
-          <div class="col-md-2 col-sm-5">
-            {% if plenary_session.image_url is not none %}
-            <img src="static/images/invited/{{plenary_session.image_url}}" width="100%" class="mt-3" />
-            {% endif %}
-          </div>
+      <div class="row">
+        <div class="col-md-2 col-sm-5">
+          {% if plenary_session.image_url is not none %}
+          <img src="static/images/invited/{{plenary_session.image_url}}" width="100%" class="mt-3" />
+          {% endif %}
+        </div>
 
-          {% if plenary_session.presenter != none %}
-          <div class="m-3 text-muted">
-            <span class="card-title h3">
+        {% if plenary_session.presenter != none %}
+        <div class="m-3 text-muted">
+          <span class="card-title h3">
               {{plenary_session.presenter}}
               {% if plenary_session.institution != none %}
               / {{plenary_session.institution}}
               {% endif %}
-            </span>
-          </div>
-          {% endif %}
+          </span>
+        </div>
+        {% endif %}
 
-          {% for session in plenary_session.sessions %}
+        {% for session in plenary_session.sessions %}
           <div class="m-3 text-muted">
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
-            {% if plenary_session.presentation_id or session.presentation_id %}
-            [<a href="plenary_session_{{plenary_session.id}}.html" class="card-link">Watch video</a>]
-            {% else %}
-            [<a href="livestream.html" class="card-link">Join Livestream</a>]
-            {% endif %}
+              {% if plenary_session.presentation_id or session.presentation_id %}
+              [<a href="plenary_session_{{plenary_session.id}}.html" class="card-link">Watch video</a>]
+              {% else %}
+              [<a href="livestream.html" class="card-link">Join Livestream</a>]
+              {% endif %}
           </div>
-          {% endfor %}
+        {% endfor %}
 
-          {% if plenary_session.abstract != none %}
-          <div class="m-3">
-            {{plenary_session.abstract|markdown}}
-          </div>
-          {% endif %}
+        {% if plenary_session.abstract != none %}
+        <div class="m-3">
+          {{plenary_session.abstract|markdown}}
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -273,8 +272,7 @@
   {% set tutorial = tutorials[tutorial_key] %}
   <div class="col-md-6 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-light rounded"
-      style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
-
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
       <div class="m-3 text-muted text-center">
         <h4>
           <a href="tutorial_{{tutorial.id}}.html" class="main-title">
@@ -284,23 +282,21 @@
         </h4>
       </div>
 
-          <div class="m-3 text-muted text-center">
-            <span class="card-title h3">
-              {{ ', '.join(tutorial.organizers) }}
-            </span>
-          </div>
-        <div class="mx-4 text-left card-subtitle">
+      <div class="m-3 text-muted text-center">
+        <span class="card-title h3">
+          {{ ', '.join(tutorial.organizers) }}
+        </span>
+      </div>
 
-
-          <div class="m-3 text-center">
-            {{tutorial.start_time.strftime('%A, %B %d %H:%M')}}
-            <span class="session_times">{{session.time_string}}</span>
-          </div>
-          <div class="text-center text-muted text-monospace">
-            <div class="paper-cal-links">
-              <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-              <span id="session-cal-link-{{ tutorial.id }}-{{loop.index}}"></span>
-            </div>
+      <div class="mx-4 text-left card-subtitle">
+        <div class="m-3 text-center">
+          {{tutorial.start_time.strftime('%A, %B %d %H:%M')}}
+          <span class="session_times">{{session.time_string}}</span>
+        </div>
+        <div class="text-center text-muted text-monospace">
+          <div class="paper-cal-links">
+            <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+            <span id="session-cal-link-{{ tutorial.id }}-{{loop.index}}"></span>
           </div>
         </div>
       </div>

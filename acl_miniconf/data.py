@@ -128,7 +128,7 @@ class Tutorial(Event):
 
 class AnthologyAuthor(BaseModel):
     first_name: Optional[str]
-    middle_name: Optional[str]
+    middle_name: Optional[str] = None
     last_name: Optional[str]
     full_name: Optional[str] = None
     google_scholar: Optional[str] = None

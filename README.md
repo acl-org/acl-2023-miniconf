@@ -37,9 +37,10 @@ We are very welcoming of community contributions!
 
 ACL 2023 Miniconf is generated in three steps:
 
-1. Data is located in `data/acl_2023/data` and should be downloaded from the (private) conference google spreadsheets into these files: `oral-papers.tsv`, `poster-demo-papers.tsv`, `spotlight-papers.tsv`, and `virtual-papers.tsv`. Additionally, obtain `acl-2023-events-export-2023-06-22.xlsx` from underline to map paper IDs to underline IDs/URLs.
+1. Data is located in `data/acl_2023/data` and should be downloaded from the (private) conference google spreadsheets into these files: `oral-papers.tsv`, `poster-demo-papers.tsv`, `spotlight-papers.tsv`, and `virtual-papers.tsv`. There are additional files in the same google drive, make sure to download all of them to that folder.
 2. Run `python acl_miniconf/import_acl2023.py` to generate data to `auto_data/acl_2023/`, in `conference.json`, `conference.pkl`, and `conference.yaml` (all same content).
 3. Run `make run`
+4. Before pushing, run `make freeze` and check it works
 
 ### Update ACL 2023 Workshops from Source
 

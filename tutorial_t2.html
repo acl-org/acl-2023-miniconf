@@ -182,7 +182,7 @@
       T2: Complex Reasoning in Natural Language
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      Aman Madaan, Bill Yuchen Lin, Michihiro Yasunaga, Mor Geva, Tao Yu, Wenting Zhao
+      [&#39;Aman Madaan&#39;, &#39;Bill Yuchen Lin&#39;, &#39;Michihiro Yasunaga&#39;, &#39;Mor Geva&#39;, &#39;Tao Yu&#39;, &#39;Wenting Zhao&#39;]
     </h3>
 
     <div class="text-center p-3">
@@ -198,28 +198,6 @@
     </div>
 
     
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Session 2023-07-09T09:00:00: Jul 9:  ()</span>
-    <div>Conference Room:  </div>
-    <div>Conference Time:  (America/Toronto)</div>
-    <div>Global Time: Jul 9, <span class="session_times">Session 2023-07-09T09:00:00: Jul 9 (09:00-12:30 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -232,43 +210,6 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'T2: Complex Reasoning in Natural Language'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-09T09:00:00"),
-        end: new Date("2023-07-09T12:30:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://virtual.acl2020.org/tutorial_t2.html'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
 </script>
 
   </div>
@@ -279,7 +220,7 @@
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        Teaching machines to reason over texts has been a long-standing goal of natural language processing (NLP). To this end, researchers have designed a diverse set of complex reasoning tasks that involve compositional reasoning, knowledge retrieval, grounding, commonsense reasoning, etc.A standard choice for building systems that perform a desired type of reasoning is to fine-tune a pretrained language model (LM) on specific downstream tasks. However, recent research has demonstrated that such a straightforward approach is often brittle. For example, Elazar et al. (2021) and Branco et al. (2021) show that, on question-answering (QA) tasks, similar performance can be achieved with questions removed from the inputs. Min et al. (2019), Chen and Durrett (2019), and Tang et al. (2021) show that models trained on multi-hop QA do not generalize to answer single-hop questions. The reasoning capabilities of these models thus remain at a surface level, i.e., exploiting data patterns. Consequently, augmenting LMs with techniques that make them robust and effective becomes an active research area.We will start the tutorial by providing an overview of complex reasoning tasks where the standard application of pretrained language models fails. This tutorial then reviews recent promising directions for tackling these tasks. Specifically, we focus on the following groups of approaches that explicitly consider problem structures: (1) knowledge-augmented methods, where the knowledge is either incorporated during fine-tuning or pretraining; (2) few-shot prompting methods, which effectively guide the models to follow instructions; (3) neuro-symbolic methods, which produce explicit intermediate representations; and, (4) rationale-based methods, one of the most popular forms of the neuro-symbolic methods, which highlight subsets of input as explanations for individual model predictions. <br />
+         <br />
       </div>
     </div>
     <p></p>
@@ -294,7 +235,7 @@
   <div class="row m-2">
     <div class="col-md-12 col-xs-12 my-auto p-2" >
       <b>Information about the virtual format of this tutorial: </b>
-      None
+      
     </div>
   </div>
 

@@ -182,7 +182,7 @@
       T3: Everything you need to know about Multilingual LLMs: Towards fair, performant and reliable models for languages of the world
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      Barun Patra, Kabir Ahuja, Kalika Balia, Monojit Choudhury, Sunayana Sitaram, Vishrav Chaudhary
+      [&#39;Barun Patra&#39;, &#39;Kabir Ahuja&#39;, &#39;Kalika Balia&#39;, &#39;Monojit Choudhury&#39;, &#39;Sunayana Sitaram&#39;, &#39;Vishrav Chaudhary&#39;]
     </h3>
 
     <div class="text-center p-3">
@@ -198,28 +198,6 @@
     </div>
 
     
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Session 2023-07-09T09:00:00: Jul 9:  ()</span>
-    <div>Conference Room:  </div>
-    <div>Conference Time:  (America/Toronto)</div>
-    <div>Global Time: Jul 9, <span class="session_times">Session 2023-07-09T09:00:00: Jul 9 (09:00-12:30 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -232,43 +210,6 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'T3: Everything you need to know about Multilingual LLMs: Towards fair, performant and reliable models for languages of the world'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-09T09:00:00"),
-        end: new Date("2023-07-09T12:30:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://virtual.acl2020.org/tutorial_t3.html'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
 </script>
 
   </div>
@@ -279,7 +220,7 @@
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        This tutorial will describe various aspects of scaling up language technologies to many of the world's languages by describing the latest research in Massively Multilingual Language Models (MMLMs). We will cover topics such as data collection, training and fine-tuning of models, Responsible AI issues such as fairness, bias and toxicity, linguistic diversity and evaluation in the context of MMLMs, specifically focusing on issues in non-English and low-resource languages. Further, we will also talk about some of the real-world challenges in deploying these models in language communities in the field. With the performance of MMLMs improving in the zero-shot setting for many languages, it is now becoming feasible to use them for building language technologies in many languages of the world, and this tutorial will provide the computational linguistics community with unique insights from the latest research in multilingual models <br />
+         <br />
       </div>
     </div>
     <p></p>
@@ -294,7 +235,7 @@
   <div class="row m-2">
     <div class="col-md-12 col-xs-12 my-auto p-2" >
       <b>Information about the virtual format of this tutorial: </b>
-      None
+      
     </div>
   </div>
 

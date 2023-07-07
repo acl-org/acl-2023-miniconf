@@ -182,7 +182,7 @@
       T4: Generating Text from Language Models
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      Afra Amini}, Ph.D. Student, ETH Z\H{u, Clara Meister}, Ph.D. Student, ETH Z\H{u, John Hewitt, Ryan Cotterell}, Assistant Professor, ETH Z\H{u, Tiago Pimentel
+      [&#39;Afra Amini}, Ph.D. Student, ETH Z\\H{u&#39;, &#39;Clara Meister}, Ph.D. Student, ETH Z\\H{u&#39;, &#39;John Hewitt&#39;, &#39;Ryan Cotterell}, Assistant Professor, ETH Z\\H{u&#39;, &#39;Tiago Pimentel&#39;]
     </h3>
 
     <div class="text-center p-3">
@@ -198,28 +198,6 @@
     </div>
 
     
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Session 2023-07-09T14:00:00: Jul 9:  ()</span>
-    <div>Conference Room:  </div>
-    <div>Conference Time:  (America/Toronto)</div>
-    <div>Global Time: Jul 9, <span class="session_times">Session 2023-07-09T14:00:00: Jul 9 (14:00-17:30 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -232,43 +210,6 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'T4: Generating Text from Language Models'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-09T14:00:00"),
-        end: new Date("2023-07-09T17:30:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://virtual.acl2020.org/tutorial_t4.html'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
 </script>
 
   </div>
@@ -279,7 +220,7 @@
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        An increasingly large percentage of natural language processing (NLP) tasks center around the generation of text from probabilistic language models. Despite this trend, techniques for improving or specifying preferences in these generated texts rely mostly on intuition-based heuristics. Further, there lacks a unified presentation of their motivations, practical implementation, successes and pitfalls. Practitioners must, therefore, choose somewhat blindly between generation algorithms---like top-p sampling or beam search---which can lead to wildly different results. At the same time, language generation research continues to criticize and improve the standard toolboxes, further adding entropy to the state of the field. In this tutorial, we will provide a centralized and cohesive discussion of critical considerations when choosing how to generate from a language model. We will cover a wide range of empirically-observed problems (like degradation, hallucination, repetition) and their corresponding proposed algorithmic solutions from recent research (like top-p sampling and its successors). We will then discuss a subset of these algorithms under a unified light; most stochastic generation strategies can be framed as locally adapting the probabilities of a model to avoid failure cases. Finally, we will then cover methods in controlled generation, that go beyond just ensuring coherence to ensure text exhibits specific desired properties. We aim for NLP practitioners and researchers to leave our tutorial with a unified framework which they can use to evaluate and contribute to the latest research in language generation. <br />
+         <br />
       </div>
     </div>
     <p></p>
@@ -294,7 +235,7 @@
   <div class="row m-2">
     <div class="col-md-12 col-xs-12 my-auto p-2" >
       <b>Information about the virtual format of this tutorial: </b>
-      None
+      
     </div>
   </div>
 

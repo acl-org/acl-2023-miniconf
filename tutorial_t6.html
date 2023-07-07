@@ -182,7 +182,7 @@
       T6: Retrieval-based Language Models and Applications
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      Akari Asai, Danqi Chen, Sewon Min, Zexuan Zhong
+      [&#39;Akari Asai&#39;, &#39;Danqi Chen&#39;, &#39;Sewon Min&#39;, &#39;Zexuan Zhong&#39;]
     </h3>
 
     <div class="text-center p-3">
@@ -198,28 +198,6 @@
     </div>
 
     
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Session 2023-07-09T14:00:00: Jul 9:  ()</span>
-    <div>Conference Room:  </div>
-    <div>Conference Time:  (America/Toronto)</div>
-    <div>Global Time: Jul 9, <span class="session_times">Session 2023-07-09T14:00:00: Jul 9 (14:00-17:30 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -232,43 +210,6 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'T6: Retrieval-based Language Models and Applications'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-09T14:00:00"),
-        end: new Date("2023-07-09T17:30:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://virtual.acl2020.org/tutorial_t6.html'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
 </script>
 
   </div>
@@ -279,7 +220,7 @@
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        Retrieval-based language models (LMs) have shown impressive performance on diverse NLP tasks. In this tutorial, we will provide a comprehensive and coherent overview of recent advances in retrieval-based LMs. We will start by providing preliminaries covering the foundation of LMs (e.g., masked LMs, autoregressive LMs) and retrieval systems (e.g., nearest-neighbor search). We will then detail recent progress in retrieval-based models, focusing on their model architectures and learning approaches. Finally, we will show how retrieval-based LMs are adapted to downstream applications, and extended to multilingual and multi-modal settings. Finally, we will use an exercise to showcase the effectiveness of retrieval-based LMs. <br />
+         <br />
       </div>
     </div>
     <p></p>
@@ -294,7 +235,7 @@
   <div class="row m-2">
     <div class="col-md-12 col-xs-12 my-auto p-2" >
       <b>Information about the virtual format of this tutorial: </b>
-      None
+      
     </div>
   </div>
 

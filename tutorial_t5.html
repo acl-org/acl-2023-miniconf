@@ -182,7 +182,7 @@
       T5: Indirectly Supervised Natural Language Processing
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      Ben Zhou, Dan Roth, Kai-Wei Chang, Muhao Chen, Qiang Ning, Wenpeng Yin
+      [&#39;Ben Zhou&#39;, &#39;Dan Roth&#39;, &#39;Kai-Wei Chang&#39;, &#39;Muhao Chen&#39;, &#39;Qiang Ning&#39;, &#39;Wenpeng Yin&#39;]
     </h3>
 
     <div class="text-center p-3">
@@ -198,28 +198,6 @@
     </div>
 
     
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-session-times">
-    <span>Session 2023-07-09T14:00:00: Jul 9:  ()</span>
-    <div>Conference Room:  </div>
-    <div>Conference Time:  (America/Toronto)</div>
-    <div>Global Time: Jul 9, <span class="session_times">Session 2023-07-09T14:00:00: Jul 9 (14:00-17:30 UTC)</span></div>
-
-  
-
-  <!--
-  
-  -->
-  </div>
-  </div>
-
-  <div class="text-center text-muted text-monospace">
-  <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
-  </div>
-  </div>
-
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -232,43 +210,6 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'T5: Indirectly Supervised Natural Language Processing'.replace("#", " "),
-
-        // Event start date
-        start: new Date("2023-07-09T14:00:00"),
-        end: new Date("2023-07-09T17:30:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
-        // Event Address
-        
-
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://virtual.acl2020.org/tutorial_t5.html'
-      }
-    });
-
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
-  
 </script>
 
   </div>
@@ -279,7 +220,7 @@
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        This tutorial targets researchers and practitioners who are interested in ML technologies for NLP from indirect supervision. In particular, we will present a diverse thread of indirect supervision studies that try to answer the following questions: (i) when and how can we provide supervision for a target task T, if all we have is data that corresponds to a related task T? (ii) humans do not use exhaustive supervision; they rely on occasional feedback, and learn from incidental signals from various sources; how can we effectively incorporate such supervision in machine learning? (iii) how can we leverage multi-modal supervision to help NLP? To the end, we will discuss several lines of research that address those challenges, including (i) indirect supervision from T' that handles T with outputs spanning from a moderate size to an open space, (ii) the use of sparsely occurring and incidental signals, such as partial labels, noisy labels, knowledge-based constraints, and cross-domain or cross-task annotations—all having statistical associations with the task, (iii) principled ways to measure and understand why these incidental signals can contribute to our target tasks, and (iv) indirect supervision from vision-language signals. We will conclude the tutorial by outlining directions for further investigation. <br />
+         <br />
       </div>
     </div>
     <p></p>
@@ -294,7 +235,7 @@
   <div class="row m-2">
     <div class="col-md-12 col-xs-12 my-auto p-2" >
       <b>Information about the virtual format of this tutorial: </b>
-      None
+      
     </div>
   </div>
 

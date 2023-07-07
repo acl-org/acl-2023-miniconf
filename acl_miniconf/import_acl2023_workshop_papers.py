@@ -62,7 +62,6 @@ class AnthologyWorkshop(BaseModel):
     committee: List[AnthologyAuthor]
 
 
-
 def main(
     workshop_data_dir: Path = Path("workshop-data"),
     output_dir: Path = Path("data/acl_2023/data"),
@@ -92,7 +91,12 @@ def main(
                     AnthologyAuthor(first_name=first_name, last_name=last_name)
                 )
             workshops.append(
-                AnthologyWorkshop(anthology_venue_id=prefix, name=workshop_name, committee=committee, short_name=short_name).dict()
+                AnthologyWorkshop(
+                    anthology_venue_id=prefix,
+                    name=workshop_name,
+                    committee=committee,
+                    short_name=short_name,
+                ).dict()
             )
 
         papers = load_papers(workshop_dir / "papers.yml")

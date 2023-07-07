@@ -92,6 +92,7 @@ def livestream():
     data = _data()
     return render_template("livestream.html", **data)
 
+
 @app.route("/plenary_sessions.html")
 def plenary_sessions():
     data = _data()
@@ -99,6 +100,7 @@ def plenary_sessions():
     data["plenary_sessions"] = session_data
     data["plenary_session_days"] = session_day_data
     return render_template("plenary_sessions.html", **data)
+
 
 @app.route("/sessions.html")
 def sessions():
@@ -114,7 +116,7 @@ def sessions():
 
     data["papers"] = {k: v.dict() for k, v in by_uid.papers.items()}
     # The sessions page is for paper sessions, other sessions are shown in schedule
-    data['excluded_session_types'] = ['Breaks', 'Plenary Sessions', 'Socials']
+    data["excluded_session_types"] = ["Breaks", "Plenary Sessions", "Socials"]
     return render_template("sessions.html", **data)
 
 
@@ -148,8 +150,14 @@ def paper(uid):
     data["id"] = uid
     data["openreview"] = v
     data["paper"] = v
-    data["events"] = [conference.events[e_id] for e_id in v.event_ids if e_id in conference.events]
-    data["workshop_events"] = [conference.workshops[e_id] for e_id in v.event_ids if e_id in conference.workshops]
+    data["events"] = [
+        conference.events[e_id] for e_id in v.event_ids if e_id in conference.events
+    ]
+    data["workshop_events"] = [
+        conference.workshops[e_id]
+        for e_id in v.event_ids
+        if e_id in conference.workshops
+    ]
     data["paper_recs"] = [by_uid.papers[i] for i in v.similar_paper_ids[1:]]
     # TODO: Fix
     data["zone"] = site_data.local_timezone
@@ -188,6 +196,7 @@ def chat():
 @app.route("/schedule.json")
 def schedule_json():
     return jsonify([e.dict() for e in site_data.calendar])
+
 
 @app.route("/papers.json")
 def papers_json():
@@ -252,14 +261,14 @@ def generator():
     for wsh in site_data.workshops:
         yield "track_json", {"track_name": wsh.title, "program_name": WORKSHOP}
 
-    #for _, plenary_sessions_on_date in site_data.plenary_sessions.items():
+    # for _, plenary_sessions_on_date in site_data.plenary_sessions.items():
     #    for plenary_session in plenary_sessions_on_date:
     #        yield "plenary_session", {"uid": plenary_session.id}
 
     for tutorial in site_data.tutorials.values():
         yield "tutorial", {"uid": tutorial.id}
 
-    #for workshop in site_data.workshops.values():
+    # for workshop in site_data.workshops.values():
     #    yield "workshop", {"uid": workshop.id}
 
     # for key in site_data:
@@ -279,7 +288,8 @@ def hydra_main(cfg: DictConfig):
     global site_data
     global by_uid
     site_data = SiteData.from_conference(
-        conference, data_dir,
+        conference,
+        data_dir,
     )
     site_data.local_timezone = cfg.time_zone
     by_uid = ByUid()

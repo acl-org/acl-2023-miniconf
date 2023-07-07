@@ -43,8 +43,6 @@ def load_site_data(
     by_uid.tutorials = conference.tutorials
     by_uid.workshops = conference.workshops
 
-
-
     # workshops.html
     # workshops = build_workshops(
     #     raw_workshops=site_data["workshops"],
@@ -74,7 +72,6 @@ def extract_list_field(v, key):
         return value
     else:
         return value.split("|")
-
 
 
 def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
@@ -296,6 +293,7 @@ def compute_schedule_blocks(
 
     return blocks
 
+
 def reformat_plenary_data(plenaries):
     # Massages the data a bit to match what the template expects.
     # We would typically do this at an earlier stage, but by doing it here
@@ -303,27 +301,31 @@ def reformat_plenary_data(plenaries):
     session_data = dict()
     session_day_data = []
 
-    re_date = re.compile('.*[^\w](\w+), July (\d+).*')
-    re_time = re.compile('.*Time: (\d+:\d+).(\d+:\d+).*')
+    re_date = re.compile(".*[^\w](\w+), July (\d+).*")
+    re_time = re.compile(".*Time: (\d+:\d+).(\d+:\d+).*")
     for plenary_key, plenary in plenaries.items():
         # Parse the date and time from the description
         result_date = re_date.search(plenary.abstract)
-        date_string = '2023-07-{}'.format(result_date.group(2))
+        date_string = "2023-07-{}".format(result_date.group(2))
         plenary_day = result_date.group(1)
         result_time = re_time.search(plenary.abstract)
         start_time_string = result_time.group(1)
         end_time_string = result_time.group(2)
-        start_time = datetime.datetime.strptime('{} {}'.format(date_string, start_time_string), '%Y-%m-%d %H:%M')
-        end_time = datetime.datetime.strptime('{} {}'.format(date_string, end_time_string), '%Y-%m-%d %H:%M')
+        start_time = datetime.datetime.strptime(
+            "{} {}".format(date_string, start_time_string), "%Y-%m-%d %H:%M"
+        )
+        end_time = datetime.datetime.strptime(
+            "{} {}".format(date_string, end_time_string), "%Y-%m-%d %H:%M"
+        )
         # Load images if we have one
-        if plenary_key == 'memorial':
-            plenary.image_url = 'drago.jpg'
-        elif plenary_key == 'two-paths-to-intelligence':
-            plenary.image_url = 'invited1.jpg'
-        elif plenary_key[:10] == 'large-lang':
-            plenary.image_url = 'invited2.jpg'
-        elif plenary_key[:10] == 'the-future':
-            plenary.image_url = 'invited3.jpg'
+        if plenary_key == "memorial":
+            plenary.image_url = "drago.jpg"
+        elif plenary_key == "two-paths-to-intelligence":
+            plenary.image_url = "invited1.jpg"
+        elif plenary_key[:10] == "large-lang":
+            plenary.image_url = "invited2.jpg"
+        elif plenary_key[:10] == "the-future":
+            plenary.image_url = "invited3.jpg"
         else:
             plenary.image_url = None
         # Add the existing dates to a list of all possible dates
@@ -336,5 +338,7 @@ def reformat_plenary_data(plenaries):
 
     # Sorting days like this only works in this very specific case.
     session_day_data.sort()
-    session_day_data = list(map(lambda x: (x[0], x[1], True), enumerate(session_day_data)))
+    session_day_data = list(
+        map(lambda x: (x[0], x[1], True), enumerate(session_day_data))
+    )
     return session_data, session_day_data

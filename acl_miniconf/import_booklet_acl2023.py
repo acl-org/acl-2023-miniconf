@@ -93,7 +93,7 @@ def generate_plenaries(
         # Creating a session per plenary simplifies this
         event = Plenary(
             id=plenary_id,
-            title='Plenary: ' + plenary_dict["title"],
+            title="Plenary: " + plenary_dict["title"],
             image_url=plenary_dict["image"],
             presenter=plenary_dict["speaker_name"],
             institution=plenary_dict["institution"],
@@ -105,7 +105,7 @@ def generate_plenaries(
         )
         session = Session(
             id=plenary_id,
-            name='Plenary: ' + plenary_dict['title'],
+            name="Plenary: " + plenary_dict["title"],
             display_name=session_name,
             start_time=start_time,
             end_time=end_time,
@@ -141,7 +141,7 @@ def generate_tutorials(
         )
         session = Session(
             id=tutorial_id,
-            name=tutorial_dict['title'],
+            name=tutorial_dict["title"],
             display_name=tutorial_dict["title"],
             start_time=start_time,
             end_time=start_time,
@@ -176,7 +176,10 @@ def generate_workshops(
         workshop = Workshop(
             id=workshop_id,
             title=workshop_dict["title"],
-            committee=[AnthologyAuthor(full_name=a.strip()) for a in workshop_dict["chair"].split(",")],
+            committee=[
+                AnthologyAuthor(full_name=a.strip())
+                for a in workshop_dict["chair"].split(",")
+            ],
             workshop_site_url=workshop_dict["url"],
             description=workshop_dict["desc"],
             room=workshop_dict["location"],
@@ -187,7 +190,7 @@ def generate_workshops(
         )
         session = Session(
             id=workshop_id,
-            name=workshop_dict['title'],
+            name=workshop_dict["title"],
             display_name=workshop_dict["title"],
             start_time=start_time,
             end_time=end_time,

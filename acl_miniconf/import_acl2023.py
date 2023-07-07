@@ -61,6 +61,7 @@ UNDERLINE_EVENTS_TO_SKIP = {
     "15246",
     "15270",
     "15247",
+    "15247",  # Ethics Panel, which is a duplicate
     # Spotlights
     "15510",
     "15511",

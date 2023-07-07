@@ -327,7 +327,7 @@ def reformat_plenary_data(plenaries):
         elif plenary_key[:10] == "the-future":
             plenary.image_url = "invited/invited3.jpg"
         else:
-            plenary.image_url = 'acl2023/acl-logo.png'
+            plenary.image_url = "acl2023/acl-logo.png"
         # Add the existing dates to a list of all possible dates
         if plenary_day not in session_data:
             session_data[plenary_day] = []
@@ -338,7 +338,7 @@ def reformat_plenary_data(plenaries):
 
     # Sorting days like this only works in this very specific case.
     session_day_data.sort()
-    session_day_data = list(
-        map(lambda x: (x[0], x[1], True), enumerate(session_day_data))
-    )
+    session_day_data = [
+        (f"jul1{idx}", day, idx == 0) for idx, day in enumerate(session_day_data)
+    ]
     return session_data, session_day_data

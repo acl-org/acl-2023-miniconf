@@ -1,11 +1,8 @@
 {% extends "base.html" %}
-{% set page_title = "Q&A Sessions" %}
+{% set page_title = "Sessions" %}
 
 {% block heading %}
 {{ components.section("Paper Sessions") }}
-Each <a class="text" href="papers.html" >paper</a> has a pre-recorded 7-12 minute talk,
-        one live Q&A video sessions (on Zoom or in Gather.Town) at different times, and a linked RocketChat channel (for chatting anytime with the author).
-        This includes <a class="text" href="papers.html?filter=titles&program=demo&track=All+tracks" >System Demonstrations</a> papers</a>.
 {% endblock %}
 
 {% block tabs %}
@@ -27,13 +24,15 @@ Each <a class="text" href="papers.html" >paper</a> has a pre-recorded 7-12 minut
             <div class="plenary_sessions">
                 <hr/>
                 {% for session in sessions[day] %}
+                {% if session.type not in excluded_session_types and not session.name.startswith('Diversity and Inclusion') %}
                 <div class="row p-4 col-md-12">
-
                     <a name="{{ session.uid }}">
-                        <h5>{{ session.name }}:
-                            {{session.day}},
-                            <span class="session_times">{{session.session}} {{session.time_string}}</span>
-                        </h5>
+                        <h5>{{ session.name }}</h5>
+                            <div>Day: {{session.day}}</div>
+                            <div>{{ session.conference_datetime }}</div>
+                            <div class="session_times">
+                                {{session.session}} {{session.time_string}}
+                            </div>
                     </a>
                     {% for event_type in event_types %}
                         {% if session.events.values()|selectattr('type', 'equalto', event_type)|list|length > 0 %}
@@ -60,8 +59,8 @@ Each <a class="text" href="papers.html" >paper</a> has a pre-recorded 7-12 minut
                             {% endfor %}
                         {% endif %}
                     {% endfor %}
-
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

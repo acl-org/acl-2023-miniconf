@@ -1,41 +1,49 @@
 - anthology_venue_id: DialDoc
   committee:
   - first_name: Smaranda
+    full_name: null
     google_scholar: null
     last_name: Muresan
     middle_name: null
     semantic_scholar: null
   - first_name: Vivian
+    full_name: null
     google_scholar: null
     last_name: Chen
     middle_name: null
     semantic_scholar: null
   - first_name: Kennington
+    full_name: null
     google_scholar: null
     last_name: Casey
     middle_name: null
     semantic_scholar: null
   - first_name: Vandyke
+    full_name: null
     google_scholar: null
     last_name: David
     middle_name: null
     semantic_scholar: null
   - first_name: Dethlefs
+    full_name: null
     google_scholar: null
     last_name: Nina
     middle_name: null
     semantic_scholar: null
   - first_name: Inoue
+    full_name: null
     google_scholar: null
     last_name: Koji
     middle_name: null
     semantic_scholar: null
   - first_name: Ekstedt
+    full_name: null
     google_scholar: null
     last_name: Erik
     middle_name: null
     semantic_scholar: null
   - first_name: Ultes
+    full_name: null
     google_scholar: null
     last_name: Stefan
     middle_name: null
@@ -46,26 +54,31 @@
 - anthology_venue_id: MATCHING
   committee:
   - first_name: Estevam
+    full_name: null
     google_scholar: null
     last_name: Hruschka
     middle_name: null
     semantic_scholar: null
   - first_name: Tom
+    full_name: null
     google_scholar: null
     last_name: Mitchell
     middle_name: null
     semantic_scholar: null
   - first_name: Sajjadur
+    full_name: null
     google_scholar: null
     last_name: Rahman
     middle_name: null
     semantic_scholar: null
   - first_name: Dunja
+    full_name: null
     google_scholar: null
     last_name: "Mladeni\u0107"
     middle_name: null
     semantic_scholar: null
   - first_name: Marko
+    full_name: null
     google_scholar: null
     last_name: Grobelnik
     middle_name: null
@@ -76,16 +89,19 @@
 - anthology_venue_id: BioNLP
   committee:
   - first_name: Dina
+    full_name: null
     google_scholar: null
     last_name: Demner-fushman
     middle_name: null
     semantic_scholar: null
   - first_name: Sophia
+    full_name: null
     google_scholar: null
     last_name: Ananiadou
     middle_name: null
     semantic_scholar: null
   - first_name: Kevin
+    full_name: null
     google_scholar: null
     last_name: Cohen
     middle_name: null
@@ -95,26 +111,31 @@
 - anthology_venue_id: ACL
   committee:
   - first_name: Bhavana
+    full_name: null
     google_scholar: null
     last_name: Dalvi Mishra
     middle_name: null
     semantic_scholar: null
   - first_name: Greg
+    full_name: null
     google_scholar: null
     last_name: Durrett
     middle_name: null
     semantic_scholar: null
   - first_name: Peter
+    full_name: null
     google_scholar: null
     last_name: Jansen
     middle_name: null
     semantic_scholar: null
   - first_name: Danilo
+    full_name: null
     google_scholar: null
     last_name: Neves Ribeiro
     middle_name: null
     semantic_scholar: null
   - first_name: Jason
+    full_name: null
     google_scholar: null
     last_name: Wei
     middle_name: null
@@ -125,36 +146,43 @@
 - anthology_venue_id: ACL
   committee:
   - first_name: Manuel
+    full_name: null
     google_scholar: null
     last_name: Mager
     middle_name: null
     semantic_scholar: null
   - first_name: Abteen
+    full_name: null
     google_scholar: null
     last_name: Ebrahimi
     middle_name: null
     semantic_scholar: null
   - first_name: Arturo
+    full_name: null
     google_scholar: null
     last_name: Oncevay
     middle_name: null
     semantic_scholar: null
   - first_name: Enora
+    full_name: null
     google_scholar: null
     last_name: Rice
     middle_name: null
     semantic_scholar: null
   - first_name: Shruti
+    full_name: null
     google_scholar: null
     last_name: Rijhwani
     middle_name: null
     semantic_scholar: null
   - first_name: Alexis
+    full_name: null
     google_scholar: null
     last_name: Palmer
     middle_name: null
     semantic_scholar: null
   - first_name: Katharina
+    full_name: null
     google_scholar: null
     last_name: Kann
     middle_name: null
@@ -165,16 +193,19 @@
 - anthology_venue_id: WASSA
   committee:
   - first_name: Jeremy
+    full_name: null
     google_scholar: null
     last_name: Barnes
     middle_name: null
     semantic_scholar: null
   - first_name: "Orph\xE9e"
+    full_name: null
     google_scholar: null
     last_name: De Clercq
     middle_name: null
     semantic_scholar: null
   - first_name: Roman
+    full_name: null
     google_scholar: null
     last_name: Klinger
     middle_name: null
@@ -185,36 +216,43 @@
 - anthology_venue_id: ACL-CODI
   committee:
   - first_name: "Chlo\xE9"
+    full_name: null
     google_scholar: null
     last_name: Braud
     middle_name: null
     semantic_scholar: null
   - first_name: Yang Janet
+    full_name: null
     google_scholar: null
     last_name: Liu
     middle_name: null
     semantic_scholar: null
   - first_name: Eleni
+    full_name: null
     google_scholar: null
     last_name: Metheniti
     middle_name: null
     semantic_scholar: null
   - first_name: Philippe
+    full_name: null
     google_scholar: null
     last_name: Muller
     middle_name: null
     semantic_scholar: null
   - first_name: Laura
+    full_name: null
     google_scholar: null
     last_name: "Rivi\xE8re"
     middle_name: null
     semantic_scholar: null
   - first_name: Attapol
+    full_name: null
     google_scholar: null
     last_name: Rutherford
     middle_name: null
     semantic_scholar: null
   - first_name: Amir
+    full_name: null
     google_scholar: null
     last_name: Zeldes
     middle_name: null
@@ -224,26 +262,31 @@
 - anthology_venue_id: ClinicalNLP
   committee:
   - first_name: Tristan
+    full_name: null
     google_scholar: null
     last_name: Naumann
     middle_name: null
     semantic_scholar: null
   - first_name: Asma
+    full_name: null
     google_scholar: null
     last_name: Ben Abacha
     middle_name: null
     semantic_scholar: null
   - first_name: Steven
+    full_name: null
     google_scholar: null
     last_name: Bethard
     middle_name: null
     semantic_scholar: null
   - first_name: Kirk
+    full_name: null
     google_scholar: null
     last_name: Roberts
     middle_name: null
     semantic_scholar: null
   - first_name: Anna
+    full_name: null
     google_scholar: null
     last_name: Rumshisky
     middle_name: null
@@ -253,11 +296,13 @@
 - anthology_venue_id: StarSEM
   committee:
   - first_name: Alexis
+    full_name: null
     google_scholar: null
     last_name: Palmer
     middle_name: null
     semantic_scholar: null
   - first_name: Jose
+    full_name: null
     google_scholar: null
     last_name: Camacho-collados
     middle_name: null
@@ -267,11 +312,13 @@
 - anthology_venue_id: NLP4ConvAI
   committee:
   - first_name: Yun-Nung
+    full_name: null
     google_scholar: null
     last_name: Chen
     middle_name: null
     semantic_scholar: null
   - first_name: Abhinav
+    full_name: null
     google_scholar: null
     last_name: Rastogi
     middle_name: null
@@ -281,11 +328,13 @@
 - anthology_venue_id: LAW
   committee:
   - first_name: Jakob
+    full_name: null
     google_scholar: null
     last_name: Prange
     middle_name: null
     semantic_scholar: null
   - first_name: Annemarie
+    full_name: null
     google_scholar: null
     last_name: Friedrich
     middle_name: null
@@ -295,21 +344,25 @@
 - anthology_venue_id: ACL
   committee:
   - first_name: Garrett
+    full_name: null
     google_scholar: null
     last_name: Nicolai
     middle_name: null
     semantic_scholar: null
   - first_name: Eleanor
+    full_name: null
     google_scholar: null
     last_name: Chodroff
     middle_name: null
     semantic_scholar: null
   - first_name: Frederic
+    full_name: null
     google_scholar: null
     last_name: Mailhot
     middle_name: null
     semantic_scholar: null
   - first_name: "\xC7a\u011Fr\u0131"
+    full_name: null
     google_scholar: null
     last_name: "\xC7\xF6ltekin"
     middle_name: null
@@ -319,11 +372,13 @@
 - anthology_venue_id: SICon
   committee:
   - first_name: Kushal
+    full_name: null
     google_scholar: null
     last_name: Chawla
     middle_name: null
     semantic_scholar: null
   - first_name: Weiyan
+    full_name: null
     google_scholar: null
     last_name: Shi
     middle_name: null
@@ -333,51 +388,61 @@
 - anthology_venue_id: TrustNLP
   committee:
   - first_name: Anaelia
+    full_name: null
     google_scholar: null
     last_name: Ovalle
     middle_name: null
     semantic_scholar: null
   - first_name: Kai-Wei
+    full_name: null
     google_scholar: null
     last_name: Chang
     middle_name: null
     semantic_scholar: null
   - first_name: Ninareh
+    full_name: null
     google_scholar: null
     last_name: Mehrabi
     middle_name: null
     semantic_scholar: null
   - first_name: Yada
+    full_name: null
     google_scholar: null
     last_name: Pruksachatkun
     middle_name: null
     semantic_scholar: null
   - first_name: Aram
+    full_name: null
     google_scholar: null
     last_name: Galystan
     middle_name: null
     semantic_scholar: null
   - first_name: Jwala
+    full_name: null
     google_scholar: null
     last_name: Dhamala
     middle_name: null
     semantic_scholar: null
   - first_name: Apurv
+    full_name: null
     google_scholar: null
     last_name: Verma
     middle_name: null
     semantic_scholar: null
   - first_name: Trista
+    full_name: null
     google_scholar: null
     last_name: Cao
     middle_name: null
     semantic_scholar: null
   - first_name: Anoop
+    full_name: null
     google_scholar: null
     last_name: Kumar
     middle_name: null
     semantic_scholar: null
   - first_name: Rahul
+    full_name: null
     google_scholar: null
     last_name: Gupta
     middle_name: null
@@ -387,31 +452,37 @@
 - anthology_venue_id: wnu2023
   committee:
   - first_name: Nader
+    full_name: null
     google_scholar: null
     last_name: Akoury
     middle_name: null
     semantic_scholar: null
   - first_name: Elizabeth
+    full_name: null
     google_scholar: null
     last_name: Clark
     middle_name: null
     semantic_scholar: null
   - first_name: Mohit
+    full_name: null
     google_scholar: null
     last_name: Iyyer
     middle_name: null
     semantic_scholar: null
   - first_name: Snigdha
+    full_name: null
     google_scholar: null
     last_name: Chaturvedi
     middle_name: null
     semantic_scholar: null
   - first_name: Faeze
+    full_name: null
     google_scholar: null
     last_name: Brahman
     middle_name: null
     semantic_scholar: null
   - first_name: Khyathi
+    full_name: null
     google_scholar: null
     last_name: Chandu
     middle_name: null
@@ -421,16 +492,19 @@
 - anthology_venue_id: CAWL
   committee:
   - first_name: Kyle
+    full_name: null
     google_scholar: null
     last_name: Gorman
     middle_name: null
     semantic_scholar: null
   - first_name: Richard
+    full_name: null
     google_scholar: null
     last_name: Sproat
     middle_name: null
     semantic_scholar: null
   - first_name: Brian
+    full_name: null
     google_scholar: null
     last_name: Roark
     middle_name: null
@@ -440,46 +514,55 @@
 - anthology_venue_id: BEA
   committee:
   - first_name: Ekaterina
+    full_name: null
     google_scholar: null
     last_name: Kochmar
     middle_name: null
     semantic_scholar: null
   - first_name: Jill
+    full_name: null
     google_scholar: null
     last_name: Burstein
     middle_name: null
     semantic_scholar: null
   - first_name: Andrea
+    full_name: null
     google_scholar: null
     last_name: Horbach
     middle_name: null
     semantic_scholar: null
   - first_name: Ronja
+    full_name: null
     google_scholar: null
     last_name: Laarmann-Quante
     middle_name: null
     semantic_scholar: null
   - first_name: Nitin
+    full_name: null
     google_scholar: null
     last_name: Madnani
     middle_name: null
     semantic_scholar: null
   - first_name: "Ana\xEFs"
+    full_name: null
     google_scholar: null
     last_name: Tack
     middle_name: null
     semantic_scholar: null
   - first_name: Victoria
+    full_name: null
     google_scholar: null
     last_name: Yaneva
     middle_name: null
     semantic_scholar: null
   - first_name: Zheng
+    full_name: null
     google_scholar: null
     last_name: Yuan
     middle_name: null
     semantic_scholar: null
   - first_name: Torsten
+    full_name: null
     google_scholar: null
     last_name: Zesch
     middle_name: null
@@ -489,66 +572,79 @@
 - anthology_venue_id: ACL
   committee:
   - first_name: Burcu
+    full_name: null
     google_scholar: null
     last_name: Can
     middle_name: null
     semantic_scholar: null
   - first_name: Maximilian
+    full_name: null
     google_scholar: null
     last_name: Mozes
     middle_name: null
     semantic_scholar: null
   - first_name: Samuel
+    full_name: null
     google_scholar: null
     last_name: Cahyawijaya
     middle_name: null
     semantic_scholar: null
   - first_name: Naomi
+    full_name: null
     google_scholar: null
     last_name: Saphra
     middle_name: null
     semantic_scholar: null
   - first_name: Nora
+    full_name: null
     google_scholar: null
     last_name: Kassner
     middle_name: null
     semantic_scholar: null
   - first_name: Shauli
+    full_name: null
     google_scholar: null
     last_name: Ravfogel
     middle_name: null
     semantic_scholar: null
   - first_name: Abhilasha
+    full_name: null
     google_scholar: null
     last_name: Ravichander
     middle_name: null
     semantic_scholar: null
   - first_name: Chen
+    full_name: null
     google_scholar: null
     last_name: Zhao
     middle_name: null
     semantic_scholar: null
   - first_name: Isabelle
+    full_name: null
     google_scholar: null
     last_name: Augenstein
     middle_name: null
     semantic_scholar: null
   - first_name: Anna
+    full_name: null
     google_scholar: null
     last_name: Rogers
     middle_name: null
     semantic_scholar: null
   - first_name: Kyunghyun
+    full_name: null
     google_scholar: null
     last_name: Cho
     middle_name: null
     semantic_scholar: null
   - first_name: Edward
+    full_name: null
     google_scholar: null
     last_name: Grefenstette
     middle_name: null
     semantic_scholar: null
   - first_name: Lena
+    full_name: null
     google_scholar: null
     last_name: Voita
     middle_name: null
@@ -558,26 +654,31 @@
 - anthology_venue_id: ACL
   committee:
   - first_name: Yi-ling
+    full_name: null
     google_scholar: null
     last_name: Chung
     middle_name: null
     semantic_scholar: null
   - first_name: Paul
+    full_name: null
     google_scholar: null
     last_name: R{\"ottger}
     middle_name: null
     semantic_scholar: null
   - first_name: Debora
+    full_name: null
     google_scholar: null
     last_name: Nozza
     middle_name: null
     semantic_scholar: null
   - first_name: Zeerak
+    full_name: null
     google_scholar: null
     last_name: Talat
     middle_name: null
     semantic_scholar: null
   - first_name: Aida
+    full_name: null
     google_scholar: null
     last_name: Mostafazadeh Davani
     middle_name: null
@@ -587,36 +688,43 @@
 - anthology_venue_id: SustaiNLP
   committee:
   - first_name: Nafise
+    full_name: null
     google_scholar: null
     last_name: Sadat Moosavi
     middle_name: null
     semantic_scholar: null
   - first_name: Iryna
+    full_name: null
     google_scholar: null
     last_name: Gurevych
     middle_name: null
     semantic_scholar: null
   - first_name: Yufang
+    full_name: null
     google_scholar: null
     last_name: Hou
     middle_name: null
     semantic_scholar: null
   - first_name: Gyuwan
+    full_name: null
     google_scholar: null
     last_name: Kim
     middle_name: null
     semantic_scholar: null
   - first_name: Young Jin
+    full_name: null
     google_scholar: null
     last_name: Kim
     middle_name: null
     semantic_scholar: null
   - first_name: Tal
+    full_name: null
     google_scholar: null
     last_name: Schuster
     middle_name: null
     semantic_scholar: null
   - first_name: Ameeta
+    full_name: null
     google_scholar: null
     last_name: Agrawal
     middle_name: null
@@ -626,16 +734,19 @@
 - anthology_venue_id: IWSLT
   committee:
   - first_name: Elizabeth
+    full_name: null
     google_scholar: null
     last_name: Salesky
     middle_name: null
     semantic_scholar: null
   - first_name: Marcello
+    full_name: null
     google_scholar: null
     last_name: Federico
     middle_name: null
     semantic_scholar: null
   - first_name: Marine
+    full_name: null
     google_scholar: null
     last_name: Carpuat
     middle_name: null
@@ -645,31 +756,37 @@
 - anthology_venue_id: SemEval
   committee:
   - first_name: Atul Kr.
+    full_name: null
     google_scholar: null
     last_name: Ojha
     middle_name: null
     semantic_scholar: null
   - first_name: A. Seza
+    full_name: null
     google_scholar: null
     last_name: "Do\u011Fru\xF6z"
     middle_name: null
     semantic_scholar: null
   - first_name: Giovanni
+    full_name: null
     google_scholar: null
     last_name: Da San Martino
     middle_name: null
     semantic_scholar: null
   - first_name: Harish
+    full_name: null
     google_scholar: null
     last_name: Tayyar Madabushi
     middle_name: null
     semantic_scholar: null
   - first_name: Ritesh
+    full_name: null
     google_scholar: null
     last_name: Kumar
     middle_name: null
     semantic_scholar: null
   - first_name: Elisa
+    full_name: null
     google_scholar: null
     last_name: Sartori
     middle_name: null
@@ -679,31 +796,37 @@
 - anthology_venue_id: CODI
   committee:
   - first_name: Michael
+    full_name: null
     google_scholar: null
     last_name: Strube
     middle_name: null
     semantic_scholar: null
   - first_name: Chloe
+    full_name: null
     google_scholar: null
     last_name: Braud
     middle_name: null
     semantic_scholar: null
   - first_name: Christian
+    full_name: null
     google_scholar: null
     last_name: Hardmeier
     middle_name: null
     semantic_scholar: null
   - first_name: Junyi Jessy
+    full_name: null
     google_scholar: null
     last_name: Li
     middle_name: null
     semantic_scholar: null
   - first_name: Sharid
+    full_name: null
     google_scholar: null
     last_name: Loaiciga
     middle_name: null
     semantic_scholar: null
   - first_name: Amir
+    full_name: null
     google_scholar: null
     last_name: Zeldes
     middle_name: null

@@ -84,6 +84,9 @@
   ('schedule.html', 'Schedule'),
   ('sessions.html', 'Sessions'),
   ('papers.html', 'Papers'),
+  ('tutorials.html', 'Tutorials'),
+  ('workshops.html', 'Workshops'),
+  ('https://' + config.chat_server, 'Chat'),
   ('https://2023.aclweb.org/','Main Site')
   ] -%}
   <!-- ('https://2023.aclweb.org/faq/', 'FAQ'), -->
@@ -94,9 +97,6 @@
     ('about.html', 'Help'),
     ('plenary_sessions.html', 'Plenary'),
     ('livestream.html', 'Livestream'),
-    ('tutorials.html', 'Tutorials'),
-    ('workshops.html', 'Workshops'),
-    ('http://' + config.chat_server, 'Chat'),
     (config.gather_town , 'Gather'),
     for a new conference
     -->
@@ -114,27 +114,13 @@
       <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           {% for href, id in navigation_bar %}
-          {% if id == "Chat" %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{href}}" target="_blank" id="chatNavbarDropdown" role="button"
-              data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
-              Chat
-            </a>
-            <div class="dropdown-menu" aria-labelledby="chatNavbarDropdown">
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#chatsModal">
-                Active Chats
-              </a>
-            </div>
-          </li>
-          {% else %}
           <li class="nav-item {% if id == active_page %}active{% endif %}">
-            {% if href.startswith("http") %}
+            {% if href.startswith("https:") %}
             <a class="nav-link" href="{{href}}" target="_blank"><u>{{id}}</u></a>
             {% else %}
             <a class="nav-link" href="{{href}}">{{id}}</a>
             {% endif %}
           </li>
-          {% endif %}
           {% endfor %}
         </ul>
       </div>

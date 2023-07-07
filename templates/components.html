@@ -309,7 +309,8 @@
 
 {% macro tutorialgroup(tutorials) -%}
 <div class="cards row">
-  {% for tutorial in tutorials %}
+  {% for tutorial_key in tutorials %}
+  {% set tutorial = tutorials[tutorial_key] %}
   <div class="col-md-6 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-light rounded"
          style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
@@ -325,15 +326,14 @@
 
           <div class="m-3 text-muted text-center">
             <span class="card-title h3">
-              {{ tutorial.organizers }}
+              {{ ', '.join(tutorial.organizers) }}
             </span>
           </div>
         <div class="mx-4 text-left card-subtitle">
 
 
-          {% for session in tutorial.blocks %}
           <div class="m-3 text-center">
-            {{session.session}}
+            {{tutorial.start_time.strftime('%A, %B %d %H:%M')}}
             <span class="session_times">{{session.time_string}}</span>
           </div>
           <div class="text-center text-muted text-monospace">
@@ -342,7 +342,6 @@
               <span id="session-cal-link-{{ tutorial.id }}-{{loop.index}}"></span>
             </div>
           </div>
-          {% endfor %}
         </div>
     </div>
   </div>
@@ -359,8 +358,8 @@
   let parser = new DOMParser();
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
-  {% for tutorial in tutorials %}
-    {% for session in tutorial.blocks %}
+  {% for tutorial_key in tutorials %}
+    {% set tutorial = tutorials[tutorial_key] %}
       // create a calendar by hand
       ouicalData = addToCalendarData({
         options: {
@@ -368,19 +367,19 @@
           id: 'my-id'                               // If you don't pass an id, one will be generated for you.
         },
         data: {
-          title: '{{ title }}'.replace("#", " "),
+          title: '{{ tutorial.title }}'.replace("#", " "),
 
           // Event start date
-          start: new Date("{{session.start_time_string}}"),
-          end: new Date("{{session.end_time_string}}"),
+          start: new Date("{{tutorial.start_time.isoformat()}}"),
+          end: new Date("{{tutorial.end_time.isoformat()}}"),
           // duration: 120,                           // Event duration (IN MINUTES)
           // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
           // Event timezone. Will convert the given time to that zone
           timezone: 'UTC',
           // Event Address
-          {% if session.link %}
-            address: '{{session.link}}',
+          {% if tutorial.link %}
+            address: '{{tutorial.link}}',
           {% endif %}
 
           // Event Description
@@ -398,7 +397,6 @@
         calendarNodeSpan.appendChild(document.createTextNode("]"));
         targetNode.appendChild(calendarNodeSpan);
       }
-    {% endfor %}
   {% endfor %}
 </script>
 

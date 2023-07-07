@@ -10,7 +10,7 @@
       {{tutorial.title}}
     </h2>
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      {{ tutorial.organizers }}
+      {{ ', '.join(tutorial.organizers) }}
     </h3>
 
     <div class="text-center p-3">
@@ -55,7 +55,7 @@
     <div class="card-text">
       <div id="abstractExample">
         <span class="font-weight-bold">Abstract:</span>
-        {{tutorial.abstract|safe}} <br />
+        {{tutorial.description|safe}} <br />
       </div>
     </div>
     <p></p>
@@ -63,7 +63,6 @@
 </div>
 
 <!-- Schedule -->
-{% if tutorial.sessions %}
 <div id="schedule" class="collapse" aria-labelledby="schedule">
   <div class="card-body">
     <table class="table table-bordered table-striped" style="font-size: small;">
@@ -75,20 +74,17 @@
         </tr>
       </thead>
       <tbody>
-        {% for event in tutorial.sessions %}
         <tr>
             <td>
-              {{event.day}}, <span class="session_times">{{event.time_string}}</span>
+              {{tutorial.start_time.strftime('%A')}}, <span class="session_times">{{tutorial.start_time.strftime('%H:%M')}}</span>
             </td>
-          <td scope="row">{{event.session_name}}</td>
-          <td style="white-space: pre-wrap;">{{event.hosts}}</td>
+          <td scope="row">{{tutorial.title}}</td>
+          <td style="white-space: pre-wrap;">{{', '.join(tutorial.organizers)}}</td>
         </tr>
-        {% endfor %}
       </tbody>
     </table>
   </div>
 </div>
-{% endif %}
 <script src="static/js/time-extend.js"></script>
 
 <div class="container" style="background-color:white; padding: 0px;">

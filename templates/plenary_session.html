@@ -64,7 +64,6 @@
   <!-- Multiple Videos -->
   {% if plenary_session.videos != none %}
 
-  {% if plenary_session.rocketchat_channel is defined %}
   <!-- We follow the RC IDs in the main conference -->
   {% if plenary_session.id == 'two-paths-to-intelligence' %}
     {% set rocketchat_fixed = 'paper-event_keynote-1_-geoffrey-hinton' %}
@@ -86,7 +85,6 @@
     </a>
     channel below in a separate window.
   </div>
-  {% endif %}
 
   <div class="row m-2">
     <div class="col-md-7 col-xs-12 p-2">
@@ -108,7 +106,7 @@
 
     <div class="col-md-5 col-xs-12 p-2">
       <div id="gitter" class="slp">
-        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{rocketchat_fixed}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
   </div>
@@ -183,8 +181,8 @@
     {% elif plenary_session.rocketchat_channel %}
     <div class="text-muted text-center">
       You can open the
-        <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
-           target="_blank">#{{plenary_session.rocketchat_channel}}</a>
+        <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_fixed}}"
+           target="_blank">#{{plenary_session.rocketchat_fixed}}</a>
         channel
         in a separate window.
     </div>
@@ -223,10 +221,11 @@
     {% endif %}
 
     <!-- Chat -->
-    {% if plenary_session.rocketchat_channel %}
+    {% if rocketchat_fixed %}
     <div class="col-md-{{ n }} col-xs-12 p-2">
       <div id="gitter" class="slp">
-        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+        {{rocketchat_fixed}}
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{rocketchat_fixed}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
     {% endif %}

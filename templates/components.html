@@ -32,19 +32,11 @@
 <div class="row p-4">
   <div class="col-md-12">
     <div class="card p-3 shadow bg-light rounded">
-      <div class="row">
-        <div class="col-md-2 col-sm-5">
-          {% if plenary_session.image is not none %}
-          <img src="static/images/invited/{{plenary_session.image}}" width="100%" class="mt-3" />
-          {% endif %}
-        </div>
-        <div class="col-md-10 col-sm-6">
-          <div class="m-3 text-muted">
-            <h4>
-              <a href="plenary_session_{{plenary_session.id}}.html" class="main-title">
-                {{plenary_session.title}}
-              </a>
-            </h4>
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            {% if plenary_session.image_url is not none %}
+            <img src="static/images/invited/{{plenary_session.image_url}}" width="100%" class="mt-3" />
+            {% endif %}
           </div>
 
           {% if plenary_session.presenter != none %}
@@ -277,7 +269,8 @@
 
 {% macro tutorialgroup(tutorials) -%}
 <div class="cards row">
-  {% for tutorial in tutorials %}
+  {% for tutorial_key in tutorials %}
+  {% set tutorial = tutorials[tutorial_key] %}
   <div class="col-md-6 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-light rounded"
       style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
@@ -291,23 +284,23 @@
         </h4>
       </div>
 
-      <div class="m-3 text-muted text-center">
-        <span class="card-title h3">
-          {{ tutorial.organizers }}
-        </span>
-      </div>
-      <div class="mx-4 text-left card-subtitle">
+          <div class="m-3 text-muted text-center">
+            <span class="card-title h3">
+              {{ ', '.join(tutorial.organizers) }}
+            </span>
+          </div>
+        <div class="mx-4 text-left card-subtitle">
 
 
-        {% for session in tutorial.blocks %}
-        <div class="m-3 text-center">
-          {{session.session}}
-          <span class="session_times">{{session.time_string}}</span>
-        </div>
-        <div class="text-center text-muted text-monospace">
-          <div class="paper-cal-links">
-            <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-            <span id="session-cal-link-{{ tutorial.id }}-{{loop.index}}"></span>
+          <div class="m-3 text-center">
+            {{tutorial.start_time.strftime('%A, %B %d %H:%M')}}
+            <span class="session_times">{{session.time_string}}</span>
+          </div>
+          <div class="text-center text-muted text-monospace">
+            <div class="paper-cal-links">
+              <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+              <span id="session-cal-link-{{ tutorial.id }}-{{loop.index}}"></span>
+            </div>
           </div>
         </div>
         {% endfor %}
@@ -327,29 +320,29 @@
   let parser = new DOMParser();
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
-  {% for tutorial in tutorials %}
-  {% for session in tutorial.blocks %}
-  // create a calendar by hand
-  ouicalData = addToCalendarData({
-    options: {
-      class: 'my-class',
-      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-    },
-    data: {
-      title: '{{ title }}'.replace("#", " "),
+  {% for tutorial_key in tutorials %}
+    {% set tutorial = tutorials[tutorial_key] %}
+      // create a calendar by hand
+      ouicalData = addToCalendarData({
+        options: {
+          class: 'my-class',
+          id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+        },
+        data: {
+          title: '{{ tutorial.title }}'.replace("#", " "),
 
-      // Event start date
-      start: new Date("{{session.start_time_string}}"),
-      end: new Date("{{session.end_time_string}}"),
-      // duration: 120,                           // Event duration (IN MINUTES)
-      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+          // Event start date
+          start: new Date("{{tutorial.start_time.isoformat()}}"),
+          end: new Date("{{tutorial.end_time.isoformat()}}"),
+          // duration: 120,                           // Event duration (IN MINUTES)
+          // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
-      // Event timezone. Will convert the given time to that zone
-      timezone: 'UTC',
+          // Event timezone. Will convert the given time to that zone
+          timezone: 'UTC',
           // Event Address
-          {% if session.link %}
-  address: '{{session.link}}',
-    {% endif %}
+          {% if tutorial.link %}
+            address: '{{tutorial.link}}',
+          {% endif %}
 
   // Event Description
   // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
@@ -366,7 +359,6 @@
     calendarNodeSpan.appendChild(document.createTextNode("]"));
     targetNode.appendChild(calendarNodeSpan);
   }
-  {% endfor %}
   {% endfor %}
 </script>
 

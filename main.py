@@ -26,8 +26,10 @@ app.config.from_object(__name__)
 freezer = Freezer(app)
 markdown = Markdown(app)
 
+
 def take_one(dictionary: Dict):
     return next(iter(dictionary.values()))
+
 
 app.jinja_env.filters["quote_plus"] = quote_plus
 app.jinja_env.filters["take_one"] = take_one
@@ -265,15 +267,14 @@ def generator():
     for wsh in site_data.workshops:
         yield "track_json", {"track_name": wsh.title, "program_name": WORKSHOP}
 
-    # for _, plenary_sessions_on_date in site_data.plenary_sessions.items():
-    #    for plenary_session in plenary_sessions_on_date:
-    #        yield "plenary_session", {"uid": plenary_session.id}
+    for plenary_key, _ in site_data.plenaries.items():
+        yield "plenary_session", {"uid": plenary_key}
 
     for tutorial in site_data.tutorials.values():
         yield "tutorial", {"uid": tutorial.id}
 
     for workshop in site_data.workshops.values():
-       yield "workshop", {"uid": workshop.id}
+        yield "workshop", {"uid": workshop.id}
 
     # for key in site_data:
     #    yield "serve", {"path": key}

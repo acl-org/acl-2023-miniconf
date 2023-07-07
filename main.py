@@ -26,7 +26,11 @@ app.config.from_object(__name__)
 freezer = Freezer(app)
 markdown = Markdown(app)
 
+def take_one(dictionary: Dict):
+    return next(iter(dictionary.values()))
+
 app.jinja_env.filters["quote_plus"] = quote_plus
+app.jinja_env.filters["take_one"] = take_one
 
 # MAIN PAGES
 

@@ -180,6 +180,19 @@ def parse_authors(
         return authors
 
 
+def underline_paper_id_to_sheets_id(paper_id: Union[str, int]) -> str:
+    if isinstance(paper_id, int):
+        return str(paper_id)
+    elif paper_id.startswith('demo-'):
+        return 'D' + paper_id[5:]
+    elif paper_id.startswith('srw-'):
+        return 'S' + paper_id[4:]
+    elif paper_id.startswith('industry-'):
+        return 'I' + paper_id[9:]
+    else:
+        return paper_id
+
+
 class Acl2023Parser:
     def __init__(
         self,
@@ -339,6 +352,7 @@ class Acl2023Parser:
         logging.info("Parsing Underline XLSX File")
         df = pd.read_excel(self.extras_xlsx_path, sheet_name="Lectures")
         df = df[df["Paper number"].notnull()]
+        df['Paper number'] = df['Paper number'].map(underline_paper_id_to_sheets_id)
         for _, paper in df[
             [
                 "ID",
@@ -351,7 +365,7 @@ class Acl2023Parser:
             ]
         ].iterrows():
             # Underline strips the leading letter, keep in mind
-            underline_paper_id = str(paper["Paper number"])
+            underline_paper_id = paper["Paper number"]
             assets = Assets(
                 underline_paper_id=underline_paper_id,
                 underline_id=paper["ID"],
@@ -452,6 +466,14 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+                    
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
+
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -461,7 +483,7 @@ class Acl2023Parser:
                         ),
                         # TODO: group_track
                         track=row.Track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -551,6 +573,13 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -559,7 +588,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -652,6 +681,12 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -660,7 +695,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,
@@ -741,6 +776,13 @@ class Acl2023Parser:
                     else:
                         abstract = ""
                         tldr = ""
+
+                    if row.Category == 'Demo':
+                        paper_length = 'demo'
+                    elif row.Category == 'Industry':
+                        paper_length = 'industry'
+                    else:
+                        paper_length = row.Category
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -749,7 +791,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
-                        paper_type=row.Length,
+                        paper_type=paper_length,
                         category=row.Category,
                         abstract=abstract,
                         tldr=tldr,

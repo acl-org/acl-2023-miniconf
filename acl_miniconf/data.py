@@ -74,14 +74,14 @@ class Event(BaseModel):
     @property
     def day(self) -> str:
         start_time = self.start_time.astimezone(pytz.utc)
-        return start_time.strftime("%b %d")
+        return start_time.strftime("%B %d")
 
     @property
     def conference_datetime(self) -> str:
         start = self.start_time
         end = self.end_time
         return "{}, {}-{}".format(
-            start.astimezone(CONFERENCE_TZ).strftime("%b %d"),
+            start.astimezone(CONFERENCE_TZ).strftime("%B %d"),
             start.astimezone(CONFERENCE_TZ).strftime("%H:%M"),
             end.astimezone(CONFERENCE_TZ).strftime("%H:%M (%Z)"),
         )
@@ -180,14 +180,14 @@ class Session(BaseModel):
         start = self.start_time
         end = self.end_time
         return "{}, {}-{}".format(
-            start.astimezone(CONFERENCE_TZ).strftime("%b %d"),
+            start.astimezone(CONFERENCE_TZ).strftime("%B %d"),
             start.astimezone(CONFERENCE_TZ).strftime("%H:%M"),
             end.astimezone(CONFERENCE_TZ).strftime("%H:%M (%Z)"),
         )
 
     @property
     def day(self) -> str:
-        return self.start_time.astimezone(pytz.utc).strftime("%b %d")
+        return self.start_time.astimezone(pytz.utc).strftime("%B %d")
 
     @property
     def time_string(self) -> str:

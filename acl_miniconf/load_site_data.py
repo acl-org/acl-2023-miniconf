@@ -319,15 +319,15 @@ def reformat_plenary_data(plenaries):
         )
         # Load images if we have one
         if plenary_key == "memorial":
-            plenary.image_url = "drago.jpg"
+            plenary.image_url = "invited/drago.jpg"
         elif plenary_key == "two-paths-to-intelligence":
-            plenary.image_url = "invited1.jpg"
+            plenary.image_url = "invited/invited1.jpg"
         elif plenary_key[:10] == "large-lang":
-            plenary.image_url = "invited2.jpg"
+            plenary.image_url = "invited/invited2.jpg"
         elif plenary_key[:10] == "the-future":
-            plenary.image_url = "invited3.jpg"
+            plenary.image_url = "invited/invited3.jpg"
         else:
-            plenary.image_url = None
+            plenary.image_url = 'acl2023/acl-logo.png'
         # Add the existing dates to a list of all possible dates
         if plenary_day not in session_data:
             session_data[plenary_day] = []

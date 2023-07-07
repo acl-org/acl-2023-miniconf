@@ -35,38 +35,48 @@
       <div class="row">
         <div class="col-md-2 col-sm-5">
           {% if plenary_session.image_url is not none %}
-          <img src="static/images/invited/{{plenary_session.image_url}}" width="100%" class="mt-3" />
+          <img src="static/images/{{plenary_session.image_url}}" width="100%" class="mt-3" />
           {% endif %}
         </div>
 
-        {% if plenary_session.presenter != none %}
-        <div class="m-3 text-muted">
-          <span class="card-title h3">
+        <div class="col-md-10 col-sm-6">
+          <div class="m-3 text-muted">
+            <h4>
+            <a href="plenary_session_{{plenary_session.id}}.html" class="main-title" >
+              {{plenary_session.title}}
+            </a>
+            </h4>
+          </div>
+
+          {% if plenary_session.presenter != none %}
+          <div class="m-3 text-muted">
+            <span class="card-title h3">
               {{plenary_session.presenter}}
               {% if plenary_session.institution != none %}
               / {{plenary_session.institution}}
               {% endif %}
-          </span>
-        </div>
-        {% endif %}
-
-        {% for session in plenary_session.sessions %}
-          <div class="m-3 text-muted">
-            {{session.session}}
-            <span class="session_times">{{session.time_string}}</span>
-              {% if plenary_session.presentation_id or session.presentation_id %}
-              [<a href="plenary_session_{{plenary_session.id}}.html" class="card-link">Watch video</a>]
-              {% else %}
-              [<a href="livestream.html" class="card-link">Join Livestream</a>]
-              {% endif %}
+            </span>
           </div>
-        {% endfor %}
+          {% endif %}
 
-        {% if plenary_session.abstract != none %}
-        <div class="m-3">
-          {{plenary_session.abstract|markdown}}
+          {% for session in plenary_session.sessions %}
+            <div class="m-3 text-muted">
+              {{session.session}}
+              <span class="session_times">{{session.time_string}}</span>
+                {% if plenary_session.presentation_id or session.presentation_id %}
+                [<a href="plenary_session_{{plenary_session.id}}.html" class="card-link">Watch video</a>]
+                {% else %}
+                [<a href="livestream.html" class="card-link">Join Livestream</a>]
+                {% endif %}
+            </div>
+          {% endfor %}
+
+          {% if plenary_session.abstract != none %}
+          <div class="m-3">
+            {{plenary_session.abstract|markdown}}
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
       </div>
     </div>
   </div>

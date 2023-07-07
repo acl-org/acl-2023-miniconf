@@ -13,11 +13,17 @@
       {{ workshop.committee }}
     </h3>
  -->
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      {% for author in workshop.committee %}
+      <a href="papers.html?filter=authors&search={{author.full_name}}&program=all"
+        class="text-primary">{{author.full_name}}</a>{{
+      "," if not loop.last }}
+      {% endfor %}
+    </h3>
+    <div class="text-muted text-center">
+      {{workshop.description|safe}}
+    </div>
     <div class="text-center p-3">
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Description
-      </a>
-
       {% if workshop.workshop_site_url %}
       <a href="{{workshop.workshop_site_url}}" target="_blank" class="card-link">
         External Website
@@ -50,7 +56,7 @@
   </div> -->
   </div>
 
-  <div id="details" class="pp-card m-3 collapse hide">
+  <!-- <div id="details" class="pp-card m-3 collapse hide">
     <div class="card-body">
       <div class="card-text">
         <div id="abstractExample">
@@ -60,7 +66,7 @@
       <p></p>
     </div>
   </div>
-
+ -->
   <!-- Schedule -->
   <!-- {% if workshop.sessions %}
   <div id="schedule" class="collapse" aria-labelledby="schedule">

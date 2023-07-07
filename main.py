@@ -268,8 +268,8 @@ def generator():
     for tutorial in site_data.tutorials.values():
         yield "tutorial", {"uid": tutorial.id}
 
-    # for workshop in site_data.workshops.values():
-    #    yield "workshop", {"uid": workshop.id}
+    for workshop in site_data.workshops.values():
+       yield "workshop", {"uid": workshop.id}
 
     # for key in site_data:
     #    yield "serve", {"path": key}

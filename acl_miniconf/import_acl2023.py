@@ -900,7 +900,7 @@ class Acl2023Parser:
         self._parse_multi_event_single_paper(
             self.spreadsheet_info,
             "Diversity and Inclusion",
-            "Workshops",
+            "Socials",
         )
         self._parse_multi_event_single_paper(
             self.spreadsheet_info,

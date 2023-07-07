@@ -40,7 +40,7 @@ class AclRcHelper:
         self.conference: Conference = Conference.parse_file(program_json_path)
         with open(booklet_json_path) as f:
             self.booklet = json.load(f)
-        
+
         with open(workshops_yaml_path) as f:
             self.workshops = yaml.safe_load(f)
         self.dry_run = dry_run
@@ -59,7 +59,9 @@ class AclRcHelper:
             c["name"] for c in self.rocket.channels_list(count=0).json()["channels"]
         ]
 
-    def create_channel(self, name: str, topic: str, description: str, create: bool = True):
+    def create_channel(
+        self, name: str, topic: str, description: str, create: bool = True
+    ):
         if self.dry_run:
             print("Dry Run: Creating " + name + " topic " + topic)
         else:
@@ -69,40 +71,42 @@ class AclRcHelper:
                     raise ValueError(f"Bad response: name={name} response={created}")
                 channel_id = created["channel"]["_id"]
             else:
-                channel_id = self.rocket.channels_info(channel=name).json()['channel']['_id']
+                channel_id = self.rocket.channels_info(channel=name).json()["channel"][
+                    "_id"
+                ]
             self.rocket.channels_set_topic(channel_id, topic).json()
             self.rocket.channels_set_description(channel_id, description).json()
-    
+
     def create_tutorial_channels(self):
         existing_channels = set(self.get_channel_names())
         skipped = 0
         created = 0
-        for tutorial in track(self.booklet['tutorials']):
-            tutorial_id = tutorial['id'].replace('t', '')
-            channel_name = f'tutorial-{tutorial_id}'
-            author_string = ", ".join(tutorial['hosts'])
-            title = tutorial['title']
+        for tutorial in track(self.booklet["tutorials"]):
+            tutorial_id = tutorial["id"].replace("t", "")
+            channel_name = f"tutorial-{tutorial_id}"
+            author_string = ", ".join(tutorial["hosts"])
+            title = tutorial["title"]
             topic = f"{title} - {author_string}"
             create = channel_name not in existing_channels
-            self.create_channel(channel_name, topic, tutorial['desc'], create=create)
+            self.create_channel(channel_name, topic, tutorial["desc"], create=create)
             created += 1
 
         print(
             f"Total tutorials: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
         )
-    
+
     def create_workshop_channels(self):
         existing_channels = set(self.get_channel_names())
         skipped = 0
         created = 0
 
         for ws in track(self.workshops):
-            if ws['short_name'] == 'inputs':
-                workshop_id = ws['anthology_venue_id']
+            if ws["short_name"] == "inputs":
+                workshop_id = ws["anthology_venue_id"]
             else:
-                workshop_id = ws['short_name']
-            channel_name = f'workshop-{workshop_id}'
-            title = ws['name']
+                workshop_id = ws["short_name"]
+            channel_name = f"workshop-{workshop_id}"
+            title = ws["name"]
             topic = f"{title} - {workshop_id}"
             create = channel_name not in existing_channels
             self.create_channel(channel_name, topic, topic, create=create)
@@ -111,7 +115,6 @@ class AclRcHelper:
         print(
             f"Total workshops: {len(self.conference.papers)}, Created: {created} Skipped: {skipped} Total: {created + skipped}"
         )
-        
 
     def create_paper_channels(self):
         existing_channels = set(self.get_channel_names())

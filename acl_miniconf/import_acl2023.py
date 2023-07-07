@@ -56,16 +56,17 @@ DATE_FMT = "%Y-%m-%d %H:%M"
 # the booklet has more information (e.g., abstracts)
 UNDERLINE_EVENTS_TO_SKIP = {
     # Plenaries
-    '15192',
-    '15244',
-    '15246',
-    '15270',
-    '15247',
+    "15192",
+    "15244",
+    "15246",
+    "15270",
+    "15247",
     # Spotlights
-    '15510',
-    '15511',
-    '15221',
+    "15510",
+    "15511",
+    "15221",
 }
+
 
 # No Op Fixed in new program
 def internal_to_external_session(name: str):
@@ -198,7 +199,9 @@ class Acl2023Parser:
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
-        self.booklet: Booklet = Booklet.from_booklet_data(booklet_json_path, workshops_yaml_path)
+        self.booklet: Booklet = Booklet.from_booklet_data(
+            booklet_json_path, workshops_yaml_path
+        )
         self.anthology_data: Dict[str, AnthologyEntry] = {}
         self.papers: Dict[str, Paper] = {}
         self.sessions: Dict[str, Session] = {}
@@ -250,31 +253,31 @@ class Acl2023Parser:
             if p.program != WORKSHOP:
                 assert len(p.event_ids) > 0
             assert p.program in PROGRAMS
-        
+
         for e in self.events.values():
             assert not isinstance(e, Plenary)
             assert not isinstance(e, Tutorial)
             assert not isinstance(e, Workshop)
-    
+
     def _parse_tutorials(self):
         self.tutorials = self.booklet.tutorials
         for session in self.booklet.tutorial_sessions.values():
             if session.id in self.sessions:
-                raise ValueError('Duplicate tutorial session')
+                raise ValueError("Duplicate tutorial session")
             self.sessions[session.id] = session
-    
+
     def _parse_plenaries(self):
         self.plenaries = self.booklet.plenaries
         for session in self.booklet.plenary_sessions.values():
             if session.id in self.sessions:
-                raise ValueError('Duplicate plenary session')
+                raise ValueError("Duplicate plenary session")
             self.sessions[session.id] = session
 
     def _parse_workshops(self):
         self.workshops = self.booklet.workshops
         for session in self.booklet.workshop_sessions.values():
             if session.id in self.sessions:
-                raise ValueError('Duplicate workshop session')
+                raise ValueError("Duplicate workshop session")
             self.sessions[session.id] = session
 
     def _parse_workshop_papers(self):
@@ -350,7 +353,6 @@ class Acl2023Parser:
             datetime.datetime.strptime(f"{date_str} {end_time}", DATE_FMT)
         )
         return start_parsed_dt, end_parsed_dt
-    
 
     def _parse_spotlight_papers(self):
         logging.info("Parsing spotlight papers")
@@ -805,7 +807,7 @@ class Acl2023Parser:
                     "date": event_date.isoformat(),
                     "start": event_start.isoformat(),
                     "end": event_end.isoformat(),
-                    "underline_id": str(sheet['A'][row].value)
+                    "underline_id": str(sheet["A"][row].value),
                 }
                 spreadsheet_info[track_name]["events"][event_id].append(event)
                 row += 1
@@ -817,19 +819,29 @@ class Acl2023Parser:
         self._parse_event_without_papers(self.spreadsheet_info, "Social", "Socials")
         # Parse sessions not in the booklet
         self._parse_event_without_papers(
-            self.spreadsheet_info, "Plenary Sessions", "Plenary Sessions",
+            self.spreadsheet_info,
+            "Plenary Sessions",
+            "Plenary Sessions",
         )
         self._parse_event_without_papers(
-            self.spreadsheet_info, "Findings", "Workshops",
+            self.spreadsheet_info,
+            "Findings",
+            "Workshops",
         )
         self._parse_multi_event_single_paper(
-            self.spreadsheet_info, "Coffee Break", "Breaks",
+            self.spreadsheet_info,
+            "Coffee Break",
+            "Breaks",
         )
         self._parse_multi_event_single_paper(
-            self.spreadsheet_info, "Diversity and Inclusion", "Workshops",
+            self.spreadsheet_info,
+            "Diversity and Inclusion",
+            "Workshops",
         )
         self._parse_multi_event_single_paper(
-            self.spreadsheet_info, "Birds of a Feather", "Socials",
+            self.spreadsheet_info,
+            "Birds of a Feather",
+            "Socials",
         )
 
     def _parse_event_without_papers(
@@ -840,7 +852,7 @@ class Acl2023Parser:
             # We first create the session and store a variable to reference it.
             # Because this Session has a single event, we don't iterate here.
             event_data = spreadsheet_info[event_key]["events"][session_key][0]
-            if event_data['underline_id'] in UNDERLINE_EVENTS_TO_SKIP:
+            if event_data["underline_id"] in UNDERLINE_EVENTS_TO_SKIP:
                 continue
             group_session = event_data["name"]
             self.sessions[group_session] = Session(
@@ -888,7 +900,10 @@ class Acl2023Parser:
             session.events[event_id] = event
 
     def _parse_multi_event_single_paper(
-        self, spreadsheet_info, event_key, event_type,
+        self,
+        spreadsheet_info,
+        event_key,
+        event_type,
     ):
         # This is almost the exact same code than _parse_event_without_papers,
         # only with a slightly more complex event handling because a single

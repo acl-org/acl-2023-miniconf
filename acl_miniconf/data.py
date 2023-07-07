@@ -17,9 +17,9 @@ INDUSTRY = "Industry"
 PROGRAMS = {MAIN, WORKSHOP, FINDINGS, DEMO, INDUSTRY}
 
 
-PLENARY_TRACK = 'Plenary'
-WORKSHOP_TRACK = 'Workshop'
-TUTORIAL_TRACK = 'Tutorial'
+PLENARY_TRACK = "Plenary"
+WORKSHOP_TRACK = "Workshop"
+TUTORIAL_TRACK = "Tutorial"
 
 PLENARIES = "Plenary Sessions"
 TUTORIALS = "Tutorials"
@@ -280,8 +280,6 @@ class Conference(BaseModel):
         return [p for p in self.papers.values() if p.program == INDUSTRY]
 
 
-
-
 class FrontendCalendarEvent(BaseModel):
     title: str
     start: datetime.datetime
@@ -327,7 +325,9 @@ class SiteData(BaseModel):
 
     @classmethod
     def from_conference(
-        cls, conference: Conference, site_data_path: Path,
+        cls,
+        conference: Conference,
+        site_data_path: Path,
     ):
         days = set()
         for s in conference.sessions.values():

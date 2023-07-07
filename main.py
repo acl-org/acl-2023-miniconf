@@ -12,7 +12,7 @@ from flask import Flask, jsonify, redirect, render_template, send_from_directory
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
 
-from acl_miniconf.load_site_data import load_site_data
+from acl_miniconf.load_site_data import load_site_data, reformat_plenary_data
 from acl_miniconf.data import WORKSHOP, Conference, SiteData, ByUid, Paper
 
 conference: Conference = None
@@ -92,6 +92,13 @@ def livestream():
     data = _data()
     return render_template("livestream.html", **data)
 
+@app.route("/plenary_sessions.html")
+def plenary_sessions():
+    data = _data()
+    session_data, session_day_data = reformat_plenary_data(site_data.plenaries)
+    data["plenary_sessions"] = session_data
+    data["plenary_session_days"] = session_day_data
+    return render_template("plenary_sessions.html", **data)
 
 @app.route("/sessions.html")
 def sessions():
@@ -153,7 +160,6 @@ def paper(uid):
 @app.route("/plenary_session_<uid>.html")
 def plenary_session(uid):
     data = _data()
-    print(by_uid.plenary_sessions.keys())
     data["plenary_session"] = by_uid.plenaries[uid]
     return render_template("plenary_session.html", **data)
 

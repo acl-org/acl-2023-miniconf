@@ -289,27 +289,27 @@
     </p>
 
     
-  <div class="text-center text-muted text-monospace">
+<div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
     <span>Session 7: Information Extraction (Oral)</span>
     <div>Conference Room: Metropolitan Centre </div>
     <div>Conference Time: Jul 12, 11:00-11:45 (EDT) (America/Toronto)</div>
     <div>Global Time: Jul 12, <span class="session_times">Session 7 (15:00-15:45 UTC)</span></div>
 
-  
+    
 
-  <!--
+    <!--
   
   -->
   </div>
-  </div>
+</div>
 
-  <div class="text-center text-muted text-monospace">
+<div class="text-center text-muted text-monospace">
   <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
+    <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+    <span id="session-cal-link-1"></span>
   </div>
-  </div>
+</div>
 
 
 <script src="static/js/add-to-calendar.js"></script>
@@ -323,42 +323,42 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'Improving Continual Relation Extraction by Distinguishing Analogous Semantics'.replace("#", " "),
+  // create a calendar by hand
+  ouicalData = addToCalendarData({
+    options: {
+      class: 'my-class',
+      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+    },
+    data: {
+      title: 'Improving Continual Relation Extraction by Distinguishing Analogous Semantics'.replace("#", " "),
 
-        // Event start date
-        start: new Date("2023-07-12T15:00:00"),
-        end: new Date("2023-07-12T15:45:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+      // Event start date
+      start: new Date("2023-07-12T15:00:00"),
+      end: new Date("2023-07-12T15:45:00"),
+      // duration: 120,                           // Event duration (IN MINUTES)
+      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
+      // Event timezone. Will convert the given time to that zone
+      timezone: 'UTC',
         // Event Address
         
 
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://underline.io'
+  // Event Description
+  // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+  description: 'https://underline.io'
       }
     });
 
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
+  targetNode = document.querySelector('#session-cal-link-1');
+  for (const name of calendarNames) {
+    calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+    calendarNodeSpan = document.createElement("span");
+    calendarNodeSpan.setAttribute("style", "padding: 2px");
+    calendarNodeSpan.appendChild(document.createTextNode("["));
+    calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+    calendarNodeSpan.appendChild(document.createTextNode("]"));
+    targetNode.appendChild(calendarNodeSpan);
+  }
   
 </script>
         <div>

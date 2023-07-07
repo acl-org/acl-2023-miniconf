@@ -297,27 +297,27 @@
     </p>
 
     
-  <div class="text-center text-muted text-monospace">
+<div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
     <span>Session 3: Multilingualism and Cross-Lingual NLP (Poster)</span>
     <div>Conference Room: Frontenac Ballroom and Queen’s Quay </div>
     <div>Conference Time: Jul 11, 09:00-10:30 (EDT) (America/Toronto)</div>
     <div>Global Time: Jul 11, <span class="session_times">Session 3 (13:00-14:30 UTC)</span></div>
 
-  
+    
 
-  <!--
+    <!--
   
   -->
   </div>
-  </div>
+</div>
 
-  <div class="text-center text-muted text-monospace">
+<div class="text-center text-muted text-monospace">
   <div class="paper-cal-links">
-  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-  <span id="session-cal-link-1"></span>
+    <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+    <span id="session-cal-link-1"></span>
   </div>
-  </div>
+</div>
 
 
 <script src="static/js/add-to-calendar.js"></script>
@@ -331,42 +331,42 @@
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
   
-    // create a calendar by hand
-    ouicalData = addToCalendarData({
-      options: {
-        class: 'my-class',
-        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-      },
-      data: {
-        title: 'Analyzing and Reducing the Performance Gap in Cross-Lingual Transfer with Fine-tuning Slow and Fast'.replace("#", " "),
+  // create a calendar by hand
+  ouicalData = addToCalendarData({
+    options: {
+      class: 'my-class',
+      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+    },
+    data: {
+      title: 'Analyzing and Reducing the Performance Gap in Cross-Lingual Transfer with Fine-tuning Slow and Fast'.replace("#", " "),
 
-        // Event start date
-        start: new Date("2023-07-11T13:00:00"),
-        end: new Date("2023-07-11T14:30:00"),
-        // duration: 120,                           // Event duration (IN MINUTES)
-        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+      // Event start date
+      start: new Date("2023-07-11T13:00:00"),
+      end: new Date("2023-07-11T14:30:00"),
+      // duration: 120,                           // Event duration (IN MINUTES)
+      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
 
-        // Event timezone. Will convert the given time to that zone
-        timezone: 'UTC',
+      // Event timezone. Will convert the given time to that zone
+      timezone: 'UTC',
         // Event Address
         
 
-        // Event Description
-        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
-        description: 'https://underline.io'
+  // Event Description
+  // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+  description: 'https://underline.io'
       }
     });
 
-    targetNode = document.querySelector('#session-cal-link-1');
-    for (const name of calendarNames) {
-      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-      calendarNodeSpan = document.createElement("span");
-      calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
-      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
-      targetNode.appendChild(calendarNodeSpan);
-    }
+  targetNode = document.querySelector('#session-cal-link-1');
+  for (const name of calendarNames) {
+    calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+    calendarNodeSpan = document.createElement("span");
+    calendarNodeSpan.setAttribute("style", "padding: 2px");
+    calendarNodeSpan.appendChild(document.createTextNode("["));
+    calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+    calendarNodeSpan.appendChild(document.createTextNode("]"));
+    targetNode.appendChild(calendarNodeSpan);
+  }
   
 </script>
         <div>

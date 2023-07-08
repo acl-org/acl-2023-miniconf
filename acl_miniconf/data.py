@@ -124,6 +124,8 @@ class Tutorial(Event):
     rocketchat_channel: Optional[str] = None
     type: str = TUTORIALS
     track: str = TUTORIAL_TRACK
+    anthology_url: Optional[str] = None
+    tutorial_pdf: Optional[str] = None
 
 
 class AnthologyAuthor(BaseModel):

@@ -147,7 +147,7 @@ class AnthologyEntry(BaseModel):
 def to_anthology_id(paper_id: str):
     if paper_id.startswith("P"):
         return paper_id[1:]
-    elif paper_id.startswith("D") or paper_id.startswith('I'):
+    elif paper_id.startswith("D") or paper_id.startswith('I') or paper_id.startswith("S"):
         return paper_id
     else:
         return None
@@ -204,6 +204,7 @@ class Acl2023Parser:
         acl_main_findings_proceedings_yaml_path: Path,
         acl_demo_proceedings_yaml_path: Path,
         acl_industry_proceedings_yaml_path: Path,
+        acl_srw_proceedings_yaml_path: Path,
         workshop_papers_yaml_path: Path,
         workshops_yaml_path: Path,
         booklet_json_path: Path,
@@ -219,6 +220,7 @@ class Acl2023Parser:
         self.acl_main_findings_proceedings_yaml_path = acl_main_findings_proceedings_yaml_path
         self.acl_demo_proceedings_yaml_path = acl_demo_proceedings_yaml_path
         self.acl_industry_proceedings_yaml_path = acl_industry_proceedings_yaml_path
+        self.acl_srw_proceedings_yaml_path = acl_srw_proceedings_yaml_path
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
@@ -282,9 +284,28 @@ class Acl2023Parser:
             assert not isinstance(e, Plenary)
             assert not isinstance(e, Tutorial)
             assert not isinstance(e, Workshop)
+    
+    def get_anthology_urls(self, paper_type: str, paper_length: str, anthology_publication_id: str):
+        if paper_type == 'demo':
+            anthology_url = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}"
+            paper_pdf = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}.pdf"
+        elif paper_type == 'industry':
+            anthology_url = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}"
+            paper_pdf = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}.pdf"
+        elif paper_type == 'srw':
+            anthology_url = self.acl_anthology_prefix + f"2023.acl-srw.{anthology_publication_id}"
+            paper_pdf = self.acl_anthology_prefix + f"2023.acl-srw.{anthology_publication_id}.pdf"
+        else:
+            anthology_url = self.acl_anthology_prefix + f"2023.acl-{paper_length}.{anthology_publication_id}"
+            paper_pdf = self.acl_anthology_prefix + f"2023.acl-{paper_length}.{anthology_publication_id}.pdf"
+        return anthology_url, paper_pdf
 
     def _parse_tutorials(self):
         self.tutorials = self.booklet.tutorials
+        for t in self.tutorials.values():
+            t.anthology_url = self.acl_anthology_prefix + f"2023.acl-tutorials.{t.id[1:]}"
+            t.tutorial_pdf = self.acl_anthology_prefix + f"2023.acl-tutorials.{t.id[1:]}.pdf"
+
         for session in self.booklet.tutorial_sessions.values():
             if session.id in self.sessions:
                 raise ValueError("Duplicate tutorial session")
@@ -369,6 +390,26 @@ class Acl2023Parser:
             entries = yaml.safe_load(f)
         for idx, e in enumerate(entries, start=1):
             paper_id = 'I' + str(e['id'])
+            self.anthology_data[paper_id] = AnthologyEntry(
+                # These are not prexied with I already
+                paper_id=paper_id,
+                anthology_id=str(idx),
+                abstract=e["abstract"],
+                file=e["file"],
+                authors=[
+                    AnthologyAuthor(
+                        first_name=a["first_name"],
+                        last_name=a["last_name"],
+                    )
+                    for a in e["authors"]
+                ],
+            )
+
+        logging.info("Parsing ACL Anthology SRW track data")
+        with open(self.acl_srw_proceedings_yaml_path) as f:
+            entries = yaml.safe_load(f)
+        for idx, e in enumerate(entries, start=1):
+            paper_id = 'S' + str(e['id'])
             self.anthology_data[paper_id] = AnthologyEntry(
                 # These are not prexied with I already
                 paper_id=paper_id,
@@ -496,6 +537,8 @@ class Acl2023Parser:
                         paper_type = 'demo'
                     elif row.Category == 'Industry':
                         paper_type = 'industry'
+                    elif row.Category == 'SRW':
+                        paper_type = 'srw'
                     else:
                         paper_type = row.Category
 
@@ -510,16 +553,7 @@ class Acl2023Parser:
                             anthology_url = None
                             paper_pdf = None
                         else:
-                            if paper_type == 'demo':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}.pdf"
-                            elif paper_type == 'industry':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}.pdf"
-                            else:
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
-                            
+                            anthology_url, paper_pdf = self.get_anthology_urls(paper_type, row.Length, anthology_publication_id)
                     else:
                         abstract = ""
                         tldr = ""
@@ -622,6 +656,8 @@ class Acl2023Parser:
                         paper_type = 'demo'
                     elif row.Category == 'Industry':
                         paper_type = 'industry'
+                    elif row.Category == 'SRW':
+                        paper_type = 'srw'
                     else:
                         paper_type = row.Category
                     anthology_id = to_anthology_id(paper_id)
@@ -634,15 +670,7 @@ class Acl2023Parser:
                             anthology_url = None
                             paper_pdf = None
                         else:
-                            if paper_type == 'demo':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}.pdf"
-                            elif paper_type == 'industry':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}.pdf"
-                            else:
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
+                            anthology_url, paper_pdf = self.get_anthology_urls(paper_type, row.Length, anthology_publication_id)
                     else:
                         abstract = ""
                         tldr = ""
@@ -747,6 +775,8 @@ class Acl2023Parser:
                         paper_type = 'demo'
                     elif row.Category == 'Industry':
                         paper_type = 'industry'
+                    elif row.Category == 'SRW':
+                        paper_type = 'srw'
                     else:
                         paper_type = row.Category
                     anthology_id = to_anthology_id(paper_id)
@@ -759,15 +789,7 @@ class Acl2023Parser:
                             anthology_url = None
                             paper_pdf = None
                         else:
-                            if paper_type == 'demo':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}.pdf"
-                            elif paper_type == 'industry':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}.pdf"
-                            else:
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
+                            anthology_url, paper_pdf = self.get_anthology_urls(paper_type, row.Length, anthology_publication_id)
                     else:
                         abstract = ""
                         tldr = ""
@@ -860,6 +882,8 @@ class Acl2023Parser:
                         paper_type = 'demo'
                     elif row.Category == 'Industry':
                         paper_type = 'industry'
+                    elif row.Category == 'SRW':
+                        paper_type = 'srw'
                     else:
                         paper_type = row.Category
                     anthology_id = to_anthology_id(paper_id)
@@ -872,15 +896,7 @@ class Acl2023Parser:
                             anthology_url = None
                             paper_pdf = None
                         else:
-                            if paper_type == 'demo':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-demo.{anthology_publication_id}.pdf"
-                            elif paper_type == 'industry':
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-industry.{anthology_publication_id}.pdf"
-                            else:
-                                anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
-                                paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
+                            anthology_url, paper_pdf = self.get_anthology_urls(paper_type, row.Length, anthology_publication_id)
                     else:
                         abstract = ""
                         tldr = ""
@@ -1152,6 +1168,7 @@ def main(
     acl_main_findings_proceedings_yaml: str = "private_data-acl2023/main/findings.yml",
     acl_demo_proceedings_yaml: str = "private_data-acl2023/demo/papers.yml",
     acl_industry_proceedings_yaml: str = "private_data-acl2023/industry/papers.yml",
+    acl_srw_proceedings_yaml: str = "private_data-acl2023/SRW/papers.yml",
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
     booklet_json: str = "data/acl_2023/data/booklet_data.json",
@@ -1169,6 +1186,7 @@ def main(
         acl_main_findings_proceedings_yaml_path=(acl_main_findings_proceedings_yaml),
         acl_demo_proceedings_yaml_path=Path(acl_demo_proceedings_yaml),
         acl_industry_proceedings_yaml_path=Path(acl_industry_proceedings_yaml),
+        acl_srw_proceedings_yaml_path=Path(acl_srw_proceedings_yaml),
         workshop_papers_yaml_path=Path(workshop_papers_yml),
         workshops_yaml_path=Path(workshops_yaml),
         booklet_json_path=Path(booklet_json),

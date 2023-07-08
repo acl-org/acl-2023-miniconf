@@ -75,6 +75,8 @@
     {% set rocketchat_fixed = 'paper-event_plenary_-llm-panel' %}
   {% elif plenary_session.id == 'large-language-models-as-cultural-technologies_-imitation-and-innovation-in-children-and-models' %}
     {% set rocketchat_fixed = 'paper-event_keynote-2_-alison-gopnik' %}
+  {% elif plenary_session.id == 'navigating-nlp-in-the-era-of-llm' %}
+    {% set rocketchat_fixed = 'paper-event_navigating-nlp-llm-era' %}
   {% else %}
     {% set rocketchat_fixed = plenary_session.id %}
   {% endif %}

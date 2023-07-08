@@ -74,43 +74,48 @@
     </h3>
    
     <div class="text-center p-3">
-      {% if paper.pdf_url %}
-      <a class="card-link" target="_blank" href="{{paper.pdf_url}}">
+      {% if paper.paper_pdf %}
+      <a class="card-link link-info" target="_blank" href="{{paper.paper_pdf}}">
         Paper
       </a>
       {% endif %}
+      {% if paper.anthology_url %}
+      <a class="card-link link-info" target="_blank" href="{{paper.anthology_url}}">
+        Anthology
+      </a>
+      {% endif %}
       {% if paper.underline_url %}
-      <a class="card-link" target="_blank" href="{{paper.underline_url}}">
+      <a class="card-link link-info" target="_blank" href="{{paper.underline_url}}">
         Underline
       </a>
       {% endif %}
       {% if paper.poster_pdf %}
-      <a class="card-link" target="_blank" href="{{paper.poster_pdf}}">
+      <a class="card-link link-info" target="_blank" href="{{paper.poster_pdf}}">
         Poster
       </a>
       {% endif %}
       {% if paper.slides_pdf %}
-      <a class="card-link" target="_blank" href="{{paper.slides_pdf}}">
+      <a class="card-link link-info" target="_blank" href="{{paper.slides_pdf}}">
         Slides
       </a>
       {% endif %}
       {% if paper.video_url %}
-      <a class="card-link" target="_blank" href="{{paper.video_url}}">
+      <a class="card-link link-info" target="_blank" href="{{paper.video_url}}">
         Video
       </a>
       {% endif %}
       {% if paper.underline_url %}
-      <a class="card-link" target="_blank" href="{{paper.underline_url}}">
+      <a class="card-link link-info" target="_blank" href="{{paper.underline_url}}">
         Watch Video on Underline
       </a>
       {% endif %}
       {% if paper.code != blank %}
-      <a href="{{paper.code}}" target="_blank" class="card-link">
+      <a href="{{paper.code}}" target="_blank" class="card-link link-info">
         Code
       </a>
       {% endif %}
       {% if paper.demo_url %}
-      <a href="{{paper.demo_url}}" target="_blank" class="card-link">
+      <a href="{{paper.demo_url}}" target="_blank" class="card-link link-info">
         Demo
       </a>
       {% endif %}
@@ -161,6 +166,11 @@
   <li class="nav-item">
     <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
   </li>
+  {% if paper.paper_pdf %}
+  <li class="nav-item">
+    <a class="nav-link" id="paper-tab" data-toggle="tab" href="#paper" role="tab" aria-controls="paper" aria-selected="false">Paper</a>
+  </li>
+  {% endif %}
   {% if paper.poster_pdf %}
   <li class="nav-item">
     <a class="nav-link" id="poster-tab" data-toggle="tab" href="#poster" role="tab" aria-controls="poster" aria-selected="false">Poster</a>
@@ -207,6 +217,11 @@
       </div>
     </div>
   </div>
+  {% if paper.paper_pdf %}
+  <div class="tab-pane fade" id="paper" role="tabpanel" aria-labelledby="paper-tab">
+    <embed src="{{paper.paper_pdf}}" type="application/pdf" width="100%" height="850px">
+  </div>
+  {% endif %}
   {% if paper.poster_pdf %}
   <div class="tab-pane fade" id="poster" role="tabpanel" aria-labelledby="poster-tab">
     <embed src="{{paper.poster_pdf}}" type="application/pdf" width="100%" height="850px">

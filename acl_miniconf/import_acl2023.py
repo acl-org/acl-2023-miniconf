@@ -134,6 +134,7 @@ class Assets(BaseModel):
 class AnthologyEntry(BaseModel):
     # Without letter prefix
     paper_id: str
+    anthology_id: Optional[str] = None
     title: Optional[str] = None
     abstract: Optional[str] = None
     # TODO: This is likely the field needed + prefix URL to get Paper PDFs
@@ -198,22 +199,28 @@ class Acl2023Parser:
         virtual_tsv_path: Path,
         spotlight_tsv_path: Path,
         extras_xlsx_path: Path,
-        acl_main_proceedings_yaml_path: Path,
+        acl_main_long_proceedings_yaml_path: Path,
+        acl_main_short_proceedings_yaml_path: Path,
+        acl_main_findings_proceedings_yaml_path: Path,
         acl_demo_proceedings_yaml_path: Path,
         workshop_papers_yaml_path: Path,
         workshops_yaml_path: Path,
         booklet_json_path: Path,
+        acl_anthology_prefix: str,
     ):
         self.poster_tsv_path = poster_tsv_path
         self.oral_tsv_path = oral_tsv_path
         self.virtual_tsv_path = virtual_tsv_path
         self.spotlight_tsv_path = spotlight_tsv_path
         self.extras_xlsx_path = extras_xlsx_path
-        self.acl_main_proceedings_yaml_path = acl_main_proceedings_yaml_path
+        self.acl_main_long_proceedings_yaml_path = acl_main_long_proceedings_yaml_path
+        self.acl_main_short_proceedings_yaml_path = acl_main_short_proceedings_yaml_path
+        self.acl_main_findings_proceedings_yaml_path = acl_main_findings_proceedings_yaml_path
         self.acl_demo_proceedings_yaml_path = acl_demo_proceedings_yaml_path
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
+        self.acl_anthology_prefix = acl_anthology_prefix
         self.booklet: Booklet = Booklet.from_booklet_data(
             booklet_json_path, workshops_yaml_path
         )
@@ -308,11 +315,20 @@ class Acl2023Parser:
 
     def _add_anthology_data(self):
         logging.info("Parsing ACL Anthology main track data")
-        with open(self.acl_main_proceedings_yaml_path) as f:
-            entries = yaml.safe_load(f)
+        entries = []
+        with open(self.acl_main_long_proceedings_yaml_path) as f:
+            entries.extend(yaml.safe_load(f))
+
+        with open(self.acl_main_short_proceedings_yaml_path) as f:
+            entries.extend(yaml.safe_load(f))
+
+        with open(self.acl_main_findings_proceedings_yaml_path) as f:
+            entries.extend(yaml.safe_load(f))
+
         for e in entries:
             self.anthology_data[str(e["id"])] = AnthologyEntry(
                 paper_id=str(e["id"]),
+                anthology_id=str(e['anthology_id']),
                 abstract=e["abstract"],
                 file=e["file"],
                 attachments=e["attachments"],
@@ -452,13 +468,24 @@ class Acl2023Parser:
                         assets = self.underline_assets[underline_paper_id]
                     else:
                         assets = Assets()
+                    # This is the internal ID, but in the anthology format, distinct from the anthology_id used for publication
                     anthology_id = to_anthology_id(paper_id)
                     if anthology_id in self.anthology_data:
-                        abstract = self.anthology_data[anthology_id].abstract
+                        anthology_entry = self.anthology_data[anthology_id]
+                        abstract = anthology_entry.abstract
                         tldr = abstract[:TLDR_LENGTH] + "..."
+                        anthology_publication_id = anthology_entry.anthology_id
+                        if anthology_publication_id is None:
+                            anthology_url = None
+                            paper_pdf = None
+                        else:
+                            anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
+                            paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
                     else:
                         abstract = ""
                         tldr = ""
+                        anthology_url = None
+                        paper_pdf = None
                     
                     if row.Category == 'Demo':
                         paper_length = 'demo'
@@ -466,6 +493,7 @@ class Acl2023Parser:
                         paper_length = 'industry'
                     else:
                         paper_length = row.Category
+                    
 
                     paper = Paper(
                         id=paper_id,
@@ -481,10 +509,10 @@ class Acl2023Parser:
                         abstract=abstract,
                         tldr=tldr,
                         event_ids=[event.id],
-                        forum="",
-                        card_image_path="",
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
+                        anthology_url=anthology_url,
+                        paper_pdf=paper_pdf,
                         slides_pdf=assets.slides_pdf,
                         video_url=assets.video_url,
                         preview_image=assets.poster_preview_png,
@@ -561,11 +589,21 @@ class Acl2023Parser:
                         assets = Assets()
                     anthology_id = to_anthology_id(paper_id)
                     if anthology_id in self.anthology_data:
-                        abstract = self.anthology_data[anthology_id].abstract
+                        anthology_entry = self.anthology_data[anthology_id]
+                        abstract = anthology_entry.abstract
                         tldr = abstract[:TLDR_LENGTH] + "..."
+                        anthology_publication_id = anthology_entry.anthology_id
+                        if anthology_publication_id is None:
+                            anthology_url = None
+                            paper_pdf = None
+                        else:
+                            anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
+                            paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
                     else:
                         abstract = ""
                         tldr = ""
+                        anthology_url = None
+                        paper_pdf = None
 
                     if row.Category == 'Demo':
                         paper_length = 'demo'
@@ -587,10 +625,10 @@ class Acl2023Parser:
                         tldr=tldr,
                         event_ids=[event.id],
                         similar_paper_ids=[],
-                        forum="",
-                        card_image_path="",
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
+                        anthology_url=anthology_url,
+                        paper_pdf=paper_pdf,
                         slides_pdf=assets.slides_pdf,
                         preview_image=assets.poster_preview_png,
                         poster_pdf=assets.poster_pdf,
@@ -669,11 +707,22 @@ class Acl2023Parser:
                         assets = Assets()
                     anthology_id = to_anthology_id(paper_id)
                     if anthology_id in self.anthology_data:
-                        abstract = self.anthology_data[anthology_id].abstract
+                        anthology_entry = self.anthology_data[anthology_id]
+                        abstract = anthology_entry.abstract
                         tldr = abstract[:TLDR_LENGTH] + "..."
+                        anthology_publication_id = anthology_entry.anthology_id
+                        if anthology_publication_id is None:
+                            anthology_url = None
+                            paper_pdf = None
+                        else:
+                            anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
+                            paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
                     else:
                         abstract = ""
                         tldr = ""
+                        anthology_url = None
+                        paper_pdf = None
+
                     if row.Category == 'Demo':
                         paper_length = 'demo'
                     elif row.Category == 'Industry':
@@ -693,10 +742,10 @@ class Acl2023Parser:
                         abstract=abstract,
                         tldr=tldr,
                         event_ids=[event.id],
-                        forum="",
-                        card_image_path="",
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
+                        anthology_url=anthology_url,
+                        paper_pdf=paper_pdf,
                         slides_pdf=assets.slides_pdf,
                         preview_image=assets.poster_preview_png,
                         poster_pdf=assets.poster_pdf,
@@ -764,11 +813,21 @@ class Acl2023Parser:
                         assets = Assets()
                     anthology_id = to_anthology_id(paper_id)
                     if anthology_id in self.anthology_data:
-                        abstract = self.anthology_data[anthology_id].abstract
+                        anthology_entry = self.anthology_data[anthology_id]
+                        abstract = anthology_entry.abstract
                         tldr = abstract[:TLDR_LENGTH] + "..."
+                        anthology_publication_id = anthology_entry.anthology_id
+                        if anthology_publication_id is None:
+                            anthology_url = None
+                            paper_pdf = None
+                        else:
+                            anthology_url = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}"
+                            paper_pdf = self.acl_anthology_prefix + f"2023.acl-{row.Length}.{anthology_publication_id}.pdf"
                     else:
                         abstract = ""
                         tldr = ""
+                        anthology_url = None
+                        paper_pdf = None
 
                     if row.Category == 'Demo':
                         paper_length = 'demo'
@@ -789,10 +848,10 @@ class Acl2023Parser:
                         abstract=abstract,
                         tldr=tldr,
                         event_ids=[event.id],
-                        forum="",
-                        card_image_path="",
                         underline_id=assets.underline_id,
                         underline_url=assets.underline_url,
+                        anthology_url=anthology_url,
+                        paper_pdf=paper_pdf,
                         slides_pdf=assets.slides_pdf,
                         preview_image=assets.poster_preview_png,
                         poster_pdf=assets.poster_pdf,
@@ -1036,11 +1095,14 @@ def main(
     virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
     extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-07-05.xlsx",
-    acl_main_proceedings_yaml: str = "private_data-acl2023/main/revised_abstract_papers.yml",
+    acl_main_long_proceedings_yaml: str = "private_data-acl2023/main/long.yml",
+    acl_main_short_proceedings_yaml: str = "private_data-acl2023/main/short.yml",
+    acl_main_findings_proceedings_yaml: str = "private_data-acl2023/main/findings.yml",
     acl_demo_proceedings_yaml: str = "private_data-acl2023/demo/papers.yml",
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
     booklet_json: str = "data/acl_2023/data/booklet_data.json",
+    acl_anthology_prefix: str = "https://preview.aclanthology.org/acl-23-ingestion/",
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(
@@ -1049,11 +1111,14 @@ def main(
         virtual_tsv_path=Path(virtual_tsv),
         spotlight_tsv_path=Path(spotlight_tsv),
         extras_xlsx_path=Path(extras_xlsx),
-        acl_main_proceedings_yaml_path=Path(acl_main_proceedings_yaml),
+        acl_main_long_proceedings_yaml_path=(acl_main_long_proceedings_yaml),
+        acl_main_short_proceedings_yaml_path=(acl_main_short_proceedings_yaml),
+        acl_main_findings_proceedings_yaml_path=(acl_main_findings_proceedings_yaml),
         acl_demo_proceedings_yaml_path=Path(acl_demo_proceedings_yaml),
         workshop_papers_yaml_path=Path(workshop_papers_yml),
         workshops_yaml_path=Path(workshops_yaml),
         booklet_json_path=Path(booklet_json),
+        acl_anthology_prefix=acl_anthology_prefix,
     )
     conf = parser.parse()
     out_dir = Path(out_dir)

@@ -188,7 +188,14 @@ def tutorial(uid):
 @app.route("/workshop_<uid>.html")
 def workshop(uid):
     data = _data()
-    data["workshop"] = by_uid.workshops[uid]
+    workshop = by_uid.workshops[uid]
+    data["workshop"] = workshop
+    papers = []
+    for p in site_data.workshop_papers:
+        if workshop.short_name in p.event_ids:
+            papers.append(p)
+    data['papers'] = papers
+    data['rocketchat_channel'] = f'workshop-{workshop.short_name}'
     return render_template("workshop.html", **data)
 
 

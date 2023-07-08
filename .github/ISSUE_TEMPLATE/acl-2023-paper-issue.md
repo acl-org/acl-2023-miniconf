@@ -14,7 +14,7 @@ We can help you with the following:
 - If you cannot login to RocketChat a https://acl.rocket.chat
 
 We *cannot* help you with any of the following:
-- Issues with your paper on Underline. Contact underline for support
+- Issues with your paper on Underline. Contact underline for support at support@underline.io
 - Changing the time or modality of your presentation. Contact the PCs with requests.
 - Displaying your video on MiniConf. Videos are only available on Underline, each paper links to its Underline page however.
 
@@ -33,7 +33,7 @@ Fill these fields:
 - Author Name
 - Email:
 - URL on MiniConf (starts with virtual2023.aclweb.org/paper):
-- URL on MiniConf:
+- URL on Underline (starts with underline.io):
 
 If your issue is with an outdated poster that you recently had Underline change, please be patient and wait at least 24 hours for the changes to propagate to MiniConf (i.e., when the virtual chairs are provided a updated export of Underline assets).
 
@@ -46,5 +46,5 @@ If it has been more than 24 hours, then:
 ## RocketChat Login Issues
 
 - [ ] I confirm that I am registered for the conference on Underline and can login at https://underline.io/events/395/reception
-- Did you login by pressing "Login with Underline" or some other way: FILL HERE
-- What is your Underline email: FILL HERE
+- Did you login by pressing "Login with Underline" or some other way: 
+- What is your Underline email: 

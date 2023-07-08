@@ -47,4 +47,4 @@ If it has been more than 24 hours, then:
 
 - [ ] I confirm that I am registered for the conference on Underline and can login at https://underline.io/events/395/reception
 - Did you login by pressing "Login with Underline" or some other way: 
-- What is your Underline email: 
+- What is your Underline email:

@@ -179,27 +179,23 @@
       <div class="content">
         
 
-<script src='https://slideslive.com/embed_presentation.js'></script>
 <!-- Title -->
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
       CAWL
     </h2>
-    <!-- <h3 class="card-subtitle mb-2 text-muted text-center">
-      [AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Kyle Gorman&#39;, google_scholar=None, semantic_scholar=None), AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Brian Roark&#39;, google_scholar=None, semantic_scholar=None), AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Richard Sproat&#39;, google_scholar=None, semantic_scholar=None)]
-    </h3>
- -->
     <h3 class="card-subtitle mb-2 text-muted text-center">
+      Organizers: 
       
       <a href="papers.html?filter=authors&search=Kyle Gorman&program=all"
-        class="text-primary">Kyle Gorman</a>,
+        class="text-primary link-primary">Kyle Gorman</a>,
       
       <a href="papers.html?filter=authors&search=Brian Roark&program=all"
-        class="text-primary">Brian Roark</a>,
+        class="text-primary link-primary">Brian Roark</a>,
       
       <a href="papers.html?filter=authors&search=Richard Sproat&program=all"
-        class="text-primary">Richard Sproat</a>
+        class="text-primary link-primary">Richard Sproat</a>
       
     </h3>
     <div class="text-muted text-center">
@@ -207,7 +203,7 @@
     </div>
     <div class="text-center p-3">
       
-      <a href="https://cawl.wellformedness.com/" target="_blank" class="card-link">
+      <a href="https://cawl.wellformedness.com/" target="_blank" class="link-success">
         External Website
       </a>
       
@@ -215,76 +211,204 @@
 
     </div>
 
-    <!-- <div class="text-center pt-n2 pb-3">
-      
-    </div>
-
-    
-
-<script src="static/js/add-to-calendar.js"></script>
-<script>
-
-  let ouicalData;
-  let targetNode;
-  let calendarNodeInner;
-  let calendarNodeSpan;
-  let parser = new DOMParser();
-  let calendarNames = Array("google", "off365", "outlook", "ical");
-
-  
-</script>
-
-  </div> -->
   </div>
 
-  <!-- <div id="details" class="pp-card m-3 collapse hide">
-    <div class="card-body">
-      <div class="card-text">
-        <div id="abstractExample">
-          Most work on NLP focuses on language in its canonical written form. This has often led researchers to ignore the differences between written and spoken language or, worse, to conflate the two. Instances of conflation are statements like “Chinese is a logographic language" or “Persian is a right-to-left language", variants of which can be found frequently in the ACL anthology. These statements confuse properties of the language with properties of its writing system. Ignoring differences between written and spoken language leads, among other things, to conflating different words that are spelled the same (e.g., English bass), or treating as different, words that have multiple spellings. \\newline text enFurthermore, methods for dealing with written language issues (e.g., various kinds of normalization or conversion) or for recognizing text input (e.g. OCR \& handwriting recognition or text entry methods) are often regarded as precursors to NLP rather than as fundamental parts of the enterprise, despite the fact that most NLP methods rely centrally on representations derived from text rather than (spoken) language. This general lack of consideration of writing has led to much of the research on such topics to largely appear outside of ACL venues, in conferences or journals of neighboring fields such as speech technology (e.g., text normalization) or human-computer interaction (e.g., text entry). \\newline We will invite submissions on the relationship between written and spoken language, the properties of written language, the ways in which writing systems encode language, and applications specifically focused on characteristics of writing systems.
-        </div>
-      </div>
-      <p></p>
-    </div>
-  </div>
- -->
   <!-- Schedule -->
   <!-- 
-  <script src="static/js/time-extend.js"></script> -->
+-->
 
   <div class="container" style="background-color:white; padding: 0px;">
     <div class="text-muted text-center">
       You can open
-      
       the
       <a href="https://acl.rocket.chat/channel/workshop-CAWL" target="_blank">
         #workshop-CAWL
       </a>
-      channel
-      
-      in a separate window.
-      
+      channel in separate windows.
 
     </div>
 
     <div class="row m-2">
-      
       <div class="container" style="background-color:white; padding: 0px;">
-
-
         <!-- Chat -->
         <div id="gitter" class="slp">
           <iframe frameborder="0"
-            src="https://acl.rocket.chat/channel/?layout=embedded" height="700px"
+            src="https://acl.rocket.chat/channel/workshop-CAWL?layout=embedded" height="700px"
             width="100%"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="row"><div class="col-12"><h3 class="text-center">Workshop Papers</h3></div></div>
+    <div class="row" style='margin: 15px;'>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Back-Transliteration of English Loanwords in Japanese
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Yuying Ren</h5>
+            <p class="card-text">We propose methods for transliterating English loanwords in Japanese from their Japanese written form (katakana/romaji) to their original English written form. Our data is a Japanese-English loanwords dictionary that we have created ourselves. We employ two approaches: the direct transliteration, which directly converts words from katakana to English, and the indirect transliteration, which utilizes the English pronunciation as an intermediate step. Additionally, we compare the effectiveness of using katakana versus romaji as input characters. We develop 6 models of 2 types for our experiments: one with an English lexicon-filter, and the other without. For each type, we built 3 models, including a pair n-gram based on WFSTs and two sequence-to-sequence models leveraging LSTM and transformer. Our best performing model was the pair n-gram model with a lexicon-filter, directly transliterating from katakana to English.</p>
+            <a href="/paper_CAWL_10.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Pronunciation Ambiguities in Japanese Kanji
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Wen Zhang</h5>
+            <p class="card-text">Japanese writing is a complex system, and a large part of the complexity resides in the use of kanji. A single kanji character in modern Japanese may have multiple pronunciations, either as native vocabulary or as words borrowed from Chinese. This causes a problem for text-to-speech synthesis (TTS) because the system has to predict which pronunciation of each kanji character is appropriate in the context. The problem is called homograph disambiguation. To solve the problem, this research provides a new annotated Japanese single kanji character pronunciation data set and describes an experiment using the logistic regression (LR) classifier. A baseline is computed to compare with the LR classifier accuracy. This experiment provides the first experimental research in Japanese single kanji homograph disambiguation. The annotated Japanese data is freely released to the public to support further work.</p>
+            <a href="/paper_CAWL_12.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Preserving the Authenticity of Handwritten Learner Language: Annotation Guidelines for Creating Transcripts Retaining Orthographic Features
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Christian Gold, Ronja Laarmann-quante, Torsten Zesch</h5>
+            <p class="card-text">Handwritten texts produced by young learners often contain orthographic features like spelling errors, capitalization errors, punctuation mistakes, and impurities such as strikethrough, inserts, and smudges that are typically normalized or ignored in existing transcriptions. For applications like handwriting recognition with the goal of automatically analyzing a learner&#39;s language performance, however, retaining such features would be necessary.
+To address this, we present transcription guidelines that retain the features addressed above. 
+Our guidelines were developed iteratively and include numerous example images to illustrate the various issues.
+On a subset of about 90 double-transcribed texts, we compute inter-annotator agreement and show that our guidelines can be applied with high levels of percentage agreement of about .98.
+Overall, we transcribed 1,350 learner texts, which is about the same size as the widely adopted handwriting recognition datasets IAM (1,500 pages) and CVL (1,600 pages).
+Our final corpus can be used to train a handwriting recognition system that transcribes closely to the real productions by young learners.
+Such a system is a prerequisite for applying automatic orthography feedback systems to handwritten texts in the future.</p>
+            <a href="/paper_CAWL_13.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Exploring the Impact of Transliteration on NLP Performance for Low-Resource Languages: The Case of Maltese and Arabic
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Kurt Micallef, Fadhl Eryani, Nizar Habash, Houda Bouamor, Claudia Borg</h5>
+            <p class="card-text">Maltese is a low-resource language of Arabic and Romance origins written in Latin script. We explore the impact of transliterating Maltese into Arabic script on a number of downstream tasks. We compare multiple transliteration pipelines ranging from simple one-to-one character maps to more sophisticated alternatives that explore multiple possibilities or make use of manual linguistic annotations. We show that the sophisticated systems are consistently better than simpler systems, quantitatively and qualitatively. We also show transliterating Maltese can be considered as an option to improve the cross-lingual transfer capabilities.</p>
+            <a href="/paper_CAWL_14.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            A Mutual Information-based Approach to Quantifying Logography in Japanese and Sumerian
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Noah Hermalin</h5>
+            <p class="card-text">Writing systems have traditionally been classified by whether they prioritize encoding phonological information (phonographic) versus morphological or semantic information (logographic). Recent work has broached the question of how membership in these categories can be quantified. Sproat and Gutkin (2021) proposed a range of metrics by which degree of logography can be quantified, including mutual information and a metric based on contextual attention required by a sequence-to-sequence RNN that maps pronunciations to spellings. We aim to build on this work by treating a definition of logography which, in contrast to the definition used by Sproat and Gutkin, more directly incorporates morphological identity. We compare mutual information between graphic forms and phonological forms and between graphic forms and morphological identity for written Japanese and Sumerian. Our results suggest that our methods present a promising means of classifying the degree to which a writing system is logographic or phonographic.</p>
+            <a href="/paper_CAWL_18.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Myths about Writing Systems in Speech &amp; Language Technology
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Kyle Gorman, Richard Sproat</h5>
+            <p class="card-text">Natural language processing is largely focused on written text processing. However, many computational linguists tacitly endorse myths about the nature of writing. We highlight two of these myths---the conflation of language and writing, and the notion that Chinese, Japanese, and Korean writing is ideographic---and suggest how the community can dispel them.</p>
+            <a href="/paper_CAWL_20.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Lenient Evaluation of Japanese Speech Recognition: Modeling Naturally Occurring Spelling Inconsistency
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Shigeki Karita, Richard Sproat, Haruko Ishikawa</h5>
+            <p class="card-text">Word error rate (WER) and character error rate (CER) are standard metrics in
+Speech Recognition (ASR), but one problem has always been alternative spellings: If one&#39;s system transcribes adviser whereas the ground truth has advisor, this will count as an error even though the two spellings really represent the same word.
+
+Japanese is notorious for &#34;lacking orthography”: most words can be spelled in multiple ways, presenting a problem for accurate ASR evaluation. In this paper we propose a new lenient evaluation metric as a more defensible CER measure for Japanese ASR. We create a lattice of plausible respellings of the reference transcription, using a combination of lexical resources, a Japanese text-processing system, and a neural machine translation model for reconstructing kanji from hiragana or katakana. In a
+manual evaluation, raters rated 95.4\% of the proposed spelling variants as plausible. ASR results show that our method, which does not penalize the system for choosing a valid alternate spelling of a word, affords a 2.4\%–3.1\% absolute reduction in CER depending on the task.</p>
+            <a href="/paper_CAWL_4.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Decipherment of Lost Ancient Scripts as Combinatorial Optimisation Using Coupled Simulated Annealing
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Fabio Tamburini</h5>
+            <p class="card-text">This paper presents a new approach to the ancient scripts decipherment problem based on combinatorial optimisation and coupled simulated annealing. The proposed system is able to produce enhanced results in cognate identification when compared to the state-of-the-art systems on standard evaluation benchmarks used in literature.</p>
+            <a href="/paper_CAWL_5.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Learning the Character Inventories of Undeciphered Scripts Using Unsupervised Deep Clustering
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Logan Born, M. Willis Monroe, Kathryn Kelley, Anoop Sarkar</h5>
+            <p class="card-text">A crucial step in deciphering a text is to identify what set of characters were used to write it. This requires grouping character tokens according to visual and contextual features, which can be challenging for human analysts when the number of tokens or underlying types is large. Prior work has shown that this process can be automated by clustering dense representations of character images, in a task which we call ``script clustering&#39;&#39;. In this work, we present novel architectures which exploit varying degrees of contextual and visual information to learn representations for use in script clustering. We evaluate on a range of modern and ancient scripts, and find that our models produce representations which are more effective for script recovery than the current state-of-the-art, despite using just \textasciitilde{}2\textbackslash{}\% as many parameters. Our analysis fruitfully applies these models to assess hypotheses about the character inventory of the partially-deciphered proto-Elamite script.</p>
+            <a href="/paper_CAWL_6.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Disambiguating Numeral Sequences to Decipher Ancient Accounting Corpora
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Logan Born, M. Willis Monroe, Kathryn Kelley, Anoop Sarkar</h5>
+            <p class="card-text">A numeration system encodes abstract numeric quantities as concrete strings of written characters. The numeration systems used by modern scripts tend to be precise and unambiguous, but this was not so for the ancient and partially-deciphered proto-Elamite (PE) script, where written numerals can have up to four distinct readings depending on the system that is used to read them. We consider the task of disambiguating between these readings in order to determine the values of the numeric quantities recorded in this corpus. We contribute an automated conversion from PE notation to modern Hindu-Arabic notation, as well as two disambiguation techniques based on structural properties of the original documents and classifiers learned with the bootstrapping algorithm. We also contribute a test set for evaluating disambiguation techniques, as well as a novel approach to cautious rule selection for bootstrapped classifiers. Our analysis confirms existing intuitions about this script and reveals previously-unknown correlations between tablet content and numeral magnitude. This work is crucial to understanding and deciphering PE, as the corpus is heavily accounting-focused and contains many more numeric tokens than tokens of text.</p>
+            <a href="/paper_CAWL_7.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            The Hidden Folk: Linguistic Properties Encoded in Multilingual Contextual Character Representations
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Manex Agirrezabal, Sidsel Boldsen, Nora Hollenstein</h5>
+            <p class="card-text">To gain a better understanding of the linguistic information encoded in character-based language models, we probe the multilingual contextual CANINE model. We design a range of phonetic probing tasks in six Nordic languages, including Faroese as an additional zero-shot instance. We observe that some phonetic information is indeed encoded in the character representations, as consonants and vowels can be well distinguished using a linear classifier. Furthermore, results for the Danish and Norwegian language seem to be worse for the consonant/vowel distinction in comparison to other languages. The information encoded in these representations can also be learned in a zero-shot scenario, as Faroese shows a reasonably good performance in the same vowel/consonant distinction task.</p>
+            <a href="/paper_CAWL_8.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Distinguishing Romanized Hindi from Romanized Urdu
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Elizabeth Nielsen, Christo Kirov, Brian Roark</h5>
+            <p class="card-text">We examine the task of distinguishing between Hindi and Urdu when those languages are romanized, i.e., written in the Latin script.  Both languages are widely informally romanized, and to the extent that they are identified in the Latin script by language identification systems, they are typically conflated.  In the absence of large labeled collections of such text, we consider methods for generating training data. Beginning with a small set of seed words, each of which are strongly indicative of one of the languages versus the other, we prompt a pretrained large language model (LLM) to generate romanized text.  Treating text generated from an Urdu prompt as one class and text generated from a Hindi prompt as the other class, we build a binary language identification (LangID) classifier.  We demonstrate that the resulting classifier distinguishes manually romanized Urdu Wikipedia text from manually romanized Hindi Wikipedia text far better than chance.  We use this classifier to estimate the prevalence of Urdu in a large collection of text labeled as romanized Hindi that has been used to train large language models. These techniques can be applied to bootstrap classifiers in other cases where a dataset is known to contain multiple distinct but related classes, such as different dialects of the same language, but for which labels cannot easily be obtained.</p>
+            <a href="/paper_CAWL_9.html" class="btn btn-primary">Go to Paper</a>
+          </div>
         </div>
       </div>
       
     </div>
 
-
-
-    
 
     <script src="static/js/time-extend.js"></script>
     <script>

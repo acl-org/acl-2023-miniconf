@@ -179,30 +179,26 @@
       <div class="content">
         
 
-<script src='https://slideslive.com/embed_presentation.js'></script>
 <!-- Title -->
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
       SIGMORPHON
     </h2>
-    <!-- <h3 class="card-subtitle mb-2 text-muted text-center">
-      [AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Garrett Nicolai&#39;, google_scholar=None, semantic_scholar=None), AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Eleanor Chodroff&#39;, google_scholar=None, semantic_scholar=None), AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Çağrı Çöltekin&#39;, google_scholar=None, semantic_scholar=None), AnthologyAuthor(first_name=None, middle_name=None, last_name=None, full_name=&#39;Fred Mailhot&#39;, google_scholar=None, semantic_scholar=None)]
-    </h3>
- -->
     <h3 class="card-subtitle mb-2 text-muted text-center">
+      Organizers: 
       
       <a href="papers.html?filter=authors&search=Garrett Nicolai&program=all"
-        class="text-primary">Garrett Nicolai</a>,
+        class="text-primary link-primary">Garrett Nicolai</a>,
       
       <a href="papers.html?filter=authors&search=Eleanor Chodroff&program=all"
-        class="text-primary">Eleanor Chodroff</a>,
+        class="text-primary link-primary">Eleanor Chodroff</a>,
       
       <a href="papers.html?filter=authors&search=Çağrı Çöltekin&program=all"
-        class="text-primary">Çağrı Çöltekin</a>,
+        class="text-primary link-primary">Çağrı Çöltekin</a>,
       
       <a href="papers.html?filter=authors&search=Fred Mailhot&program=all"
-        class="text-primary">Fred Mailhot</a>
+        class="text-primary link-primary">Fred Mailhot</a>
       
     </h3>
     <div class="text-muted text-center">
@@ -210,7 +206,7 @@
     </div>
     <div class="text-center p-3">
       
-      <a href="https://sigmorphon.github.io/workshops/2023/" target="_blank" class="card-link">
+      <a href="https://sigmorphon.github.io/workshops/2023/" target="_blank" class="link-success">
         External Website
       </a>
       
@@ -218,76 +214,233 @@
 
     </div>
 
-    <!-- <div class="text-center pt-n2 pb-3">
-      
-    </div>
-
-    
-
-<script src="static/js/add-to-calendar.js"></script>
-<script>
-
-  let ouicalData;
-  let targetNode;
-  let calendarNodeInner;
-  let calendarNodeSpan;
-  let parser = new DOMParser();
-  let calendarNames = Array("google", "off365", "outlook", "ical");
-
-  
-</script>
-
-  </div> -->
   </div>
 
-  <!-- <div id="details" class="pp-card m-3 collapse hide">
-    <div class="card-body">
-      <div class="card-text">
-        <div id="abstractExample">
-          SIGMORPHON aims to bring together researchers interested in applying computational techniques to problems in morphology, phonology, and phonetics. Work that addresses orthographic issues is also welcome. Papers will be on substantial, original, and unpublished research on these topics, potentially including strong work in progress.
-        </div>
-      </div>
-      <p></p>
-    </div>
-  </div>
- -->
   <!-- Schedule -->
   <!-- 
-  <script src="static/js/time-extend.js"></script> -->
+-->
 
   <div class="container" style="background-color:white; padding: 0px;">
     <div class="text-muted text-center">
       You can open
-      
       the
       <a href="https://acl.rocket.chat/channel/workshop-SIGMORPHON" target="_blank">
         #workshop-SIGMORPHON
       </a>
-      channel
-      
-      in a separate window.
-      
+      channel in separate windows.
 
     </div>
 
     <div class="row m-2">
-      
       <div class="container" style="background-color:white; padding: 0px;">
-
-
         <!-- Chat -->
         <div id="gitter" class="slp">
           <iframe frameborder="0"
-            src="https://acl.rocket.chat/channel/?layout=embedded" height="700px"
+            src="https://acl.rocket.chat/channel/workshop-SIGMORPHON?layout=embedded" height="700px"
             width="100%"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="row"><div class="col-12"><h3 class="text-center">Workshop Papers</h3></div></div>
+    <div class="row" style='margin: 15px;'>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Multilingual Sequence-to-Sequence Models for Hebrew NLP
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Matan Eyal, Hila Noga, Roee Aharoni, Idan Szpektor, Reut Tsarfaty</h5>
+            <p class="card-text">Recent work attributes progress in NLP to large language models (LMs) with increased model size and large quantities of pretraining data. Despite this, current state-of-the-art LMs for Hebrew are both under-parameterized and under-trained compared to LMs in other languages. Additionally, previous work on pretrained Hebrew LMs focused on encoder-only models. While the encoder-only architecture is beneficial for classification tasks, it does not cater well for sub-word prediction tasks, such as Named Entity Recognition, when considering the morphologically rich nature of Hebrew. In this paper we argue that sequence-to-sequence generative architectures are more suitable for large LMs in morphologically rich languages (MRLs) such as Hebrew. We demonstrate this by casting tasks in the Hebrew NLP pipeline as text-to-text tasks, for which we can leverage powerful multilingual, pretrained sequence-to-sequence models as mT5, eliminating the need for a separate, specialized, morpheme-based, decoder. Using this approach, our experiments show substantial improvements over previously published results on all existing Hebrew NLP benchmarks. These results suggest that multilingual sequence-to-sequence models present a promising building block for NLP for MRLs.</p>
+            <a href="/paper_ACL_1.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Joint Learning Model for Low-Resource Agglutinative Language Morphological Tagging
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Gulinigeer Abudouwaili, Kahaerjiang Abiderexiti, Nian Yi, Aishan Wumaier</h5>
+            <p class="card-text">Due to the lack of data resources, rule-based or transfer learning is mainly used in the morphological tagging of low-resource languages. However, these methods require expert knowledge, ignore contextual features, and have error propagation. Therefore, we propose a joint morphological tagger for low-resource agglutinative languages to alleviate the above challenges. First, we represent the contextual input with multi-dimensional features of agglutinative words. Second, joint training reduces the direct impact of part-of-speech errors on morphological features and increases the indirect influence between the two types of labels through a fusion mechanism. Finally, our model separately predicts part-of-speech and morphological features. Part-of-speech tagging is regarded as sequence tagging. When predicting morphological features, two-label adjacency graphs are dynamically reconstructed by integrating multilingual global features and monolingual local features. Then, a graph convolution network is used to learn the higher-order intersection of labels. A series of experiments show that the proposed model in this paper is superior to other comparative models.</p>
+            <a href="/paper_ACL_11.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Lightweight morpheme labeling in context: Using structured linguistic representations to support linguistic analysis for the language documentation context
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Bhargav Shandilya, Alexis Palmer</h5>
+            <p class="card-text">Linguistic analysis is a core task in the process of documenting, analyzing, and describing endangered and less-studied languages. In addition to providing insight into the properties of the language being studied, having tools to automatically label words in a language for grammatical category and morphological features can support a range of applications useful for language pedagogy and revitalization. At the same time, most modern NLP methods for these tasks require both large amounts of data in the language and compute costs well beyond the capacity of most research groups and language communities.  In this paper, we present a gloss-to-gloss (g2g) model for linguistic analysis (specifically, morphological analysis and part-of-speech tagging) that is lightweight in terms of both data requirements and computational expense. The model is designed for the interlinear glossed text (IGT) format, in which we expect the source text of a sentence in a low-resource language, a translation of that sentence into a language of wider communication, and a detailed glossing of the morphological properties of each word in the sentence. We first produce silver standard parallel glossed data by automatically labeling the high-resource translation. The model then learns to transform source language morphological labels into output labels for the target language, mediated by a structured linguistic representation layer. We test the model on both low-resource and high-resource languages, and find that our simple CNN-based model achieves comparable performance to a state-of-the-art transformer-based model, at a fraction of the computational cost.</p>
+            <a href="/paper_ACL_17.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Character alignment methods for dialect-to-standard normalization
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Yves Scherrer</h5>
+            <p class="card-text">This paper evaluates various character alignment methods on the task of sentence-level standardization of dialect transcriptions. We compare alignment methods from different scientific traditions (dialectometry, speech processing, machine translation) and apply them to Finnish, Norwegian and Swiss German dialect datasets. In the absence of gold alignments, we evaluate the methods on a set of characteristics that are deemed undesirable for the task. We find that trained alignment methods only show marginal benefits to simple Levenshtein distance. On this particular task, eflomal outperforms related methods such as GIZA++ or fast_align by a large margin.</p>
+            <a href="/paper_ACL_21.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Linear Discriminative Learning: a competitive non-neural baseline for morphological inflection
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Cheonkam Jeong, Dominic Schmitz, Akhilesh Kakolu Ramarao, Anna Stein, Kevin Tang</h5>
+            <p class="card-text">This paper presents our submission to the SIGMORPHON 2023 task 2 of Cognitively Plausible Morphophonological Generalization in Korean. We implemented both Linear Discriminative Learning and Transformer models and found that the Linear Discriminative Learning model trained on a combination of corpus and experimental data showed the best performance with the overall accuracy of around 83%. We found that the best model must be trained on both corpus data and the experimental data of one particular participant. Our examination of speaker-variability and speaker-specific information did not explain why a particular participant combined well with the corpus data. We recommend Linear Discriminative Learning models as a future non-neural baseline system, owning to its training speed, accuracy, model interpretability and cognitive plausibility. In order to improve the model performance, we suggest using bigger data and/or performing data augmentation and incorporating speaker- and item-specifics considerably.</p>
+            <a href="/paper_ACL_24.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            An Ensembled Encoder-Decoder System for Interlinear Glossed Text
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Edith Coates</h5>
+            <p class="card-text">This paper presents my submission to Track 1 of the 2023 SIGMORPHON shared task on interlinear glossed text (IGT). There are a wide amount of techniques for building and training IGT models (see Moeller and Hulden, 2018; McMillan-Major, 2020; Zhao et al., 2020). I describe my ensembled sequence-to-sequence approach, perform experiments, and share my submission&#39;s test-set accuracy. I also discuss future areas of research in low-resource token classification methods for IGT.</p>
+            <a href="/paper_ACL_28.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            The BGU-MeLeL System for the SIGMORPHON 2023 Shared Task on Morphological Inflection
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Gal Astrach, Yuval Pinter</h5>
+            <p class="card-text">This paper presents the submission by the MeLeL team to the SIGMORPHON–UniMorph Shared Task on Typologically Diverse and Acquisition-Inspired Morphological Inflection Generation Part 3: Models of Acquisition of Inflectional Noun Morphology in Polish, Estonian, and Finnish. This task requires us to produce the word form given a lemma and a grammatical case, while trying to produce the same error-rate as in children. We approach this task with a reduced-size character-based transformer model, multilingual training and an upsampling method to introduce bias.</p>
+            <a href="/paper_ACL_32.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            The SIGMORPHON 2022 Shared Task on Cross-lingual and Low-Resource Grapheme-to-Phoneme Conversion
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Arya D. McCarthy, Jackson L. Lee, Alexandra DeLucia, Travis Bartley, Milind Agarwal, Lucas F.E. Ashby, Luca Del Signore, Cameron Gibson, Reuben Raff, Winston Wu</h5>
+            <p class="card-text">Grapheme-to-phoneme conversion is an important component in many speech technologies, but until recently there were no multilingual benchmarks for this task. The third iteration of the SIGMORPHON shared task on multilingual grapheme-to-phoneme conversion features many improvements from the previous year’s task (Ashby et al., 2021), including additional languages, three subtasks varying the amount of available resources, extensive quality assurance procedures, and automated error analyses. Three teams submitted a total of fifteen systems, at best achieving relative reductions of word error rate of 14% in the crosslingual subtask and 14% in the very-low resource subtask. The generally consistent result is that cross-lingual transfer substantially helps grapheme-to-phoneme modeling, but not to the same degree as in-language examples.</p>
+            <a href="/paper_ACL_G2P.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            SIGMORPHON 2022 Shared Task on Grapheme-to-Phoneme Conversion Submission Description: Sequence Labelling for G2P
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Leander Girrbach</h5>
+            <p class="card-text">This paper describes our participation in the Third SIGMORPHON Shared Task on Grapheme-to-Phoneme Conversion (Low-Resource and Cross-Lingual) (McCarthy et al.,2022). Our models rely on different sequence labelling methods. The main model predicts multiple phonemes from each grapheme and is trained using CTC loss (Graves et al., 2006). We find that sequence labelling methods yield worse performance than the baseline when enough data is available, but can still be used when very little data is available. Furthermore, we demonstrate that alignments learned by the sequence labelling models can be easily inspected.</p>
+            <a href="/paper_ACL_G2P1.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Low-resource grapheme-to-phoneme mapping with phonetically-conditioned transfer
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Michael Hammond</h5>
+            <p class="card-text">In this paper we explore a very simple nonneural approach to mapping orthography to phonetic transcription in a low-resource context with transfer data from a related language. We start from a baseline system and focus our efforts on data augmentation. We make three principal moves. First, we start with an HMMbased system (Novak et al., 2012). Second, we augment our basic system by recombining legal substrings in restricted fashion (Ryan and Hulden, 2020). Finally, we limit our transfer data by only using training pairs where the phonetic form shares all bigrams with the target language.</p>
+            <a href="/paper_ACL_G2P2.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            A future for universal grapheme-phoneme transduction modeling with neuralized finite-state transducers
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Chu-Cheng Lin Lin</h5>
+            <p class="card-text">We propose a universal grapheme-phoneme transduction model using neuralized finite-state transducers.  Many computational models of grapheme-phoneme transduction nowadays are based on the (autoregressive) sequence-to-sequence string transduction paradigm. While such models have achieved state-of-the-art performance, they suffer from theoretical limitations of autoregressive models. On the other hand, neuralized finite-state transducers (NFSTs) have shown promising results on various string transduction tasks. NFSTs can be seen as a generalization of weighted finite-state transducers (WFSTs), and can be seen as pairs of a featurized finite-state machine (‘marked finite-state transducer’ or MFST in NFST terminology), and a string scoring function. Instead of taking a product of local contextual feature weights on FST arcs, NFSTs can employ arbitrary scoring functions to weight global contextual features of a string transduction, and therefore break the Markov property. Furthermore, NFSTs can be formally shown to be more expressive than (autoregressive) seq2seq models. Empirically, joint grapheme-phoneme transduction NFSTs have consistently outperformed vanilla seq2seq models on grapheme-tophoneme and phoneme-to-grapheme transduction tasks for English. Furthermore, they provide interpretable aligned string transductions, thanks to their finite-state machine component. In this talk, we propose a multilingual extension of the joint grapheme-phoneme NFST. We achieve this goal by modeling typological and phylogenetic features of languages and scripts as optional latent variables using a finite-state machine. The result is a versatile graphemephoneme transduction model: in addition to standard monolingual and multilingual transduction, the proposed multilingual NFST can also be used in various controlled generation scenarios, such as phoneme-to-grapheme transduction of an unseen language-script pair. We also plan to release an NFST software package.</p>
+            <a href="/paper_ACL_G2P3.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Fine-tuning mSLAM for the SIGMORPHON 2022 Shared Task on Grapheme-to-Phoneme Conversion
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Dan Garrette</h5>
+            <p class="card-text">Grapheme-to-phoneme (G2P) conversion is a task that is inherently related to both written and spoken language. Therefore, our submission to the G2P shared task builds off of mSLAM (Bapna et al., 2022), a 600M parameter encoder model pretrained simultaneously on text from 101 languages and speech from 51 languages. For fine-tuning a G2P model, we combined mSLAM’s text encoder, which uses characters as its input tokens, with an uninitialized single-layer RNN-T decoder (Graves, 2012) whose vocabulary is the set of all 381 phonemes appearing in the shared task data. We took an explicitly multilingual approach to modeling the G2P tasks, fine-tuning and evaluating a single model that covered all the languages in each task, and adding language codes as prefixes to the input strings as a means of specifying the language of each example. Our models perform well in the shared task’s “high” setting (in which they were trained on 1,000 words from each language), though they do poorly in the “low” task setting (training on only 100 words from each language). Our models also perform reasonably in the “mixed” setting (training on 100 words in the target language and 1000 words in a related language), hinting that mSLAM’s multilingual pretraining may be enabling useful cross-lingual sharing.</p>
+            <a href="/paper_ACL_G2P4.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            Findings of the SIGMORPHON 2023 Shared Task on Interlinear Glossing
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Michael Ginn, Sarah Moeller, Alexis Palmer, Anna Stacey, Garrett Nicolai, Mans Hulden, Miikka Silfverberg</h5>
+            <p class="card-text">This paper presents the findings of the SIGMORPHON 2023 Shared Task on Interlinear Glossing. This first iteration of the shared task explores glossing of a set of six typologically diverse languages: Arapaho, Gitksan, Lezgi, Natügu, Tsez and Uspanteko. The shared task encompasses two tracks: a resource-scarce closed track and an open track, where participants are allowed to utilize external data resources.  Five teams participated in the shared task. The winning team Tü-CL achieved a 23.99%-point improvement over a baseline RoBERTa system in the closed track and a 17.42%-point improvement in the open track.</p>
+            <a href="/paper_ACL_Gloss.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            SIGMORPHON–UniMorph 2023 Shared Task 0: Typologically Diverse Morphological Inflection
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Omer Goldman, Khuyagbaatar Batsuren, Salam Khalifa, Aryaman Arora, Garrett Nicolai, Reut Tsarfaty, Ekaterina Vylomova</h5>
+            <p class="card-text">The 2023 SIGMORPHON–UniMorph shared task on typologically diverse morphological inflection included a wide range of languages: 26 languages from 9 primary language families. The data this year was all lemma-split, to allow testing models&#39; generalization ability, and structured along the new hierarchical schema presented in (Batsuren et al., 2022). The systems submitted this year, 9 in number, showed ingenuity and innovativeness, including hard attention for explainability and bidirectional decoding. Special treatment was also given by many participants to the newly-introduced data in Japanese, due to the high abundance of unseen Kanji characters in its test set.</p>
+            <a href="/paper_ACL_Inf1.html" class="btn btn-primary">Go to Paper</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            SIGMORPHON–UniMorph 2023 Shared Task 0, Part 2: Cognitively Plausible Morphophonological Generalization in Korean
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: Canaan Breiss, Jinyoung Jo</h5>
+            <p class="card-text">This paper summarises data collection and curation for Part 2 of the 2023 SIGMORPHON-UniMorph Shared Task 0, which focused on modeling speaker knowledge and generalization of a pair of interacting phonological processes in Korean. We briefly describe how modeling the generalization task could be of interest to researchers in both Natural Language Processing and linguistics, and then summarise the traditional description of the phonological processes that are at the center of the modeling challenge. We then describe the criteria we used to select and code cases of process application in two Korean speech corpora, which served as the primary learning data. We also report the technical details of the experiment we carried out that served as the primary test data.</p>
+            <a href="/paper_ACL_Inf2.html" class="btn btn-primary">Go to Paper</a>
+          </div>
         </div>
       </div>
       
     </div>
 
-
-
-    
 
     <script src="static/js/time-extend.js"></script>
     <script>

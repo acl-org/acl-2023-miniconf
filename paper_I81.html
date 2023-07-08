@@ -79,7 +79,7 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="E-commerce websites (e.g. Amazon, Alibaba) have a plethora of structured and unstructured information (text and images) present on the product pages. Sellers often don&#39;t label or mislabel values of the attributes (e.g. color, size etc.) for their products. Automatically identifying these attribute values from an eCommerce product page that contains both text and images is a challenging task, especially when the attribute value is not explicitly mentioned in the catalog. In this paper, we present a scalable solution for this problem where we pose attribute extraction problem as a question-answering task, which we solve using MXT, that consists of three key components: (i) MAG (Multimodal Adaptation Gate), (ii) Xception network, and (iii) T5 encoder-decoder. Our system consists of a generative model that generates attribute-values for a given product by using both textual and visual characteristics (e.g. images) of the product. We show that our system is capable of handling zero-shot attribute prediction (when attribute value is not seen in training data) and value-absent prediction (when attribute value is not mentioned in the text) which are missing in traditional classification-based and NER-based models respectively. We have trained our models using distant supervision, removing dependency on human labeling, thus making them practical for real-world applications. With this framework, we are able to train a single model for 1000s of (product-type, attribute) pairs, thus reducing the overhead of training and maintaining separate models. Extensive experiments on two real world datasets (total 57 attributes) show that our framework improves the absolute recall@90P by 10.16\% and 6.9\textbackslash{} from the existing state of the art models. In a popular e-commerce store, we have productionized our models that cater to \textgreater{}12K (product-type, attribute) pairs, and have extracted \textgreater{}150MM attribute values." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -265,6 +265,14 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.29.pdf">
+        Paper
+      </a>
+      
+      
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.29">
+        Anthology
+      </a>
       
       
       <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15229/lecture/79762-large-scale-generative-multimodal-attribute-extraction-for-e-commerce-attributes">
@@ -372,7 +380,7 @@
 </script>
         <div>
           <span class="font-weight-bold">TLDR:</span>
-          
+          E-commerce websites (e.g. Amazon, Alibaba) have a plethora of structured and unstructured information (text and images) present on the product pages. Sellers often don&#39;t label or mislabel values of the attributes (e.g. color, size etc.) for their products. Automatically identifying these attribute v...
         </div>
   </div>
 </div>
@@ -383,6 +391,10 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="paper-tab" data-toggle="tab" href="#paper" role="tab" aria-controls="paper" aria-selected="false">Paper</a>
   </li>
   
   
@@ -415,11 +427,15 @@
         <div class="card-text">
           <div id="abstractExample">
             <span class="font-weight-bold">Abstract:</span>
-            
+            E-commerce websites (e.g. Amazon, Alibaba) have a plethora of structured and unstructured information (text and images) present on the product pages. Sellers often don&#39;t label or mislabel values of the attributes (e.g. color, size etc.) for their products. Automatically identifying these attribute values from an eCommerce product page that contains both text and images is a challenging task, especially when the attribute value is not explicitly mentioned in the catalog. In this paper, we present a scalable solution for this problem where we pose attribute extraction problem as a question-answering task, which we solve using MXT, that consists of three key components: (i) MAG (Multimodal Adaptation Gate), (ii) Xception network, and (iii) T5 encoder-decoder. Our system consists of a generative model that generates attribute-values for a given product by using both textual and visual characteristics (e.g. images) of the product. We show that our system is capable of handling zero-shot attribute prediction (when attribute value is not seen in training data) and value-absent prediction (when attribute value is not mentioned in the text) which are missing in traditional classification-based and NER-based models respectively. We have trained our models using distant supervision, removing dependency on human labeling, thus making them practical for real-world applications. With this framework, we are able to train a single model for 1000s of (product-type, attribute) pairs, thus reducing the overhead of training and maintaining separate models. Extensive experiments on two real world datasets (total 57 attributes) show that our framework improves the absolute recall@90P by 10.16\% and 6.9\textbackslash{} from the existing state of the art models. In a popular e-commerce store, we have productionized our models that cater to \textgreater{}12K (product-type, attribute) pairs, and have extracted \textgreater{}150MM attribute values.
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="tab-pane fade" id="paper" role="tabpanel" aria-labelledby="paper-tab">
+    <embed src="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.29.pdf" type="application/pdf" width="100%" height="850px">
   </div>
   
   

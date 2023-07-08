@@ -81,7 +81,7 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Early exiting can reduce the average latency of pre-trained language models (PLMs) via its adaptive inference mechanism and work with other inference speed-up methods like model pruning, thus drawing much attention from the industry. In this work, we propose a novel framework, BADGE, which consists of two off-the-shelf methods for improving PLMs&#39; early exiting. We first address the issues of training a multi-exit PLM, the backbone model for early exiting. We propose the novel architecture of block-wise bypasses, which can alleviate the conflicts in jointly training multiple intermediate classifiers and thus improve the overall performances of multi-exit PLM while introducing negligible additional flops to the model. Second, we propose a novel divergence-based early exiting (DGE) mechanism, which obtains early exiting signals by comparing the predicted distributions of two adjacent layers&#39; exits. Extensive experiments on three proprietary datasets and three GLUE benchmark tasks demonstrate that our method can obtain a better speedup-performance trade-off than the existing baseline methods.\textbackslash{}footnote\{Code will be made publicly available to the research community upon acceptance.\}" />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -271,6 +271,14 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.48.pdf">
+        Paper
+      </a>
+      
+      
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.48">
+        Anthology
+      </a>
       
       
       <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15229/lecture/79759-badge-speeding-up-bert-inference-after-deployment-via-block-wise-bypasses-and-divergence-based-early-exiting">
@@ -378,7 +386,7 @@
 </script>
         <div>
           <span class="font-weight-bold">TLDR:</span>
-          
+          Early exiting can reduce the average latency of pre-trained language models (PLMs) via its adaptive inference mechanism and work with other inference speed-up methods like model pruning, thus drawing much attention from the industry. In this work, we propose a novel framework, BADGE, which consists ...
         </div>
   </div>
 </div>
@@ -389,6 +397,10 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="paper-tab" data-toggle="tab" href="#paper" role="tab" aria-controls="paper" aria-selected="false">Paper</a>
   </li>
   
   
@@ -421,11 +433,15 @@
         <div class="card-text">
           <div id="abstractExample">
             <span class="font-weight-bold">Abstract:</span>
-            
+            Early exiting can reduce the average latency of pre-trained language models (PLMs) via its adaptive inference mechanism and work with other inference speed-up methods like model pruning, thus drawing much attention from the industry. In this work, we propose a novel framework, BADGE, which consists of two off-the-shelf methods for improving PLMs&#39; early exiting. We first address the issues of training a multi-exit PLM, the backbone model for early exiting. We propose the novel architecture of block-wise bypasses, which can alleviate the conflicts in jointly training multiple intermediate classifiers and thus improve the overall performances of multi-exit PLM while introducing negligible additional flops to the model. Second, we propose a novel divergence-based early exiting (DGE) mechanism, which obtains early exiting signals by comparing the predicted distributions of two adjacent layers&#39; exits. Extensive experiments on three proprietary datasets and three GLUE benchmark tasks demonstrate that our method can obtain a better speedup-performance trade-off than the existing baseline methods.\textbackslash{}footnote\{Code will be made publicly available to the research community upon acceptance.\}
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="tab-pane fade" id="paper" role="tabpanel" aria-labelledby="paper-tab">
+    <embed src="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.48.pdf" type="application/pdf" width="100%" height="850px">
   </div>
   
   

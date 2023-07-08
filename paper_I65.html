@@ -85,7 +85,13 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Datasets used to train deep learning models in industrial settings often exhibit skewed distributions with some samples repeated a large number of times.
+This paper presents a simple yet effective solution to reduce the increased burden of repeated computation on redundant datasets.
+Our approach eliminates duplicates at the batch level, without altering the data distribution observed by the model, making it model-agnostic and easy to implement as a plug-and-play module. 
+We also provide a mathematical expression to estimate the reduction in training time that our approach provides. 
+Through empirical evidence, we show that our approach significantly reduces training times on various models across datasets with varying redundancy factors, without impacting their performance on the Named Entity Recognition task, both on publicly available datasets and in real industrial settings.
+In the latter, the approach speeds training by up to 87\%, and by 46\% on average, with a drop in model performance of 0.2\% relative at worst.
+We finally release a modular and reusable codebase to further advance research in this area." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -283,6 +289,14 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.23.pdf">
+        Paper
+      </a>
+      
+      
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.23">
+        Anthology
+      </a>
       
       
       <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15254/lecture/79812-mitigating-the-burden-of-redundant-datasets-via-batch-wise-unique-samples-and-frequency-aware-losses">
@@ -390,7 +404,9 @@
 </script>
         <div>
           <span class="font-weight-bold">TLDR:</span>
-          
+          Datasets used to train deep learning models in industrial settings often exhibit skewed distributions with some samples repeated a large number of times.
+This paper presents a simple yet effective solution to reduce the increased burden of repeated computation on redundant datasets.
+Our approach eli...
         </div>
   </div>
 </div>
@@ -401,6 +417,10 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="paper-tab" data-toggle="tab" href="#paper" role="tab" aria-controls="paper" aria-selected="false">Paper</a>
   </li>
   
   
@@ -433,11 +453,21 @@
         <div class="card-text">
           <div id="abstractExample">
             <span class="font-weight-bold">Abstract:</span>
-            
+            Datasets used to train deep learning models in industrial settings often exhibit skewed distributions with some samples repeated a large number of times.
+This paper presents a simple yet effective solution to reduce the increased burden of repeated computation on redundant datasets.
+Our approach eliminates duplicates at the batch level, without altering the data distribution observed by the model, making it model-agnostic and easy to implement as a plug-and-play module. 
+We also provide a mathematical expression to estimate the reduction in training time that our approach provides. 
+Through empirical evidence, we show that our approach significantly reduces training times on various models across datasets with varying redundancy factors, without impacting their performance on the Named Entity Recognition task, both on publicly available datasets and in real industrial settings.
+In the latter, the approach speeds training by up to 87\%, and by 46\% on average, with a drop in model performance of 0.2\% relative at worst.
+We finally release a modular and reusable codebase to further advance research in this area.
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="tab-pane fade" id="paper" role="tabpanel" aria-labelledby="paper-tab">
+    <embed src="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.23.pdf" type="application/pdf" width="100%" height="850px">
   </div>
   
   

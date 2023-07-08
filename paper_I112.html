@@ -91,7 +91,11 @@
 <meta name="citation_publication_date" content="July 2023" />
 <meta name="citation_conference_title" content="The 61st Annual Meeting Of The Association For Computational Linguistics" />
 <meta name="citation_inbook_title" content="Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics" />
-<meta name="citation_abstract" content="" />
+<meta name="citation_abstract" content="Leveraging representations from pre-trained transformer-based encoders achieves state-of-the-art performance on numerous NLP tasks.
+Larger encoders can improve accuracy for spoken language understanding (SLU) but are challenging to use given the inference latency constraints of online systems (especially on CPU machines).
+We evaluate using a larger 170M parameter BERT encoder that shares representations across languages, domains and tasks for SLU compared to using smaller 17M parameter BERT encoders with language-, domain- and task-decoupled finetuning.
+Running inference with a larger shared encoder on GPU is latency neutral and reduces infrastructure cost compared to running inference for decoupled smaller encoders on CPU machines.
+The larger shared encoder reduces semantic error rates by 4.62\% for test sets representing user requests to voice-controlled devices and 5.79\% on the tail of the test sets on average across four languages." />
 
 <meta name="citation_pdf_url" content="" />
 
@@ -301,6 +305,14 @@
    
     <div class="text-center p-3">
       
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.43.pdf">
+        Paper
+      </a>
+      
+      
+      <a class="card-link link-info" target="_blank" href="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.43">
+        Anthology
+      </a>
       
       
       <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15266/lecture/79767-sharing-encoder-representations-across-languages-domains-and-tasks-in-large-scale-spoken-language-understanding">
@@ -408,7 +420,8 @@
 </script>
         <div>
           <span class="font-weight-bold">TLDR:</span>
-          
+          Leveraging representations from pre-trained transformer-based encoders achieves state-of-the-art performance on numerous NLP tasks.
+Larger encoders can improve accuracy for spoken language understanding (SLU) but are challenging to use given the inference latency constraints of online systems (espec...
         </div>
   </div>
 </div>
@@ -419,6 +432,10 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" id="abstract-tab" data-toggle="tab" href="#abstract" role="tab" aria-controls="abstract" aria-selected="false">Abstract</a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" id="paper-tab" data-toggle="tab" href="#paper" role="tab" aria-controls="paper" aria-selected="false">Paper</a>
   </li>
   
   
@@ -451,11 +468,19 @@
         <div class="card-text">
           <div id="abstractExample">
             <span class="font-weight-bold">Abstract:</span>
-            
+            Leveraging representations from pre-trained transformer-based encoders achieves state-of-the-art performance on numerous NLP tasks.
+Larger encoders can improve accuracy for spoken language understanding (SLU) but are challenging to use given the inference latency constraints of online systems (especially on CPU machines).
+We evaluate using a larger 170M parameter BERT encoder that shares representations across languages, domains and tasks for SLU compared to using smaller 17M parameter BERT encoders with language-, domain- and task-decoupled finetuning.
+Running inference with a larger shared encoder on GPU is latency neutral and reduces infrastructure cost compared to running inference for decoupled smaller encoders on CPU machines.
+The larger shared encoder reduces semantic error rates by 4.62\% for test sets representing user requests to voice-controlled devices and 5.79\% on the tail of the test sets on average across four languages.
           </div>
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="tab-pane fade" id="paper" role="tabpanel" aria-labelledby="paper-tab">
+    <embed src="https://preview.aclanthology.org/acl-23-ingestion/2023.acl-industry.43.pdf" type="application/pdf" width="100%" height="850px">
   </div>
   
   

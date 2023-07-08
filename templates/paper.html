@@ -76,37 +76,37 @@
     <div class="text-center p-3">
       {% if paper.paper_pdf %}
       <a class="card-link link-info" target="_blank" href="{{paper.paper_pdf}}">
-        Paper
+        📝 Paper 
       </a>
       {% endif %}
       {% if paper.anthology_url %}
       <a class="card-link link-info" target="_blank" href="{{paper.anthology_url}}">
-        Anthology
+        <img src='/static/images/acl2023/acl-logo.png' height="20"></img> Anthology
       </a>
       {% endif %}
       {% if paper.underline_url %}
       <a class="card-link link-info" target="_blank" href="{{paper.underline_url}}">
-        Underline
+        <img src='/static/images/underline.jpg' height="20"></img> Underline
       </a>
       {% endif %}
       {% if paper.poster_pdf %}
       <a class="card-link link-info" target="_blank" href="{{paper.poster_pdf}}">
-        Poster
+        🪧 Poster
       </a>
       {% endif %}
       {% if paper.slides_pdf %}
       <a class="card-link link-info" target="_blank" href="{{paper.slides_pdf}}">
-        Slides
+        🧑‍🏫 Slides
       </a>
       {% endif %}
       {% if paper.video_url %}
       <a class="card-link link-info" target="_blank" href="{{paper.video_url}}">
-        Video
+        📺 Video
       </a>
       {% endif %}
       {% if paper.underline_url %}
       <a class="card-link link-info" target="_blank" href="{{paper.underline_url}}">
-        Watch Video on Underline
+        📺 Watch Video on Underline
       </a>
       {% endif %}
       {% if paper.code != blank %}

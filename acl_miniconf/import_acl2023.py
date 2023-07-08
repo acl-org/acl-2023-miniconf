@@ -69,10 +69,6 @@ UNDERLINE_EVENTS_TO_SKIP = {
 }
 
 
-# No Op Fixed in new program
-def internal_to_external_session(name: str):
-    return name
-
 
 def parse_sessions_and_tracks(df: pd.DataFrame):
     sessions = sorted(set(df.Session.values), key=lambda x: int(x.split()[1]))
@@ -404,15 +400,12 @@ class Acl2023Parser:
         end_dt = self.zone.localize(
             datetime.datetime(year=2023, month=7, day=10, hour=21, minute=0)
         )
-        # TODO: Fix Session once the sheet has it
-        for group_room, group in df.groupby(["Location"]):
-            group_session = "Spotlight"
+        for (group_session, group_track), group in df.groupby(["Session", "Track"]):
             group = group.sort_values("Presentation Order")
             room = group.iloc[0].Location
-            group_track = "Spotlight"
             # There are multiple concurrent spotlight events, each in a different room.
             # Thus, the one spotlight session should have multiple events that are differentiated by room
-            event_name = get_session_event_name(group_session, group_room, group_type)
+            event_name = get_session_event_name(group_session, group_track, group_type)
             event_id = name_to_id(event_name)
 
             start_dt, end_dt = self._parse_start_end_dt(
@@ -438,7 +431,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
-                    display_name=internal_to_external_session(group_session),
+                    display_name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -535,7 +528,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
-                    display_name=internal_to_external_session(group_session),
+                    display_name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -641,7 +634,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
-                    display_name=internal_to_external_session(group_session),
+                    display_name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -745,7 +738,7 @@ class Acl2023Parser:
                 self.sessions[group_session] = Session(
                     id=name_to_id(group_session),
                     name=group_session,
-                    display_name=internal_to_external_session(group_session),
+                    display_name=group_session,
                     start_time=start_dt,
                     end_time=end_dt,
                     type="Paper Sessions",
@@ -922,7 +915,7 @@ class Acl2023Parser:
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
-                display_name=internal_to_external_session(group_session),
+                display_name=group_session,
                 start_time=event_data["start"],
                 end_time=event_data["end"],
                 type=event_type,
@@ -991,7 +984,7 @@ class Acl2023Parser:
             self.sessions[group_session] = Session(
                 id=name_to_id(group_session),
                 name=group_session,
-                display_name=internal_to_external_session(group_session),
+                display_name=group_session,
                 start_time=session_start,
                 end_time=session_end,
                 type=event_type,

@@ -2,21 +2,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<script src='https://slideslive.com/embed_presentation.js'></script>
 <!-- Title -->
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
       {{workshop.short_name}}
     </h2>
-    <!-- <h3 class="card-subtitle mb-2 text-muted text-center">
-      {{ workshop.committee }}
-    </h3>
- -->
     <h3 class="card-subtitle mb-2 text-muted text-center">
+      Organizers: 
       {% for author in workshop.committee %}
       <a href="papers.html?filter=authors&search={{author.full_name}}&program=all"
-        class="text-primary">{{author.full_name}}</a>{{
+        class="text-primary link-primary">{{author.full_name}}</a>{{
       "," if not loop.last }}
       {% endfor %}
     </h3>
@@ -25,7 +21,7 @@
     </div>
     <div class="text-center p-3">
       {% if workshop.workshop_site_url %}
-      <a href="{{workshop.workshop_site_url}}" target="_blank" class="card-link">
+      <a href="{{workshop.workshop_site_url}}" target="_blank" class="link-success">
         External Website
       </a>
       {% endif %}
@@ -33,40 +29,8 @@
 
     </div>
 
-    <!-- <div class="text-center pt-n2 pb-3">
-      {% if workshop.zoom_links| length == 1 %}
-      <a href="{{ workshop.zoom_links[0] }}" target="_blank" class="card-link">
-        Zoom Link
-      </a>
-      {% elif workshop.zoom_links|length > 1 %}
-      {% for zoom_link in workshop.zoom_links %}
-      <a href="{{ zoom_link }}" target="_blank" class="card-link">
-        Zoom Link {{ loop.index }}
-      </a>
-      {% endfor %}
-      {% endif %}
-    </div>
-
-    {{ components.live_sessions(
-    workshop.blocks,
-    workshop.title,
-    "https://virtual.acl2020.org/workshop_" + workshop.id + ".html",
-    false) }}
-
-  </div> -->
   </div>
 
-  <!-- <div id="details" class="pp-card m-3 collapse hide">
-    <div class="card-body">
-      <div class="card-text">
-        <div id="abstractExample">
-          {{workshop.description|safe}}
-        </div>
-      </div>
-      <p></p>
-    </div>
-  </div>
- -->
   <!-- Schedule -->
   <!-- {% if workshop.sessions %}
   <div id="schedule" class="collapse" aria-labelledby="schedule">
@@ -95,91 +59,47 @@
     </div>
   </div>
   {% endif %}
-  <script src="static/js/time-extend.js"></script> -->
+-->
 
   <div class="container" style="background-color:white; padding: 0px;">
     <div class="text-muted text-center">
       You can open
-      {% if workshop.livestream %}
       the
-      <a href="https://slideslive.com/{{workshop.livestream}}" target="_blank">livestream video</a>
-      and
-      {% endif %}
-      the
-      <a href="https://{{config.chat_server}}/channel/workshop-{{workshop.id|replace('_', '-')}}" target="_blank">
-        #workshop-{{workshop.id|replace('_', '-')}}
+      <a href="https://{{ config.chat_server }}/channel/{{ rocketchat_channel }}" target="_blank">
+        #{{ rocketchat_channel }}
       </a>
-      channel
-      {% if workshop.livestream %}
-      in separate windows.
-      {% else %}
-      in a separate window.
-      {% endif %}
+      channel in separate windows.
 
     </div>
 
     <div class="row m-2">
-      {% if workshop.livestream %}
-      <!-- Livestreaming -->
-      <div class="col-md-7 col-xs-12 my-auto p-2">
-        <div id="presentation-embed" class="slp my-auto"></div>
-        <script src='https://slideslive.com/embed_presentation.js'></script>
-        <script>
-          embed = new SlidesLiveEmbed('presentation-embed', {
-            presentationId: '{{workshop.livestream}}',
-            autoPlay: false, // change to true to autoplay the embedded presentation
-            verticalEnabled: true,
-            verticalWhenWidthLte: 500,
-            allowHiddenControlsWhenPaused: true,
-            hideTitle: true
-          });
-        </script>
-      </div>
-
-      <!-- Chat -->
-      <br />
-      <div class="col-md-5 col-xs-12 p-2">
-        <div id="gitter" class="slp">
-          <iframe frameborder="0"
-            src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px"
-            width="100%"></iframe>
-        </div>
-      </div>
-      {% else %}
       <div class="container" style="background-color:white; padding: 0px;">
-
-
         <!-- Chat -->
         <div id="gitter" class="slp">
           <iframe frameborder="0"
-            src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px"
+            src="https://{{ config.chat_server }}/channel/{{ rocketchat_channel }}?layout=embedded" height="700px"
             width="100%"></iframe>
         </div>
       </div>
-      {% endif %}
     </div>
-
-
-
-    {% if workshop.prerecorded_talks %}
-    <!-- Prerecorded Talk -->
-    {{ components.section("Pre-recorded Plenary Talks") }}
-    <div id="accordion">
-      {% for talk in workshop.prerecorded_talks %}
-      <div class="row m-2">
-        <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
-          <br />
-          <p>
-            <a href="https://slideslive.com/{{talk.presentation_id}}" target="_blank"><b>{{talk.title}}</b></a>
-          </p>
-          <p>
-            <i>{{talk.speakers}}</i>
-          </p>
+    <div class="row"><div class="col-12"><h3 class="text-center">Workshop Papers</h3></div></div>
+    <div class="row" style='margin: 15px;'>
+      {% for paper in papers %}
+      <div class="col-12" style="margin-bottom: 15px;">
+        <div class="card">
+          <div class="card-header">
+            {{ paper.title }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Authors: {{ paper.authors | join(', ') }}</h5>
+            <p class="card-text">{{ paper.abstract }}</p>
+            <a href="/paper_{{paper.id}}.html" class="btn btn-primary">Go to Paper</a>
+          </div>
         </div>
       </div>
       {% endfor %}
     </div>
-    {% endif %}
+
 
     <script src="static/js/time-extend.js"></script>
     <script>

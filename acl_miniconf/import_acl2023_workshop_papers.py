@@ -111,8 +111,6 @@ def main(
             workshop_papers.append(
                 Paper(
                     id=f"{prefix}_{workshop_paper_id}",
-                    forum="",
-                    card_image_path="",
                     title=p["title"],
                     authors=authors,
                     track=workshop_name,

@@ -203,8 +203,6 @@ class Paper(BaseModel):
     """
 
     id: str
-    forum: str
-    card_image_path: str
     title: str
     authors: List[str]
     track: str
@@ -219,6 +217,7 @@ class Paper(BaseModel):
     poster_pdf: Optional[str] = None
     slides_pdf: Optional[str] = None
     video_url: Optional[str] = None
+    anthology_url: Optional[str] = None
     paper_pdf: Optional[str] = None
     demo_url: Optional[str] = None
     event_ids: List[str]

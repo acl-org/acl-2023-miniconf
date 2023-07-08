@@ -320,6 +320,7 @@ def reformat_plenary_data(plenaries):
         # Load images if we have one
         if plenary_key == "memorial":
             plenary.image_url = "invited/drago.jpg"
+            plenary.abstract = plenary.abstract.replace('[image]', '').strip()
         elif plenary_key == "two-paths-to-intelligence":
             plenary.image_url = "invited/invited1.jpg"
         elif plenary_key[:10] == "large-lang":

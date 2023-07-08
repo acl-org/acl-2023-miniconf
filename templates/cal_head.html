@@ -1,139 +1,148 @@
-{{ components.calendar_scripts() }}
+{{components.calendar_scripts()}}
 <script>
-  
-  // We use https://fullcalendar.io/
-  document.addEventListener('DOMContentLoaded', function() {
-      $.get("/schedule.json", function(data, status) {
+    // We use https://fullcalendar.io/
+    document.addEventListener('DOMContentLoaded', function() {
+    var initial_view = 'timeGridWeek';
+    window.fc_current_view = initial_view;
+    var initialTimeZone = moment.tz.guess();
+    var timeZoneSelectorEl = document.getElementById('time-zone-selector');
+    var eventTypeSelectorEl = document.getElementById('event-type-selector');
+
+    // M: This variable is here to be filled inside the "$.get" function
+    var calendar = null;
+
+    $.get("/schedule.json", function (data, status) {
         var events = data;
-      var event_lookup = Object.fromEntries(events.map(e => [e.title, e]));
-      var initial_view = 'timeGridWeek';
-      window.fc_current_view = initial_view;
-      var initialTimeZone = moment.tz.guess();
-      var timeZoneSelectorEl = document.getElementById('time-zone-selector');
-      var eventTypeSelectorEl = document.getElementById('event-type-selector');
-      // get event types
-      // var uniqEvents = [...new Set(events.map(x=>x.type))]
-      //  ["Tutorials", "Plenary Sessions", "Workshops", "Socials", "QA Sessions"]
+        // Fun fact! I think this variable is no longer in use
+        var event_lookup = Object.fromEntries(events.map(e => [e.title, e]));
+        // get event types
+        // var uniqEvents = [...new Set(events.map(x=>x.type))]
+        //  ["Tutorials", "Plenary Sessions", "Workshops", "Socials", "QA Sessions"]
 
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: initial_view,
-        initialDate: '{{ config.calendar.start }}',
-        timeZone: initialTimeZone,
-        allDaySlot: false,
-        nowIndicator: true,
-        slotLabelFormat: {
-          hour: '2-digit',
-          minute: '2-digit',
-          meridiem: false,
-          hour12: false
-        },
-        eventTimeFormat: {
-          hour: '2-digit',
-          minute: '2-digit',
-          meridiem: false,
-          timeZoneName: 'short',
-          hour12: false
-        },
-        visibleRange: {
-          start: '{{ config.calendar.start }}',
-          end: '{{ config.calendar.end }}'
-        },
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'timeGridWeek,timeGridDay'
-        },
-        slotEventOverlap: false,
-        slotDuration: "00:30:00",
-        height: "auto",
-        events: function(info, successCallback, failureCallback) {
-            // We need to change the time zone manually,
-            // we cannot use static event data
-            // Deep copy
-            let tz = info.timeZone;
-            //get selected event types
-            let eventTypes = [...eventTypeSelectorEl.options].filter(option => option.selected).map(option => option.value);
+        var calendarEl = document.getElementById('calendar');
+        var calendar_n = new FullCalendar.Calendar(calendarEl, {
+            initialView: initial_view,
+            initialDate: '{{ config.calendar.start }}',
+            timeZone: initialTimeZone,
+            allDaySlot: false,
+            nowIndicator: true,
+            slotLabelFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                meridiem: false,
+                hour12: false
+            },
+            eventTimeFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                meridiem: false,
+                timeZoneName: 'short',
+                hour12: false
+            },
+            visibleRange: {
+                start: '{{ config.calendar.start }}',
+                end: '{{ config.calendar.end }}'
+            },
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'timeGridWeek,timeGridDay'
+            },
+            slotEventOverlap: false,
+            slotDuration: "00:30:00",
+            height: "auto",
+            events: function (info, successCallback, failureCallback) {
+                // We need to change the time zone manually,
+                // we cannot use static event data
+                // Deep copy
+                let tz = info.timeZone;
+                //get selected event types
+                let eventTypes = [...eventTypeSelectorEl.options].filter(option => option.selected).map(option => option.value);
 
-            if (tz === "Local") {
-                tz = moment.tz.guess();
-            }
+                if (tz === "Local") {
+                    tz = moment.tz.guess();
+                }
 
-            let view = window.fc_current_view;
+                let view = window.fc_current_view;
 
-            let zoned_events = JSON.parse(JSON.stringify(events));
-            for (var i = 0; i < zoned_events.length; i++){
-              var obj = zoned_events[i];
-              obj["start"] = moment(obj["start"]).tz(tz).format();
-              obj["end"] = moment(obj["end"]).tz(tz).format();
+                let zoned_events = JSON.parse(JSON.stringify(events));
+                for (var i = 0; i < zoned_events.length; i++) {
+                    var obj = zoned_events[i];
+                    obj["start"] = moment(obj["start"]).tz(tz).format();
+                    obj["end"] = moment(obj["end"]).tz(tz).format();
 
-              if (obj["view"] === "day" && view !== "timeGridDay" ||
-                  obj["view"] === "week" && view !== "timeGridWeek" ||
-                  !eventTypes.includes(obj["type"])) {
-                obj["display"] = "none";
-              }
-            }
-            successCallback(zoned_events);
-        },
-        eventClick: function(eventClickInfo) {
-            var e = eventClickInfo.event;
-            // Prevent reloading the current page, as we clicked
-            // on a hyperlink on the current page
-            eventClickInfo.jsEvent.preventDefault();
+                    if (obj["view"] === "day" && view !== "timeGridDay" ||
+                        obj["view"] === "week" && view !== "timeGridWeek" ||
+                        !eventTypes.includes(obj["type"])) {
+                        obj["display"] = "none";
+                    }
+                }
+                successCallback(zoned_events);
+            },
+            eventClick: function (eventClickInfo) {
+                var e = eventClickInfo.event;
+                // Prevent reloading the current page, as we clicked
+                // on a hyperlink on the current page
+                eventClickInfo.jsEvent.preventDefault();
 
-            if (e.url) {
-                window.open(e.url, "_blank");
-                return false;
-            }
-        },
-        eventDidMount: function(info) {
-          var title = info.event.title;
-          $(info.el).popover({
-            title: title,
-            html: true,
-            content: info.timeText,//+ "<br/> Room: " + event_lookup[title].location,
-            placement: 'top',
-            trigger:'hover',
-            container:'body'
-          })
-        },
-        // Render HTML from title as HTML
-        eventContent: function( arg ) {
- 	        return { html: arg.event.title }
-        },
-        datesSet: function( dateInfo ) {
-            window.fc_current_view = dateInfo.view.type;
-            dateInfo.view.calendar.refetchEvents();
-        },
-        
-      });
+                if (e.url) {
+                    window.open(e.url, "_blank");
+                    return false;
+                }
+            },
+            eventDidMount: function (info) {
+                var title = info.event.title;
+                $(info.el).popover({
+                    title: title,
+                    html: true,
+                    content: info.timeText,//+ "<br/> Room: " + event_lookup[title].location,
+                    placement: 'top',
+                    trigger: 'hover',
+                    container: 'body'
+                })
+            },
+            // Render HTML from title as HTML
+            eventContent: function (arg) {
+                return {html: arg.event.title}
+            },
+            datesSet: function (dateInfo) {
+                window.fc_current_view = dateInfo.view.type;
+                dateInfo.view.calendar.refetchEvents();
+            },
 
-      moment.tz.names().forEach(function(timeZone) {
+        });
+        // M: We now assign the "calendar" variable the value we just calculated
+        // above. Why not assigning it directly? Because I'm trying to touch
+        // the minimum possible amount of code.
+        calendar = calendar_n;
+        // I did not find a better way than using global variables
+        window.fc_current_view = calendar.view.type;
+        calendar.render();
+    });
+    // M: I moved these functions from the above loop because otherwise they
+    // don't work well in Firefox. I believe the issue is one of script execution:
+    // I imagine that the Event Listeners are not triggered if inside a function
+    // that's not running?
+    moment.tz.names().forEach(function (timeZone) {
         var optionEl;
-
         if (timeZone !== 'UTC') { // UTC is already in the list
-          optionEl = document.createElement('option');
-          optionEl.value = timeZone;
-          optionEl.innerText = timeZone;
-          timeZoneSelectorEl.appendChild(optionEl);
+            optionEl = document.createElement('option');
+            optionEl.value = timeZone;
+            optionEl.innerText = timeZone;
+            timeZoneSelectorEl.appendChild(optionEl);
         }
-      });
+    });
 
     // when the timezone selector changes, dynamically change the calendar option
-    timeZoneSelectorEl.addEventListener('change', function() {
-      calendar.setOption('timeZone', this.value);
+    timeZoneSelectorEl.addEventListener('change', function () {
+        calendar.setOption('timeZone', this.value);
     });
 
     // when eventype changes, refetch and hide unselected events
-    eventTypeSelectorEl.addEventListener('change', function(){
-      calendar.refetchEvents();
+    eventTypeSelectorEl.addEventListener('change', function () {
+        calendar.refetchEvents();
     })
-
-    // I did not find a better way than using global variables
-    window.fc_current_view = calendar.view.type;
-    calendar.render();
-      });
-  });
+});
 
 </script>
 <script src="static/js/lazy_load.js"></script>

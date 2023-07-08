@@ -13,16 +13,12 @@
 <div class="tab-content" id="nav-tabContent">
 
     {% for (tab_id, day, active) in session_days %}
-    <div
-            class="tab-pane fade {{ 'active show' if active else '' }}"
-            id="tab-{{ tab_id }}"
-            role="tabpanel"
-            aria-labelledby="nav-profile-tab"
-    >
+    <div class="tab-pane fade {{ 'active show' if active else '' }}" id="tab-{{ tab_id }}" role="tabpanel"
+        aria-labelledby="nav-profile-tab">
 
         <div id="{{ tab_id }}">
             <div class="plenary_sessions">
-                <hr/>
+                <hr />
                 <span>
                     Timezone:
                     <span class="badge badge-primary">Conference (Toronto)</span>
@@ -30,60 +26,73 @@
                     <span class="badge badge-info">Browser</span>
                 </span>
                 {% for session in sessions[day] %}
-                {% if session.type not in excluded_session_types and not session.name.startswith('Diversity and Inclusion') %}
+                {% if session.type not in excluded_session_types and not session.name.startswith('Diversity and
+                Inclusion') %}
                 <div class="row p-4 col-md-12">
-                        {% if session.type == 'Tutorials' %}
-                        <div class="row col-12">
-                            {% set tutorial_event = session.tutorial_events | take_one %}
-                            <h3><a href="/tutorial_{{ tutorial_event.id }}.html">{{ session.name }}</a></h3>
+                    {% if session.type == 'Tutorials' %}
+                    <div class="row col-12">
+                        {% set tutorial_event = session.tutorial_events | take_one %}
+                        <h3><a href="/tutorial_{{ tutorial_event.id }}.html">{{ session.name }}</a></h3>
+                    </div>
+                    {% elif session.type == 'Workshops' %}
+                    <div class="row col-12">
+                        {% set w_event = session.workshop_events | take_one %}
+                        <h3><a href="/workshop_{{ w_event.id }}.html">{{ session.name }}</a></h3>
+                    </div>
+                    {% else %}
+                    <div class="row col-12">
+                        <h3>{{ session.name }}</h3>
+                    </div>
+                    {% endif %}
+                    <div class="row col-12">
+                        <div class="col-12">⏰ Time: {{ session.conference_datetime }} <span
+                                class="badge badge-primary">Conference</span></div>
+                        <div class="col-12">
+                            ⏰ Time: <span class="session_times">{{session.session}} {{session.time_string}}</span>
+                            <span class="badge badge-secondary">UTC</span> /
+                            <span class="badge badge-info">Browser</span>
                         </div>
-                        {% else %}
-                        <div class="row col-12"><h3>{{ session.name }}</h3></div>
-                        {% endif %}
-                        <div class="row col-12">
-                            <div class="col-12">⏰ Time: {{ session.conference_datetime }} <span class="badge badge-primary">Conference</span></div>
-                            <div class="col-12">
-                                ⏰ Time: <span class="session_times">{{session.session}} {{session.time_string}}</span>
-                                <span class="badge badge-secondary">UTC</span> /
-                                <span class="badge badge-info">Browser</span>
-                            </div>
-                        </div>
+                    </div>
                     {% for event_type in event_types %}
-                        {% if session.events.values()|selectattr('type', 'equalto', event_type)|list|length > 0 %}
-                            <div class="col-12">
-                                <h5>{{ event_type }} Presentations</h5>
-                            <hr/>
-                            </div>
-                            {% for event in session.events.values() %}
-                            {% if event_type == event.type %}
-                            <div class="col-12 mb-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class='col-sm-7'><h5 class='text-left'>{{ event.track }} ({{ event.type }})</h5></div>
-                                            <div class="col-sm-5"><h5 class='text-right'>Room: {{ event.room }}</h5></div>
-                                        </div>
+                    {% if session.events.values()|selectattr('type', 'equalto', event_type)|list|length > 0 %}
+                    <div class="col-12">
+                        <h5>{{ event_type }} Presentations</h5>
+                        <hr />
+                    </div>
+                    {% for event in session.events.values() %}
+                    {% if event_type == event.type %}
+                    <div class="col-12 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class='col-sm-7'>
+                                        <h5 class='text-left'>{{ event.track }} ({{ event.type }})</h5>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                        <ul>
-                                            {% for paper_id in event.paper_ids %}
-                                            {% set paper = papers[paper_id] %}
-                                            <li>
-                                                <a href="paper_{{paper.id}}.html" target="_blank">
-                                                    {{ paper.title }}
-                                                </a>
-                                            </li>
-                                            {% endfor %}
-                                        </ul>
-                                        </p>
+                                    <div class="col-sm-5">
+                                        <h5 class='text-right'>Room: {{ event.room }}</h5>
                                     </div>
                                 </div>
-                                
                             </div>
-                            {% endif %}
-                            {% endfor %}
-                        {% endif %}
+                            <div class="card-body">
+                                <p class="card-text">
+                                <ul>
+                                    {% for paper_id in event.paper_ids %}
+                                    {% set paper = papers[paper_id] %}
+                                    <li>
+                                        <a href="paper_{{paper.id}}.html" target="_blank">
+                                            {{ paper.title }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}

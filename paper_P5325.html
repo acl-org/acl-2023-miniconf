@@ -305,7 +305,7 @@
       </a>
       
       
-      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15279/lecture/78075-align-then-enhance-multilingual-entailment-graph-enhancement-with-soft-predicate-alignment">
+      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/posters/15279/poster/78075-align-then-enhance-multilingual-entailment-graph-enhancement-with-soft-predicate-alignment">
         <img src='/static/images/underline.jpg' height="20"></img> Underline
       </a>
       
@@ -321,7 +321,7 @@
       
       
       
-      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15279/lecture/78075-align-then-enhance-multilingual-entailment-graph-enhancement-with-soft-predicate-alignment">
+      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/posters/15279/poster/78075-align-then-enhance-multilingual-entailment-graph-enhancement-with-soft-predicate-alignment">
         📺 Watch Video on Underline
       </a>
       
@@ -366,6 +366,28 @@
   </div>
 </div>
 
+<div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+    <span>Spotlight Session: Spotlight - Metropolitan West (Spotlight)</span>
+    <div>Conference Room: Metropolitan West </div>
+    <div>Conference Time: July 10, 19:00-21:00 (EDT) (America/Toronto)</div>
+    <div>Global Time: July 10, <span class="session_times">Spotlight Session (23:00-01:00 UTC)</span></div>
+
+    
+
+    <!--
+  
+  -->
+  </div>
+</div>
+
+<div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+    <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+    <span id="session-cal-link-2"></span>
+  </div>
+</div>
+
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -405,6 +427,43 @@
     });
 
   targetNode = document.querySelector('#session-cal-link-1');
+  for (const name of calendarNames) {
+    calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+    calendarNodeSpan = document.createElement("span");
+    calendarNodeSpan.setAttribute("style", "padding: 2px");
+    calendarNodeSpan.appendChild(document.createTextNode("["));
+    calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+    calendarNodeSpan.appendChild(document.createTextNode("]"));
+    targetNode.appendChild(calendarNodeSpan);
+  }
+  
+  // create a calendar by hand
+  ouicalData = addToCalendarData({
+    options: {
+      class: 'my-class',
+      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+    },
+    data: {
+      title: 'Align-then-Enhance: Multilingual Entailment Graph Enhancement with Soft Predicate Alignment'.replace("#", " "),
+
+      // Event start date
+      start: new Date("2023-07-10T23:00:00"),
+      end: new Date("2023-07-11T01:00:00"),
+      // duration: 120,                           // Event duration (IN MINUTES)
+      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+      // Event timezone. Will convert the given time to that zone
+      timezone: 'UTC',
+        // Event Address
+        
+
+  // Event Description
+  // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+  description: 'https://underline.io'
+      }
+    });
+
+  targetNode = document.querySelector('#session-cal-link-2');
   for (const name of calendarNames) {
     calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
     calendarNodeSpan = document.createElement("span");

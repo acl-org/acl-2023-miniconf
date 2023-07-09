@@ -303,7 +303,7 @@ Furthermore, we confirm that our model can potentially predict emerging topics f
       </a>
       
       
-      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77484-dynamic-structured-neural-topic-model-with-self-attention-mechanism">
+      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/posters/15200/poster/77484-dynamic-structured-neural-topic-model-with-self-attention-mechanism">
         <img src='/static/images/underline.jpg' height="20"></img> Underline
       </a>
       
@@ -319,7 +319,7 @@ Furthermore, we confirm that our model can potentially predict emerging topics f
       
       
       
-      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/sessions/15200/lecture/77484-dynamic-structured-neural-topic-model-with-self-attention-mechanism">
+      <a class="card-link link-info" target="_blank" href="https://underline.io/events/395/posters/15200/poster/77484-dynamic-structured-neural-topic-model-with-self-attention-mechanism">
         📺 Watch Video on Underline
       </a>
       
@@ -364,6 +364,28 @@ Furthermore, we confirm that our model can potentially predict emerging topics f
   </div>
 </div>
 
+<div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+    <span>Spotlight Session: Spotlight - Metropolitan East (Spotlight)</span>
+    <div>Conference Room: Metropolitan East </div>
+    <div>Conference Time: July 10, 19:00-21:00 (EDT) (America/Toronto)</div>
+    <div>Global Time: July 10, <span class="session_times">Spotlight Session (23:00-01:00 UTC)</span></div>
+
+    
+
+    <!--
+  
+  -->
+  </div>
+</div>
+
+<div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+    <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+    <span id="session-cal-link-2"></span>
+  </div>
+</div>
+
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -403,6 +425,43 @@ Furthermore, we confirm that our model can potentially predict emerging topics f
     });
 
   targetNode = document.querySelector('#session-cal-link-1');
+  for (const name of calendarNames) {
+    calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+    calendarNodeSpan = document.createElement("span");
+    calendarNodeSpan.setAttribute("style", "padding: 2px");
+    calendarNodeSpan.appendChild(document.createTextNode("["));
+    calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+    calendarNodeSpan.appendChild(document.createTextNode("]"));
+    targetNode.appendChild(calendarNodeSpan);
+  }
+  
+  // create a calendar by hand
+  ouicalData = addToCalendarData({
+    options: {
+      class: 'my-class',
+      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+    },
+    data: {
+      title: 'Dynamic Structured Neural Topic Model with Self-Attention Mechanism'.replace("#", " "),
+
+      // Event start date
+      start: new Date("2023-07-10T23:00:00"),
+      end: new Date("2023-07-11T01:00:00"),
+      // duration: 120,                           // Event duration (IN MINUTES)
+      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+      // Event timezone. Will convert the given time to that zone
+      timezone: 'UTC',
+        // Event Address
+        
+
+  // Event Description
+  // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+  description: 'https://underline.io'
+      }
+    });
+
+  targetNode = document.querySelector('#session-cal-link-2');
   for (const name of calendarNames) {
     calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
     calendarNodeSpan = document.createElement("span");

@@ -96,7 +96,13 @@
       </p>
       {% endif %}
       <p class="text-center text-muted card-title">
-      {% if socials[social]['events'][event]['id'][0] != 'b' %}
+      {% if socials[social]['events'][event]['track'] == 'Queer in AI workshop' %}
+        <!-- Unifies two related events into one -->
+        <a href="https://acl.rocket.chat/channel/paper-birds-of-a-feather-1" target="_blank"> Chat </a>  
+      {% elif socials[social]['events'][event]['id'][:9] == 'diversity' %}
+        <!-- Unifies two related events into one -->
+        <a href="https://acl.rocket.chat/channel/paper-event_diversity-and-inclusion" target="_blank"> Chat </a>  
+      {% elif socials[social]['events'][event]['id'][0] != 'b' %}
         <a href="https://acl.rocket.chat/channel/paper-event_{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  
       {% else %}
         <a href="https://acl.rocket.chat/channel/paper-{{socials[social]['events'][event]['id']}}" target="_blank"> Chat </a>  

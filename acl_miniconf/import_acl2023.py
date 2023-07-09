@@ -1176,7 +1176,7 @@ def main(
     poster_tsv: str = "private_data-acl2023/poster-demo-papers.tsv",
     virtual_tsv: str = "private_data-acl2023/virtual-papers.tsv",
     spotlight_tsv: str = "private_data-acl2023/spotlight-papers.tsv",
-    extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-07-05.xlsx",
+    extras_xlsx: str = "private_data-acl2023/acl-2023-events-export-2023-07-09 (1).xlsx",
     acl_main_long_proceedings_yaml: str = "private_data-acl2023/main/long.yml",
     acl_main_short_proceedings_yaml: str = "private_data-acl2023/main/short.yml",
     acl_main_findings_proceedings_yaml: str = "private_data-acl2023/main/findings.yml",

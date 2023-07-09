@@ -366,7 +366,7 @@ def reformat_plenary_data(plenaries):
     session_data = dict()
     session_day_data = []
 
-    re_date = re.compile(".*[^\w](\w+), July (\d+).*")
+    re_date = re.compile("(\w+), July (\d+).*")
     re_time = re.compile(".*Time: (\d+:\d+).(\d+:\d+).*")
     for plenary_key, plenary in plenaries.items():
         # Parse the date and time from the description
@@ -376,12 +376,16 @@ def reformat_plenary_data(plenaries):
         result_time = re_time.search(plenary.abstract)
         start_time_string = result_time.group(1)
         end_time_string = result_time.group(2)
+        # We add 6 hours here because there are issues with timezones that
+        # were missed before.
         start_time = datetime.datetime.strptime(
             "{} {}".format(date_string, start_time_string), "%Y-%m-%d %H:%M"
         )
+        start_time = start_time + datetime.timedelta(hours=6)
         end_time = datetime.datetime.strptime(
             "{} {}".format(date_string, end_time_string), "%Y-%m-%d %H:%M"
         )
+        end_time = end_time + datetime.timedelta(hours=6)
         # Load images if we have one
         if plenary_key == "memorial":
             plenary.image_url = "invited/drago.jpg"

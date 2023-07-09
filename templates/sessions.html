@@ -78,6 +78,16 @@
                                 <ul>
                                     {% for paper_id in event.paper_ids %}
                                     {% set paper = papers[paper_id] %}
+                                    {% set prev_paper_id = loop.previtem %}
+                                        {% if event.type == 'Spotlight' %}
+                                        {% if prev_paper_id is defined %}
+                                        {% if papers[prev_paper_id].display_track != paper.display_track %}
+                                        <li><b>Track: {{ paper.display_track }}</b></li>
+                                        {% endif %}
+                                        {% else %}
+                                        <li><b>Track: {{ paper.display_track }}</b></li>
+                                        {% endif %}
+                                        {% endif %}
                                     <li>
                                         <a href="paper_{{paper.id}}.html" target="_blank">
                                             {{ paper.title }}

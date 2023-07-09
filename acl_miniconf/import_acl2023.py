@@ -484,12 +484,12 @@ class Acl2023Parser:
         end_dt = self.zone.localize(
             datetime.datetime(year=2023, month=7, day=10, hour=21, minute=0)
         )
-        for (group_session, group_track), group in df.groupby(["Session", "Track"]):
+        for (group_session, group_room), group in df.groupby(["Session", "Location"]):
             group = group.sort_values("Presentation Order")
-            room = group.iloc[0].Location
             # There are multiple concurrent spotlight events, each in a different room.
             # Thus, the one spotlight session should have multiple events that are differentiated by room
-            event_name = get_session_event_name(group_session, group_track, group_type)
+            track = f'Spotlight - {group_room}'
+            event_name = get_session_event_name(group_session, track, group_type)
             event_id = name_to_id(event_name)
 
             start_dt, end_dt = self._parse_start_end_dt(
@@ -501,13 +501,13 @@ class Acl2023Parser:
                 self.events[event_id] = Event(
                     id=event_id,
                     session=group_session,
-                    track=group_track,
+                    track=track,
                     start_time=start_dt,
                     end_time=end_dt,
                     chairs=[],
                     paper_ids=[],
                     link=None,
-                    room=room,
+                    room=group_room,
                     type=group_type,
                 )
             event = self.events[event_id]
@@ -572,8 +572,8 @@ class Acl2023Parser:
                         authors=parse_authors(
                             self.anthology_data, paper_id, row.Author
                         ),
-                        # TODO: group_track
-                        track=row.Track,
+                        track=track,
+                        display_track=row.Track,
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
@@ -692,6 +692,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
+                        display_track=group_track,
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
@@ -813,6 +814,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
+                        display_track=group_track,
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
@@ -922,6 +924,7 @@ class Acl2023Parser:
                             self.anthology_data, paper_id, row.Author
                         ),
                         track=group_track,
+                        display_track=group_track,
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,

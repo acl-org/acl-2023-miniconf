@@ -227,6 +227,7 @@ class Paper(BaseModel):
     program: str
     material: str = None
     is_paper: bool = True
+    display_track: Optional[str] = None
 
     @property
     def rocketchat_channel(self) -> str:

@@ -212,8 +212,33 @@
       
       
     </div>
+    
+<div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+    <span>the-future-of-computational-linguistics-in-the-llm-age: Plenary (Plenary Sessions)</span>
+    <div>Conference Room: Metropolitan </div>
+    <div>Conference Time: July 11, 16:45-17:45 (EDT) (America/Toronto)</div>
+    <div>Global Time: July 11, <span class="session_times">the-future-of-computational-linguistics-in-the-llm-age (20:45-21:45 UTC)</span></div>
 
     
+
+    <!--
+  
+    <a href="livestream.html"   class="card-link">
+    [Livestream]
+    </a>
+  
+  -->
+  </div>
+</div>
+
+<div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+    <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+    <span id="session-cal-link-1"></span>
+  </div>
+</div>
+
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
@@ -225,6 +250,43 @@
   let parser = new DOMParser();
   let calendarNames = Array("google", "off365", "outlook", "ical");
 
+  
+  // create a calendar by hand
+  ouicalData = addToCalendarData({
+    options: {
+      class: 'my-class',
+      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+    },
+    data: {
+      title: 'Plenary: The Future of Computational Linguistics in the LLM Age'.replace("#", " "),
+
+      // Event start date
+      start: new Date("2023-07-11T20:45:00"),
+      end: new Date("2023-07-11T21:45:00"),
+      // duration: 120,                           // Event duration (IN MINUTES)
+      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+      // Event timezone. Will convert the given time to that zone
+      timezone: 'UTC',
+        // Event Address
+        
+
+  // Event Description
+  // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+  description: 'https://virtual2023.aclweb.org/plenary_session_the-future-of-computational-linguistics-in-the-llm-age.html'
+      }
+    });
+
+  targetNode = document.querySelector('#session-cal-link-1');
+  for (const name of calendarNames) {
+    calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+    calendarNodeSpan = document.createElement("span");
+    calendarNodeSpan.setAttribute("style", "padding: 2px");
+    calendarNodeSpan.appendChild(document.createTextNode("["));
+    calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+    calendarNodeSpan.appendChild(document.createTextNode("]"));
+    targetNode.appendChild(calendarNodeSpan);
+  }
   
 </script>
 

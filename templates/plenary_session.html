@@ -29,11 +29,10 @@
       </a>
       {% endif %}
     </div>
-
     {{ components.live_sessions(
-        plenary_session.sessions,
+        [plenary_session],
         plenary_session.title,
-        "https://virtual.2020.emnlp.org/plenary_session_" + plenary_session.id + ".html",
+        "https://virtual2023.aclweb.org/plenary_session_" + plenary_session.id + ".html",
         true) }}
 
   </div>

@@ -82,10 +82,10 @@
                                         {% if event.type == 'Spotlight' %}
                                         {% if prev_paper_id is defined %}
                                         {% if papers[prev_paper_id].display_track != paper.display_track %}
-                                        <li><b>Track: {{ paper.display_track }}</b></li>
+                                        <li class="display-track-item"><b>Track: {{ paper.display_track }}</b></li>
                                         {% endif %}
                                         {% else %}
-                                        <li><b>Track: {{ paper.display_track }}</b></li>
+                                        <li class="display-track-item"><b>Track: {{ paper.display_track }}</b></li>
                                         {% endif %}
                                         {% endif %}
                                     <li>

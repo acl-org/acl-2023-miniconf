@@ -1,0 +1,36 @@
+{% set active_page = "Map" %}
+{% set page_title = "Map" %}
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-xl-12">
+  <h3>Venue Map</h3>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-overall-tab" data-toggle="tab" href="#nav-overall" role="tab" aria-controls="nav-overall" aria-selected="true">
+        Overall Map of Westin Hotel</a>
+      <a class="nav-item nav-link" id="nav-lobby-tab" data-toggle="tab" href="#nav-lobby" role="tab" aria-controls="nav-lobby" aria-selected="false">
+        Main Lobby (ML)</a>
+      <a class="nav-item nav-link" id="nav-second-tab" data-toggle="tab" href="#nav-second" role="tab" aria-controls="nav-second" aria-selected="false">
+        2nd Level Conference Center, Upper Level, Lower Level</a>
+      <a class="nav-item nav-link" id="nav-third-tab" data-toggle="tab" href="#nav-third" role="tab" aria-controls="nav-third" aria-selected="false">
+        3rd Level Lower Level</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-overall" role="tabpanel" aria-labelledby="nav-overall-tab">
+      <img src="/static/images/map/acl-2023-map1.png" style="max-width: 100%"/>
+    </div>
+    <div class="tab-pane fade" id="nav-lobby" role="tabpanel" aria-labelledby="nav-lobby-tab">
+      <img src="/static/images/map/acl-2023-map2.png" style="max-width: 100%"/>
+    </div>
+    <div class="tab-pane fade" id="nav-second" role="tabpanel" aria-labelledby="nav-second-tab">
+      <img src="/static/images/map/toronto-4.png" style="max-width: 100%"/>
+    </div>
+    <div class="tab-pane fade" id="nav-third" role="tabpanel" aria-labelledby="nav-third-tab">
+      <img src="/static/images/map/toronto-5.png" style="max-width: 100%"/>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

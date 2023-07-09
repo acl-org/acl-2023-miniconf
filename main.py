@@ -204,6 +204,10 @@ def chat():
     data = _data()
     return render_template("chat.html", **data)
 
+@app.route("/map.html")
+def venue_map():
+    data = _data()
+    return render_template("map.html", **data)
 
 # FRONT END SERVING
 @app.route("/schedule.json")

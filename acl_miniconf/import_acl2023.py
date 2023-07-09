@@ -295,6 +295,9 @@ class Acl2023Parser:
         elif paper_type == 'srw':
             anthology_url = self.acl_anthology_prefix + f"2023.acl-srw.{anthology_publication_id}"
             paper_pdf = self.acl_anthology_prefix + f"2023.acl-srw.{anthology_publication_id}.pdf"
+        elif paper_type == 'findings':
+            anthology_url = self.acl_anthology_prefix + f"2023.findings-acl.{anthology_publication_id}"
+            paper_pdf = self.acl_anthology_prefix + f"2023.findings-acl.{anthology_publication_id}.pdf"
         else:
             anthology_url = self.acl_anthology_prefix + f"2023.acl-{paper_length}.{anthology_publication_id}"
             paper_pdf = self.acl_anthology_prefix + f"2023.acl-{paper_length}.{anthology_publication_id}.pdf"
@@ -539,6 +542,8 @@ class Acl2023Parser:
                         paper_type = 'industry'
                     elif row.Category == 'SRW':
                         paper_type = 'srw'
+                    elif row.Category == 'Findings':
+                        paper_type = 'findings'
                     else:
                         paper_type = row.Category
 
@@ -658,6 +663,8 @@ class Acl2023Parser:
                         paper_type = 'industry'
                     elif row.Category == 'SRW':
                         paper_type = 'srw'
+                    elif row.Category == 'Findings':
+                        paper_type = 'findings'
                     else:
                         paper_type = row.Category
                     anthology_id = to_anthology_id(paper_id)
@@ -777,6 +784,8 @@ class Acl2023Parser:
                         paper_type = 'industry'
                     elif row.Category == 'SRW':
                         paper_type = 'srw'
+                    elif row.Category == 'Findings':
+                        paper_type = 'findings'
                     else:
                         paper_type = row.Category
                     anthology_id = to_anthology_id(paper_id)
@@ -884,6 +893,8 @@ class Acl2023Parser:
                         paper_type = 'industry'
                     elif row.Category == 'SRW':
                         paper_type = 'srw'
+                    elif row.Category == 'Findings':
+                        paper_type = 'findings'
                     else:
                         paper_type = row.Category
                     anthology_id = to_anthology_id(paper_id)

@@ -1186,7 +1186,7 @@ def main(
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
     booklet_json: str = "data/acl_2023/data/booklet_data.json",
-    acl_anthology_prefix: str = "https://preview.aclanthology.org/acl-23-ingestion/",
+    acl_anthology_prefix: str = "https://aclanthology.org/",
     out_dir: str = "data/acl_2023/data/",
 ):
     parser = Acl2023Parser(

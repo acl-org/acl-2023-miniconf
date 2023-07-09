@@ -658,3 +658,8 @@ div#papers_options > div {
 .customnav {
   box-shadow: 0px 5px 5px gray;
 }
+
+.display-track-item {
+  list-style-type: none;
+  margin-left: -30px;
+}

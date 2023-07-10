@@ -152,3 +152,4 @@ configs/rocketchat
 # This should never be committed, it is private sheets
 private_data-acl2023
 workshop-data/
+srw_mapping.py

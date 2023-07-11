@@ -1,0 +1,162 @@
+[
+  {
+    "id": "birds-of-a-feather-1",
+    "name": "Birds of a Feather 1",
+    "display_name": "Queer in AI Workshop",
+    "start_time": "2023-07-09T13:00:00+00:00",
+    "end_time": "2023-07-09T21:45:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-1",
+    "room": "Pier 9"
+  },
+  {
+    "id": "diversity-and-inclusion-lunch1",
+    "name": "D&I 1",
+    "display_name": "D&I Lunch Social",
+    "start_time": "2023-07-10T16:30:00+00:00",
+    "end_time": "2023-07-10T17:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-event_diversity-and-inclusion",
+    "room": "Dockside 3"
+  },
+  {
+    "id": "birds-of-a-feather-4",
+    "name": "Birds of a Feather 4",
+    "display_name": "Low-Resource Languages",
+    "start_time": "2023-07-10T18:00:00+00:00",
+    "end_time": "2023-07-10T19:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-4",
+    "room": "Pier 9"
+  },
+  {
+    "id": "birds-of-a-feather-5",
+    "name": "Birds of a Feather 5",
+    "display_name": "Mindfulness meditation in a time of NLP hyperactivity",
+    "start_time": "2023-07-11T13:00:00+00:00",
+    "end_time": "2023-07-11T14:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-5",
+    "room": "Pier 9"
+  },
+  {
+    "id": "birds-of-a-feather-6",
+    "name": "Birds of a Feather 6",
+    "display_name": "NLP for Social Good",
+    "start_time": "2023-07-11T15:00:00+00:00",
+    "end_time": "2023-07-11T16:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-6",
+    "room": "Pier 9"
+  },
+  {
+    "id": "birds-of-a-feather-13",
+    "name": "Birds of a Feather 13",
+    "display_name": "How to know your true market value as and AI researcher",
+    "start_time": "2023-07-11T15:00:00+00:00",
+    "end_time": "2023-07-11T16:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-13",
+    "room": "Dockside 2"
+  },
+  {
+    "id": "diversity-and-inclusion-lunch2",
+    "name": "D&I 2",
+    "display_name": "D&I Lunch Social",
+    "start_time": "2023-07-11T16:30:00+00:00",
+    "end_time": "2023-07-11T17:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-event_diversity-and-inclusion",
+    "room": "Dockside 3"
+  },
+  {
+    "id": "birds-of-a-feather-7",
+    "name": "Birds of a Feather 7",
+    "display_name": "Discussion on biomedical and clinical NLP and healthcare data",
+    "start_time": "2023-07-11T18:00:00+00:00",
+    "end_time": "2023-07-11T19:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-7",
+    "room": "Pier 9"
+  },
+  {
+    "id": "birds-of-a-feather-8",
+    "name": "Birds of a Feather 8",
+    "display_name": "Women in NLP advancing our careers",
+    "start_time": "2023-07-11T18:45:00+00:00",
+    "end_time": "2023-07-11T20:15:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-8",
+    "room": "Dockside 2"
+  },
+  {
+    "id": "birds-of-a-feather-10",
+    "name": "Birds of a Feather 10",
+    "display_name": "Social: Reinforcement learning for language models",
+    "start_time": "2023-07-12T13:00:00+00:00",
+    "end_time": "2023-07-12T14:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-10",
+    "room": "Pier 9"
+  },
+  {
+    "id": "birds-of-a-feather-3",
+    "name": "Birds of a Feather 3",
+    "display_name": "ACL Mentorship",
+    "start_time": "2023-07-12T14:00:00+00:00",
+    "end_time": "2023-07-12T14:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-3",
+    "room": "Dockerside 2"
+  },
+  {
+    "id": "birds-of-a-feather-11",
+    "name": "Birds of a Feather 11",
+    "display_name": "Mentoring early-career students in Pier 9",
+    "start_time": "2023-07-12T15:00:00+00:00",
+    "end_time": "2023-07-12T16:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-11",
+    "room": "Pier 9"
+  },
+  {
+    "id": "birds-of-a-feather-14",
+    "name": "Birds of a Feather 14",
+    "display_name": "Interpretability and Fairness in Large Language Models",
+    "start_time": "2023-07-12T15:00:00+00:00",
+    "end_time": "2023-07-12T16:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-14",
+    "room": "Dockerside 2"
+  },
+  {
+    "id": "birds-of-a-feather-12",
+    "name": "Birds of a Feather 12",
+    "display_name": "Queer in AI Lunch Social",
+    "start_time": "2023-07-12T16:30:00+00:00",
+    "end_time": "2023-07-12T17:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-12",
+    "room": "Dockside 3"
+  },
+  {
+    "id": "social-event-1",
+    "name": "Dinner 1",
+    "display_name": "Social event",
+    "start_time": "2023-07-11T22:30:00+00:00",
+    "end_time": "2023-07-12T02:00:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-event_social-event",
+    "room": "Steam Whistle Brewing Company"
+  },
+  {
+    "id": "social-event-2",
+    "name": "Dinner 2",
+    "display_name": "Welcome reception",
+    "start_time": "2023-07-09T23:00:00+00:00",
+    "end_time": "2023-07-10T01:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-event_welcome-reception",
+    "room": "Metropolitan Ballroom"
+  }
+]

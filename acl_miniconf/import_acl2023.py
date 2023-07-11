@@ -208,6 +208,7 @@ class Acl2023Parser:
         workshop_papers_yaml_path: Path,
         workshops_yaml_path: Path,
         booklet_json_path: Path,
+        socials_json_path: Path,
         acl_anthology_prefix: str,
     ):
         self.poster_tsv_path = poster_tsv_path
@@ -224,6 +225,7 @@ class Acl2023Parser:
         self.workshop_papers_yaml_path = workshop_papers_yaml_path
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
+        self.socials_json_path = socials_json_path
         self.acl_anthology_prefix = acl_anthology_prefix
         self.booklet: Booklet = Booklet.from_booklet_data(
             booklet_json_path, workshops_yaml_path
@@ -259,7 +261,7 @@ class Acl2023Parser:
         self._parse_spotlight_papers()
 
         # Parse extra events
-        self._parse_extras_from_spreadsheet()
+        self._parse_extras_from_spreadsheet(self.socials_json_path)
 
         self._parse_workshop_papers()
 
@@ -1013,8 +1015,7 @@ class Acl2023Parser:
             pass
         self.spreadsheet_info = spreadsheet_info
 
-    def _parse_extras_from_spreadsheet(self):
-        self._parse_event_without_papers(self.spreadsheet_info, "Social", "Socials")
+    def _parse_extras_from_spreadsheet(self, socials_json):
         # Parse sessions not in the booklet
         self._parse_event_without_papers(
             self.spreadsheet_info,
@@ -1031,16 +1032,57 @@ class Acl2023Parser:
             "Coffee Break",
             "Breaks",
         )
-        self._parse_multi_event_single_paper(
-            self.spreadsheet_info,
-            "Diversity and Inclusion",
-            "Socials",
-        )
-        self._parse_multi_event_single_paper(
-            self.spreadsheet_info,
-            "Birds of a Feather",
-            "Socials",
-        )
+        # We no longer parse these events here.
+        # self._parse_event_without_papers(self.spreadsheet_info, "Social", "Socials")
+        # self._parse_multi_event_single_paper(
+        #     self.spreadsheet_info,
+        #     "Diversity and Inclusion",
+        #     "Socials",
+        # )
+        # self._parse_multi_event_single_paper(
+        #     self.spreadsheet_info,
+        #     "Birds of a Feather",
+        #     "Socials",
+        # )
+
+        # We parse those events in here instead
+        self._parse_socials(socials_json)
+
+
+    def _parse_socials(self, socials_json):
+        new_sessions = []
+        with open(socials_json, 'r') as fp:
+            all_socials = json.load(fp)
+        for social in all_socials:
+            id = social['id']
+            name = social['name']
+            display_name = social['display_name']
+            start_time = social['start_time']
+            end_time = social['end_time']
+            rc_link = social['link']
+            room = social['room']
+
+            event = Event(id=id,
+                          session="event_session",
+                          track=name,
+                          start_time=start_time,
+                          end_time=end_time,
+                          chairs=[],
+                          paper_ids=[],
+                          link=rc_link,
+                          room=room,
+                          type="Socials")
+            session = Session(id=id,
+                              name=display_name,
+                              display_name=display_name,
+                              start_time=start_time,
+                              end_time=end_time,
+                              type="Socials",
+                              events={'id': event})
+            new_sessions.append((name, session))
+        for (name, session) in new_sessions:
+            self.sessions[name] = session
+
 
     def _parse_event_without_papers(
         self, spreadsheet_info, event_key, event_type, event_name=None
@@ -1186,6 +1228,7 @@ def main(
     workshop_papers_yml: str = "data/acl_2023/data/workshop_papers.yaml",
     workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
     booklet_json: str = "data/acl_2023/data/booklet_data.json",
+    socials_json: str = "data/acl_2023/data/socials_data.json",
     acl_anthology_prefix: str = "https://aclanthology.org/",
     out_dir: str = "data/acl_2023/data/",
 ):
@@ -1204,6 +1247,7 @@ def main(
         workshop_papers_yaml_path=Path(workshop_papers_yml),
         workshops_yaml_path=Path(workshops_yaml),
         booklet_json_path=Path(booklet_json),
+        socials_json_path=Path(socials_json),
         acl_anthology_prefix=acl_anthology_prefix,
     )
     conf = parser.parse()

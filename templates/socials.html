@@ -21,7 +21,7 @@
          style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
       <h2 class="card-title" >
         {% if social[0] == 'B' %}
-          {{ socials[social]['name'] }}: {{ socials[social]['events'][event]['track'] }}
+          {{ socials[social]['events'][event]['track'] }}: {{ socials[social]['name'] }}
         {% else %}
           {{ socials[social]['name'] }}
         {% endif %}
@@ -46,17 +46,17 @@
 
       <div class="mx-4 text-left card-subtitle">
         <p>{{socials[social]['desc']|safe}}</p>
-
         {% if socials[social]['events'][event]['room'] %}
         <p class="text-center">This event takes place in {{ socials[social]['events'][event]['room'] }}.</p>
         {% endif %}
 
         {% for session in socials[social]['events'] %}
           <div class="m-3 text-muted text-center">
-          <span class="session_times">{{socials[social]['events'][session]['start_time'].strftime('%A %d, %H:%m')}}</span>
-          {% if session.link %}
+          <span class="session_times">{{socials[social]['events'][session]['start_time'].strftime('%A %d, %H:%M')}}</span>
+          {% if session_link %}
             <div>
-            <a href="{{session.link}}" target="_blank"  class="card-link">
+                {{session_link}}
+            <a href="{{session_link}}" target="_blank"  class="card-link">
               <!--
               <img
                   src="static/images/zoom-icon.png"
@@ -65,7 +65,7 @@
                   title="Join Zoom Meeting"
               >
               -->
-              [Join Meeting]
+              [Join Zoom Meeting]
             </a>
             </div>
           {% endif %}
@@ -138,6 +138,8 @@
   // Again, I'm so sorry for this Jinja hack
   {% for social in socials if social[0:6] != 'Coffee' %}
     {% for social_event in socials[social]['events'] %}
+      console.log("{{ socials[social]["events"][social_event]['track'] }}");
+      console.log(new Date("{{socials[social]['events'][social_event]['start_time'].isoformat()}}"));
       // create a calendar by hand
       ouicalData = addToCalendarData({
         options: {

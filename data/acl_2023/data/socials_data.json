@@ -158,5 +158,15 @@
     "type": "Socials",
     "link": "https://acl.rocket.chat/channel/paper-event_welcome-reception",
     "room": "Metropolitan Ballroom"
+  },
+  {
+    "id": "birds-of-a-feather-15",
+    "name": "Birds of a Feather 15",
+    "display_name": "LatinX",
+    "start_time": "2023-07-11T15:00:00+00:00",
+    "end_time": "2023-07-11T16:30:00+00:00",
+    "type": "Socials",
+    "link": "https://acl.rocket.chat/channel/paper-birds-of-a-feather-15",
+    "room": "Pier 9"
   }
 ]

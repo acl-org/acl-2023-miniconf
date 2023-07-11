@@ -189,7 +189,11 @@ class Session(BaseModel):
 
     @property
     def day(self) -> str:
-        return self.start_time.astimezone(pytz.utc).strftime("%B %d")
+        # This line was changed because the .js library that builds the calendar
+        # expects the dates to have the second format. If we do it the previous
+        # way, the `sessions.html` tabs for each day don't work well.
+        # return self.start_time.astimezone(pytz.utc).strftime("%B %d")
+        return self.start_time.astimezone(pytz.utc).strftime("%b %d")
 
     @property
     def time_string(self) -> str:

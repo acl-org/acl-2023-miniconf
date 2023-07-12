@@ -28,7 +28,7 @@
                 {% for session in sessions[day] %}
                 {% if session.type not in excluded_session_types and not session.name.startswith('Diversity and
                 Inclusion') %}
-                <div class="row p-4 col-md-12">
+                <div class="row p-4 col-md-12" id="{{ session.id }}">
                     {% if session.type == 'Tutorials' %}
                     <div class="row col-12">
                         {% set tutorial_event = session.tutorial_events | take_one %}
@@ -64,7 +64,7 @@
                     <div class="col-12 mb-4">
                         <div class="card">
                             <div class="card-header">
-                                <div class="row">
+                                <div class="row" id="{{ event.id }}">
                                     <div class='col-sm-7'>
                                         <h5 class='text-left'>{{ event.track }} ({{ event.type }})</h5>
                                     </div>
@@ -119,7 +119,23 @@
 <script>
     $(document).ready(() => {
         add_local_tz('.session_times');
+        var hash = window.location.hash;
+        if (hash.startsWith('#link-')) {
+            var parts = hash.split('-')
+            if (parts.length >= 2) {
+                var tab_link = parts[0] + '-' + parts[1];
+                console.log('Clicking:' + tab_link);
+                $(tab_link).trigger("click");
+                if (parts.length >= 3) {
+                    var event_link = parts.slice(2).join('-');
+                    console.log('Href to: ' + event_link);
+                    location.href = '#' + event_link;
+                }
+            }
+
+        }
     });
+
 </script>
 
 {% endblock %}

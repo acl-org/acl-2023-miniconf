@@ -83,7 +83,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
         end = session.end_time
         tab_id = (
             session.start_time.astimezone(pytz.utc)
-            .strftime("%b %d")
+            .strftime("%B %d")
             .replace(" ", "")
             .lower()
         )
@@ -96,7 +96,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
         elif session.type == "Socials":
             url = f"socials.html#tab-{tab_id}"
         else:
-            url = f"sessions.html#tab-{tab_id}"
+            url = f"sessions.html#link-{tab_id}-{session.id}"
 
         event = FrontendCalendarEvent(
             title=session.name,
@@ -117,7 +117,7 @@ def generate_paper_events(site_data: SiteData) -> List[Dict[str, Any]]:
                 elif event.type == 'Plenary Sessions':
                     url = "/plenary_sessions.html"
                 else:
-                    url = "/sessions.html"
+                    url = f"/sessions.html#link-{tab_id}-{event.id}"
                 frontend_event = FrontendCalendarEvent(
                     title=f"<b>{event.track}</b>",
                     start=start,
@@ -227,7 +227,7 @@ def generate_social_events(site_data: SiteData) -> List[Dict[str, Any]]:
         end = session.end_time
         tab_id = (
             session.start_time.astimezone(pytz.utc)
-            .strftime("%b %d")
+            .strftime("%B %d")
             .replace(" ", "")
             .lower()
         )
@@ -409,6 +409,6 @@ def reformat_plenary_data(plenaries):
     # Sorting days like this only works in this very specific case.
     session_day_data.sort()
     session_day_data = [
-        (f"jul1{idx}", day, idx == 0) for idx, day in enumerate(session_day_data)
+        (f"july1{idx}", day, idx == 0) for idx, day in enumerate(session_day_data)
     ]
     return session_data, session_day_data

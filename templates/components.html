@@ -2,7 +2,7 @@
 <ul class="nav nav-pills justify-content-center">
   {% for tab in tab_group %}
   <li class="nav-item">
-    <a class="nav-link {{tab[2]}}" data-toggle="tab" href="#tab-{{tab[0]}}" role="tab" aria-controls="nav-home"
+    <a id="link-{{tab[0]}}" class="nav-link {{tab[2]}}" data-toggle="tab" href="#tab-{{tab[0]}}" role="tab" aria-controls="nav-home"
       aria-selected="true">{{tab[1]}}
     </a>
   </li>

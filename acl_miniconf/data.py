@@ -217,6 +217,7 @@ class Paper(BaseModel):
     abstract: str
     tldr: str
     keywords: List[str] = []
+    languages: List[str] = []
     underline_url: Optional[str] = None
     underline_id: Optional[int] = None
     preview_image: Optional[str] = None

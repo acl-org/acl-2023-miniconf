@@ -144,6 +144,13 @@ class AnthologyEntry(BaseModel):
     authors: List[AnthologyAuthor] = []
 
 
+class Keywords(BaseModel):
+    paper_id: str
+    track: str
+    keywords: List[str] = []
+    languages: List[str] = []
+
+
 def to_anthology_id(paper_id: str):
     if paper_id.startswith("P"):
         return paper_id[1:]
@@ -209,6 +216,7 @@ class Acl2023Parser:
         workshops_yaml_path: Path,
         booklet_json_path: Path,
         socials_json_path: Path,
+        keywords_csv_path: Path,
         acl_anthology_prefix: str,
     ):
         self.poster_tsv_path = poster_tsv_path
@@ -226,6 +234,7 @@ class Acl2023Parser:
         self.workshops_yaml_path = workshops_yaml_path
         self.booklet_json_path = booklet_json_path
         self.socials_json_path = socials_json_path
+        self.keywords_csv_path = keywords_csv_path
         self.acl_anthology_prefix = acl_anthology_prefix
         self.booklet: Booklet = Booklet.from_booklet_data(
             booklet_json_path, workshops_yaml_path
@@ -239,6 +248,7 @@ class Acl2023Parser:
         self.underline_assets: Dict[str, Assets] = {}
         self.zone = pytz.timezone("America/Toronto")
         self.workshops: Dict[str, Workshop] = {}
+        self.keywords: Dict[str, Keywords] = {}
         self.spreadsheet_info: Dict = {}
 
     def parse(self):
@@ -247,6 +257,7 @@ class Acl2023Parser:
         # Underline has to be parsed early to fill in links/files/etc
         self._parse_underline_assets()
         self._parse_underline_spreadsheet()
+        self._parse_keywords()
         # Early parse special sessions, so they can be filled in
         self._parse_workshops()
         self._parse_plenaries()
@@ -304,6 +315,29 @@ class Acl2023Parser:
             anthology_url = self.acl_anthology_prefix + f"2023.acl-{paper_length}.{anthology_publication_id}"
             paper_pdf = self.acl_anthology_prefix + f"2023.acl-{paper_length}.{anthology_publication_id}.pdf"
         return anthology_url, paper_pdf
+    
+    def _parse_keywords(self):
+        df = pd.read_csv('data/acl_2023/data/keywords.csv', sep=',').fillna("")
+        for _, r in df.iterrows():
+            submission_id = r['Submission ID']
+            paper_id = f'P{submission_id}'
+            track = r['Track']
+            assert len(track) != 0
+            if r['Keywords'] == "":
+                keywords = []
+            else:
+                keywords = r['Keywords'].split("|")
+            if r['Languages'] == "":
+                languages = []
+            else:
+                languages = r['Languages'].split("|")
+
+            self.keywords[paper_id] = Keywords(
+                paper_id=paper_id,
+                track=track,
+                keywords=keywords,
+                languages=languages,
+            )
 
     def _parse_tutorials(self):
         self.tutorials = self.booklet.tutorials
@@ -567,6 +601,14 @@ class Acl2023Parser:
                         anthology_url = None
                         paper_pdf = None
 
+                    if paper_id in self.keywords:
+                        kw = self.keywords[paper_id]
+                        keywords = kw.keywords
+                        languages = kw.languages
+                    else:
+                        keywords = []
+                        languages = []
+
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -579,6 +621,8 @@ class Acl2023Parser:
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
+                        keywords=keywords,
+                        languages=languages,
                         tldr=tldr,
                         event_ids=[event.id],
                         underline_id=assets.underline_id,
@@ -686,6 +730,14 @@ class Acl2023Parser:
                         anthology_url = None
                         paper_pdf = None
 
+                    if paper_id in self.keywords:
+                        kw = self.keywords[paper_id]
+                        keywords = kw.keywords
+                        languages = kw.languages
+                    else:
+                        keywords = []
+                        languages = []
+
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -698,6 +750,8 @@ class Acl2023Parser:
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
+                        keywords=keywords,
+                        languages=languages,
                         tldr=tldr,
                         event_ids=[event.id],
                         similar_paper_ids=[],
@@ -808,6 +862,14 @@ class Acl2023Parser:
                         anthology_url = None
                         paper_pdf = None
 
+                    if paper_id in self.keywords:
+                        kw = self.keywords[paper_id]
+                        keywords = kw.keywords
+                        languages = kw.languages
+                    else:
+                        keywords = []
+                        languages = []
+
                     paper = Paper(
                         id=paper_id,
                         program=determine_program(row.Category),
@@ -820,6 +882,8 @@ class Acl2023Parser:
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
+                        languages=languages,
+                        keywords=keywords,
                         tldr=tldr,
                         event_ids=[event.id],
                         underline_id=assets.underline_id,
@@ -917,6 +981,14 @@ class Acl2023Parser:
                         tldr = ""
                         anthology_url = None
                         paper_pdf = None
+                    
+                    if paper_id in self.keywords:
+                        kw = self.keywords[paper_id]
+                        keywords = kw.keywords
+                        languages = kw.languages
+                    else:
+                        keywords = []
+                        languages = []
 
                     paper = Paper(
                         id=paper_id,
@@ -930,6 +1002,8 @@ class Acl2023Parser:
                         paper_type=paper_type,
                         category=row.Category,
                         abstract=abstract,
+                        keywords=keywords,
+                        languages=languages,
                         tldr=tldr,
                         event_ids=[event.id],
                         underline_id=assets.underline_id,
@@ -1229,6 +1303,7 @@ def main(
     workshops_yaml: str = "data/acl_2023/data/workshops.yaml",
     booklet_json: str = "data/acl_2023/data/booklet_data.json",
     socials_json: str = "data/acl_2023/data/socials_data.json",
+    keywords_csv: str = "data/acl_2023/data/keywords.csv",
     acl_anthology_prefix: str = "https://aclanthology.org/",
     out_dir: str = "data/acl_2023/data/",
 ):
@@ -1248,6 +1323,7 @@ def main(
         workshops_yaml_path=Path(workshops_yaml),
         booklet_json_path=Path(booklet_json),
         socials_json_path=Path(socials_json),
+        keywords_csv_path=Path(keywords_csv),
         acl_anthology_prefix=acl_anthology_prefix,
     )
     conf = parser.parse()

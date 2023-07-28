@@ -152,6 +152,18 @@
         false
         )
     }}
+        {% if paper.keywords %}
+        <div>
+          <span class="font-weight-bold">Keywords:</span>
+          {{paper.keywords | join(", ")}}
+        </div>
+        {% endif %}
+        {% if paper.languages %}
+        <div>
+          <span class="font-weight-bold">Languages:</span>
+          {{paper.languages | join(", ")}}
+        </div>
+        {% endif %}
         <div>
           <span class="font-weight-bold">TLDR:</span>
           {{paper.tldr}}
